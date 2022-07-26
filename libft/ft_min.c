@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: andref <andref@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 20:05:32 by lsherry           #+#    #+#             */
-/*   Updated: 2022/05/14 20:05:33 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/07/23 00:43:34 by andref           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minishell.h"
+#include "libft.h"
 
 int	ft_min(int a, int b)
 {

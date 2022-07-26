@@ -14,3 +14,13 @@ t_map	*create_empty_map()
 	map->F = 0;
 	return (map);
 }
+
+int	ft_arraylen(void **arr)
+{
+	int	counter;
+
+	counter = 0;
+	while (arr[counter] != NULL)
+		++counter;
+	return (counter);
+}

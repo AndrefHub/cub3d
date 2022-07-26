@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru      +#+  +:+       +#+        */
+/*   By: andref <andref@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:55:43 by lsherry           #+#    #+#             */
-/*   Updated: 2022/05/06 13:27:29 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/07/23 01:00:38 by andref           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ char	*get_next_line(int fd)
 		}
 		str = ft_strjoin_gnl(str, buffer);
 	}
+	// printf("%s\n", str);
 	if (rd > 0 || ft_strlen(str) != 0 || rem != NULL)
 		return (str);
 	free(str);
