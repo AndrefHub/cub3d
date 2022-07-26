@@ -35,9 +35,9 @@ char	*crop_prefix(char* line, char *prefix)
 
 int		ft_is_empty(char *line)
 {
-	while (*line)
+	while (line && *line)
 	{
-		if (*line != ' ' || *line != '\t')
+		if (*line != ' ' && *line != '\t' && *line != '\n')
 			return (0);
 		++line;
 	}
@@ -134,18 +134,27 @@ void	print_map_debug(t_map *map)
 	}
 }
 
-int	is_enclosed(t_map *args)
-{
-	t_list	*map;
+// int	is_enclosed(t_map *args)
+// {
+// 	t_list	*map;
 
-	map = args->map;
-	while ()
-}
+// 	map = args->map;
+// 	// while ()
+// }
 
 int main(int ac, char **av)
 {
 	t_map	*map;
 
+	printf("%d %d %d %d %d %d %d\n",
+		ft_is_empty(""),
+		ft_is_empty("    "),
+		ft_is_empty("	"),
+		ft_is_empty("    \n"),
+		ft_is_empty("\n"),
+		ft_is_empty(" lOl"),
+		ft_is_empty("lOl")
+	);
 	map = parse_file(ac, av);
 	if (map)
 	{

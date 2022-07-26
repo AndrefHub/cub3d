@@ -3,7 +3,7 @@ CC      = gcc
 FLAGS	= -Wall -Wextra -Werror -g
 LFLAGS	= -L./libft -lft
 SRCDIR	= src/
-SRCFILE	= 
+SRCFILE	= ft_utils.c
 MAIN	= main.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
@@ -26,7 +26,7 @@ $(NAME): $(OBJS) $(OBJMAIN) $(MSHHDR)
 	@echo
 	@echo "\033[1;33m"$(NAME) "objs is up to date."'\033[0m'
 	@make -C libft
-	@$(CC) $(FLAGS) $(OBJS) $(OBJMAIN) -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJS) $(OBJMAIN) libft/libft.a -o $(NAME)
 	@echo "\033[1;33m"$(NAME) "is up to date."'\033[0m'
 
 clean:
