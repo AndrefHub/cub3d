@@ -24,3 +24,30 @@ int	ft_arraylen(void **arr)
 		++counter;
 	return (counter);
 }
+
+int		ft_is_empty(char *line)
+{
+	while (line && *line)
+	{
+		if (*line != ' ' && *line != '\t' && *line != '\n')
+			return (0);
+		++line;
+	}
+	return (1);
+}
+
+void	print_map_debug(t_map *map)
+{
+	t_list	*lst;
+
+	printf("NO %s\nSO %s\nWE %s\nEA %s\nF %d,%d,%d\nC %d,%d,%d\n\n", map->NO, map->SO, map->WE, map->EA,
+		map->F >> 16, (map->F >> 8) % (1 << 8), map->F % (1 << 8),
+		map->C >> 16, (map->C >> 8) % (1 << 8), map->C % (1 << 8));
+	// printf("%lu %lu\n", map->map->size, map->map->capacity);
+	lst = map->map;
+	while (lst)
+	{
+		printf("%s", (char *)lst->content);
+		lst = lst->next;
+	}
+}

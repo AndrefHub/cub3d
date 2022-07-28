@@ -2,8 +2,9 @@ NAME    = cub3d
 CC      = gcc
 FLAGS	= -Wall -Wextra -Werror -g
 LFLAGS	= -L./libft -lft
+MLXFLAGS	= -L./mlx -lmlx
 SRCDIR	= src/
-SRCFILE	= ft_utils.c
+SRCFILE	= check_file.c ft_utils.c input_manip.c parsing.c
 MAIN	= main.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
@@ -26,7 +27,8 @@ $(NAME): $(OBJS) $(OBJMAIN) $(MSHHDR)
 	@echo
 	@echo "\033[1;33m"$(NAME) "objs is up to date."'\033[0m'
 	@make -C libft
-	@$(CC) $(FLAGS) $(OBJS) $(OBJMAIN) libft/libft.a -o $(NAME)
+	@make -C mlx
+	@$(CC) $(FLAGS) $(OBJS) $(OBJMAIN) $(LFLAGS) $(MLXFLAGS) -o $(NAME)
 	@echo "\033[1;33m"$(NAME) "is up to date."'\033[0m'
 
 clean:
@@ -35,6 +37,7 @@ clean:
 
 fclean: clean
 	@make -C libft fclean
+	@make -C mlx clean
 	@$(RM) $(NAME)
 	@echo '\033[1;31m'$(NAME) "deleted."'\033[0m'
 
