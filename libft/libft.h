@@ -88,12 +88,6 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-typedef struct s_vector
-{
-	int	x;
-	int	y;
-}	t_vector;
-
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new_);
 t_list	*ft_lstat(t_list *lst, int n);

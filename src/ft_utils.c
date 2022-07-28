@@ -12,6 +12,8 @@ t_map	*create_empty_map()
 	map->EA = NULL;
 	map->C = 0;
 	map->F = 0;
+	map->player_coords.x = BAD_COORD;
+	map->player_coords.y = BAD_COORD;
 	return (map);
 }
 
@@ -44,6 +46,7 @@ void	print_map_debug(t_map *map)
 		map->F >> 16, (map->F >> 8) % (1 << 8), map->F % (1 << 8),
 		map->C >> 16, (map->C >> 8) % (1 << 8), map->C % (1 << 8));
 	// printf("%lu %lu\n", map->map->size, map->map->capacity);
+	printf("Player X: %f\nPlayer Y: %f\nPlayer orientation: %c\n", map->player_coords.x, map->player_coords.y, map->player_orient);
 	lst = map->map;
 	while (lst)
 	{

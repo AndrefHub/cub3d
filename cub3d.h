@@ -7,6 +7,13 @@
 
 # define BAD_FILE -2
 # define BAD_COLOUR (1 << 24)
+# define BAD_COORD -1
+
+typedef struct s_vector
+{
+	float	x;
+	float	y;
+}	t_vector;
 
 typedef struct s_map
 {
@@ -17,7 +24,14 @@ typedef struct s_map
 	char	*EA;
 	int		F;
 	int		C;
+	t_vector	player_coords;
+	char	player_orient;
 } t_map;
+
+// typedef struct s_game
+// {
+// 	t_map		*map;
+// } t_game;
 
 int		check_file(int ac, char **av);
 char	*crop_prefix(char* line, char *prefix);
@@ -29,6 +43,7 @@ void	get_textures(t_map *map, int fd);
 void	get_map(t_map *map, int fd);
 t_map	*parse_file(int ac, char **av);
 void	print_map_debug(t_map *map);
+int		find_player(t_map *map, char *line);
 int		is_enclosed(t_map *args);
 
 t_map	*create_empty_map(void);

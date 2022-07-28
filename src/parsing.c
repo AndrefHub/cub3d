@@ -18,6 +18,7 @@ void	get_map(t_map *map, int fd)
 	while (line && !ft_is_empty(line))
 	{
 		ft_lstadd_back(&map->map, ft_lstnew(line));
+		find_player(map, line);
 		line = get_next_line(fd);
 	}
 	free(line);
