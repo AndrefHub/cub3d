@@ -1,13 +1,16 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "mlx/mlx.h"
-# include "libft/libft.h"
+# include "../mlx/mlx.h"
+# include "../libft/libft.h"
 # include "stdio.h"
 
 # define BAD_FILE -2
 # define BAD_COLOUR (1 << 24)
 # define BAD_COORD -1
+
+# define PROJ_NAME "Cub3d"
+
 
 typedef struct s_vector
 {

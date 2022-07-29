@@ -1,4 +1,4 @@
-#include "../cub3d.h"
+#include "../inc/cub3d.h"
 
 int	set_player(t_map *map, char *line, char *orient)
 {
@@ -30,30 +30,30 @@ int	find_player(t_map *map, char *line)
 	return (return_code);
 }
 
-void	get_vector_from_direction(t_vector *vector, int direction)
-{
-	
-}
-
-int	recursive_enclosure_checker(t_vector starting, t_vector last, t_vector prelast)
-{
-	static int	recursion_depth = 0;
-
-	if (++recursion_depth > 1000)
-		return (0);
-	
-}
-
-int	is_enclosed(t_map *args)
-{
-	t_list	*map;
-	char	*line;
-	int		x;
-
-	map = args->map;
-	x = args->player_coords.x;
-	line = ft_lstat(map, args->player_coords.y);
-	while (line[x] != '1')
-		--x;
-	
-}
+//void	get_vector_from_direction(t_vector *vector, int direction)
+//{
+//
+//}
+//
+//int	recursive_enclosure_checker(t_vector starting, t_vector last, t_vector prelast)
+//{
+//	static int	recursion_depth = 0;
+//
+//	if (++recursion_depth > 1000)
+//		return (0);
+//
+//}
+//
+//int	is_enclosed(t_map *args)
+//{
+//	t_list	*map;
+//	char	*line;
+//	int		x;
+//
+//	map = args->map;
+//	x = args->player_coords.x;
+//	line = ft_lstat(map, args->player_coords.y);
+//	while (line[x] != '1')
+//		--x;
+//
+//}
