@@ -53,5 +53,5 @@ void	print_map_debug(t_map *map)
 		printf("%s", (char *)lst->content);
 		lst = lst->next;
 	}
-	printf("Is enclosed? %d", is_enclosed(map));
+	printf("\nIs enclosed?\n%d", is_enclosed(map));
 }

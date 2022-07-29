@@ -50,22 +50,30 @@ t_vector	*get_vector_from_direction(int direction)
 	t_vector	*vector;
 
 	vector = malloc(sizeof(*vector));
-	if (direction % 8 == 0)
+	if (direction % 4 == 0)
 		set_values_to_vector(vector, 1, 0);
-	else if (direction % 8 == 1)
-		set_values_to_vector(vector, 1, 1);
-	else if (direction % 8 == 2)
-		set_values_to_vector(vector, 0, 1);
-	else if (direction % 8 == 3)
-		set_values_to_vector(vector, -1, 1);
-	else if (direction % 8 == 4)
-		set_values_to_vector(vector, -1, 0);
-	else if (direction % 8 == 5)
-		set_values_to_vector(vector, -1, -1);
-	else if (direction % 8 == 6)
+	else if (direction % 4 == 1)
 		set_values_to_vector(vector, 0, -1);
-	else if (direction % 8 == 7)
-		set_values_to_vector(vector, 1, -1);
+	else if (direction % 4 == 2)
+		set_values_to_vector(vector, -1, 0);
+	else if (direction % 4 == 3)
+		set_values_to_vector(vector, 0, 1);
+	// if (direction % 8 == 0)
+	// 	set_values_to_vector(vector, 1, 0);
+	// else if (direction % 8 == 1)
+	// 	set_values_to_vector(vector, 1, -1);
+	// else if (direction % 8 == 2)
+	// 	set_values_to_vector(vector, 0, -1);
+	// else if (direction % 8 == 3)
+	// 	set_values_to_vector(vector, -1, -1);
+	// else if (direction % 8 == 4)
+	// 	set_values_to_vector(vector, -1, 0);
+	// else if (direction % 8 == 5)
+	// 	set_values_to_vector(vector, -1, 1);
+	// else if (direction % 8 == 6)
+	// 	set_values_to_vector(vector, 0, 1);
+	// else if (direction % 8 == 7)
+	// 	set_values_to_vector(vector, 1, 1);
 	return (vector);
 }
 
@@ -73,6 +81,7 @@ t_vector	*vector_sum(t_vector *lhs, t_vector *rhs)
 {
 	lhs->x += rhs->x;
 	lhs->y += rhs->y;
+	printf("\033[1;33mSum X%d Y%d\n", lhs->x, lhs->y);
 	return (lhs);
 }
 
@@ -80,8 +89,9 @@ int	border(t_list *map, t_vector *vector)
 {
 	char	*line;
 
-	line = ft_lstat(map, vector->y)->content;
-	return (line && (int)ft_strlen(line) > vector->x && line[(int)vector->x] == '1');
+	if (ft_lstat(map, vector->y))
+		line = ft_lstat(map, vector->y)->content;
+	return (line && (int)ft_strlen(line) >= vector->x && line[(int)vector->x] == '1');
 }
 
 int	operator_equals_vector(t_vector *lhs, t_vector *rhs)
@@ -95,21 +105,22 @@ int	recursive_enclosure_checker(t_list *map, t_vector* starting, t_vector* last,
 	t_vector	*check;
 	int			counter;
 
-	if (++recursion_depth > 1000)
+	printf("\033[1;31mRec X%d Y%d\n", last->x, last->y);
+	if (++recursion_depth > 250)
 		return (0);
-	if (operator_equals_vector(starting, last))
+	if (operator_equals_vector(starting, last) && direction == 1)
 	{
 		free(last);
 		return (1);
 	}
 	counter = -1;
-	while (++counter < 8)
+	while (++counter < 4)
 	{
-		check = vector_sum(get_vector_from_direction(direction + counter - 2), last);
+		check = vector_sum(get_vector_from_direction(direction + counter + 1), last);
 		if (border(map, check))
 		{
 			free(last);
-			return (recursive_enclosure_checker(map, starting, check, (direction + counter - 2) % 8));
+			return (recursive_enclosure_checker(map, starting, check, (direction + counter - 1)));
 		}
 		free(check);
 	}
@@ -129,8 +140,8 @@ int	is_enclosed(t_map *args)
 	{
 		if (line[vec.x] == '1')
 		{
-			ret_val = recursive_enclosure_checker(args->map, &vec, vector_sum(get_vector_from_direction(6), &vec), 6);
-			if (ret_val)
+			ret_val = recursive_enclosure_checker(args->map, &vec, vector_sum(get_vector_from_direction(3), &vec), 3);
+			// if (ret_val)
 				return (ret_val);
 		}
 	}
