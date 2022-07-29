@@ -1,4 +1,4 @@
-#include "../cub3d.h"
+#include "../inc/cub3d.h"
 
 int	set_player(t_map *map, char *line, char *orient)
 {
@@ -80,7 +80,9 @@ int	border(t_list *map, t_vector *vector)
 {
 	char	*line;
 
-	line = ft_lstat(map, vector->y)->content;
+	line = NULL;
+	if (ft_lstat(map, vector->y))
+		line = ft_lstat(map, vector->y)->content;
 	return (line && (int)ft_strlen(line) > vector->x && line[(int)vector->x] == '1');
 }
 

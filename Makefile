@@ -2,9 +2,14 @@ NAME    = cub3d
 CC      = gcc
 FLAGS	= -Wall -Wextra -Werror -g
 LFLAGS	= -L./libft -lft
-MLXFLAGS	= -L./mlx -lmlx
+MLXFLAGS	= -Lmlx -lmlx -framework OpenGL -framework AppKit
 SRCDIR	= src/
-SRCFILE	= check_file.c ft_utils.c input_manip.c parsing.c border_checking.c
+SRCFILE	= 	check_file.c\
+			ft_utils.c\
+			input_manip.c\
+			parsing.c\
+			border_checking.c\
+			start_game.c
 MAIN	= main.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
@@ -14,13 +19,14 @@ OBJBNS	= $(addprefix $(OBJDIR), $(BONUS:.c=.o))
 OBJS	= $(addprefix $(OBJDIR), $(OBJFILE))
 RM      = rm -rf
 LIBHDR  = libft/libft.h
-CUBHDR  = cub3d.h
+INCDIR	= inc/
+CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
 
 all: $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(MSHHDR)
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(FLAGS) -c $< -o $@  -include $(LIBHDR) -include $(CUBHDR)
+	@$(CC) -Imlx $(FLAGS) -c $< -o $@  -include $(LIBHDR) -include $(CUBHDR)
 	@printf "\033[1;36m/\033[0m"
 
 $(NAME): $(OBJS) $(OBJMAIN) $(MSHHDR)
