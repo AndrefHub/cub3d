@@ -30,61 +30,6 @@ int	find_player(t_map *map, char *line)
 	return (return_code);
 }
 
-void	set_values_to_vector(t_vector *vector, int x, int y)
-{
-	vector->x = x;
-	vector->y = y;
-}
-
-void	rotate_vector_counterclockwise(t_vector *vector)
-{
-	int	temp;
-
-	temp = vector->x;
-	vector->x = -vector->y;
-	vector->y = temp;
-}
-
-t_vector	*get_vector_from_direction(int direction)
-{
-	t_vector	*vector;
-
-	vector = malloc(sizeof(*vector));
-	if (direction % 4 == 0)
-		set_values_to_vector(vector, 1, 0);
-	else if (direction % 4 == 1)
-		set_values_to_vector(vector, 0, -1);
-	else if (direction % 4 == 2)
-		set_values_to_vector(vector, -1, 0);
-	else if (direction % 4 == 3)
-		set_values_to_vector(vector, 0, 1);
-	// if (direction % 8 == 0)
-	// 	set_values_to_vector(vector, 1, 0);
-	// else if (direction % 8 == 1)
-	// 	set_values_to_vector(vector, 1, -1);
-	// else if (direction % 8 == 2)
-	// 	set_values_to_vector(vector, 0, -1);
-	// else if (direction % 8 == 3)
-	// 	set_values_to_vector(vector, -1, -1);
-	// else if (direction % 8 == 4)
-	// 	set_values_to_vector(vector, -1, 0);
-	// else if (direction % 8 == 5)
-	// 	set_values_to_vector(vector, -1, 1);
-	// else if (direction % 8 == 6)
-	// 	set_values_to_vector(vector, 0, 1);
-	// else if (direction % 8 == 7)
-	// 	set_values_to_vector(vector, 1, 1);
-	return (vector);
-}
-
-t_vector	*vector_sum(t_vector *lhs, t_vector *rhs)
-{
-	lhs->x += rhs->x;
-	lhs->y += rhs->y;
-	printf("\033[1;33mSum X%d Y%d\n", lhs->x, lhs->y);
-	return (lhs);
-}
-
 int	border(t_list *map, t_vector *vector)
 {
 	char	*line;
@@ -94,56 +39,36 @@ int	border(t_list *map, t_vector *vector)
 	return (line && (int)ft_strlen(line) >= vector->x && line[(int)vector->x] == '1');
 }
 
-int	operator_equals_vector(t_vector *lhs, t_vector *rhs)
+int	check_longer_row_border(char *shorter, int sindex, int lindex)
 {
-	return (lhs->x == rhs->x && lhs->y == rhs->y);
+	while (shorter[sindex] == '1' && sindex <= lindex)
+		++sindex;
+	return (sindex > lindex);
 }
 
-int	recursive_enclosure_checker(t_list *map, t_vector* starting, t_vector* last, int direction)
+int	check_left_right_walls(t_list *map)
 {
-	static int	recursion_depth = 0;
-	t_vector	*check;
-	int			counter;
+	int	last_x;
+	int	curr_x;
 
-	printf("\033[1;31mRec X%d Y%d\n", last->x, last->y);
-	if (++recursion_depth > 250)
+	if (!ft_strchr(map->content, '1'))
 		return (0);
-	if (operator_equals_vector(starting, last) && direction == 1)
+	last_x = ft_strchr(map->content, '1') - (char *)map->content;
+	while (map->next)
 	{
-		free(last);
-		return (1);
+		if (!ft_strchr(map->next->content, '1'))
+			return (0);
+		curr_x = ft_strchr(map->next->content, '1') - (char *)map->next->content;
+		if (last_x < curr_x && check_longer_row_border(map->content, last_x, curr_x))
+			return (0);
+		else if (last_x > curr_x && check_longer_row_border(map->next->content, curr_x, last_x))
+			return (0);
+		map = map->next;
 	}
-	counter = -1;
-	while (++counter < 4)
-	{
-		check = vector_sum(get_vector_from_direction(direction + counter + 1), last);
-		if (border(map, check))
-		{
-			free(last);
-			return (recursive_enclosure_checker(map, starting, check, (direction + counter - 1)));
-		}
-		free(check);
-	}
-	return (0);
+	return (1);
 }
 
 int	is_enclosed(t_map *args)
 {
-	char		*line;
-	t_vector	vec;
-	int			ret_val;
-
-	vec.x = args->player_coords.x;
-	vec.y = args->player_coords.y;
-	line = ft_lstat(args->map, args->player_coords.y)->content;
-	while (--(vec.x) >= 0)
-	{
-		if (line[vec.x] == '1')
-		{
-			ret_val = recursive_enclosure_checker(args->map, &vec, vector_sum(get_vector_from_direction(3), &vec), 3);
-			// if (ret_val)
-				return (ret_val);
-		}
-	}
-	return (0);
+	return (check_left_right_walls(args->map));
 }
