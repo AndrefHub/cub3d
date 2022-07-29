@@ -20,6 +20,13 @@ int	close_game(t_game *game)
 	return (0);
 }
 
+int	key_hook(int key, t_game *game)
+{
+	if (key == ESC_KEY)
+		close_game(game);
+	return (0);
+}
+
 int	ft_update(t_game *game)
 {
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->mlx.assets, 0, 0);
@@ -38,7 +45,7 @@ int ft_new_game(t_game *game)
 
 
 	mlx_loop_hook(game->mlx.id, ft_update, (void *) game);
-//	mlx_hook(mlx.window, 2, 0, key_hook, mlx);
+	mlx_hook(game->mlx.window, 2, 0, key_hook, game);
 	mlx_hook(game->mlx.window, 17, 0, close_game, (void *) game);
 	mlx_loop(game->mlx.id);
 	return (0);

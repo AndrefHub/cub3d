@@ -1,7 +1,7 @@
 NAME    = cub3d
 CC      = gcc
 FLAGS	= -Wall -Wextra -Werror -g
-LFLAGS	= -Lmlx -lmlx -framework OpenGL -framework AppKit
+LFLAGS	= -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit
 SRCDIR	= src/
 SRCFILE	= check_file.c ft_utils.c input_manip.c parsing.c border_checking.c start_game.c
 MAIN	= main.c

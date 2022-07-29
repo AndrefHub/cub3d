@@ -1,3 +1,0 @@
-/Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles/cub3d.dir

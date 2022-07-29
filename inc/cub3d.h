@@ -4,13 +4,11 @@
 # include "../mlx/mlx.h"
 # include "../libft/libft.h"
 # include "stdio.h"
+# include "constants.h"
 
 # define BAD_FILE -2
 # define BAD_COLOUR (1 << 24)
 # define BAD_COORD -1
-
-# define PROJ_NAME "Cub3d"
-
 
 typedef struct s_vector
 {
