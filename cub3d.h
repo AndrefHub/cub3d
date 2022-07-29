@@ -11,8 +11,8 @@
 
 typedef struct s_vector
 {
-	float	x;
-	float	y;
+	int	x;
+	int	y;
 }	t_vector;
 
 typedef struct s_map
