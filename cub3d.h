@@ -33,6 +33,12 @@ typedef struct s_map
 // 	t_map		*map;
 // } t_game;
 
+int		check_longer_row_border(char *shorter, int sindex, int lindex, char direct);
+int		check_longer_row_border_vert(t_list *map, int x, int sindex, int lindex, char direct);
+int		get_non_space_index_left(char *line);
+int		get_non_space_index_right(char *line);
+int		get_non_space_index_top(t_list *map, int x);
+
 int		check_file(int ac, char **av);
 char	*crop_prefix(char* line, char *prefix);
 int		ft_is_empty(char *line);

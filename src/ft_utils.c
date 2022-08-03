@@ -50,8 +50,8 @@ void	print_map_debug(t_map *map)
 	lst = map->map;
 	while (lst)
 	{
-		printf("%s", (char *)lst->content);
+		printf("%s\n", (char *)lst->content);
 		lst = lst->next;
 	}
-	printf("\nIs enclosed?\n%d", is_enclosed(map));
+	printf("\nIs enclosed? %d\n", is_enclosed(map));
 }

@@ -19,7 +19,7 @@ void	get_map(t_map *map, int fd)
 	{
 		ft_lstadd_back(&map->map, ft_lstnew(line));
 		find_player(map, line);
-		line = get_next_line(fd);
+		line = skip_empty_lines(fd);
 	}
 	free(line);
 }

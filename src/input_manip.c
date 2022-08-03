@@ -24,11 +24,13 @@ char	*skip_empty_lines(int fd)
 	char	*line;
 
 	line = get_next_line(fd);
-	while (ft_is_empty(line))
+	while (line && ft_is_empty(line))
 	{
 		free(line);
 		line = get_next_line(fd);
 	}
+	if (line)
+		line[ft_strlen(line) - 1] = 0;
 	return (line);
 }
 
