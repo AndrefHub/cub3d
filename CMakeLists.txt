@@ -12,5 +12,5 @@ add_executable(cub3d
         src/parsing.c
         src/start_game.c)
 
-target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
-target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/libft/libft.a)
+target_link_libraries(cub3d /Users/landreas/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
+target_link_libraries(cub3d /Users/landreas/42Course/cub3d/libft/libft.a)

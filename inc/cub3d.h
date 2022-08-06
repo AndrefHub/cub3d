@@ -29,6 +29,22 @@ typedef struct s_map
 	char	player_orient;
 } t_map;
 
+typedef struct mlx_params
+{
+	void	*id;
+	void	*window;
+	void	*assets;
+}	t_mlx_params;
+
+typedef struct game
+{
+	t_mlx_params	mlx;
+	t_map			*map;
+	int				size;
+	int				frames;
+	int				init_render;
+}	t_game;
+
 // typedef struct s_game
 // {
 // 	t_map		*map;

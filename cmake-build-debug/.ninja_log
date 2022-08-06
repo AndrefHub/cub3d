@@ -1,10 +1,19 @@
 # ninja log v5
-36	219	1659099820000000000	build.ninja	fb25d0a697a47815
-1	152	1659099820000000000	CMakeFiles/cub3d.dir/src/main.c.o	c493fdfb9dd0eb5b
-1	153	1659099820000000000	CMakeFiles/cub3d.dir/src/ft_utils.c.o	551b909d8dc4b1d8
-0	157	1659099820000000000	CMakeFiles/cub3d.dir/src/check_file.c.o	efc40ab7fbae1382
-2	158	1659099820000000000	CMakeFiles/cub3d.dir/src/parsing.c.o	f23acb82b9a6e1dd
-1	158	1659099820000000000	CMakeFiles/cub3d.dir/src/input_manip.c.o	aa4d1ebff7026d4e
-0	178	1659099820000000000	CMakeFiles/cub3d.dir/src/border_checking.c.o	2b1829e7d53b108c
 2	225	1659099820000000000	CMakeFiles/cub3d.dir/src/start_game.c.o	9d3c35669c1b6ff
+0	178	1659099820000000000	CMakeFiles/cub3d.dir/src/border_checking.c.o	2b1829e7d53b108c
+0	157	1659099820000000000	CMakeFiles/cub3d.dir/src/check_file.c.o	efc40ab7fbae1382
 225	333	1659099820000000000	cub3d	687342cf48bddd12
+1	152	1659099820000000000	CMakeFiles/cub3d.dir/src/main.c.o	c493fdfb9dd0eb5b
+2	158	1659099820000000000	CMakeFiles/cub3d.dir/src/parsing.c.o	f23acb82b9a6e1dd
+1	153	1659099820000000000	CMakeFiles/cub3d.dir/src/ft_utils.c.o	551b909d8dc4b1d8
+1	158	1659099820000000000	CMakeFiles/cub3d.dir/src/input_manip.c.o	aa4d1ebff7026d4e
+36	219	1659776606834775779	build.ninja	fb25d0a697a47815
+0	86	1659776606834775779	build.ninja	26a17924cf8cdbca
+2	156	1659776607002799412	CMakeFiles/cub3d.dir/src/check_file.c.o	341cdfcf5d5f5260
+2	163	1659776607008280394	CMakeFiles/cub3d.dir/src/ft_utils.c.o	d4c6abd459a88813
+3	163	1659776607007493463	CMakeFiles/cub3d.dir/src/input_manip.c.o	94eb7df9ce4f1a7b
+4	164	1659776607008519903	CMakeFiles/cub3d.dir/src/start_game.c.o	30d6fed66b985086
+6	171	1659776607015969222	CMakeFiles/cub3d.dir/src/main.c.o	2f315d84f2ee32b3
+1	177	1659776607024667060	CMakeFiles/cub3d.dir/src/border_checking.c.o	c777ff264421e8c5
+4	179	1659776607026541280	CMakeFiles/cub3d.dir/src/parsing.c.o	8bc6bfb41e5bc0ae
+179	338	1659776607184274814	cub3d	f6b588f3dfe3d671
