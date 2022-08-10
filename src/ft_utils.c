@@ -55,3 +55,4 @@ void	print_map_debug(t_map *map)
 	}
 	printf("Is enclosed? %d", is_enclosed(map));
 }
+

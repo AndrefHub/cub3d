@@ -5,6 +5,9 @@
 # include "../libft/libft.h"
 # include "stdio.h"
 # include "constants.h"
+# include "math.h"
+# include "/opt/X11/include/X11/X.h"
+# include "/opt/X11/include/X11/keysym.h"
 
 # define BAD_FILE -2
 # define BAD_COLOUR (1 << 24)
@@ -15,6 +18,12 @@ typedef struct s_vector
 	int	x;
 	int	y;
 }	t_vector;
+
+typedef struct s_fvector
+{
+	float	x;
+	float	y;
+}	t_fvector;
 
 typedef struct s_map
 {
@@ -29,20 +38,37 @@ typedef struct s_map
 	char	player_orient;
 } t_map;
 
-typedef struct mlx_params
+typedef struct s_img
 {
-	void	*id;
-	void	*window;
-	void	*assets;
-}	t_mlx_params;
+	void		*mlx_img;
+	int			*addr;
+	int			bpp;
+	int			line_length;
+	int			endian;
+	t_vector	size;
+}	t_img;
 
 typedef struct game
 {
-	t_mlx_params	mlx;
+	struct s_mlx
+	{
+		void	*id;
+		void	*window;
+	}	mlx;
 	t_map			*map;
+	char			**grid;
+	t_img			img;
 	int				size;
 	int				frames;
 	int				init_render;
+	struct			s_player
+	{
+		t_fvector	pos;
+		float	angle;
+		t_fvector	vector;
+		t_fvector	delta;
+		t_fvector	plane;
+	}	player;
 }	t_game;
 
 // typedef struct s_game
@@ -67,4 +93,19 @@ t_map	*create_empty_map(void);
 
 int		ft_arraylen(void **arr);
 
+//controller.c
+int	close_hook(t_game *game);
+int	key_hook_press(int key, t_game *game);
+int	game_loop(t_game *game);
+
+//drawing.c
+void	draw_map(t_game *game);
+void	draw_line(t_img *img, t_vector p1, t_vector p2, int color);
+void	put_pixel(t_img *img, t_vector point, int color);
+void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
+void	draw_player(t_game *game);
+void	img_clear_rgb(t_img *img, int color);
+
+//demo
+char	**charlist_to_matrix(t_list *list);
 #endif

@@ -75,42 +75,70 @@ build cmake_object_order_depends_target_cub3d: phony || CMakeFiles/cub3d.dir
 build CMakeFiles/cub3d.dir/src/border_checking.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/border_checking.c || cmake_object_order_depends_target_cub3d
   DEP_FILE = CMakeFiles/cub3d.dir/src/border_checking.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
 
 build CMakeFiles/cub3d.dir/src/check_file.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/check_file.c || cmake_object_order_depends_target_cub3d
   DEP_FILE = CMakeFiles/cub3d.dir/src/check_file.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
 
 build CMakeFiles/cub3d.dir/src/ft_utils.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/ft_utils.c || cmake_object_order_depends_target_cub3d
   DEP_FILE = CMakeFiles/cub3d.dir/src/ft_utils.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
 
 build CMakeFiles/cub3d.dir/src/input_manip.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/input_manip.c || cmake_object_order_depends_target_cub3d
   DEP_FILE = CMakeFiles/cub3d.dir/src/input_manip.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
 
 build CMakeFiles/cub3d.dir/src/main.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/main.c || cmake_object_order_depends_target_cub3d
   DEP_FILE = CMakeFiles/cub3d.dir/src/main.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
 
 build CMakeFiles/cub3d.dir/src/parsing.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/parsing.c || cmake_object_order_depends_target_cub3d
   DEP_FILE = CMakeFiles/cub3d.dir/src/parsing.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
 
 build CMakeFiles/cub3d.dir/src/start_game.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/start_game.c || cmake_object_order_depends_target_cub3d
   DEP_FILE = CMakeFiles/cub3d.dir/src/start_game.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
+
+build CMakeFiles/cub3d.dir/src/controller.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/controller.c || cmake_object_order_depends_target_cub3d
+  DEP_FILE = CMakeFiles/cub3d.dir/src/controller.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
+
+build CMakeFiles/cub3d.dir/src/drawing.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/drawing.c || cmake_object_order_depends_target_cub3d
+  DEP_FILE = CMakeFiles/cub3d.dir/src/drawing.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
+
+build CMakeFiles/cub3d.dir/src/demo_utils.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/demo_utils.c || cmake_object_order_depends_target_cub3d
+  DEP_FILE = CMakeFiles/cub3d.dir/src/demo_utils.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
 
@@ -122,7 +150,7 @@ build CMakeFiles/cub3d.dir/src/start_game.c.o: C_COMPILER__cub3d_Debug /Users/la
 #############################################
 # Link the executable cub3d
 
-build cub3d: C_EXECUTABLE_LINKER__cub3d_Debug CMakeFiles/cub3d.dir/src/border_checking.c.o CMakeFiles/cub3d.dir/src/check_file.c.o CMakeFiles/cub3d.dir/src/ft_utils.c.o CMakeFiles/cub3d.dir/src/input_manip.c.o CMakeFiles/cub3d.dir/src/main.c.o CMakeFiles/cub3d.dir/src/parsing.c.o CMakeFiles/cub3d.dir/src/start_game.c.o | ../mlx/libmlx.a ../libft/libft.a
+build cub3d: C_EXECUTABLE_LINKER__cub3d_Debug CMakeFiles/cub3d.dir/src/border_checking.c.o CMakeFiles/cub3d.dir/src/check_file.c.o CMakeFiles/cub3d.dir/src/ft_utils.c.o CMakeFiles/cub3d.dir/src/input_manip.c.o CMakeFiles/cub3d.dir/src/main.c.o CMakeFiles/cub3d.dir/src/parsing.c.o CMakeFiles/cub3d.dir/src/start_game.c.o CMakeFiles/cub3d.dir/src/controller.c.o CMakeFiles/cub3d.dir/src/drawing.c.o CMakeFiles/cub3d.dir/src/demo_utils.c.o | ../mlx/libmlx.a ../libft/libft.a
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   LINK_LIBRARIES = ../mlx/libmlx.a  -framework OpenGL  -framework AppKit  ../libft/libft.a
   OBJECT_DIR = CMakeFiles/cub3d.dir

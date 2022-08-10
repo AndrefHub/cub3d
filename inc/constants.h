@@ -4,7 +4,10 @@
 # define PROJ_NAME "Cub3d"
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT 1080
-# define MAP_GRID_SIZE 64
+# define MAP_GRID_SIZE 32
+# define RAYS 512
+# define PI 3.14159265359
+
 
 enum e_keys
 {

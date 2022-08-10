@@ -3,7 +3,15 @@ CC      = gcc
 FLAGS	= -Wall -Wextra -Werror -g
 LFLAGS	= -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit
 SRCDIR	= src/
-SRCFILE	= check_file.c ft_utils.c input_manip.c parsing.c border_checking.c start_game.c
+SRCFILE	= check_file.c\
+			ft_utils.c\
+			input_manip.c\
+			parsing.c\
+			border_checking.c\
+			start_game.c\
+			controller.c\
+			drawing.c\
+			demo_utils.c
 MAIN	= main.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
