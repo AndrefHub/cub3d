@@ -17,8 +17,7 @@ typedef struct s_vector
 
 typedef struct s_map
 {
-	t_list	*map;
-	char	**rename_this_to_map;
+	char	**map;
 	char	*NO;
 	char	*SO;
 	char	*WE;

@@ -47,8 +47,8 @@ int convert_rgb(char *line)
 	rgb = BAD_COLOUR;
 	rgb_values = ft_split(line, ',');
 	if (ft_arraylen((void **)rgb_values) == 3)
-		rgb = ft_atoi(rgb_values[0]) * (1 << 16) + ft_atoi(rgb_values[1]) *
-			(1 << 8) + ft_atoi(rgb_values[2]);
+		rgb = ft_atoi(rgb_values[0]) << 16 + ft_atoi(rgb_values[1]) << 8
+			+ ft_atoi(rgb_values[2]);
 	ft_freesplit(rgb_values);
 	return (rgb);
 }

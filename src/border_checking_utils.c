@@ -15,16 +15,16 @@ int	check_longer_row_border(char *shorter, int sindex, int lindex, char direct)
 	return (sindex >= lindex);
 }
 
-int	check_longer_row_border_vert(t_list *map, int x, int sindex, int lindex, char direct)
+int	check_longer_row_border_vert(char **map, int x, int sindex, int lindex, char direct)
 {
 	if (direct == 't')
 	{	
-		while ((((char *)ft_lstat(map, sindex)->content)[x] == '1' || ((char *)ft_lstat(map, sindex)->content)[x] == ' ') && sindex <= lindex)
+		while ((map[sindex][x] == '1' || (map[sindex][x] == ' ') && sindex <= lindex)
 			++sindex;
 		printf("sindex = %d, lindex = %d\n", sindex, lindex);
 		return (sindex <= lindex);
 	}
-	while (((char *)ft_lstat(map, sindex)->content)[x] == '1' && sindex >= lindex)
+	while (map[index][x] == '1' && sindex >= lindex)
 		--sindex;
 	printf("sindex = %d, lindex = %d\n", sindex, lindex);
 	return (sindex >= lindex);
@@ -54,15 +54,15 @@ int	get_non_space_index_right(char *line)
 	return (index);
 }
 
-int	get_non_space_index_top(t_list *map, int x)
+int	get_non_space_index_top(char **map, int x)
 {
 	int	index;
 
 	index = 0;
-	while (ft_lstat(map, index) && (x > (int)ft_strlen(ft_lstat(map, index)->content)
-		|| (((char *)ft_lstat(map, index)->content)[x] == ' ')))
+	while (map[index] && (x > (int)ft_strlen(map[index])
+		|| (map[index][x] == ' ')))
 		++index;
-	if (!ft_lstat(map, index))
+	if (!map[index])
 		return (0);
 	return (index);
 }

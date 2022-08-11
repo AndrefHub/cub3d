@@ -47,7 +47,7 @@ void	get_map(t_map *map, int fd)
 		line = skip_empty_lines(fd);
 	}
 	free(line);
-	map->rename_this_to_map = lst_to_char_ptr(tmp);
+	map->map = lst_to_char_ptr(tmp);
 	ft_lstclear(&tmp, empty_func);
 }
 
