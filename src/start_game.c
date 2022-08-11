@@ -35,7 +35,7 @@ void	initialize_game(t_game *game)
 	game->img.addr = (int *) mlx_get_data_addr(game->img.mlx_img, &game->img.bpp, &game->img.line_length, &game->img.endian);
 	game->img.size = (t_vector) {WIN_WIDTH, WIN_HEIGHT - 54};
 
-	game->player.pos = (t_fvector) {(float )game->map->player_coords.x * MAP_GRID_SIZE, (float )(game->map->player_coords.y - 1) * MAP_GRID_SIZE};
+	game->player.pos = (t_fvector) {(float )game->map->player_coords.x * MAP_GRID_SIZE + MAP_GRID_SIZE / 2, (float )(game->map->player_coords.y - 1) * MAP_GRID_SIZE + MAP_GRID_SIZE / 2};
 	game->player.angle = 0;
 	game->player.plane.x = 0;
 	game->player.plane.y = 0.66f;

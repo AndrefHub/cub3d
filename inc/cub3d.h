@@ -8,6 +8,7 @@
 # include "math.h"
 # include "/opt/X11/include/X11/X.h"
 # include "/opt/X11/include/X11/keysym.h"
+# include "time.h"
 
 # define BAD_FILE -2
 # define BAD_COLOUR (1 << 24)
@@ -60,6 +61,7 @@ typedef struct game
 	t_img			img;
 	int				size;
 	int				frames;
+	int				fps;
 	int				init_render;
 	struct			s_player
 	{
