@@ -63,32 +63,7 @@ void	img_clear_rgb(t_img *img, int color)
 		img->addr[i++] = color;
 }
 
-void	draw_map(t_game *game)
-{
-	int	x;
-	int	y;
-
-	y = 0;
-	while (game->grid[y])
-	{
-		x = 0;
-		while (game->grid[y][x])
-		{
-			if (game->grid[y][x] == '0' || game->grid[y][x] == 'N')
-				draw_square_fill(&game->img,
-								 (t_vector) {x * game->size, y * game->size},
-								 game->size, 0xFFFFFF);
-			else if (game->grid[y][x] == '1')
-				draw_square_fill(&game->img,
-								 (t_vector) {x * game->size, y * game->size},
-								 game->size, 0x000000);
-			x++;
-		}
-		y++;
-	}
-}
-
-float	get_interception(t_game *game, double ray_angle) //DDA algorithm
+float	get_interception(t_game *game, float ray_angle, int i) //DDA algorithm
 {
 	t_fvector	ray_unit;
 	t_fvector	ray_dir;
@@ -98,9 +73,10 @@ float	get_interception(t_game *game, double ray_angle) //DDA algorithm
 	t_fvector	ray_start;
 
 	ray_start = game->player.pos;
-	ray_dir.x = cos(ray_angle);
-	ray_dir.y = sin(ray_angle);
-	ray_unit = (t_fvector) {sqrt(1 + (ray_dir.y / ray_dir.x) * (ray_dir.y / ray_dir.x)), sqrt(1 + (ray_dir.x / ray_dir.y) * (ray_dir.x / ray_dir.y))};
+	ray_dir.x = cosf(ray_angle);
+	ray_dir.y = sinf(ray_angle);
+	ray_unit = (t_fvector) {sqrtf(1 + tanf(ray_angle) * tanf(ray_angle)), sqrtf(1 +
+							1 / (tanf(ray_angle) * tanf(ray_angle)))};
 	map_tile = (t_vector) {game->player.pos.x, game->player.pos.y};
 
 	if (ray_dir.x < 0)
@@ -124,13 +100,13 @@ float	get_interception(t_game *game, double ray_angle) //DDA algorithm
 		ray_length.y = (((float ) map_tile.y + 1) - ray_start.y) * ray_unit.y;
 	}
 
-	int		tile_found;
+	bool	tile_found;
 	float	distance;
 	float	max_distance;
 
 	tile_found = 0;
 	distance = 0.0f;
-	max_distance = 1080.0f;
+	max_distance = MAX_RENDER_DISTANCE;
 	while (!tile_found && distance < max_distance)
 	{
 		if (ray_length.x < ray_length.y)
@@ -147,65 +123,69 @@ float	get_interception(t_game *game, double ray_angle) //DDA algorithm
 		}
 
 		//TODO: add outOfBounds check
-		if (game->grid[map_tile.y / MAP_GRID_SIZE][map_tile.x / MAP_GRID_SIZE] == '1')
+		if (map_tile.y / MAP_GRID_SIZE <= ft_arraylen((void **) game->grid) && map_tile.x / MAP_GRID_SIZE <=
+																					   (int) ft_strlen(game->grid[map_tile.y / MAP_GRID_SIZE]))
 		{
-			tile_found = 1;
+			if (game->grid[map_tile.y / MAP_GRID_SIZE][map_tile.x /
+													   MAP_GRID_SIZE] == '1') {
+				if (ray_length.x - ray_unit.x > ray_length.y - ray_unit.y)
+					game->column[i].color = 0x009CA4;
+				else
+					game->column[i].color = 0x00DCE7;
+				tile_found = true;
+				break ;
+			}
 		}
 	}
+
+	float camera;
 
 	if (tile_found)
 	{
 //		*res = (t_fvector) {ray_start.x + ray_dir.x * distance, ray_start.y + ray_dir.y * distance};
-		return (distance);
+//		if (ray_length.x > ray_length.y)
+//			game->column[i].color = 0x009CA4;
+//		else
+//			game->column[i].color = 0x00DCE7;
 	}
 	else
 	{
 //		*res = (t_fvector) {0.0f, 0.0f};
-		return (0);
+//		game->column->color = 0x00DCE7;
+		game->column->distance = 0;
 	}
-}
-
-void	draw_3D(t_game *game, int i , float distance, float	ray_angle)
-{
-	float	line_height;
-	float	camera;
-
 	camera = game->player.angle - ray_angle;
 	if (camera < 0)
 		camera += 2 * PI;
 	if (camera > 2 * PI)
 		camera -= 2 * PI;
-	line_height = (MAP_GRID_SIZE * 840) / (distance * cos(camera));
-//	if (line_height > 840)
-//		line_height = 840;
-	draw_line(&game->img, (t_vector) {i, game->img.size.y / 2 - line_height / 2}, (t_vector) {i, game->img.size.y / 2 + line_height / 2}, 0x00BFFF);
+	game->column[i].height = (MAP_GRID_SIZE * 840.0f) / (distance * cosf(camera));
+	if (game->column[i].height > game->img.size.y)
+		game->column[i].height = game->img.size.y;
+	game->column[i].distance = distance;
+	return (0);
 }
 
-void	draw_rays(t_game *game)
+void	draw_3D(t_game *game)
 {
-		float	ray_angle;
-		int i;
-		float	distance;
-//		t_fvector ray;
+	int		i;
+	int		k;
 
-		i = 0;
-		while (i < game->img.size.x)
+	i = 0;
+	while (i < game->img.size.x)
+	{
+		k = game->img.size.y / 2 - game->column[i].height / 2;
+		while (k < game->img.size.y / 2 + game->column[i].height / 2)
 		{
-			//TODO: set to 0.66 degrees player's camera angel
-			ray_angle = game->player.angle + atan(0.001 * (i - (float) game->img.size.x / 2));
-			distance = get_interception(game, ray_angle);
-//			ray = (t_fvector) {game->player.pos.x + cos(ray_angle) * distance, game->player.pos.y +
-//					sin(ray_angle) * distance};
-//			draw_line(&game->img, (t_vector) {game->player.pos.x, game->player.pos.y} , (t_vector) {ray.x, ray.y}, 0x0000FF);
-			draw_3D(game, i, distance, ray_angle);
-			i++;
+//			put_pixel(&game->img, (t_vector) {i, k}, game->column[i].color);
+			game->img.addr[k * game->img.size.x + i] = game->column[i].color;
+			k++;
 		}
+		i++;
+	}
 }
 
 void	draw_player(t_game *game)
 {
-	draw_square_fill(&game->img, (t_vector) {game->player.pos.x - MAP_GRID_SIZE / 4, game->player.pos.y - MAP_GRID_SIZE / 4}, MAP_GRID_SIZE / 2, 0xFF0000);
-	draw_rays(game);
-	draw_line(&game->img, (t_vector) {game->player.pos.x, game->player.pos.y},
-			  (t_vector) {game->player.pos.x + game->player.delta.x * 5, game->player.pos.y + game->player.delta.y * 5}, 0xFF0000);
+	(void) game;
 }

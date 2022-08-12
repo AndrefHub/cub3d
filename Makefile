@@ -1,6 +1,6 @@
 NAME    = cub3d
 CC      = gcc
-FLAGS	= -Wall -Wextra -Werror -g
+FLAGS	= -Wall -Wextra -Werror -o2
 LFLAGS	= -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit
 SRCDIR	= src/
 SRCFILE	=	border_checking.c \
@@ -15,7 +15,7 @@ SRCFILE	=	border_checking.c \
 			parsing.c \
 			start_game.c \
 			vector_utils.c
-			MAIN	= main.c
+MAIN	= main.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
 OBJFILE = $(SRCFILE:.c=.o)
