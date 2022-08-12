@@ -1,6 +1,6 @@
 NAME    = cub3d
 CC      = gcc
-FLAGS	= -Wall -Wextra -Werror -g
+FLAGS	= -Wall -Wextra -Werror -o2
 LFLAGS	= -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit
 SRCDIR	= src/
 SRCFILE	= check_file.c\
@@ -11,7 +11,8 @@ SRCFILE	= check_file.c\
 			start_game.c\
 			controller.c\
 			drawing.c\
-			demo_utils.c
+			demo_utils.c\
+			draw_map.c
 MAIN	= main.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/

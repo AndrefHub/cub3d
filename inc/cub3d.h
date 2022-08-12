@@ -1,6 +1,7 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
+# include <stdbool.h>
 # include "../mlx/mlx.h"
 # include "../libft/libft.h"
 # include "stdio.h"
@@ -26,19 +27,6 @@ typedef struct s_fvector
 	float	y;
 }	t_fvector;
 
-typedef struct s_map
-{
-	t_list	*map;
-	char	*NO;
-	char	*SO;
-	char	*WE;
-	char	*EA;
-	int		F;
-	int		C;
-	t_vector	player_coords;
-	char	player_orient;
-} t_map;
-
 typedef struct s_img
 {
 	void		*mlx_img;
@@ -49,6 +37,20 @@ typedef struct s_img
 	t_vector	size;
 }	t_img;
 
+typedef struct s_map
+{
+	t_list	*map;
+	char	*NO;
+	char	*SO;
+	char	*WE;
+	char	*EA;
+	int		F;
+	int		C;
+	t_img	img;
+	t_vector	player_coords;
+	char	player_orient;
+} t_map;
+
 typedef struct game
 {
 	struct s_mlx
@@ -58,25 +60,36 @@ typedef struct game
 	}	mlx;
 	t_map			*map;
 	char			**grid;
+	bool			show_map;
 	t_img			img;
-	int				size;
-	int				frames;
 	int				fps;
-	int				init_render;
 	struct			s_player
 	{
 		t_fvector	pos;
-		float	angle;
+		float		angle;
 		t_fvector	vector;
 		t_fvector	delta;
-		t_fvector	plane;
-	}	player;
-}	t_game;
+	}				player;
+	struct			s_key
+	{
+		bool		k[512];
+		bool		m[8];
+		t_vector	mpos;
+		t_vector	mdir;
+		bool		mouse;
+	}				key;
+	struct			s_column
+	{
+		float		distance;
+		t_fvector	pos;
+		t_vector	cell;
+		char		dir;
+		int			height;
+		//texture
+		int			color;
+	}				*column;
 
-// typedef struct s_game
-// {
-// 	t_map		*map;
-// } t_game;
+}	t_game;
 
 int		check_file(int ac, char **av);
 char	*crop_prefix(char* line, char *prefix);
@@ -96,9 +109,10 @@ t_map	*create_empty_map(void);
 int		ft_arraylen(void **arr);
 
 //controller.c
-int	close_hook(t_game *game);
-int	key_hook_press(int key, t_game *game);
-int	game_loop(t_game *game);
+int		close_hook(t_game *game);
+int		key_hook_press(int key, t_game *game);
+int		key_hook_release(int key, t_game *game);
+int		game_loop(t_game *game);
 
 //drawing.c
 void	draw_map(t_game *game);
@@ -107,6 +121,9 @@ void	put_pixel(t_img *img, t_vector point, int color);
 void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
 void	draw_player(t_game *game);
 void	img_clear_rgb(t_img *img, int color);
+void	draw_rays(t_game *game);
+float	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
+void	draw_3D(t_game *game);
 
 //demo
 char	**charlist_to_matrix(t_list *list);

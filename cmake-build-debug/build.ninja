@@ -142,6 +142,13 @@ build CMakeFiles/cub3d.dir/src/demo_utils.c.o: C_COMPILER__cub3d_Debug /Users/la
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
 
+build CMakeFiles/cub3d.dir/src/draw_map.c.o: C_COMPILER__cub3d_Debug /Users/landreas/42Course/cub3d/src/draw_map.c || cmake_object_order_depends_target_cub3d
+  DEP_FILE = CMakeFiles/cub3d.dir/src/draw_map.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target cub3d
@@ -150,7 +157,7 @@ build CMakeFiles/cub3d.dir/src/demo_utils.c.o: C_COMPILER__cub3d_Debug /Users/la
 #############################################
 # Link the executable cub3d
 
-build cub3d: C_EXECUTABLE_LINKER__cub3d_Debug CMakeFiles/cub3d.dir/src/border_checking.c.o CMakeFiles/cub3d.dir/src/check_file.c.o CMakeFiles/cub3d.dir/src/ft_utils.c.o CMakeFiles/cub3d.dir/src/input_manip.c.o CMakeFiles/cub3d.dir/src/main.c.o CMakeFiles/cub3d.dir/src/parsing.c.o CMakeFiles/cub3d.dir/src/start_game.c.o CMakeFiles/cub3d.dir/src/controller.c.o CMakeFiles/cub3d.dir/src/drawing.c.o CMakeFiles/cub3d.dir/src/demo_utils.c.o | ../mlx/libmlx.a ../libft/libft.a
+build cub3d: C_EXECUTABLE_LINKER__cub3d_Debug CMakeFiles/cub3d.dir/src/border_checking.c.o CMakeFiles/cub3d.dir/src/check_file.c.o CMakeFiles/cub3d.dir/src/ft_utils.c.o CMakeFiles/cub3d.dir/src/input_manip.c.o CMakeFiles/cub3d.dir/src/main.c.o CMakeFiles/cub3d.dir/src/parsing.c.o CMakeFiles/cub3d.dir/src/start_game.c.o CMakeFiles/cub3d.dir/src/controller.c.o CMakeFiles/cub3d.dir/src/drawing.c.o CMakeFiles/cub3d.dir/src/demo_utils.c.o CMakeFiles/cub3d.dir/src/draw_map.c.o | ../mlx/libmlx.a ../libft/libft.a
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   LINK_LIBRARIES = ../mlx/libmlx.a  -framework OpenGL  -framework AppKit  ../libft/libft.a
   OBJECT_DIR = CMakeFiles/cub3d.dir
