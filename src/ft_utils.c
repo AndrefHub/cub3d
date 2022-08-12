@@ -1,4 +1,4 @@
-#include "../cub3d.h"
+#include "../inc/cub3d.h"
 
 t_map	*create_empty_map()
 {
@@ -53,5 +53,11 @@ void	print_map_debug(t_map *map)
 		printf("%s\n", *ptr);
 		++ptr;
 	}
+<<<<<<< HEAD
 	// printf("\nIs enclosed? %d\n", is_enclosed(map));
 }
+=======
+	printf("Is enclosed? %d", is_enclosed(map));
+}
+
+>>>>>>> lsherry
