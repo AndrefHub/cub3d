@@ -1,10 +1,18 @@
 NAME    = cub3d
 CC      = gcc
-FLAGS	= -Wall -Wextra -Werror -g
-LFLAGS	= -L./libft -lft
-MLXFLAGS	= -L./mlx -lmlx
+FLAGS	= -Wall -Wextra -Werror -o2
+LFLAGS	= -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit
 SRCDIR	= src/
-SRCFILE	= check_file.c ft_utils.c input_manip.c parsing.c border_checking.c border_checking_utils.c
+SRCFILE	= check_file.c\
+			ft_utils.c\
+			input_manip.c\
+			parsing.c\
+			border_checking.c\
+			start_game.c\
+			controller.c\
+			drawing.c\
+			demo_utils.c\
+			draw_map.c
 MAIN	= main.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
@@ -14,7 +22,8 @@ OBJBNS	= $(addprefix $(OBJDIR), $(BONUS:.c=.o))
 OBJS	= $(addprefix $(OBJDIR), $(OBJFILE))
 RM      = rm -rf
 LIBHDR  = libft/libft.h
-CUBHDR  = cub3d.h
+CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
+INCDIR  = inc/
 
 all: $(NAME)
 

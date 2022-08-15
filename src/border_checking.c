@@ -1,4 +1,4 @@
-#include "../cub3d.h"
+#include "../inc/cub3d.h"
 
 int	get_map_width(char **map)
 {
@@ -57,7 +57,7 @@ int	check_top_wall(char **map)
 	while (++x < width)
 	{
 		curr_y = get_non_space_index_top(map, x);
-		if (curr_y && (map[curr_y][x] != '1')
+		if (curr_y && map[curr_y][x] != '1')
 			return (0);
 		// last_y = curr_y;
 	}

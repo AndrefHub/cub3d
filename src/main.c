@@ -1,4 +1,6 @@
-#include "../cub3d.h"
+#include "../inc/cub3d.h"
+
+int	game(t_map *map);
 
 int main(int ac, char **av)
 {
@@ -9,4 +11,8 @@ int main(int ac, char **av)
 	{
 		print_map_debug(map);
 	}
+
+	(void ) ac;
+	(void ) av;
+	game(map);
 }
