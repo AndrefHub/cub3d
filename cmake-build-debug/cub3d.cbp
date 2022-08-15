@@ -83,6 +83,9 @@
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/border_checking.c">
 			<Option target="cub3d"/>
 		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/border_checking_utils.c">
+			<Option target="cub3d"/>
+		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/check_file.c">
 			<Option target="cub3d"/>
 		</Unit>
@@ -113,7 +116,13 @@
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/parsing.c">
 			<Option target="cub3d"/>
 		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/ray_casting.c">
+			<Option target="cub3d"/>
+		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/start_game.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/vector_utils.c">
 			<Option target="cub3d"/>
 		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/CMakeLists.txt">

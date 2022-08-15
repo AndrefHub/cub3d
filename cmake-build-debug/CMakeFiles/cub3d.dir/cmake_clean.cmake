@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cub3d.dir/src/border_checking.c.o"
   "CMakeFiles/cub3d.dir/src/border_checking.c.o.d"
+  "CMakeFiles/cub3d.dir/src/border_checking_utils.c.o"
+  "CMakeFiles/cub3d.dir/src/border_checking_utils.c.o.d"
   "CMakeFiles/cub3d.dir/src/check_file.c.o"
   "CMakeFiles/cub3d.dir/src/check_file.c.o.d"
   "CMakeFiles/cub3d.dir/src/controller.c.o"
@@ -21,8 +23,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/cub3d.dir/src/main.c.o.d"
   "CMakeFiles/cub3d.dir/src/parsing.c.o"
   "CMakeFiles/cub3d.dir/src/parsing.c.o.d"
+  "CMakeFiles/cub3d.dir/src/ray_casting.c.o"
+  "CMakeFiles/cub3d.dir/src/ray_casting.c.o.d"
   "CMakeFiles/cub3d.dir/src/start_game.c.o"
   "CMakeFiles/cub3d.dir/src/start_game.c.o.d"
+  "CMakeFiles/cub3d.dir/src/vector_utils.c.o"
+  "CMakeFiles/cub3d.dir/src/vector_utils.c.o.d"
   "cub3d"
   "cub3d.pdb"
 )

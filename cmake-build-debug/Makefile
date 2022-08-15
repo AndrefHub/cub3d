@@ -153,6 +153,30 @@ src/border_checking.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/border_checking.c.s
 .PHONY : src/border_checking.c.s
 
+src/border_checking_utils.o: src/border_checking_utils.c.o
+.PHONY : src/border_checking_utils.o
+
+# target to build an object file
+src/border_checking_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/border_checking_utils.c.o
+.PHONY : src/border_checking_utils.c.o
+
+src/border_checking_utils.i: src/border_checking_utils.c.i
+.PHONY : src/border_checking_utils.i
+
+# target to preprocess a source file
+src/border_checking_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/border_checking_utils.c.i
+.PHONY : src/border_checking_utils.c.i
+
+src/border_checking_utils.s: src/border_checking_utils.c.s
+.PHONY : src/border_checking_utils.s
+
+# target to generate assembly for a file
+src/border_checking_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/border_checking_utils.c.s
+.PHONY : src/border_checking_utils.c.s
+
 src/check_file.o: src/check_file.c.o
 .PHONY : src/check_file.o
 
@@ -393,6 +417,30 @@ src/parsing.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/parsing.c.s
 .PHONY : src/parsing.c.s
 
+src/ray_casting.o: src/ray_casting.c.o
+.PHONY : src/ray_casting.o
+
+# target to build an object file
+src/ray_casting.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ray_casting.c.o
+.PHONY : src/ray_casting.c.o
+
+src/ray_casting.i: src/ray_casting.c.i
+.PHONY : src/ray_casting.i
+
+# target to preprocess a source file
+src/ray_casting.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ray_casting.c.i
+.PHONY : src/ray_casting.c.i
+
+src/ray_casting.s: src/ray_casting.c.s
+.PHONY : src/ray_casting.s
+
+# target to generate assembly for a file
+src/ray_casting.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ray_casting.c.s
+.PHONY : src/ray_casting.c.s
+
 src/start_game.o: src/start_game.c.o
 .PHONY : src/start_game.o
 
@@ -417,6 +465,30 @@ src/start_game.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/start_game.c.s
 .PHONY : src/start_game.c.s
 
+src/vector_utils.o: src/vector_utils.c.o
+.PHONY : src/vector_utils.o
+
+# target to build an object file
+src/vector_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/vector_utils.c.o
+.PHONY : src/vector_utils.c.o
+
+src/vector_utils.i: src/vector_utils.c.i
+.PHONY : src/vector_utils.i
+
+# target to preprocess a source file
+src/vector_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/vector_utils.c.i
+.PHONY : src/vector_utils.c.i
+
+src/vector_utils.s: src/vector_utils.c.s
+.PHONY : src/vector_utils.s
+
+# target to generate assembly for a file
+src/vector_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/vector_utils.c.s
+.PHONY : src/vector_utils.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -429,6 +501,9 @@ help:
 	@echo "... src/border_checking.o"
 	@echo "... src/border_checking.i"
 	@echo "... src/border_checking.s"
+	@echo "... src/border_checking_utils.o"
+	@echo "... src/border_checking_utils.i"
+	@echo "... src/border_checking_utils.s"
 	@echo "... src/check_file.o"
 	@echo "... src/check_file.i"
 	@echo "... src/check_file.s"
@@ -459,9 +534,15 @@ help:
 	@echo "... src/parsing.o"
 	@echo "... src/parsing.i"
 	@echo "... src/parsing.s"
+	@echo "... src/ray_casting.o"
+	@echo "... src/ray_casting.i"
+	@echo "... src/ray_casting.s"
 	@echo "... src/start_game.o"
 	@echo "... src/start_game.i"
 	@echo "... src/start_game.s"
+	@echo "... src/vector_utils.o"
+	@echo "... src/vector_utils.i"
+	@echo "... src/vector_utils.s"
 .PHONY : help
 
 
