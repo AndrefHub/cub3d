@@ -26,7 +26,7 @@ void	start_mlx(t_game *game)
 void	initialize_game(t_game *game)
 {
 	game->mlx.window = mlx_new_window(game->mlx.id, WIN_WIDTH, WIN_HEIGHT - 54, PROJ_NAME);
-	game->grid = charlist_to_matrix(game->map->map);
+	game->grid = game->map->map;
 
 	game->img.mlx_img = mlx_new_image(game->mlx.id, WIN_WIDTH, WIN_HEIGHT - 54);
 	if (game->img.mlx_img == NULL)

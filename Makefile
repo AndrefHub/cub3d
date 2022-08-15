@@ -8,10 +8,10 @@ SRCFILE	=	border_checking.c \
 			check_file.c \
 			controller.c \
 			demo_utils.c \
+			draw_map.c \
 			drawing.c \
 			ft_utils.c \
 			input_manip.c \
-			main.c \
 			parsing.c \
 			start_game.c \
 			vector_utils.c
@@ -38,6 +38,7 @@ $(NAME): $(OBJS) $(OBJMAIN) $(MSHHDR)
 	@echo
 	@echo "\033[1;33m"$(NAME) "objs is up to date."'\033[0m'
 	@make -C libft
+	@make -C mlx
 	@$(CC) $(FLAGS) $(OBJS) $(OBJMAIN) $(LFLAGS) -o $(NAME)
 	@echo "\033[1;33m"$(NAME) "is up to date."'\033[0m'
 

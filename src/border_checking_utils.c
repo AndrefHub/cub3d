@@ -1,4 +1,4 @@
-#include "../cub3d.h"
+#include "../inc/cub3d.h"
 
 int	check_longer_row_border(char *shorter, int sindex, int lindex, char direct)
 {
@@ -19,12 +19,12 @@ int	check_longer_row_border_vert(char **map, int x, int sindex, int lindex, char
 {
 	if (direct == 't')
 	{	
-		while ((map[sindex][x] == '1' || (map[sindex][x] == ' ') && sindex <= lindex)
+		while ((map[sindex][x] == '1' || map[sindex][x] == ' ') && sindex <= lindex)
 			++sindex;
 		printf("sindex = %d, lindex = %d\n", sindex, lindex);
 		return (sindex <= lindex);
 	}
-	while (map[index][x] == '1' && sindex >= lindex)
+	while (map[sindex][x] == '1' && sindex >= lindex)
 		--sindex;
 	printf("sindex = %d, lindex = %d\n", sindex, lindex);
 	return (sindex >= lindex);

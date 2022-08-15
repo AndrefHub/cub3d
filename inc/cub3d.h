@@ -7,8 +7,8 @@
 # include "stdio.h"
 # include "constants.h"
 # include "math.h"
-# include "/opt/X11/include/X11/X.h"
-# include "/opt/X11/include/X11/keysym.h"
+# include "/usr/local/include/X11/X.h"
+# include "/usr/local/include/X11/keysym.h"
 # include "time.h"
 
 # define BAD_FILE -2
@@ -39,16 +39,17 @@ typedef struct s_img
 
 typedef struct s_map
 {
-	t_list	*map;
-	char	*NO;
-	char	*SO;
-	char	*WE;
-	char	*EA;
-	int		F;
-	int		C;
-	t_img	img;
+	char		**map;
+	t_vector	map_size;
+	char		*NO;
+	char		*SO;
+	char		*WE;
+	char		*EA;
+	int			F;
+	int			C;
+	t_img		img;
 	t_vector	player_coords;
-	char	player_orient;
+	int			player_orient;
 } t_map;
 
 typedef struct game
@@ -101,8 +102,9 @@ void	get_textures(t_map *map, int fd);
 void	get_map(t_map *map, int fd);
 t_map	*parse_file(int ac, char **av);
 void	print_map_debug(t_map *map);
-int		find_player(t_map *map, char *line);
+int		find_player(t_map *map, char *line, t_list *lst);
 int		is_enclosed(t_map *args);
+int		get_map_width(char **map);
 
 t_map	*create_empty_map(void);
 
@@ -127,4 +129,10 @@ void	draw_3D(t_game *game);
 
 //demo
 char	**charlist_to_matrix(t_list *list);
+
+int	get_non_space_index_left(char *line);
+int	get_non_space_index_right(char *line);
+int	get_non_space_index_top(char **map, int x);
+int	check_longer_row_border(char *shorter, int sindex, int lindex, char direct);
+int	check_longer_row_border_vert(char **map, int x, int sindex, int lindex, char direct);
 #endif

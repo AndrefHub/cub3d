@@ -123,8 +123,7 @@ float	get_interception(t_game *game, float ray_angle, int i) //DDA algorithm
 		}
 
 		//TODO: add outOfBounds check
-		if (map_tile.y / MAP_GRID_SIZE <= ft_arraylen((void **) game->grid) && map_tile.x / MAP_GRID_SIZE <=
-																					   (int) ft_strlen(game->grid[map_tile.y / MAP_GRID_SIZE]))
+		if (map_tile.y / MAP_GRID_SIZE < game->map->map_size.y && map_tile.x / MAP_GRID_SIZE < game->map->map_size.x)
 		{
 			if (game->grid[map_tile.y / MAP_GRID_SIZE][map_tile.x /
 													   MAP_GRID_SIZE] == '1') {
