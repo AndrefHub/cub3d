@@ -1,5 +1,7 @@
 #include "../inc/cub3d.h"
-
+// #define CUTE_SOUND_IMPLEMENTATION
+// # define CUTE_SOUND_FORCE_SDL
+#include "../cute_sound/cute_sound.h"
 void	check_borders(t_game *game)
 {
 	char	tile;
@@ -47,7 +49,9 @@ void	player_controll(t_game *game)
 	if (key_pressed(game,W_KEY))
 	{
 		if (game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE][(int)(game->player.pos.x + game->player.delta.x) / MAP_GRID_SIZE] != '1')
+		{
 			game->player.pos.x += game->player.delta.x;
+		}
 		if (game->map->map[(int)(game->player.pos.y + game->player.delta.y) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
 			game->player.pos.y += game->player.delta.y;
 	}

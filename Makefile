@@ -28,6 +28,7 @@ RM      = rm -rf
 LIBHDR  = libft/libft.h
 CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
 INCDIR  = inc/
+SNDLIB  = cute_sound/cute_sound.o
 
 all: $(NAME)
 
@@ -41,7 +42,8 @@ $(NAME): $(OBJS) $(OBJMAIN) $(MSHHDR)
 	@echo "\033[1;33m"$(NAME) "objs is up to date."'\033[0m'
 	@make -C libft
 	@make -C mlx
-	@$(CC) $(FLAGS) $(OBJS) $(OBJMAIN) $(LFLAGS) -o $(NAME)
+	@make -C cute_sound
+	@$(CC) $(FLAGS) $(OBJS) $(SNDLIB) $(OBJMAIN) $(LFLAGS) -o $(NAME)
 	@echo "\033[1;33m"$(NAME) "is up to date."'\033[0m'
 
 clean:
@@ -51,6 +53,7 @@ clean:
 fclean: clean
 	@make -C libft fclean
 	@make -C mlx clean
+	@make -C cute_sound fclean
 	@$(RM) $(NAME)
 	@echo '\033[1;31m'$(NAME) "deleted."'\033[0m'
 

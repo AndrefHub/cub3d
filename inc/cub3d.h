@@ -10,6 +10,7 @@
 # include "X11/X.h"
 # include "X11/keysym.h"
 # include "time.h"
+# include "../cute_sound/cute_sound.h"
 
 # define BAD_FILE -2
 # define BAD_COLOUR (1 << 24)
@@ -51,6 +52,9 @@ typedef struct s_map
 	t_vector	player_coords;
 	int			player_orient;
 	int			map_tile_size;
+
+
+	
 } t_map;
 
 typedef struct ray
