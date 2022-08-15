@@ -177,6 +177,102 @@ src/check_file.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/check_file.c.s
 .PHONY : src/check_file.c.s
 
+src/controller.o: src/controller.c.o
+.PHONY : src/controller.o
+
+# target to build an object file
+src/controller.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/controller.c.o
+.PHONY : src/controller.c.o
+
+src/controller.i: src/controller.c.i
+.PHONY : src/controller.i
+
+# target to preprocess a source file
+src/controller.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/controller.c.i
+.PHONY : src/controller.c.i
+
+src/controller.s: src/controller.c.s
+.PHONY : src/controller.s
+
+# target to generate assembly for a file
+src/controller.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/controller.c.s
+.PHONY : src/controller.c.s
+
+src/demo_utils.o: src/demo_utils.c.o
+.PHONY : src/demo_utils.o
+
+# target to build an object file
+src/demo_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/demo_utils.c.o
+.PHONY : src/demo_utils.c.o
+
+src/demo_utils.i: src/demo_utils.c.i
+.PHONY : src/demo_utils.i
+
+# target to preprocess a source file
+src/demo_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/demo_utils.c.i
+.PHONY : src/demo_utils.c.i
+
+src/demo_utils.s: src/demo_utils.c.s
+.PHONY : src/demo_utils.s
+
+# target to generate assembly for a file
+src/demo_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/demo_utils.c.s
+.PHONY : src/demo_utils.c.s
+
+src/draw_map.o: src/draw_map.c.o
+.PHONY : src/draw_map.o
+
+# target to build an object file
+src/draw_map.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_map.c.o
+.PHONY : src/draw_map.c.o
+
+src/draw_map.i: src/draw_map.c.i
+.PHONY : src/draw_map.i
+
+# target to preprocess a source file
+src/draw_map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_map.c.i
+.PHONY : src/draw_map.c.i
+
+src/draw_map.s: src/draw_map.c.s
+.PHONY : src/draw_map.s
+
+# target to generate assembly for a file
+src/draw_map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_map.c.s
+.PHONY : src/draw_map.c.s
+
+src/drawing.o: src/drawing.c.o
+.PHONY : src/drawing.o
+
+# target to build an object file
+src/drawing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/drawing.c.o
+.PHONY : src/drawing.c.o
+
+src/drawing.i: src/drawing.c.i
+.PHONY : src/drawing.i
+
+# target to preprocess a source file
+src/drawing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/drawing.c.i
+.PHONY : src/drawing.c.i
+
+src/drawing.s: src/drawing.c.s
+.PHONY : src/drawing.s
+
+# target to generate assembly for a file
+src/drawing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/drawing.c.s
+.PHONY : src/drawing.c.s
+
 src/ft_utils.o: src/ft_utils.c.o
 .PHONY : src/ft_utils.o
 
@@ -200,6 +296,30 @@ src/ft_utils.s: src/ft_utils.c.s
 src/ft_utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ft_utils.c.s
 .PHONY : src/ft_utils.c.s
+
+src/hooks.o: src/hooks.c.o
+.PHONY : src/hooks.o
+
+# target to build an object file
+src/hooks.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/hooks.c.o
+.PHONY : src/hooks.c.o
+
+src/hooks.i: src/hooks.c.i
+.PHONY : src/hooks.i
+
+# target to preprocess a source file
+src/hooks.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/hooks.c.i
+.PHONY : src/hooks.c.i
+
+src/hooks.s: src/hooks.c.s
+.PHONY : src/hooks.s
+
+# target to generate assembly for a file
+src/hooks.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/hooks.c.s
+.PHONY : src/hooks.c.s
 
 src/input_manip.o: src/input_manip.c.o
 .PHONY : src/input_manip.o
@@ -312,9 +432,24 @@ help:
 	@echo "... src/check_file.o"
 	@echo "... src/check_file.i"
 	@echo "... src/check_file.s"
+	@echo "... src/controller.o"
+	@echo "... src/controller.i"
+	@echo "... src/controller.s"
+	@echo "... src/demo_utils.o"
+	@echo "... src/demo_utils.i"
+	@echo "... src/demo_utils.s"
+	@echo "... src/draw_map.o"
+	@echo "... src/draw_map.i"
+	@echo "... src/draw_map.s"
+	@echo "... src/drawing.o"
+	@echo "... src/drawing.i"
+	@echo "... src/drawing.s"
 	@echo "... src/ft_utils.o"
 	@echo "... src/ft_utils.i"
 	@echo "... src/ft_utils.s"
+	@echo "... src/hooks.o"
+	@echo "... src/hooks.i"
+	@echo "... src/hooks.s"
 	@echo "... src/input_manip.o"
 	@echo "... src/input_manip.i"
 	@echo "... src/input_manip.s"

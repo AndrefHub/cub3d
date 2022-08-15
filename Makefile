@@ -14,7 +14,8 @@ SRCFILE	=	border_checking.c \
 			input_manip.c \
 			parsing.c \
 			start_game.c \
-			vector_utils.c
+			vector_utils.c \
+			hooks.c
 MAIN	= main.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/

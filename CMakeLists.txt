@@ -18,7 +18,8 @@ add_executable(cub3d
         src/controller.c
         src/drawing.c
         src/demo_utils.c
-        src/draw_map.c)
+        src/draw_map.c
+        src/hooks.c)
 
-target_link_libraries(cub3d /Users/landreas/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
-target_link_libraries(cub3d /Users/landreas/42Course/cub3d/libft/libft.a)
+target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
+target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/libft/libft.a)

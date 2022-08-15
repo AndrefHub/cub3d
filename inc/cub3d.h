@@ -7,8 +7,8 @@
 # include "stdio.h"
 # include "constants.h"
 # include "math.h"
-# include "/usr/local/include/X11/X.h"
-# include "/usr/local/include/X11/keysym.h"
+# include "X11/X.h"
+# include "X11/keysym.h"
 # include "time.h"
 
 # define BAD_FILE -2
@@ -114,6 +114,8 @@ int		ft_arraylen(void **arr);
 int		close_hook(t_game *game);
 int		key_hook_press(int key, t_game *game);
 int		key_hook_release(int key, t_game *game);
+int		mouse_hook_press(int button, int x, int y, t_game *game);
+int		mouse_hook_release(int button, int x, int y, t_game *game);
 int		game_loop(t_game *game);
 
 //drawing.c
@@ -122,10 +124,12 @@ void	draw_line(t_img *img, t_vector p1, t_vector p2, int color);
 void	put_pixel(t_img *img, t_vector point, int color);
 void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
 void	draw_player(t_game *game);
+void	draw_aim(t_game *game);
 void	img_clear_rgb(t_img *img, int color);
-void	draw_rays(t_game *game);
+void	cast_rays(t_game *game);
 float	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
 void	draw_3D(t_game *game);
+bool	key_pressed(t_game *game, int key);
 
 //demo
 char	**charlist_to_matrix(t_list *list);

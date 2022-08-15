@@ -158,9 +158,10 @@ float	get_interception(t_game *game, float ray_angle, int i) //DDA algorithm
 		camera += 2 * PI;
 	if (camera > 2 * PI)
 		camera -= 2 * PI;
-	game->column[i].height = (MAP_GRID_SIZE * 840.0f) / (distance * cosf(camera));
+	game->column[i].height = (MAP_GRID_SIZE * ABS_WALL_SIZE) / (distance * cosf(camera));
 	if (game->column[i].height > game->img.size.y)
 		game->column[i].height = game->img.size.y;
+	game->column[i].pos = (t_fvector) {game->player.pos.x + cos(ray_angle) * distance, game->player.pos.y + sin(ray_angle) * distance};
 	game->column[i].distance = distance;
 	return (0);
 }
@@ -187,4 +188,9 @@ void	draw_3D(t_game *game)
 void	draw_player(t_game *game)
 {
 	(void) game;
+}
+
+void	draw_aim(t_game *game)
+{
+	draw_square_fill(&game->img, (t_vector ) {game->img.size.x / 2 - AIM_SIZE / 2, game->img.size.y / 2 - AIM_SIZE / 2}, AIM_SIZE, AIM_COLOR);
 }
