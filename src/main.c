@@ -10,9 +10,9 @@ int main(int ac, char **av)
 	if (map)
 	{
 		print_map_debug(map);
+		(void ) ac;
+		(void ) av;
+		game(map);
 	}
 
-	(void ) ac;
-	(void ) av;
-	game(map);
 }

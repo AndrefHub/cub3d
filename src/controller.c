@@ -42,23 +42,31 @@ void	player_controll(t_game *game)
 	}
 	if (key_pressed(game,W_KEY))
 	{
-		game->player.pos.x += game->player.delta.x;
-		game->player.pos.y += game->player.delta.y;
+		if (game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE][(int)(game->player.pos.x + game->player.delta.x) / MAP_GRID_SIZE] != '1')
+			game->player.pos.x += game->player.delta.x;
+		if (game->map->map[(int)(game->player.pos.y + game->player.delta.y) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
+			game->player.pos.y += game->player.delta.y;
 	}
 	if (key_pressed(game,S_KEY))
 	{
-		game->player.pos.x -= game->player.delta.x;
-		game->player.pos.y -= game->player.delta.y;
+		if (game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE][(int)(game->player.pos.x - game->player.delta.x) / MAP_GRID_SIZE] != '1')
+			game->player.pos.x -= game->player.delta.x;
+		if (game->map->map[(int)(game->player.pos.y - game->player.delta.y) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
+			game->player.pos.y -= game->player.delta.y;
 	}
 	if (key_pressed(game,D_KEY))
 	{
-		game->player.pos.x -= game->player.delta.y;
-		game->player.pos.y += game->player.delta.x;
+		if (game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE][(int)(game->player.pos.x - game->player.delta.y) / MAP_GRID_SIZE] != '1')
+			game->player.pos.x -= game->player.delta.y;
+		if (game->map->map[(int)(game->player.pos.y + game->player.delta.x) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
+			game->player.pos.y += game->player.delta.x;
 	}
 	if (key_pressed(game,A_KEY))
 	{
-		game->player.pos.x += game->player.delta.y;
-		game->player.pos.y -= game->player.delta.x;
+		if (game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE][(int)(game->player.pos.x + game->player.delta.y) / MAP_GRID_SIZE] != '1')
+			game->player.pos.x += game->player.delta.y;
+		if (game->map->map[(int)(game->player.pos.y - game->player.delta.x) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
+			game->player.pos.y -= game->player.delta.x;
 	}
 	if (key_pressed(game,LEFT_KEY))
 	{

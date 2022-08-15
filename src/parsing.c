@@ -33,6 +33,16 @@ void	empty_func(void *ptr)
 	(void) ptr;
 }
 
+int	ft_strrchr_int(char *line, int chr)
+{
+	char	*one;
+
+	one = ft_strrchr(line, chr);
+	if (line)
+		return (one - line + 1);
+	return (-1);
+}
+
 void	map_to_rectangle(t_map *map)
 {
 	char	**arr;
@@ -45,21 +55,32 @@ void	map_to_rectangle(t_map *map)
 	while (arr[++index])
 	{
 		resized_line = arr[index];
-		if ((int)ft_strlen(arr[index]) < map->map_size.x)
+		if (ft_strrchr_int(arr[index], '1') < map->map_size.x)
 		{
 			resized_line = malloc(sizeof(char) * (map->map_size.x + 1));
-			ft_memset(resized_line, '0', sizeof(char) * map->map_size.x);
+			ft_memset(resized_line, ' ', sizeof(char) * map->map_size.x);
 			resized_line[map->map_size.x] = 0;
-			ft_memcpy(resized_line, arr[index], ft_strlen(arr[index]));
+			ft_memcpy(resized_line, arr[index], ft_strrchr_int(arr[index], '1'));
 			free(arr[index]);
 			arr[index] = resized_line;
 		}
-		while (*resized_line)
-		{
-			if (*resized_line == ' ')
-				*resized_line = '0';
-			++resized_line;
-		}
+	}
+}
+
+void	convert_spaces_to_zeros(t_map *map)
+{
+	char	**arr;
+	int		yindex;
+	int		xindex;
+
+	yindex = -1;
+	arr = map->map;
+	while (arr[++yindex])
+	{
+		xindex = -1;
+		while (arr[yindex][++xindex])
+			if (arr[yindex][xindex] == ' ')
+				arr[yindex][xindex] = '0';
 	}
 }
 
@@ -81,8 +102,8 @@ void	get_map(t_map *map, int fd)
 	ft_lstclear(&tmp, empty_func);
 	map->map_size.x = get_map_width(map->map);
 	map->map_size.y = ft_arraylen((void **) map->map);
+	map_to_rectangle(map);
 	// ft_putendl_fd("amogus_gaming", 1);
-	map_to_rectangle(map);	
 }
 
 t_map	*free_map(t_map *map)
@@ -105,8 +126,12 @@ t_map	*parse_file(int ac, char **av)
 		get_textures(map, fd);
 		get_map(map, fd);
 	}
-	// if (is_enclosed(map))
-	// 	return (map);
-	// return (free_map(map));
-	return (map);
+	if (is_enclosed(map))
+	{
+		convert_spaces_to_zeros(map);
+		return (map);
+	}
+	ft_putendl_fd("amogus_gaming2", 1);
+	return (free_map(map));
+	// return (map);
 }

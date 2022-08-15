@@ -5,12 +5,11 @@ int	get_map_width(char **map)
 	int	max_width;
 
 	max_width = 0;
-	ft_putendl_fd("amogus_gaming", 1);
 	while (*map)
 	{
 		ft_putendl_fd(*map, 1);
-		if (max_width < (int)ft_strlen(*map))
-			max_width = ft_strlen(*map);
+		if (max_width < ft_strrchr_int(*map, '1'))
+			max_width = ft_strrchr_int(*map, '1');
 		++map;
 	}
 	return (max_width);
@@ -27,7 +26,14 @@ int	set_player(t_map *map, t_list *lst, char *line, char *orient)
 		{
 			map->player_coords.x = x;
 			map->player_coords.y = ft_lstsize(lst);
-			map->player_orient = *orient;
+			if (*orient == 'E')
+				map->player_orient = 0;
+			if (*orient == 'N')
+				map->player_orient = 90;
+			if (*orient == 'W')
+				map->player_orient = 180;
+			if (*orient == 'S')
+				map->player_orient = 270;
 		}
 		else
 			return (BAD_COORD);
@@ -46,96 +52,41 @@ int	find_player(t_map *map, char *line, t_list *lst)
 	return (return_code);
 }
 
-int	check_top_wall(char **map)
+int	is_wall(char c)
 {
-	int	x;
-	int	width;
-	// int	last_y;
-	int	curr_y;
-
-	x = -1;
-	width = get_map_width(map);
-	// last_y = get_non_space_index_top(map, x);
-	while (++x < width)
-	{
-		curr_y = get_non_space_index_top(map, x);
-		if (curr_y && map[curr_y][x] != '1')
-			return (0);
-		// last_y = curr_y;
-	}
-	return (1);
+	return (c == '1');
 }
 
-int	check_bottom_wall(char **map)
+int check_enclosure(t_map *map, t_vector vec)
 {
-	int	x;
-	int	width;
-	// int	last_y;
-	int	curr_y;
-
-	x = -1;
-	width = get_map_width(map);
-	// last_y = get_non_space_index_top(map, x);
-	while (++x < width)
-	{
-		curr_y = get_non_space_index_top(map, x);
-		if (curr_y && map[curr_y][x] != '1')
-			return (0);
-		// last_y = curr_y;
-	}
-	return (1);
-}
-
-int	check_left_wall(char **map)
-{
-	int	last_x;
-	int	curr_x;
-
-	if (!ft_strchr(*map, '1'))
+	if (map->map[vec.y][vec.x] == ' ' || is_wall(map->map[vec.y][vec.x]))
 		return (0);
-	last_x = get_non_space_index_left(*map);
-	while (map[1])
-	{
-		if (!ft_strchr(map[1], '1'))
-			return (0);
-		curr_x = get_non_space_index_left(map[1]);
-		if (map[1][curr_x] != '1' || (last_x < curr_x
-			&& check_longer_row_border(*map, last_x, curr_x, 'l')))
-			return (0);
-		else if (last_x > curr_x && check_longer_row_border(map[1], curr_x, last_x, 'l'))
-			return (0);
-		last_x = curr_x;
-		++map;
-	}
-	return (1);
-}
-
-int	check_right_wall(char **map)
-{
-	int	last_x;
-	int	curr_x;
-
-	if (!ft_strchr(*map, '1'))
-		return (0);
-	last_x = get_non_space_index_right(*map);
-	while (map[1])
-	{
-		if (!ft_strchr(map[1], '1'))
-			return (0);
-		curr_x = get_non_space_index_right(map[1]);
-		if (map[1][curr_x] != '1' || (last_x > curr_x
-			&& check_longer_row_border(*map, last_x, curr_x, 'r')))
-			return (0);
-		else if (last_x < curr_x && check_longer_row_border(map[1], curr_x, last_x, 'r'))
-			return (0);
-		last_x = curr_x;
-		++map;
-	}
-	return (1);
+	if (vec.x == 0 || vec.x == map->map_size.x - 1 || vec.y == 0
+		|| vec.y == map->map_size.y - 1)
+		return (1);
+	return (map->map[vec.y - 1][vec.x] == ' '
+		|| map->map[vec.y + 1][vec.x] == ' '
+		|| map->map[vec.y][vec.x - 1] == ' '
+		|| map->map[vec.y][vec.x + 1] == ' ');
 }
 
 int	is_enclosed(t_map *args)
 {
-	return (check_left_wall(args->map) && check_right_wall(args->map)
-		&& check_top_wall(args->map) && check_bottom_wall(args->map));
+	t_vector	check;
+
+	check.y = 0;
+	while (check.y < args->map_size.y)
+	{
+		check.x = 0;
+		while (check.x < args->map_size.x)
+		{
+			if (check_enclosure(args, check))
+			{
+				return (0);
+			}
+			++check.x;
+		}
+		++check.y;
+	}
+	return (1);
 }

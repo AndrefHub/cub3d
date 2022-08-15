@@ -105,7 +105,7 @@ void	print_map_debug(t_map *map);
 int		find_player(t_map *map, char *line, t_list *lst);
 int		is_enclosed(t_map *args);
 int		get_map_width(char **map);
-
+int		ft_strrchr_int(char *line, int chr);
 t_map	*create_empty_map(void);
 
 int		ft_arraylen(void **arr);
