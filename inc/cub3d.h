@@ -50,7 +50,18 @@ typedef struct s_map
 	t_img		img;
 	t_vector	player_coords;
 	int			player_orient;
+	int			map_tile_size;
 } t_map;
+
+typedef struct ray
+{
+	t_fvector	unit;
+	t_fvector	dir;
+	t_vector	map_tile;
+	t_fvector	length;
+	t_fvector	end;
+	t_vector	step;
+}				t_ray;
 
 typedef struct game
 {
@@ -63,7 +74,6 @@ typedef struct game
 	char			**grid;
 	bool			show_map;
 	t_img			img;
-	int				fps;
 	struct			s_player
 	{
 		t_fvector	pos;
@@ -127,9 +137,9 @@ void	draw_player(t_game *game);
 void	draw_aim(t_game *game);
 void	img_clear_rgb(t_img *img, int color);
 void	cast_rays(t_game *game);
-float	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
-void	draw_3D(t_game *game);
+void	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
 bool	key_pressed(t_game *game, int key);
+void	draw_walls(t_game *game);
 
 //demo
 char	**charlist_to_matrix(t_list *list);

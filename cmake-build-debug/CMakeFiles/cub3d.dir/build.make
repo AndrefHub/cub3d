@@ -237,6 +237,48 @@ CMakeFiles/cub3d.dir/src/hooks.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3d.dir/src/hooks.c.s"
 	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lsherry/42Course/cub3d/src/hooks.c -o CMakeFiles/cub3d.dir/src/hooks.c.s
 
+CMakeFiles/cub3d.dir/src/vector_utils.c.o: CMakeFiles/cub3d.dir/flags.make
+CMakeFiles/cub3d.dir/src/vector_utils.c.o: ../src/vector_utils.c
+CMakeFiles/cub3d.dir/src/vector_utils.c.o: CMakeFiles/cub3d.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/cub3d.dir/src/vector_utils.c.o"
+	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cub3d.dir/src/vector_utils.c.o -MF CMakeFiles/cub3d.dir/src/vector_utils.c.o.d -o CMakeFiles/cub3d.dir/src/vector_utils.c.o -c /Users/lsherry/42Course/cub3d/src/vector_utils.c
+
+CMakeFiles/cub3d.dir/src/vector_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3d.dir/src/vector_utils.c.i"
+	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lsherry/42Course/cub3d/src/vector_utils.c > CMakeFiles/cub3d.dir/src/vector_utils.c.i
+
+CMakeFiles/cub3d.dir/src/vector_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3d.dir/src/vector_utils.c.s"
+	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lsherry/42Course/cub3d/src/vector_utils.c -o CMakeFiles/cub3d.dir/src/vector_utils.c.s
+
+CMakeFiles/cub3d.dir/src/border_checking_utils.c.o: CMakeFiles/cub3d.dir/flags.make
+CMakeFiles/cub3d.dir/src/border_checking_utils.c.o: ../src/border_checking_utils.c
+CMakeFiles/cub3d.dir/src/border_checking_utils.c.o: CMakeFiles/cub3d.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/cub3d.dir/src/border_checking_utils.c.o"
+	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cub3d.dir/src/border_checking_utils.c.o -MF CMakeFiles/cub3d.dir/src/border_checking_utils.c.o.d -o CMakeFiles/cub3d.dir/src/border_checking_utils.c.o -c /Users/lsherry/42Course/cub3d/src/border_checking_utils.c
+
+CMakeFiles/cub3d.dir/src/border_checking_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3d.dir/src/border_checking_utils.c.i"
+	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lsherry/42Course/cub3d/src/border_checking_utils.c > CMakeFiles/cub3d.dir/src/border_checking_utils.c.i
+
+CMakeFiles/cub3d.dir/src/border_checking_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3d.dir/src/border_checking_utils.c.s"
+	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lsherry/42Course/cub3d/src/border_checking_utils.c -o CMakeFiles/cub3d.dir/src/border_checking_utils.c.s
+
+CMakeFiles/cub3d.dir/src/ray_casting.c.o: CMakeFiles/cub3d.dir/flags.make
+CMakeFiles/cub3d.dir/src/ray_casting.c.o: ../src/ray_casting.c
+CMakeFiles/cub3d.dir/src/ray_casting.c.o: CMakeFiles/cub3d.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/cub3d.dir/src/ray_casting.c.o"
+	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/cub3d.dir/src/ray_casting.c.o -MF CMakeFiles/cub3d.dir/src/ray_casting.c.o.d -o CMakeFiles/cub3d.dir/src/ray_casting.c.o -c /Users/lsherry/42Course/cub3d/src/ray_casting.c
+
+CMakeFiles/cub3d.dir/src/ray_casting.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cub3d.dir/src/ray_casting.c.i"
+	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lsherry/42Course/cub3d/src/ray_casting.c > CMakeFiles/cub3d.dir/src/ray_casting.c.i
+
+CMakeFiles/cub3d.dir/src/ray_casting.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cub3d.dir/src/ray_casting.c.s"
+	/usr/local/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lsherry/42Course/cub3d/src/ray_casting.c -o CMakeFiles/cub3d.dir/src/ray_casting.c.s
+
 # Object files for target cub3d
 cub3d_OBJECTS = \
 "CMakeFiles/cub3d.dir/src/border_checking.c.o" \
@@ -250,7 +292,10 @@ cub3d_OBJECTS = \
 "CMakeFiles/cub3d.dir/src/drawing.c.o" \
 "CMakeFiles/cub3d.dir/src/demo_utils.c.o" \
 "CMakeFiles/cub3d.dir/src/draw_map.c.o" \
-"CMakeFiles/cub3d.dir/src/hooks.c.o"
+"CMakeFiles/cub3d.dir/src/hooks.c.o" \
+"CMakeFiles/cub3d.dir/src/vector_utils.c.o" \
+"CMakeFiles/cub3d.dir/src/border_checking_utils.c.o" \
+"CMakeFiles/cub3d.dir/src/ray_casting.c.o"
 
 # External object files for target cub3d
 cub3d_EXTERNAL_OBJECTS =
@@ -267,11 +312,14 @@ cub3d: CMakeFiles/cub3d.dir/src/drawing.c.o
 cub3d: CMakeFiles/cub3d.dir/src/demo_utils.c.o
 cub3d: CMakeFiles/cub3d.dir/src/draw_map.c.o
 cub3d: CMakeFiles/cub3d.dir/src/hooks.c.o
+cub3d: CMakeFiles/cub3d.dir/src/vector_utils.c.o
+cub3d: CMakeFiles/cub3d.dir/src/border_checking_utils.c.o
+cub3d: CMakeFiles/cub3d.dir/src/ray_casting.c.o
 cub3d: CMakeFiles/cub3d.dir/build.make
 cub3d: ../mlx/libmlx.a
 cub3d: ../libft/libft.a
 cub3d: CMakeFiles/cub3d.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable cub3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking C executable cub3d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cub3d.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -4,18 +4,14 @@ void	check_borders(t_game *game)
 {
 	char	tile;
 
-	tile = game->grid[(int) game->player.pos.y][(int) game->player.pos.x];
+	tile = game->grid[(int) game->player.pos.y / MAP_GRID_SIZE][(int) game->player.pos.x / MAP_GRID_SIZE];
 
 	if (tile != '0')
 	{
-		if (game->player.pos.x - (int) game->player.pos.x < game->player.pos.y - (int) game->player.pos.y)
-		{
-			game->player.pos.x += 0.01f;
-		}
+		if ((game->player.pos.x - (int ) game->player.pos.x) - (game->player.pos.y - (int ) game->player.pos.y) > 0)
+			game->player.pos.x -= game->player.delta.x;
 		else
-		{
-			game->player.pos.y += 0.01f;
-		}
+			game->player.pos.y -= game->player.delta.y;
 	}
 }
 
@@ -25,7 +21,15 @@ void	check_restrictions(t_game *game)
 		game->player.angle += 2 * PI;
 	if (game->player.angle > 2 * PI)
 		game->player.angle -= 2 * PI;
-//	check_borders(game);
+	if (game->player.pos.x > game->map->map_size.x * MAP_GRID_SIZE)
+		game->player.pos.x -= MAP_GRID_SIZE;
+	if (game->player.pos.x < 0)
+		game->player.pos.x += MAP_GRID_SIZE;
+	if (game->player.pos.y > game->map->map_size.y * MAP_GRID_SIZE)
+		game->player.pos.y -= MAP_GRID_SIZE;
+	if (game->player.pos.y < 0)
+		game->player.pos.y += MAP_GRID_SIZE;
+	check_borders(game);
 }
 
 void	player_controll(t_game *game)
@@ -92,7 +96,7 @@ int	game_loop(t_game *game)
 	img_clear_rgb(&game->img, 0x808080);
 //	draw_player(game);
 	cast_rays(game);
-	draw_3D(game);
+	draw_walls(game);
 	draw_aim(game);
 
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img, 0, 0);
@@ -101,7 +105,6 @@ int	game_loop(t_game *game)
 
 	if (clock() != cur_time)
 		fps = CLOCKS_PER_SEC / (clock() - cur_time);
-	game->fps = fps;
 	cur_time = clock();
 	mlx_string_put(game->mlx.id, game->mlx.window, 0, 15, 0x00FFFFFF, \
 		(char []){'0' + fps / 100, '0' + fps / 10 % 10, '0' + fps % 10, '\0'});
