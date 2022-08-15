@@ -1,33 +1,5 @@
 #include "../inc/cub3d.h"
 
-bool	key_pressed(t_game *game, int key)
-{
-	return (game->key.k[key]);
-}
-
-int	close_hook(t_game *game)
-{
-	mlx_clear_window(game->mlx.id, game->mlx.window);
-	mlx_destroy_window(game->mlx.id, game->mlx.window);
-	exit(0);
-	return (0);
-}
-
-int	key_hook_press(int key, t_game *game)
-{
-	if (key >= (int) sizeof(game->key) || key < -256)
-		return (1);
-	if (key == ESC_KEY)
-		close_hook(game);
-	if (key == M_KEY)
-	{
-		game->show_map = !game->show_map;
-		return (0);
-	}
-	game->key.k[key] = true;
-	return (0);
-}
-
 void	check_borders(t_game *game)
 {
 	char	tile;
@@ -58,6 +30,16 @@ void	check_restrictions(t_game *game)
 
 void	player_controll(t_game *game)
 {
+	if (game->key.mouse == true)
+	{
+		mlx_mouse_get_pos(game->mlx.window, &game->key.mpos.x,&game->key.mpos.y);
+		game->key.mdir.x = game->key.mpos.x - game->img.size.x / 2;
+		game->key.mdir.y = game->key.mpos.y - game->img.size.y / 2;
+		mlx_mouse_move(game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
+		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED;
+		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
+		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
+	}
 	if (key_pressed(game,W_KEY))
 	{
 		game->player.pos.x += game->player.delta.x;
@@ -70,25 +52,27 @@ void	player_controll(t_game *game)
 	}
 	if (key_pressed(game,D_KEY))
 	{
-		game->player.angle += PL_ROT_SPEED;
-		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
-		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
+		game->player.pos.x -= game->player.delta.y;
+		game->player.pos.y += game->player.delta.x;
 	}
 	if (key_pressed(game,A_KEY))
 	{
-		game->player.angle -= PL_ROT_SPEED;
+		game->player.pos.x += game->player.delta.y;
+		game->player.pos.y -= game->player.delta.x;
+	}
+	if (key_pressed(game,LEFT_KEY))
+	{
+		game->player.angle += PL_ROT_KEY_SPEED;
+		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
+		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
+	}
+	if (key_pressed(game,RIGHT_KEY))
+	{
+		game->player.angle -= PL_ROT_KEY_SPEED;
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
 		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
 	}
 	check_restrictions(game);
-}
-
-int	key_hook_release(int key, t_game *game)
-{
-	if (key >= (int) sizeof(game->key) || key < -256)
-		return (1);
-	game->key.k[key] = false;
-	return (0);
 }
 
 int	game_loop(t_game *game)
@@ -99,10 +83,9 @@ int	game_loop(t_game *game)
 	player_controll(game);
 	img_clear_rgb(&game->img, 0x808080);
 //	draw_player(game);
-	draw_rays(game);
+	cast_rays(game);
 	draw_3D(game);
-//	draw_line(&game->img, (t_vector) {0, 0}, (t_vector) {WIN_WIDTH, WIN_HEIGHT - 54}, 0xABCDEF);
-//	draw_line(&game->img, (t_vector) {WIN_WIDTH, 0}, (t_vector) {0, WIN_HEIGHT - 54}, 0xABCDEF);
+	draw_aim(game);
 
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img, 0, 0);
 	if (game->show_map)

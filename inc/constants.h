@@ -3,13 +3,19 @@
 
 # define PROJ_NAME "Cub3d"
 # define WIN_WIDTH 1920
-# define WIN_HEIGHT 1080
+# define WIN_HEIGHT 1026
 # define MAP_GRID_SIZE 32
 # define MAX_RENDER_DISTANCE 1000
 # define RAYS 512
 # define PI (float) M_PI
-# define PL_ROT_SPEED 0.05f
-# define PL_SPEED 3.0f
+# define PL_ROT_KEY_SPEED 0.05f
+# define PL_ROT_MOUSE_SPEED 0.002f
+# define PL_SPEED 2.0f
+# define PL_MAP_COLOR 0xFF0000
+# define RAYS_COLOR 0xFFFF00
+# define ABS_WALL_SIZE 840.0f
+# define AIM_SIZE 4
+# define AIM_COLOR 0xFF0000
 
 
 enum e_keys

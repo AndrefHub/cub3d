@@ -12,7 +12,8 @@ SRCFILE	= check_file.c\
 			controller.c\
 			drawing.c\
 			demo_utils.c\
-			draw_map.c
+			draw_map.c\
+			hooks.c
 MAIN	= main.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/

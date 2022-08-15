@@ -44,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/opt/X11/include"/>
 					<Add directory="/usr/local/include/"/>
 					<Add directory="/usr/local/bin/../lib/gcc/10/gcc/x86_64-apple-darwin20/10.3.0/include"/>
 					<Add directory="/usr/local/bin/../lib/gcc/10/gcc/x86_64-apple-darwin20/10.3.0/include-fixed"/>
@@ -64,6 +65,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/opt/X11/include"/>
 					<Add directory="/usr/local/include/"/>
 					<Add directory="/usr/local/bin/../lib/gcc/10/gcc/x86_64-apple-darwin20/10.3.0/include"/>
 					<Add directory="/usr/local/bin/../lib/gcc/10/gcc/x86_64-apple-darwin20/10.3.0/include-fixed"/>
@@ -84,7 +86,22 @@
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/check_file.c">
 			<Option target="cub3d"/>
 		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/controller.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/demo_utils.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/draw_map.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/drawing.c">
+			<Option target="cub3d"/>
+		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/ft_utils.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/hooks.c">
 			<Option target="cub3d"/>
 		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/input_manip.c">
