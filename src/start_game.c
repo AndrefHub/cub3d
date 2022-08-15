@@ -13,8 +13,8 @@ void	error_exit(t_game *game, int return_value, char *message)
 
 void	start_mlx(t_game *game)
 {
-	mlx_do_key_autorepeatoff(game->mlx.id);
 	mlx_mouse_hide(game->mlx.id, game->mlx.window);
+	mlx_do_key_autorepeatoff(game->mlx.id);
 	mlx_hook(game->mlx.window, KeyPress, KeyPressMask, key_hook_press, game);
 	mlx_hook(game->mlx.window, KeyRelease, KeyReleaseMask, key_hook_release, game);
 	mlx_hook(game->mlx.window, ButtonPress, ButtonPressMask, mouse_hook_press, game);
@@ -56,9 +56,30 @@ void	initialize_game(t_game *game)
 	game->show_map = false;
 }
 
+void	import_texture(t_game *game, t_img *img, char *filename)
+{
+	int	size;
+
+	size = MAP_GRID_SIZE;
+	if (ft_strlen(filename) < 5)
+		error_exit(game, 1, "Invalid texture filename");
+	if (ft_strncmp(".xpm", &filename[ft_strlen(filename) - 4], 4) == 0)
+		img->mlx_img = mlx_xpm_file_to_image(game->mlx.id, filename, &size, &size);
+	else
+		error_exit(game, 1, "Invalid texture format");
+	if (img->mlx_img == NULL)
+		error_exit(game, 1, "Can't load texture");
+	img->addr = (int *) mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_length, &img->endian);
+	img->size.x = MAP_GRID_SIZE;
+	img->size.y = MAP_GRID_SIZE;
+}
+
 void	initialize_sprites(t_game *game)
 {
-	(void) game;
+	import_texture(game, &game->textures[0], game->map->NO);
+	import_texture(game, &game->textures[1], game->map->SO);
+	import_texture(game, &game->textures[2], game->map->WE);
+	import_texture(game, &game->textures[3], game->map->EA);
 }
 
 int	game(t_map *map)

@@ -11,10 +11,6 @@
 # include "X11/keysym.h"
 # include "time.h"
 
-# define BAD_FILE -2
-# define BAD_COLOUR (1 << 24)
-# define BAD_COORD -1
-
 typedef struct s_vector
 {
 	int	x;
@@ -92,14 +88,18 @@ typedef struct game
 	struct			s_column
 	{
 		float		distance;
+		float		perp_dist;
 		t_fvector	pos;
+		int			side;
+		t_fvector	ray_dir;
 		t_vector	cell;
 		char		dir;
 		int			height;
-		//texture
+		uint32_t	texture_id;
+		float		texture_pos;
 		int			color;
 	}				*column;
-
+	t_img			textures[MAX_TEXTURES];
 }	t_game;
 
 int		check_file(int ac, char **av);

@@ -1,11 +1,10 @@
-0O 0/p0t00to0t0000ort00t00tur0
+NO ./assets/wall1.xpm
 
-1O 0/p0t00to0t0001out00t00tur0
+SO ./assets/wall1.xpm
 
-00 0/p0t00to0t000001t0t00tur0
+WE ./assets/wall1.xpm
 
-
-00 0/p0t00to0t000001t0t00tur0
+EA ./assets/wall1.xpm
 
 
 F 110110010

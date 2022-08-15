@@ -34,16 +34,16 @@ void	check_restrictions(t_game *game)
 
 void	player_controll(t_game *game)
 {
-	if (game->key.mouse == true)
-	{
-		mlx_mouse_get_pos(game->mlx.window, &game->key.mpos.x,&game->key.mpos.y);
-		game->key.mdir.x = game->key.mpos.x - game->img.size.x / 2;
-		game->key.mdir.y = game->key.mpos.y - game->img.size.y / 2;
-		mlx_mouse_move(game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
-		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED;
-		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
-		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
-	}
+//	if (game->key.mouse == true)
+//	{
+//		mlx_mouse_get_pos(game->mlx.window, &game->key.mpos.x,&game->key.mpos.y);
+//		game->key.mdir.x = game->key.mpos.x - game->img.size.x / 2;
+//		game->key.mdir.y = game->key.mpos.y - game->img.size.y / 2;
+//		mlx_mouse_move(game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
+//		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED;
+//		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
+//		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
+//	}
 	if (key_pressed(game,W_KEY))
 	{
 		game->player.pos.x += game->player.delta.x;
