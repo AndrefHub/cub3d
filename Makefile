@@ -48,6 +48,7 @@ clean:
 
 fclean: clean
 	@make -C libft fclean
+	@make -C mlx fclean
 	@$(RM) $(NAME)
 	@echo '\033[1;31m'$(NAME) "deleted."'\033[0m'
 
