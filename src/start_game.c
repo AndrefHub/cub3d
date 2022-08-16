@@ -60,7 +60,7 @@ void	import_texture(t_game *game, t_img *img, char *filename)
 {
 	int	size;
 
-	size = MAP_GRID_SIZE;
+	size = TEXTURE_SIZE;
 	if (ft_strlen(filename) < 5)
 		error_exit(game, 1, "Invalid texture filename");
 	if (ft_strncmp(".xpm", &filename[ft_strlen(filename) - 4], 4) == 0)
@@ -70,8 +70,8 @@ void	import_texture(t_game *game, t_img *img, char *filename)
 	if (img->mlx_img == NULL)
 		error_exit(game, 1, "Can't load texture");
 	img->addr = (int *) mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_length, &img->endian);
-	img->size.x = MAP_GRID_SIZE;
-	img->size.y = MAP_GRID_SIZE;
+	img->size.x = TEXTURE_SIZE;
+	img->size.y = TEXTURE_SIZE;
 }
 
 void	initialize_sprites(t_game *game)
