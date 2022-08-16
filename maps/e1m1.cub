@@ -1,10 +1,10 @@
 NO ./assets/wall1.xpm
 
-SO ./assets/wall1.xpm
+SO ./assets/wall2.xpm
 
-WE ./assets/wall1.xpm
+WE ./assets/wall3.xpm
 
-EA ./assets/wall1.xpm
+EA ./assets/wall4.xpm
 
 
 F 110110010

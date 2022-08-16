@@ -1,15 +1,17 @@
 #include "../inc/cub3d.h"
 
-void	draw_wall_scaled(t_img *img, t_img *texture, const struct s_column *column, int x, t_game *game)
+void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *column, int x)
 {
-	const double	step = (double ) texture->size.y / game->column->height;
-	const unsigned	tex_col = column->texture_pos * texture->size.x;
+	const double	step = (double ) texture->size.y / column->height;
+	const unsigned	tex_col = (unsigned ) column->texture_pos % texture->size.x;
+//	const double	step = (double ) texture->size.y / column->height;
+//	const unsigned	tex_col = (unsigned ) column->pos.x % texture->size.x;
 	int				y;
 	double			tex_y;
 	int 			max_height;
 
 	tex_y = 0;
-	if (column->height > img->size.y)
+	if (column->height >= img->size.y)
 	{
 		tex_y += (double ) texture->size.y * (column->height - img->size.y) / 2 / column->height;
 		y = 0;
@@ -26,14 +28,6 @@ void	draw_wall_scaled(t_img *img, t_img *texture, const struct s_column *column,
 		tex_y += step;
 		y++;
 	}
-
-//	y = img->size.y / 2 - column->height / 2;
-//	while (y < img->size.y / 2 + column->height / 2)
-//	{
-//		color = texture->addr[ty * texture->size.x + (x / ty_step)];
-//		img->addr[y * img->size.x + x] = column->color;
-//		y++;
-//	}
 }
 
 void	draw_walls(t_game *game)
@@ -43,8 +37,8 @@ void	draw_walls(t_game *game)
 	x = 0;
 	while (x < game->img.size.x)
 	{
-		draw_wall_scaled(&game->img, &game->textures[game->column->texture_id],
-						 &game->column[x], x, game);
+		draw_wall_scaled(&game->img, &game->textures[game->column[x].texture_id],
+						 &game->column[x], x);
 		x++;
 	}
 }
@@ -124,26 +118,29 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 		game->column[i].height = (MAP_GRID_SIZE * ABS_WALL_SIZE) / (distance
 			* cosf(camera));
 		game->column[i].perp_dist = distance * cosf(camera);
-		if (game->column[i].height > game->img.size.y)
-			game->column[i].height = game->img.size.y;
-		if (ray->length.x - ray->unit.x > ray->length.y - ray->unit.y)
+//		if (game->column[i].height > game->img.size.y)
+//			game->column[i].height = game->img.size.y;
+		game->column[i].pos = (t_fvector) {game->player.pos.x + cosf(ray_angle)
+			* distance, game->player.pos.y + sinf(ray_angle) * distance};
+		if (ray->length.x - ray->unit.x >= ray->length.y - ray->unit.y)
 		{
-			game->column[i].color = game->column[i].texture_id = 0;
+			game->column[i].color = game->column[i].texture_id = 1;
+			game->column[i].color = game->column[i].texture_pos = game->player.pos.y + sinf(ray_angle)
+																						* distance;
 //			game->column[i].dir = "EW"[(int) (ray->length.x - ray->unit.x - game->player.pos.x / MAP_GRID_SIZE)];
-			game->column[i].dir = 'E';
-			game->column[i].texture_pos = fabs(ray->length.x - ray->unit.x) - (int)(ray->length.x - ray->unit.x);
+
 		}
 		else
 		{
-			game->column[i].color = game->column[i].texture_id = 1;
-			game->column[i].dir = 'N';
-			game->column[i].texture_pos = fabs(ray->length.y - ray->unit.y) - (int)(ray->length.y - ray->unit.y);
+			game->column[i].color = game->column[i].texture_id = 0;
+			game->column[i].color = game->column[i].texture_pos = game->player.pos.x + cosf(ray_angle)
+																					   * distance;
 //			game->column[i].dir = "NS"[(int) (ray->length.y - ray->unit.y - game->player.pos.y / MAP_GRID_SIZE)];
+//			game->column[i].dir = 'N';
+//			game->column[i].texture_pos = fabs(ray->length.y - ray->unit.y) - (int)(ray->length.y - ray->unit.y);
 		}
 		if (distance > MAX_RENDER_DISTANCE)
 			game->column[i].color = 0xFFAAAA;
-		game->column[i].pos = (t_fvector) {game->player.pos.x + cos(ray_angle)
-			* distance, game->player.pos.y + sin(ray_angle) * distance};
 		game->column[i].distance = distance;
 		game->column[i].ray_dir = ray->dir;
 //		if (game->column[i].dir == 'N' || game->column[i].dir =='S')

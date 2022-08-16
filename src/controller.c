@@ -64,13 +64,13 @@ void	player_controll(t_game *game)
 		game->player.pos.x += game->player.delta.y;
 		game->player.pos.y -= game->player.delta.x;
 	}
-	if (key_pressed(game,LEFT_KEY))
+	if (key_pressed(game,RIGHT_KEY))
 	{
 		game->player.angle += PL_ROT_KEY_SPEED;
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
 		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
 	}
-	if (key_pressed(game,RIGHT_KEY))
+	if (key_pressed(game,LEFT_KEY))
 	{
 		game->player.angle -= PL_ROT_KEY_SPEED;
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;

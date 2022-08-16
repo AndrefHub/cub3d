@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "cub3d::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cub3d-Debug-a693dfc00cbb5809001f.json",
+					"jsonFile" : "target-cub3d-Debug-037dd3b3a70c006ea8f2.json",
 					"name" : "cub3d",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/lsherry/42Course/cub3d/cmake-build-debug",
-		"source" : "/Users/lsherry/42Course/cub3d"
+		"build" : "/Users/landreas/42Course/cub3d/cmake-build-debug",
+		"source" : "/Users/landreas/42Course/cub3d"
 	},
 	"version" : 
 	{
