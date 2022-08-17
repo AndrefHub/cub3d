@@ -8,7 +8,7 @@ void	check_borders(t_game *game)
 
 	tile = game->grid[(int) game->player.pos.y / MAP_GRID_SIZE][(int) game->player.pos.x / MAP_GRID_SIZE];
 
-	if (tile != '0')
+	if (is_wall(tile))
 	{
 		if ((game->player.pos.x - (int ) game->player.pos.x) - (game->player.pos.y - (int ) game->player.pos.y) > 0)
 			game->player.pos.x -= game->player.delta.x;
@@ -76,13 +76,13 @@ void	player_controll(t_game *game)
 		if (game->map->map[(int)(game->player.pos.y - game->player.delta.x) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
 			game->player.pos.y -= game->player.delta.x;
 	}
-	if (key_pressed(game,LEFT_KEY))
+	if (key_pressed(game,RIGHT_KEY))
 	{
 		game->player.angle += PL_ROT_KEY_SPEED;
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
 		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
 	}
-	if (key_pressed(game,RIGHT_KEY))
+	if (key_pressed(game,LEFT_KEY))
 	{
 		game->player.angle -= PL_ROT_KEY_SPEED;
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;

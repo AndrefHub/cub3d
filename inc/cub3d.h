@@ -12,10 +12,6 @@
 # include "time.h"
 # include "../cute_sound/cute_sound.h"
 
-# define BAD_FILE -2
-# define BAD_COLOUR (1 << 24)
-# define BAD_COORD -1
-
 typedef struct s_vector
 {
 	int	x;
@@ -96,14 +92,18 @@ typedef struct game
 	struct			s_column
 	{
 		float		distance;
+		float		perp_dist;
 		t_fvector	pos;
+		int			side;
+		t_fvector	ray_dir;
 		t_vector	cell;
 		char		dir;
 		int			height;
-		//texture
+		uint32_t	texture_id;
+		float		texture_pos;
 		int			color;
 	}				*column;
-
+	t_img			textures[MAX_TEXTURES];
 }	t_game;
 
 int		check_file(int ac, char **av);
@@ -121,7 +121,7 @@ int		is_enclosed(t_map *args);
 int		get_map_width(char **map);
 int		ft_strrchr_int(char *line, int chr);
 t_map	*create_empty_map(void);
-
+int		is_wall(char c);
 int		ft_arraylen(void **arr);
 
 //controller.c
