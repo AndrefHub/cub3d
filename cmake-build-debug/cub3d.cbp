@@ -8,115 +8,124 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/lsherry/42Course/cub3d/cmake-build-debug"/>
+				<Option working_dir="/Users/landreas/42Course/cub3d/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/lsherry/42Course/cub3d/cmake-build-debug"/>
+				<Option working_dir="/Users/landreas/42Course/cub3d/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/lsherry/42Course/cub3d/cmake-build-debug"/>
+				<Option working_dir="/Users/landreas/42Course/cub3d/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="cub3d">
-				<Option output="/Users/lsherry/42Course/cub3d/cmake-build-debug/cub3d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lsherry/42Course/cub3d/cmake-build-debug"/>
+				<Option output="/Users/landreas/42Course/cub3d/cmake-build-debug/cub3d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/landreas/42Course/cub3d/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/opt/X11/include"/>
-					<Add directory="/usr/local/include/"/>
-					<Add directory="/usr/local/bin/../lib/gcc/10/gcc/x86_64-apple-darwin20/10.3.0/include"/>
-					<Add directory="/usr/local/bin/../lib/gcc/10/gcc/x86_64-apple-darwin20/10.3.0/include-fixed"/>
-					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 cub3d"/>
-					<CompileFile command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 cub3d"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="cub3d/fast">
-				<Option output="/Users/lsherry/42Course/cub3d/cmake-build-debug/cub3d" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/lsherry/42Course/cub3d/cmake-build-debug"/>
+				<Option output="/Users/landreas/42Course/cub3d/cmake-build-debug/cub3d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/landreas/42Course/cub3d/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/opt/X11/include"/>
-					<Add directory="/usr/local/include/"/>
-					<Add directory="/usr/local/bin/../lib/gcc/10/gcc/x86_64-apple-darwin20/10.3.0/include"/>
-					<Add directory="/usr/local/bin/../lib/gcc/10/gcc/x86_64-apple-darwin20/10.3.0/include-fixed"/>
-					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 cub3d/fast"/>
-					<CompileFile command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="make -j6 -f &quot;/Users/lsherry/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 cub3d/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/landreas/42Course/cub3d/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/border_checking.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/border_checking.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/check_file.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/border_checking_utils.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/controller.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/check_file.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/demo_utils.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/controller.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/draw_map.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/demo_utils.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/drawing.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/draw_map.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/ft_utils.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/drawing.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/hooks.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/ft_utils.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/input_manip.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/hooks.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/main.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/input_manip.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/parsing.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/main.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/start_game.c">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/parsing.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/CMakeLists.txt">
+		<Unit filename="/Users/landreas/42Course/cub3d/src/ray_casting.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/landreas/42Course/cub3d/src/start_game.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/landreas/42Course/cub3d/src/vector_utils.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/landreas/42Course/cub3d/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

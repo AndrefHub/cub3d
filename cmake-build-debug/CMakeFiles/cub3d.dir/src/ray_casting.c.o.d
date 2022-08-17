@@ -1,5 +1,5 @@
-CMakeFiles/cub3d.dir/src/border_checking.c.o: \
-  /Users/landreas/42Course/cub3d/src/border_checking.c \
+CMakeFiles/cub3d.dir/src/ray_casting.c.o: \
+  /Users/landreas/42Course/cub3d/src/ray_casting.c \
   /Users/landreas/42Course/cub3d/src/../inc/cub3d.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.1.6/include/stdbool.h \
   /Users/landreas/42Course/cub3d/src/../inc/../mlx/mlx.h \

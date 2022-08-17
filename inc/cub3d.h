@@ -11,10 +11,6 @@
 # include "X11/keysym.h"
 # include "time.h"
 
-# define BAD_FILE -2
-# define BAD_COLOUR (1 << 24)
-# define BAD_COORD -1
-
 typedef struct s_vector
 {
 	int	x;
@@ -50,7 +46,18 @@ typedef struct s_map
 	t_img		img;
 	t_vector	player_coords;
 	int			player_orient;
+	int			map_tile_size;
 } t_map;
+
+typedef struct ray
+{
+	t_fvector	unit;
+	t_fvector	dir;
+	t_vector	map_tile;
+	t_fvector	length;
+	t_fvector	end;
+	t_vector	step;
+}				t_ray;
 
 typedef struct game
 {
@@ -63,7 +70,6 @@ typedef struct game
 	char			**grid;
 	bool			show_map;
 	t_img			img;
-	int				fps;
 	struct			s_player
 	{
 		t_fvector	pos;
@@ -82,14 +88,18 @@ typedef struct game
 	struct			s_column
 	{
 		float		distance;
+		float		perp_dist;
 		t_fvector	pos;
+		int			side;
+		t_fvector	ray_dir;
 		t_vector	cell;
 		char		dir;
 		int			height;
-		//texture
+		uint32_t	texture_id;
+		float		texture_pos;
 		int			color;
 	}				*column;
-
+	t_img			textures[MAX_TEXTURES];
 }	t_game;
 
 int		check_file(int ac, char **av);
@@ -127,9 +137,9 @@ void	draw_player(t_game *game);
 void	draw_aim(t_game *game);
 void	img_clear_rgb(t_img *img, int color);
 void	cast_rays(t_game *game);
-float	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
-void	draw_3D(t_game *game);
+void	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
 bool	key_pressed(t_game *game, int key);
+void	draw_walls(t_game *game);
 
 //demo
 char	**charlist_to_matrix(t_list *list);
