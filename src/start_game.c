@@ -82,6 +82,23 @@ void	initialize_sprites(t_game *game)
 	import_texture(game, &game->textures[3], game->map->EA);
 }
 
+void	init_sound(t_game *game)
+{
+	game->sound.ctx = cs_make_context(0, 44100, 4096, 2, NULL);
+	cs_spawn_mix_thread(game->sound.ctx);
+	cs_thread_sleep_delay(game->sound.ctx, 5);
+
+	game->sound.song_file = cs_load_wav("assets/sus.wav");
+	game->sound.song_def = cs_make_def(&game->sound.song_file);
+	cs_play_sound(game->sound.ctx, game->sound.song_def);
+
+	game->sound.file = cs_load_wav("assets/bonk.wav");
+	game->sound.def = cs_make_def(&game->sound.file);
+	game->sound.def.volume_left = 1.;
+	game->sound.def.volume_right = 1.;
+	// cs_insert_sound(game->sound.ctx, &s0);
+}
+
 int	game(t_map *map)
 {
 	t_game	game;
@@ -90,6 +107,7 @@ int	game(t_map *map)
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
 		error_exit(&game, 0, NULL);
+	init_sound(&game);
 	initialize_game(&game);
 	initialize_sprites(&game);
 	start_mlx(&game);
