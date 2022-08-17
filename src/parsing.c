@@ -54,8 +54,7 @@ void	map_to_rectangle(t_map *map)
 	arr = map->map;
 	while (arr[++index])
 	{
-		resized_line = arr[index];
-		if (ft_strrchr_int(arr[index], '1') < map->map_size.x)
+		if (ft_strrchr_int(arr[index], '1') < map->map_size.x || arr[index][ft_strlen(arr[index]) - 1] != '1')
 		{
 			resized_line = malloc(sizeof(char) * (map->map_size.x + 1));
 			ft_memset(resized_line, ' ', sizeof(char) * map->map_size.x);
@@ -133,5 +132,4 @@ t_map	*parse_file(int ac, char **av)
 	}
 	ft_putendl_fd("amogus_gaming2", 1);
 	return (free_map(map));
-	// return (map);
 }
