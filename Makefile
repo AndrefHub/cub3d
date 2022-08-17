@@ -28,7 +28,7 @@ RM      = rm -rf
 LIBHDR  = libft/libft.h
 CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
 INCDIR  = inc/
-SNDLIB  = cute_sound/cute_sound.o
+SNDLIB  = cute_sound/cute_sound.o cute_sound/SDL2
 
 all: $(NAME)
 

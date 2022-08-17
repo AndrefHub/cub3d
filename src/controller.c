@@ -36,6 +36,8 @@ void	check_restrictions(t_game *game)
 
 void	player_controll(t_game *game)
 {
+	int collision = 0;
+
 	if (game->key.mouse == true)
 	{
 		mlx_mouse_get_pos(game->mlx.window, &game->key.mpos.x,&game->key.mpos.y);
@@ -49,32 +51,46 @@ void	player_controll(t_game *game)
 	if (key_pressed(game,W_KEY))
 	{
 		if (game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE][(int)(game->player.pos.x + game->player.delta.x) / MAP_GRID_SIZE] != '1')
-		{
 			game->player.pos.x += game->player.delta.x;
-		}
+		else
+			++collision;
 		if (game->map->map[(int)(game->player.pos.y + game->player.delta.y) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
 			game->player.pos.y += game->player.delta.y;
+		else
+			++collision;
 	}
 	if (key_pressed(game,S_KEY))
 	{
 		if (game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE][(int)(game->player.pos.x - game->player.delta.x) / MAP_GRID_SIZE] != '1')
 			game->player.pos.x -= game->player.delta.x;
+		else
+			++collision;
 		if (game->map->map[(int)(game->player.pos.y - game->player.delta.y) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
 			game->player.pos.y -= game->player.delta.y;
+		else
+			++collision;
 	}
 	if (key_pressed(game,D_KEY))
 	{
 		if (game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE][(int)(game->player.pos.x - game->player.delta.y) / MAP_GRID_SIZE] != '1')
 			game->player.pos.x -= game->player.delta.y;
+		else
+			++collision;
 		if (game->map->map[(int)(game->player.pos.y + game->player.delta.x) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
 			game->player.pos.y += game->player.delta.x;
+		else
+			++collision;
 	}
 	if (key_pressed(game,A_KEY))
 	{
 		if (game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE][(int)(game->player.pos.x + game->player.delta.y) / MAP_GRID_SIZE] != '1')
 			game->player.pos.x += game->player.delta.y;
+		else
+			++collision;
 		if (game->map->map[(int)(game->player.pos.y - game->player.delta.x) / MAP_GRID_SIZE][(int)game->player.pos.x / MAP_GRID_SIZE] != '1')
 			game->player.pos.y -= game->player.delta.x;
+		else
+			++collision;
 	}
 	if (key_pressed(game,RIGHT_KEY))
 	{
@@ -88,6 +104,8 @@ void	player_controll(t_game *game)
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
 		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
 	}
+	if (collision)
+		cs_play_sound(game->sound.ctx, game->sound.def);
 	check_restrictions(game);
 }
 

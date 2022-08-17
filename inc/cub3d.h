@@ -48,9 +48,6 @@ typedef struct s_map
 	t_vector	player_coords;
 	int			player_orient;
 	int			map_tile_size;
-
-
-	
 } t_map;
 
 typedef struct ray
@@ -104,6 +101,19 @@ typedef struct game
 		int			color;
 	}				*column;
 	t_img			textures[MAX_TEXTURES];
+
+	struct			s_sound
+	{
+		cs_context_t		*ctx;
+
+		cs_loaded_sound_t	file;
+		cs_play_sound_def_t	def;
+
+		cs_loaded_sound_t	song_file;
+		cs_play_sound_def_t	song_def;
+
+
+	}				sound;
 }	t_game;
 
 int		check_file(int ac, char **av);
