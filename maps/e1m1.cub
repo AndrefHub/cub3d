@@ -1,17 +1,77 @@
-NO ./assets/wall1.xpm
+NO0./assets/sus64xpm/sus32-0.xpm
+NO1./assets/sus64xpm/sus32-1.xpm
+NO2./assets/sus64xpm/sus32-2.xpm
+NO3./assets/sus64xpm/sus32-3.xpm
+NO4./assets/sus64xpm/sus32-4.xpm
+NO5./assets/sus64xpm/sus32-5.xpm
 
-SO ./assets/wall2.xpm
+SO000 ./assets/kill_yourself/kill-yourself-00.xpm
+SO001 ./assets/kill_yourself/kill-yourself-01.xpm
+SO002 ./assets/kill_yourself/kill-yourself-02.xpm
+SO003 ./assets/kill_yourself/kill-yourself-03.xpm
+SO004 ./assets/kill_yourself/kill-yourself-04.xpm
+SO005 ./assets/kill_yourself/kill-yourself-05.xpm
+SO006 ./assets/kill_yourself/kill-yourself-06.xpm
+SO007 ./assets/kill_yourself/kill-yourself-07.xpm
+SO008 ./assets/kill_yourself/kill-yourself-08.xpm
+SO009 ./assets/kill_yourself/kill-yourself-09.xpm
+SO010 ./assets/kill_yourself/kill-yourself-10.xpm
+SO011 ./assets/kill_yourself/kill-yourself-11.xpm
+SO012 ./assets/kill_yourself/kill-yourself-12.xpm
+SO013 ./assets/kill_yourself/kill-yourself-13.xpm
+SO014 ./assets/kill_yourself/kill-yourself-14.xpm
+SO015 ./assets/kill_yourself/kill-yourself-15.xpm
+SO016 ./assets/kill_yourself/kill-yourself-16.xpm
+SO017 ./assets/kill_yourself/kill-yourself-17.xpm
+SO018 ./assets/kill_yourself/kill-yourself-18.xpm
+SO019 ./assets/kill_yourself/kill-yourself-19.xpm
+SO020 ./assets/kill_yourself/kill-yourself-20.xpm
+SO021 ./assets/kill_yourself/kill-yourself-21.xpm
+SO022 ./assets/kill_yourself/kill-yourself-22.xpm
+SO023 ./assets/kill_yourself/kill-yourself-23.xpm
+SO024 ./assets/kill_yourself/kill-yourself-24.xpm
+SO025 ./assets/kill_yourself/kill-yourself-25.xpm
+SO026 ./assets/kill_yourself/kill-yourself-26.xpm
+SO027 ./assets/kill_yourself/kill-yourself-27.xpm
+SO028 ./assets/kill_yourself/kill-yourself-28.xpm
+SO029 ./assets/kill_yourself/kill-yourself-29.xpm
+SO030 ./assets/kill_yourself/kill-yourself-30.xpm
+SO031 ./assets/kill_yourself/kill-yourself-31.xpm
+SO032 ./assets/kill_yourself/kill-yourself-32.xpm
+SO033 ./assets/kill_yourself/kill-yourself-33.xpm
+SO034 ./assets/kill_yourself/kill-yourself-34.xpm
+SO035 ./assets/kill_yourself/kill-yourself-35.xpm
+SO036 ./assets/kill_yourself/kill-yourself-36.xpm
+SO037 ./assets/kill_yourself/kill-yourself-37.xpm
+SO038 ./assets/kill_yourself/kill-yourself-38.xpm
+SO039 ./assets/kill_yourself/kill-yourself-39.xpm
+SO040 ./assets/kill_yourself/kill-yourself-40.xpm
+SO041 ./assets/kill_yourself/kill-yourself-41.xpm
+SO042 ./assets/kill_yourself/kill-yourself-42.xpm
+SO043 ./assets/kill_yourself/kill-yourself-43.xpm
+SO044 ./assets/kill_yourself/kill-yourself-44.xpm
+SO045 ./assets/kill_yourself/kill-yourself-45.xpm
+SO046 ./assets/kill_yourself/kill-yourself-46.xpm
 
-WE ./assets/wall3.xpm
+WE0 ./assets/sus64xpm/sus32-0.xpm
+WE1 ./assets/sus64xpm/sus32-1.xpm
+WE2 ./assets/sus64xpm/sus32-2.xpm
+WE3 ./assets/sus64xpm/sus32-3.xpm
+WE4 ./assets/sus64xpm/sus32-4.xpm
+WE5 ./assets/sus64xpm/sus32-5.xpm
 
-EA ./assets/wall4.xpm
+EA0 ./assets/sus64xpm/sus32-0.xpm
+EA1 ./assets/sus64xpm/sus32-1.xpm
+EA2 ./assets/sus64xpm/sus32-2.xpm
+EA3 ./assets/sus64xpm/sus32-3.xpm
+EA4 ./assets/sus64xpm/sus32-4.xpm
+EA5 ./assets/sus64xpm/sus32-5.xpm
 
+F 110,110,10
 
-F 110110010
+C 111,110,10
 
-C 11111010
-
-
+                              1
                             111111111111111
      111111                 110000001000011
      100001      111111111111000001000000011111
@@ -48,9 +108,9 @@ C 11111010
 1000111110001                    10101         1001
 1000110110001                    10001         1001 111111111
 1000001010101                    10001         100010000000001
-1000100010001                    10001         100000000000001
+1000100010001                    10001         1000D0000000001
 1010111110001                    10101         10001000N000001
-1000111110001111111111111        10001         100000000000011
+1000111110001111111111111        10001         1000D0000000011
 100000000000000001000000111      10001         111110000000101
 100000100000001001000000101      10001              111111111
 100000000000000001000000111      10101

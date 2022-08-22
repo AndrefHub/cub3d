@@ -15,6 +15,7 @@
 # define PL_ROT_KEY_SPEED 0.05f
 # define PL_ROT_MOUSE_SPEED 0.002f
 # define PL_SPEED 2.0f
+# define PL_RADIUS 10.0f
 # define PL_MAP_COLOR 0xFF0000
 # define RAYS_COLOR 0xFFFF00
 # define ABS_WALL_SIZE 840.0f
@@ -22,7 +23,7 @@
 # define AIM_COLOR 0xFF0000
 # define MAX_TEXTURES 4
 
-
+# ifdef __APPLE__
 enum e_keys
 {
 	W_KEY = 13,
@@ -36,7 +37,24 @@ enum e_keys
 	RIGHT_KEY = 124,
 	M_KEY = 46,
 };
-
+# else
+#  ifdef __linux__
+enum e_keys
+{
+	W_KEY = 119,
+	A_KEY = 97,
+	S_KEY = 115,
+	D_KEY = 100,
+	ESC_KEY = 113,
+	UP_KEY = 83,
+	LEFT_KEY = 91,
+	DOWN_KEY = 81,
+	RIGHT_KEY = 93,
+	M_KEY = 109,
+	E_KEY = 101,
+};
+#  endif
+# endif
 
 
 #endif

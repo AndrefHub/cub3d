@@ -94,13 +94,18 @@ float	interception_distance(t_game *game, t_ray *ray)
 		}
 		if (ray->map_tile.y >= 0 && ray->map_tile.x >= 0 &&
 			ray->map_tile.y / MAP_GRID_SIZE < game->map->map_size.y &&
-			ray->map_tile.x / MAP_GRID_SIZE < game->map->map_size.x) {
-			if (game->grid[ray->map_tile.y / MAP_GRID_SIZE][ray->map_tile.x /
-														   MAP_GRID_SIZE] ==
-				'1')
+			ray->map_tile.x / MAP_GRID_SIZE < game->map->map_size.x)
+		{
+			if (is_wall(game->grid[ray->map_tile.y / MAP_GRID_SIZE]
+											[ray->map_tile.x / MAP_GRID_SIZE]))
 				break;
 		}
 	}
+	// if (game->grid[ray->map_tile.y / MAP_GRID_SIZE]
+	// 	[ray->map_tile.x / MAP_GRID_SIZE] == 'D')
+	// {
+	// 	distance += .5 * MAP_GRID_SIZE;
+	// }
 	return (distance);
 }
 

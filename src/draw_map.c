@@ -45,7 +45,8 @@ void	draw_map(t_game *game)
 	int	x;
 	int	y;
 
-	img_clear_rgb(&game->map->img, 0xFF000000);
+	img_clear_rgb(&game->map->img, 0xAA000000);
+	// img_clear_rgb(&game->map->img, 0xFF000000);
 	y = 0;
 	while (game->grid[y])
 	{
@@ -56,7 +57,7 @@ void	draw_map(t_game *game)
 				draw_square_fill(&game->map->img,
 								 (t_vector) {x * game->map->map_tile_size, y * game->map->map_tile_size},
 								 game->map->map_tile_size, 0xAAFFFFFF);
-			else if (game->grid[y][x] == '1')
+			else if (is_wall(game->grid[y][x]))
 				draw_square_fill(&game->map->img,
 								 (t_vector) {x * game->map->map_tile_size, y * game->map->map_tile_size},
 								 game->map->map_tile_size, 0xAA000000);

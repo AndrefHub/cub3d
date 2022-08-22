@@ -1,6 +1,6 @@
 NAME		:= libft.a
 CC			:= gcc
-CFLAGS		:= -Wall -Wextra -Werror -c
+CFLAGS		:= -Wall -Wextra -Werror -c -g
 SRCS		:= 	ft_isalnum.c\
 				ft_isalpha.c\
 				ft_isascii.c\

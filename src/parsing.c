@@ -2,12 +2,46 @@
 
 void	get_textures(t_map *map, int fd)
 {
-	map->NO = crop_prefix(get_texture(fd), "NO");
-	map->SO = crop_prefix(get_texture(fd), "SO");
-	map->WE = crop_prefix(get_texture(fd), "WE");
-	map->EA = crop_prefix(get_texture(fd), "EA");
+	map->texture_list[0] = get_textures_list(fd, "NO");
+	map->texture_list[1] = get_textures_list(fd, "SO");
+	map->texture_list[2] = get_textures_list(fd, "WE");
+	map->texture_list[3] = get_textures_list(fd, "EA");
+	// map->NO = crop_prefix(get_texture(fd), "NO");
+	// map->SO = crop_prefix(get_texture(fd), "SO");
+	// map->WE = crop_prefix(get_texture(fd), "WE");
+	// map->EA = crop_prefix(get_texture(fd), "EA");
 	map->F = convert_rgb(crop_prefix(get_texture(fd), "F"));
 	map->C = convert_rgb(crop_prefix(get_texture(fd), "C"));
+}
+
+int	is_prefix_number(char *line, char *prefix, int counter)
+{
+	return (line && !ft_strncmp(line, prefix, ft_strlen(prefix))
+		&& ft_atoi(line + ft_strlen(prefix)) == counter
+				);
+}
+
+t_list	*get_textures_list(int fd, char *prefix)
+{
+	t_list		*lst;
+	static char	*line = NULL;
+	int			counter;
+
+	lst = NULL;
+	counter = 0;
+	if (is_prefix_number(line, prefix, counter))
+	{
+		ft_lstadd_back(&lst, ft_lstnew(crop_prefix(line, prefix)));
+		++counter;
+	}
+	line = get_texture(fd);
+	while (is_prefix_number(line, prefix, counter))
+	{
+		ft_lstadd_back(&lst, ft_lstnew(crop_prefix(line, prefix)));
+		++counter;
+		line = get_texture(fd);
+	}
+	return (lst);
 }
 
 char	**lst_to_char_ptr(t_list *tmp)
