@@ -1,6 +1,6 @@
 NAME    = cute_sound.o
 CC      = gcc
-FLAGS	= -Ofast -march=native SDL2 
+FLAGS	= -Ofast -march=native  
 MAIN	= cute_sound.c
 RM      = rm -rf
 HEADER  = cute_sound.h

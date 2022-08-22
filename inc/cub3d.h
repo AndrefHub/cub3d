@@ -38,10 +38,13 @@ typedef struct s_map
 {
 	char		**map;
 	t_vector	map_size;
-	char		*NO;
-	char		*SO;
-	char		*WE;
-	char		*EA;
+	t_list		*texture_list[MAX_TEXTURES];
+	t_list		*img_list[MAX_TEXTURES];
+	unsigned	list_size;
+	// char		*NO;
+	// char		*SO;
+	// char		*WE;
+	// char		*EA;
 	int			F;
 	int			C;
 	t_img		img;
@@ -118,6 +121,7 @@ typedef struct game
 
 int		check_file(int ac, char **av);
 char	*crop_prefix(char* line, char *prefix);
+int		is_space(char c);
 int		ft_is_empty(char *line);
 char	*skip_empty_lines(int fd);
 char	*get_texture(int fd);
@@ -133,7 +137,8 @@ int		ft_strrchr_int(char *line, int chr);
 t_map	*create_empty_map(void);
 int		is_wall(char c);
 int		ft_arraylen(void **arr);
-
+t_list	*get_textures_list(int fd, char *prefix);
+// char	*get_textures_list(int fd, char *prefix, t_list **lst);
 //controller.c
 int		close_hook(t_game *game);
 int		key_hook_press(int key, t_game *game);

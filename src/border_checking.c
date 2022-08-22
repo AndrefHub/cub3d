@@ -54,7 +54,7 @@ int	find_player(t_map *map, char *line, t_list *lst)
 
 int	is_wall(char c)
 {
-	return (c == '1');
+	return (c == '1' || c == 'D');
 }
 
 int check_enclosure(t_map *map, t_vector vec)

@@ -7,7 +7,8 @@ void	error_exit(t_game *game, int return_value, char *message)
 		ft_putendl_fd(message, 2);
 	}
 	//free(all)
-	(void ) game;
+	// (void ) game;
+	mlx_do_key_autorepeaton(game->mlx.id);
 	exit(return_value);
 }
 
@@ -42,7 +43,7 @@ void	initialize_game(t_game *game)
 	game->map->map_tile_size = ft_min(game->map->img.size.x / game->map->map_size.x, game->map->img.size.y / game->map->map_size.y);
 
 	game->player.pos = (t_fvector) {(float )game->map->player_coords.x * MAP_GRID_SIZE + MAP_GRID_SIZE / 2, (float )(game->map->player_coords.y - 1) * MAP_GRID_SIZE + MAP_GRID_SIZE / 2};
-	game->player.angle = 0;
+	game->player.angle = ((game->map->player_orient / 90) * PI) / 2;
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
 
@@ -76,10 +77,31 @@ void	import_texture(t_game *game, t_img *img, char *filename)
 
 void	initialize_sprites(t_game *game)
 {
-	import_texture(game, &game->textures[0], game->map->NO);
-	import_texture(game, &game->textures[1], game->map->SO);
-	import_texture(game, &game->textures[2], game->map->WE);
-	import_texture(game, &game->textures[3], game->map->EA);
+	t_list	*img_list;
+	t_list	*texture_list;
+	t_img	*img;
+	int		counter;
+
+	counter = -1;
+	while (++counter < 4)
+	{
+		texture_list = game->map->texture_list[counter];
+		img_list = NULL;
+		while (texture_list)
+		{
+			img = malloc(sizeof(*img));
+			import_texture(game, img, texture_list->content);
+			ft_lstadd_back(&img_list, ft_lstnew(img));
+			texture_list = texture_list->next;
+		}
+		ft_lstlast(img_list)->next = img_list;
+		game->map->img_list[counter] = img_list;
+		game->textures[counter] = *(t_img *)game->map->img_list[counter]->content;
+	}
+	// import_texture(game, &game->textures[0], game->map->NO);
+	// import_texture(game, &game->textures[1], game->map->SO);
+	// import_texture(game, &game->textures[2], game->map->WE);
+	// import_texture(game, &game->textures[3], game->map->EA);
 }
 
 void	init_sound(t_game *game)

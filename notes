@@ -1,0 +1,7 @@
+#0  0x00007ffff7cb9846 in XQueryPointer () from /usr/lib/libX11.so.6
+#1  0x0000555555563be7 in mlx_mouse_get_pos ()
+#2  0x000055555555be54 in player_controll (game=0x7fffffffdf30) at src/controller.c:43
+#3  0x000055555555c536 in game_loop (game=0x7fffffffdf30) at src/controller.c:117
+#4  0x0000555555561bf5 in mlx_loop ()
+#5  0x000055555555e439 in game (map=0x55555556d330) at src/start_game.c:114
+#6  0x00005555555608ee in main (ac=2, av=0x7fffffffe438) at src/main.c:15

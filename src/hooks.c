@@ -7,6 +7,7 @@ bool	key_pressed(t_game *game, int key)
 
 int	close_hook(t_game *game)
 {
+	mlx_do_key_autorepeaton(game->mlx.id);
 	mlx_clear_window(game->mlx.id, game->mlx.window);
 	mlx_destroy_window(game->mlx.id, game->mlx.window);
 	exit(0);
@@ -25,6 +26,8 @@ int	key_hook_press(int key, t_game *game)
 		return (0);
 	}
 	game->key.k[key] = true;
+	ft_putnbr_fd(key, 1);
+	ft_putendl_fd("", 1);
 	return (0);
 }
 

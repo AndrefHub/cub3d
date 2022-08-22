@@ -11,6 +11,8 @@ char	*crop_prefix(char* line, char *prefix)
 		return (NULL);
 	}
 	begin = line + ft_strlen(prefix);
+	while ((ft_isdigit(*begin)))
+		++begin;
 	while (*begin == ' ' || *begin == '\t')
 		++begin;
 	// if (*begin == '.' && *(begin + 1) == '/')
@@ -29,7 +31,7 @@ char	*skip_empty_lines(int fd)
 		free(line);
 		line = get_next_line(fd);
 	}
-	if (line)
+	if (line && line[ft_strlen(line) - 1] == '\n')
 		line[ft_strlen(line) - 1] = 0;
 	return (line);
 }
