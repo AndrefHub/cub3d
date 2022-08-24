@@ -1,5 +1,57 @@
 #include "../inc/cub3d.h"
-#include "../cute_sound/cute_sound.h"
+
+#ifdef __APPLE__
+
+static inline void	mouse_get_pos(void *mlx_ptr, void *win_ptr, int *x, int *y)
+{
+	(void)mlx_ptr;
+	mlx_mouse_get_pos(win_ptr, x, y);
+}
+
+static inline void	mouse_move(void *mlx_ptr, void *win_ptr, int x, int y)
+{
+	(void)mlx_ptr;
+	mlx_mouse_move(win_ptr, x, y);
+}
+
+static inline void	mouse_show(void *mlx_ptr, void *win_ptr)
+{
+	(void)mlx_ptr;
+	(void)win_ptr;
+	mlx_mouse_show();
+}
+
+static inline void	mouse_hide(void *mlx_ptr, void *win_ptr)
+{
+	(void)mlx_ptr;
+	(void)win_ptr;
+	mlx_mouse_hide();
+}
+
+#else
+
+static inline void	mouse_get_pos(void *mlx_ptr, void *win_ptr, int *x, int *y)
+{
+	mlx_mouse_get_pos(mlx_ptr, win_ptr, x, y);
+}
+
+static inline void	mouse_move(void *mlx_ptr, void *win_ptr, int x, int y)
+{
+	mlx_mouse_move(mlx_ptr, win_ptr, x, y);
+}
+
+static inline void	mouse_show(void *mlx_ptr, void *win_ptr)
+{
+	mlx_mouse_show(mlx_ptr, win_ptr);
+}
+
+static inline void	mouse_hide(void *mlx_ptr, void *win_ptr)
+{
+	mlx_mouse_hide(mlx_ptr, win_ptr);
+}
+
+#endif
+
 void	check_borders(t_game *game)
 {
 	char	tile;
@@ -37,18 +89,32 @@ int	float_sign(float f)
 	return (1 - (f == 0.) - 2 * (f < 0.));
 }
 
+void	update_last_collision(t_game *game)
+{
+	game->map->last_collision.x = game->player.pos.x;
+	game->map->last_collision.y = game->player.pos.y;
+}
+
 void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collision)
 {
 	if (!is_wall(game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE]
 		[(int)(game->player.pos.x + x_delta + float_sign(x_delta) * PL_RADIUS) / MAP_GRID_SIZE]))
 		game->player.pos.x += x_delta;
 	else
-		++(*collision);
+	{
+		if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
+			++(*collision);
+		update_last_collision(game);
+	}
 	if (!is_wall(game->map->map[(int)(game->player.pos.y + y_delta + float_sign(y_delta) * PL_RADIUS) / MAP_GRID_SIZE]
 		[(int)game->player.pos.x / MAP_GRID_SIZE]))
 		game->player.pos.y += y_delta;
 	else
-		++(*collision);
+	{
+		if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
+			++(*collision);
+		update_last_collision(game);
+	}
 }
 
 void	open_door(t_game *game)
@@ -56,35 +122,41 @@ void	open_door(t_game *game)
 	const int	x = (int)game->player.pos.x / MAP_GRID_SIZE;
 	const int	y = (int)game->player.pos.y / MAP_GRID_SIZE;
 	const float	angle = game->player.angle;
+	char		*to_change;
 	
-	if (PI / 4 <= angle && angle <= 3 * PI / 4 && game->grid[y - 1][x] == 'D')
-	// if (game->grid[y - 1][x] == 'D')
-		game->grid[y - 1][x] = 'd';
-	else if (3 * PI / 4 <= angle && angle <= 5 * PI / 4 && game->grid[y][x - 1] == 'D')
-	// else if (game->grid[y][x - 1] == 'D')
-		game->grid[y][x - 1] = 'd';
-	else if (5 * PI / 4 <= angle && angle <= 7 * PI / 4 && game->grid[y + 1][x] == 'D')
-	// else if (game->grid[y + 1][x] == 'D')
-		game->grid[y + 1][x] = 'd';
-	else if ((7 * PI / 4 <= angle || angle <= PI / 4) && game->grid[y][x + 1] == 'D')
-	// else if (game->grid[y][x + 1] == 'D')
-		game->grid[y][x + 1] = 'd';
+	to_change = NULL;
+	if (PI / 4 <= angle && angle <= 3 * PI / 4 && ft_tolower(game->grid
+		[y - 1][x]) == 'd')
+		to_change = game->grid[y - 1] + x;
+	else if (3 * PI / 4 <= angle && angle <= 5 * PI / 4 && ft_tolower(game->grid
+		[y][x - 1]) == 'd')
+		to_change = game->grid[y] + x - 1;
+	else if (5 * PI / 4 <= angle && angle <= 7 * PI / 4 && ft_tolower(game->grid
+		[y + 1][x]) == 'd')
+		to_change = game->grid[y + 1] + x;
+	else if ((7 * PI / 4 <= angle || angle <= PI / 4) && ft_tolower(game->grid
+		[y][x + 1]) == 'd')
+		to_change = game->grid[y] + x + 1;
+	if (to_change && *to_change == 'd')
+		*to_change = 'D';
+	else if (to_change && *to_change == 'D')
+		*to_change = 'd';
 }
 
 void	player_controll(t_game *game)
 {
 	int collision = 0;
 
-	// if (game->key.mouse == true)
-	// {
-	// 	mlx_mouse_get_pos(game->mlx.window, &game->key.mpos.x,&game->key.mpos.y);
-	// 	game->key.mdir.x = game->key.mpos.x - game->img.size.x / 2;
-	// 	game->key.mdir.y = game->key.mpos.y - game->img.size.y / 2;
-	// 	mlx_mouse_move(game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
-	// 	game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED;
-	// 	game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
-	// 	game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
-	// }
+	if (game->key.mouse == true)
+	{
+		mouse_get_pos(game->mlx.id, game->mlx.window, &game->key.mpos.x,&game->key.mpos.y);
+		game->key.mdir.x = game->key.mpos.x - game->img.size.x / 2;
+		game->key.mdir.y = game->key.mpos.y - game->img.size.y / 2;
+		mouse_move(game->mlx.id, game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
+		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2;
+		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
+		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
+	}
 	if (key_pressed(game,W_KEY))
 		move_radius_check(game, game->player.delta.x, game->player.delta.y, &collision);
 	if (key_pressed(game,S_KEY))
@@ -108,7 +180,10 @@ void	player_controll(t_game *game)
 		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
 	}
 	if (collision)
+	{
 		cs_play_sound(game->sound.ctx, game->sound.def);
+		update_last_collision(game);
+	}
 	check_restrictions(game);
 }
 

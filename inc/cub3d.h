@@ -2,7 +2,6 @@
 # define CUB3D_H
 
 # include <stdbool.h>
-# include "../mlx/mlx.h"
 # include "../libft/libft.h"
 # include "stdio.h"
 # include "constants.h"
@@ -11,7 +10,11 @@
 # include "X11/keysym.h"
 # include "time.h"
 # include "../cute_sound/cute_sound.h"
-
+# ifdef __APPLE__
+#  include "../mlx/mlx.h"
+# else
+#  include "../mlx_linux/mlx.h"
+# endif
 typedef struct s_vector
 {
 	int	x;
@@ -51,6 +54,7 @@ typedef struct s_map
 	t_vector	player_coords;
 	int			player_orient;
 	int			map_tile_size;
+	t_fvector	last_collision;
 } t_map;
 
 typedef struct ray

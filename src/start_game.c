@@ -106,7 +106,7 @@ void	initialize_sprites(t_game *game)
 
 void	init_sound(t_game *game)
 {
-	game->sound.ctx = cs_make_context(0, 44100, 4096, 2, NULL);
+	game->sound.ctx = cs_make_context(0, 44100, 4096, 4, NULL);
 	cs_spawn_mix_thread(game->sound.ctx);
 	cs_thread_sleep_delay(game->sound.ctx, 5);
 
