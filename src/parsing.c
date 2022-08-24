@@ -17,8 +17,7 @@ void	get_textures(t_map *map, int fd)
 int	is_prefix_number(char *line, char *prefix, int counter)
 {
 	return (line && !ft_strncmp(line, prefix, ft_strlen(prefix))
-		&& ft_atoi(line + ft_strlen(prefix)) == counter
-				);
+		&& ft_atoi(line + ft_strlen(prefix)) == counter);
 }
 
 t_list	*get_textures_list(int fd, char *prefix)

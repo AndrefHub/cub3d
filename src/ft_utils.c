@@ -18,6 +18,8 @@ t_map	*create_empty_map()
 	map->F = 0;
 	map->player_coords.x = BAD_COORD;
 	map->player_coords.y = BAD_COORD;
+	map->last_collision.x = BAD_COORD;
+	map->last_collision.y = BAD_COORD;
 	return (map);
 }
 
