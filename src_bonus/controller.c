@@ -1,4 +1,4 @@
-#include "../inc/cub3d.h"
+#include "../inc/cub3d_bonus.h"
 
 #ifdef __APPLE__
 
@@ -187,23 +187,23 @@ void	player_controll(t_game *game)
 	check_restrictions(game);
 }
 
-// void	change_textures(t_game *game)
-// {
-// 	static char	counter = 0;
-// 	int			index;
+void	change_textures(t_game *game)
+{
+	static char	counter = 0;
+	int			index;
 
-// 	++counter;
-// 	if (counter == 5)
-// 	{
-// 		counter = 0;
-// 		index = -1;
-// 		while (++index < MAX_TEXTURES)
-// 		{
-// 			game->map->img_list[index] = game->map->img_list[index]->next;
-// 			game->textures[index] = *(t_img *)game->map->img_list[index]->content;	
-// 		}
-// 	}
-// }
+	++counter;
+	if (counter == 5)
+	{
+		counter = 0;
+		index = -1;
+		while (++index < MAX_TEXTURES)
+		{
+			game->map->img_list[index] = game->map->img_list[index]->next;
+			game->textures[index] = *(t_img *)game->map->img_list[index]->content;	
+		}
+	}
+}
 
 int	game_loop(t_game *game)
 {
@@ -216,7 +216,7 @@ int	game_loop(t_game *game)
 	cast_rays(game);
 	draw_walls(game);
 	draw_aim(game);
-	// change_textures(game);
+	change_textures(game);
 
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img, 0, 0);
 	if (game->show_map)

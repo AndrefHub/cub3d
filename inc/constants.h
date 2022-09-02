@@ -3,6 +3,7 @@
 
 
 # define BAD_FILE -2
+# define FRAMERATE 30
 # define BAD_COLOUR (1 << 24)
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"
@@ -22,6 +23,9 @@
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
 # define MAX_TEXTURES 4
+# define MAX_WALL_CHARS 9
+
+# define WALL_CHARS "123456789"
 
 # ifdef __APPLE__
 enum e_keys
