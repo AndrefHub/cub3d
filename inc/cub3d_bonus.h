@@ -1,5 +1,5 @@
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include <stdbool.h>
 # include "../libft/libft.h"
@@ -41,13 +41,9 @@ typedef struct s_map
 {
 	char		**map;
 	t_vector	map_size;
-	// t_list		*texture_list[MAX_TEXTURES];
-	// t_list		*img_list[MAX_TEXTURES];
+	t_list		*texture_list[MAX_WALL_CHARS];
+	t_list		*img_list[MAX_WALL_CHARS];
 	unsigned	list_size;
-	char		*NO;
-	char		*SO;
-	char		*WE;
-	char		*EA;
 	int			F;
 	int			C;
 	t_img		img;
@@ -107,7 +103,7 @@ typedef struct game
 		float		texture_pos;
 		int			color;
 	}				*column;
-	t_img			textures[MAX_TEXTURES];
+	t_img			textures[MAX_WALL_CHARS];
 
 	struct			s_sound
 	{
@@ -124,7 +120,7 @@ typedef struct game
 }	t_game;
 
 int		check_file(int ac, char **av);
-char	*crop_prefix(char* line, char *prefix);
+char	*crop_prefix(char* line, char prefix);
 int		is_space(char c);
 int		ft_is_empty(char *line);
 char	*skip_empty_lines(int fd);
@@ -141,6 +137,7 @@ int		ft_strrchr_int(char *line, int chr);
 t_map	*create_empty_map(void);
 int		is_wall(char c);
 int		ft_arraylen(void **arr);
+void	get_textures_in_lists(t_map *map, int fd, char **line);
 t_list	*get_textures_list(int fd, char *prefix, char **line_ret);
 // char	*get_textures_list(int fd, char *prefix, t_list **lst);
 //controller.c

@@ -1,10 +1,9 @@
-NO ./assets/sus64xpm/sus32-0.xpm
-
-
-
-SO ./assets/sus64xpm/sus32-0.xpm
-WE ./assets/sus64xpm/sus32-0.xpm
-EA ./assets/sus64xpm/sus32-0.xpm
+10 ./assets/sus64xpm/sus32-0.xpm
+11 ./assets/sus64xpm/sus32-1.xpm
+12 ./assets/sus64xpm/sus32-2.xpm
+13 ./assets/sus64xpm/sus32-3.xpm
+14 ./assets/sus64xpm/sus32-4.xpm
+15 ./assets/sus64xpm/sus32-5.xpm
 
 F 110,110,10
 
