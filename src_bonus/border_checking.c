@@ -1,4 +1,4 @@
-#include "../inc/cub3d.h"
+#include "../inc/cub3d_bonus.h"
 
 int	get_map_width(char **map)
 {
@@ -54,7 +54,7 @@ int	find_player(t_map *map, char *line, t_list *lst)
 
 int	is_wall(char c)
 {
-	return (c == '1' || c == 'D');
+	return (ft_strrchr_int(WALL_CHARS, c) != -1);
 }
 
 int check_enclosure(t_map *map, t_vector vec)
