@@ -28,6 +28,12 @@ t_list	*get_textures_list(int fd, char *prefix)
 
 	lst = NULL;
 	counter = 0;
+	if (line && !ft_strncmp(line, prefix, ft_strlen(prefix)) && is_space(line[ft_strlen(prefix) + 1]))
+	{
+		ft_lstadd_back(&lst, ft_lstnew(crop_prefix(line, prefix)));
+		line = NULL;
+		return (lst);
+	}
 	if (is_prefix_number(line, prefix, counter))
 	{
 		ft_lstadd_back(&lst, ft_lstnew(crop_prefix(line, prefix)));

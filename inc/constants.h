@@ -9,7 +9,7 @@
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT 1026
 # define MAP_GRID_SIZE 32
-# define TEXTURE_SIZE 32
+# define TEXTURE_SIZE 64
 # define MAX_RENDER_DISTANCE 5000
 # define PI (float) M_PI
 # define PL_ROT_KEY_SPEED 0.05f
