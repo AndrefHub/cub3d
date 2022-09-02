@@ -62,13 +62,17 @@ clean:
 	@$(RM) $(OBJDIR)
 	@echo '\033[1;31m'$(NAME) "objs deleted."'\033[0m'
 
-fclean: clean
+clean_proj_files: clean
+	@$(RM) $(NAME)
+
+fclean: clean_proj_files
 	@make -C libft fclean
 	@make -C $(MLX) clean
 	@make -C cute_sound fclean
-	@$(RM) $(NAME)
 	@echo '\033[1;31m'$(NAME) "deleted."'\033[0m'
 
-re: fclean all
+re: clean all
+
+full_rebuild: fclean all
 
 .PHONY: all clean fclean re bonus
