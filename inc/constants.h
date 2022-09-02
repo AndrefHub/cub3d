@@ -9,7 +9,7 @@
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT 1026
 # define MAP_GRID_SIZE 32
-# define TEXTURE_SIZE 64
+# define TEXTURE_SIZE 32
 # define MAX_RENDER_DISTANCE 5000
 # define PI (float) M_PI
 # define PL_ROT_KEY_SPEED 0.05f
@@ -36,6 +36,7 @@ enum e_keys
 	DOWN_KEY = 125,
 	RIGHT_KEY = 124,
 	M_KEY = 46,
+	E_KEY = 14,
 };
 # else
 #  ifdef __linux__
