@@ -181,7 +181,7 @@ void	player_controll(t_game *game)
 	}
 	if (collision)
 	{
-		cs_play_sound(game->sound.ctx, game->sound.def);
+		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 		update_last_collision(game);
 	}
 	check_restrictions(game);

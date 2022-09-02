@@ -67,6 +67,12 @@ typedef struct ray
 	t_vector	step;
 }				t_ray;
 
+typedef struct sound
+{
+	cs_loaded_sound_t	file;
+	cs_play_sound_def_t	def;
+}				t_sound;
+
 typedef struct game
 {
 	struct s_mlx
@@ -109,18 +115,13 @@ typedef struct game
 	}				*column;
 	t_img			textures[MAX_TEXTURES];
 
-	struct			s_sound
+	struct				s_audio
 	{
-		cs_context_t		*ctx;
+		cs_context_t	*ctx;
 
-		cs_loaded_sound_t	file;
-		cs_play_sound_def_t	def;
-
-		cs_loaded_sound_t	song_file;
-		cs_play_sound_def_t	song_def;
-
-
-	}				sound;
+		t_sound			bonk;
+		t_sound			song;
+	}					audio;
 }	t_game;
 
 int		check_file(int ac, char **av);
