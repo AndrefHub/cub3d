@@ -12,16 +12,32 @@ SRCFILE	=	border_checking.c \
 			drawing.c \
 			ft_utils.c \
 			input_manip.c \
+			main.c \
 			parsing.c \
 			start_game.c \
 			vector_utils.c \
 			ray_casting.c \
 			hooks.c
-MAIN	= main.c
+# SRCDIR	= src_bonus/
+# SRCFILE	=	border_checking.c \
+			border_checking_utils.c \
+			check_file.c \
+			controller.c \
+			demo_utils.c \
+			draw_map.c \
+			drawing.c \
+			free_game.c \
+			ft_utils.c \
+			hooks.c \
+			input_manip.c \
+			main.c \
+			parsing.c \
+			ray_casting.c \
+			start_game.c \
+			vector_utils.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
 OBJFILE = $(SRCFILE:.c=.o)
-OBJMAIN = $(addprefix $(OBJDIR), $(MAIN:.c=.o))
 OBJBNS	= $(addprefix $(OBJDIR), $(BONUS:.c=.o))
 OBJS	= $(addprefix $(OBJDIR), $(OBJFILE))
 RM      = rm -rf
