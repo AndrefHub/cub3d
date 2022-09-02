@@ -1,9 +1,4 @@
-NO0 ./assets/sus64xpm/sus64-0.xpm
-NO1 ./assets/sus64xpm/sus64-1.xpm
-NO2 ./assets/sus64xpm/sus64-2.xpm
-NO3 ./assets/sus64xpm/sus64-3.xpm
-NO4 ./assets/sus64xpm/sus64-4.xpm
-NO5 ./assets/sus64xpm/sus64-5.xpm
+NO ./assets/sus64xpm/sus64-0.xpm
 
 SO0 ./assets/sus64xpm/sus64-0.xpm
 SO1 ./assets/sus64xpm/sus64-1.xpm
