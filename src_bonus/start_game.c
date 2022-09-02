@@ -1,4 +1,4 @@
-#include "../inc/cub3d.h"
+#include "../inc/cub3d_bonus.h"
 
 void	error_exit(t_game *game, int return_value, char *message)
 {
@@ -94,12 +94,16 @@ void	initialize_sprites(t_game *game)
 			ft_lstadd_back(&img_list, ft_lstnew(img));
 			texture_list = texture_list->next;
 		}
-		if (img_list)
+		if (img_list && img_list->next)
 			ft_lstlast(img_list)->next = img_list;
 		game->map->img_list[counter] = img_list;
-		if (img_list)
+		if (img_list && img_list->next)
 			game->textures[counter] = *(t_img *)game->map->img_list[counter]->content;
 	}
+	// import_texture(game, &game->textures[0], game->map->NO);
+	// import_texture(game, &game->textures[1], game->map->SO);
+	// import_texture(game, &game->textures[2], game->map->WE);
+	// import_texture(game, &game->textures[3], game->map->EA);
 }
 
 void	init_sound(t_game *game)
