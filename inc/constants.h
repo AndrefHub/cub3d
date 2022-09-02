@@ -23,7 +23,7 @@
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
 # define MAX_TEXTURES 4
-# define MAX_WALL_CHARS 9
+# define MAX_WALL_CHARS 4
 
 # define WALL_CHARS "123456789"
 

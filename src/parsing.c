@@ -2,18 +2,25 @@
 
 void	get_textures(t_map *map, int fd)
 {
-	map->NO = crop_prefix(get_texture(fd), "NO");
-	map->SO = crop_prefix(get_texture(fd), "SO");
-	map->WE = crop_prefix(get_texture(fd), "WE");
-	map->EA = crop_prefix(get_texture(fd), "EA");
-	map->F = convert_rgb(crop_prefix(get_texture(fd), "F"));
+	char	*line;
+
+	line = NULL;
+	map->texture_list[0] = get_textures_list(fd, "NO", &line);
+	map->texture_list[1] = get_textures_list(fd, "SO", &line);
+	map->texture_list[2] = get_textures_list(fd, "WE", &line);
+	map->texture_list[3] = get_textures_list(fd, "EA", &line);
+	if (line)
+		map->F = convert_rgb(crop_prefix(line, "F"));
+	else
+		map->F = convert_rgb(crop_prefix(get_texture(fd), "F"));
 	map->C = convert_rgb(crop_prefix(get_texture(fd), "C"));
 }
 
 int	is_prefix_number(char *line, char *prefix, int counter)
 {
 	return (line && !ft_strncmp(line, prefix, ft_strlen(prefix))
-		&& ft_atoi(line + ft_strlen(prefix)) == counter);
+		&& (ft_atoi(line + ft_strlen(prefix)) == counter
+			|| (counter == 0 && line[ft_strlen(prefix) + 1] == ' ')));
 }
 
 t_list	*get_textures_list(int fd, char *prefix, char **line)
@@ -130,7 +137,7 @@ void	get_map(t_map *map, int fd)
 	map->map_size.x = get_map_width(map->map);
 	map->map_size.y = ft_arraylen((void **) map->map);
 	map_to_rectangle(map);
-	// ft_putendl_fd("amogus_gaming", 1);
+	ft_putendl_fd("amogus_gaming", 1);
 }
 
 t_map	*free_map(t_map *map)
@@ -149,8 +156,11 @@ t_map	*parse_file(int ac, char **av)
 	fd = check_file(ac, av);
 	if (fd != BAD_FILE)
 	{
+		// ft_putendl_fd("amogus_gaming", 1);
 		map = create_empty_map();
+	ft_putendl_fd("amogus_gaming", 1);
 		get_textures(map, fd);
+	ft_putendl_fd("amogus_gaming", 1);
 		get_map(map, fd);
 	}
 	if (is_enclosed(map))

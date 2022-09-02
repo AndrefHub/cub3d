@@ -2,23 +2,24 @@ NAME    = cub3d
 CC      = gcc
 FLAGS	= -Wall -Wextra -Werror -o2 -g
 LFLAGS	= -Llibft -lft 
+SRCDIR	= src/
+SRCFILE	=	border_checking.c \
+			border_checking_utils.c \
+			check_file.c \
+			controller.c \
+			demo_utils.c \
+			draw_map.c \
+			drawing.c \
+			ft_utils.c \
+			input_manip.c \
+			main.c \
+			parsing.c \
+			start_game.c \
+			vector_utils.c \
+			ray_casting.c \
+			hooks.c
 # SRCDIR	= src_bonus/
 # SRCFILE	=	border_checking.c \
-# 			border_checking_utils.c \
-# 			check_file.c \
-# 			controller.c \
-# 			demo_utils.c \
-# 			draw_map.c \
-# 			drawing.c \
-# 			ft_utils.c \
-# 			input_manip.c \
-# 			parsing.c \
-# 			start_game.c \
-# 			vector_utils.c \
-# 			ray_casting.c \
-# 			hooks.c
-SRCDIR	= src_bonus/
-SRCFILE	=	border_checking.c \
 			border_checking_utils.c \
 			check_file.c \
 			controller.c \
@@ -41,7 +42,7 @@ OBJBNS	= $(addprefix $(OBJDIR), $(BONUS:.c=.o))
 OBJS	= $(addprefix $(OBJDIR), $(OBJFILE))
 RM      = rm -rf
 LIBHDR  = libft/libft.h
-CUBHDR  = $(addprefix $(INCDIR), cub3d_bonus.h)
+CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
 INCDIR  = inc/
 SNDLIB  = cute_sound/cute_sound.o 
 
