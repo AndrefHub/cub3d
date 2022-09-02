@@ -6,14 +6,14 @@ t_map	*create_empty_map()
 
 	map = malloc(sizeof(*map));
 	map->map = NULL;
-	// map->texture_list[0] = NULL;
-	// map->texture_list[1] = NULL;
-	// map->texture_list[2] = NULL;
-	// map->texture_list[3] = NULL;
-	map->NO = NULL;
-	map->SO = NULL;
-	map->WE = NULL;
-	map->EA = NULL;
+	map->texture_list[0] = NULL;
+	map->texture_list[1] = NULL;
+	map->texture_list[2] = NULL;
+	map->texture_list[3] = NULL;
+	// map->NO = NULL;
+	// map->SO = NULL;
+	// map->WE = NULL;
+	// map->EA = NULL;
 	map->C = 0;
 	map->F = 0;
 	map->player_coords.x = BAD_COORD;
@@ -53,10 +53,11 @@ void	print_map_debug(t_map *map)
 {
 	char	**ptr;
 
-	// printf("NO %s\nSO %s\nWE %s\nEA %s\nF %d,%d,%d\nC %d,%d,%d\n\n",
-	// 	map->NO, map->SO, map->WE, map->EA,
-	// 	map->F >> 16, (map->F >> 8) % (1 << 8), map->F % (1 << 8),
-	// 	map->C >> 16, (map->C >> 8) % (1 << 8), map->C % (1 << 8));
+	printf("NO %s\nSO %s\nWE %s\nEA %s\nF %d,%d,%d\nC %d,%d,%d\n\n",
+		(char *)map->texture_list[0]->content, (char *)map->texture_list[1]->content,
+		(char *)map->texture_list[2]->content, (char *)map->texture_list[3]->content,
+		map->F >> 16, (map->F >> 8) % (1 << 8), map->F % (1 << 8),
+		map->C >> 16, (map->C >> 8) % (1 << 8), map->C % (1 << 8));
 	printf("Player X: %d\nPlayer Y: %d\nPlayer orientation: %f\n",
 		map->player_coords.x, map->player_coords.y, map->player_orient);
 	ptr = map->map;
