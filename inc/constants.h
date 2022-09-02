@@ -25,7 +25,7 @@
 # define MAX_TEXTURES 4
 # define MAX_WALL_CHARS 4
 
-# define WALL_CHARS "123456789"
+# define WALL_CHARS "123456789@"
 
 # ifdef __APPLE__
 enum e_keys

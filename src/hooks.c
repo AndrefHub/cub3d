@@ -25,6 +25,8 @@ int	key_hook_press(int key, t_game *game)
 		game->show_map = !game->show_map;
 		return (0);
 	}
+	if (key == E_KEY)
+		open_door(game);
 	game->key.k[key] = true;
 	ft_putnbr_fd(key, 1);
 	ft_putendl_fd("", 1);

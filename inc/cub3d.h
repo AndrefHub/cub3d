@@ -173,4 +173,6 @@ int	get_non_space_index_right(char *line);
 int	get_non_space_index_top(char **map, int x);
 int	check_longer_row_border(char *shorter, int sindex, int lindex, char direct);
 int	check_longer_row_border_vert(char **map, int x, int sindex, int lindex, char direct);
+
+void	open_door(t_game *game);
 #endif

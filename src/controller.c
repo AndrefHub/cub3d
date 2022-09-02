@@ -141,6 +141,7 @@ void	open_door(t_game *game)
 		*to_change = 'D';
 	else if (to_change && *to_change == 'D')
 		*to_change = 'd';
+	ft_putendl_fd(to_change, 1);
 }
 
 void	player_controll(t_game *game)
@@ -165,8 +166,6 @@ void	player_controll(t_game *game)
 		move_radius_check(game, -game->player.delta.y, game->player.delta.x, &collision);
 	if (key_pressed(game,A_KEY))
 		move_radius_check(game, game->player.delta.y, -game->player.delta.x, &collision);
-	if (key_pressed(game,E_KEY))
-		open_door(game);
 	if (key_pressed(game,RIGHT_KEY))
 	{
 		game->player.angle += PL_ROT_KEY_SPEED;
