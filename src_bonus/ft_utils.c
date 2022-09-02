@@ -1,19 +1,15 @@
-#include "../inc/cub3d.h"
+#include "../inc/cub3d_bonus.h"
 
 t_map	*create_empty_map()
 {
 	t_map	*map;
+	int		counter;
 
 	map = malloc(sizeof(*map));
+	counter = -1;
 	map->map = NULL;
-	// map->texture_list[0] = NULL;
-	// map->texture_list[1] = NULL;
-	// map->texture_list[2] = NULL;
-	// map->texture_list[3] = NULL;
-	map->NO = NULL;
-	map->SO = NULL;
-	map->WE = NULL;
-	map->EA = NULL;
+	while (++counter < MAX_WALL_CHARS)
+		map->texture_list[counter] = NULL;
 	map->C = 0;
 	map->F = 0;
 	map->player_coords.x = BAD_COORD;
