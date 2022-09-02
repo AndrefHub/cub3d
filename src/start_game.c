@@ -104,20 +104,20 @@ void	initialize_sprites(t_game *game)
 
 void	init_sound(t_game *game)
 {
-	game->sound.ctx = cs_make_context(0, 44100, 4096, 4, NULL);
-	cs_spawn_mix_thread(game->sound.ctx);
-	cs_thread_sleep_delay(game->sound.ctx, 5);
+	game->audio.ctx = cs_make_context(0, 44100, 4096, 4, NULL);
+	cs_spawn_mix_thread(game->audio.ctx);
+	cs_thread_sleep_delay(game->audio.ctx, 5);
 
-	game->sound.song_file = cs_load_wav("assets/sus.wav");
-	if (game->sound.song_file.channels[0])
+	game->audio.song.file = cs_load_wav("assets/sus.wav");
+	if (game->audio.song.file.channels[0])
 	{
-		game->sound.song_def = cs_make_def(&game->sound.song_file);
-		cs_play_sound(game->sound.ctx, game->sound.song_def);
+		game->audio.song.def = cs_make_def(&game->audio.song.file);
+		cs_play_sound(game->audio.ctx, game->audio.song.def);
 	}
-	game->sound.file = cs_load_wav("assets/bonk.wav");
-	game->sound.def = cs_make_def(&game->sound.file);
-	game->sound.def.volume_left = 1.;
-	game->sound.def.volume_right = 1.;
+	game->audio.bonk.file = cs_load_wav("assets/bonk.wav");
+	game->audio.bonk.def = cs_make_def(&game->audio.bonk.file);
+	game->audio.bonk.def.volume_left = 1.;
+	game->audio.bonk.def.volume_right = 1.;
 	// cs_insert_sound(game->sound.ctx, &s0);
 }
 
