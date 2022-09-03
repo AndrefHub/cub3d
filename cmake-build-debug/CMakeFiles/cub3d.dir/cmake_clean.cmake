@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o"
+  "CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o.d"
   "CMakeFiles/cub3d.dir/src/border_checking.c.o"
   "CMakeFiles/cub3d.dir/src/border_checking.c.o.d"
   "CMakeFiles/cub3d.dir/src/border_checking_utils.c.o"

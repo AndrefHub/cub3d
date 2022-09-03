@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/lsherry/42Course/cub3d/cute_sound/cute_sound.c" "CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o" "gcc" "CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/border_checking.c" "CMakeFiles/cub3d.dir/src/border_checking.c.o" "gcc" "CMakeFiles/cub3d.dir/src/border_checking.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/border_checking_utils.c" "CMakeFiles/cub3d.dir/src/border_checking_utils.c.o" "gcc" "CMakeFiles/cub3d.dir/src/border_checking_utils.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/check_file.c" "CMakeFiles/cub3d.dir/src/check_file.c.o" "gcc" "CMakeFiles/cub3d.dir/src/check_file.c.o.d"

@@ -1118,6 +1118,54 @@
 			"value" : "/usr/sbin/sysctl"
 		},
 		{
+			"name" : "SDL2_App",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "SDL2_App-NOTFOUND"
+		},
+		{
+			"name" : "SDL2_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for SDL2."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/Users/lsherry/.brew/lib/cmake/SDL2"
+		},
+		{
+			"name" : "SDL2_LIBRARY",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/Users/lsherry/Library/Frameworks/SDL2.framework"
+		},
+		{
+			"name" : "cub3d",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "cub3d-NOTFOUND"
+		},
+		{
 			"name" : "cub3d_BINARY_DIR",
 			"properties" : 
 			[
@@ -1143,6 +1191,42 @@
 		},
 		{
 			"name" : "cub3d_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/lsherry/42Course/cub3d"
+		},
+		{
+			"name" : "whiteboard_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/lsherry/42Course/cub3d/cmake-build-debug"
+		},
+		{
+			"name" : "whiteboard_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "whiteboard_SOURCE_DIR",
 			"properties" : 
 			[
 				{
