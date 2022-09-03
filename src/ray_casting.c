@@ -142,7 +142,6 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 			else
 				game->column[i].texture_pos = (TEXTURE_SIZE / MAP_GRID_SIZE - game->player.pos.x - cosf(ray_angle) * distance) * TEXTURE_SIZE / MAP_GRID_SIZE;
 		}
-		ft_putchar(game->column[i].dir);
 		if (distance > MAX_RENDER_DISTANCE)
 			game->column[i].color = 0xFFAAAA;
 		game->column[i].distance = distance;

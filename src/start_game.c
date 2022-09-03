@@ -22,6 +22,7 @@ void	start_mlx(t_game *game)
 	mlx_hook(game->mlx.window, ButtonRelease, ButtonReleaseMask, mouse_hook_release, game);
 	mlx_hook(game->mlx.window, DestroyNotify, StructureNotifyMask, close_hook, game);
 	init_time(game);
+	cs_play_sound(game->audio.ctx, game->audio.song.def);
 	mlx_loop_hook(game->mlx.id, game_loop, game);
 }
 
@@ -109,11 +110,11 @@ void	init_sound(t_game *game)
 	cs_spawn_mix_thread(game->audio.ctx);
 	cs_thread_sleep_delay(game->audio.ctx, 5);
 
-	game->audio.song.file = cs_load_wav("assets/sus.wav");
+	game->audio.song.file = cs_load_wav("assets/wah.wav");
 	if (game->audio.song.file.channels[0])
 	{
 		game->audio.song.def = cs_make_def(&game->audio.song.file);
-		cs_play_sound(game->audio.ctx, game->audio.song.def);
+		game->audio.song.def.looped = 1;
 	}
 	game->audio.bonk.file = cs_load_wav("assets/bonk.wav");
 	game->audio.bonk.def = cs_make_def(&game->audio.bonk.file);

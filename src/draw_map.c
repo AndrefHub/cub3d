@@ -88,5 +88,5 @@ void	draw_fps(t_game *game)
 	++s;
 	f += fps;
 
-	printf("%f\n", ((double)f) / s);
+	printf("%f %d\n", ((double)f) / s, fps);
 }
