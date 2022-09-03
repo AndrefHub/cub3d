@@ -20,6 +20,7 @@ add_executable(cub3d
         src/demo_utils.c
         src/draw_map.c
         src/hooks.c
+        src/draw_texture.c
         src/vector_utils.c
         src/border_checking_utils.c
         src/ray_casting.c)
