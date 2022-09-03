@@ -175,4 +175,5 @@ int	check_longer_row_border(char *shorter, int sindex, int lindex, char direct);
 int	check_longer_row_border_vert(char **map, int x, int sindex, int lindex, char direct);
 
 void	open_door(t_game *game);
+void	draw_texture_set(t_game *game, struct s_column *column);
 #endif
