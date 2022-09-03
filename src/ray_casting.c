@@ -4,8 +4,6 @@ void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *c
 {
 	const double	step = (double ) texture->size.y / column->height;
 	const unsigned	tex_col = (unsigned ) column->texture_pos % TEXTURE_SIZE;
-//	const double	step = (double ) texture->size.y / column->height;
-//	const unsigned	tex_col = (unsigned ) column->pos.x % texture->size.x;
 	int				y;
 	double			tex_y;
 	int 			max_height;
@@ -120,21 +118,31 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 		game->column[i].perp_dist = distance * cosf(camera);
 		game->column[i].pos = (t_fvector) {game->player.pos.x + cosf(ray_angle)
 			* distance, game->player.pos.y + sinf(ray_angle) * distance};
-		if (ray->length.x - ray->unit.x >= ray->length.y - ray->unit.y)
+		if (ray->length.y - ray->unit.y < ray->length.x - ray->unit.x)
 		{
+//			y
 			game->column[i].texture_id = 1;
-			game->column[i].texture_pos = (game->player.pos.y + sinf(ray_angle) * distance ) * TEXTURE_SIZE / MAP_GRID_SIZE;
-//			game->column[i].dir = "EW"[(int) (ray->length.x - ray->unit.x - game->player.pos.x / MAP_GRID_SIZE)];
-
+			game->column[i].fade = 2.f;
+			game->column[i].dir = "SN"[(int) (game->column[i].pos.x > game->player.pos.x)];
+//			game->column[i].texture_pos = (game->player.pos.y + sinf(ray_angle) * distance ) * TEXTURE_SIZE / MAP_GRID_SIZE;
+			if (game->column[i].dir == 'N')
+				game->column[i].texture_pos = (game->player.pos.y + sinf(ray_angle) * distance ) * TEXTURE_SIZE / MAP_GRID_SIZE;
+			else
+				game->column[i].texture_pos = (TEXTURE_SIZE / MAP_GRID_SIZE - game->player.pos.y - sinf(ray_angle) * distance ) * TEXTURE_SIZE / MAP_GRID_SIZE;
 		}
 		else
 		{
+//			x
 			game->column[i].texture_id = 0;
-			game->column[i].texture_pos = (game->player.pos.x + cosf(ray_angle) * distance) * TEXTURE_SIZE / MAP_GRID_SIZE;
-//			game->column[i].dir = "NS"[(int) (ray->length.y - ray->unit.y - game->player.pos.y / MAP_GRID_SIZE)];
-//			game->column[i].dir = 'N';
-//			game->column[i].texture_pos = fabs(ray->length.y - ray->unit.y) - (int)(ray->length.y - ray->unit.y);
+			game->column[i].fade = 1.f;
+			game->column[i].dir = "EW"[(int) (game->column[i].pos.y > game->player.pos.y)];
+//			game->column[i].texture_pos = (game->player.pos.x + cosf(ray_angle) * distance) * TEXTURE_SIZE / MAP_GRID_SIZE;
+			if (game->column[i].dir == 'E')
+				game->column[i].texture_pos = (game->player.pos.x + cosf(ray_angle) * distance) * TEXTURE_SIZE / MAP_GRID_SIZE;
+			else
+				game->column[i].texture_pos = (TEXTURE_SIZE / MAP_GRID_SIZE - game->player.pos.x - cosf(ray_angle) * distance) * TEXTURE_SIZE / MAP_GRID_SIZE;
 		}
+		ft_putchar(game->column[i].dir);
 		if (distance > MAX_RENDER_DISTANCE)
 			game->column[i].color = 0xFFAAAA;
 		game->column[i].distance = distance;
