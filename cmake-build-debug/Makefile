@@ -129,6 +129,30 @@ cub3d/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/build
 .PHONY : cub3d/fast
 
+cute_sound/cute_sound.o: cute_sound/cute_sound.c.o
+.PHONY : cute_sound/cute_sound.o
+
+# target to build an object file
+cute_sound/cute_sound.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o
+.PHONY : cute_sound/cute_sound.c.o
+
+cute_sound/cute_sound.i: cute_sound/cute_sound.c.i
+.PHONY : cute_sound/cute_sound.i
+
+# target to preprocess a source file
+cute_sound/cute_sound.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.i
+.PHONY : cute_sound/cute_sound.c.i
+
+cute_sound/cute_sound.s: cute_sound/cute_sound.c.s
+.PHONY : cute_sound/cute_sound.s
+
+# target to generate assembly for a file
+cute_sound/cute_sound.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.s
+.PHONY : cute_sound/cute_sound.c.s
+
 src/border_checking.o: src/border_checking.c.o
 .PHONY : src/border_checking.o
 
@@ -522,6 +546,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cub3d"
+	@echo "... cute_sound/cute_sound.o"
+	@echo "... cute_sound/cute_sound.i"
+	@echo "... cute_sound/cute_sound.s"
 	@echo "... src/border_checking.o"
 	@echo "... src/border_checking.i"
 	@echo "... src/border_checking.s"

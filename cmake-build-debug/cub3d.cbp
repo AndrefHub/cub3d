@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/lsherry/42Course/cub3d/cute_sound/cute_sound.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/cute_sound/cute_sound.h">
+			<Option target="cub3d"/>
+		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/border_checking.c">
 			<Option target="cub3d"/>
 		</Unit>
