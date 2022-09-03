@@ -1,5 +1,5 @@
 #include "../inc/cub3d.h"
-
+#include <unistd.h>
 #ifdef __APPLE__
 
 static inline void	mouse_get_pos(void *mlx_ptr, void *win_ptr, int *x, int *y)
@@ -57,7 +57,6 @@ void	check_borders(t_game *game)
 	char	tile;
 
 	tile = game->grid[(int) game->player.pos.y / MAP_GRID_SIZE][(int) game->player.pos.x / MAP_GRID_SIZE];
-
 	if (is_wall(tile))
 	{
 		if ((game->player.pos.x - (int ) game->player.pos.x) - (game->player.pos.y - (int ) game->player.pos.y) > 0)
@@ -158,21 +157,21 @@ void	player_controll(t_game *game)
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
 		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
 	}
-	if (key_pressed(game,W_KEY))
+	if (key_pressed(game, W_KEY))
 		move_radius_check(game, game->player.delta.x, game->player.delta.y, &collision);
-	if (key_pressed(game,S_KEY))
+	if (key_pressed(game, S_KEY))
 		move_radius_check(game, -game->player.delta.x, -game->player.delta.y, &collision);
-	if (key_pressed(game,D_KEY))
+	if (key_pressed(game, D_KEY))
 		move_radius_check(game, -game->player.delta.y, game->player.delta.x, &collision);
-	if (key_pressed(game,A_KEY))
+	if (key_pressed(game, A_KEY))
 		move_radius_check(game, game->player.delta.y, -game->player.delta.x, &collision);
-	if (key_pressed(game,RIGHT_KEY))
+	if (key_pressed(game, RIGHT_KEY))
 	{
 		game->player.angle += PL_ROT_KEY_SPEED;
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
 		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
 	}
-	if (key_pressed(game,LEFT_KEY))
+	if (key_pressed(game, LEFT_KEY))
 	{
 		game->player.angle -= PL_ROT_KEY_SPEED;
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
@@ -188,20 +187,30 @@ void	player_controll(t_game *game)
 
 void	change_textures(t_game *game)
 {
-	static char	counter = 0;
-	int			index;
+	const int	clocks_per_frame = 1000 / FRAMERATE;
+	int	index;
+	int	frames_to_move;
+	int	counter;
+	static int f = 0;
+	static int s = 0;
 
-	++counter;
-	if (counter == 5)
+	frames_to_move = (get_time() - game->time.startup) / clocks_per_frame \
+		- (game->time.last - game->time.startup) / clocks_per_frame;
+	game->time.last = get_time();
+	if (frames_to_move)
 	{
-		counter = 0;
 		index = -1;
 		while (++index < MAX_TEXTURES)
 		{
-			game->map->img_list[index] = game->map->img_list[index]->next;
+			counter = -1;
+			while (++counter < frames_to_move)
+				game->map->img_list[index] = game->map->img_list[index]->next;
 			game->textures[index] = *(t_img *)game->map->img_list[index]->content;	
 		}
 	}
+	f += frames_to_move;
+	++s;
+	printf("%f ", ((double)f) / s);
 }
 
 void	fill_floor(t_img *img, int color)
@@ -226,9 +235,6 @@ void	fill_ceiling(t_img *img, int color)
 
 int	game_loop(t_game *game)
 {
-	static clock_t	cur_time;
-	static int		fps;
-
 	player_controll(game);
 	img_clear_rgb(&game->img, 0x808080);
 	fill_floor(&game->img, game->map->F);
@@ -237,16 +243,11 @@ int	game_loop(t_game *game)
 	cast_rays(game);
 	draw_walls(game);
 	draw_aim(game);
-	change_textures(game);
 
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img, 0, 0);
 	if (game->show_map)
 		draw_map(game);
-
-	if (clock() != cur_time)
-		fps = CLOCKS_PER_SEC / (clock() - cur_time);
-	cur_time = clock();
-	mlx_string_put(game->mlx.id, game->mlx.window, 0, 15, 0x00FFFFFF, \
-		(char []){'0' + fps / 100, '0' + fps / 10 % 10, '0' + fps % 10, '\0'});
+	draw_fps(game);
+	change_textures(game);
 	return (0);
 }
