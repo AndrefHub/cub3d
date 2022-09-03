@@ -31,14 +31,15 @@ void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *c
 void	draw_walls(t_game *game)
 {
 	int				x;
-	unsigned int	texture_id;
+//	unsigned int	texture_id;
 
 	x = 0;
 	while (x < game->img.size.x)
 	{
-//		draw_texture_set(game, &game->column[x]);
-		texture_id = ft_strchr(CARDINAL_POINTS, game->column[x].dir) - CARDINAL_POINTS;
-		draw_wall_scaled(&game->img, &game->textures[texture_id],
+		draw_texture_set(game, &game->column[x]);
+//		texture_id = ft_strchr(CARDINAL_POINTS, game->column[x].dir) - CARDINAL_POINTS;
+//		ft_putnbr_fd(texture_id, 1);
+		draw_wall_scaled(&game->img, &game->textures[game->column[x].texture_id],
 						 &game->column[x], x);
 		x++;
 	}
@@ -139,6 +140,7 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 			game->column[i].color = 0xFFAAAA;
 		game->column[i].distance = distance;
 		game->column[i].ray_dir = ray->dir;
+		game->column[i].cell = (t_vector) {ray->map_tile.x / MAP_GRID_SIZE, ray->map_tile.y / MAP_GRID_SIZE};
 	}
 	else
 	{
