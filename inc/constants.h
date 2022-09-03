@@ -1,7 +1,6 @@
 #ifndef CONSTANTS_H
 # define CONSTANTS_H
 
-
 # define BAD_FILE -2
 # define FRAMERATE 30
 # define BAD_COLOUR (1 << 24)
@@ -10,7 +9,7 @@
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT 1026
 # define MAP_GRID_SIZE 32
-# define TEXTURE_SIZE 448
+# define TEXTURE_SIZE 192
 # define MAX_RENDER_DISTANCE 5000
 # define PI (float) M_PI
 # define PL_ROT_KEY_SPEED 0.05f
@@ -24,9 +23,10 @@
 # define AIM_COLOR 0xFF0000
 # define MAX_TEXTURES 4
 # define MAX_WALL_CHARS 4
+// # define MAX_WALL_CHARS 10
 
+# define WALL_CHARS "123456789D"
 # define CARDINAL_POINTS "NSWE"
-# define WALL_CHARS "12D3456789@"
 
 # ifdef __APPLE__
 enum e_keys

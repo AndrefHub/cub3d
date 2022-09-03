@@ -1,4 +1,9 @@
-NO ./assets/wall3.xpm
+NO0 ./assets/fireplace/fireplace-0.xpm
+NO1 ./assets/fireplace/fireplace-1.xpm
+NO2 ./assets/fireplace/fireplace-2.xpm
+NO3 ./assets/fireplace/fireplace-3.xpm
+NO4 ./assets/fireplace/fireplace-4.xpm
+NO5 ./assets/fireplace/fireplace-5.xpm
 
 SO ./assets/wall3.xpm
 

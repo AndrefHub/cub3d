@@ -52,5 +52,6 @@ int convert_rgb(char *line)
 		rgb = (ft_atoi(rgb_values[0]) << 16) + (ft_atoi(rgb_values[1]) << 8)
 			+ ft_atoi(rgb_values[2]);
 	ft_freesplit(rgb_values);
+	free(line);
 	return (rgb);
 }
