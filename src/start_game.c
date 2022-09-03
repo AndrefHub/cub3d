@@ -21,6 +21,7 @@ void	start_mlx(t_game *game)
 	mlx_hook(game->mlx.window, ButtonPress, ButtonPressMask, mouse_hook_press, game);
 	mlx_hook(game->mlx.window, ButtonRelease, ButtonReleaseMask, mouse_hook_release, game);
 	mlx_hook(game->mlx.window, DestroyNotify, StructureNotifyMask, close_hook, game);
+	init_time(game);
 	mlx_loop_hook(game->mlx.id, game_loop, game);
 }
 

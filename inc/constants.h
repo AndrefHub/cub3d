@@ -1,9 +1,8 @@
 #ifndef CONSTANTS_H
 # define CONSTANTS_H
 
-
 # define BAD_FILE -2
-# define FRAMERATE 30
+# define FRAMERATE 20
 # define BAD_COLOUR (1 << 24)
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"

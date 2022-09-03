@@ -72,3 +72,21 @@ void	draw_map(t_game *game)
 	draw_player_on_map(game);
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->map->img.mlx_img, 0, 0);
 }
+
+void	draw_fps(t_game *game)
+{
+	static int	fps = 0;
+	t_ull		curr_time;
+	static int f = 0;
+	static int s = 0;
+
+	curr_time = get_time();
+	if (curr_time != game->time.last)
+		fps = 1000 / (curr_time - game->time.last);
+	mlx_string_put(game->mlx.id, game->mlx.window, 0, 15, 0x00FFFFFF, \
+		(char []){'0' + fps / 100, '0' + fps / 10 % 10, '0' + fps % 10, '\0'});
+	++s;
+	f += fps;
+
+	printf("%f\n", ((double)f) / s);
+}
