@@ -227,6 +227,5 @@ int	game_loop(t_game *game)
 		draw_map(game);
 	draw_fps(game);
 	change_textures(game);
-	usleep(20000);
 	return (0);
 }
