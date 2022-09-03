@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/lsherry/42Course/cub3d/cute_sound/cute_sound.c" "CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o" "gcc" "CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/border_checking.c" "CMakeFiles/cub3d.dir/src/border_checking.c.o" "gcc" "CMakeFiles/cub3d.dir/src/border_checking.c.o.d"
-  "/Users/lsherry/42Course/cub3d/src/border_checking_utils.c" "CMakeFiles/cub3d.dir/src/border_checking_utils.c.o" "gcc" "CMakeFiles/cub3d.dir/src/border_checking_utils.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/check_file.c" "CMakeFiles/cub3d.dir/src/check_file.c.o" "gcc" "CMakeFiles/cub3d.dir/src/check_file.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/controller.c" "CMakeFiles/cub3d.dir/src/controller.c.o" "gcc" "CMakeFiles/cub3d.dir/src/controller.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/demo_utils.c" "CMakeFiles/cub3d.dir/src/demo_utils.c.o" "gcc" "CMakeFiles/cub3d.dir/src/demo_utils.c.o.d"
@@ -24,7 +23,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/lsherry/42Course/cub3d/src/parsing.c" "CMakeFiles/cub3d.dir/src/parsing.c.o" "gcc" "CMakeFiles/cub3d.dir/src/parsing.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/ray_casting.c" "CMakeFiles/cub3d.dir/src/ray_casting.c.o" "gcc" "CMakeFiles/cub3d.dir/src/ray_casting.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/start_game.c" "CMakeFiles/cub3d.dir/src/start_game.c.o" "gcc" "CMakeFiles/cub3d.dir/src/start_game.c.o.d"
-  "/Users/lsherry/42Course/cub3d/src/vector_utils.c" "CMakeFiles/cub3d.dir/src/vector_utils.c.o" "gcc" "CMakeFiles/cub3d.dir/src/vector_utils.c.o.d"
+  "/Users/lsherry/42Course/cub3d/src/time_funcs.c" "CMakeFiles/cub3d.dir/src/time_funcs.c.o" "gcc" "CMakeFiles/cub3d.dir/src/time_funcs.c.o.d"
   )
 
 # Targets to which this target links.

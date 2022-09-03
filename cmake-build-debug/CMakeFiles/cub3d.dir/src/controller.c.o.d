@@ -136,5 +136,7 @@ CMakeFiles/cub3d.dir/src/controller.c.o: \
  /usr/local/include/X11/X.h /usr/local/include/X11/keysym.h \
  /usr/local/include/X11/keysymdef.h \
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h \
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/time.h \
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval64.h \
  /Users/lsherry/42Course/cub3d/src/../inc/../cute_sound/cute_sound.h \
  /Users/lsherry/42Course/cub3d/src/../inc/../mlx/mlx.h
