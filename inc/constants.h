@@ -25,7 +25,7 @@
 # define MAX_WALL_CHARS 4
 // # define MAX_WALL_CHARS 10
 
-# define WALL_CHARS "123456789D"
+# define WALL_CHARS "12D3456789"
 # define CARDINAL_POINTS "NSWE"
 
 # ifdef __APPLE__

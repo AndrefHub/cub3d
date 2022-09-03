@@ -1,5 +1,5 @@
-CMakeFiles/cub3d.dir/src/drawing.c.o: \
- /Users/lsherry/42Course/cub3d/src/drawing.c \
+CMakeFiles/cub3d.dir/src/time_funcs.c.o: \
+ /Users/lsherry/42Course/cub3d/src/time_funcs.c \
  /Users/lsherry/42Course/cub3d/src/../inc/cub3d.h \
  /usr/local/lib/gcc/10/gcc/x86_64-apple-darwin20/10.3.0/include/stdbool.h \
  /Users/lsherry/42Course/cub3d/src/../inc/../libft/libft.h \
