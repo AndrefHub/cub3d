@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/cub3d.dir/src/demo_utils.c.o.d"
   "CMakeFiles/cub3d.dir/src/draw_map.c.o"
   "CMakeFiles/cub3d.dir/src/draw_map.c.o.d"
+  "CMakeFiles/cub3d.dir/src/draw_texture.c.o"
+  "CMakeFiles/cub3d.dir/src/draw_texture.c.o.d"
   "CMakeFiles/cub3d.dir/src/drawing.c.o"
   "CMakeFiles/cub3d.dir/src/drawing.c.o.d"
   "CMakeFiles/cub3d.dir/src/ft_utils.c.o"

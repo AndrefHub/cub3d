@@ -26,6 +26,7 @@
 // # define MAX_WALL_CHARS 10
 
 # define WALL_CHARS "123456789D"
+# define CARDINAL_POINTS "NSWE"
 
 # ifdef __APPLE__
 enum e_keys

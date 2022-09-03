@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/lsherry/42Course/cub3d/src/controller.c" "CMakeFiles/cub3d.dir/src/controller.c.o" "gcc" "CMakeFiles/cub3d.dir/src/controller.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/demo_utils.c" "CMakeFiles/cub3d.dir/src/demo_utils.c.o" "gcc" "CMakeFiles/cub3d.dir/src/demo_utils.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/draw_map.c" "CMakeFiles/cub3d.dir/src/draw_map.c.o" "gcc" "CMakeFiles/cub3d.dir/src/draw_map.c.o.d"
+  "/Users/lsherry/42Course/cub3d/src/draw_texture.c" "CMakeFiles/cub3d.dir/src/draw_texture.c.o" "gcc" "CMakeFiles/cub3d.dir/src/draw_texture.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/drawing.c" "CMakeFiles/cub3d.dir/src/drawing.c.o" "gcc" "CMakeFiles/cub3d.dir/src/drawing.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/ft_utils.c" "CMakeFiles/cub3d.dir/src/ft_utils.c.o" "gcc" "CMakeFiles/cub3d.dir/src/ft_utils.c.o.d"
   "/Users/lsherry/42Course/cub3d/src/hooks.c" "CMakeFiles/cub3d.dir/src/hooks.c.o" "gcc" "CMakeFiles/cub3d.dir/src/hooks.c.o.d"
