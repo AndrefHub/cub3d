@@ -4,23 +4,6 @@ FLAGS	= -Wall -Wextra -Werror -o2 -g
 LFLAGS	= -Llibft -lft 
 SRCDIR	= src/
 SRCFILE	=	border_checking.c \
-			border_checking_utils.c \
-			check_file.c \
-			controller.c \
-			demo_utils.c \
-			draw_map.c \
-			drawing.c \
-			ft_utils.c \
-			input_manip.c \
-			main.c \
-			parsing.c \
-			start_game.c \
-			vector_utils.c \
-			ray_casting.c \
-			hooks.c
-# SRCDIR	= src_bonus/
-# SRCFILE	=	border_checking.c \
-			border_checking_utils.c \
 			check_file.c \
 			controller.c \
 			demo_utils.c \
@@ -34,7 +17,7 @@ SRCFILE	=	border_checking.c \
 			parsing.c \
 			ray_casting.c \
 			start_game.c \
-			vector_utils.c
+			time_funcs.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
 OBJFILE = $(SRCFILE:.c=.o)

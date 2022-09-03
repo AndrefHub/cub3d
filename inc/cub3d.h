@@ -9,12 +9,16 @@
 # include "X11/X.h"
 # include "X11/keysym.h"
 # include "time.h"
+# include <sys/time.h>
 # include "../cute_sound/cute_sound.h"
 # ifdef __APPLE__
 #  include "../mlx/mlx.h"
 # else
 #  include "../mlx_linux/mlx.h"
 # endif
+
+typedef unsigned long long	t_ull;
+
 typedef struct s_vector
 {
 	int	x;
@@ -122,6 +126,12 @@ typedef struct game
 		t_sound			bonk;
 		t_sound			song;
 	}					audio;
+	struct 	s_time
+	{
+		t_ull	startup;
+		t_ull	last;
+	}		time;
+	
 }	t_game;
 
 int		check_file(int ac, char **av);
@@ -164,6 +174,7 @@ void	cast_rays(t_game *game);
 void	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
 bool	key_pressed(t_game *game, int key);
 void	draw_walls(t_game *game);
+void	draw_fps(t_game *game);
 
 //demo
 char	**charlist_to_matrix(t_list *list);
@@ -175,4 +186,8 @@ int	check_longer_row_border(char *shorter, int sindex, int lindex, char direct);
 int	check_longer_row_border_vert(char **map, int x, int sindex, int lindex, char direct);
 
 void	open_door(t_game *game);
+
+// time
+t_ull	get_time(void);
+void	init_time(t_game *game);
 #endif
