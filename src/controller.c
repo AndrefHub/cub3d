@@ -213,10 +213,32 @@ void	change_textures(t_game *game)
 	printf("%f ", ((double)f) / s);
 }
 
+void	fill_floor(t_img *img, int color)
+{
+	const int	img_size = img->size.x * img->size.y / 2;
+	int			i;
+
+	i = 0;
+	while (i < img_size)
+		img->addr[i++ + img_size] = color;
+}
+
+void	fill_ceiling(t_img *img, int color)
+{
+	const int	img_size = img->size.x * img->size.y / 2;
+	int			i;
+
+	i = 0;
+	while (i < img_size)
+		img->addr[i++] = color;
+}
+
 int	game_loop(t_game *game)
 {
 	player_controll(game);
 	img_clear_rgb(&game->img, 0x808080);
+	fill_floor(&game->img, game->map->F);
+	fill_ceiling(&game->img, game->map->C);
 //	draw_player(game);
 	cast_rays(game);
 	draw_walls(game);

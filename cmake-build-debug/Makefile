@@ -273,6 +273,30 @@ src/draw_map.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_map.c.s
 .PHONY : src/draw_map.c.s
 
+src/draw_texture.o: src/draw_texture.c.o
+.PHONY : src/draw_texture.o
+
+# target to build an object file
+src/draw_texture.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_texture.c.o
+.PHONY : src/draw_texture.c.o
+
+src/draw_texture.i: src/draw_texture.c.i
+.PHONY : src/draw_texture.i
+
+# target to preprocess a source file
+src/draw_texture.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_texture.c.i
+.PHONY : src/draw_texture.c.i
+
+src/draw_texture.s: src/draw_texture.c.s
+.PHONY : src/draw_texture.s
+
+# target to generate assembly for a file
+src/draw_texture.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_texture.c.s
+.PHONY : src/draw_texture.c.s
+
 src/drawing.o: src/drawing.c.o
 .PHONY : src/drawing.o
 
@@ -516,6 +540,9 @@ help:
 	@echo "... src/draw_map.o"
 	@echo "... src/draw_map.i"
 	@echo "... src/draw_map.s"
+	@echo "... src/draw_texture.o"
+	@echo "... src/draw_texture.i"
+	@echo "... src/draw_texture.s"
 	@echo "... src/drawing.o"
 	@echo "... src/drawing.i"
 	@echo "... src/drawing.s"

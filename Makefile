@@ -8,6 +8,7 @@ SRCFILE	=	border_checking.c \
 			controller.c \
 			demo_utils.c \
 			draw_map.c \
+			draw_texture.c \
 			drawing.c \
 			free_game.c \
 			ft_utils.c \

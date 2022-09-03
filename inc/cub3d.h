@@ -190,4 +190,5 @@ void	open_door(t_game *game);
 // time
 t_ull	get_time(void);
 void	init_time(t_game *game);
+void	draw_texture_set(t_game *game, struct s_column *column);
 #endif
