@@ -63,7 +63,6 @@ typedef struct ray
 	t_fvector	dir;
 	t_vector	map_tile;
 	t_fvector	length;
-	t_fvector	end;
 	t_vector	step;
 }				t_ray;
 
@@ -111,6 +110,7 @@ typedef struct game
 		int			height;
 		uint32_t	texture_id;
 		float		texture_pos;
+		float		fade;
 		int			color;
 	}				*column;
 	t_img			textures[MAX_TEXTURES];
