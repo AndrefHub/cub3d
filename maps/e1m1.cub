@@ -38,9 +38,9 @@ SO15 ./assets/sussy_stickmin/sussy-15.xpm
 SO16 ./assets/sussy_stickmin/sussy-16.xpm
 SO17 ./assets/sussy_stickmin/sussy-17.xpm
 
-WE ./assets/sus64xpm/sus32-0.xpm
-EA0 ./assets/sus64xpm/sus32-0.xpm
-EA1 ./assets/sus64xpm/sus32-1.xpm
+WE ./assets/sussy_stickmin/sussy-17.xpm
+EA0 ./assets/sussy_stickmin/sussy-17.xpm
+EA1 ./assets/sussy_stickmin/sussy-16.xpm
 
 F 110,110,10
 

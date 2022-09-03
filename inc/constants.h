@@ -25,6 +25,7 @@
 # define MAX_TEXTURES 4
 # define MAX_WALL_CHARS 4
 
+# define CARDINAL_POINTS "NSWE"
 # define WALL_CHARS "123456789@"
 
 # ifdef __APPLE__

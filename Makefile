@@ -10,6 +10,7 @@ SRCFILE	=	border_checking.c \
 			demo_utils.c \
 			draw_map.c \
 			drawing.c \
+			draw_texture.c\
 			ft_utils.c \
 			input_manip.c \
 			main.c \
