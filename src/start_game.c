@@ -71,7 +71,7 @@ void	import_texture(t_game *game, t_img *img, char *filename)
 	else
 		error_exit(game, 1, "Invalid texture format");
 	if (img->mlx_img == NULL)
-		error_exit(game, 1, "Can't load texture");
+		error_exit(game, 1, filename);
 	img->addr = (int *) mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_length, &img->endian);
 	img->size.x = TEXTURE_SIZE;
 	img->size.y = TEXTURE_SIZE;

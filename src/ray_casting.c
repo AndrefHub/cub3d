@@ -135,7 +135,7 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 			game->column[i].texture_pos = (game->player.pos.x + cosf(ray_angle) * distance) * TEXTURE_SIZE / MAP_GRID_SIZE;
 		}
 		if (game->column[i].dir == 'W' || game->column[i].dir == 'S')
-			game->column[i].texture_pos = powf(TEXTURE_SIZE / MAP_GRID_SIZE, 2) - game->column[i].texture_pos;
+			game->column[i].texture_pos = ABS_WALL_SIZE * TEXTURE_SIZE - game->column[i].texture_pos;
 		if (distance > MAX_RENDER_DISTANCE)
 			game->column[i].color = 0xFFAAAA;
 		game->column[i].distance = distance;
