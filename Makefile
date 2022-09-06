@@ -8,7 +8,7 @@ SRCFILE	=	border_checking.c \
 			controller.c \
 			demo_utils.c \
 			draw_map.c \
-			draw_texture.c \
+			game_textures.c \
 			drawing.c \
 			free_game.c \
 			ft_utils.c \
@@ -17,6 +17,7 @@ SRCFILE	=	border_checking.c \
 			main.c \
 			parsing.c \
 			ray_casting.c \
+			game_sound.c\
 			start_game.c \
 			time_funcs.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))

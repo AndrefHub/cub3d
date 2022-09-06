@@ -273,30 +273,6 @@ src/draw_map.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_map.c.s
 .PHONY : src/draw_map.c.s
 
-src/draw_texture.o: src/draw_texture.c.o
-.PHONY : src/draw_texture.o
-
-# target to build an object file
-src/draw_texture.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_texture.c.o
-.PHONY : src/draw_texture.c.o
-
-src/draw_texture.i: src/draw_texture.c.i
-.PHONY : src/draw_texture.i
-
-# target to preprocess a source file
-src/draw_texture.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_texture.c.i
-.PHONY : src/draw_texture.c.i
-
-src/draw_texture.s: src/draw_texture.c.s
-.PHONY : src/draw_texture.s
-
-# target to generate assembly for a file
-src/draw_texture.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_texture.c.s
-.PHONY : src/draw_texture.c.s
-
 src/drawing.o: src/drawing.c.o
 .PHONY : src/drawing.o
 
@@ -344,6 +320,54 @@ src/ft_utils.s: src/ft_utils.c.s
 src/ft_utils.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ft_utils.c.s
 .PHONY : src/ft_utils.c.s
+
+src/game_sound.o: src/game_sound.c.o
+.PHONY : src/game_sound.o
+
+# target to build an object file
+src/game_sound.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_sound.c.o
+.PHONY : src/game_sound.c.o
+
+src/game_sound.i: src/game_sound.c.i
+.PHONY : src/game_sound.i
+
+# target to preprocess a source file
+src/game_sound.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_sound.c.i
+.PHONY : src/game_sound.c.i
+
+src/game_sound.s: src/game_sound.c.s
+.PHONY : src/game_sound.s
+
+# target to generate assembly for a file
+src/game_sound.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_sound.c.s
+.PHONY : src/game_sound.c.s
+
+src/game_textures.o: src/game_textures.c.o
+.PHONY : src/game_textures.o
+
+# target to build an object file
+src/game_textures.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_textures.c.o
+.PHONY : src/game_textures.c.o
+
+src/game_textures.i: src/game_textures.c.i
+.PHONY : src/game_textures.i
+
+# target to preprocess a source file
+src/game_textures.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_textures.c.i
+.PHONY : src/game_textures.c.i
+
+src/game_textures.s: src/game_textures.c.s
+.PHONY : src/game_textures.s
+
+# target to generate assembly for a file
+src/game_textures.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_textures.c.s
+.PHONY : src/game_textures.c.s
 
 src/hooks.o: src/hooks.c.o
 .PHONY : src/hooks.o
@@ -540,15 +564,18 @@ help:
 	@echo "... src/draw_map.o"
 	@echo "... src/draw_map.i"
 	@echo "... src/draw_map.s"
-	@echo "... src/draw_texture.o"
-	@echo "... src/draw_texture.i"
-	@echo "... src/draw_texture.s"
 	@echo "... src/drawing.o"
 	@echo "... src/drawing.i"
 	@echo "... src/drawing.s"
 	@echo "... src/ft_utils.o"
 	@echo "... src/ft_utils.i"
 	@echo "... src/ft_utils.s"
+	@echo "... src/game_sound.o"
+	@echo "... src/game_sound.i"
+	@echo "... src/game_sound.s"
+	@echo "... src/game_textures.o"
+	@echo "... src/game_textures.i"
+	@echo "... src/game_textures.s"
 	@echo "... src/hooks.o"
 	@echo "... src/hooks.i"
 	@echo "... src/hooks.s"
