@@ -1,5 +1,16 @@
 #include "../inc/cub3d.h"
 
+int	get_string_index(char *str, char c)
+{
+	int	index;
+	
+	index = -1;
+	while (str[++index])
+		if (str[index] == c)
+			return (index);
+	return (-1);
+}
+
 void	get_textures(t_map *map, int fd)
 {
 	int		counter;
@@ -7,9 +18,10 @@ void	get_textures(t_map *map, int fd)
 
 	line = NULL;
 	counter = -1;
-	while (++counter < MAX_WALL_CHARS - 1)
-		map->texture_list[counter] = get_textures_list(fd, (char []){'1' + counter, '\0'}, &line);
-	map->texture_list[counter] = get_textures_list(fd, (char []){'D', '\0'}, &line);
+	ft_putendl_fd("Are we even here?", 2);
+	while (++counter < MAX_WALL_CHARS)
+		get_textures_list(map, fd, &line);
+	// map->texture_list[counter] = get_textures_list(fd, (char []){'W', 'D', '\0'}, &line);
 		
 	// map->texture_list[0] = get_textures_list(fd, "NO", &line);
 	// map->texture_list[1] = get_textures_list(fd, "SO", &line);
@@ -18,8 +30,8 @@ void	get_textures(t_map *map, int fd)
 	if (line)
 		map->F = convert_rgb(crop_prefix(line, "F"));
 	else
-		map->F = convert_rgb(crop_prefix(get_texture(fd), "F"));
-	map->C = convert_rgb(crop_prefix(get_texture(fd), "C"));
+		map->F = convert_rgb(crop_prefix(skip_empty_lines(fd), "F"));
+	map->C = convert_rgb(crop_prefix(skip_empty_lines(fd), "C"));
 }
 
 int	is_prefix_number(char *line, char *prefix, int counter)
@@ -29,26 +41,29 @@ int	is_prefix_number(char *line, char *prefix, int counter)
 			|| (counter == 0 && line[ft_strlen(prefix) + 1] == ' ')));
 }
 
-t_list	*get_textures_list(int fd, char *prefix, char **line)
+void	get_textures_list(t_map* map, int fd, char **line)
 {
-	t_list		*lst;
-	int			counter;
+	// t_list		*lst;
+	char	*prefix = WALL_PREFIX;
+	int		index;
 
-	lst = NULL;
-	counter = 0;
-	if (is_prefix_number(*line, prefix, counter))
+	// lst = NULL;
+	index = 0;
+	if (!line || !*line)
+		*line = skip_empty_lines(fd);
+	if (line && *line && **line == 'W' && get_string_index(WALL_CHARS, (*line)[1]) != -1)
 	{
-		ft_lstadd_back(&lst, ft_lstnew(crop_prefix(*line, prefix)));
-		++counter;
+		index = get_string_index(WALL_CHARS, (*line)[1]);
+		ft_lstadd_back(&map->texture_list[index], ft_lstnew(crop_prefix(*line, prefix)));
 	}
-	*line = get_texture(fd);
-	while (is_prefix_number(*line, prefix, counter))
+	else
+		return ;
+	*line = skip_empty_lines(fd);
+	while (!(line && *line && **line == 'W' && get_string_index(WALL_CHARS, (*line)[1]) != -1))
 	{
-		ft_lstadd_back(&lst, ft_lstnew(crop_prefix(*line, prefix)));
-		++counter;
-		*line = get_texture(fd);
+		ft_lstadd_back(&map->texture_list[index], ft_lstnew(crop_prefix(*line, prefix)));
+		*line = skip_empty_lines(fd);
 	}
-	return (lst);
 }
 
 char	**lst_to_char_ptr(t_list *tmp)
@@ -77,20 +92,11 @@ void	empty_func(void *ptr)
 int	ft_strrchr_int(char *line, int chr)
 {
 	char	*wall;
-	int		val;
 
 	wall = ft_strrchr(line, chr);
 	if (line && wall)
 		return (wall - line + 1);
 	return (-1);
-// 		unsigned int	l;
-
-// 	l = ft_strlen(s);
-// 	while (s[l] != (char)c && l != 0)
-// 		l--;
-// 	if (s[l] == (char)c)
-// 		return ((char *)s + l);
-// 	return (NULL);
 }
 
 int	ft_strrchr_int_arr(char *line, char* chr)
@@ -121,8 +127,6 @@ void	map_to_rectangle(t_map *map)
 	arr = map->map;
 	while (arr[++index])
 	{
-		ft_putnbr_fd(ft_strrchr_int_arr(arr[index], WALL_CHARS), 2);
-		ft_putendl_fd("", 2);
 		if (ft_strrchr_int_arr(arr[index], WALL_CHARS) < map->map_size.x || !is_wall(arr[index][ft_strlen(arr[index]) - 1]))
 		{
 			resized_line = malloc(sizeof(char) * (map->map_size.x + 1));
@@ -184,7 +188,6 @@ t_map	*parse_file(int ac, char **av)
 {
 	t_map	*map;
 	int		fd;
-	// char	*line;
 
 	map = NULL;
 	fd = check_file(ac, av);
@@ -192,9 +195,7 @@ t_map	*parse_file(int ac, char **av)
 	{
 		// ft_putendl_fd("amogus_gaming", 1);
 		map = create_empty_map();
-	ft_putendl_fd("amogus_gaming", 1);
 		get_textures(map, fd);
-	ft_putendl_fd("amogus_gaming", 1);
 		get_map(map, fd);
 	}
 	if (is_enclosed(map))

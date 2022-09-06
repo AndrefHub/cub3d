@@ -152,7 +152,7 @@ int		ft_strrchr_int(char *line, int chr);
 t_map	*create_empty_map(void);
 int		is_wall(char c);
 int		ft_arraylen(void **arr);
-t_list	*get_textures_list(int fd, char *prefix, char **line_ret);
+void	get_textures_list(t_map* map, int fd, char **line);
 // char	*get_textures_list(int fd, char *prefix, t_list **lst);
 //controller.c
 int		close_hook(t_game *game);

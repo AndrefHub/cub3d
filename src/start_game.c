@@ -112,7 +112,7 @@ void	init_sound(t_game *game)
 	cs_spawn_mix_thread(game->audio.ctx);
 	cs_thread_sleep_delay(game->audio.ctx, 5);
 
-	game->audio.song.file = cs_load_wav("assets/chicony_sped_up.wav");
+	game->audio.song.file = cs_load_wav("assets/sus_sped_up.wav");
 	if (game->audio.song.file.channels[0])
 	{
 		game->audio.song.def = cs_make_def(&game->audio.song.file);

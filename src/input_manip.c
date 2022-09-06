@@ -36,11 +36,6 @@ char	*skip_empty_lines(int fd)
 	return (line);
 }
 
-char	*get_texture(int fd)
-{
-	return (skip_empty_lines(fd));
-}
-
 int convert_rgb(char *line)
 {
 	char	**rgb_values;

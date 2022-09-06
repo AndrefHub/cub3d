@@ -125,14 +125,14 @@ void	open_door(t_game *game)
 	
 	to_change = NULL;
 	if (PI / 4 <= angle && angle <= 3 * PI / 4 && ft_tolower(game->grid
-		[y - 1][x]) == 'd')
-		to_change = game->grid[y - 1] + x;
+		[y + 1][x]) == 'd')
+		to_change = game->grid[y + 1] + x;
 	else if (3 * PI / 4 <= angle && angle <= 5 * PI / 4 && ft_tolower(game->grid
 		[y][x - 1]) == 'd')
 		to_change = game->grid[y] + x - 1;
 	else if (5 * PI / 4 <= angle && angle <= 7 * PI / 4 && ft_tolower(game->grid
-		[y + 1][x]) == 'd')
-		to_change = game->grid[y + 1] + x;
+		[y - 1][x]) == 'd')
+		to_change = game->grid[y - 1] + x;
 	else if ((7 * PI / 4 <= angle || angle <= PI / 4) && ft_tolower(game->grid
 		[y][x + 1]) == 'd')
 		to_change = game->grid[y] + x + 1;
