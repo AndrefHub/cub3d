@@ -134,6 +134,44 @@ typedef struct game
 	
 }	t_game;
 
+int	game(t_map *map);
+
+// Map parsing: parsing.c //
+// Main parsing control function
+t_map	*parse_file(int ac, char **av);
+// Reading textures from file
+void	get_textures(t_map *map, int fd); //TODO: Rename "get_textures_from_file"
+void	get_map(t_map *map, int fd); //TODO: Rename
+char	**lst_to_char_ptr(t_list *tmp); // TODO: Move to another file
+void	map_to_rectangle(t_map *map); // TODO: Rename "set_map_to_rectangle"?
+void	convert_spaces_to_zeros(t_map *map);
+int		ft_strrchr_int(char *line, int chr); //TODO: Rename "get_chr_index"
+t_map	*free_map(t_map *map);
+char	**lst_to_char_ptr(t_list *tmp); //TODO: Rename "lst_to_char_matrix"
+
+// Check filename and : check_file.c //
+int		check_file(int ac, char **av);
+
+
+// Cub3d utils : ft_utils.c //
+t_map	*create_empty_map();
+int		ft_arraylen(void **arr);
+int		ft_is_empty(char *line); //TODO: Rename "is_line_empty"
+
+
+// Some utils for parsing and working with files: input_manip.c //
+int		convert_rgb(char *line); //TODO: Rename
+char	*skip_empty_lines(int fd);
+
+
+
+// Border checking and utils for it: border_checking.c //
+int		find_player(t_map *map, char *line, t_list *lst); //TODO: Rename "find_player_on_map"
+int		get_map_width(char **map); //TODO: Move to another file
+int		is_enclosed(t_map *args); //TODO: Rename "is_map_enclosed"
+int		check_enclosure(t_map *map, t_vector vec);
+
+
 int		check_file(int ac, char **av);
 char	*crop_prefix(char* line, char *prefix);
 int		is_space(char c);

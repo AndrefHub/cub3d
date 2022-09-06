@@ -12,7 +12,7 @@ void	get_textures(t_map *map, int fd)
 	if (line)
 		map->F = convert_rgb(crop_prefix(line, "F"));
 	else
-		map->F = convert_rgb(crop_prefix(get_texture(fd), "F"));	//TODO: ?? эт как понимать?
+		map->F = convert_rgb(crop_prefix(get_texture(fd), "F"));
 	map->C = convert_rgb(crop_prefix(get_texture(fd), "C"));
 }
 
@@ -53,7 +53,6 @@ char	**lst_to_char_ptr(t_list *tmp)
 
 	size = ft_lstsize(tmp);
 	map = malloc(sizeof(*map) * (size + 1));
-	//TODO: add malloc checking
 	counter = -1;
 	while (++counter < size)
 	{
@@ -64,7 +63,7 @@ char	**lst_to_char_ptr(t_list *tmp)
 	return (map);
 }
 
-void	empty_func(void *ptr) //TODO: ??
+void	empty_func(void *ptr)
 {
 	(void) ptr;
 }
@@ -83,22 +82,21 @@ void	map_to_rectangle(t_map *map)
 {
 	char	**arr;
 	char	*resized_line;
-	int		i;
+	int		index;
 
-	i = -1;
+	index = -1;
 	resized_line = NULL;
 	arr = map->map;
-	while (arr[++i])
+	while (arr[++index])
 	{
-		if (ft_strrchr_int(arr[i], '1') < map->map_size.x || arr[i][ft_strlen(arr[i]) - 1] != '1')
+		if (ft_strrchr_int(arr[index], '1') < map->map_size.x || arr[index][ft_strlen(arr[index]) - 1] != '1')
 		{
 			resized_line = malloc(sizeof(char) * (map->map_size.x + 1));
-			//TODO: add malloc checking
 			ft_memset(resized_line, ' ', sizeof(char) * map->map_size.x);
 			resized_line[map->map_size.x] = 0;
-			ft_memcpy(resized_line, arr[i], ft_strrchr_int(arr[i], '1'));
-			free(arr[i]);
-			arr[i] = resized_line;
+			ft_memcpy(resized_line, arr[index], ft_strrchr_int(arr[index], '1'));
+			free(arr[index]);
+			arr[index] = resized_line;
 		}
 	}
 }
@@ -106,17 +104,17 @@ void	map_to_rectangle(t_map *map)
 void	convert_spaces_to_zeros(t_map *map)
 {
 	char	**arr;
-	int		y;
-	int		x;
+	int		yindex;
+	int		xindex;
 
-	y = -1;
+	yindex = -1;
 	arr = map->map;
-	while (arr[++y])
+	while (arr[++yindex])
 	{
-		x = -1;
-		while (arr[y][++x])
-			if (arr[y][x] == ' ')
-				arr[y][x] = '0';
+		xindex = -1;
+		while (arr[yindex][++xindex])
+			if (arr[yindex][xindex] == ' ')
+				arr[yindex][xindex] = '0';
 	}
 }
 
@@ -152,11 +150,13 @@ t_map	*parse_file(int ac, char **av)
 {
 	t_map	*map;
 	int		fd;
+	// char	*line;
 
 	map = NULL;
 	fd = check_file(ac, av);
 	if (fd != BAD_FILE)
 	{
+		// ft_putendl_fd("amogus_gaming", 1);
 		map = create_empty_map();
 		if (map == NULL)
 			error_exit(NULL, 1, "Allocation error: Map");

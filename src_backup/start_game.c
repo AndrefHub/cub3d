@@ -93,7 +93,6 @@ void	initialize_sprites(t_game *game)
 		while (texture_list)
 		{
 			img = malloc(sizeof(*img));
-			//TODO: add malloc checking
 			import_texture(game, img, texture_list->content);
 			ft_lstadd_back(&img_list, ft_lstnew(img));
 			texture_list = texture_list->next;
