@@ -133,25 +133,15 @@ void	map_to_rectangle(t_map *map)
 	arr = map->map;
 	while (arr[++i])
 	{
-<<<<<<< HEAD
-		if (ft_strrchr_int(arr[i], '1') < map->map_size.x || arr[i][ft_strlen(arr[i]) - 1] != '1')
-=======
-		if (ft_strrchr_int_arr(arr[index], WALL_CHARS) < map->map_size.x || !is_wall(arr[index][ft_strlen(arr[index]) - 1]))
->>>>>>> kdancy
+		if (ft_strrchr_int_arr(arr[i], WALL_CHARS) < map->map_size.x || !is_wall(arr[i][ft_strlen(arr[i]) - 1]))
 		{
 			resized_line = malloc(sizeof(char) * (map->map_size.x + 1));
 			//TODO: add malloc checking
 			ft_memset(resized_line, ' ', sizeof(char) * map->map_size.x);
 			resized_line[map->map_size.x] = 0;
-<<<<<<< HEAD
-			ft_memcpy(resized_line, arr[i], ft_strrchr_int(arr[i], '1'));
+			ft_memcpy(resized_line, arr[i], ft_strrchr_int_arr(arr[i], WALL_CHARS));
 			free(arr[i]);
 			arr[i] = resized_line;
-=======
-			ft_memcpy(resized_line, arr[index], ft_strrchr_int_arr(arr[index], WALL_CHARS));
-			free(arr[index]);
-			arr[index] = resized_line;
->>>>>>> kdancy
 		}
 	}
 }
@@ -211,11 +201,8 @@ t_map	*parse_file(int ac, char **av)
 	if (fd != BAD_FILE)
 	{
 		map = create_empty_map();
-<<<<<<< HEAD
 		if (map == NULL)
 			error_exit(NULL, 1, "Allocation error: Map");
-=======
->>>>>>> kdancy
 		get_textures(map, fd);
 		get_map(map, fd);
 		if (map->map_size.x == 0 || map->map_size.y == 0)
@@ -226,17 +213,8 @@ t_map	*parse_file(int ac, char **av)
 			return (map);
 		}
 	}
-<<<<<<< HEAD
 	else
 		error_exit(NULL, 1, "Invalid input file: Map");
 	ft_putendl_fd("Reading map: success", 2);
-=======
-	if (is_enclosed(map))
-	{
-		convert_spaces_to_zeros(map);
-		return (map);
-	}
-	ft_putendl_fd("Faulty map", 1);
->>>>>>> kdancy
 	return (free_map(map));
 }
