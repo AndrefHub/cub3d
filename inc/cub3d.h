@@ -48,15 +48,11 @@ typedef struct s_map
 	t_list		*texture_list[MAX_WALL_CHARS];
 	t_list		*img_list[MAX_WALL_CHARS];
 	unsigned	list_size;
-	// char		*NO;
-	// char		*SO;
-	// char		*WE;
-	// char		*EA;
 	int			F;
 	int			C;
 	t_img		img;
 	t_vector	player_coords;
-	double		player_orient;
+	float		player_orient;
 	int			map_tile_size;
 	t_fvector	last_collision;
 } t_map;
@@ -78,15 +74,17 @@ typedef struct sound
 
 typedef struct game
 {
+	t_map			*map;
+	char			**grid;
+	bool			show_map;
+	t_img			img;
+
 	struct s_mlx
 	{
 		void	*id;
 		void	*window;
 	}	mlx;
-	t_map			*map;
-	char			**grid;
-	bool			show_map;
-	t_img			img;
+
 	struct			s_player
 	{
 		t_fvector	pos;
@@ -94,6 +92,7 @@ typedef struct game
 		t_fvector	vector;
 		t_fvector	delta;
 	}				player;
+
 	struct			s_key
 	{
 		bool		k[512];
@@ -102,6 +101,7 @@ typedef struct game
 		t_vector	mdir;
 		bool		mouse;
 	}				key;
+
 	struct			s_column
 	{
 		float		distance;
@@ -134,12 +134,9 @@ typedef struct game
 	
 }	t_game;
 
-int	game(t_map *map);
 
 // Map parsing: parsing.c //
-// Main parsing control function
 t_map	*parse_file(int ac, char **av);
-// Reading textures from file
 void	get_textures(t_map *map, int fd); //TODO: Rename "get_textures_from_file"
 void	get_map(t_map *map, int fd); //TODO: Rename
 char	**lst_to_char_ptr(t_list *tmp); // TODO: Move to another file
@@ -149,6 +146,7 @@ int		ft_strrchr_int(char *line, int chr); //TODO: Rename "get_chr_index"
 t_map	*free_map(t_map *map);
 char	**lst_to_char_ptr(t_list *tmp); //TODO: Rename "lst_to_char_matrix"
 
+
 // Check filename and : check_file.c //
 int		check_file(int ac, char **av);
 
@@ -157,6 +155,7 @@ int		check_file(int ac, char **av);
 t_map	*create_empty_map();
 int		ft_arraylen(void **arr);
 int		ft_is_empty(char *line); //TODO: Rename "is_line_empty"
+t_img	initialize_img(t_img *img, void *mlx_ptr, int width, int height);
 
 
 // Some utils for parsing and working with files: input_manip.c //
@@ -170,6 +169,43 @@ int		find_player(t_map *map, char *line, t_list *lst); //TODO: Rename "find_play
 int		get_map_width(char **map); //TODO: Move to another file
 int		is_enclosed(t_map *args); //TODO: Rename "is_map_enclosed"
 int		check_enclosure(t_map *map, t_vector vec);
+
+
+// Game initialization: start_game.c //
+int		game(t_map *map);
+
+// Work with sound: game_sound.c //
+void	init_main_game_sound_theme(t_game *game, char *main_music_theme_filename);
+void	set_game_events_sounds(struct s_audio *audio);
+void	set_sound(t_sound *sound, char *filename);
+
+
+// Work with sprites: game_sprites.c //
+void	initialize_sprites(t_game *game);
+void	import_texture_to_img(t_game *game, t_img *img, char *filename);
+void	draw_texture_set(t_game *game, struct s_column *column);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int		check_file(int ac, char **av);

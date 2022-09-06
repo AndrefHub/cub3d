@@ -101,13 +101,16 @@
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/draw_map.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src/draw_texture.c">
-			<Option target="cub3d"/>
-		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/drawing.c">
 			<Option target="cub3d"/>
 		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/ft_utils.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/game_sound.c">
+			<Option target="cub3d"/>
+		</Unit>
+		<Unit filename="/Users/lsherry/42Course/cub3d/src/game_textures.c">
 			<Option target="cub3d"/>
 		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/src/hooks.c">

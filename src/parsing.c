@@ -136,7 +136,8 @@ void	map_to_rectangle(t_map *map)
 		if (ft_strrchr_int_arr(arr[i], WALL_CHARS) < map->map_size.x || !is_wall(arr[i][ft_strlen(arr[i]) - 1]))
 		{
 			resized_line = malloc(sizeof(char) * (map->map_size.x + 1));
-			//TODO: add malloc checking
+			if (resized_line == NULL)
+				error_exit(NULL, 1, "Memory allocation error: Map processing");
 			ft_memset(resized_line, ' ', sizeof(char) * map->map_size.x);
 			resized_line[map->map_size.x] = 0;
 			ft_memcpy(resized_line, arr[i], ft_strrchr_int_arr(arr[i], WALL_CHARS));
