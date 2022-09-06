@@ -57,10 +57,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lsherry/42Course/cub3d
+CMAKE_SOURCE_DIR = /Users/landreas/42Course/cub3d
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lsherry/42Course/cub3d/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/landreas/42Course/cub3d/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles /Users/lsherry/42Course/cub3d/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/landreas/42Course/cub3d/cmake-build-debug/CMakeFiles /Users/landreas/42Course/cub3d/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/landreas/42Course/cub3d/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -441,6 +441,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/mlx_adapter.o: src/mlx_adapter.c.o
+.PHONY : src/mlx_adapter.o
+
+# target to build an object file
+src/mlx_adapter.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/mlx_adapter.c.o
+.PHONY : src/mlx_adapter.c.o
+
+src/mlx_adapter.i: src/mlx_adapter.c.i
+.PHONY : src/mlx_adapter.i
+
+# target to preprocess a source file
+src/mlx_adapter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/mlx_adapter.c.i
+.PHONY : src/mlx_adapter.c.i
+
+src/mlx_adapter.s: src/mlx_adapter.c.s
+.PHONY : src/mlx_adapter.s
+
+# target to generate assembly for a file
+src/mlx_adapter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/mlx_adapter.c.s
+.PHONY : src/mlx_adapter.c.s
+
 src/parsing.o: src/parsing.c.o
 .PHONY : src/parsing.o
 
@@ -585,6 +609,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/mlx_adapter.o"
+	@echo "... src/mlx_adapter.i"
+	@echo "... src/mlx_adapter.s"
 	@echo "... src/parsing.o"
 	@echo "... src/parsing.i"
 	@echo "... src/parsing.s"

@@ -8,6 +8,7 @@
 # include "math.h"
 # include "X11/X.h"
 # include "X11/keysym.h"
+# include <Carbon/Carbon.h>
 # include "time.h"
 # include <sys/time.h>
 # include "../cute_sound/cute_sound.h"
@@ -129,6 +130,7 @@ typedef struct game
 	struct 	s_time
 	{
 		t_ull	startup;
+		int		frames_to_move;
 		t_ull	last;
 	}		time;
 	
@@ -185,12 +187,20 @@ void	initialize_sprites(t_game *game);
 void	import_texture_to_img(t_game *game, t_img *img, char *filename);
 void	draw_texture_set(t_game *game, struct s_column *column);
 
+// Adapters for MLX for macOS and Linux: mlx_adapters.c //
+void	mouse_get_pos(void *mlx_ptr, void *win_ptr, int *x, int *y);
+void	mouse_move(void *mlx_ptr, void *win_ptr, int x, int y);
+void	mouse_show(void *mlx_ptr, void *win_ptr);
+void	mouse_hide(void *mlx_ptr, void *win_ptr);
 
-
-
-
-
-
+// Everything about drawing: drawing.c //
+void	put_pixel(t_img *img, t_vector point, int color);
+void	draw_line(t_img *img, t_vector p1, t_vector p2, int color);
+void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
+void	fill_img_color(t_img *img, int color);
+void	fill_floor_color(t_img *img, int color);
+void	fill_ceiling_color(t_img *img, int color);
+void	draw_aim(t_game *game); //TODO: ??
 
 
 
@@ -244,7 +254,7 @@ void	put_pixel(t_img *img, t_vector point, int color);
 void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
 void	draw_player(t_game *game);
 void	draw_aim(t_game *game);
-void	img_clear_rgb(t_img *img, int color);
+void	fill_img_color(t_img *img, int color);
 void	cast_rays(t_game *game);
 void	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
 bool	key_pressed(t_game *game, int key);
