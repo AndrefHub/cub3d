@@ -3,13 +3,13 @@
 t_map	*create_empty_map()
 {
 	t_map	*map;
+	int		counter;
 
+	counter = -1;
 	map = malloc(sizeof(*map));
 	map->map = NULL;
-	map->texture_list[0] = NULL;
-	map->texture_list[1] = NULL;
-	map->texture_list[2] = NULL;
-	map->texture_list[3] = NULL;
+	while (++counter < MAX_WALL_CHARS)
+		map->texture_list[counter] = NULL;
 	// map->NO = NULL;
 	// map->SO = NULL;
 	// map->WE = NULL;
