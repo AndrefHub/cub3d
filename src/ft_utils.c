@@ -5,6 +5,8 @@ t_map	*create_empty_map()
 	t_map	*map;
 
 	map = malloc(sizeof(*map));
+	if (!map)
+		return (NULL);
 	map->map = NULL;
 	map->texture_list[0] = NULL;
 	map->texture_list[1] = NULL;
@@ -68,4 +70,3 @@ void	print_map_debug(t_map *map)
 	}
 	// printf("\nIs enclosed? %d\n", is_enclosed(map));
 }
-

@@ -137,12 +137,12 @@ void	get_map(t_map *map, int fd)
 	map->map_size.x = get_map_width(map->map);
 	map->map_size.y = ft_arraylen((void **) map->map);
 	map_to_rectangle(map);
-	ft_putendl_fd("amogus_gaming", 1);
 }
 
 t_map	*free_map(t_map *map)
 {
-	ft_freesplit(map->map);
+	if (map)
+		ft_freesplit(map->map);
 	return (NULL);
 }
 
@@ -158,16 +158,20 @@ t_map	*parse_file(int ac, char **av)
 	{
 		// ft_putendl_fd("amogus_gaming", 1);
 		map = create_empty_map();
-	ft_putendl_fd("amogus_gaming", 1);
+		if (map == NULL)
+			error_exit(NULL, 1, "Allocation error: Map");
 		get_textures(map, fd);
-	ft_putendl_fd("amogus_gaming", 1);
 		get_map(map, fd);
+		if (map->map_size.x == 0 || map->map_size.y == 0)
+			error_exit(NULL, 1, "Reading error: Map");
+		if (is_enclosed(map))
+		{
+			convert_spaces_to_zeros(map);
+			return (map);
+		}
 	}
-	if (is_enclosed(map))
-	{
-		convert_spaces_to_zeros(map);
-		return (map);
-	}
-	ft_putendl_fd("amogus_gaming2", 1);
+	else
+		error_exit(NULL, 1, "Invalid input file: Map");
+	ft_putendl_fd("Reading map: success", 2);
 	return (free_map(map));
 }

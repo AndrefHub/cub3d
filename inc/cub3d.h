@@ -184,11 +184,12 @@ int	get_non_space_index_right(char *line);
 int	get_non_space_index_top(char **map, int x);
 int	check_longer_row_border(char *shorter, int sindex, int lindex, char direct);
 int	check_longer_row_border_vert(char **map, int x, int sindex, int lindex, char direct);
+void	error_exit(t_game *game, int return_value, char *message);
 
 void	open_door(t_game *game);
-
 // time
 t_ull	get_time(void);
 void	init_time(t_game *game);
+
 void	draw_texture_set(t_game *game, struct s_column *column);
 #endif

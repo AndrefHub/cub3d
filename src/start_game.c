@@ -8,7 +8,8 @@ void	error_exit(t_game *game, int return_value, char *message)
 	}
 	//free(all)
 	// (void ) game;
-	mlx_do_key_autorepeaton(game->mlx.id);
+	if (game != NULL)
+		mlx_do_key_autorepeaton(game->mlx.id);
 	exit(return_value);
 }
 
