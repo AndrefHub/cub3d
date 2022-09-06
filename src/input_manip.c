@@ -5,7 +5,7 @@ char	*crop_prefix(char* line, char *prefix)
 	char	*new_line;
 	char	*begin;
 
-	if (ft_strncmp(line, prefix, ft_strlen(prefix)))
+	if (!line || ft_strncmp(line, prefix, ft_strlen(prefix)))
 	{
 		free(line);
 		return (NULL);
