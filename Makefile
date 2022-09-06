@@ -30,6 +30,7 @@ LIBHDR  = libft/libft.h
 CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
 INCDIR  = inc/
 SNDLIB  = cute_sound/cute_sound.o 
+ASSETS_LINK	= 'https://drive.google.com/file/d/1LN2mkGPS0Jez69ijpsC_n7bsKnlIN_l_/view?usp=sharing'
 
 UNAME	= $(shell uname -s)
 
@@ -37,15 +38,17 @@ ifeq ($(UNAME), Darwin)
 	MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 	MLX		= mlx
 	SNDLIB	+= cute_sound/SDL2
+	GOINFRE = ~/goinfre
 endif
 
 ifeq ($(UNAME), Linux)
 	MLXFLAGS = -Lmlx_linux -lmlx -Imlx_linux -lXext -lX11 -lm -lz
 	MLX		= mlx_linux
 	SNDLIB	+= -lSDL2
+	GOINFRE = ~/Documents
 endif
 
-all: $(NAME)
+all: download_assets $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c $(MSHHDR)
 	@mkdir -p $(OBJDIR)
@@ -77,5 +80,8 @@ fclean: clean_proj_files
 re: clean all
 
 full_rebuild: fclean all
+
+download_assets:
+	/bin/bash assets.sh
 
 .PHONY: all clean fclean re bonus
