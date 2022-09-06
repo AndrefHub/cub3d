@@ -15,3 +15,12 @@ void	init_time(t_game *game)
 	game->time.startup = get_time();
 	game->time.last = game->time.startup;
 }
+
+void	wait_milliseconds(int milliseconds)
+{
+	t_ull	curr_time;
+
+	curr_time = get_time();
+	while (get_time() < curr_time + milliseconds)
+		usleep(500);
+}

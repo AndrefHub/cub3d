@@ -8,6 +8,8 @@
 # define PROJ_NAME "Cub3d"
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT 1026
+// # define WIN_WIDTH 1280
+// # define WIN_HEIGHT 720
 # define MAP_GRID_SIZE 32
 # define TEXTURE_SIZE 192
 # define MAX_RENDER_DISTANCE 5000
@@ -22,12 +24,14 @@
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
 # define MAX_TEXTURES 4
-# define MAX_WALL_CHARS 4
-// # define MAX_WALL_CHARS 10
+// # define MAX_WALL_CHARS 4
+# define MAX_WALL_CHARS 10
 
-# define WALL_CHARS "12D3456789"
+// # define WALL_CHARS "1D23456789"
+# define WALL_CHARS "123456789D"
 # define CARDINAL_POINTS "NSWE"
 
+# define WALL_PREFIX "W"
 # ifdef __APPLE__
 enum e_keys
 {

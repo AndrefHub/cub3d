@@ -1,13 +1,35 @@
-10 ./assets/sus64xpm/sus32-0.xpm
-11 ./assets/sus64xpm/sus32-1.xpm
-12 ./assets/sus64xpm/sus32-2.xpm
-13 ./assets/sus64xpm/sus32-3.xpm
-14 ./assets/sus64xpm/sus32-4.xpm
-15 ./assets/sus64xpm/sus32-5.xpm
+W1 ./assets/sussy_stickmin/sussy-00.xpm
+./assets/sussy_stickmin/sussy-01.xpm
+./assets/sussy_stickmin/sussy-02.xpm
+./assets/sussy_stickmin/sussy-03.xpm
+./assets/sussy_stickmin/sussy-04.xpm
+./assets/sussy_stickmin/sussy-05.xpm
+./assets/sussy_stickmin/sussy-06.xpm
+./assets/sussy_stickmin/sussy-07.xpm
+./assets/sussy_stickmin/sussy-08.xpm
+./assets/sussy_stickmin/sussy-09.xpm
+./assets/sussy_stickmin/sussy-10.xpm
+./assets/sussy_stickmin/sussy-11.xpm
+./assets/sussy_stickmin/sussy-12.xpm
+./assets/sussy_stickmin/sussy-13.xpm
+./assets/sussy_stickmin/sussy-14.xpm
+./assets/sussy_stickmin/sussy-15.xpm
+./assets/sussy_stickmin/sussy-16.xpm
+./assets/sussy_stickmin/sussy-17.xpm
 
-F 110,110,10
+W2 ./assets/wah-goodman/wah102.xpm
+W3 ./assets/wah-goodman/wah103.xpm
+W4 ./assets/wah-goodman/wah104.xpm
+W5 ./assets/wah-goodman/wah105.xpm
+W6 ./assets/wah-goodman/wah106.xpm
+W7 ./assets/wah-goodman/wah107.xpm
+W8 ./assets/wah-goodman/wah108.xpm
+W9 ./assets/wah-goodman/wah109.xpm
 
-C 111,110,10
+WD ./assets/wah-goodman/wah001.xpm
+./assets/wah-goodman/wah002.xpm
+F 217,242,253
+C 178,229,251
                             111111111111111
      111111                 110000001000011
      100001      111111111111000001000000011111
@@ -30,7 +52,7 @@ C 111,110,10
 1000001010101               1111 10101
 1000100010001                    10001
 1000111111011111                 11011                1111111111
-1010110000000001           11111110001111111          1000000001
+1010110000000001           111D1110001111111          1000000001
 1000110100000101           11000000000000011          1000000001
 1000110010001001           1000000000000000111111111111000000001
 1000010000000001           1000000000000000000000000000000000001
@@ -42,7 +64,7 @@ C 111,110,10
 1010111111011111                1000001        1001   1000000001
 10001   10001                    10001         1001    11111111
 1000111110001                    10101         1001
-1000110110001                    10001         1001 111111111
+1000110110001                    10001         1001 111D11111
 1000001010101                    10001         100010000000001
 1000100010001                    10001         1000D0000000001
 1010111110001                    10101         10001000E000001
@@ -50,8 +72,8 @@ C 111,110,10
 100000000000000001000000111      10001         111110000000101
 100000100000001001000000101      10001              111111111
 100000000000000001000000111      10101
-1111111111111111110111111        10001
-         111001000001       111111000111111
+111111111111111111011111111      10001
+         111001000001      1111111000111111
          101001001011       100000000000001
          11100000111        100001010101001
            1101111          100000000000001

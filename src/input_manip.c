@@ -5,13 +5,13 @@ char	*crop_prefix(char* line, char *prefix)
 	char	*new_line;
 	char	*begin;
 
-	if (ft_strncmp(line, prefix, ft_strlen(prefix)))
+	if (!line || ft_strncmp(line, prefix, ft_strlen(prefix)))
 	{
 		free(line);
 		return (NULL);
 	}
 	begin = line + ft_strlen(prefix);
-	while ((ft_isdigit(*begin)))
+	while (get_string_index(WALL_CHARS, *begin) != -1)
 		++begin;
 	while (*begin == ' ' || *begin == '\t')
 		++begin;
@@ -34,11 +34,6 @@ char	*skip_empty_lines(int fd)
 	if (line && line[ft_strlen(line) - 1] == '\n')
 		line[ft_strlen(line) - 1] = 0;
 	return (line);
-}
-
-char	*get_texture(int fd)
-{
-	return (skip_empty_lines(fd)); //TODO: ??
 }
 
 int convert_rgb(char *line)
