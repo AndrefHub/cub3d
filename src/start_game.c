@@ -46,6 +46,7 @@ void	start_game(t_game *game)
 {
 	init_time(game);
 	cs_play_sound(game->audio.ctx, game->audio.song.def);
+	wait_milliseconds(200);
 	mlx_loop(game->mlx.id);
 }
 
