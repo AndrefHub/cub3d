@@ -45,8 +45,8 @@ typedef struct s_map
 {
 	char		**map;
 	t_vector	map_size;
-	t_list		*texture_list[MAX_TEXTURES];
-	t_list		*img_list[MAX_TEXTURES];
+	t_list		*texture_list[MAX_WALL_CHARS];
+	t_list		*img_list[MAX_WALL_CHARS];
 	unsigned	list_size;
 	// char		*NO;
 	// char		*SO;
@@ -117,7 +117,7 @@ typedef struct game
 		float		fade;
 		int			color;
 	}				*column;
-	t_img			textures[MAX_TEXTURES];
+	t_img			textures[MAX_WALL_CHARS];
 
 	struct				s_audio
 	{
@@ -190,7 +190,8 @@ int		ft_strrchr_int(char *line, int chr);
 t_map	*create_empty_map(void);
 int		is_wall(char c);
 int		ft_arraylen(void **arr);
-t_list	*get_textures_list(int fd, char *prefix, char **line_ret);
+int		get_string_index(char *str, char c);
+void	get_textures_list(t_map* map, int fd, char **line);
 // char	*get_textures_list(int fd, char *prefix, t_list **lst);
 //controller.c
 int		close_hook(t_game *game);
@@ -228,6 +229,7 @@ void	open_door(t_game *game);
 // time
 t_ull	get_time(void);
 void	init_time(t_game *game);
+void	wait_milliseconds(int milliseconds);
 
 void	draw_texture_set(t_game *game, struct s_column *column);
 #endif
