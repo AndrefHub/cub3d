@@ -63,7 +63,7 @@ void	get_textures_list(t_map* map, int fd, char **line)
 	while (line && *line && !ft_isalpha(**line))
 	{
 		ft_putendl_fd(*line, 1);
-		ft_lstadd_back(&map->texture_list[index], ft_lstnew(crop_prefix(*line, prefix)));
+		ft_lstadd_back(&map->texture_list[index], ft_lstnew(*line));
 		*line = skip_empty_lines(fd);
 	}
 	ft_putstr_fd("--- Wall ", 1);
