@@ -1,56 +1,5 @@
 #include "../inc/cub3d.h"
 #include <unistd.h>
-#ifdef __APPLE__
-
-static inline void	mouse_get_pos(void *mlx_ptr, void *win_ptr, int *x, int *y)
-{
-	(void)mlx_ptr;
-	mlx_mouse_get_pos(win_ptr, x, y);
-}
-
-static inline void	mouse_move(void *mlx_ptr, void *win_ptr, int x, int y)
-{
-	(void)mlx_ptr;
-	mlx_mouse_move(win_ptr, x, y);
-}
-
-static inline void	mouse_show(void *mlx_ptr, void *win_ptr)
-{
-	(void)mlx_ptr;
-	(void)win_ptr;
-	mlx_mouse_show();
-}
-
-static inline void	mouse_hide(void *mlx_ptr, void *win_ptr)
-{
-	(void)mlx_ptr;
-	(void)win_ptr;
-	mlx_mouse_hide();
-}
-
-#else
-
-static inline void	mouse_get_pos(void *mlx_ptr, void *win_ptr, int *x, int *y)
-{
-	mlx_mouse_get_pos(mlx_ptr, win_ptr, x, y);
-}
-
-static inline void	mouse_move(void *mlx_ptr, void *win_ptr, int x, int y)
-{
-	mlx_mouse_move(mlx_ptr, win_ptr, x, y);
-}
-
-static inline void	mouse_show(void *mlx_ptr, void *win_ptr)
-{
-	mlx_mouse_show(mlx_ptr, win_ptr);
-}
-
-static inline void	mouse_hide(void *mlx_ptr, void *win_ptr)
-{
-	mlx_mouse_hide(mlx_ptr, win_ptr);
-}
-
-#endif
 
 void	check_borders(t_game *game)
 {
@@ -140,7 +89,7 @@ void	open_door(t_game *game)
 		*to_change = 'D';
 	else if (to_change && *to_change == 'D')
 		*to_change = 'd';
-	ft_putendl_fd(to_change, 1);
+//	ft_putendl_fd(to_change, 1);
 }
 
 void	player_controll(t_game *game)
@@ -156,6 +105,11 @@ void	player_controll(t_game *game)
 		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2;
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
 		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
+	}
+	if (key_pressed(game, LEFT_CTRL_KEY))
+	{
+		game->player.delta.x *= PL_ACCELERATION;
+		game->player.delta.y *= PL_ACCELERATION;
 	}
 	if (key_pressed(game, W_KEY))
 		move_radius_check(game, game->player.delta.x, game->player.delta.y, &collision);
@@ -187,16 +141,16 @@ void	player_controll(t_game *game)
 
 void	change_textures(t_game *game)
 {
-	const int	clocks_per_frame = 1000 / FRAMERATE;
+	static int clocks_per_frame = 1000 / FRAMERATE;
 	int	index;
-	int	frames_to_move;
 	int	counter;
-	static int f = 0;
+//	static int f = 0;
+	int frames_to_move;
 	static int s = 0;
 
 	frames_to_move = (get_time() - game->time.startup) / clocks_per_frame \
 		- (game->time.last - game->time.startup) / clocks_per_frame;
-	game->time.last = get_time();
+	game->time.last = get_time(); //TODO: move this line to game_loop
 	if (frames_to_move)
 	{
 		index = -1;
@@ -208,46 +162,27 @@ void	change_textures(t_game *game)
 			game->textures[index] = *(t_img *)game->map->img_list[index]->content;	
 		}
 	}
-	f += frames_to_move;
+//	f += game->time.frames_to_move;
 	++s;
-	printf("%f ", ((double)f) / s);
-}
-
-void	fill_floor(t_img *img, int color)
-{
-	const int	img_size = img->size.x * img->size.y / 2;
-	int			i;
-
-	i = 0;
-	while (i < img_size)
-		img->addr[i++ + img_size] = color;
-}
-
-void	fill_ceiling(t_img *img, int color)
-{
-	const int	img_size = img->size.x * img->size.y / 2;
-	int			i;
-
-	i = 0;
-	while (i < img_size)
-		img->addr[i++] = color;
+//	printf("%f ", ((double)f) / s);
 }
 
 int	game_loop(t_game *game)
 {
 	player_controll(game);
-	img_clear_rgb(&game->img, 0x808080);
-	fill_floor(&game->img, game->map->F);
-	fill_ceiling(&game->img, game->map->C);
-//	draw_player(game);
+	fill_img_color(&game->img, 0x808080);
+	fill_floor_color(&game->img, game->map->F);
+	fill_ceiling_color(&game->img, game->map->C);
 	cast_rays(game);
 	draw_walls(game);
+
 	draw_aim(game);
 
-	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img, 0, 0);
+	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
+		0, 0);
 	if (game->show_map)
 		draw_map(game);
 	draw_fps(game);
-	change_textures(game);
+	change_textures(game); //TODO: do something with fps. it is terrible
 	return (0);
 }

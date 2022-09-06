@@ -7,7 +7,6 @@ void	put_pixel(t_img *img, t_vector point, int color)
 	img->addr[point.y * img->size.x + point.x] = color;
 }
 
-//Bresenham's line algorithm
 void	draw_line(t_img *img, t_vector p1, t_vector p2, int color)
 {
 	const t_vector	diff = {abs(p2.x - p1.x), -abs(p2.y - p1.y)};
@@ -53,9 +52,29 @@ void	draw_square_fill(t_img *img, t_vector top_left, int size, int color)
 	}
 }
 
-void	img_clear_rgb(t_img *img, int color)
+void	fill_img_color(t_img *img, int color)
 {
 	const int	img_size = img->size.x * img->size.y;
+	int			i;
+
+	i = 0;
+	while (i < img_size)
+		img->addr[i++] = color;
+}
+
+void	fill_floor_color(t_img *img, int color)
+{
+	const int	img_size = img->size.x * img->size.y / 2;
+	int			i;
+
+	i = 0;
+	while (i < img_size)
+		img->addr[i++ + img_size] = color;
+}
+
+void	fill_ceiling_color(t_img *img, int color)
+{
+	const int	img_size = img->size.x * img->size.y / 2;
 	int			i;
 
 	i = 0;

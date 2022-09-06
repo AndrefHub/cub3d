@@ -3,6 +3,7 @@
 
 # define BAD_FILE -2
 # define FRAMERATE 30
+# define CLOCKS_PER_FRAME 1000 / FRAMERATE
 # define BAD_COLOUR (1 << 24)
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"
@@ -17,6 +18,7 @@
 # define PL_ROT_KEY_SPEED 0.05f
 # define PL_ROT_MOUSE_SPEED 0.002f
 # define PL_SPEED 2.0f
+# define PL_ACCELERATION 2.5f
 # define PL_RADIUS 10.0f
 # define PL_MAP_COLOR 0xFF0000
 # define RAYS_COLOR 0xFFFF00
@@ -46,6 +48,7 @@ enum e_keys
 	RIGHT_KEY = 124,
 	M_KEY = 46,
 	E_KEY = 14,
+	LEFT_CTRL_KEY = 256, //59
 };
 # else
 #  ifdef __linux__
