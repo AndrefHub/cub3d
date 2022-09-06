@@ -1,31 +1,14 @@
 #include "../inc/cub3d.h"
 
-void	cast_rays(t_game *game)
-{
-	int		i;
-	float	ray_angle;
-
-	i = 0;
-	while (i < game->img.size.x)
-	{
-		ray_angle = game->player.angle + atan(0.001 * (i - (float) game->img.size.x / 2));
-		get_interception(game, ray_angle, i);
-		i++;
-	}
-}
-
-void	draw_map_grid(t_game *game)
-{
-	(void) game;
-}
-
 void	draw_player_on_map(t_game *game)
 {
 	t_vector	player;
 	int			i;
 
-	player = (t_vector) {game->player.pos.x / MAP_GRID_SIZE * game->map->map_tile_size
-						 - game->map->map_tile_size / 4, game->player.pos.y / MAP_GRID_SIZE * game->map->map_tile_size - game->map->map_tile_size / 4};
+	player = (t_vector) {game->player.pos.x / MAP_GRID_SIZE
+		* game->map->map_tile_size - game->map->map_tile_size / 4,
+		game->player.pos.y / MAP_GRID_SIZE * game->map->map_tile_size
+		- game->map->map_tile_size / 4};
 	i = 0;
 	while (i < game->img.size.x - 50)
 	{
@@ -49,8 +32,7 @@ void	draw_map(t_game *game)
 	int	x;
 	int	y;
 
-	img_clear_rgb(&game->map->img, 0xAA000000);
-	// img_clear_rgb(&game->map->img, 0xFF000000);
+	img_clear_rgb(&game->map->img, 0xFF000000);
 	y = 0;
 	while (game->grid[y])
 	{

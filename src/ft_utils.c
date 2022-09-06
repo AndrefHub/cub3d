@@ -47,6 +47,29 @@ int		ft_is_empty(char *line)
 	return (1);
 }
 
+void	error_exit(t_game *game, int return_value, char *message)
+{
+	if (return_value)
+	{
+		ft_putendl_fd(message, 2);
+	}
+	//free(all)
+	// (void ) game;
+	if (game != NULL)
+		mlx_do_key_autorepeaton(game->mlx.id);
+	exit(return_value);
+}
+
+t_img	initialize_img(t_img *img, void *mlx_ptr, int width, int height)
+{
+	img->mlx_img = mlx_new_image(mlx_ptr, width, height);
+	if (img->mlx_img == NULL)
+		error_exit(NULL, 1, "Memory allocation error: t_img");
+	img->addr = (int *) mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_length, &img->endian);
+	img->size = (t_vector) {width, height};
+	return (*img);
+}
+
 void	print_map_debug(t_map *map)
 {
 	char	**ptr;
