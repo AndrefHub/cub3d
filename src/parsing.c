@@ -2,13 +2,19 @@
 
 void	get_textures(t_map *map, int fd)
 {
+	int		counter;
 	char	*line;
 
 	line = NULL;
-	map->texture_list[0] = get_textures_list(fd, "NO", &line);
-	map->texture_list[1] = get_textures_list(fd, "SO", &line);
-	map->texture_list[2] = get_textures_list(fd, "WE", &line);
-	map->texture_list[3] = get_textures_list(fd, "EA", &line);
+	counter = -1;
+	while (++counter < MAX_WALL_CHARS - 1)
+		map->texture_list[counter] = get_textures_list(fd, (char []){'1' + counter, '\0'}, &line);
+	map->texture_list[counter] = get_textures_list(fd, (char []){'D', '\0'}, &line);
+		
+	// map->texture_list[0] = get_textures_list(fd, "NO", &line);
+	// map->texture_list[1] = get_textures_list(fd, "SO", &line);
+	// map->texture_list[2] = get_textures_list(fd, "WE", &line);
+	// map->texture_list[3] = get_textures_list(fd, "EA", &line);
 	if (line)
 		map->F = convert_rgb(crop_prefix(line, "F"));
 	else
@@ -78,6 +84,23 @@ int	ft_strrchr_int(char *line, int chr)
 	return (-1);
 }
 
+int	ft_strrchr_int_arr(char *line, char* chr)
+{
+	int		max;
+	int		curr;
+	size_t	counter;
+
+	counter = 0;
+	max = ft_strrchr_int(line, chr[counter]);
+	while (++counter < ft_strlen(chr))
+	{
+		curr = ft_strrchr_int(line, chr[counter]);
+		if (max < curr)
+			max = curr;
+	}
+	return (max);
+}
+
 void	map_to_rectangle(t_map *map)
 {
 	char	**arr;
@@ -89,12 +112,12 @@ void	map_to_rectangle(t_map *map)
 	arr = map->map;
 	while (arr[++index])
 	{
-		if (ft_strrchr_int(arr[index], '1') < map->map_size.x || arr[index][ft_strlen(arr[index]) - 1] != '1')
+		if (ft_strrchr_int_arr(arr[index], WALL_CHARS) < map->map_size.x || !is_wall(arr[index][ft_strlen(arr[index]) - 1]))
 		{
 			resized_line = malloc(sizeof(char) * (map->map_size.x + 1));
 			ft_memset(resized_line, ' ', sizeof(char) * map->map_size.x);
 			resized_line[map->map_size.x] = 0;
-			ft_memcpy(resized_line, arr[index], ft_strrchr_int(arr[index], '1'));
+			ft_memcpy(resized_line, arr[index], ft_strrchr_int_arr(arr[index], WALL_CHARS));
 			free(arr[index]);
 			arr[index] = resized_line;
 		}
@@ -165,7 +188,9 @@ t_map	*parse_file(int ac, char **av)
 	}
 	if (is_enclosed(map))
 	{
+		ft_putendl_fd("SIUUUUUUU", 1);
 		convert_spaces_to_zeros(map);
+		ft_putendl_fd("SIUUUUUUU", 1);
 		return (map);
 	}
 	ft_putendl_fd("amogus_gaming2", 1);

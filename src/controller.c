@@ -200,7 +200,7 @@ void	change_textures(t_game *game)
 	if (frames_to_move)
 	{
 		index = -1;
-		while (++index < MAX_TEXTURES)
+		while (++index < MAX_WALL_CHARS)
 		{
 			counter = -1;
 			while (++counter < frames_to_move)
