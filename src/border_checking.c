@@ -9,7 +9,7 @@ int	get_map_width(char **map)
 	{
 		ft_putendl_fd(*map, 1);
 		if (max_width < ft_strrchr_int(*map, '1'))
-			max_width = ft_strrchr_int(*map, '1');
+			max_width = ft_strrchr_int(*map, '1'); // change wall to WALL_CHARS
 		++map;
 	}
 	return (max_width);
@@ -54,7 +54,7 @@ int	find_player(t_map *map, char *line, t_list *lst)
 
 int	is_wall(char c)
 {
-	return (c == '1' || c == 'D');
+	return (ft_strchr(WALL_CHARS, c) != NULL);
 }
 
 int check_enclosure(t_map *map, t_vector vec)
@@ -64,10 +64,12 @@ int check_enclosure(t_map *map, t_vector vec)
 	if (vec.x == 0 || vec.x == map->map_size.x - 1 || vec.y == 0
 		|| vec.y == map->map_size.y - 1)
 		return (1);
-	return (map->map[vec.y - 1][vec.x] == ' '
+	if (map->map[vec.y - 1][vec.x] == ' '
 		|| map->map[vec.y + 1][vec.x] == ' '
 		|| map->map[vec.y][vec.x - 1] == ' '
-		|| map->map[vec.y][vec.x + 1] == ' ');
+		|| map->map[vec.y][vec.x + 1] == ' ')
+		return 1;
+	return 0;
 }
 
 int	is_enclosed(t_map *args)

@@ -3,17 +3,17 @@
 t_map	*create_empty_map()
 {
 	t_map	*map;
+	int		counter;
 
+	counter = -1;
 	map = malloc(sizeof(*map));
 	if (!map)
 		return (NULL);
 	map->map = NULL;
+	while (++counter < MAX_WALL_CHARS)
+		map->texture_list[counter] = NULL;
 	map->C = 0;
 	map->F = 0;
-	map->texture_list[0] = NULL;
-	map->texture_list[1] = NULL;
-	map->texture_list[2] = NULL;
-	map->texture_list[3] = NULL;
 	map->player_coords.x = BAD_COORD;
 	map->player_coords.y = BAD_COORD;
 	map->last_collision.x = BAD_COORD;
