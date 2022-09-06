@@ -54,16 +54,21 @@ void	get_textures_list(t_map* map, int fd, char **line)
 	if (line && *line && **line == 'W' && get_string_index(WALL_CHARS, (*line)[1]) != -1)
 	{
 		index = get_string_index(WALL_CHARS, (*line)[1]);
+		ft_putendl_fd(*line, 1);
 		ft_lstadd_back(&map->texture_list[index], ft_lstnew(crop_prefix(*line, prefix)));
 	}
 	else
 		return ;
 	*line = skip_empty_lines(fd);
-	while (!(line && *line && **line == 'W' && get_string_index(WALL_CHARS, (*line)[1]) != -1))
+	while (line && *line && !ft_isalpha(**line))
 	{
+		ft_putendl_fd(*line, 1);
 		ft_lstadd_back(&map->texture_list[index], ft_lstnew(crop_prefix(*line, prefix)));
 		*line = skip_empty_lines(fd);
 	}
+	ft_putstr_fd("--- Wall ", 1);
+	ft_putnbr_fd(index, 1);
+	ft_putendl_fd(" done ---", 1);
 }
 
 char	**lst_to_char_ptr(t_list *tmp)
