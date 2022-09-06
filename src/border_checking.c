@@ -84,7 +84,6 @@ int	is_enclosed(t_map *args)
 		{
 			if (check_enclosure(args, check))
 			{
-				printf("%d, %d\n", check.x, check.y);
 				return (0);
 			}
 			++check.x;
