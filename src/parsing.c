@@ -76,12 +76,21 @@ void	empty_func(void *ptr)
 
 int	ft_strrchr_int(char *line, int chr)
 {
-	char	*one;
+	char	*wall;
+	int		val;
 
-	one = ft_strrchr(line, chr);
-	if (line)
-		return (one - line + 1);
+	wall = ft_strrchr(line, chr);
+	if (line && wall)
+		return (wall - line + 1);
 	return (-1);
+// 		unsigned int	l;
+
+// 	l = ft_strlen(s);
+// 	while (s[l] != (char)c && l != 0)
+// 		l--;
+// 	if (s[l] == (char)c)
+// 		return ((char *)s + l);
+// 	return (NULL);
 }
 
 int	ft_strrchr_int_arr(char *line, char* chr)
@@ -92,7 +101,7 @@ int	ft_strrchr_int_arr(char *line, char* chr)
 
 	counter = 0;
 	max = ft_strrchr_int(line, chr[counter]);
-	while (++counter < ft_strlen(chr))
+	while (++counter < MAX_WALL_CHARS)
 	{
 		curr = ft_strrchr_int(line, chr[counter]);
 		if (max < curr)
@@ -112,6 +121,8 @@ void	map_to_rectangle(t_map *map)
 	arr = map->map;
 	while (arr[++index])
 	{
+		ft_putnbr_fd(ft_strrchr_int_arr(arr[index], WALL_CHARS), 2);
+		ft_putendl_fd("", 2);
 		if (ft_strrchr_int_arr(arr[index], WALL_CHARS) < map->map_size.x || !is_wall(arr[index][ft_strlen(arr[index]) - 1]))
 		{
 			resized_line = malloc(sizeof(char) * (map->map_size.x + 1));
@@ -188,11 +199,9 @@ t_map	*parse_file(int ac, char **av)
 	}
 	if (is_enclosed(map))
 	{
-		ft_putendl_fd("SIUUUUUUU", 1);
 		convert_spaces_to_zeros(map);
-		ft_putendl_fd("SIUUUUUUU", 1);
 		return (map);
 	}
-	ft_putendl_fd("amogus_gaming2", 1);
+	ft_putendl_fd("Faulty map", 1);
 	return (free_map(map));
 }
