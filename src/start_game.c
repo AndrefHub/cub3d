@@ -100,11 +100,12 @@ void	initialize_sprites(t_game *game)
 			ft_lstadd_back(&img_list, ft_lstnew(img));
 			texture_list = texture_list->next;
 		}
-		if (img_list)
-			ft_lstlast(img_list)->next = img_list;
 		game->map->img_list[counter] = img_list;
 		if (img_list)
+		{
+			ft_lstlast(img_list)->next = img_list;
 			game->textures[counter] = *(t_img *)game->map->img_list[counter]->content;
+		}
 	}
 }
 
