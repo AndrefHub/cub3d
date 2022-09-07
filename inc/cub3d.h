@@ -43,6 +43,8 @@ typedef struct s_img
 
 typedef struct s_map
 {
+	int			bonus;
+	int			path_prefix;
 	char		**map;
 	t_vector	map_size;
 	t_list		*texture_list[MAX_WALL_CHARS];
@@ -185,29 +187,6 @@ void	initialize_sprites(t_game *game);
 void	import_texture_to_img(t_game *game, t_img *img, char *filename);
 void	draw_texture_set(t_game *game, struct s_column *column);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int		check_file(int ac, char **av);
 char	*crop_prefix(char* line, char *prefix);
 int		is_space(char c);
@@ -223,6 +202,7 @@ int		find_player(t_map *map, char *line, t_list *lst);
 int		is_enclosed(t_map *args);
 int		get_map_width(char **map);
 int		ft_strrchr_int(char *line, int chr);
+char	*ft_strcat_delim(char *first, char delim, char *second);
 t_map	*create_empty_map(void);
 int		is_wall(char c);
 int		ft_arraylen(void **arr);
@@ -254,11 +234,6 @@ void	draw_fps(t_game *game);
 //demo
 char	**charlist_to_matrix(t_list *list);
 
-int	get_non_space_index_left(char *line);
-int	get_non_space_index_right(char *line);
-int	get_non_space_index_top(char **map, int x);
-int	check_longer_row_border(char *shorter, int sindex, int lindex, char direct);
-int	check_longer_row_border_vert(char **map, int x, int sindex, int lindex, char direct);
 void	error_exit(t_game *game, int return_value, char *message);
 
 void	open_door(t_game *game);

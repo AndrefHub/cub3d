@@ -14,6 +14,8 @@ t_map	*create_empty_map()
 		map->texture_list[counter] = NULL;
 	map->C = 0;
 	map->F = 0;
+	map->bonus = 0;
+	map->path_prefix = 0;
 	map->player_coords.x = BAD_COORD;
 	map->player_coords.y = BAD_COORD;
 	map->last_collision.x = BAD_COORD;
