@@ -1,12 +1,18 @@
 #!/bin/bash
 
-ASSETS_LINK='https://drive.google.com/file/d/1LN2mkGPS0Jez69ijpsC_n7bsKnlIN_l_/view?usp=sharing'
-GOINFRE=~/goinfre
+yaDiskLink='https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key='
+assetsLink='https://disk.yandex.ru/d/mAoZ9b8dmaQWXA'
+OAuthToken='y0_AgAAAAAUbd_zAADLWwAAAADOJupZ3JK4Uy0eQkmrkkhi0tAWU-lHwT4'
+goinfre=~/goinfre/
+folderPath="$goinfre"assets
+savePath="$folderPath".zip
 
-if [ ! -f ${GOINFRE}/assets ]
+if [ ! -d ~/goinfre/assets ]
     then
-        ./gdrive_download.py ${ASSETS_LINK} ${GOINFRE}/assets.zip
-        unzip ${GOINFRE}/assets.zip
+        downloadLink=$(curl -s "$yaDiskLink""$assetsLink" | cut -d'"' -f4)
+        curl -H "Authorization: OAuth $OAuthToken" -s -L "$downloadLink" -o "$savePath"
+        unzip "$savePath" -d "$goinfre"
+        echo "Assets saved to $savePath!"
 else
-    echo "assets or assets.zip (or even both!) already exists. Delete them?"
+    echo "assets or assets.zip (or even both!) already exists"
 fi 

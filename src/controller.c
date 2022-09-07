@@ -99,21 +99,22 @@ void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collisio
 	if (!is_wall(game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE]
 		[(int)(game->player.pos.x + x_delta + float_sign(x_delta) * PL_RADIUS) / MAP_GRID_SIZE]))
 		game->player.pos.x += x_delta;
-	else
-	{
-		if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
-			++(*collision);
-		update_last_collision(game);
-	}
+	// else
+	// {
+	// 	if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
+	// 		++(*collision);
+	// 	update_last_collision(game);
+	// }
 	if (!is_wall(game->map->map[(int)(game->player.pos.y + y_delta + float_sign(y_delta) * PL_RADIUS) / MAP_GRID_SIZE]
 		[(int)game->player.pos.x / MAP_GRID_SIZE]))
 		game->player.pos.y += y_delta;
-	else
-	{
-		if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
-			++(*collision);
-		update_last_collision(game);
-	}
+	// else
+	// {
+	// 	if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
+	// 		++(*collision);
+	// 	update_last_collision(game);
+	// }
+	(void)collision;
 }
 
 void	open_door(t_game *game)

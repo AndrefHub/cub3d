@@ -10,6 +10,21 @@ int	get_string_index(char *str, char c)
 			return (index);
 	return (-1);
 }
+void	get_config(t_map* map, int fd, char **line)
+{
+	if (!*line)
+		*line = skip_empty_lines(fd);
+	while (*line && ft_strncmp(*line, WALL_PREFIX, ft_strlen(WALL_PREFIX)) && 
+		!(map->bonus && map->path_prefix))
+	{
+		if (!ft_strncmp(*line, USE_PATH_PREFIX, ft_strlen(USE_PATH_PREFIX)))
+			++map->path_prefix;
+		else if (!ft_strncmp(*line, BONUS, ft_strlen(BONUS)))
+			++map->bonus;
+		free(*line);
+		*line = skip_empty_lines(fd);
+	}
+}
 
 void	get_textures(t_map *map, int fd)
 {
@@ -18,10 +33,9 @@ void	get_textures(t_map *map, int fd)
 
 	line = NULL;
 	counter = -1;
-	ft_putendl_fd("Are we even here?", 2);
+	get_config(map, fd, &line);
 	while (++counter < MAX_WALL_CHARS)
 		get_textures_list(map, fd, &line);
-	// map->texture_list[counter] = get_textures_list(fd, (char []){'W', 'D', '\0'}, &line);
 		
 	// map->texture_list[0] = get_textures_list(fd, "NO", &line);
 	// map->texture_list[1] = get_textures_list(fd, "SO", &line);
@@ -41,34 +55,35 @@ int	is_prefix_number(char *line, char *prefix, int counter)
 			|| (counter == 0 && line[ft_strlen(prefix) + 1] == ' ')));
 }
 
+char	*get_full_texture_path(char *line, int flag)
+{
+	if (flag)
+		return (ft_strcat_delim(ASSETS_PATH, '/', line));
+	return (line);
+}
+
 void	get_textures_list(t_map* map, int fd, char **line)
 {
-	// t_list		*lst;
-	char	*prefix = WALL_PREFIX;
 	int		index;
 
-	// lst = NULL;
 	index = 0;
-	if (!line || !*line)
+	if (!*line)
 		*line = skip_empty_lines(fd);
-	if (line && *line && **line == 'W' && get_string_index(WALL_CHARS, (*line)[1]) != -1)
-	{
-		index = get_string_index(WALL_CHARS, (*line)[1]);
-		ft_putendl_fd(*line, 1);
-		ft_lstadd_back(&map->texture_list[index], ft_lstnew(crop_prefix(*line, prefix)));
-	}
-	else
+	if (!(line && *line && !ft_strncmp(*line, WALL_PREFIX, ft_strlen(
+		WALL_PREFIX)) && get_string_index(WALL_CHARS, (*line)[1]) != -1))
 		return ;
+	index = get_string_index(WALL_CHARS, (*line)[1]);
+	ft_putendl_fd(*line, 1);
+	ft_lstadd_back(&map->texture_list[index], ft_lstnew(get_full_texture_path(
+		crop_prefix(*line, WALL_PREFIX), map->path_prefix)));
 	*line = skip_empty_lines(fd);
 	while (line && *line && !ft_isalpha(**line))
 	{
 		ft_putendl_fd(*line, 1);
-		ft_lstadd_back(&map->texture_list[index], ft_lstnew(*line));
+		ft_lstadd_back(&map->texture_list[index], ft_lstnew(
+			get_full_texture_path(*line, map->path_prefix)));
 		*line = skip_empty_lines(fd);
 	}
-	ft_putstr_fd("--- Wall ", 1);
-	ft_putnbr_fd(index, 1);
-	ft_putendl_fd(" done ---", 1);
 }
 
 char	**lst_to_char_ptr(t_list *tmp)

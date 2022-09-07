@@ -30,6 +30,12 @@
 // # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
 # define CARDINAL_POINTS "NSWE"
+# define BONUS "BONUS"
+# define USE_PATH_PREFIX "USE_PATH_PREFIX"
+
+# ifndef ASSETS_PATH
+#  define ASSETS_PATH "."
+# endif
 
 # define WALL_PREFIX "W"
 # ifdef __APPLE__
