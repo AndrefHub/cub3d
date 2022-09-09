@@ -14,6 +14,7 @@ void	mouse_controller(t_game *game)
 		game->key.mdir.x = game->key.mpos.x - game->img.size.x / 2;
 		game->key.mdir.y = game->key.mpos.y - game->img.size.y / 2;
 		mouse_move(game->mlx.id, game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
+		game->player.angle_y -= (float) game->key.mdir.y * 2;
 		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2;
 		player_delta_calculation(&game->player);
 	}
