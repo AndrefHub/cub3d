@@ -1,4 +1,4 @@
-#include "../inc/cub3d.h"
+#include "../inc_bonus/cub3d_bonus.h"
 
 void	draw_texture_set(t_game *game, struct s_column *column)
 {

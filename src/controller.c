@@ -107,11 +107,6 @@ void	player_controll(t_game *game)
 		game->player.delta.x = cosf(game->player.angle) * PL_SPEED;
 		game->player.delta.y = sinf(game->player.angle) * PL_SPEED;
 	}
-	if (key_pressed(game, LEFT_CTRL_KEY))
-	{
-		game->player.delta.x = cosf(game->player.angle) * PL_ACCELERATION * PL_SPEED;
-		game->player.delta.y = sinf(game->player.angle) * PL_ACCELERATION * PL_SPEED;
-	}
 	if (key_pressed(game, W_KEY))
 		move_radius_check(game, game->player.delta.x, game->player.delta.y, &collision);
 	if (key_pressed(game, S_KEY))
