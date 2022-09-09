@@ -41,14 +41,20 @@ typedef struct s_img
 	t_vector	size;
 }	t_img;
 
+typedef struct s_texture
+{
+	t_list	*texture;
+	t_list	*img;
+}	t_texture;
+
 typedef struct s_map
 {
 	int			bonus;
 	int			path_prefix;
 	char		**map;
 	t_vector	map_size;
-	t_list		*texture_list[MAX_WALL_CHARS];
-	t_list		*img_list[MAX_WALL_CHARS];
+	t_texture	walls[MAX_WALL_CHARS];
+	t_texture	entity[MAX_ENTITIES];
 	unsigned	list_size;
 	int			F;
 	int			C;
@@ -57,6 +63,7 @@ typedef struct s_map
 	float		player_orient;
 	int			map_tile_size;
 	t_fvector	last_collision;
+	t_list		*enemies;	
 } t_map;
 
 typedef struct ray
@@ -68,11 +75,17 @@ typedef struct ray
 	t_vector	step;
 }				t_ray;
 
-typedef struct sound
+typedef struct	sound
 {
 	cs_loaded_sound_t	file;
 	cs_play_sound_def_t	def;
 }				t_sound;
+
+typedef struct	s_enemy
+{
+	t_img		sprite;
+	t_fvector	pos;
+}				t_enemy;
 
 typedef struct game
 {
@@ -144,7 +157,7 @@ void	get_map(t_map *map, int fd); //TODO: Rename
 char	**lst_to_char_ptr(t_list *tmp); // TODO: Move to another file
 void	map_to_rectangle(t_map *map); // TODO: Rename "set_map_to_rectangle"?
 void	convert_spaces_to_zeros(t_map *map);
-int		ft_strrchr_int(char *line, int chr); //TODO: Rename "get_chr_index"
+int		ft_strrchr_int(const char *line, int chr);
 t_map	*free_map(t_map *map);
 char	**lst_to_char_ptr(t_list *tmp); //TODO: Rename "lst_to_char_matrix"
 
@@ -168,7 +181,8 @@ char	*skip_empty_lines(int fd);
 
 // Border checking and utils for it: border_checking.c //
 int		find_player(t_map *map, char *line, t_list *lst); //TODO: Rename "find_player_on_map"
-int		get_map_width(char **map); //TODO: Move to another file
+void	find_enemy(t_map *map);
+int		get_map_width(const char **map); //TODO: Move to another file
 int		is_enclosed(t_map *args); //TODO: Rename "is_map_enclosed"
 int		check_enclosure(t_map *map, t_vector vec);
 
@@ -183,7 +197,7 @@ void	set_sound(t_sound *sound, char *filename);
 
 
 // Work with sprites: game_sprites.c //
-void	initialize_sprites(t_game *game);
+void	initialize_sprites(t_game *game, int size, t_texture *sprites_list);
 void	import_texture_to_img(t_game *game, t_img *img, char *filename);
 void	draw_texture_set(t_game *game, struct s_column *column);
 
@@ -200,14 +214,14 @@ t_map	*parse_file(int ac, char **av);
 void	print_map_debug(t_map *map);
 int		find_player(t_map *map, char *line, t_list *lst);
 int		is_enclosed(t_map *args);
-int		get_map_width(char **map);
-int		ft_strrchr_int(char *line, int chr);
 char	*ft_strcat_delim(char *first, char delim, char *second);
 t_map	*create_empty_map(void);
 int		is_wall(char c);
 int		ft_arraylen(void **arr);
 int		get_string_index(char *str, char c);
 void	get_textures_list(t_map* map, int fd, char **line);
+void	get_entity(t_map* map, int fd, char **line);
+
 // char	*get_textures_list(int fd, char *prefix, t_list **lst);
 //controller.c
 int		close_hook(t_game *game);
