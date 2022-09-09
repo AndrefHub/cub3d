@@ -33,12 +33,6 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
 				"line" : 31,
 				"parent" : 0
 			},
@@ -46,6 +40,12 @@
 				"command" : 1,
 				"file" : 0,
 				"line" : 32,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
@@ -116,7 +116,11 @@
 				14,
 				15,
 				16,
-				17
+				17,
+				18,
+				19,
+				20,
+				21
 			]
 		}
 	],
@@ -191,7 +195,11 @@
 				14,
 				15,
 				16,
-				17
+				17,
+				18,
+				19,
+				20,
+				21
 			]
 		}
 	],
@@ -302,7 +310,31 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src_bonus/game_loop.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "cute_sound/cute_sound.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/player_controller.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/player_movement.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/vector_utils.c",
 			"sourceGroupIndex" : 0
 		}
 	],
