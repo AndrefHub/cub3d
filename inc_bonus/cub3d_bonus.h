@@ -191,6 +191,10 @@ int		check_enclosure(t_map *map, t_vector vec);
 
 // Game initialization: start_game.c //
 int		game(t_map *map);
+void	initialize_mlx_parameters(t_game *game);
+void	initialize_player(t_game *game);
+void	initialize_game_parameters(t_game *game);
+void	start_game(t_game *game);
 
 // Work with sound: game_sound.c //
 void	init_main_game_sound_theme(t_game *game, char *main_music_theme_filename);
@@ -198,7 +202,7 @@ void	set_game_events_sounds(struct s_audio *audio);
 void	set_sound(t_sound *sound, char *filename);
 
 
-// Work with sprites: game_sprites.c //
+// Work with sprites: game_textures.c //
 void	initialize_sprites(t_game *game, int size, t_texture *sprites_list);
 void	import_texture_to_img(t_game *game, t_img *img, char *filename);
 void	draw_texture_set(t_game *game, struct s_column *column);
@@ -218,25 +222,64 @@ void	fill_floor_color(t_img *img, int color);
 void	fill_ceiling_color(t_img *img, int color);
 void	draw_aim(t_game *game); //TODO: ??
 
+// Main game loop: game_loop.c //
+int		game_loop(t_game *game);
 
 
-int		check_file(int ac, char **av);
+// : controller.c //
+int		float_sign(float f);
+void	open_door(t_game *game);
+void	change_textures(t_game *game);
+float	fvector_distance(t_fvector lhs, t_fvector rhs);
+void	enemy_attack(t_game *game);
+void	enemy_move(t_game *game);
+
+// Player input control: player_controller.c //
+void	update_last_collision(t_game *game);
+void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collision);
+void	check_borders(t_game *game);
+void	check_restrictions(t_game *game);
+void	player_controll(t_game *game);
+
+// Player moving control: player_movement.c //
+void	update_last_collision(t_game *game);
+void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collision);
+void	check_borders(t_game *game);
+void	check_restrictions(t_game *game);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 char	*crop_prefix(char* line, char *prefix);
 int		is_space(char c);
-int		ft_is_empty(char *line);
-char	*skip_empty_lines(int fd);
 char	*get_texture(int fd);
-int		convert_rgb(char *line);
-void	get_textures(t_map *map, int fd);
-void	get_map(t_map *map, int fd);
-t_map	*parse_file(int ac, char **av);
 void	print_map_debug(t_map *map);
-int		find_player(t_map *map, char *line, t_list *lst);
-int		is_enclosed(t_map *args);
 char	*ft_strcat_delim(char *first, char delim, char *second);
-t_map	*create_empty_map(void);
 int		is_wall(char c);
-int		ft_arraylen(void **arr);
 int		get_string_index(char *str, char c);
 void	get_textures_list(t_map* map, int fd, char **line);
 void	get_entity(t_map* map, int fd, char **line);
@@ -249,16 +292,10 @@ int		key_hook_press(int key, t_game *game);
 int		key_hook_release(int key, t_game *game);
 int		mouse_hook_press(int button, int x, int y, t_game *game);
 int		mouse_hook_release(int button, int x, int y, t_game *game);
-int		game_loop(t_game *game);
 
 //drawing.c
 void	draw_map(t_game *game);
-void	draw_line(t_img *img, t_vector p1, t_vector p2, int color);
-void	put_pixel(t_img *img, t_vector point, int color);
-void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
 void	draw_player(t_game *game);
-void	draw_aim(t_game *game);
-void	fill_img_color(t_img *img, int color);
 void	cast_rays(t_game *game);
 void	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
 bool	key_pressed(t_game *game, int key);
@@ -270,11 +307,8 @@ char	**charlist_to_matrix(t_list *list);
 
 void	error_exit(t_game *game, int return_value, char *message);
 
-void	open_door(t_game *game);
 // time
 t_ull	get_time(void);
 void	init_time(t_game *game);
 void	wait_milliseconds(int milliseconds);
-
-void	draw_texture_set(t_game *game, struct s_column *column);
 #endif
