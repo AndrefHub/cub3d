@@ -17,6 +17,7 @@ SRCFILE	=	border_checking.c \
 			main.c \
 			parsing.c \
 			ray_casting.c \
+			mlx_adapter.c \
 			game_sound.c\
 			start_game.c \
 			time_funcs.c

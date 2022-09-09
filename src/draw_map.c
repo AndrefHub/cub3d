@@ -32,7 +32,7 @@ void	draw_map(t_game *game)
 	int	x;
 	int	y;
 
-	img_clear_rgb(&game->map->img, 0xFF000000);
+	fill_img_color(&game->map->img, 0xFF000000);
 	y = 0;
 	while (game->grid[y])
 	{
@@ -59,7 +59,7 @@ void	draw_fps(t_game *game)
 {
 	static int	fps = 0;
 	t_ull		curr_time;
-	static int f = 0;
+//	static int f = 0;
 	static int s = 0;
 
 	curr_time = get_time();
@@ -68,7 +68,7 @@ void	draw_fps(t_game *game)
 	mlx_string_put(game->mlx.id, game->mlx.window, 0, 15, 0x00FFFFFF, \
 		(char []){'0' + fps / 100, '0' + fps / 10 % 10, '0' + fps % 10, '\0'});
 	++s;
-	f += fps;
+//	f += fps;
 
-	printf("%f %d\n", ((double)f) / s, fps);
+//	printf("%f %d\n", ((double)f) / s, fps);
 }
