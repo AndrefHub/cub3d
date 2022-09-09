@@ -1,6 +1,6 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *column, int x)
+void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *column, int x, t_game * game)
 {
 	const double	step = (double ) texture->size.y / column->height;
 	const unsigned	tex_col = (unsigned ) column->texture_pos % TEXTURE_SIZE;
@@ -9,20 +9,22 @@ void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *c
 	int 			max_height;
 
 	tex_y = 0;
-	if (column->height >= img->size.y)
-	{
-		tex_y += (double ) texture->size.y * (column->height - img->size.y) / 2 / column->height;
-		y = 0;
-		max_height = img->size.y;
-	}
-	else
-	{
-		y = img->size.y / 2 - column->height / 2;
+//	if (column->height >= img->size.y)
+//	{
+//		tex_y += (double ) texture->size.y * (column->height - img->size.y) / 2 / column->height;
+//		y = 0;
+//		max_height = img->size.y + (game->player.angle_y);
+//	}
+//	else
+//	{
+		y = img->size.y / 2 - column->height / 2 + (game->player.angle_y);
 		max_height = y + column->height;
-	}
+//	}
 	while (y < max_height)
 	{
-		img->addr[y * img->size.x + x] = texture->addr[(unsigned )tex_y * texture->size.x + tex_col];
+//		img->addr[y * img->size.x + x] = texture->addr[(unsigned )tex_y * texture->size.x + tex_col];
+		put_pixel(img, (t_vector) {x, y}, texture->addr[(unsigned )tex_y * texture->size.x + tex_col]);
+//		img->addr[y * img->size.x + x] = PL_MAP_COLOR;
 		tex_y += step;
 		y++;
 	}
@@ -40,7 +42,7 @@ void	draw_walls(t_game *game)
 //		texture_id = ft_strchr(CARDINAL_POINTS, game->column[x].dir) - CARDINAL_POINTS;
 //		ft_putnbr_fd(texture_id, 1);
 		draw_wall_scaled(&game->img, &game->textures[game->column[x].texture_id],
-						 &game->column[x], x);
+						 &game->column[x], x, game);
 		x++;
 	}
 }

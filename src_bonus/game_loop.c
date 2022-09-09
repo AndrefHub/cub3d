@@ -9,6 +9,7 @@ int	game_loop(t_game *game)
 	fill_floor_color(&game->img, game->map->F);
 	fill_ceiling_color(&game->img, game->map->C);
 //	draw_player(game);
+//  draw_hud(game);
 	cast_rays(game);
 	draw_walls(game);
 
@@ -19,7 +20,7 @@ int	game_loop(t_game *game)
 	if (game->show_map)
 		draw_map(game);
 	draw_fps(game);
-	game->time.last = get_time(); //TODO: move this line to game_loop
-	change_textures(game); //TODO: do something with fps. it is terrible
+//	change_textures(game);
+	game->time.last = get_time();
 	return (0);
 }

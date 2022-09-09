@@ -106,6 +106,7 @@ typedef struct game
 	{
 		t_fvector	pos;
 		float		angle;
+		float		angle_y;
 		t_fvector	vector;
 		t_fvector	delta;
 	}				player;
