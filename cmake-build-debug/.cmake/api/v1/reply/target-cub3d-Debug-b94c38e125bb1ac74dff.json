@@ -120,7 +120,8 @@
 				18,
 				19,
 				20,
-				21
+				21,
+				22
 			]
 		}
 	],
@@ -199,7 +200,8 @@
 				18,
 				19,
 				20,
-				21
+				21,
+				22
 			]
 		}
 	],
@@ -335,6 +337,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src_bonus/vector_utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/draw_floor.c",
 			"sourceGroupIndex" : 0
 		}
 	],
