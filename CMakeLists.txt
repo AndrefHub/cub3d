@@ -15,6 +15,7 @@ add_executable(cub3d
         src/main.c
         src/parsing.c
         src/start_game.c
+        src/mlx_adapter.c
         src/controller.c
         src/drawing.c
         src/demo_utils.c
