@@ -16,6 +16,9 @@ int	close_hook(t_game *game)
 
 int	key_hook_press(int key, t_game *game)
 {
+//	TODO: add this
+//	if (game.text_mode)
+//		entering();
 	if (key >= (int) sizeof(game->key) || key < -256)
 		return (1);
 	if (key == ESC_KEY)

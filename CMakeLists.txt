@@ -26,6 +26,6 @@ add_executable(cub3d
         src/time_funcs.c
         src/game_sound.c
         cute_sound/cute_sound.c)
-target_link_libraries(cub3d /Users/landreas/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
-target_link_libraries(cub3d /Users/landreas/42Course/cub3d/libft/libft.a)
-target_link_libraries(cub3d /Users/landreas/42Course/cub3d/cute_sound/SDL2)
+target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
+target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/libft/libft.a)
+target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/cute_sound/SDL2)
