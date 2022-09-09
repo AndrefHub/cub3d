@@ -56,7 +56,6 @@ typedef struct s_map
 	t_vector	map_size;
 	t_texture	walls[MAX_WALL_CHARS];
 	t_texture	entity[MAX_ENTITIES];
-	char		*sounds[MAX_SOUNDS];
 	unsigned	list_size;
 	int			F;
 	int			C;
