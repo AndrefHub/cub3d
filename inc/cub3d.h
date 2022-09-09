@@ -8,7 +8,7 @@
 # include "math.h"
 # include "X11/X.h"
 # include "X11/keysym.h"
-# include <Carbon/Carbon.h>
+//# include
 # include "time.h"
 # include <sys/time.h>
 # include "../cute_sound/cute_sound.h"
