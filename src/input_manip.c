@@ -50,3 +50,28 @@ int convert_rgb(char *line)
 	free(line);
 	return (rgb);
 }
+
+char	*ft_strcat_delim(char *first, char delim, char *second)
+{
+	char	*dup;
+	size_t	flen;
+	size_t	slen;
+	int		fcounter;
+	int		scounter;
+
+	fcounter = -1;
+	scounter = -1;
+	flen = ft_strlen(first);
+	slen = ft_strlen(second);
+	dup = (char *)malloc(sizeof(char) * (flen + 1 + slen + 1));
+	if (!dup)
+		return (NULL);
+	while (first[++fcounter])
+		dup[fcounter] = first[fcounter];
+	dup[fcounter++] = delim;
+	while (second[++scounter])
+		dup[fcounter + scounter] = second[scounter];
+	dup[fcounter + scounter] = '\0';
+	free(second);
+	return (dup);
+}

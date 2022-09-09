@@ -11,6 +11,22 @@ int	get_string_index(char *str, char c)
 	return (-1);
 }
 
+void	get_config(t_map* map, int fd, char **line)
+{
+	if (!*line)
+		*line = skip_empty_lines(fd);
+	while (*line && ft_strncmp(*line, WALL_PREFIX, ft_strlen(WALL_PREFIX)) && 
+		!(map->bonus && map->path_prefix))
+	{
+		if (!ft_strncmp(*line, USE_PATH_PREFIX, ft_strlen(USE_PATH_PREFIX)))
+			++map->path_prefix;
+		else if (!ft_strncmp(*line, BONUS, ft_strlen(BONUS)))
+			++map->bonus;
+		free(*line);
+		*line = skip_empty_lines(fd);
+	}
+}
+
 void	get_textures(t_map *map, int fd)
 {
 	int		counter;
@@ -18,11 +34,10 @@ void	get_textures(t_map *map, int fd)
 
 	line = NULL;
 	counter = -1;
-	ft_putendl_fd("Are we even here?", 2);
+	get_config(map, fd, &line);
 	while (++counter < MAX_WALL_CHARS)
 		get_textures_list(map, fd, &line);
-	// map->texture_list[counter] = get_textures_list(fd, (char []){'W', 'D', '\0'}, &line);
-		
+	get_entity(map, fd, &line);
 	// map->texture_list[0] = get_textures_list(fd, "NO", &line);
 	// map->texture_list[1] = get_textures_list(fd, "SO", &line);
 	// map->texture_list[2] = get_textures_list(fd, "WE", &line);
@@ -37,38 +52,63 @@ void	get_textures(t_map *map, int fd)
 int	is_prefix_number(char *line, char *prefix, int counter)
 {
 	return (line && !ft_strncmp(line, prefix, ft_strlen(prefix))
-		&& (ft_atoi(line + ft_strlen(prefix)) == counter
+		&& (ft_atoi(line + ft_strlen(prefix)) == counter + 1
 			|| (counter == 0 && line[ft_strlen(prefix) + 1] == ' ')));
+}
+
+char	*get_full_texture_path(char *line, int flag)
+{
+	if (flag)
+		return (ft_strcat_delim(ASSETS_PATH, '/', line));
+	return (line);
 }
 
 void	get_textures_list(t_map* map, int fd, char **line)
 {
-	// t_list		*lst;
-	char	*prefix = WALL_PREFIX;
 	int		index;
 
-	// lst = NULL;
 	index = 0;
-	if (!line || !*line)
+	if (!*line)
 		*line = skip_empty_lines(fd);
-	if (line && *line && **line == 'W' && get_string_index(WALL_CHARS, (*line)[1]) != -1)
-	{
-		index = get_string_index(WALL_CHARS, (*line)[1]);
-		ft_putendl_fd(*line, 1);
-		ft_lstadd_back(&map->texture_list[index], ft_lstnew(crop_prefix(*line, prefix)));
-	}
-	else
+	if (!(line && *line && !ft_strncmp(*line, WALL_PREFIX, ft_strlen(
+		WALL_PREFIX)) && get_string_index(WALL_CHARS, (*line)[1]) != -1))
 		return ;
+	index = get_string_index(WALL_CHARS, (*line)[1]);
+	ft_putendl_fd(*line, 1);
+	ft_lstadd_back(&map->walls[index].texture, ft_lstnew(get_full_texture_path(
+		crop_prefix(*line, WALL_PREFIX), map->path_prefix)));
 	*line = skip_empty_lines(fd);
 	while (line && *line && !ft_isalpha(**line))
 	{
 		ft_putendl_fd(*line, 1);
-		ft_lstadd_back(&map->texture_list[index], ft_lstnew(*line));
+		ft_lstadd_back(&map->walls[index].texture, ft_lstnew(
+			get_full_texture_path(*line, map->path_prefix)));
 		*line = skip_empty_lines(fd);
 	}
-	ft_putstr_fd("--- Wall ", 1);
-	ft_putnbr_fd(index, 1);
-	ft_putendl_fd(" done ---", 1);
+}
+
+void	get_entity(t_map* map, int fd, char **line)
+{
+	int		index;
+
+	index = 0;
+	if (!*line)
+		*line = skip_empty_lines(fd);
+	if (!(line && *line && !ft_strncmp(*line, ENTITY_PREFIX, ft_strlen(
+		ENTITY_PREFIX))))// && get_string_index(WALL_CHARS, (*line)[1]) != -1))
+		return ;
+	index = ft_atoi(*line + 1) - 1; // Check zero value
+	ft_putendl_fd(*line, 1);
+	ft_lstadd_back(&map->entity[index].texture, ft_lstnew(get_full_texture_path(
+		crop_prefix(*line, ENTITY_PREFIX), map->path_prefix)));
+	*line = skip_empty_lines(fd);
+	while (line && *line && !ft_isalpha(**line))
+	{
+		ft_putendl_fd(*line, 1);
+		ft_lstadd_back(&map->entity[index].texture, ft_lstnew(
+			get_full_texture_path(*line, map->path_prefix)));
+		*line = skip_empty_lines(fd);
+	}
 }
 
 char	**lst_to_char_ptr(t_list *tmp)
@@ -95,7 +135,7 @@ void	empty_func(void *ptr) //TODO: ??
 	(void) ptr;
 }
 
-int	ft_strrchr_int(char *line, int chr)
+int	ft_strrchr_int(const char *line, int chr)
 {
 	char	*wall;
 
@@ -179,8 +219,9 @@ void	get_map(t_map *map, int fd)
 	}
 	free(line);
 	map->map = lst_to_char_ptr(tmp);
+	find_enemy(map);
 	ft_lstclear(&tmp, empty_func);
-	map->map_size.x = get_map_width(map->map);
+	map->map_size.x = get_map_width((const char **)map->map);
 	map->map_size.y = ft_arraylen((void **) map->map);
 	map_to_rectangle(map);
 }
