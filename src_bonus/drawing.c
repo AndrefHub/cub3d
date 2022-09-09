@@ -1,4 +1,4 @@
-#include "../inc/cub3d.h"
+#include "../inc_bonus/cub3d_bonus.h"
 
 void	put_pixel(t_img *img, t_vector point, int color)
 {

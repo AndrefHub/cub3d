@@ -1,4 +1,4 @@
-#include "../inc/cub3d.h"
+#include "../inc_bonus/cub3d_bonus.h"
 
 void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *column, int x)
 {
