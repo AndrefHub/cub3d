@@ -56,6 +56,7 @@ typedef struct s_map
 	t_vector	map_size;
 	t_texture	walls[MAX_WALL_CHARS];
 	t_texture	entity[MAX_ENTITIES];
+	char		*sounds[MAX_SOUNDS];
 	unsigned	list_size;
 	int			F;
 	int			C;
@@ -198,7 +199,7 @@ void	start_game(t_game *game);
 
 // Work with sound: game_sound.c //
 void	init_main_game_sound_theme(t_game *game, char *main_music_theme_filename);
-void	set_game_events_sounds(struct s_audio *audio);
+void	set_game_events_sounds(struct s_audio *audio, char *filename);
 void	set_sound(t_sound *sound, char *filename);
 
 
@@ -284,7 +285,7 @@ int		get_string_index(char *str, char c);
 void	get_textures_list(t_map* map, int fd, char **line);
 void	get_entity(t_map* map, int fd, char **line);
 char	*get_full_texture_path(char *line, int flag);
-
+void	parse_sounds(t_map* map, int fd, char **line);
 // char	*get_textures_list(int fd, char *prefix, t_list **lst);
 //controller.c
 int		close_hook(t_game *game);
