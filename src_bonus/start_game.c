@@ -19,6 +19,7 @@ void	initialize_player(t_game *game)
 		(float )(game->map->player_coords.y - 1)
 		* MAP_GRID_SIZE + MAP_GRID_SIZE / 2};
 	game->player.angle = game->map->player_orient;
+	game->player.angle_y = 0;
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
 }

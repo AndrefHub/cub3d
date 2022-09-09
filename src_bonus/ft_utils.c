@@ -13,6 +13,9 @@ t_map	*create_empty_map()
 	map->enemies = NULL;
 	while (++counter < MAX_WALL_CHARS)
 		map->walls[counter].texture = NULL;
+	counter = -1;
+	while (++counter < MAX_ENTITIES)
+		map->entity[counter].texture = NULL;
 	map->C = 0;
 	map->F = 0;
 	map->bonus = 0;

@@ -57,5 +57,9 @@ void	check_restrictions(t_game *game)
 		game->player.pos.y -= MAP_GRID_SIZE;
 	if (game->player.pos.y < 0)
 		game->player.pos.y += MAP_GRID_SIZE;
+	if (game->player.angle_y > 500)
+		game->player.angle_y = 500;
+	if (game->player.angle_y < -500)
+		game->player.angle_y = -500;
 	check_borders(game);
 }

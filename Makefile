@@ -47,6 +47,7 @@ SRC_BONUSFILE	= main.c \
 					draw_map.c \
 					demo_utils.c \
 					free_game.c \
+					vector_utils.c \
 					time_funcs.c
 SRCS_BONUS	= $(addprefix $(SRC_BONUSDIR), $(SRC_BONUSFILE))
 OBJ_BONUSDIR	= obj_bonus/
