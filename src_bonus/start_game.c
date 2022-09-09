@@ -58,8 +58,8 @@ int	game(t_map *map)
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
 		error_exit(&game, 1, "Game initialization error: MLX initialization");
-	init_main_game_sound_theme(&game, get_full_texture_path(ft_strdup("assets/sounds/wah.wav"), map->path_prefix));
-	set_game_events_sounds(&game.audio);
+	init_main_game_sound_theme(&game, map->sounds[0]);
+	set_game_events_sounds(&game.audio, map->sounds[1]);
 	initialize_game_parameters(&game);
 	initialize_sprites(&game, MAX_ENTITIES, (t_texture *)game.map->entity);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls);

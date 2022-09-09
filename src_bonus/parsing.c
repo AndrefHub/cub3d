@@ -38,6 +38,8 @@ void	get_textures(t_map *map, int fd)
 	while (++counter < MAX_WALL_CHARS)
 		get_textures_list(map, fd, &line);
 	get_entity(map, fd, &line);
+	parse_sounds(map, fd, &line);
+	parse_sounds(map, fd, &line);
 	// map->texture_list[0] = get_textures_list(fd, "NO", &line);
 	// map->texture_list[1] = get_textures_list(fd, "SO", &line);
 	// map->texture_list[2] = get_textures_list(fd, "WE", &line);
@@ -61,7 +63,8 @@ char	*get_full_texture_path(char *line, int flag)
 	char	*new_line;
 
 	new_line = line;
-	if (flag) {
+	if (flag)
+	{
 		new_line = ft_strcat_delim(ASSETS_PATH, '/', line);
 		free(line);
 	}
@@ -114,6 +117,23 @@ void	get_entity(t_map* map, int fd, char **line)
 			get_full_texture_path(*line, map->path_prefix)));
 		*line = skip_empty_lines(fd);
 	}
+}
+
+void	parse_sounds(t_map* map, int fd, char **line)
+{
+	int		index;
+
+	index = 0;
+	if (!*line)
+		*line = skip_empty_lines(fd);
+	if (!(line && *line && !ft_strncmp(*line, SOUND_PREFIX, ft_strlen(
+		SOUND_PREFIX)) )) // && get_string_index(WALL_CHARS, (*line)[1]) != -1))
+		return ;
+	index = ft_atoi(*line + 1) - 1; // Check zero value
+	ft_putendl_fd(*line, 1);
+	map->sounds[index] = get_full_texture_path(
+		crop_prefix(*line, SOUND_PREFIX), map->path_prefix);
+	*line = skip_empty_lines(fd);
 }
 
 char	**lst_to_char_ptr(t_list *tmp)
@@ -259,9 +279,11 @@ t_map	*parse_file(int ac, char **av)
 			convert_spaces_to_zeros(map);
 			return (map);
 		}
+		else
+			error_exit(NULL, 1, "Reading error: Map not enclosed");
 	}
 	else
 		error_exit(NULL, 1, "Invalid input file: Map");
-	ft_putendl_fd("Reading map: success", 2);
+	ft_putendl_fd("Reading error: I don't know where, but it is", 2);
 	return (free_map(map));
 }

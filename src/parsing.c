@@ -38,6 +38,7 @@ void	get_textures(t_map *map, int fd)
 	while (++counter < MAX_WALL_CHARS)
 		get_textures_list(map, fd, &line);
 	get_entity(map, fd, &line);
+	parse_sounds(map, fd, &line);
 	// map->texture_list[0] = get_textures_list(fd, "NO", &line);
 	// map->texture_list[1] = get_textures_list(fd, "SO", &line);
 	// map->texture_list[2] = get_textures_list(fd, "WE", &line);

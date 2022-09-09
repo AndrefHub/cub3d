@@ -2,7 +2,7 @@ NAME    = cub3d
 CC      = gcc
 FLAGS	= -Wall -Wextra -Werror -o2 -g
 LFLAGS	= -Llibft -lft 
-SRCDIR	= src/
+SRCDIR	= src_bonus/
 SRCFILE	=	border_checking.c \
 			check_file.c \
 			controller.c \
