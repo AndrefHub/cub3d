@@ -22,7 +22,7 @@ void	init_main_game_sound_theme(t_game *game, char *main_music_theme_filename)
 	}
 }
 
-void	set_game_events_sounds(struct s_audio *audio)
+void	set_game_events_sounds(struct s_audio *audio, char *filename)
 {
-	set_sound(&audio->bonk, get_full_texture_path(ft_strdup("assets/sounds/bonk.wav"), 1));
+	set_sound(&audio->bonk, filename);
 }

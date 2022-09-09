@@ -29,6 +29,7 @@
 # define MAX_ENTITIES 1
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
+# define MAX_SOUNDS 2
 
 // # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
@@ -43,6 +44,7 @@
 
 # define WALL_PREFIX "W"
 # define ENTITY_PREFIX "E"
+# define SOUND_PREFIX "S"
 # ifdef __APPLE__
 enum e_keys
 {
