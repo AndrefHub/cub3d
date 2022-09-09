@@ -72,6 +72,5 @@ char	*ft_strcat_delim(char *first, char delim, char *second)
 	while (second[++scounter])
 		dup[fcounter + scounter] = second[scounter];
 	dup[fcounter + scounter] = '\0';
-	free(second);
 	return (dup);
 }

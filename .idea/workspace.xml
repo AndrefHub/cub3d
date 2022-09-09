@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="cub3d" targetName="cub3d" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6c4e217c-7993-4678-a3b0-20a822acdc07" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src_bonus/check_file.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src_bonus/game_textures.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src_bonus/mlx_adapter.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src_bonus/parsing.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src_bonus/start_game.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-66e5a8ad3c79dfc1e5f4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-09T09-55-51-0931.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-cub3d-Debug-f956571366acb85fbd2c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/border_checking.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/border_checking.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/controller.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/demo_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/demo_utils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/draw_map.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/draw_map.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/drawing.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/drawing.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/ft_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/ft_utils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/game_sound.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/game_sound.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/game_textures.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/game_textures.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/hooks.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/hooks.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/input_manip.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/input_manip.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/parsing.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/parsing.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/ray_casting.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/ray_casting.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/start_game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/start_game.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/time_funcs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src/time_funcs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cub3d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cub3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cub3d" beforeDir="false" afterPath="$PROJECT_DIR$/cub3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cute_sound/cute_sound.h" beforeDir="false" afterPath="$PROJECT_DIR$/cute_sound/cute_sound.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/cub3d.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/cub3d.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/e1m1bonus.cub" beforeDir="false" afterPath="$PROJECT_DIR$/maps/e1m1bonus.cub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/border_checking.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/border_checking.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/check_file.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/check_file.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/controller.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/controller.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/demo_utils.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/demo_utils.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/draw_map.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/draw_map.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/drawing.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/drawing.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/free_game.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/free_game.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/ft_utils.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ft_utils.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/game_sound.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/game_sound.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/game_textures.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/game_textures.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/hooks.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/hooks.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/input_manip.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/input_manip.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/mlx_adapter.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/mlx_adapter.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/parsing.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/parsing.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/ray_casting.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/ray_casting.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/start_game.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/start_game.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/time_funcs.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj/time_funcs.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/free_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/free_game.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_sound.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/game_sound.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_textures.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_textures.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input_manip.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/input_manip.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsing.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsing.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/start_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/start_game.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/border_checking.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/border_checking.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/check_file.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/controller.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/demo_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/demo_utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/draw_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/draw_texture.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/drawing.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/drawing.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/free_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/free_game.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/ft_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/ft_utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/hooks.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/hooks.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/input_manip.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/input_manip.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/parsing.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/ray_casting.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/ray_casting.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/start_game.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_backup/time_funcs.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/time_funcs.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2021" />
+    <option name="minorVersion" value="3.2" />
+  </component>
+  <component name="ProjectId" id="2EFhiwi2YYSIlzFnGiQWka8P6GV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/textures" />
+      <recent name="$PROJECT_DIR$/assets/sounds" />
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cub3d" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="maps/e1m1bonus.cub" REDIRECT_INPUT="false" REDIRECT_INPUT_PATH="cub.input" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$ContentRoot$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cub3d" TARGET_NAME="cub3d" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cub3d" RUN_TARGET_NAME="cub3d">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c4e217c-7993-4678-a3b0-20a822acdc07" name="Changes" comment="" />
+      <created>1662197380185</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662197380185</updated>
+      <workItem from="1662197380186" duration="16956000" />
+      <workItem from="1662453297426" duration="4716000" />
+      <workItem from="1662470256538" duration="5608000" />
+      <workItem from="1662476530103" duration="1176000" />
+      <workItem from="1662717183825" duration="2076000" />
+      <workItem from="1662720880963" duration="4108000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+</project>

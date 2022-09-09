@@ -6,6 +6,8 @@ set(CMAKE_C_STANDARD 99)
 if(APPLE)
     include_directories(AFTER "/opt/X11/include")
 endif()
+#add_definitions(-DASSETS_PATH='"/Users/lsherry/goinfre"')
+add_compile_definitions(ASSETS_PATH="/Users/lsherry/goinfre")
 
 add_executable(cub3d
         src/border_checking.c
@@ -24,7 +26,6 @@ add_executable(cub3d
         src/game_textures.c
         src/ray_casting.c
         src/time_funcs.c
-        src/game_sound.c
         cute_sound/cute_sound.c)
 target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
 target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/libft/libft.a)

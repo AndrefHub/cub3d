@@ -240,6 +240,7 @@ int		ft_arraylen(void **arr);
 int		get_string_index(char *str, char c);
 void	get_textures_list(t_map* map, int fd, char **line);
 void	get_entity(t_map* map, int fd, char **line);
+char	*get_full_texture_path(char *line, int flag);
 
 // char	*get_textures_list(int fd, char *prefix, t_list **lst);
 //controller.c

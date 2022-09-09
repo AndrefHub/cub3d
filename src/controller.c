@@ -48,21 +48,21 @@ void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collisio
 	if (!is_wall(game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE]
 		[(int)(game->player.pos.x + x_delta + float_sign(x_delta) * PL_RADIUS) / MAP_GRID_SIZE]))
 		game->player.pos.x += x_delta;
-	// else
-	// {
-	// 	if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
-	// 		++(*collision);
-	// 	update_last_collision(game);
-	// }
+	else
+	{
+		if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
+			++(*collision);
+		update_last_collision(game);
+	}
 	if (!is_wall(game->map->map[(int)(game->player.pos.y + y_delta + float_sign(y_delta) * PL_RADIUS) / MAP_GRID_SIZE]
 		[(int)game->player.pos.x / MAP_GRID_SIZE]))
 		game->player.pos.y += y_delta;
-	// else
-	// {
-	// 	if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
-	// 		++(*collision);
-	// 	update_last_collision(game);
-	// }
+	else
+	{
+		if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
+			++(*collision);
+		update_last_collision(game);
+	}
 	(void)collision;
 }
 
@@ -109,8 +109,8 @@ void	player_controll(t_game *game)
 	}
 	if (key_pressed(game, LEFT_CTRL_KEY))
 	{
-		game->player.delta.x *= PL_ACCELERATION;
-		game->player.delta.y *= PL_ACCELERATION;
+		game->player.delta.x = cosf(game->player.angle) * PL_ACCELERATION * PL_SPEED;
+		game->player.delta.y = sinf(game->player.angle) * PL_ACCELERATION * PL_SPEED;
 	}
 	if (key_pressed(game, W_KEY))
 		move_radius_check(game, game->player.delta.x, game->player.delta.y, &collision);
@@ -134,7 +134,6 @@ void	player_controll(t_game *game)
 	}
 	if (collision)
 	{
-		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 		update_last_collision(game);
 	}
 	check_restrictions(game);
@@ -190,21 +189,15 @@ void	enemy_move(t_game *game)
 int	game_loop(t_game *game)
 {
 	player_controll(game);
-	enemy_move(game);
 	fill_img_color(&game->img, 0x808080);
 	fill_floor_color(&game->img, game->map->F);
 	fill_ceiling_color(&game->img, game->map->C);
-//	draw_player(game);
 	cast_rays(game);
 	draw_walls(game);
-
-	draw_aim(game);
-
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
 		0, 0);
-	if (game->show_map)
-		draw_map(game);
 	draw_fps(game);
-	change_textures(game); //TODO: do something with fps. it is terrible
+//	change_textures(game);
+	game->time.last = get_time(); //TODO: move this line to game_loop
 	return (0);
 }
