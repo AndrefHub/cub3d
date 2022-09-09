@@ -48,21 +48,22 @@ void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collisio
 	if (!is_wall(game->map->map[(int)game->player.pos.y / MAP_GRID_SIZE]
 		[(int)(game->player.pos.x + x_delta + float_sign(x_delta) * PL_RADIUS) / MAP_GRID_SIZE]))
 		game->player.pos.x += x_delta;
-	else
-	{
-		if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
-			++(*collision);
-		update_last_collision(game);
-	}
+	// else
+	// {
+	// 	if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
+	// 		++(*collision);
+	// 	update_last_collision(game);
+	// }
 	if (!is_wall(game->map->map[(int)(game->player.pos.y + y_delta + float_sign(y_delta) * PL_RADIUS) / MAP_GRID_SIZE]
 		[(int)game->player.pos.x / MAP_GRID_SIZE]))
 		game->player.pos.y += y_delta;
-	else
-	{
-		if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
-			++(*collision);
-		update_last_collision(game);
-	}
+	// else
+	// {
+	// 	if (game->map->last_collision.x != game->player.pos.x && game->map->last_collision.y != game->player.pos.y)
+	// 		++(*collision);
+	// 	update_last_collision(game);
+	// }
+	(void)collision;
 }
 
 void	open_door(t_game *game)
@@ -158,8 +159,8 @@ void	change_textures(t_game *game)
 		{
 			counter = -1;
 			while (++counter < frames_to_move)
-				game->map->img_list[index] = game->map->img_list[index]->next;
-			game->textures[index] = *(t_img *)game->map->img_list[index]->content;	
+				game->map->walls[index].img = game->map->walls[index].img->next;
+			game->textures[index] = *(t_img *)game->map->walls[index].img->content;	
 		}
 	}
 //	f += game->time.frames_to_move;
@@ -167,12 +168,33 @@ void	change_textures(t_game *game)
 //	printf("%f ", ((double)f) / s);
 }
 
+float	fvector_distance(t_fvector lhs, t_fvector rhs)
+{
+	return (sqrt(pow(lhs.x - rhs.x, 2) + pow(lhs.y - rhs.y, 2)));
+}
+
+void	enemy_attack(t_game *game)
+{
+	(void)game;
+	exit(727);
+}
+
+void	enemy_move(t_game *game)
+{
+	// const float	x_dis = game;
+	
+	if (fvector_distance(game->player.pos, ((t_enemy *)game->map->enemies->content)->pos) < MAP_GRID_SIZE)
+		enemy_attack(game);
+}
+
 int	game_loop(t_game *game)
 {
 	player_controll(game);
+	enemy_move(game);
 	fill_img_color(&game->img, 0x808080);
 	fill_floor_color(&game->img, game->map->F);
 	fill_ceiling_color(&game->img, game->map->C);
+//	draw_player(game);
 	cast_rays(game);
 	draw_walls(game);
 

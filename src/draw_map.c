@@ -1,5 +1,23 @@
 #include "../inc/cub3d.h"
 
+void	draw_enemies_on_map(t_game *game)
+{
+	t_list		*enemies;
+	t_vector	coords;
+
+	enemies = game->map->enemies;
+	while (enemies)
+	{
+		coords = (t_vector) {((t_enemy *)enemies->content)->pos.x / MAP_GRID_SIZE
+			* game->map->map_tile_size - game->map->map_tile_size / 4,
+			((t_enemy *)enemies->content)->pos.y / MAP_GRID_SIZE * game->map->map_tile_size
+			- game->map->map_tile_size / 4};
+		draw_square_fill(&game->map->img, coords, game->map->map_tile_size / 2,
+						0x89D1FE);
+		enemies = enemies->next;
+	}
+}
+
 void	draw_player_on_map(t_game *game)
 {
 	t_vector	player;
@@ -52,6 +70,7 @@ void	draw_map(t_game *game)
 		y++;
 	}
 	draw_player_on_map(game);
+	draw_enemies_on_map(game);
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->map->img.mlx_img, 0, 0);
 }
 
