@@ -26,7 +26,8 @@ add_executable(cub3d
         src_bonus/ray_casting.c
         src_bonus/time_funcs.c
         src_bonus/game_sound.c
-        cute_sound/cute_sound.c)
+        src_bonus/game_loop.c
+        cute_sound/cute_sound.c src_bonus/player_controller.c src_bonus/player_movement.c src_bonus/vector_utils.c)
 target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
 target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/libft/libft.a)
 target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/cute_sound/SDL2)

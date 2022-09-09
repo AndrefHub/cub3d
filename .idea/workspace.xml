@@ -12,38 +12,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c4e217c-7993-4678-a3b0-20a822acdc07" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/inc_bonus/constants_bonus.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src_bonus/game_loop.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src_bonus/player_controller.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src_bonus/player_movement.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src_bonus/vector_utils.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-775963f6916e101a0044.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-09T12-13-24-0977.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-cub3d-Debug-fbfec97105125c952596.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-44c0e691db71538e4968.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-09T12-55-41-0916.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-cub3d-Debug-343a74767d9c6340dc21.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/controller.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/border_checking.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/border_checking.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/check_file.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/check_file.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cub3d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cub3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/controller.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/demo_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/demo_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/draw_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/drawing.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/drawing.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/free_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/free_game.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/ft_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/ft_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/game_sound.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/game_sound.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/game_textures.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/game_textures.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/hooks.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/hooks.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/input_manip.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/input_manip.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/mlx_adapter.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/mlx_adapter.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/parsing.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/parsing.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/ray_casting.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/ray_casting.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/start_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/start_game.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/time_funcs.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/time_funcs.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +116,7 @@
       <workItem from="1662470256538" duration="5608000" />
       <workItem from="1662476530103" duration="1176000" />
       <workItem from="1662717183825" duration="2076000" />
-      <workItem from="1662720880963" duration="6320000" />
+      <workItem from="1662720880963" duration="9063000" />
     </task>
     <servers />
   </component>
