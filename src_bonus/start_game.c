@@ -45,6 +45,7 @@ void	initialize_game_parameters(t_game *game)
 void	start_game(t_game *game)
 {
 	init_time(game);
+	cs_play_sound(game->audio.ctx, game->audio.song.def);
 	wait_milliseconds(200);
 	mlx_loop(game->mlx.id);
 }
@@ -57,11 +58,12 @@ int	game(t_map *map)
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
 		error_exit(&game, 1, "Game initialization error: MLX initialization");
+	init_main_game_sound_theme(&game, get_full_texture_path(ft_strdup("assets/sounds/wah.wav"), map->path_prefix));
+	set_game_events_sounds(&game.audio);
 	initialize_game_parameters(&game);
 	initialize_sprites(&game, MAX_ENTITIES, (t_texture *)game.map->entity);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls);
 	initialize_mlx_parameters(&game);
-	game.key.mouse = false;
 	start_game(&game);
 	return (1);
 }

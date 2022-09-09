@@ -159,3 +159,18 @@ void	get_interception(t_game *game, float ray_angle, int i) //DDA algorithm
 	distance = interception_distance(game, &ray);
 	initialize_columns(game, &ray, distance, i, ray_angle);
 }
+
+void	cast_rays(t_game *game)
+{
+	int		i;
+	float	ray_angle;
+
+	i = 0;
+	while (i < game->img.size.x)
+	{
+		ray_angle = game->player.angle
+					+ atan(0.001 * (i - (float) game->img.size.x / 2));
+		get_interception(game, ray_angle, i);
+		i++;
+	}
+}

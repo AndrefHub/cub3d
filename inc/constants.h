@@ -38,6 +38,7 @@
 
 # ifndef ASSETS_PATH
 #  define ASSETS_PATH "."
+//# define ASSETS_PATH "/Users/lsherry/goinfre"
 # endif
 
 # define WALL_PREFIX "W"

@@ -12,6 +12,7 @@
 		[
 			"add_executable",
 			"target_link_libraries",
+			"add_compile_definitions",
 			"include_directories"
 		],
 		"files" : 
@@ -26,13 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 29,
+				"line" : 12,
 				"parent" : 0
 			},
 			{
@@ -48,7 +43,19 @@
 				"parent" : 0
 			},
 			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 32,
+				"parent" : 0
+			},
+			{
 				"command" : 2,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
 				"file" : 0,
 				"line" : 7,
 				"parent" : 0
@@ -67,10 +74,17 @@
 					"fragment" : "-std=gnu99"
 				}
 			],
-			"includes" : 
+			"defines" : 
 			[
 				{
 					"backtrace" : 5,
+					"define" : "ASSETS_PATH=\"/Users/lsherry/goinfre\""
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 6,
 					"path" : "/opt/X11/include"
 				}
 			],
@@ -101,8 +115,7 @@
 				13,
 				14,
 				15,
-				16,
-				17
+				16
 			]
 		}
 	],
@@ -176,8 +189,7 @@
 				13,
 				14,
 				15,
-				16,
-				17
+				16
 			]
 		}
 	],
@@ -277,12 +289,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/time_funcs.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/game_sound.c",
 			"sourceGroupIndex" : 0
 		},
 		{

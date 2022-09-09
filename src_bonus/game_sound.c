@@ -20,10 +20,9 @@ void	init_main_game_sound_theme(t_game *game, char *main_music_theme_filename)
 		game->audio.song.def = cs_make_def(&game->audio.song.file);
 		game->audio.song.def.looped = 1;
 	}
-	// cs_insert_sound(game->sound.ctx, &s0);
 }
 
 void	set_game_events_sounds(struct s_audio *audio)
 {
-	set_sound(&audio->bonk, "assets/sounds/bonk.wav");
+	set_sound(&audio->bonk, get_full_texture_path(ft_strdup("assets/sounds/bonk.wav"), 1));
 }
