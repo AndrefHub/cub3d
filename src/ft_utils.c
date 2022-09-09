@@ -10,8 +10,9 @@ t_map	*create_empty_map()
 	if (!map)
 		return (NULL);
 	map->map = NULL;
+	map->enemies = NULL;
 	while (++counter < MAX_WALL_CHARS)
-		map->texture_list[counter] = NULL;
+		map->walls[counter].texture = NULL;
 	map->C = 0;
 	map->F = 0;
 	map->bonus = 0;
@@ -77,8 +78,8 @@ void	print_map_debug(t_map *map)
 	char	**ptr;
 
 	printf("NO %s\nSO %s\nWE %s\nEA %s\nF %d,%d,%d\nC %d,%d,%d\n\n",
-		(char *)map->texture_list[0]->content, (char *)map->texture_list[1]->content,
-		(char *)map->texture_list[2]->content, (char *)map->texture_list[3]->content,
+		(char *)map->walls[0].texture->content, (char *)map->walls[1].texture->content,
+		(char *)map->walls[2].texture->content, (char *)map->walls[3].texture->content,
 		map->F >> 16, (map->F >> 8) % (1 << 8), map->F % (1 << 8),
 		map->C >> 16, (map->C >> 8) % (1 << 8), map->C % (1 << 8));
 	printf("Player X: %d\nPlayer Y: %d\nPlayer orientation: %f\n",

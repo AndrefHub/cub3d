@@ -61,7 +61,8 @@ int	game(t_map *map)
 	init_main_game_sound_theme(&game, "assets/sounds/wah.wav");
 	set_game_events_sounds(&game.audio);
 	initialize_game_parameters(&game);
-	initialize_sprites(&game);
+	initialize_sprites(&game, MAX_ENTITIES, (t_texture *)game.map->entity);
+	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls);
 	initialize_mlx_parameters(&game);
 	start_game(&game);
 	return (1);

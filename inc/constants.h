@@ -19,11 +19,12 @@
 # define PL_SPEED 2.0f
 # define PL_RADIUS 10.0f
 # define PL_MAP_COLOR 0xFF0000
+# define EN_SPEED 1.0f
 # define RAYS_COLOR 0xFFFF00
 # define ABS_WALL_SIZE 840.0f
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
-# define MAX_TEXTURES 4
+# define MAX_ENTITIES 1
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
 
@@ -38,6 +39,7 @@
 # endif
 
 # define WALL_PREFIX "W"
+# define ENTITY_PREFIX "E"
 # ifdef __APPLE__
 enum e_keys
 {

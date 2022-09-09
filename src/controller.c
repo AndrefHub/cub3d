@@ -205,8 +205,8 @@ void	change_textures(t_game *game)
 		{
 			counter = -1;
 			while (++counter < frames_to_move)
-				game->map->img_list[index] = game->map->img_list[index]->next;
-			game->textures[index] = *(t_img *)game->map->img_list[index]->content;	
+				game->map->walls[index].img = game->map->walls[index].img->next;
+			game->textures[index] = *(t_img *)game->map->walls[index].img->content;	
 		}
 	}
 	f += frames_to_move;
@@ -234,9 +234,29 @@ void	fill_ceiling(t_img *img, int color)
 		img->addr[i++] = color;
 }
 
+float	fvector_distance(t_fvector lhs, t_fvector rhs)
+{
+	return (sqrt(pow(lhs.x - rhs.x, 2) + pow(lhs.y - rhs.y, 2)));
+}
+
+void	enemy_attack(t_game *game)
+{
+	(void)game;
+	exit(727);
+}
+
+void	enemy_move(t_game *game)
+{
+	// const float	x_dis = game;
+	
+	if (fvector_distance(game->player.pos, ((t_enemy *)game->map->enemies->content)->pos) < MAP_GRID_SIZE)
+		enemy_attack(game);
+}
+
 int	game_loop(t_game *game)
 {
 	player_controll(game);
+	enemy_move(game);
 	img_clear_rgb(&game->img, 0x808080);
 	fill_floor(&game->img, game->map->F);
 	fill_ceiling(&game->img, game->map->C);
