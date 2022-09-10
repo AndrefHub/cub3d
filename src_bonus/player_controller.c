@@ -53,6 +53,7 @@ void	player_controll(t_game *game)
 	mouse_controller(game);
 	movement_controller(game, &collision);
 	rotation_by_key_controller(game);
+	game->horizon += game->key.mdir.y;
 	if (collision)
 	{
 		cs_play_sound(game->audio.ctx, game->audio.bonk.def);

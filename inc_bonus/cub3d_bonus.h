@@ -95,6 +95,7 @@ typedef struct game
 	char			**grid;
 	bool			show_map;
 	t_img			img;
+	int				horizon;
 
 	struct s_mlx
 	{
@@ -163,12 +164,9 @@ void	map_to_rectangle(t_map *map); // TODO: Rename "set_map_to_rectangle"?
 void	convert_spaces_to_zeros(t_map *map);
 int		ft_strrchr_int(const char *line, int chr);
 t_map	*free_map(t_map *map);
-char	**lst_to_char_ptr(t_list *tmp); //TODO: Rename "lst_to_char_matrix"
-
 
 // Check filename and : check_file.c //
 int		check_file(int ac, char **av);
-
 
 // Cub3d utils : ft_utils.c //
 t_map	*create_empty_map();
@@ -176,12 +174,9 @@ int		ft_arraylen(void **arr);
 int		ft_is_empty(char *line); //TODO: Rename "is_line_empty"
 t_img	initialize_img(t_img *img, void *mlx_ptr, int width, int height);
 
-
 // Some utils for parsing and working with files: input_manip.c //
 int		convert_rgb(char *line); //TODO: Rename
 char	*skip_empty_lines(int fd);
-
-
 
 // Border checking and utils for it: border_checking.c //
 int		find_player(t_map *map, char *line, t_list *lst); //TODO: Rename "find_player_on_map"
@@ -189,7 +184,6 @@ void	find_enemy(t_map *map);
 int		get_map_width(const char **map); //TODO: Move to another file
 int		is_enclosed(t_map *args); //TODO: Rename "is_map_enclosed"
 int		check_enclosure(t_map *map, t_vector vec);
-
 
 // Game initialization: start_game.c //
 int		game(t_map *map);
@@ -202,7 +196,6 @@ void	start_game(t_game *game);
 void	init_main_game_sound_theme(t_game *game, char *main_music_theme_filename);
 void	set_game_events_sounds(struct s_audio *audio, char *filename);
 void	set_sound(t_sound *sound, char *filename);
-
 
 // Work with sprites: game_textures.c //
 void	initialize_sprites(t_game *game, int size, t_texture *sprites_list);
@@ -220,8 +213,8 @@ void	put_pixel(t_img *img, t_vector point, int color);
 void	draw_line(t_img *img, t_vector p1, t_vector p2, int color);
 void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
 void	fill_img_color(t_img *img, int color);
-void	fill_floor_color(t_img *img, int color);
-void	fill_ceiling_color(t_img *img, int color);
+void	fill_floor_color(t_img *img, int color, int horizon);
+void	fill_ceiling_color(t_img *img, int color, int horizon);
 void	draw_aim(t_game *game); //TODO: ??
 
 // Main game loop: game_loop.c //
@@ -237,10 +230,10 @@ void	enemy_attack(t_game *game);
 void	enemy_move(t_game *game);
 
 // Player input control: player_controller.c //
-void	update_last_collision(t_game *game);
-void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collision);
-void	check_borders(t_game *game);
-void	check_restrictions(t_game *game);
+void	player_delta_calculation(struct s_player *player);
+void	mouse_controller(t_game *game);
+void	movement_controller(t_game *game, int *collision);
+void	rotation_by_key_controller(t_game *game);
 void	player_controll(t_game *game);
 
 // Player moving control: player_movement.c //
@@ -249,8 +242,8 @@ void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collisio
 void	check_borders(t_game *game);
 void	check_restrictions(t_game *game);
 
-
-
+// Drawing ceil and floor textured: draw_ceil_floor.c //
+void	draw_ceil_textured(t_game *game);
 
 
 

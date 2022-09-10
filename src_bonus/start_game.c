@@ -31,6 +31,7 @@ void	initialize_game_parameters(t_game *game)
 	initialize_player(game);
 	game->key.mouse = true;
 	game->show_map = false;
+	game->horizon = 0;
 	game->grid = game->map->map;
 	game->img = initialize_img(&game->img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,
