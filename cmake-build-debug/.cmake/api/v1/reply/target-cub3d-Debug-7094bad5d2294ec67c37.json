@@ -12,7 +12,6 @@
 		[
 			"add_executable",
 			"target_link_libraries",
-			"add_compile_definitions",
 			"include_directories"
 		],
 		"files" : 
@@ -51,12 +50,6 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 9,
-				"parent" : 0
-			},
-			{
-				"command" : 3,
-				"file" : 0,
 				"line" : 7,
 				"parent" : 0
 			}
@@ -68,23 +61,16 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6"
+					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk"
 				},
 				{
 					"fragment" : "-std=gnu99"
 				}
 			],
-			"defines" : 
-			[
-				{
-					"backtrace" : 5,
-					"define" : "ASSETS_PATH=\"/Users/lsherry/goinfre\""
-				}
-			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/opt/X11/include"
 				}
 			],

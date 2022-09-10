@@ -1,6 +1,6 @@
 NAME    = cub3d
-CC      = gcc
-FLAGS	= -Wall -Wextra -Werror -o2 -g
+CC      = clang
+FLAGS	= -Wall -Wextra -Werror -g -MMD -Ofast -march=native
 LFLAGS	= -Llibft -lft
 ###
 SRCDIR	= src/
@@ -79,7 +79,12 @@ ifeq ($(UNAME), Linux)
 	GOINFRE = .
 endif
 
+ifneq ($(shell [ -d $(GOINFRE) ]; echo $?), 0)
+	GOINFRE = .
+endif
+
 DEFINES	= -DASSETS_PATH='"'$(GOINFRE)'"'
+
 
 all: download_assets $(NAME)
 
@@ -101,7 +106,7 @@ $(NAME): $(OBJS) $(MSHHDR)
 	@$(CC) $(FLAGS) $(OBJS) $(LFLAGS) $(MLXFLAGS) $(DEFINES) -o $(NAME)
 	@echo "\033[1;33m"$(NAME) "is up to date."'\033[0m'
 
-bonus: $(OBJS_BONUS)
+bonus: download_assets  $(OBJS_BONUS)
 	@echo
 	@echo "\033[1;33m"$(NAME)"_bonus" "objs is up to date."'\033[0m'
 	@make -C libft
