@@ -62,21 +62,28 @@ void	fill_img_color(t_img *img, int color)
 		img->addr[i++] = color;
 }
 
-void	fill_floor_color(t_img *img, int color)
+void	fill_floor_color(t_img *img, int color, int horizon)
 {
-	const int	img_size = img->size.x * img->size.y / 2;
-	int			i;
+	int	i;
 
-	i = 0;
-	while (i < img_size)
-		img->addr[i++ + img_size] = color;
+	if (-horizon > img->size.y / 2)
+		return ;
+	i = img->size.x * (img->size.y / 2 - horizon);
+	if (i < 0)
+		i = 0;
+	while (i < img->size.x * img->size.y)
+		img->addr[i++] = color;
 }
 
-void	fill_ceiling_color(t_img *img, int color)
+void	fill_ceiling_color(t_img *img, int color, int horizon)
 {
-	const int	img_size = img->size.x * img->size.y / 2;
+	int	img_size = img->size.x * (img->size.y / 2 - horizon);
 	int			i;
 
+	if (horizon > img->size.y / 2)
+		return ;
+	if (img_size > img->size.x * img->size.y)
+		img_size = img->size.x * img->size.y;
 	i = 0;
 	while (i < img_size)
 		img->addr[i++] = color;
