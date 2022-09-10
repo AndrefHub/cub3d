@@ -4,6 +4,12 @@ yaDiskLink='https://cloud-api.yandex.net/v1/disk/public/resources/download?publi
 assetsLink='https://disk.yandex.ru/d/mAoZ9b8dmaQWXA'
 OAuthToken='y0_AgAAAAAUbd_zAADLWwAAAADOJupZ3JK4Uy0eQkmrkkhi0tAWU-lHwT4'
 goinfre=$1
+
+if [ ! -d $goinfre ]
+    then
+        goinfre="."
+fi
+
 folderPath="$goinfre"/assets
 savePath="$folderPath".zip
 

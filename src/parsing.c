@@ -34,11 +34,8 @@ void	get_textures(t_map *map, int fd)
 
 	line = NULL;
 	counter = -1;
-	get_config(map, fd, &line);
 	while (++counter < MAX_WALL_CHARS)
 		get_textures_list(map, fd, &line);
-	get_entity(map, fd, &line);
-	parse_sounds(map, fd, &line);
 	// map->texture_list[0] = get_textures_list(fd, "NO", &line);
 	// map->texture_list[1] = get_textures_list(fd, "SO", &line);
 	// map->texture_list[2] = get_textures_list(fd, "WE", &line);
@@ -260,6 +257,8 @@ t_map	*parse_file(int ac, char **av)
 			convert_spaces_to_zeros(map);
 			return (map);
 		}
+		else
+			error_exit(NULL, 1, "Invalid input file: Map not enclosed");
 	}
 	else
 		error_exit(NULL, 1, "Invalid input file: Map");

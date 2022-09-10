@@ -3,28 +3,26 @@
 void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *column, int x, t_game * game)
 {
 	const double	step = (double ) texture->size.y / column->height;
-	const unsigned	tex_col = (unsigned ) column->texture_pos % TEXTURE_SIZE;
+	const unsigned	tex_x = (unsigned ) column->texture_pos % TEXTURE_SIZE;
 	int				y;
 	double			tex_y;
 	int 			max_height;
 
 	tex_y = 0;
-//	if (column->height >= img->size.y)
-//	{
-//		tex_y += (double ) texture->size.y * (column->height - img->size.y) / 2 / column->height;
-//		y = 0;
-//		max_height = img->size.y + (game->player.angle_y);
-//	}
-//	else
-//	{
+	if (column->height >= img->size.y)
+	{
+		tex_y += (double ) texture->size.y * (column->height - img->size.y) / 2 / column->height;
+		y = 0;
+		max_height = img->size.y;
+	}
+	else
+	{
 		y = img->size.y / 2 - column->height / 2 + (game->player.angle_y);
 		max_height = y + column->height;
-//	}
+	}
 	while (y < max_height)
 	{
-//		img->addr[y * img->size.x + x] = texture->addr[(unsigned )tex_y * texture->size.x + tex_col];
-		put_pixel(img, (t_vector) {x, y}, texture->addr[(unsigned )tex_y * texture->size.x + tex_col]);
-//		img->addr[y * img->size.x + x] = PL_MAP_COLOR;
+		put_pixel(img, (t_vector) {x, y}, texture->addr[(unsigned )tex_y * texture->size.x + tex_x]);
 		tex_y += step;
 		y++;
 	}
@@ -50,17 +48,23 @@ void	draw_walls(t_game *game)
 t_ray	ray_initialize(t_game *game, float ray_angle)
 {
 	t_ray ray;
+	float tan;
 
 	ray.dir.x = cosf(ray_angle);
 	ray.dir.y = sinf(ray_angle);
-	ray.unit = (t_fvector) {sqrtf(1 + tanf(ray_angle) * tanf(ray_angle)),
-							sqrtf(1 + 1 / (tanf(ray_angle) * tanf(ray_angle)))};
+	tan = powf(ray.dir.y / ray.dir.x, 2);
+
+	ray.unit = (t_fvector) {sqrtf(1 + tan),
+							sqrtf(1 + 1 / tan)};
 	ray.map_tile = (t_vector) {game->player.pos.x, game->player.pos.y};
-	if (ray.dir.x < 0) {
+	if (ray.dir.x < 0)
+	{
 		ray.step.x = -1;
 		ray.length.x =
 				(game->player.pos.x - (float) ray.map_tile.x) * ray.unit.x;
-	} else {
+	}
+	else
+	{
 		ray.step.x = 1;
 		ray.length.x = (((float) ray.map_tile.x + 1) - game->player.pos.x) *
 					   ray.unit.x;
@@ -112,8 +116,8 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 {
 	float camera;
 
-	if (distance < MAX_RENDER_DISTANCE)
-	{
+//	if (distance < MAX_RENDER_DISTANCE)
+//	{
 		camera = game->player.angle - ray_angle;
 		if (camera < 0)
 			camera += 2 * PI;
@@ -126,30 +130,30 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 			* distance, game->player.pos.y + sinf(ray_angle) * distance};
 		if (ray->length.y - ray->unit.y < ray->length.x - ray->unit.x)
 		{
-			game->column[i].fade = 2.f;
-			game->column[i].dir = "SN"[(int) (game->column[i].pos.x > game->player.pos.x)];
+//			game->column[i].fade = 2.f;
+//			game->column[i].dir = "SN"[(int) (game->column[i].pos.x > game->player.pos.x)];
 			game->column[i].texture_pos = (game->player.pos.y + sinf(ray_angle) * distance ) * TEXTURE_SIZE / MAP_GRID_SIZE;
 		}
 		else
 		{
-			game->column[i].fade = 1.f;
-			game->column[i].dir = "EW"[(int) (game->column[i].pos.y > game->player.pos.y)];
+//			game->column[i].fade = 1.f;
+//			game->column[i].dir = "EW"[(int) (game->column[i].pos.y > game->player.pos.y)];
 			game->column[i].texture_pos = (game->player.pos.x + cosf(ray_angle) * distance) * TEXTURE_SIZE / MAP_GRID_SIZE;
 		}
-		if (game->column[i].dir == 'W' || game->column[i].dir == 'S')
-			game->column[i].texture_pos = TEXTURE_SIZE * ABS_WALL_SIZE - game->column[i].texture_pos;
-		if (distance > MAX_RENDER_DISTANCE)
-			game->column[i].color = 0xFFAAAA;
+//		if (game->column[i].dir == 'W' || game->column[i].dir == 'S')
+//			game->column[i].texture_pos = TEXTURE_SIZE * ABS_WALL_SIZE - game->column[i].texture_pos;
+//		if (distance > MAX_RENDER_DISTANCE)
+//			game->column[i].color = 0xFFAAAA;
 		game->column[i].distance = distance;
 		game->column[i].ray_dir = ray->dir;
 		game->column[i].cell = (t_vector) {ray->map_tile.x / MAP_GRID_SIZE, ray->map_tile.y / MAP_GRID_SIZE};
-	}
-	else
-	{
-		game->column->height = 1;
-		game->column[i].color = 0x00DCE7;
-		game->column->distance = 1000;
-	}
+//	}
+//	else
+//	{
+//		game->column->height = 1;
+//		game->column[i].color = 0x00DCE7;
+//		game->column->distance = 1000;
+//	}
 }
 
 void	get_interception(t_game *game, float ray_angle, int i) //DDA algorithm
@@ -157,6 +161,8 @@ void	get_interception(t_game *game, float ray_angle, int i) //DDA algorithm
 	t_ray	ray;
 	float	distance;
 
+//	step_x = 1 - (angle < -M_PI_2_F || angle >= M_PI_2_F) * 2;
+//	step_y = 1 - (sinf(angle) < 0.0f) * 2;
 	ray = ray_initialize(game, ray_angle);
 	distance = interception_distance(game, &ray);
 	initialize_columns(game, &ray, distance, i, ray_angle);
@@ -172,6 +178,7 @@ void	cast_rays(t_game *game)
 	{
 		ray_angle = game->player.angle
 					+ atan(0.001 * (i - (float) game->img.size.x / 2));
+
 		get_interception(game, ray_angle, i);
 		i++;
 	}
