@@ -2,8 +2,8 @@
 
 void	player_delta_calculation(struct s_player *player)
 {
-	player->delta.x = cosf(player->angle) * PL_SPEED;
-	player->delta.y = sinf(player->angle) * PL_SPEED;
+	player->delta.x = cosf(player->angle) * 0.05f;
+	player->delta.y = sinf(player->angle) * 0.05f;
 }
 
 void	mouse_controller(t_game *game)

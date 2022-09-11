@@ -15,13 +15,16 @@ void	initialize_mlx_parameters(t_game *game)
 void	initialize_player(t_game *game)
 {
 	game->player.pos = (t_fvector) {(float )game->map->player_coords.x
-		* MAP_GRID_SIZE + MAP_GRID_SIZE / 2,
+		+ 0.5f,
 		(float )(game->map->player_coords.y - 1)
-		* MAP_GRID_SIZE + MAP_GRID_SIZE / 2};
+		+ 0.5f};
 	game->player.angle = game->map->player_orient;
 	game->player.angle_y = 0;
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
+
+	game->fov = 0.001f;
+
 }
 
 void	initialize_game_parameters(t_game *game)

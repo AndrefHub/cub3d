@@ -1,7 +1,7 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-//void	draw_ceil_textured(t_game *game)
-//{
+void	draw_ceil_textured(t_game *game)
+{
 //	int y;
 //
 //	y = 0;
@@ -12,4 +12,5 @@
 //		ray_dir0.x =
 //		y++;
 //	}
-//}
+	(void ) game;
+}

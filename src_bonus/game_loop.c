@@ -11,7 +11,7 @@ void	draw_hud(t_game *game, t_ull time1, t_ull time2)
 int	game_loop(t_game *game)
 {
 	player_controll(game);
-	enemy_move(game);
+//	enemy_move(game);
 	fill_img_color(&game->img, 0x808080);
 	fill_ceiling_color(&game->img, game->map->C, game->horizon);
 	draw_ceil_textured(game);

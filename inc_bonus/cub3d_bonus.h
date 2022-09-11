@@ -96,6 +96,7 @@ typedef struct game
 	bool			show_map;
 	t_img			img;
 	int				horizon;
+	float			fov;
 
 	struct s_mlx
 	{

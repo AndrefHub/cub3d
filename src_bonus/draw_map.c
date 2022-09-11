@@ -23,17 +23,17 @@ void	draw_player_on_map(t_game *game)
 	t_vector	player;
 	int			i;
 
-	player = (t_vector) {game->player.pos.x / MAP_GRID_SIZE
+	player = (t_vector) {game->player.pos.x
 		* game->map->map_tile_size - game->map->map_tile_size / 4,
-		game->player.pos.y / MAP_GRID_SIZE * game->map->map_tile_size
+		game->player.pos.y * game->map->map_tile_size
 		- game->map->map_tile_size / 4};
 	i = 0;
 	while (i < game->img.size.x - 50)
 	{
 		draw_line(&game->map->img, (t_vector) {player.x +
 		game->map->map_tile_size / 4, player.y + game->map->map_tile_size / 4},
-			(t_vector) {game->column[i].pos.x / MAP_GRID_SIZE *
-			game->map->map_tile_size, game->column[i].pos.y / MAP_GRID_SIZE
+			(t_vector) {game->column[i].pos.x *
+			game->map->map_tile_size, game->column[i].pos.y
 			* game->map->map_tile_size}, RAYS_COLOR);
 		i += 50;
 	}
@@ -70,7 +70,7 @@ void	draw_map(t_game *game)
 		y++;
 	}
 	draw_player_on_map(game);
-	draw_enemies_on_map(game);
+//	draw_enemies_on_map(game);
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->map->img.mlx_img, 0, 0);
 }
 
