@@ -3,8 +3,8 @@
 
 void	open_door(t_game *game)
 {
-	const int	x = (int)game->player.pos.x / MAP_GRID_SIZE;
-	const int	y = (int)game->player.pos.y / MAP_GRID_SIZE;
+	const int	x = (int)game->player.pos.x;
+	const int	y = (int)game->player.pos.y;
 	const float	angle = game->player.angle;
 	char		*to_change;
 	
