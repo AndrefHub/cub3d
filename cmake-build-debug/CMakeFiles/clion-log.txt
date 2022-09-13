@@ -1,4 +1,0 @@
-/private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/ninja/mac/ninja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=gcc -G Ninja -S /Users/lsherry/42Course/cub3d -B /Users/lsherry/42Course/cub3d/cmake-build-debug
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/lsherry/42Course/cub3d/cmake-build-debug
