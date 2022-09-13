@@ -6,7 +6,7 @@ set(CMAKE_C_STANDARD 99)
 if(APPLE)
     include_directories(AFTER "/opt/X11/include")
 endif()
-add_compile_definitions(ASSETS_PATH="/Users/kdancy/goinfre")
+add_compile_definitions(ASSETS_PATH="/Users/lsherry/goinfre")
 
 add_executable(cub3d
         src_bonus/border_checking.c
@@ -21,9 +21,12 @@ add_executable(cub3d
         src_bonus/game_loop.c
         src_bonus/game_sound.c
         src_bonus/game_textures.c
+        src_bonus/death_events.c
+        src_bonus/vector_utils.c
         src_bonus/hooks.c
         src_bonus/input_manip.c
         src_bonus/main.c
+        src_bonus/enemy_actions.c
         src_bonus/mlx_adapter.c
         src_bonus/parsing.c
         src_bonus/parsing_font.c
@@ -33,6 +36,7 @@ add_executable(cub3d
         src_bonus/player_movement.c
         src_bonus/put_text.c
         src_bonus/ray_casting.c
+        src_bonus/draw_walls.c
         src_bonus/start_game.c
         src_bonus/time_funcs.c
         src_bonus/game_sound.c

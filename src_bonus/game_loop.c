@@ -14,6 +14,9 @@ void	draw_hud(t_game *game, t_ull time1, t_ull time2)
 
 int	game_loop(t_game *game)
 {
+	t_ull time_rays = -1;
+	t_ull time_drawing = -1;
+
 	if (check_aliveness(game))
 	{
 		player_controll(game);
@@ -23,13 +26,12 @@ int	game_loop(t_game *game)
 		draw_ceil_textured(game);
 		fill_floor_color(&game->img, game->map->F, game->z_offset);
 	//	draw_player(game);
-	//  draw_hud(game);
 		t_ull time = get_time();
 		cast_rays(game);	
-		t_ull time_rays = get_time() - time;
+		time_rays = get_time() - time;
 		time = get_time();
 		draw_walls(game);
-		t_ull time_drawing = get_time() - time;
+		time_drawing = get_time() - time;
 		printf("*** %llu *** %llu ***\n", time_rays, time_drawing);
 		draw_aim(game);
 		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
@@ -43,6 +45,7 @@ int	game_loop(t_game *game)
 	{
 		player_death(game);
 	}
+	draw_hud(game, time_rays, time_drawing);
 	draw_fps(game);
 	game->time.last = get_time();
 	return (0);

@@ -33,19 +33,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 47,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 48,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 49,
+				"line" : 53,
 				"parent" : 0
 			},
 			{
@@ -78,7 +78,7 @@
 			[
 				{
 					"backtrace" : 5,
-					"define" : "ASSETS_PATH=\"/Users/kdancy/goinfre\""
+					"define" : "ASSETS_PATH=\"/Users/lsherry/goinfre\""
 				}
 			],
 			"includes" : 
@@ -126,7 +126,11 @@
 				24,
 				25,
 				26,
-				27
+				27,
+				28,
+				29,
+				30,
+				31
 			]
 		}
 	],
@@ -211,7 +215,11 @@
 				24,
 				25,
 				26,
-				27
+				27,
+				28,
+				29,
+				30,
+				31
 			]
 		}
 	],
@@ -292,6 +300,18 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src_bonus/death_events.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/vector_utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src_bonus/hooks.c",
 			"sourceGroupIndex" : 0
 		},
@@ -305,6 +325,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src_bonus/main.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/enemy_actions.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -359,6 +385,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src_bonus/ray_casting.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/draw_walls.c",
 			"sourceGroupIndex" : 0
 		},
 		{
