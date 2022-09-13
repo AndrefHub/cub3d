@@ -2,7 +2,7 @@
 
 void	initialize_mlx_parameters(t_game *game)
 {
-	mouse_hide(game->mlx.id, game->mlx.window);
+	// mouse_hide(game->mlx.id, game->mlx.window);
 	mlx_do_key_autorepeatoff(game->mlx.id);
 	mlx_hook(game->mlx.window, KeyPress, KeyPressMask, key_hook_press, game);
 	mlx_hook(game->mlx.window, KeyRelease, KeyReleaseMask, key_hook_release, game);
@@ -22,6 +22,8 @@ void	initialize_player(t_game *game)
 	game->player.angle_y = 0;
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
+	game->player.health = 1;
+	game->player.last_attack_time = 0;
 }
 
 void	initialize_game_parameters(t_game *game)
@@ -46,7 +48,7 @@ void	initialize_game_parameters(t_game *game)
 void	start_game(t_game *game)
 {
 	init_time(game);
-	cs_play_sound(game->audio.ctx, game->audio.song.def);
+	game->audio.song.play = cs_play_sound(game->audio.ctx, game->audio.song.def);
 	wait_milliseconds(200);
 	mlx_loop(game->mlx.id);
 }
@@ -62,8 +64,9 @@ int	game(t_map *map)
 	init_main_game_sound_theme(&game, map->sounds[0]);
 	set_game_events_sounds(&game.audio, map->sounds[1]);
 	initialize_game_parameters(&game);
-	initialize_sprites(&game, MAX_ENTITIES, (t_texture *)game.map->entity);
-	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls);
+	initialize_sprites(&game, MAX_ENTITIES, (t_texture *)game.map->entity, TEXTURE_SIZE);
+	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
+	initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
 	initialize_mlx_parameters(&game);
 	start_game(&game);
 	return (1);

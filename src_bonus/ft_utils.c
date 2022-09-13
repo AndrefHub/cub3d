@@ -16,6 +16,9 @@ t_map	*create_empty_map()
 	counter = -1;
 	while (++counter < MAX_ENTITIES)
 		map->entity[counter].texture = NULL;
+	counter = -1;
+	while (++counter < MAX_FONT_CHARS)
+		map->font[counter].texture = NULL;
 	map->C = 0;
 	map->F = 0;
 	map->bonus = 0;
@@ -42,7 +45,7 @@ int	is_space(char c)
 	return (c != ' ' && c != '\t' && c != '\n');
 }
 
-int		ft_is_empty(char *line)
+int		is_line_empty(char *line)
 {
 	while (line && *line)
 	{
@@ -93,5 +96,18 @@ void	print_map_debug(t_map *map)
 		printf("%s\n", *ptr);
 		++ptr;
 	}
-	// printf("\nIs enclosed? %d\n", is_enclosed(map));
+	// printf("\nIs enclosed? %d\n", is_map_enclosed(map));
+}
+
+char	*get_full_texture_path(char *line, int flag)
+{
+	char	*new_line;
+
+	new_line = line;
+	if (flag)
+	{
+		new_line = ft_strcat_delim(ASSETS_PATH, '/', line);
+		free(line);
+	}
+	return (new_line);
 }

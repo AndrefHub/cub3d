@@ -7,10 +7,10 @@
 # define BAD_COLOUR (1 << 24)
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"
-//# define WIN_WIDTH 1920
-//# define WIN_HEIGHT 1026
- # define WIN_WIDTH 1280
- # define WIN_HEIGHT 720
+# define WIN_WIDTH 1920
+# define WIN_HEIGHT 1026
+//  # define WIN_WIDTH 1280
+//  # define WIN_HEIGHT 720
 # define MAP_GRID_SIZE 32
 # define TEXTURE_SIZE 192
 # define MAX_RENDER_DISTANCE 5000
@@ -30,6 +30,11 @@
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
 # define MAX_SOUNDS 2
+# define MAX_FONT_CHARS 64
+# define ENEMY_RELOAD 1000
+# define PL_INVINCIBILITY 2000
+# define FONT_SIZE 100
+# define FONT_OFFSET 32
 
 // # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
@@ -45,6 +50,7 @@
 # define WALL_PREFIX "W"
 # define ENTITY_PREFIX "E"
 # define SOUND_PREFIX "S"
+# define FONT_PREFIX "F"
 # ifdef __APPLE__
 enum e_keys
 {

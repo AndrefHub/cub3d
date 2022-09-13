@@ -62,6 +62,7 @@ void	find_enemy(t_map *map)
 				* MAP_GRID_SIZE + MAP_GRID_SIZE / 2,
 				(float )counter
 				* MAP_GRID_SIZE + MAP_GRID_SIZE / 2};
+			enemy->last_attack_time = 0;
 			// enemy->sprite = NULL;
 			ft_lstadd_back(&map->enemies, ft_lstnew(enemy));
 			line += x_coord + 1;
@@ -100,7 +101,7 @@ int check_enclosure(t_map *map, t_vector vec)
 	return 0;
 }
 
-int	is_enclosed(t_map *args)
+int	is_map_enclosed(t_map *args)
 {
 	t_vector	check;
 
