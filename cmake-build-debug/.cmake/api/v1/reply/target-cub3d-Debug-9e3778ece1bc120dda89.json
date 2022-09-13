@@ -12,7 +12,6 @@
 		[
 			"add_executable",
 			"target_link_libraries",
-			"add_compile_options",
 			"add_compile_definitions",
 			"include_directories"
 		],
@@ -28,25 +27,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 12,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 37,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 38,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 39,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
@@ -57,12 +56,6 @@
 			},
 			{
 				"command" : 3,
-				"file" : 0,
-				"line" : 10,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
 				"file" : 0,
 				"line" : 7,
 				"parent" : 0
@@ -78,36 +71,20 @@
 					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6"
 				},
 				{
-					"backtrace" : 5,
-					"fragment" : "-g"
-				},
-				{
-					"backtrace" : 5,
-					"fragment" : "-MMD"
-				},
-				{
-					"backtrace" : 5,
-					"fragment" : "-Ofast"
-				},
-				{
-					"backtrace" : 5,
-					"fragment" : "-march=native"
-				},
-				{
 					"fragment" : "-std=gnu99"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"backtrace" : 6,
-					"define" : "ASSETS_PATH=\"/Users/lsherry/goinfre\""
+					"backtrace" : 5,
+					"define" : "ASSETS_PATH=\"/Users/kdancy/goinfre\""
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 7,
+					"backtrace" : 6,
 					"path" : "/opt/X11/include"
 				}
 			],
@@ -146,7 +123,10 @@
 				21,
 				22,
 				23,
-				24
+				24,
+				25,
+				26,
+				27
 			]
 		}
 	],
@@ -228,7 +208,10 @@
 				21,
 				22,
 				23,
-				24
+				24,
+				25,
+				26,
+				27
 			]
 		}
 	],
@@ -249,7 +232,67 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+			"path" : "src_bonus/controller.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/demo_utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/draw_floor.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/draw_map.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/drawing.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/free_game.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
 			"path" : "src_bonus/ft_utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/game_loop.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/game_sound.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/game_textures.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/hooks.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -267,85 +310,31 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src_bonus/parsing.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src_bonus/start_game.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "src_bonus/mlx_adapter.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src_bonus/controller.c",
+			"path" : "src_bonus/parsing.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src_bonus/drawing.c",
+			"path" : "src_bonus/parsing_font.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src_bonus/demo_utils.c",
+			"path" : "src_bonus/parsing_textures.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src_bonus/draw_map.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src_bonus/hooks.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src_bonus/game_textures.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src_bonus/ray_casting.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src_bonus/time_funcs.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src_bonus/game_sound.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src_bonus/game_loop.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "cute_sound/cute_sound.c",
+			"path" : "src_bonus/parsing_utils.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -363,13 +352,25 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src_bonus/vector_utils.c",
+			"path" : "src_bonus/put_text.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src_bonus/draw_floor.c",
+			"path" : "src_bonus/ray_casting.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/start_game.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/time_funcs.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -381,7 +382,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src_bonus/draw_walls.c",
+			"path" : "cute_sound/cute_sound.c",
 			"sourceGroupIndex" : 0
 		}
 	],

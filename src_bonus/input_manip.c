@@ -26,7 +26,7 @@ char	*skip_empty_lines(int fd)
 	char	*line;
 
 	line = get_next_line(fd);
-	while (line && ft_is_empty(line))
+	while (line && is_line_empty(line))
 	{
 		free(line);
 		line = get_next_line(fd);
@@ -36,7 +36,7 @@ char	*skip_empty_lines(int fd)
 	return (line);
 }
 
-int convert_rgb(char *line)
+int convert_to_rgb(char *line)
 {
 	char	**rgb_values;
 	int		rgb;
