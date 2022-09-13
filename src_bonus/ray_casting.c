@@ -1,44 +1,5 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *column, int x, t_game * game)
-{
-	const double	step = (double ) texture->size.y / column->height;
-	const unsigned	tex_col = (unsigned ) column->texture_pos % texture->size.x;
-	int				y;
-	double			tex_y;
-	int 			max_height;
-
-	tex_y = 0;
-	y = img->size.y / 2 - column->height / 2 - (game->horizon);
-	max_height = y + column->height;
-//	if (y > 0)
-//		draw_ceil_textured(game, y);
-	while (y < max_height)
-	{
-		put_pixel(img, (t_vector) {x, y}, texture->addr[(unsigned )tex_y * texture->size.x + tex_col]);
-		tex_y += step;
-		y++;
-	}
-}
-
-void	draw_walls(t_game *game)
-{
-	int				x;
-//	unsigned int	texture_id;
-
-	x = 0;
-	while (x < game->img.size.x)
-	{
-		game->column[x].height = (int) (ABS_WALL_SIZE / game->column[x].perp_dist);
-		draw_texture_set(game, &game->column[x]);
-//		texture_id = ft_strchr(CARDINAL_POINTS, game->column[x].dir) - CARDINAL_POINTS;
-//		ft_putnbr_fd(texture_id, 1);
-		draw_wall_scaled(&game->img, &game->textures[game->column[x].texture_id],
-						 &game->column[x], x, game);
-		x++;
-	}
-}
-
 t_ray	ray_initialize(t_game *game, float ray_angle)
 {
 	t_ray ray;

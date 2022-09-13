@@ -58,10 +58,8 @@ void	find_enemy(t_map *map)
 		{
 			enemy = malloc(sizeof(*enemy));
 			x_coord = ft_strchr(line, 'e') - map->map[counter] + x_coord + 1;
-			enemy->pos = (t_fvector) {(float )x_coord
-				* MAP_GRID_SIZE + MAP_GRID_SIZE / 2,
-				(float )counter
-				* MAP_GRID_SIZE + MAP_GRID_SIZE / 2};
+			enemy->pos = (t_fvector) {(float )x_coord + 0.5f,
+				(float )counter + 0.5f};
 			// enemy->sprite = NULL;
 			ft_lstadd_back(&map->enemies, ft_lstnew(enemy));
 			line += x_coord + 1;

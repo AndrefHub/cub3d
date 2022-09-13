@@ -13,6 +13,7 @@
 			"add_executable",
 			"target_link_libraries",
 			"add_compile_options",
+			"add_compile_definitions",
 			"include_directories"
 		],
 		"files" : 
@@ -27,35 +28,41 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 11,
+				"line" : 12,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 31,
+				"line" : 37,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 32,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 33,
+				"line" : 39,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 10,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
 				"file" : 0,
 				"line" : 7,
 				"parent" : 0
@@ -68,19 +75,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk"
-				},
-				{
-					"backtrace" : 5,
-					"fragment" : "-Wall"
-				},
-				{
-					"backtrace" : 5,
-					"fragment" : "-Wextra"
-				},
-				{
-					"backtrace" : 5,
-					"fragment" : "-Werror"
+					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6"
 				},
 				{
 					"backtrace" : 5,
@@ -99,17 +94,20 @@
 					"fragment" : "-march=native"
 				},
 				{
-					"backtrace" : 5,
-					"fragment" : "-Qunused-arguments"
-				},
-				{
 					"fragment" : "-std=gnu99"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 6,
+					"define" : "ASSETS_PATH=\"/Users/lsherry/goinfre\""
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 6,
+					"backtrace" : 7,
 					"path" : "/opt/X11/include"
 				}
 			],
@@ -147,7 +145,8 @@
 				20,
 				21,
 				22,
-				23
+				23,
+				24
 			]
 		}
 	],
@@ -228,7 +227,8 @@
 				20,
 				21,
 				22,
-				23
+				23,
+				24
 			]
 		}
 	],
@@ -376,6 +376,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src_bonus/draw_ceil_floor.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/draw_walls.c",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -37,6 +37,7 @@ SRC_BONUSFILE	= main.c \
 					game_sound.c\
 					game_textures.c \
 					hooks.c \
+					draw_ceil_floor.c \
 					mlx_adapter.c \
 					game_loop.c \
 					ray_casting.c \
@@ -79,9 +80,9 @@ ifeq ($(UNAME), Linux)
 	GOINFRE = .
 endif
 
-ifneq ($(shell [ -d $(GOINFRE) ]; echo $?), 0)
-	GOINFRE = .
-endif
+#ifeq ($(shell [ -d $(GOINFRE) ]; echo $?), 1) #TODO: it is doesn't work at school computer
+#	GOINFRE = .
+#endif
 
 DEFINES	= -DASSETS_PATH='"'$(GOINFRE)'"'
 

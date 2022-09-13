@@ -65,23 +65,23 @@ void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collisio
 void	check_borders(t_game *game)
 {
 	char			tile;
-	const t_vector	plus = {(int)(game->player.pos.x + PL_RADIUS) / MAP_GRID_SIZE,
-		(int)(game->player.pos.y + PL_RADIUS) / MAP_GRID_SIZE};
-	const t_vector	minus = {(int)(game->player.pos.x - PL_RADIUS) / MAP_GRID_SIZE,
-		(int)(game->player.pos.y - PL_RADIUS) / MAP_GRID_SIZE};
+	const t_vector	plus = {(int)(game->player.pos.x + PL_RADIUS),
+		(int)(game->player.pos.y + PL_RADIUS)};
+	const t_vector	minus = {(int)(game->player.pos.x - PL_RADIUS),
+		(int)(game->player.pos.y - PL_RADIUS)};
 
-	tile = game->grid[(int)game->player.pos.y / MAP_GRID_SIZE][minus.x];
+	tile = game->grid[(int)game->player.pos.y][minus.x];
 	if (is_wall(tile))
-		game->player.pos.x = (minus.x + 1) * MAP_GRID_SIZE + PL_RADIUS;
-	tile = game->grid[(int)game->player.pos.y / MAP_GRID_SIZE][plus.x];
+		game->player.pos.x = (minus.x + 1) + PL_RADIUS;
+	tile = game->grid[(int)game->player.pos.y][plus.x];
 	if (is_wall(tile))
-		game->player.pos.x = plus.x * MAP_GRID_SIZE - PL_RADIUS;
-	tile = game->grid[minus.y][(int)game->player.pos.x / MAP_GRID_SIZE];
+		game->player.pos.x = plus.x - PL_RADIUS;
+	tile = game->grid[minus.y][(int)game->player.pos.x];
 	if (is_wall(tile))
-		game->player.pos.y = (minus.y + 1) * MAP_GRID_SIZE + PL_RADIUS;
-	tile = game->grid[plus.y][(int)game->player.pos.x / MAP_GRID_SIZE];
+		game->player.pos.y = (minus.y + 1) + PL_RADIUS;
+	tile = game->grid[plus.y][(int)game->player.pos.x];
 	if (is_wall(tile))
-		game->player.pos.y = plus.y * MAP_GRID_SIZE - PL_RADIUS;
+		game->player.pos.y = plus.y - PL_RADIUS;
 
 }
 
@@ -91,14 +91,14 @@ void	check_restrictions(t_game *game)
 		game->player.angle += 2 * PI;
 	if (game->player.angle > 2 * PI)
 		game->player.angle -= 2 * PI;
-	if (game->player.pos.x > game->map->map_size.x * MAP_GRID_SIZE)
-		game->player.pos.x -= MAP_GRID_SIZE;
+	if (game->player.pos.x > game->map->map_size.x)
+		game->player.pos.x -= 1;
 	if (game->player.pos.x < 0)
-		game->player.pos.x += MAP_GRID_SIZE;
-	if (game->player.pos.y > game->map->map_size.y * MAP_GRID_SIZE)
-		game->player.pos.y -= MAP_GRID_SIZE;
+		game->player.pos.x += 1;
+	if (game->player.pos.y > game->map->map_size.y)
+		game->player.pos.y -= 1;
 	if (game->player.pos.y < 0)
-		game->player.pos.y += MAP_GRID_SIZE;
+		game->player.pos.y += 1;
 	if (game->horizon > game->img.size.y)
 		game->horizon = game->img.size.y;
 	if (game->horizon < -game->img.size.y)

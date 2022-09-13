@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="cub3d" targetName="cub3d" />
     </generated>
@@ -12,11 +15,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c4e217c-7993-4678-a3b0-20a822acdc07" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src_bonus/draw_walls.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-d5d2d0c5d775293dddf6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-e44a62a86aab1fa9a5d7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-5d7cdb23540ad2e4c5b5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-10T16-05-06-0432.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-cub3d-Debug-3fdfb96b81aa56a8b42a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-37b208d87cd22233f786.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/check_file.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/check_file.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/controller.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/drawing.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/drawing.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o" afterDir="false" />
@@ -26,23 +54,136 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/hooks.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/hooks.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/start_game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/start_game.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cub3d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cub3d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cute_sound/cute_sound.h" beforeDir="false" afterPath="$PROJECT_DIR$/cute_sound/cute_sound.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cute_sound/cute_sound.o" beforeDir="false" afterPath="$PROJECT_DIR$/cute_sound/cute_sound.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc_bonus/constants_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/constants_bonus.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/controller.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/draw_ceil_floor.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_ceil_floor.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/draw_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_atoi.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_atoi.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_bzero.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_bzero.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_calloc.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_calloc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_find_substr.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_find_substr.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isalnum.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_isalnum.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isalpha.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_isalpha.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isascii.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_isascii.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isdigit.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_isdigit.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_isprint.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_isprint.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_itoa.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_itoa.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_back_bonus.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstadd_back_bonus.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstadd_front_bonus.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstadd_front_bonus.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstat.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstat.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstclear_bonus.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstclear_bonus.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstdelone_bonus.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstdelone_bonus.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstiter_bonus.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstiter_bonus.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstlast_bonus.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstlast_bonus.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstmap_bonus.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstmap_bonus.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstnew_bonus.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstnew_bonus.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_lstsize_bonus.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_lstsize_bonus.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_max.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_max.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memccpy.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_memccpy.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memchr.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_memchr.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memcmp.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_memcmp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memcpy.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_memcpy.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memmove.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_memmove.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_memset.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_memset.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_min.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_min.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_print_tools.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_print_tools.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_printf.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_printf.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_putchar_fd.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_putchar_fd.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_putendl_fd.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_putendl_fd.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_putnbr_fd.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_putnbr_fd.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_putstr_fd.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_putstr_fd.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_split.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_split.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strchr.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strchr.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strdup.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strdup.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_striteri.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_striteri.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strjoin.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strjoin.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strlcat.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strlcat.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strlcpy.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strlcpy.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strlen.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strlen.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strmapi.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strmapi.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strncmp.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strncmp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strndup.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strndup.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strnew.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strnew.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strnstr.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strnstr.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strrchr.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strrchr.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_strtrim.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_strtrim.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_substr.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_substr.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_tolower.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_tolower.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/ft_toupper.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/ft_toupper.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/get_next_line.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/get_next_line.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/get_next_line_utils.o" beforeDir="false" afterPath="$PROJECT_DIR$/libft/get_next_line_utils.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libft/libft.a" beforeDir="false" afterPath="$PROJECT_DIR$/libft/libft.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/e1m1bonus.cub" beforeDir="false" afterPath="$PROJECT_DIR$/maps/e1m1bonus.cub" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/libmlx.a" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/libmlx.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx_init_loop.o" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_init_loop.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx_int_str_to_wordtab.o" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_int_str_to_wordtab.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx_mouse.o" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_mouse.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx_new_image.o" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_new_image.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx_new_window.o" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_new_window.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx_png.o" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_png.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx_shaders.o" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_shaders.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx_xpm.o" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_xpm.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/border_checking.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/border_checking.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/border_checking.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/border_checking.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/check_file.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/check_file.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/check_file.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/check_file.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/controller.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/controller.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/controller.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/controller.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/demo_utils.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/demo_utils.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/demo_utils.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/demo_utils.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/draw_map.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/draw_map.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/draw_map.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/draw_map.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/drawing.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/drawing.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/drawing.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/drawing.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/free_game.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/free_game.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/free_game.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/free_game.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/ft_utils.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/ft_utils.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/ft_utils.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/ft_utils.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/game_loop.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/game_loop.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/game_loop.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/game_loop.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/game_sound.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/game_sound.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/game_sound.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/game_sound.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/game_textures.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/game_textures.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/game_textures.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/game_textures.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/hooks.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/hooks.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/hooks.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/hooks.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/input_manip.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/input_manip.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/input_manip.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/input_manip.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/main.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/main.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/mlx_adapter.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/mlx_adapter.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/mlx_adapter.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/mlx_adapter.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/parsing.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/parsing.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/parsing.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/parsing.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/player_controller.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/player_controller.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/player_controller.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/player_controller.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/player_movement.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/player_movement.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/player_movement.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/player_movement.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/ray_casting.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/ray_casting.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/ray_casting.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/ray_casting.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/start_game.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/start_game.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/start_game.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/start_game.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/time_funcs.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/time_funcs.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/time_funcs.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/time_funcs.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/vector_utils.d" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/vector_utils.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj_bonus/vector_utils.o" beforeDir="false" afterPath="$PROJECT_DIR$/obj_bonus/vector_utils.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/border_checking.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/border_checking.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/game_loop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/game_loop.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/player_controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/player_controller.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/player_movement.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/player_movement.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/ray_casting.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/ray_casting.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/start_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/start_game.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,17 +221,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/inc_bonus" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/inc_bonus" />
@@ -103,6 +242,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="cub3d" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="maps/e1m1bonus.cub" REDIRECT_INPUT="false" REDIRECT_INPUT_PATH="cub.input" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$ContentRoot$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cub3d" TARGET_NAME="cub3d" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cub3d" RUN_TARGET_NAME="cub3d">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -122,11 +266,8 @@
       <workItem from="1662470256538" duration="5608000" />
       <workItem from="1662476530103" duration="1176000" />
       <workItem from="1662717183825" duration="2076000" />
-      <workItem from="1662720880963" duration="16533000" />
-      <workItem from="1662802045915" duration="9230000" />
-      <workItem from="1662814729323" duration="11574000" />
-      <workItem from="1662898051071" duration="2770000" />
-      <workItem from="1662901919658" duration="2235000" />
+      <workItem from="1662720880963" duration="16866000" />
+      <workItem from="1663061577825" duration="3582000" />
     </task>
     <servers />
   </component>
@@ -156,21 +297,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/inc_bonus/constants_bonus.h</url>
-          <line>5</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src_bonus/start_game.c</url>
-          <line>25</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
