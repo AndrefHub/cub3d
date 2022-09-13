@@ -27,23 +27,28 @@ float	calculate_angle(t_fvector p, t_fvector e)
 
 void	enemy_move(t_game *game)
 {
-	t_enemy	*enemy = ((t_enemy *)game->map->enemies->content);
-	const t_fvector	p = {
-		game->player.pos.x - enemy->pos.x,
-		game->player.pos.y - enemy->pos.y
-	};
+	t_list			*lst;
 	const t_fvector	e = {1, 0};
-	const float angle = calculate_angle(e, p);
+	t_enemy			*enemy;
+	t_fvector		p;
+	float 			angle;
 
-	enemy->delta.x = cosf(angle) * EN_SPEED;
-	enemy->delta.y = sinf(angle) * EN_SPEED;
-	
-	enemy->pos.x += enemy->delta.x;
-	enemy->pos.y += enemy->delta.y;
+	lst = game->map->enemies;
+	while (lst)
+	{
+		enemy = ((t_enemy *)lst->content);
+		p.x = game->player.pos.x - enemy->pos.x;
+		p.y = game->player.pos.y - enemy->pos.y;
+		angle = calculate_angle(e, p);
+		enemy->delta.x = cosf(angle) * EN_SPEED;
+		enemy->delta.y = sinf(angle) * EN_SPEED;
+		
+		enemy->pos.x += enemy->delta.x;
+		enemy->pos.y += enemy->delta.y;
 
-	check_borders(game, enemy);
-
-	printf("%f\n", angle);
-	if (fvector_distance(game->player.pos, enemy->pos) < 1)
-		enemy_attack(game, enemy);
+		check_borders(game, enemy);
+		if (fvector_distance(game->player.pos, enemy->pos) < 1)
+			enemy_attack(game, enemy);
+		lst = lst->next;
+	}
 }
