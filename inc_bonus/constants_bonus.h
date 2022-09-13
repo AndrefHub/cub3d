@@ -11,7 +11,8 @@
 # define WIN_HEIGHT 1440
 // # define WIN_WIDTH 1280
 // # define WIN_HEIGHT 720
-# define MAP_GRID_SIZE 32
+//# define WIN_WIDTH 1920
+//# define WIN_HEIGHT 1026
 # define TEXTURE_SIZE 192
 # define MAX_RENDER_DISTANCE 5000
 # define PI (float) M_PI
@@ -21,17 +22,22 @@
 # define PL_ACCELERATION 2.5f
 # define PL_RADIUS 0.2f
 # define PL_MAP_COLOR 0xFF0000
-# define EN_SPEED 1.0f
+# define EN_SPEED 0.03f
 # define RAYS_COLOR 0xFFDD2D
 # define ABS_WALL_SIZE 992.0f
 //# define ABS_WALL_SIZE 2000.0f
 # define PERSPECTIVE 4.72f
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
-# define MAX_ENTITIES 1
+# define MAX_ENEMIES 1
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
 # define MAX_SOUNDS 2
+# define MAX_FONT_CHARS 64
+# define ENEMY_RELOAD 1000
+# define PL_INVINCIBILITY 2000
+# define FONT_SIZE 100
+# define FONT_OFFSET 32
 
 // # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
@@ -47,6 +53,7 @@
 # define WALL_PREFIX "W"
 # define ENTITY_PREFIX "E"
 # define SOUND_PREFIX "S"
+# define FONT_PREFIX "F"
 # ifdef __APPLE__
 enum e_keys
 {

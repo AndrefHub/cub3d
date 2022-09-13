@@ -98,7 +98,7 @@ int check_enclosure(t_map *map, t_vector vec)
 	return 0;
 }
 
-int	is_enclosed(t_map *args)
+int	is_map_enclosed(t_map *args)
 {
 	t_vector	check;
 

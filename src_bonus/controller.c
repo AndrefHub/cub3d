@@ -50,17 +50,3 @@ void	change_textures(t_game *game)
 	}
 	++s;
 }
-
-void	enemy_attack(t_game *game)
-{
-	(void)game;
-	ft_putendl_fd("Enemy attacked you", 1);
-}
-
-void	enemy_move(t_game *game)
-{
-	// const float	x_dis = game;
-	
-	if (fvector_distance(game->player.pos, ((t_enemy *)game->map->enemies->content)->pos) < MAP_GRID_SIZE)
-		enemy_attack(game);
-}
