@@ -9,16 +9,10 @@ void	draw_wall_scaled(t_img *img, const t_img *texture,
 	double			tex_y;
 	int 			max_height;
 
-	tex_y = 0;
-	y = img->size.y / 2 - column->height / 2 - (game->horizon);
-	max_height = y + column->height;
-	if (column->height > img->size.y)
-	{
-		y = 0 - (game->horizon);
-//		y = (game->horizon);
-		tex_y = (column->height / 2 - img->size.y / 2) * step;
-		max_height = img->size.y - game->horizon;
-	}
+	tex_y = fmaxf(0.f, step * (column->height / 2 - img->size.y / 2 + game->z_offset));
+//	tex_y = 0;
+	y = ft_max(0,img->size.y / 2 - column->height / 2 - game->z_offset);
+	max_height = ft_min(img->size.y, img->size.y / 2 + column->height / 2 - game->z_offset);
 	while (y < max_height)
 	{
 		put_pixel(img, (t_vector) {x, y}, texture->addr[(unsigned )tex_y * texture->size.x + tex_x]);

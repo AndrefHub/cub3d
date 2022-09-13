@@ -14,7 +14,7 @@ void	mouse_controller(t_game *game)
 		game->key.mdir.x = game->key.mpos.x - game->img.size.x / 2;
 		game->key.mdir.y = game->key.mpos.y - game->img.size.y / 2;
 		mouse_move(game->mlx.id, game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
-		game->player.angle_y -= (float) game->key.mdir.y * 2;
+		game->z_offset += (float) game->key.mdir.y * 2;
 		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2;
 		player_delta_calculation(&game->player);
 	}
@@ -53,7 +53,6 @@ void	player_controll(t_game *game)
 	mouse_controller(game);
 	movement_controller(game, &collision);
 	rotation_by_key_controller(game);
-	game->horizon += game->key.mdir.y;
 	if (collision)
 	{
 		cs_play_sound(game->audio.ctx, game->audio.bonk.def);

@@ -17,9 +17,9 @@ int	game_loop(t_game *game)
 	player_controll(game);
 //	enemy_move(game);
 	fill_img_color(&game->img, 0x808080);
-	fill_ceiling_color(&game->img, game->map->C, game->horizon);
+	fill_ceiling_color(&game->img, game->map->C, game->z_offset);
 	draw_ceil_textured(game);
-	fill_floor_color(&game->img, game->map->F, game->horizon);
+	fill_floor_color(&game->img, game->map->F, game->z_offset);
 //	draw_player(game);
 //	printf("HORIZON: %d\n", game->horizon);
 	t_ull time = get_time();
@@ -37,7 +37,7 @@ int	game_loop(t_game *game)
 		draw_map(game);
 	draw_hud(game, time_rays, time_drawing);
 	draw_fps(game);
-	change_textures(game);
+//	change_textures(game);
 	game->time.last = get_time();
 	return (0);
 }

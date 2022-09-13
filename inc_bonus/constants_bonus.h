@@ -7,8 +7,8 @@
 # define BAD_COLOUR (1 << 24)
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1026
+# define WIN_WIDTH 2560
+# define WIN_HEIGHT 1440
 // # define WIN_WIDTH 1280
 // # define WIN_HEIGHT 720
 # define MAP_GRID_SIZE 32
@@ -24,6 +24,7 @@
 # define EN_SPEED 1.0f
 # define RAYS_COLOR 0xFFDD2D
 # define ABS_WALL_SIZE 992.0f
+//# define ABS_WALL_SIZE 2000.0f
 # define PERSPECTIVE 4.72f
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
