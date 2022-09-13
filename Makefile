@@ -1,6 +1,6 @@
 NAME    = cub3d
 CC      = gcc
-FLAGS	= -Wall -Wextra -Werror -o2 -g
+FLAGS	= -Wall -Wextra -Werror -MMD -g -Ofast -march=native
 LFLAGS	= -Llibft -lft
 ###
 SRCDIR	= src/
@@ -27,28 +27,33 @@ OBJFILE = $(SRCFILE:.c=.o)
 OBJS	= $(addprefix $(OBJDIR), $(OBJFILE))
 ###
 SRC_BONUSDIR	= src_bonus/
-SRC_BONUSFILE	= main.c \
-					parsing.c \
+SRC_BONUSFILE	= border_checking.c \
 					check_file.c \
+					controller.c \
+					demo_utils.c \
+					draw_floor.c \
+					draw_map.c \
+					drawing.c \
+					free_game.c \
 					ft_utils.c \
-					input_manip.c \
-					border_checking.c \
-					start_game.c \
-					game_sound.c\
+					game_loop.c \
+					game_sound.c \
 					game_textures.c \
 					hooks.c \
+					input_manip.c \
+					main.c \
 					mlx_adapter.c \
-					game_loop.c \
-					ray_casting.c \
-					controller.c \
+					parsing.c \
+					parsing_font.c \
+					parsing_textures.c \
+					parsing_utils.c \
 					player_controller.c \
 					player_movement.c \
-					drawing.c \
-					draw_map.c \
-					demo_utils.c \
-					free_game.c \
-					vector_utils.c \
-					time_funcs.c
+					put_text.c \
+					ray_casting.c \
+					start_game.c \
+					time_funcs.c \
+					vector_utils.c
 SRCS_BONUS	= $(addprefix $(SRC_BONUSDIR), $(SRC_BONUSFILE))
 OBJ_BONUSDIR	= obj_bonus/
 OBJ_BONUSFILE = $(SRC_BONUSFILE:.c=.o)
@@ -125,7 +130,7 @@ fclean: clean_proj_files
 	@make -C cute_sound fclean
 	@echo '\033[1;31m'$(NAME) "deleted."'\033[0m'
 
-re: clean all
+re: clean bonus
 
 full_rebuild: fclean all
 
