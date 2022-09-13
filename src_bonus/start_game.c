@@ -10,6 +10,7 @@ void	initialize_mlx_parameters(t_game *game)
 	mlx_hook(game->mlx.window, ButtonRelease, ButtonReleaseMask, mouse_hook_release, game);
 	mlx_hook(game->mlx.window, DestroyNotify, StructureNotifyMask, close_hook, game);
 	mlx_loop_hook(game->mlx.id, game_loop, game);
+	mlx_mouse_move(game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
 }
 
 void	initialize_player(t_game *game)
@@ -19,7 +20,6 @@ void	initialize_player(t_game *game)
 		(float )(game->map->player_coords.y - 1)
 		+ 0.5f};
 	game->player.angle = game->map->player_orient;
-	game->player.angle_y = 0;
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
 
@@ -34,7 +34,7 @@ void	initialize_game_parameters(t_game *game)
 	initialize_player(game);
 	game->key.mouse = true;
 	game->show_map = false;
-	game->horizon = 0;
+	game->z_offset = 0;
 	game->grid = game->map->map;
 	game->img = initialize_img(&game->img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,

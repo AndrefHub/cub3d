@@ -36,6 +36,7 @@ SRC_BONUSFILE	= main.c \
 					start_game.c \
 					game_sound.c\
 					game_textures.c \
+					draw_walls.c \
 					hooks.c \
 					draw_ceil_floor.c \
 					mlx_adapter.c \

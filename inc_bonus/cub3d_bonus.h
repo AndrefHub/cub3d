@@ -95,7 +95,7 @@ typedef struct game
 	char			**grid;
 	bool			show_map;
 	t_img			img;
-	int				horizon;
+	int				z_offset;
 	float			fov;
 
 	struct s_mlx
@@ -108,7 +108,6 @@ typedef struct game
 	{
 		t_fvector	pos;
 		float		angle;
-		float		angle_y;
 		t_fvector	vector;
 		t_fvector	delta;
 	}				player;

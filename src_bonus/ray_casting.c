@@ -80,13 +80,13 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 		{
 			game->column[i].fade = 2.f;
 			game->column[i].dir = "SN"[(int) (game->column[i].pos.x > game->player.pos.x)];
-			game->column[i].texture_pos = (game->player.pos.y + sinf(ray_angle) * distance) * TEXTURE_SIZE;
+			game->column[i].texture_pos = game->column[i].pos.y * TEXTURE_SIZE;
 		}
 		else
 		{
 			game->column[i].fade = 1.f;
 			game->column[i].dir = "EW"[(int) (game->column[i].pos.y > game->player.pos.y)];
-			game->column[i].texture_pos = (game->player.pos.x + cosf(ray_angle) * distance) * TEXTURE_SIZE;
+			game->column[i].texture_pos = game->column[i].pos.x * TEXTURE_SIZE;
 		}
 		if (game->column[i].dir == 'W' || game->column[i].dir == 'S')
 			game->column[i].texture_pos = TEXTURE_SIZE * ABS_WALL_SIZE - game->column[i].texture_pos;

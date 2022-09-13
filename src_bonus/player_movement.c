@@ -99,9 +99,9 @@ void	check_restrictions(t_game *game)
 		game->player.pos.y -= 1;
 	if (game->player.pos.y < 0)
 		game->player.pos.y += 1;
-	if (game->horizon > game->img.size.y)
-		game->horizon = game->img.size.y;
-	if (game->horizon < -game->img.size.y)
-		game->horizon = -game->img.size.y;
+	if (game->z_offset > game->img.size.y)
+		game->z_offset = game->img.size.y;
+	if (game->z_offset < -game->img.size.y)
+		game->z_offset = -game->img.size.y;
 	check_borders(game);
 }
