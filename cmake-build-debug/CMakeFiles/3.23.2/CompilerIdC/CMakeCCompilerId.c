@@ -178,6 +178,14 @@
 # define COMPILER_VERSION_MINOR DEC(__IBMC__/10 % 10)
 # define COMPILER_VERSION_PATCH DEC(__IBMC__    % 10)
 
+#elif defined(__open_xl__) && defined(__clang__)
+# define COMPILER_ID "IBMClang"
+# define COMPILER_VERSION_MAJOR DEC(__open_xl_version__)
+# define COMPILER_VERSION_MINOR DEC(__open_xl_release__)
+# define COMPILER_VERSION_PATCH DEC(__open_xl_modification__)
+# define COMPILER_VERSION_TWEAK DEC(__open_xl_ptf_fix_level__)
+
+
 #elif defined(__ibmxl__) && defined(__clang__)
 # define COMPILER_ID "XLClang"
 # define COMPILER_VERSION_MAJOR DEC(__ibmxl_version__)
@@ -307,22 +315,6 @@
   # define COMPILER_VERSION_PATCH DEC(__ARMCOMPILER_VERSION     % 10000)
 # define COMPILER_VERSION_INTERNAL DEC(__ARMCOMPILER_VERSION)
 
-#elif defined(__clang__) && __has_include(<hip/hip_version.h>)
-# define COMPILER_ID "ROCMClang"
-# if defined(_MSC_VER)
-#  define SIMULATE_ID "MSVC"
-# elif defined(__clang__)
-#  define SIMULATE_ID "Clang"
-# elif defined(__GNUC__)
-#  define SIMULATE_ID "GNU"
-# endif
-# if defined(__clang__) && __has_include(<hip/hip_version.h>)
-#  include <hip/hip_version.h>
-#  define COMPILER_VERSION_MAJOR DEC(HIP_VERSION_MAJOR)
-#  define COMPILER_VERSION_MINOR DEC(HIP_VERSION_MINOR)
-#  define COMPILER_VERSION_PATCH DEC(HIP_VERSION_PATCH)
-# endif
-
 #elif defined(__clang__)
 # define COMPILER_ID "Clang"
 # if defined(_MSC_VER)
@@ -335,6 +327,24 @@
    /* _MSC_VER = VVRR */
 #  define SIMULATE_VERSION_MAJOR DEC(_MSC_VER / 100)
 #  define SIMULATE_VERSION_MINOR DEC(_MSC_VER % 100)
+# endif
+
+#elif defined(__LCC__) && (defined(__GNUC__) || defined(__GNUG__) || defined(__MCST__))
+# define COMPILER_ID "LCC"
+# define COMPILER_VERSION_MAJOR DEC(1)
+# if defined(__LCC__)
+#  define COMPILER_VERSION_MINOR DEC(__LCC__- 100)
+# endif
+# if defined(__LCC_MINOR__)
+#  define COMPILER_VERSION_PATCH DEC(__LCC_MINOR__)
+# endif
+# if defined(__GNUC__) && defined(__GNUC_MINOR__)
+#  define SIMULATE_ID "GNU"
+#  define SIMULATE_VERSION_MAJOR DEC(__GNUC__)
+#  define SIMULATE_VERSION_MINOR DEC(__GNUC_MINOR__)
+#  if defined(__GNUC_PATCHLEVEL__)
+#   define SIMULATE_VERSION_PATCH DEC(__GNUC_PATCHLEVEL__)
+#  endif
 # endif
 
 #elif defined(__GNUC__)
@@ -752,23 +762,33 @@ char const* info_arch = "INFO" ":" "arch[" ARCHITECTURE_ID "]";
 
 #if !defined(__STDC__) && !defined(__clang__)
 # if defined(_MSC_VER) || defined(__ibmxl__) || defined(__IBMC__)
-#  define C_DIALECT "90"
+#  define C_VERSION "90"
 # else
-#  define C_DIALECT
+#  define C_VERSION
 # endif
 #elif __STDC_VERSION__ > 201710L
-# define C_DIALECT "23"
+# define C_VERSION "23"
 #elif __STDC_VERSION__ >= 201710L
-# define C_DIALECT "17"
+# define C_VERSION "17"
 #elif __STDC_VERSION__ >= 201000L
-# define C_DIALECT "11"
+# define C_VERSION "11"
 #elif __STDC_VERSION__ >= 199901L
-# define C_DIALECT "99"
+# define C_VERSION "99"
 #else
-# define C_DIALECT "90"
+# define C_VERSION "90"
 #endif
-const char* info_language_dialect_default =
-  "INFO" ":" "dialect_default[" C_DIALECT "]";
+const char* info_language_standard_default =
+  "INFO" ":" "standard_default[" C_VERSION "]";
+
+const char* info_language_extensions_default = "INFO" ":" "extensions_default["
+#if (defined(__clang__) || defined(__GNUC__) || defined(__xlC__) ||           \
+     defined(__TI_COMPILER_VERSION__)) &&                                     \
+  !defined(__STRICT_ANSI__)
+  "ON"
+#else
+  "OFF"
+#endif
+"]";
 
 /*--------------------------------------------------------------------------*/
 
@@ -800,7 +820,8 @@ int main(int argc, char* argv[])
 #if defined(__CRAYXT_COMPUTE_LINUX_TARGET)
   require += info_cray[argc];
 #endif
-  require += info_language_dialect_default[argc];
+  require += info_language_standard_default[argc];
+  require += info_language_extensions_default[argc];
   (void)argv;
   return require;
 }

@@ -2,8 +2,12 @@
 
 void	draw_hud(t_game *game, t_ull time1, t_ull time2)
 {
+	mlx_string_put(game->mlx.id, game->mlx.window, 40, 15, 0x00FFFFFF,
+				   "tr:");
 	mlx_string_put(game->mlx.id, game->mlx.window, 60, 15, 0x00FFFFFF, \
 		(char []){'0' + time1 / 1000, '0' + time1 / 100 % 10, '0' + time1 / 10 % 10, '0' + time1 % 10, '\0'});
+	mlx_string_put(game->mlx.id, game->mlx.window, 100, 15, 0x00FFFFFF,
+				   "td:");
 	mlx_string_put(game->mlx.id, game->mlx.window, 120, 15, 0x00FFFFFF, \
 		(char []){'0' + time2 / 1000, '0' + time2 / 100 % 10, '0' + time2 / 10 % 10, '0' + time2 % 10, '\0'});
 }

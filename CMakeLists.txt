@@ -6,8 +6,9 @@ set(CMAKE_C_STANDARD 99)
 if(APPLE)
     include_directories(AFTER "/opt/X11/include")
 endif()
-#add_compile_definitions(ASSETS_PATH="/Users/lsherry/goinfre")
-add_compile_options(-Wall -Wextra -Werror -g -MMD -Ofast -march=native -Qunused-arguments)
+add_compile_options(-g -MMD -Ofast -march=native)
+add_compile_definitions(ASSETS_PATH="/Users/lsherry/goinfre")
+# -Qunused-arguments
 add_executable(cub3d
         src_bonus/border_checking.c
         src_bonus/check_file.c
@@ -27,7 +28,13 @@ add_executable(cub3d
         src_bonus/time_funcs.c
         src_bonus/game_sound.c
         src_bonus/game_loop.c
-        cute_sound/cute_sound.c src_bonus/player_controller.c src_bonus/player_movement.c src_bonus/vector_utils.c src_bonus/draw_floor.c src_bonus/draw_ceil_floor.c)
-target_link_libraries(cub3d /Users/landreas/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
-target_link_libraries(cub3d /Users/landreas/42Course/cub3d/libft/libft.a)
-target_link_libraries(cub3d /Users/landreas/42Course/cub3d/cute_sound/SDL2)
+        cute_sound/cute_sound.c src_bonus/player_controller.c src_bonus/player_movement.c src_bonus/vector_utils.c src_bonus/draw_floor.c src_bonus/draw_ceil_floor.c src_bonus/draw_walls.c)
+if ($ENV{USER} EQUAL "landreas")
+    target_link_libraries(cub3d /Users/landreas/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
+    target_link_libraries(cub3d /Users/landreas/42Course/cub3d/libft/libft.a)
+    target_link_libraries(cub3d /Users/landreas/42Course/cub3d/cute_sound/SDL2)
+else()
+    target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
+    target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/libft/libft.a)
+    target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/cute_sound/SDL2)
+endif()

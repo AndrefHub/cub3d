@@ -19,7 +19,7 @@
 # define PL_ROT_MOUSE_SPEED 0.002f
 # define PL_SPEED 2.0f
 # define PL_ACCELERATION 2.5f
-# define PL_RADIUS 10.0f
+# define PL_RADIUS 0.2f
 # define PL_MAP_COLOR 0xFF0000
 # define EN_SPEED 1.0f
 # define RAYS_COLOR 0xFFDD2D
@@ -39,8 +39,8 @@
 # define USE_PATH_PREFIX "USE_PATH_PREFIX"
 
 # ifndef ASSETS_PATH
-#  define ASSETS_PATH "."
-//# define ASSETS_PATH "/Users/lsherry/goinfre"
+//#  define ASSETS_PATH "."
+# define ASSETS_PATH "/Users/lsherry/goinfre"
 # endif
 
 # define WALL_PREFIX "W"

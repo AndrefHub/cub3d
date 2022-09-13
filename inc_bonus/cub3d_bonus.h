@@ -246,15 +246,23 @@ void	check_restrictions(t_game *game);
 // Drawing ceil and floor textured: draw_ceil_floor.c //
 void	draw_ceil_textured(t_game *game);
 
+// Ray_casting algorithm: ray_casting.c //
+t_ray	ray_initialize(t_game *game, float ray_angle);
+float	interception_distance(t_game *game, t_ray *ray);
+void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float ray_angle);
+void	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
+void	cast_rays(t_game *game);
 
+// Wall drawing: draw_walls.c //
+void	draw_wall_scaled(t_img *img, const t_img *texture,
+	const struct s_column *column, int x, t_game * game);
+void	draw_walls(t_game *game);
 
-
-
-
-
-
-
-
+// Map drawing: draw_map.c //
+void	draw_fps(t_game *game);
+void	draw_enemies_on_map(t_game *game);
+void	draw_player_on_map(t_game *game);
+void	draw_map(t_game *game);
 
 
 
@@ -292,10 +300,7 @@ int		mouse_hook_release(int button, int x, int y, t_game *game);
 //drawing.c
 void	draw_map(t_game *game);
 void	draw_player(t_game *game);
-void	cast_rays(t_game *game);
-void	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
 bool	key_pressed(t_game *game, int key);
-void	draw_walls(t_game *game);
 void	draw_fps(t_game *game);
 
 //demo
