@@ -49,7 +49,7 @@ void	start_game(t_game *game)
 {
 	init_time(game);
 	game->audio.song.play = cs_play_sound(game->audio.ctx, game->audio.song.def);
-	wait_milliseconds(200);
+	wait_milliseconds(500);
 	mlx_loop(game->mlx.id);
 }
 
@@ -65,8 +65,9 @@ int	game(t_map *map)
 	set_game_events_sounds(&game.audio, map->sounds[1]);
 	initialize_game_parameters(&game);
 	initialize_sprites(&game, MAX_ENTITIES, (t_texture *)game.map->entity, TEXTURE_SIZE);
+    initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
-	initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
+	initialize_wall_textures(&game);
 	initialize_mlx_parameters(&game);
 	start_game(&game);
 	return (1);

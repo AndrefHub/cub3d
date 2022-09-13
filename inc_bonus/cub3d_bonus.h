@@ -225,8 +225,8 @@ void	set_sound(t_sound *sound, char *filename);
 
 // Work with sprites: game_textures.c //
 void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_size);
+void    initialize_wall_textures(t_game *game);
 void	import_texture_to_img(t_game *game, t_img *img, char *filename, int img_size);
-// void	import_texture_to_img(t_game *game, t_img *img, char *filename);
 void	draw_texture_set(t_game *game, struct s_column *column);
 
 // Adapters for MLX for macOS and Linux: mlx_adapters.c //
