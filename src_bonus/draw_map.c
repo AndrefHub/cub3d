@@ -70,7 +70,7 @@ void	draw_map(t_game *game)
 		y++;
 	}
 	draw_player_on_map(game);
-//	draw_enemies_on_map(game);
+	draw_enemies_on_map(game);
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->map->img.mlx_img, 0, 0);
 }
 
