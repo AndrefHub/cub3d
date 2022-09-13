@@ -8,9 +8,9 @@ void	draw_enemies_on_map(t_game *game)
 	enemies = game->map->enemies;
 	while (enemies)
 	{
-		coords = (t_vector) {((t_enemy *)enemies->content)->pos.x / MAP_GRID_SIZE
+		coords = (t_vector) {((t_enemy *)enemies->content)->pos.x
 			* game->map->map_tile_size - game->map->map_tile_size / 4,
-			((t_enemy *)enemies->content)->pos.y / MAP_GRID_SIZE * game->map->map_tile_size
+			((t_enemy *)enemies->content)->pos.y * game->map->map_tile_size
 			- game->map->map_tile_size / 4};
 		draw_square_fill(&game->map->img, coords, game->map->map_tile_size / 2,
 						0x89D1FE);

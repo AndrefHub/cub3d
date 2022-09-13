@@ -36,7 +36,30 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /Users/lsherry/42Course/cub3d/cmake-build-debug/
+cmake_ninja_workdir = /Users/kdancy/projects/cub3d/cmake-build-debug/
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/kdancy/projects/cub3d/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/kdancy/projects/cub3d -B/Users/kdancy/projects/cub3d/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/kdancy/projects/cub3d/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
 # =============================================================================
 # Object build statements for EXECUTABLE target cub3d
 
@@ -46,205 +69,229 @@ cmake_ninja_workdir = /Users/lsherry/42Course/cub3d/cmake-build-debug/
 
 build cmake_object_order_depends_target_cub3d: phony || CMakeFiles/cub3d.dir
 
-build CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/border_checking.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+build CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/border_checking.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/check_file.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/check_file.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+build CMakeFiles/cub3d.dir/src_bonus/check_file.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/check_file.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/check_file.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/ft_utils.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
-  INCLUDES = -I/opt/X11/include
-  OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-
-build CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/input_manip.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
-  INCLUDES = -I/opt/X11/include
-  OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-
-build CMakeFiles/cub3d.dir/src_bonus/main.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/main.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/main.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
-  INCLUDES = -I/opt/X11/include
-  OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-
-build CMakeFiles/cub3d.dir/src_bonus/parsing.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/parsing.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/parsing.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
-  INCLUDES = -I/opt/X11/include
-  OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-
-build CMakeFiles/cub3d.dir/src_bonus/start_game.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/start_game.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/start_game.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
-  INCLUDES = -I/opt/X11/include
-  OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-
-build CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/mlx_adapter.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
-  INCLUDES = -I/opt/X11/include
-  OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-
-build CMakeFiles/cub3d.dir/src_bonus/controller.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/controller.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+build CMakeFiles/cub3d.dir/src_bonus/controller.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/controller.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/controller.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/drawing.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/drawing.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/drawing.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
-  INCLUDES = -I/opt/X11/include
-  OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-
-build CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/demo_utils.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+build CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/demo_utils.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/draw_map.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+build CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/draw_floor.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/draw_map.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/hooks.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/hooks.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+build CMakeFiles/cub3d.dir/src_bonus/drawing.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/drawing.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/drawing.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/free_game.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/free_game.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/free_game.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/ft_utils.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/game_loop.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/game_sound.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/game_textures.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/hooks.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/hooks.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/hooks.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/game_textures.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+build CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/input_manip.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/ray_casting.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+build CMakeFiles/cub3d.dir/src_bonus/main.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/main.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/main.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/time_funcs.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+build CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/mlx_adapter.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/game_sound.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+build CMakeFiles/cub3d.dir/src_bonus/parsing.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/parsing.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/parsing.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/game_loop.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+build CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/parsing_font.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/cute_sound/cute_sound.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+build CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/parsing_textures.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/cute_sound
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/player_controller.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+build CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/parsing_utils.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/player_controller.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/player_movement.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+build CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/player_movement.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/vector_utils.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+build CMakeFiles/cub3d.dir/src_bonus/put_text.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/put_text.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/put_text.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/ray_casting.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/start_game.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/start_game.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/start_game.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/time_funcs.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/src_bonus/vector_utils.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
-build CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/draw_floor.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
+build CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o: C_COMPILER__cub3d_Debug /Users/kdancy/projects/cub3d/cute_sound/cute_sound.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/kdancy/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-
-build CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/draw_ceil_floor.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
-  INCLUDES = -I/opt/X11/include
-  OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-
-build CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/draw_walls.c || cmake_object_order_depends_target_cub3d
-  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
-  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -g -MMD -Ofast -march=native -std=gnu99
-  INCLUDES = -I/opt/X11/include
-  OBJECT_DIR = CMakeFiles/cub3d.dir
-  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/cute_sound
 
 
 # =============================================================================
@@ -254,7 +301,7 @@ build CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o: C_COMPILER__cub3d_Debug /Us
 #############################################
 # Link the executable cub3d
 
-build cub3d: C_EXECUTABLE_LINKER__cub3d_Debug CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o CMakeFiles/cub3d.dir/src_bonus/check_file.c.o CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o CMakeFiles/cub3d.dir/src_bonus/main.c.o CMakeFiles/cub3d.dir/src_bonus/parsing.c.o CMakeFiles/cub3d.dir/src_bonus/start_game.c.o CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o CMakeFiles/cub3d.dir/src_bonus/controller.c.o CMakeFiles/cub3d.dir/src_bonus/drawing.c.o CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o CMakeFiles/cub3d.dir/src_bonus/hooks.c.o CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o | ../mlx/libmlx.a ../libft/libft.a ../cute_sound/SDL2
+build cub3d: C_EXECUTABLE_LINKER__cub3d_Debug CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o CMakeFiles/cub3d.dir/src_bonus/check_file.c.o CMakeFiles/cub3d.dir/src_bonus/controller.c.o CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o CMakeFiles/cub3d.dir/src_bonus/drawing.c.o CMakeFiles/cub3d.dir/src_bonus/free_game.c.o CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o CMakeFiles/cub3d.dir/src_bonus/hooks.c.o CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o CMakeFiles/cub3d.dir/src_bonus/main.c.o CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o CMakeFiles/cub3d.dir/src_bonus/parsing.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o CMakeFiles/cub3d.dir/src_bonus/put_text.c.o CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o CMakeFiles/cub3d.dir/src_bonus/start_game.c.o CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o | ../mlx/libmlx.a ../libft/libft.a ../cute_sound/SDL2
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6
   LINK_LIBRARIES = ../mlx/libmlx.a  -framework OpenGL  -framework AppKit  ../libft/libft.a  ../cute_sound/SDL2
   OBJECT_DIR = CMakeFiles/cub3d.dir
@@ -295,7 +342,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /Users/lsherry/42Course/cub3d/cmake-build-debug
+# Folder: /Users/kdancy/projects/cub3d/cmake-build-debug
 
 build all: phony cub3d
 
@@ -306,14 +353,14 @@ build all: phony cub3d
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-GNU-C.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-GNU.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-GNU-C.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-GNU.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/ED27B9CF-F4F7-40AB-9392-0EB087BBCE21/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################
