@@ -52,13 +52,13 @@ void	parse_enemies(t_map* map, int fd, char **line)
 		return ;
 	index = ft_atoi(*line + 1) - 1; // Check zero value
 	ft_putendl_fd(*line, 1);
-	ft_lstadd_back(&map->entity[index].texture, ft_lstnew(get_full_texture_path(
+	ft_lstadd_back(&map->enemy[index].texture, ft_lstnew(get_full_texture_path(
 		crop_prefix(*line, ENTITY_PREFIX), map->path_prefix)));
 	*line = skip_empty_lines(fd);
 	while (line && *line && !ft_isalpha(**line))
 	{
 		ft_putendl_fd(*line, 1);
-		ft_lstadd_back(&map->entity[index].texture, ft_lstnew(
+		ft_lstadd_back(&map->enemy[index].texture, ft_lstnew(
 			get_full_texture_path(*line, map->path_prefix)));
 		*line = skip_empty_lines(fd);
 	}

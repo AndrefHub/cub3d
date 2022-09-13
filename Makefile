@@ -28,9 +28,10 @@ OBJFILE = $(SRCFILE:.c=.o)
 OBJS	= $(addprefix $(OBJDIR), $(OBJFILE))
 ###
 SRC_BONUSDIR	= src_bonus/
-SRC_BONUSFILE	= border_checking.c \
+SRC_BONUSFILE	= 	border_checking.c \
 					check_file.c \
 					controller.c \
+					death_events.c \
 					demo_utils.c \
 					draw_floor.c \
 					draw_walls.c \

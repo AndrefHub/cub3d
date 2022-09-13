@@ -68,7 +68,7 @@ int	game(t_map *map)
 	init_main_game_sound_theme(&game, map->sounds[0]);
 	set_game_events_sounds(&game.audio, map->sounds[1]);
 	initialize_game_parameters(&game);
-	initialize_sprites(&game, MAX_ENTITIES, (t_texture *)game.map->entity, TEXTURE_SIZE);
+	initialize_sprites(&game, MAX_ENEMIES, (t_texture *)game.map->enemy, TEXTURE_SIZE);
     initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
 	initialize_wall_textures(&game);

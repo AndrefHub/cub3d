@@ -1,5 +1,12 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
+// int	is_prefix_number(char *line, char *prefix, int counter)
+// {
+// 	return (line && !ft_strncmp(line, prefix, ft_strlen(prefix))
+// 		&& (ft_atoi(line + ft_strlen(prefix)) == counter + 1
+// 			|| (counter == 0 && line[ft_strlen(prefix) + 1] == ' ')));
+// }
+
 int	get_string_index(char *str, char c)
 {
 	int	index;
@@ -10,13 +17,6 @@ int	get_string_index(char *str, char c)
 			return (index);
 	return (-1);
 }
-
-// int	is_prefix_number(char *line, char *prefix, int counter)
-// {
-// 	return (line && !ft_strncmp(line, prefix, ft_strlen(prefix))
-// 		&& (ft_atoi(line + ft_strlen(prefix)) == counter + 1
-// 			|| (counter == 0 && line[ft_strlen(prefix) + 1] == ' ')));
-// }
 
 char	**lst_to_array(t_list *tmp)
 {
