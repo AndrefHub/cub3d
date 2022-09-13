@@ -55,7 +55,15 @@ void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_s
 		if (sprites_list[c].img)
 		{
 			ft_lstlast(sprites_list[c].img)->next = sprites_list[c].img;
-			game->textures[c] = *(t_img *) sprites_list[c].img->content;
 		}
 	}
+}
+
+void    initialize_wall_textures(t_game *game)
+{
+    int counter;
+
+	counter = -1;
+	while (++counter < MAX_WALL_CHARS)
+		game->textures[counter] = *(t_img *) game->map->walls[counter].img->content;
 }
