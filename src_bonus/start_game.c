@@ -49,6 +49,15 @@ void	initialize_game_parameters(t_game *game)
 		error_exit(game, 0, NULL);
 }
 
+void	set_input_mode_chars(t_game *game)
+{
+	game->macos_chars = "ASDFHGZXCV BQWERYT123465=97-80]OU[IP LJ'K;\\,/NM.  ~ ";
+	game->username = malloc(sizeof(*(game->username)) * 9);
+	ft_bzero(game->username, 9);
+	game->input_mode = 0;
+	game->score = 0;
+}
+
 void	start_game(t_game *game)
 {
 	init_time(game);
@@ -73,6 +82,7 @@ int	game(t_map *map)
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
 	initialize_wall_textures(&game);
 	initialize_mlx_parameters(&game);
+	set_input_mode_chars(&game);
 	start_game(&game);
 	return (1);
 }

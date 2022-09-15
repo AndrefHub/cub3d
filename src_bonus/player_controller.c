@@ -22,11 +22,11 @@ void	mouse_controller(t_game *game)
 
 void	movement_controller(t_game *game, int *collision)
 {
-	// if (key_pressed(game, LEFT_CTRL_KEY))
-	// {
-	// 	game->player.delta.x *= PL_ACCELERATION;
-	// 	game->player.delta.y *= PL_ACCELERATION;
-	// }
+	if (key_pressed(game, LEFT_CTRL_KEY))
+	{
+		game->player.delta.x *= PL_ACCELERATION;
+		game->player.delta.y *= PL_ACCELERATION;
+	}
 	if (key_pressed(game, W_KEY))
 		move_radius_check(game, game->player.delta.x, game->player.delta.y, collision);
 	if (key_pressed(game, S_KEY))
