@@ -10,7 +10,7 @@ void	initialize_mlx_parameters(t_game *game)
 	mlx_hook(game->mlx.window, ButtonRelease, ButtonReleaseMask, mouse_hook_release, game);
 	mlx_hook(game->mlx.window, DestroyNotify, StructureNotifyMask, close_hook, game);
 	mlx_loop_hook(game->mlx.id, game_loop, game);
-	mlx_mouse_move(game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
+	mouse_move(game->mlx.id, game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
 }
 
 void	initialize_player(t_game *game)
