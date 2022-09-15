@@ -167,7 +167,10 @@ typedef struct game
 		int		frames_to_move;
 		t_ull	last;
 	}		time;
-	
+	char	*macos_chars;
+	char	*username;
+	int		input_mode;
+	int		score;
 }	t_game;
 
 // Font parsing: parsing_font.c //
@@ -303,7 +306,8 @@ void	draw_map(t_game *game);
 // Text writing: put_text.c //
 void	put_char_to_screen(t_game *game, char c, t_vector pos);
 void	put_text_to_screen(t_game *game, char *text, t_vector pos);
-void	put_text_to_screen_centered(t_game *game, char *text, t_vector pos);
+void	put_text_to_screen_layout(t_game *game, char *text, t_vector pos,
+	int layout);
 
 // Death events: death_events.c //
 void	death_message(t_game *game);

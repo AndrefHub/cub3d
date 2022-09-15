@@ -20,9 +20,15 @@ void	put_text_to_screen(t_game *game, char *text, t_vector pos)
 	}
 }
 
-void	put_text_to_screen_centered(t_game *game, char *text, t_vector pos)
+void	put_text_to_screen_layout(t_game *game, char *text, t_vector pos, int layout)
 {
-	pos.y -= FONT_SIZE / 2;
-	pos.x -= (ft_strlen(text) * FONT_SIZE) / 2;
+	if (layout & VCenter)
+		pos.y -= FONT_SIZE / 2;
+	else if (layout & VBottom)
+		pos.y -= FONT_SIZE;
+	if (layout & HCenter)
+		pos.x -= (ft_strlen(text) * FONT_SIZE) / 2;
+	else if (layout & HRight)
+		pos.x -= (ft_strlen(text) * FONT_SIZE);
 	put_text_to_screen(game, text, pos);
 }

@@ -23,14 +23,29 @@ int	key_hook_press(int key, t_game *game)
 		return (1);
 	if (key == ESC_KEY)
 		close_hook(game);
-	if (key == M_KEY)
+	if (game->input_mode)
 	{
-		game->show_map = !game->show_map;
-		return (0);
+		if (key == 0x33) // Backspace
+			game->username[ft_strlen(game->username) - 1] = '\0';
+		else if (key == 0x24) // Enter, to add confirm action
+			;
+		else if (0x0 <= key && key < 0x33)
+		{
+			if (ft_strlen(game->username) < 8)
+				game->username[ft_strlen(game->username)] = game->macos_chars[key];
+		}
 	}
-	if (key == E_KEY)
-		open_door(game);
-	game->key.k[key] = true;
+	else
+	{
+		if (key == M_KEY)
+		{
+			game->show_map = !game->show_map;
+			return (0);
+		}
+		if (key == E_KEY)
+			open_door(game);
+		game->key.k[key] = true;
+	}
 	ft_putnbr_fd(key, 1);
 	ft_putendl_fd("", 1);
 	return (0);

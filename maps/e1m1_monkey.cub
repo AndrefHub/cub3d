@@ -1042,6 +1042,8 @@ F9 ./assets/font/nine.xpm
 
 F_ ./assets/font/underscore.xpm
 F! ./assets/font/exclam.xpm
+F: ./assets/font/colon.xpm
+F   ./assets/font/space.xpm
 
 S1 ./assets/sounds/monke.wav
 S2 ./assets/sounds/death.wav
