@@ -19,6 +19,7 @@ t_map	*create_empty_map()
 	counter = -1;
 	while (++counter < MAX_FONT_CHARS)
 		map->font[counter].texture = NULL;
+	map->objects = NULL;
 	map->C = 0;
 	map->F = 0;
 	map->bonus = 0;
@@ -110,4 +111,10 @@ char	*get_full_texture_path(char *line, int flag)
 		free(line);
 	}
 	return (new_line);
+}
+
+float	distancef(t_fvector *vector1, t_fvector *vector2)
+{
+	return (sqrtf(powf(vector2->x - vector1->x, 2)
+				  + powf(vector2->y - vector1->y, 2)));
 }

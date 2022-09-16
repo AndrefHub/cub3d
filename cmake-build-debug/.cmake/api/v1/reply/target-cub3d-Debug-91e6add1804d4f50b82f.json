@@ -130,7 +130,9 @@
 				28,
 				29,
 				30,
-				31
+				31,
+				32,
+				33
 			]
 		}
 	],
@@ -219,7 +221,9 @@
 				28,
 				29,
 				30,
-				31
+				31,
+				32,
+				33
 			]
 		}
 	],
@@ -415,6 +419,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "cute_sound/cute_sound.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/draw_enemies.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/ft_lstsort.c",
 			"sourceGroupIndex" : 0
 		}
 	],

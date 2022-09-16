@@ -42,7 +42,7 @@ add_executable(cub3d
         src_bonus/game_sound.c
         src_bonus/game_loop.c
         src_bonus/draw_ceil_floor.c
-        cute_sound/cute_sound.c)
+        cute_sound/cute_sound.c src_bonus/draw_enemies.c src_bonus/ft_lstsort.c)
 if ($ENV{USER} EQUAL "landreas")
     target_link_libraries(cub3d /Users/landreas/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
     target_link_libraries(cub3d /Users/landreas/42Course/cub3d/libft/libft.a)

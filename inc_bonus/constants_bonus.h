@@ -7,10 +7,10 @@
 # define BAD_COLOUR (1 << 24)
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"
-# define WIN_WIDTH 2560
-# define WIN_HEIGHT 1440
-// # define WIN_WIDTH 1280
-// # define WIN_HEIGHT 720
+//# define WIN_WIDTH 2560
+//# define WIN_HEIGHT 1440
+ # define WIN_WIDTH 1280
+ # define WIN_HEIGHT 720
 //# define WIN_WIDTH 1920
 //# define WIN_HEIGHT 1026
 # define TEXTURE_SIZE 192
@@ -36,7 +36,7 @@
 # define MAX_FONT_CHARS 64
 # define ENEMY_RELOAD 1000
 # define PL_INVINCIBILITY 2000
-# define FONT_SIZE 100
+# define FONT_SIZE 64
 # define FONT_OFFSET 32
 
 // # define WALL_CHARS "1D23456789"

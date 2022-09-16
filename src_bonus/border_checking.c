@@ -57,11 +57,16 @@ void	find_enemy(t_map *map)
 		while (ft_strchr(line, 'e'))
 		{
 			enemy = malloc(sizeof(*enemy));
-			x_coord = ft_strchr(line, 'e') - map->map[counter] + x_coord + 1;
-			enemy->pos = (t_fvector) {(float )x_coord + 0.5f,
+			x_coord = ft_strchr(line, 'e') - map->map[counter];
+			enemy->object.pos = (t_fvector) {(float )x_coord + 0.5f,
 				(float )counter + 0.5f};
 			// enemy->sprite = NULL;
 			ft_lstadd_back(&map->enemies, ft_lstnew(enemy));
+			enemy->object.distance = sqrtf(powf((map->player_coords.x + 0.5f)
+					- (enemy->object.pos.x + 0.5f), 2)
+					+ powf((map->player_coords.y + 0.5f)
+					- (enemy->object.pos.y + 0.5f), 2));
+			ft_lstadd_back(&map->objects, ft_lstnew(&enemy->object));
 			line += x_coord + 1;
 		}
 	}
