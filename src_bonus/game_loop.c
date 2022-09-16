@@ -26,13 +26,13 @@ int	game_loop(t_game *game)
 		draw_ceil_textured(game);
 		fill_floor_color(&game->img, game->map->F, game->z_offset);
 	//	draw_player(game);
-		t_ull time = get_time();
+		// t_ull time = get_time();
 		cast_rays(game);	
-		time_rays = get_time() - time;
-		time = get_time();
+		// time_rays = get_time() - time;
+		// time = get_time();
 		draw_walls(game);
-		time_drawing = get_time() - time;
-		printf("*** %llu *** %llu ***\n", time_rays, time_drawing);
+		// time_drawing = get_time() - time;
+		// printf("*** %llu *** %llu ***\n", time_rays, time_drawing);
 		draw_aim(game);
 		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
 								0, 0);

@@ -35,7 +35,7 @@ void	player_death(t_game *game)
 	}
 	if (it > 50)
 	{
-		mlx_clear_window(game->mlx.id, game->mlx.window);
+		// mlx_clear_window(game->mlx.id, game->mlx.window);
 		death_message(game);
 		put_text_to_screen_layout(game, "username: ", (t_vector)
 			{0, WIN_HEIGHT / 2 + FONT_SIZE * 2}, VBottom | HLeft);
