@@ -2,10 +2,30 @@
 
 void	death_message(t_game *game)
 {
-	put_text_to_screen_layout(game, "YOU DIED!", (t_vector)
-		{WIN_WIDTH / 2, WIN_HEIGHT / 2 - FONT_SIZE / 2}, VCenter | HCenter);
-	put_text_to_screen_layout(game, "1234567890", (t_vector)
-		{WIN_WIDTH / 2, WIN_HEIGHT / 2 + FONT_SIZE / 2}, VCenter | HCenter);
+	const int divisor = 6;
+	const int font_size = FONT_SIZE / divisor;
+
+	put_text_to_screen_layout(game, &(t_text){"cub3d (c) 2022 kdancy, lsherry",
+		(t_vector){0, game->img.size.y}, VBottom | HLeft}, 16);
+	put_text_to_screen_layout(game, &(t_text){"YOU DIED!", (t_vector)
+		{WIN_WIDTH / 2, WIN_HEIGHT / 2 - font_size / 2}, VCenter | HCenter},
+		divisor);
+	put_text_to_screen_layout(game, &(t_text){"1234567890", (t_vector)
+		{WIN_WIDTH / 2, WIN_HEIGHT / 2 + font_size / 2}, VCenter | HCenter},
+		divisor);
+}
+
+void	put_username_on_screen(t_game *game)
+{
+	t_vector	pos;
+	const int divisor = 6;
+	const int font_size = FONT_SIZE / divisor;
+
+	pos.x = ft_strlen("username:") * font_size;
+	pos.y = WIN_HEIGHT / 2 + font_size;
+	put_text_to_screen_layout(game, &(t_text){game->username, pos, VTop | HLeft}, divisor);
+	pos.x += ft_strlen(game->username) * font_size;
+	draw_square_fill(&game->img, pos, font_size, 0x00000000);
 }
 
 void	player_death(t_game *game)
@@ -22,7 +42,7 @@ void	player_death(t_game *game)
 	if (it < 50 && get_time() - time > 50)
 	{
 		time = get_time();
-		dim_image(&game->img, game->img.size.x * game->img.size.y, &(t_rgb){0, 0, 0xFF, 0xFF / (50 - it)});
+		dim_image(&game->img, game->img.size.x * game->img.size.y, &(t_rgb){0, 0, 0, 0xFF / (50 - it)});
 		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
 				0, 0);
 		++it;
@@ -31,16 +51,15 @@ void	player_death(t_game *game)
 	{
 		game->input_mode = 1;
 		death_message(game);
+		put_text_to_screen_layout(game, &(t_text){"username:", (t_vector)
+			{0, WIN_HEIGHT / 2 + (FONT_SIZE / 6) * 2}, VBottom | HLeft}, 6);
 		++it;
 	}
 	if (it > 50)
 	{
-		// mlx_clear_window(game->mlx.id, game->mlx.window);
-		death_message(game);
-		put_text_to_screen_layout(game, "username: ", (t_vector)
-			{0, WIN_HEIGHT / 2 + FONT_SIZE * 2}, VBottom | HLeft);
-		put_text_to_screen_layout(game, game->username, (t_vector)
-			{ft_strlen("username: ") * FONT_SIZE, WIN_HEIGHT / 2 + FONT_SIZE * 2}, VBottom | HLeft);
+		put_username_on_screen(game);
+		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
+				0, 0);
 	}
 }
 

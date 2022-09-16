@@ -14,32 +14,6 @@ int	close_hook(t_game *game)
 	return (0);
 }
 
-// inline void	input_mode(int key, t_game *game)
-// {
-// 	if (key == 0x33) // Backspace
-// 		game->username[ft_strlen(game->username) - 1] = '\0';
-// 	else if (key == 0x24) // Enter, to add confirm action
-// 		;
-// 	else if (0x0 <= key && key < 0x33)
-// 	{
-// 		if (ft_strlen(game->username) < 8)
-// 			game->username[ft_strlen(game->username)] = game->macos_chars[key];
-// 	}
-// }	
-
-inline void	input_mode(int key, t_game *game)
-{
-	if (key == BACKSPACE) // Backspace
-		game->username[ft_strlen(game->username) - 1] = '\0';
-	else if (key == ENTER) // Enter, to add confirm action
-		;
-	else if (FONT_OFFSET <= ft_toupper(key) && ft_toupper(key) < FONT_OFFSET + 0x40)
-	{
-		if (ft_strlen(game->username) < 8)
-			game->username[ft_strlen(game->username)] = key;
-	}
-}	
-
 int	key_hook_press(int key, t_game *game)
 {
 	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))

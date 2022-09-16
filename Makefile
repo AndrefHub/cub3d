@@ -33,6 +33,7 @@ SRC_BONUSFILE	= 	border_checking.c \
 					controller.c \
 					death_events.c \
 					demo_utils.c \
+					downscale_image.c \
 					draw_floor.c \
 					draw_walls.c \
 					draw_map.c \
@@ -46,6 +47,7 @@ SRC_BONUSFILE	= 	border_checking.c \
 					hooks.c \
 					draw_ceil_floor.c \
 					input_manip.c \
+					input_mode.c \
 					main.c \
 					mlx_adapter.c \
 					parsing.c \
