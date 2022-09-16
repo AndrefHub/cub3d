@@ -17,6 +17,8 @@ int	game_loop(t_game *game)
 	t_ull time_rays = -1;
 	t_ull time_drawing = -1;
 
+	t_ull time = get_time();
+
 	if (check_aliveness(game))
 	{
 		player_controll(game);
@@ -48,5 +50,7 @@ int	game_loop(t_game *game)
 	draw_hud(game, time_rays, time_drawing);
 	draw_fps(game);
 	game->time.last = get_time();
+		time_drawing = get_time() - time;
+		printf("*** %llu ***\n", time_drawing);
 	return (0);
 }

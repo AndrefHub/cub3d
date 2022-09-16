@@ -33,12 +33,11 @@
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
 # define MAX_SOUNDS 2
-# define MAX_FONT_CHARS 64
+# define MAX_FONT_CHARS 224
 # define ENEMY_RELOAD 1000
 # define PL_INVINCIBILITY 2000
-# define FONT_SIZE 64
+# define FONT_SIZE 240
 # define FONT_OFFSET 32
-# define CHAR_OFFSET 256
 
 // # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
@@ -57,6 +56,7 @@
 # define FONT_PREFIX "F"
 
 # ifdef __APPLE__
+# define CHAR_OFFSET 0
 enum e_keys
 {
 	W_KEY = 13,
@@ -71,8 +71,11 @@ enum e_keys
 	M_KEY = 46,
 	E_KEY = 14,
 	LEFT_CTRL_KEY = 256, //59
+	BACKSPACE = 51,
+	ENTER = 36,
 };
 # else
+# define CHAR_OFFSET 256
 #  ifdef __linux__
 enum e_keys
 {

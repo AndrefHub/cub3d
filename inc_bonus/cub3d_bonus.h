@@ -57,6 +57,13 @@ typedef struct rgb
 	unsigned char	a; // alpha;
 }	t_rgb;
 
+typedef struct text
+{
+	char		*text;
+	t_vector	pos;
+	int			layout;
+}	t_text;
+
 typedef struct s_map
 {
 	int			bonus;
@@ -167,10 +174,12 @@ typedef struct game
 		int		frames_to_move;
 		t_ull	last;
 	}		time;
+
 	char	*macos_chars;
 	char	*username;
 	int		input_mode;
 	int		score;
+	
 }	t_game;
 
 // Font parsing: parsing_font.c //
@@ -304,10 +313,12 @@ void	draw_player_on_map(t_game *game);
 void	draw_map(t_game *game);
 
 // Text writing: put_text.c //
-void	put_char_to_screen(t_game *game, char c, t_vector pos);
-void	put_text_to_screen(t_game *game, char *text, t_vector pos);
-void	put_text_to_screen_layout(t_game *game, char *text, t_vector pos,
-	int layout);
+int		put_char_to_screen(t_game *game, char c, t_vector pos, int divisor);
+void	put_text_to_screen(t_game *game, char *text, t_vector pos, int divisor);
+void	put_text_to_screen_layout(t_game *game, t_text *text, int divisor);
+
+
+void	input_mode(int key, t_game *game);
 
 // Death events: death_events.c //
 void	death_message(t_game *game);
@@ -343,4 +354,8 @@ void	error_exit(t_game *game, int return_value, char *message);
 t_ull	get_time(void);
 void	init_time(t_game *game);
 void	wait_milliseconds(int milliseconds);
+
+// downscale_image.c //
+void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor);
+
 #endif
