@@ -10,7 +10,6 @@ void	draw_wall_scaled(t_img *img, const t_img *texture,
 	int 			max_height;
 
 	tex_y = fmaxf(0.f, step * (column->height / 2 - img->size.y / 2 + game->z_offset));
-//	tex_y = 0;
 	y = ft_max(0,img->size.y / 2 - column->height / 2 - game->z_offset);
 	max_height = ft_min(img->size.y, img->size.y / 2 + column->height / 2 - game->z_offset);
 	while (y < max_height)

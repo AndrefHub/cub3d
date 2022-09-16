@@ -79,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "23"
+			"value" : "21"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "2"
+			"value" : "1"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -103,7 +103,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/FB738935-5757-4FC3-A28F-C1CFE61E30E1/d/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+			"value" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -115,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/FB738935-5757-4FC3-A28F-C1CFE61E30E1/d/CLion.app/Contents/bin/cmake/mac/bin/cpack"
+			"value" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -127,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/FB738935-5757-4FC3-A28F-C1CFE61E30E1/d/CLion.app/Contents/bin/cmake/mac/bin/ctest"
+			"value" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -519,7 +519,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/FB738935-5757-4FC3-A28F-C1CFE61E30E1/d/CLion.app/Contents/bin/ninja/mac/ninja"
+			"value" : "/Applications/CLion.app/Contents/bin/ninja/mac/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -787,7 +787,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/FB738935-5757-4FC3-A28F-C1CFE61E30E1/d/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23"
+			"value" : "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",

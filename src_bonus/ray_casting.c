@@ -72,7 +72,7 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 			camera += 2 * PI;
 		if (camera > 2 * PI)
 			camera -= 2 * PI;
-		game->column[i].height = ABS_WALL_SIZE * TEXTURE_SIZE/ distance;
+		game->column[i].height = ABS_WALL_SIZE * TEXTURE_SIZE / distance;
 		game->column[i].perp_dist = distance * cosf(camera);
 		game->column[i].pos = (t_fvector) {game->player.pos.x + cosf(ray_angle)
 																* distance, game->player.pos.y + sinf(ray_angle) * distance};
