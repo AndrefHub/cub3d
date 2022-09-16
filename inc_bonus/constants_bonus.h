@@ -7,12 +7,12 @@
 # define BAD_COLOUR (1 << 24)
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"
-# define WIN_WIDTH 2560
-# define WIN_HEIGHT 1440
+// # define WIN_WIDTH 2560
+// # define WIN_HEIGHT 1440
 // # define WIN_WIDTH 1280
 // # define WIN_HEIGHT 720
-// # define WIN_WIDTH 1920
-// # define WIN_HEIGHT 1026
+# define WIN_WIDTH 1920
+# define WIN_HEIGHT 1026
 # define TEXTURE_SIZE 192
 # define MAX_RENDER_DISTANCE 5000
 # define PI (float) M_PI
@@ -36,8 +36,9 @@
 # define MAX_FONT_CHARS 64
 # define ENEMY_RELOAD 1000
 # define PL_INVINCIBILITY 2000
-# define FONT_SIZE 100
+# define FONT_SIZE 64
 # define FONT_OFFSET 32
+# define CHAR_OFFSET 256
 
 // # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
@@ -79,13 +80,16 @@ enum e_keys
 	A_KEY = 97,
 	S_KEY = 115,
 	D_KEY = 100,
-	ESC_KEY = 113,
-	UP_KEY = 83,
-	LEFT_KEY = 91,
-	DOWN_KEY = 81,
-	RIGHT_KEY = 93,
+	ESC_KEY = 65307,
+	UP_KEY = 65362,
+	LEFT_KEY = 65361,
+	DOWN_KEY = 65364,
+	RIGHT_KEY = 65363,
 	M_KEY = 109,
 	E_KEY = 101,
+	LEFT_CTRL_KEY = 65507,
+	BACKSPACE = 65288,
+	ENTER = 65293,
 };
 #  endif
 # endif

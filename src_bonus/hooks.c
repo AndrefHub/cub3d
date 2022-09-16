@@ -2,7 +2,7 @@
 
 bool	key_pressed(t_game *game, int key)
 {
-	return (game->key.k[key]);
+	return (game->key.k[(short)(key + CHAR_OFFSET)]);
 }
 
 int	close_hook(t_game *game)
@@ -14,26 +14,41 @@ int	close_hook(t_game *game)
 	return (0);
 }
 
+// inline void	input_mode(int key, t_game *game)
+// {
+// 	if (key == 0x33) // Backspace
+// 		game->username[ft_strlen(game->username) - 1] = '\0';
+// 	else if (key == 0x24) // Enter, to add confirm action
+// 		;
+// 	else if (0x0 <= key && key < 0x33)
+// 	{
+// 		if (ft_strlen(game->username) < 8)
+// 			game->username[ft_strlen(game->username)] = game->macos_chars[key];
+// 	}
+// }	
+
+inline void	input_mode(int key, t_game *game)
+{
+	if (key == BACKSPACE) // Backspace
+		game->username[ft_strlen(game->username) - 1] = '\0';
+	else if (key == ENTER) // Enter, to add confirm action
+		;
+	else if (FONT_OFFSET <= ft_toupper(key) && ft_toupper(key) < FONT_OFFSET + 0x40)
+	{
+		if (ft_strlen(game->username) < 8)
+			game->username[ft_strlen(game->username)] = key;
+	}
+}	
+
 int	key_hook_press(int key, t_game *game)
 {
-//	TODO: add this
-//	if (game.text_mode)
-//		entering();
-	if (key >= (int) sizeof(game->key) || key < -256)
+	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))
 		return (1);
 	if (key == ESC_KEY)
 		close_hook(game);
 	if (game->input_mode)
 	{
-		if (key == 0x33) // Backspace
-			game->username[ft_strlen(game->username) - 1] = '\0';
-		else if (key == 0x24) // Enter, to add confirm action
-			;
-		else if (0x0 <= key && key < 0x33)
-		{
-			if (ft_strlen(game->username) < 8)
-				game->username[ft_strlen(game->username)] = game->macos_chars[key];
-		}
+		input_mode(key, game);
 	}
 	else
 	{
@@ -44,7 +59,7 @@ int	key_hook_press(int key, t_game *game)
 		}
 		if (key == E_KEY)
 			open_door(game);
-		game->key.k[key] = true;
+		game->key.k[(short)(key + CHAR_OFFSET)] = true;
 	}
 	ft_putnbr_fd(key, 1);
 	ft_putendl_fd("", 1);
@@ -53,9 +68,9 @@ int	key_hook_press(int key, t_game *game)
 
 int	key_hook_release(int key, t_game *game)
 {
-	if (key >= (int) sizeof(game->key) || key < -256)
+	if ((short)(key + CHAR_OFFSET) >= (int) sizeof(game->key) || (short)(key + CHAR_OFFSET) < 0)
 		return (1);
-	game->key.k[key] = false;
+	game->key.k[(short)(key + CHAR_OFFSET)] = false;
 	return (0);
 }
 
