@@ -51,6 +51,16 @@ void	initialize_game_parameters(t_game *game)
 void	initialize_game_objects(t_game *game)
 {
 	game->objects = game->map->objects;
+	t_list *elem;
+	t_object *obj;
+
+	elem = game->objects;
+	while (elem)
+	{
+		obj = elem->content;
+		obj->sprite = game->map->enemy[0].img->content;
+		elem = elem->next;
+	}
 }
 
 void	start_game(t_game *game)

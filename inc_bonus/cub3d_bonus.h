@@ -99,6 +99,10 @@ typedef struct s_game_object
 {
 	t_fvector	pos;
 	int			fade;
+	t_vector	start;
+	t_vector	end;
+	t_vector	size;
+	t_fvector	render_step;
 	float		distance;
 	t_img		*sprite;
 }				t_object;
