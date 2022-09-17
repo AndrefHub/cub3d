@@ -10,7 +10,7 @@ void	initialize_mlx_parameters(t_game *game)
 	mlx_hook(game->mlx.window, ButtonRelease, ButtonReleaseMask, mouse_hook_release, game);
 	mlx_hook(game->mlx.window, DestroyNotify, StructureNotifyMask, close_hook, game);
 	mlx_loop_hook(game->mlx.id, game_loop, game);
-	mlx_mouse_move(game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
+	mouse_move(game->mlx.id, game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
 }
 
 void	initialize_player(t_game *game)
@@ -38,6 +38,7 @@ void	initialize_game_parameters(t_game *game)
 	game->z_offset = 0;
 	game->grid = game->map->map;
 	game->img = initialize_img(&game->img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
+	game->hud = initialize_img(&game->hud, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,
 		WIN_WIDTH / 2, WIN_HEIGHT / 2);
 	game->map->map_tile_size = ft_min(game->map->img.size.x /
@@ -48,19 +49,26 @@ void	initialize_game_parameters(t_game *game)
 		error_exit(game, 0, NULL);
 }
 
-void	initialize_game_objects(t_game *game)
-{
+void	initialize_game_objects(t_game *game) {
 	game->objects = game->map->objects;
 	t_list *elem;
 	t_object *obj;
 
 	elem = game->objects;
-	while (elem)
-	{
+	while (elem) {
 		obj = elem->content;
 		obj->sprite = game->map->enemy[0].img->content;
 		elem = elem->next;
 	}
+
+}
+void	set_input_mode_chars(t_game *game)
+{
+	game->macos_chars = "ASDFHGZXCV BQWERYT123465=97-80]OU[IP LJ'K;\\,/NM.  ~ ";
+	game->username = malloc(sizeof(*(game->username)) * 9);
+	ft_bzero(game->username, 9);
+	game->input_mode = 0;
+	game->score = 0;
 }
 
 void	start_game(t_game *game)
@@ -75,6 +83,7 @@ int	game(t_map *map)
 {
 	t_game	game;
 
+	ft_bzero(&game, sizeof(game));
 	game.map = map;
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
@@ -88,6 +97,7 @@ int	game(t_map *map)
 	initialize_wall_textures(&game);
 	initialize_game_objects(&game);
 	initialize_mlx_parameters(&game);
+	set_input_mode_chars(&game);
 	start_game(&game);
 	return (1);
 }

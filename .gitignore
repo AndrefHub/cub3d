@@ -2,3 +2,6 @@ assets
 assets.zip
 src
 inc
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store

@@ -12,7 +12,7 @@ void	parse_font(t_map* map, int fd, char **line)
 	{
 		index = (*line)[1] - FONT_OFFSET;
 		ft_putendl_fd(*line, 1);
-		if (0 < index && index < MAX_FONT_CHARS)
+		if (0 <= index && index < MAX_FONT_CHARS)
 			ft_lstadd_back(&map->font[index].texture, ft_lstnew(get_full_texture_path(
 				ft_strdup(*line + 3), map->path_prefix))); // change strdup to modified crop_prefix
 		free(*line);

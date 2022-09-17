@@ -33,19 +33,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 51,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 52,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
 				"line" : 53,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 54,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 55,
 				"parent" : 0
 			},
 			{
@@ -132,7 +132,9 @@
 				30,
 				31,
 				32,
-				33
+				33,
+				34,
+				35
 			]
 		}
 	],
@@ -223,7 +225,9 @@
 				30,
 				31,
 				32,
-				33
+				33,
+				34,
+				35
 			]
 		}
 	],
@@ -335,6 +339,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src_bonus/enemy_actions.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/input_mode.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/downscale_image.c",
 			"sourceGroupIndex" : 0
 		},
 		{
