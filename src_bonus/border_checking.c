@@ -67,7 +67,7 @@ void	find_enemy(t_map *map)
 					+ powf((map->player_coords.y + 0.5f)
 					- (enemy->object.pos.y + 0.5f), 2));
 			ft_lstadd_back(&map->objects, ft_lstnew(&enemy->object));
-			line += x_coord + 1;
+			line += (ft_strchr(line, 'e') - line) + 1;
 		}
 	}
 }

@@ -43,8 +43,8 @@ void	enemy_move(t_game *game)
 		enemy->delta.x = cosf(angle) * EN_SPEED;
 		enemy->delta.y = sinf(angle) * EN_SPEED;
 		
-		enemy->object.pos.x += enemy->delta.x;
-		enemy->object.pos.y += enemy->delta.y;
+//		enemy->object.pos.x += enemy->delta.x;
+//		enemy->object.pos.y += enemy->delta.y;
 		enemy->object.distance = distancef(&game->player.pos, &enemy->object.pos);
 		check_borders(game, enemy);
 		if (fvector_distance(game->player.pos, enemy->object.pos) < 1)
