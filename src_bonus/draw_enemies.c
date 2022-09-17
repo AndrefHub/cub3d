@@ -16,8 +16,6 @@ void	calculate_object_params(t_game *game, t_object *object)
 		angle_to_player += 2 * PI;
 	object->size.y = (int) (ABS_WALL_SIZE / (cos(angle_to_player) * object->distance));
 	object->size.x = object->size.y;
-//	object->start.x = (game->img.size.x / 2) + atanf(angle_to_player) /
-//			0.001f - object->size.x / 2;
 	object->start.x = (game->img.size.x / 2) + tanf(angle_to_player) * ABS_WALL_SIZE - object->size.x / 2;
 	object->start.y = (game->img.size.y / 2) - object->size.y / 2 - game->z_offset;
 	object->end.x = object->start.x + object->size.x;
@@ -25,7 +23,6 @@ void	calculate_object_params(t_game *game, t_object *object)
 	object->render_step = (t_fvector)
 			{(float) object->sprite->size.x / object->size.x,
 			 (float) object->sprite->size.y / object->size.y};
-//	printf("--- %f wws---\n", object->render_step.x);
 }
 
 void	draw_object_scaled(t_game *game, t_object *object)

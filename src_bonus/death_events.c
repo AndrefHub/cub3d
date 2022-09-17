@@ -30,35 +30,35 @@ void	put_username_on_screen(t_game *game)
 
 void	player_death(t_game *game)
 {
-	static int		it = 0;
+	static int		i = 0;
 	static t_ull	time = 0;
 	// t_rgb	color;
 
-	if (!it)
+	if (!i)
 	{
 		cs_pause_sound(game->audio.song.play, 1);
 		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 	}
-	if (it < 50 && get_time() - time > 50)
+	if (i < 50 && get_time() - time > 50)
 	{
 		time = get_time();
-		dim_image(&game->img, game->img.size.x * game->img.size.y, &(t_rgb){0, 0, 0, 0xFF / (50 - it)});
+		dim_image(&game->img, game->img.size.x * game->img.size.y, &(t_rgb){0, 0, 0, 0xFF / (50 - i)});
 		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
 				0, 0);
-		++it;
+		++i;
 	}
-	else if (it == 50)
+	else if (i == 50)
 	{
 		game->input_mode = 1;
 		death_message(game);
 		put_text_to_screen_layout(game, &(t_text){"username:", (t_vector)
 			{0, WIN_HEIGHT / 2 + (FONT_SIZE / 6) * 2}, VBottom | HLeft}, 6);
-		++it;
+		++i;
 	}
-	if (it > 50)
+	if (i > 50)
 	{
 		put_username_on_screen(game);
-		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
+		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->hud.mlx_img,
 				0, 0);
 	}
 }
