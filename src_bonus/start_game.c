@@ -39,6 +39,7 @@ void	initialize_game_parameters(t_game *game)
 	game->z_offset = 0;
 	game->grid = game->map->map;
 	game->img = initialize_img(&game->img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
+	game->hud = initialize_img(&game->hud, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,
 		WIN_WIDTH / 2, WIN_HEIGHT / 2);
 	game->map->map_tile_size = ft_min(game->map->img.size.x /
@@ -70,6 +71,7 @@ int	game(t_map *map)
 {
 	t_game	game;
 
+	ft_bzero(&game, sizeof(game));
 	game.map = map;
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)

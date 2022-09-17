@@ -33,6 +33,7 @@ void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor)
 {
 	int	xcounter;
 	int	ycounter;
+	int	texture_pix;
 
 	ycounter = -1;
 	while (++ycounter < src->size.y / divisor)
@@ -40,9 +41,11 @@ void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor)
 		xcounter = -1;
 		while (++xcounter < src->size.x / divisor)
 		{
-			put_pixel(dst, (t_vector){pos.x + xcounter, pos.y + ycounter},
-				get_downscaled_color(src, divisor,
-					(t_vector){xcounter * divisor, ycounter * divisor}));
+			texture_pix = get_downscaled_color(src, divisor,
+					(t_vector){xcounter * divisor, ycounter * divisor});
+			// if (texture_pix >> 24 == 0x00)
+				put_pixel(dst, (t_vector){pos.x + xcounter, pos.y + ycounter},
+				texture_pix);
 		}
 	}
 }

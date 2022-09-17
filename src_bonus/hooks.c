@@ -7,10 +7,9 @@ bool	key_pressed(t_game *game, int key)
 
 int	close_hook(t_game *game)
 {
-	mlx_do_key_autorepeaton(game->mlx.id);
 	mlx_clear_window(game->mlx.id, game->mlx.window);
 	mlx_destroy_window(game->mlx.id, game->mlx.window);
-	exit(0);
+	error_exit(game, 0, NULL);
 	return (0);
 }
 
@@ -42,7 +41,7 @@ int	key_hook_press(int key, t_game *game)
 
 int	key_hook_release(int key, t_game *game)
 {
-	if ((short)(key + CHAR_OFFSET) >= (int) sizeof(game->key) || (short)(key + CHAR_OFFSET) < 0)
+	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))
 		return (1);
 	game->key.k[(short)(key + CHAR_OFFSET)] = false;
 	return (0);
