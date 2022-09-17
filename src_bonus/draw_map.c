@@ -76,17 +76,24 @@ void	draw_map(t_game *game)
 
 void	draw_fps(t_game *game)
 {
-	static int	fps = 0;
-	t_ull		curr_time;
-//	static int f = 0;
-	static int s = 0;
+	char	*output;
+	char	*fps;
 
-	curr_time = get_time();
-	if (curr_time != game->time.last)
-		fps = 1000 / (curr_time - game->time.last);
-	mlx_string_put(game->mlx.id, game->mlx.window, 0, 15, 0x00FFFFFF, \
-		(char []){'0' + fps / 100, '0' + fps / 10 % 10, '0' + fps % 10, '\0'});
-	++s;
+	output = malloc(8);
+	ft_bzero(output, 8);
+	fps = ft_itoa(game->fps);
+	// put_text_to_screen_layout(game, &(t_text){
+	// 	fps, (t_vector){0, 0}, VTop | HLeft
+	// 	}, 15
+	// );
+	put_text_to_screen_layout(game, &(t_text){
+		fps, (t_vector){0, 0}, VTop | HLeft
+		}, 2
+	);
+	free(fps);
+	// mlx_string_put(game->mlx.id, game->mlx.window, 0, 15, 0x00FFFFFF, 
+	// 	(char []){'0' + fps / 100, '0' + fps / 10 % 10, '0' + fps % 10, '\0'});
+	// ++s;
 //	f += fps;
 
 //	printf("%f %d\n", ((double)f) / s, fps);

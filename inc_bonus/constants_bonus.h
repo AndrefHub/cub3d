@@ -33,10 +33,10 @@
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
 # define MAX_SOUNDS 2
-# define MAX_FONT_CHARS 64
+# define MAX_FONT_CHARS 224
 # define ENEMY_RELOAD 1000
 # define PL_INVINCIBILITY 2000
-# define FONT_SIZE 64
+# define FONT_SIZE 240
 # define FONT_OFFSET 32
 
 // # define WALL_CHARS "1D23456789"
@@ -54,7 +54,9 @@
 # define ENTITY_PREFIX "E"
 # define SOUND_PREFIX "S"
 # define FONT_PREFIX "F"
+
 # ifdef __APPLE__
+# define CHAR_OFFSET 0
 enum e_keys
 {
 	W_KEY = 13,
@@ -69,8 +71,11 @@ enum e_keys
 	M_KEY = 46,
 	E_KEY = 14,
 	LEFT_CTRL_KEY = 256, //59
+	BACKSPACE = 51,
+	ENTER = 36,
 };
 # else
+# define CHAR_OFFSET 256
 #  ifdef __linux__
 enum e_keys
 {
@@ -78,16 +83,27 @@ enum e_keys
 	A_KEY = 97,
 	S_KEY = 115,
 	D_KEY = 100,
-	ESC_KEY = 113,
-	UP_KEY = 83,
-	LEFT_KEY = 91,
-	DOWN_KEY = 81,
-	RIGHT_KEY = 93,
+	ESC_KEY = 65307,
+	UP_KEY = 65362,
+	LEFT_KEY = 65361,
+	DOWN_KEY = 65364,
+	RIGHT_KEY = 65363,
 	M_KEY = 109,
 	E_KEY = 101,
+	LEFT_CTRL_KEY = 65507,
+	BACKSPACE = 65288,
+	ENTER = 65293,
 };
 #  endif
 # endif
-
+enum layout
+{
+	VTop = 001,
+	VCenter = 002,
+	VBottom = 004,
+	HLeft = 010,
+	HCenter = 020,
+	HRight = 040
+};
 
 #endif

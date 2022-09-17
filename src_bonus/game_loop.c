@@ -14,48 +14,39 @@ void	draw_hud(t_game *game, t_ull time1, t_ull time2)
 
 int	game_loop(t_game *game)
 {
-	t_ull time_rays = -1;
-	t_ull time_drawing = -1;
-
+	fill_img_color(&game->hud, 0xFFFFFFFF);
 	if (check_aliveness(game))
 	{
 		player_controll(game);
 		enemy_move(game);
-
 
 		fill_img_color(&game->img, 0x808080);
 		fill_ceiling_color(&game->img, game->map->C, game->z_offset);
 		draw_ceil_textured(game);
 		fill_floor_color(&game->img, game->map->F, game->z_offset);
 
-		t_ull time = get_time();
-		cast_rays(game);	
-		time_rays = get_time() - time;
-
-
-		time = get_time();
+		cast_rays(game);
 		draw_walls(game);
-		time_drawing = get_time() - time;
-//		printf("*** %llu *** %llu ***\n", time_rays, time_drawing);
-
 		draw_game_objects(game);
 
 		draw_aim(game);
 
+		draw_fps(game);
 
 		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
 								0, 0);
+		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->hud.mlx_img,
+		0, 0);
 		if (game->show_map)
 			draw_map(game);
-
 		change_textures(game);
 	}
 	else 
 	{
 		player_death(game);
 	}
-	draw_hud(game, time_rays, time_drawing);
-	draw_fps(game);
-	game->time.last = get_time();
+	update_time(game);
+	// draw_hud(game, time_rays, time_drawing);
+	// game->time.last = get_time();
 	return (0);
 }

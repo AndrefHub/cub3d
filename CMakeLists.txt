@@ -27,6 +27,8 @@ add_executable(cub3d
         src_bonus/input_manip.c
         src_bonus/main.c
         src_bonus/enemy_actions.c
+        src_bonus/input_mode.c
+        src_bonus/downscale_image.c
         src_bonus/mlx_adapter.c
         src_bonus/parsing.c
         src_bonus/parsing_font.c

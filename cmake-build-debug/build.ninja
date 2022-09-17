@@ -216,6 +216,22 @@ build CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o: C_COMPILER__cub3d_Debug 
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
+build CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/input_mode.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/downscale_image.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6 -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
 build CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o: C_COMPILER__cub3d_Debug /Users/lsherry/42Course/cub3d/src_bonus/mlx_adapter.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\"/Users/lsherry/goinfre\"
   DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o.d
@@ -352,7 +368,7 @@ build CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o: C_COMPILER__cub3d_Debug /Us
 #############################################
 # Link the executable cub3d
 
-build cub3d: C_EXECUTABLE_LINKER__cub3d_Debug CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o CMakeFiles/cub3d.dir/src_bonus/check_file.c.o CMakeFiles/cub3d.dir/src_bonus/controller.c.o CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o CMakeFiles/cub3d.dir/src_bonus/drawing.c.o CMakeFiles/cub3d.dir/src_bonus/free_game.c.o CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o CMakeFiles/cub3d.dir/src_bonus/death_events.c.o CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o CMakeFiles/cub3d.dir/src_bonus/hooks.c.o CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o CMakeFiles/cub3d.dir/src_bonus/main.c.o CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o CMakeFiles/cub3d.dir/src_bonus/parsing.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o CMakeFiles/cub3d.dir/src_bonus/put_text.c.o CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o CMakeFiles/cub3d.dir/src_bonus/start_game.c.o CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o | ../mlx/libmlx.a ../libft/libft.a ../cute_sound/SDL2
+build cub3d: C_EXECUTABLE_LINKER__cub3d_Debug CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o CMakeFiles/cub3d.dir/src_bonus/check_file.c.o CMakeFiles/cub3d.dir/src_bonus/controller.c.o CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o CMakeFiles/cub3d.dir/src_bonus/drawing.c.o CMakeFiles/cub3d.dir/src_bonus/free_game.c.o CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o CMakeFiles/cub3d.dir/src_bonus/death_events.c.o CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o CMakeFiles/cub3d.dir/src_bonus/hooks.c.o CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o CMakeFiles/cub3d.dir/src_bonus/main.c.o CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o CMakeFiles/cub3d.dir/src_bonus/parsing.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o CMakeFiles/cub3d.dir/src_bonus/put_text.c.o CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o CMakeFiles/cub3d.dir/src_bonus/start_game.c.o CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o | ../mlx/libmlx.a ../libft/libft.a ../cute_sound/SDL2
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6
   LINK_LIBRARIES = ../mlx/libmlx.a  -framework OpenGL  -framework AppKit  ../libft/libft.a  ../cute_sound/SDL2
   OBJECT_DIR = CMakeFiles/cub3d.dir

@@ -2,35 +2,38 @@
 
 bool	key_pressed(t_game *game, int key)
 {
-	return (game->key.k[key]);
+	return (game->key.k[(short)(key + CHAR_OFFSET)]);
 }
 
 int	close_hook(t_game *game)
 {
-	mlx_do_key_autorepeaton(game->mlx.id);
 	mlx_clear_window(game->mlx.id, game->mlx.window);
 	mlx_destroy_window(game->mlx.id, game->mlx.window);
-	exit(0);
+	error_exit(game, 0, NULL);
 	return (0);
 }
 
 int	key_hook_press(int key, t_game *game)
 {
-//	TODO: add this
-//	if (game.text_mode)
-//		entering();
-	if (key >= (int) sizeof(game->key) || key < -256)
+	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))
 		return (1);
 	if (key == ESC_KEY)
 		close_hook(game);
-	if (key == M_KEY)
+	if (game->input_mode)
 	{
-		game->show_map = !game->show_map;
-		return (0);
+		input_mode(key, game);
 	}
-	if (key == E_KEY)
-		open_door(game);
-	game->key.k[key] = true;
+	else
+	{
+		if (key == M_KEY)
+		{
+			game->show_map = !game->show_map;
+			return (0);
+		}
+		if (key == E_KEY)
+			open_door(game);
+		game->key.k[(short)(key + CHAR_OFFSET)] = true;
+	}
 	ft_putnbr_fd(key, 1);
 	ft_putendl_fd("", 1);
 	return (0);
@@ -38,9 +41,9 @@ int	key_hook_press(int key, t_game *game)
 
 int	key_hook_release(int key, t_game *game)
 {
-	if (key >= (int) sizeof(game->key) || key < -256)
+	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))
 		return (1);
-	game->key.k[key] = false;
+	game->key.k[(short)(key + CHAR_OFFSET)] = false;
 	return (0);
 }
 

@@ -3,27 +3,13 @@
 t_map	*create_empty_map()
 {
 	t_map	*map;
-	int		counter;
+	// int		counter;
 
-	counter = -1;
+	// counter = -1;
 	map = malloc(sizeof(*map));
 	if (!map)
 		return (NULL);
-	map->map = NULL;
-	map->enemies = NULL;
-	while (++counter < MAX_WALL_CHARS)
-		map->walls[counter].texture = NULL;
-	counter = -1;
-	while (++counter < MAX_ENEMIES)
-		map->enemy[counter].texture = NULL;
-	counter = -1;
-	while (++counter < MAX_FONT_CHARS)
-		map->font[counter].texture = NULL;
-	map->objects = NULL;
-	map->C = 0;
-	map->F = 0;
-	map->bonus = 0;
-	map->path_prefix = 0;
+	ft_bzero(map, sizeof(*map));
 	map->player_coords.x = BAD_COORD;
 	map->player_coords.y = BAD_COORD;
 	map->last_collision.x = BAD_COORD;

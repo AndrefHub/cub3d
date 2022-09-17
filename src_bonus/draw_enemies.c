@@ -35,7 +35,6 @@ void	draw_object_scaled(t_game *game, t_object *object)
 	int			texture_pix;
 	t_vector	cur;
 	t_vector	draw_start;
-	t_vector	draw_end;
 
 	draw_start.x = ft_max(0, object->start.x);
 	draw_start.y = ft_max(0, object->start.y);
