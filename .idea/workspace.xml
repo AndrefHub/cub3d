@@ -15,33 +15,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c4e217c-7993-4678-a3b0-20a822acdc07" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src_bonus/downscale_image.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src_bonus/input_mode.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-86a3e7e19105e4b28baf.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-16T13-48-31-0369.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-cub3d-Debug-91e6add1804d4f50b82f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-abfd044483507634756e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-09-17T14-32-22-0732.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-cub3d-Debug-feb8bcb4f27d034a58bb.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/check_file.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/check_file.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/controller.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/death_events.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/death_events.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/drawing.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/drawing.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/free_game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/free_game.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/hooks.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/hooks.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o" afterDir="false" />
@@ -52,21 +55,14 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/start_game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/start_game.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cub3d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cub3d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc_bonus/constants_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/constants_bonus.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/e1m1_monkey.cub" beforeDir="false" afterPath="$PROJECT_DIR$/maps/e1m1_monkey.cub" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/death_events.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/death_events.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/draw_enemies.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_enemies.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/draw_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/ft_utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/ft_utils.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/game_loop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/game_loop.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/hooks.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/hooks.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/parsing_font.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/parsing_font.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/put_text.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/put_text.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/start_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/start_game.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/time_funcs.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/time_funcs.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/enemy_actions.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/enemy_actions.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +149,7 @@
       <workItem from="1663061577825" duration="3741000" />
       <workItem from="1663075297021" duration="9136000" />
       <workItem from="1663332920973" duration="16668000" />
-      <workItem from="1663403693331" duration="14520000" />
+      <workItem from="1663403693331" duration="15736000" />
     </task>
     <servers />
   </component>
@@ -183,5 +179,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src_bonus/death_events.c</url>
+          <line>52</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src_bonus/death_events.c</url>
+          <line>59</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

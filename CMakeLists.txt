@@ -7,6 +7,7 @@ if(APPLE)
     include_directories(AFTER "/opt/X11/include")
 endif()
 add_compile_definitions(ASSETS_PATH="/Users/lsherry/goinfre")
+add_compile_options(-MMD -g -Ofast -march=native)
 
 add_executable(cub3d
         src_bonus/border_checking.c
