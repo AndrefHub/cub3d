@@ -10,7 +10,7 @@
 # include "X11/X.h"
 # include "X11/keysym.h"
 //# include
-# include "time.h"
+# include <time.h>
 # include <sys/time.h>
 # include "../cute_sound/cute_sound.h"
 # ifdef __APPLE__
@@ -53,16 +53,17 @@ typedef struct rgb
 {
 	unsigned char	b; // blue;
 	unsigned char	g; // green;
-	unsigned char	r; // red;
+	unsigned char	r; // red; 
 	unsigned char	a; // alpha;
 }	t_rgb;
 
+// t_text: dummy structure created with sole purpose of putting 5 variables in function
 typedef struct text
 {
 	char		*text;
 	t_vector	pos;
 	int			layout;
-}	t_text;
+}	t_text; 
 
 typedef struct s_map
 {
@@ -115,6 +116,7 @@ typedef struct game
 	char			**grid;
 	bool			show_map;
 	t_img			img;
+	t_img			hud;
 	int				z_offset;
 	float			fov;
 
@@ -173,13 +175,14 @@ typedef struct game
 		t_ull	startup;
 		int		frames_to_move;
 		t_ull	last;
+		t_ull	fps_time;
 	}		time;
 
 	char	*macos_chars;
 	char	*username;
 	int		input_mode;
 	int		score;
-	
+	int		fps;
 }	t_game;
 
 // Font parsing: parsing_font.c //
@@ -341,19 +344,17 @@ int		key_hook_release(int key, t_game *game);
 int		mouse_hook_press(int button, int x, int y, t_game *game);
 int		mouse_hook_release(int button, int x, int y, t_game *game);
 
-//drawing.c
-void	draw_map(t_game *game);
-void	draw_player(t_game *game);
 bool	key_pressed(t_game *game, int key);
-void	draw_fps(t_game *game);
 
 //demo
 void	error_exit(t_game *game, int return_value, char *message);
 
 // time
 t_ull	get_time(void);
+t_ull	get_time_hp(void);
 void	init_time(t_game *game);
 void	wait_milliseconds(int milliseconds);
+void	update_time(t_game *game);
 
 // downscale_image.c //
 void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor);

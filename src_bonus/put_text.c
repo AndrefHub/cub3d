@@ -21,7 +21,7 @@ int	put_char_to_screen(t_game *game, char c, t_vector pos, int divisor)
 {
 	if (game->map->font[ft_toupper(c) - FONT_OFFSET].img)
 	{
-		put_downscaled_image(&game->img, pos, ((t_img *)game->map->font
+		put_downscaled_image(&game->hud, pos, ((t_img *)game->map->font
 			[ft_toupper(c) - FONT_OFFSET].img->content), divisor);
 		return (1);
 		// put_image_to_image(&game->img, pos, ((t_img *)game->map->font
