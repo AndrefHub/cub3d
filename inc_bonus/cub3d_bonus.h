@@ -334,7 +334,7 @@ void	draw_map(t_game *game);
 int		put_char_to_screen(t_game *game, char c, t_vector pos, int divisor);
 void	put_text_to_screen(t_game *game, char *text, t_vector pos, int divisor);
 void	put_text_to_screen_layout(t_game *game, t_text *text, int divisor);
-
+void	put_image_to_image(t_img *dst, t_vector pos, t_img *src);
 
 void	input_mode(int key, t_game *game);
 
@@ -378,4 +378,7 @@ void	update_time(t_game *game);
 
 // downscale_image.c //
 void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor);
+
+void	put_frame(t_game *game);
+
 #endif

@@ -17,8 +17,8 @@ void	input_char(int key, char *username, char *charset)
 {
 	if (FONT_OFFSET <= ft_toupper(key) && ft_toupper(key) < FONT_OFFSET + 0x40)
 	{
-		if (ft_strlen(game->username) < 8)
-			game->username[ft_strlen(game->username)] = key;
+		if (ft_strlen(username) < 8)
+			username[ft_strlen(username)] = key;
 		(void) charset;
 	}
 }

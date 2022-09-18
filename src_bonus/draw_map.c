@@ -71,7 +71,8 @@ void	draw_map(t_game *game)
 	}
 	draw_player_on_map(game);
 	draw_enemies_on_map(game);
-	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->map->img.mlx_img, 0, 0);
+	put_image_to_image(&game->img, (t_vector){0, 0}, &game->map->img);
+	// mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->map->img.mlx_img, 0, 0);
 }
 
 void	draw_fps(t_game *game)
@@ -88,7 +89,7 @@ void	draw_fps(t_game *game)
 	// );
 	put_text_to_screen_layout(game, &(t_text){
 		fps, (t_vector){0, 0}, VTop | HLeft
-		}, 2
+		}, 10
 	);
 	free(fps);
 	// mlx_string_put(game->mlx.id, game->mlx.window, 0, 15, 0x00FFFFFF, 

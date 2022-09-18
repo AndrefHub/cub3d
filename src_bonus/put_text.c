@@ -1,18 +1,35 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
+t_rgb	put_pixel_on_pixel(t_rgb *dst, t_rgb *src)
+{
+	if (!src->a)
+		*dst = *src;
+	else if (src->a != 0xFF)
+	{
+		dst->r += ((src->r - dst->r) * src->a) / 0xFF;
+		dst->g += ((src->g - dst->g) * src->a) / 0xFF;
+		dst->b += ((src->b - dst->b) * src->a) / 0xFF;
+		// dst->r = ((dst->r * (0xFF - src->a)) + (src->r * src->a)) / 0xFF;
+		// dst->g = ((dst->g * (0xFF - src->a)) + (src->g * src->a)) / 0xFF;
+		// dst->b = ((dst->b * (0xFF - src->a)) + (src->b * src->a)) / 0xFF;
+	}
+	return (*dst);
+}
+
 void	put_image_to_image(t_img *dst, t_vector pos, t_img *src)
 {
+	const int x = ft_max(-pos.x, 0) - 1;
 	int	xcounter;
 	int	ycounter;
 	
-	ycounter = -1;
-	while (++ycounter < src->size.y)
+	ycounter = ft_max(-pos.y, 0) - 1;
+	while (++ycounter < src->size.y && ycounter < dst->size.y - pos.y)
 	{
-		xcounter = -1;
-		while (++xcounter < src->size.x)
+		xcounter = x;
+		while (++xcounter < src->size.x && xcounter < dst->size.x - pos.x)
 		{
-			put_pixel(dst, (t_vector){pos.x + xcounter, pos.y + ycounter},
-				src->addr[ycounter * src->size.x + xcounter]);
+			put_pixel_on_pixel((t_rgb *)dst->addr + (pos.y + ycounter) * dst->size.x + pos.x
+				+ xcounter, (t_rgb *)src->addr + ycounter * src->size.x + xcounter);
 		}
 	}
 }
