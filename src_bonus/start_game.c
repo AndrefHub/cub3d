@@ -2,7 +2,7 @@
 
 void	initialize_mlx_parameters(t_game *game)
 {
-	// mouse_hide(game->mlx.id, game->mlx.window);
+	mouse_hide(game->mlx.id, game->mlx.window);
 	mlx_do_key_autorepeatoff(game->mlx.id);
 	mlx_hook(game->mlx.window, KeyPress, KeyPressMask, key_hook_press, game);
 	mlx_hook(game->mlx.window, KeyRelease, KeyReleaseMask, key_hook_release, game);

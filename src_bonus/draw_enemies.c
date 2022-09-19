@@ -56,12 +56,26 @@ void	draw_object_scaled(t_game *game, t_object *object)
 	}
 }
 
+void	update_distance(t_game *game)
+{
+	t_list		*elem;
+	t_object	*object;
+
+	elem = game->objects;
+	while (elem)
+	{
+		object = elem->content;
+		object->distance = fvector_distance(game->player.pos, object->pos);
+		elem = elem->next;
+	}
+}
+
 void	draw_game_objects(t_game *game)
 {
 	t_list		*elem;
 	t_object	*obj;
 
-
+	update_distance(game);
 	ft_lstsort(&game->objects, object_comparator);
 	elem = game->objects;
 	int fade = 0;

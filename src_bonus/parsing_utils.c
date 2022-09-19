@@ -25,7 +25,7 @@ int	ft_strrchr_int_arr(char *line, char* chr)
 
 	counter = 0;
 	max = ft_strrchr_int(line, chr[counter]);
-	while (++counter < MAX_WALL_CHARS)
+	while (++counter < ft_strlen(chr))
 	{
 		curr = ft_strrchr_int(line, chr[counter]);
 		if (max < curr)

@@ -57,10 +57,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/landreas/42Course/cub3d
+CMAKE_SOURCE_DIR = /Users/lsherry/42Course/cub3d
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/landreas/42Course/cub3d/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/lsherry/42Course/cub3d/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/landreas/42Course/cub3d/cmake-build-debug/CMakeFiles /Users/landreas/42Course/cub3d/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles /Users/lsherry/42Course/cub3d/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/landreas/42Course/cub3d/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lsherry/42Course/cub3d/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,413 +153,845 @@ cute_sound/cute_sound.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.s
 .PHONY : cute_sound/cute_sound.c.s
 
-src/border_checking.o: src/border_checking.c.o
-.PHONY : src/border_checking.o
+src_bonus/border_checking.o: src_bonus/border_checking.c.o
+.PHONY : src_bonus/border_checking.o
 
 # target to build an object file
-src/border_checking.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/border_checking.c.o
-.PHONY : src/border_checking.c.o
+src_bonus/border_checking.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o
+.PHONY : src_bonus/border_checking.c.o
 
-src/border_checking.i: src/border_checking.c.i
-.PHONY : src/border_checking.i
+src_bonus/border_checking.i: src_bonus/border_checking.c.i
+.PHONY : src_bonus/border_checking.i
 
 # target to preprocess a source file
-src/border_checking.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/border_checking.c.i
-.PHONY : src/border_checking.c.i
+src_bonus/border_checking.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/border_checking.c.i
+.PHONY : src_bonus/border_checking.c.i
 
-src/border_checking.s: src/border_checking.c.s
-.PHONY : src/border_checking.s
+src_bonus/border_checking.s: src_bonus/border_checking.c.s
+.PHONY : src_bonus/border_checking.s
 
 # target to generate assembly for a file
-src/border_checking.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/border_checking.c.s
-.PHONY : src/border_checking.c.s
+src_bonus/border_checking.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/border_checking.c.s
+.PHONY : src_bonus/border_checking.c.s
 
-src/check_file.o: src/check_file.c.o
-.PHONY : src/check_file.o
+src_bonus/check_file.o: src_bonus/check_file.c.o
+.PHONY : src_bonus/check_file.o
 
 # target to build an object file
-src/check_file.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/check_file.c.o
-.PHONY : src/check_file.c.o
+src_bonus/check_file.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/check_file.c.o
+.PHONY : src_bonus/check_file.c.o
 
-src/check_file.i: src/check_file.c.i
-.PHONY : src/check_file.i
+src_bonus/check_file.i: src_bonus/check_file.c.i
+.PHONY : src_bonus/check_file.i
 
 # target to preprocess a source file
-src/check_file.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/check_file.c.i
-.PHONY : src/check_file.c.i
+src_bonus/check_file.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/check_file.c.i
+.PHONY : src_bonus/check_file.c.i
 
-src/check_file.s: src/check_file.c.s
-.PHONY : src/check_file.s
+src_bonus/check_file.s: src_bonus/check_file.c.s
+.PHONY : src_bonus/check_file.s
 
 # target to generate assembly for a file
-src/check_file.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/check_file.c.s
-.PHONY : src/check_file.c.s
+src_bonus/check_file.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/check_file.c.s
+.PHONY : src_bonus/check_file.c.s
 
-src/controller.o: src/controller.c.o
-.PHONY : src/controller.o
+src_bonus/controller.o: src_bonus/controller.c.o
+.PHONY : src_bonus/controller.o
 
 # target to build an object file
-src/controller.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/controller.c.o
-.PHONY : src/controller.c.o
+src_bonus/controller.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/controller.c.o
+.PHONY : src_bonus/controller.c.o
 
-src/controller.i: src/controller.c.i
-.PHONY : src/controller.i
+src_bonus/controller.i: src_bonus/controller.c.i
+.PHONY : src_bonus/controller.i
 
 # target to preprocess a source file
-src/controller.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/controller.c.i
-.PHONY : src/controller.c.i
+src_bonus/controller.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/controller.c.i
+.PHONY : src_bonus/controller.c.i
 
-src/controller.s: src/controller.c.s
-.PHONY : src/controller.s
+src_bonus/controller.s: src_bonus/controller.c.s
+.PHONY : src_bonus/controller.s
 
 # target to generate assembly for a file
-src/controller.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/controller.c.s
-.PHONY : src/controller.c.s
+src_bonus/controller.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/controller.c.s
+.PHONY : src_bonus/controller.c.s
 
-src/demo_utils.o: src/demo_utils.c.o
-.PHONY : src/demo_utils.o
+src_bonus/death_events.o: src_bonus/death_events.c.o
+.PHONY : src_bonus/death_events.o
 
 # target to build an object file
-src/demo_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/demo_utils.c.o
-.PHONY : src/demo_utils.c.o
+src_bonus/death_events.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/death_events.c.o
+.PHONY : src_bonus/death_events.c.o
 
-src/demo_utils.i: src/demo_utils.c.i
-.PHONY : src/demo_utils.i
+src_bonus/death_events.i: src_bonus/death_events.c.i
+.PHONY : src_bonus/death_events.i
 
 # target to preprocess a source file
-src/demo_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/demo_utils.c.i
-.PHONY : src/demo_utils.c.i
+src_bonus/death_events.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/death_events.c.i
+.PHONY : src_bonus/death_events.c.i
 
-src/demo_utils.s: src/demo_utils.c.s
-.PHONY : src/demo_utils.s
+src_bonus/death_events.s: src_bonus/death_events.c.s
+.PHONY : src_bonus/death_events.s
 
 # target to generate assembly for a file
-src/demo_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/demo_utils.c.s
-.PHONY : src/demo_utils.c.s
+src_bonus/death_events.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/death_events.c.s
+.PHONY : src_bonus/death_events.c.s
 
-src/draw_map.o: src/draw_map.c.o
-.PHONY : src/draw_map.o
+src_bonus/demo_utils.o: src_bonus/demo_utils.c.o
+.PHONY : src_bonus/demo_utils.o
 
 # target to build an object file
-src/draw_map.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_map.c.o
-.PHONY : src/draw_map.c.o
+src_bonus/demo_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o
+.PHONY : src_bonus/demo_utils.c.o
 
-src/draw_map.i: src/draw_map.c.i
-.PHONY : src/draw_map.i
+src_bonus/demo_utils.i: src_bonus/demo_utils.c.i
+.PHONY : src_bonus/demo_utils.i
 
 # target to preprocess a source file
-src/draw_map.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_map.c.i
-.PHONY : src/draw_map.c.i
+src_bonus/demo_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.i
+.PHONY : src_bonus/demo_utils.c.i
 
-src/draw_map.s: src/draw_map.c.s
-.PHONY : src/draw_map.s
+src_bonus/demo_utils.s: src_bonus/demo_utils.c.s
+.PHONY : src_bonus/demo_utils.s
 
 # target to generate assembly for a file
-src/draw_map.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/draw_map.c.s
-.PHONY : src/draw_map.c.s
+src_bonus/demo_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.s
+.PHONY : src_bonus/demo_utils.c.s
 
-src/drawing.o: src/drawing.c.o
-.PHONY : src/drawing.o
+src_bonus/downscale_image.o: src_bonus/downscale_image.c.o
+.PHONY : src_bonus/downscale_image.o
 
 # target to build an object file
-src/drawing.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/drawing.c.o
-.PHONY : src/drawing.c.o
+src_bonus/downscale_image.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o
+.PHONY : src_bonus/downscale_image.c.o
 
-src/drawing.i: src/drawing.c.i
-.PHONY : src/drawing.i
+src_bonus/downscale_image.i: src_bonus/downscale_image.c.i
+.PHONY : src_bonus/downscale_image.i
 
 # target to preprocess a source file
-src/drawing.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/drawing.c.i
-.PHONY : src/drawing.c.i
+src_bonus/downscale_image.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.i
+.PHONY : src_bonus/downscale_image.c.i
 
-src/drawing.s: src/drawing.c.s
-.PHONY : src/drawing.s
+src_bonus/downscale_image.s: src_bonus/downscale_image.c.s
+.PHONY : src_bonus/downscale_image.s
 
 # target to generate assembly for a file
-src/drawing.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/drawing.c.s
-.PHONY : src/drawing.c.s
+src_bonus/downscale_image.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.s
+.PHONY : src_bonus/downscale_image.c.s
 
-src/ft_utils.o: src/ft_utils.c.o
-.PHONY : src/ft_utils.o
+src_bonus/draw_ceil_floor.o: src_bonus/draw_ceil_floor.c.o
+.PHONY : src_bonus/draw_ceil_floor.o
 
 # target to build an object file
-src/ft_utils.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ft_utils.c.o
-.PHONY : src/ft_utils.c.o
+src_bonus/draw_ceil_floor.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o
+.PHONY : src_bonus/draw_ceil_floor.c.o
 
-src/ft_utils.i: src/ft_utils.c.i
-.PHONY : src/ft_utils.i
+src_bonus/draw_ceil_floor.i: src_bonus/draw_ceil_floor.c.i
+.PHONY : src_bonus/draw_ceil_floor.i
 
 # target to preprocess a source file
-src/ft_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ft_utils.c.i
-.PHONY : src/ft_utils.c.i
+src_bonus/draw_ceil_floor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.i
+.PHONY : src_bonus/draw_ceil_floor.c.i
 
-src/ft_utils.s: src/ft_utils.c.s
-.PHONY : src/ft_utils.s
+src_bonus/draw_ceil_floor.s: src_bonus/draw_ceil_floor.c.s
+.PHONY : src_bonus/draw_ceil_floor.s
 
 # target to generate assembly for a file
-src/ft_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ft_utils.c.s
-.PHONY : src/ft_utils.c.s
+src_bonus/draw_ceil_floor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.s
+.PHONY : src_bonus/draw_ceil_floor.c.s
 
-src/game_sound.o: src/game_sound.c.o
-.PHONY : src/game_sound.o
+src_bonus/draw_enemies.o: src_bonus/draw_enemies.c.o
+.PHONY : src_bonus/draw_enemies.o
 
 # target to build an object file
-src/game_sound.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_sound.c.o
-.PHONY : src/game_sound.c.o
+src_bonus/draw_enemies.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o
+.PHONY : src_bonus/draw_enemies.c.o
 
-src/game_sound.i: src/game_sound.c.i
-.PHONY : src/game_sound.i
+src_bonus/draw_enemies.i: src_bonus/draw_enemies.c.i
+.PHONY : src_bonus/draw_enemies.i
 
 # target to preprocess a source file
-src/game_sound.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_sound.c.i
-.PHONY : src/game_sound.c.i
+src_bonus/draw_enemies.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.i
+.PHONY : src_bonus/draw_enemies.c.i
 
-src/game_sound.s: src/game_sound.c.s
-.PHONY : src/game_sound.s
+src_bonus/draw_enemies.s: src_bonus/draw_enemies.c.s
+.PHONY : src_bonus/draw_enemies.s
 
 # target to generate assembly for a file
-src/game_sound.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_sound.c.s
-.PHONY : src/game_sound.c.s
+src_bonus/draw_enemies.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.s
+.PHONY : src_bonus/draw_enemies.c.s
 
-src/game_textures.o: src/game_textures.c.o
-.PHONY : src/game_textures.o
+src_bonus/draw_floor.o: src_bonus/draw_floor.c.o
+.PHONY : src_bonus/draw_floor.o
 
 # target to build an object file
-src/game_textures.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_textures.c.o
-.PHONY : src/game_textures.c.o
+src_bonus/draw_floor.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o
+.PHONY : src_bonus/draw_floor.c.o
 
-src/game_textures.i: src/game_textures.c.i
-.PHONY : src/game_textures.i
+src_bonus/draw_floor.i: src_bonus/draw_floor.c.i
+.PHONY : src_bonus/draw_floor.i
 
 # target to preprocess a source file
-src/game_textures.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_textures.c.i
-.PHONY : src/game_textures.c.i
+src_bonus/draw_floor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.i
+.PHONY : src_bonus/draw_floor.c.i
 
-src/game_textures.s: src/game_textures.c.s
-.PHONY : src/game_textures.s
+src_bonus/draw_floor.s: src_bonus/draw_floor.c.s
+.PHONY : src_bonus/draw_floor.s
 
 # target to generate assembly for a file
-src/game_textures.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/game_textures.c.s
-.PHONY : src/game_textures.c.s
+src_bonus/draw_floor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.s
+.PHONY : src_bonus/draw_floor.c.s
 
-src/hooks.o: src/hooks.c.o
-.PHONY : src/hooks.o
+src_bonus/draw_map.o: src_bonus/draw_map.c.o
+.PHONY : src_bonus/draw_map.o
 
 # target to build an object file
-src/hooks.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/hooks.c.o
-.PHONY : src/hooks.c.o
+src_bonus/draw_map.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o
+.PHONY : src_bonus/draw_map.c.o
 
-src/hooks.i: src/hooks.c.i
-.PHONY : src/hooks.i
+src_bonus/draw_map.i: src_bonus/draw_map.c.i
+.PHONY : src_bonus/draw_map.i
 
 # target to preprocess a source file
-src/hooks.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/hooks.c.i
-.PHONY : src/hooks.c.i
+src_bonus/draw_map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_map.c.i
+.PHONY : src_bonus/draw_map.c.i
 
-src/hooks.s: src/hooks.c.s
-.PHONY : src/hooks.s
+src_bonus/draw_map.s: src_bonus/draw_map.c.s
+.PHONY : src_bonus/draw_map.s
 
 # target to generate assembly for a file
-src/hooks.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/hooks.c.s
-.PHONY : src/hooks.c.s
+src_bonus/draw_map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_map.c.s
+.PHONY : src_bonus/draw_map.c.s
 
-src/input_manip.o: src/input_manip.c.o
-.PHONY : src/input_manip.o
+src_bonus/draw_walls.o: src_bonus/draw_walls.c.o
+.PHONY : src_bonus/draw_walls.o
 
 # target to build an object file
-src/input_manip.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/input_manip.c.o
-.PHONY : src/input_manip.c.o
+src_bonus/draw_walls.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o
+.PHONY : src_bonus/draw_walls.c.o
 
-src/input_manip.i: src/input_manip.c.i
-.PHONY : src/input_manip.i
+src_bonus/draw_walls.i: src_bonus/draw_walls.c.i
+.PHONY : src_bonus/draw_walls.i
 
 # target to preprocess a source file
-src/input_manip.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/input_manip.c.i
-.PHONY : src/input_manip.c.i
+src_bonus/draw_walls.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.i
+.PHONY : src_bonus/draw_walls.c.i
 
-src/input_manip.s: src/input_manip.c.s
-.PHONY : src/input_manip.s
+src_bonus/draw_walls.s: src_bonus/draw_walls.c.s
+.PHONY : src_bonus/draw_walls.s
 
 # target to generate assembly for a file
-src/input_manip.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/input_manip.c.s
-.PHONY : src/input_manip.c.s
+src_bonus/draw_walls.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.s
+.PHONY : src_bonus/draw_walls.c.s
 
-src/main.o: src/main.c.o
-.PHONY : src/main.o
+src_bonus/drawing.o: src_bonus/drawing.c.o
+.PHONY : src_bonus/drawing.o
 
 # target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/main.c.o
-.PHONY : src/main.c.o
+src_bonus/drawing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/drawing.c.o
+.PHONY : src_bonus/drawing.c.o
 
-src/main.i: src/main.c.i
-.PHONY : src/main.i
+src_bonus/drawing.i: src_bonus/drawing.c.i
+.PHONY : src_bonus/drawing.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/main.c.i
-.PHONY : src/main.c.i
+src_bonus/drawing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/drawing.c.i
+.PHONY : src_bonus/drawing.c.i
 
-src/main.s: src/main.c.s
-.PHONY : src/main.s
+src_bonus/drawing.s: src_bonus/drawing.c.s
+.PHONY : src_bonus/drawing.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/main.c.s
-.PHONY : src/main.c.s
+src_bonus/drawing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/drawing.c.s
+.PHONY : src_bonus/drawing.c.s
 
-src/mlx_adapter.o: src/mlx_adapter.c.o
-.PHONY : src/mlx_adapter.o
+src_bonus/enemy_actions.o: src_bonus/enemy_actions.c.o
+.PHONY : src_bonus/enemy_actions.o
 
 # target to build an object file
-src/mlx_adapter.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/mlx_adapter.c.o
-.PHONY : src/mlx_adapter.c.o
+src_bonus/enemy_actions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o
+.PHONY : src_bonus/enemy_actions.c.o
 
-src/mlx_adapter.i: src/mlx_adapter.c.i
-.PHONY : src/mlx_adapter.i
+src_bonus/enemy_actions.i: src_bonus/enemy_actions.c.i
+.PHONY : src_bonus/enemy_actions.i
 
 # target to preprocess a source file
-src/mlx_adapter.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/mlx_adapter.c.i
-.PHONY : src/mlx_adapter.c.i
+src_bonus/enemy_actions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.i
+.PHONY : src_bonus/enemy_actions.c.i
 
-src/mlx_adapter.s: src/mlx_adapter.c.s
-.PHONY : src/mlx_adapter.s
+src_bonus/enemy_actions.s: src_bonus/enemy_actions.c.s
+.PHONY : src_bonus/enemy_actions.s
 
 # target to generate assembly for a file
-src/mlx_adapter.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/mlx_adapter.c.s
-.PHONY : src/mlx_adapter.c.s
+src_bonus/enemy_actions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.s
+.PHONY : src_bonus/enemy_actions.c.s
 
-src/parsing.o: src/parsing.c.o
-.PHONY : src/parsing.o
+src_bonus/free_game.o: src_bonus/free_game.c.o
+.PHONY : src_bonus/free_game.o
 
 # target to build an object file
-src/parsing.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/parsing.c.o
-.PHONY : src/parsing.c.o
+src_bonus/free_game.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/free_game.c.o
+.PHONY : src_bonus/free_game.c.o
 
-src/parsing.i: src/parsing.c.i
-.PHONY : src/parsing.i
+src_bonus/free_game.i: src_bonus/free_game.c.i
+.PHONY : src_bonus/free_game.i
 
 # target to preprocess a source file
-src/parsing.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/parsing.c.i
-.PHONY : src/parsing.c.i
+src_bonus/free_game.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/free_game.c.i
+.PHONY : src_bonus/free_game.c.i
 
-src/parsing.s: src/parsing.c.s
-.PHONY : src/parsing.s
+src_bonus/free_game.s: src_bonus/free_game.c.s
+.PHONY : src_bonus/free_game.s
 
 # target to generate assembly for a file
-src/parsing.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/parsing.c.s
-.PHONY : src/parsing.c.s
+src_bonus/free_game.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/free_game.c.s
+.PHONY : src_bonus/free_game.c.s
 
-src/ray_casting.o: src/ray_casting.c.o
-.PHONY : src/ray_casting.o
+src_bonus/ft_lstsort.o: src_bonus/ft_lstsort.c.o
+.PHONY : src_bonus/ft_lstsort.o
 
 # target to build an object file
-src/ray_casting.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ray_casting.c.o
-.PHONY : src/ray_casting.c.o
+src_bonus/ft_lstsort.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o
+.PHONY : src_bonus/ft_lstsort.c.o
 
-src/ray_casting.i: src/ray_casting.c.i
-.PHONY : src/ray_casting.i
+src_bonus/ft_lstsort.i: src_bonus/ft_lstsort.c.i
+.PHONY : src_bonus/ft_lstsort.i
 
 # target to preprocess a source file
-src/ray_casting.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ray_casting.c.i
-.PHONY : src/ray_casting.c.i
+src_bonus/ft_lstsort.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.i
+.PHONY : src_bonus/ft_lstsort.c.i
 
-src/ray_casting.s: src/ray_casting.c.s
-.PHONY : src/ray_casting.s
+src_bonus/ft_lstsort.s: src_bonus/ft_lstsort.c.s
+.PHONY : src_bonus/ft_lstsort.s
 
 # target to generate assembly for a file
-src/ray_casting.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/ray_casting.c.s
-.PHONY : src/ray_casting.c.s
+src_bonus/ft_lstsort.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.s
+.PHONY : src_bonus/ft_lstsort.c.s
 
-src/start_game.o: src/start_game.c.o
-.PHONY : src/start_game.o
+src_bonus/ft_utils.o: src_bonus/ft_utils.c.o
+.PHONY : src_bonus/ft_utils.o
 
 # target to build an object file
-src/start_game.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/start_game.c.o
-.PHONY : src/start_game.c.o
+src_bonus/ft_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o
+.PHONY : src_bonus/ft_utils.c.o
 
-src/start_game.i: src/start_game.c.i
-.PHONY : src/start_game.i
+src_bonus/ft_utils.i: src_bonus/ft_utils.c.i
+.PHONY : src_bonus/ft_utils.i
 
 # target to preprocess a source file
-src/start_game.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/start_game.c.i
-.PHONY : src/start_game.c.i
+src_bonus/ft_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.i
+.PHONY : src_bonus/ft_utils.c.i
 
-src/start_game.s: src/start_game.c.s
-.PHONY : src/start_game.s
+src_bonus/ft_utils.s: src_bonus/ft_utils.c.s
+.PHONY : src_bonus/ft_utils.s
 
 # target to generate assembly for a file
-src/start_game.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/start_game.c.s
-.PHONY : src/start_game.c.s
+src_bonus/ft_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.s
+.PHONY : src_bonus/ft_utils.c.s
 
-src/time_funcs.o: src/time_funcs.c.o
-.PHONY : src/time_funcs.o
+src_bonus/game_loop.o: src_bonus/game_loop.c.o
+.PHONY : src_bonus/game_loop.o
 
 # target to build an object file
-src/time_funcs.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/time_funcs.c.o
-.PHONY : src/time_funcs.c.o
+src_bonus/game_loop.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o
+.PHONY : src_bonus/game_loop.c.o
 
-src/time_funcs.i: src/time_funcs.c.i
-.PHONY : src/time_funcs.i
+src_bonus/game_loop.i: src_bonus/game_loop.c.i
+.PHONY : src_bonus/game_loop.i
 
 # target to preprocess a source file
-src/time_funcs.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/time_funcs.c.i
-.PHONY : src/time_funcs.c.i
+src_bonus/game_loop.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/game_loop.c.i
+.PHONY : src_bonus/game_loop.c.i
 
-src/time_funcs.s: src/time_funcs.c.s
-.PHONY : src/time_funcs.s
+src_bonus/game_loop.s: src_bonus/game_loop.c.s
+.PHONY : src_bonus/game_loop.s
 
 # target to generate assembly for a file
-src/time_funcs.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src/time_funcs.c.s
-.PHONY : src/time_funcs.c.s
+src_bonus/game_loop.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/game_loop.c.s
+.PHONY : src_bonus/game_loop.c.s
+
+src_bonus/game_sound.o: src_bonus/game_sound.c.o
+.PHONY : src_bonus/game_sound.o
+
+# target to build an object file
+src_bonus/game_sound.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o
+.PHONY : src_bonus/game_sound.c.o
+
+src_bonus/game_sound.i: src_bonus/game_sound.c.i
+.PHONY : src_bonus/game_sound.i
+
+# target to preprocess a source file
+src_bonus/game_sound.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/game_sound.c.i
+.PHONY : src_bonus/game_sound.c.i
+
+src_bonus/game_sound.s: src_bonus/game_sound.c.s
+.PHONY : src_bonus/game_sound.s
+
+# target to generate assembly for a file
+src_bonus/game_sound.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/game_sound.c.s
+.PHONY : src_bonus/game_sound.c.s
+
+src_bonus/game_textures.o: src_bonus/game_textures.c.o
+.PHONY : src_bonus/game_textures.o
+
+# target to build an object file
+src_bonus/game_textures.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o
+.PHONY : src_bonus/game_textures.c.o
+
+src_bonus/game_textures.i: src_bonus/game_textures.c.i
+.PHONY : src_bonus/game_textures.i
+
+# target to preprocess a source file
+src_bonus/game_textures.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/game_textures.c.i
+.PHONY : src_bonus/game_textures.c.i
+
+src_bonus/game_textures.s: src_bonus/game_textures.c.s
+.PHONY : src_bonus/game_textures.s
+
+# target to generate assembly for a file
+src_bonus/game_textures.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/game_textures.c.s
+.PHONY : src_bonus/game_textures.c.s
+
+src_bonus/hooks.o: src_bonus/hooks.c.o
+.PHONY : src_bonus/hooks.o
+
+# target to build an object file
+src_bonus/hooks.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/hooks.c.o
+.PHONY : src_bonus/hooks.c.o
+
+src_bonus/hooks.i: src_bonus/hooks.c.i
+.PHONY : src_bonus/hooks.i
+
+# target to preprocess a source file
+src_bonus/hooks.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/hooks.c.i
+.PHONY : src_bonus/hooks.c.i
+
+src_bonus/hooks.s: src_bonus/hooks.c.s
+.PHONY : src_bonus/hooks.s
+
+# target to generate assembly for a file
+src_bonus/hooks.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/hooks.c.s
+.PHONY : src_bonus/hooks.c.s
+
+src_bonus/input_manip.o: src_bonus/input_manip.c.o
+.PHONY : src_bonus/input_manip.o
+
+# target to build an object file
+src_bonus/input_manip.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o
+.PHONY : src_bonus/input_manip.c.o
+
+src_bonus/input_manip.i: src_bonus/input_manip.c.i
+.PHONY : src_bonus/input_manip.i
+
+# target to preprocess a source file
+src_bonus/input_manip.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/input_manip.c.i
+.PHONY : src_bonus/input_manip.c.i
+
+src_bonus/input_manip.s: src_bonus/input_manip.c.s
+.PHONY : src_bonus/input_manip.s
+
+# target to generate assembly for a file
+src_bonus/input_manip.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/input_manip.c.s
+.PHONY : src_bonus/input_manip.c.s
+
+src_bonus/input_mode.o: src_bonus/input_mode.c.o
+.PHONY : src_bonus/input_mode.o
+
+# target to build an object file
+src_bonus/input_mode.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o
+.PHONY : src_bonus/input_mode.c.o
+
+src_bonus/input_mode.i: src_bonus/input_mode.c.i
+.PHONY : src_bonus/input_mode.i
+
+# target to preprocess a source file
+src_bonus/input_mode.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/input_mode.c.i
+.PHONY : src_bonus/input_mode.c.i
+
+src_bonus/input_mode.s: src_bonus/input_mode.c.s
+.PHONY : src_bonus/input_mode.s
+
+# target to generate assembly for a file
+src_bonus/input_mode.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/input_mode.c.s
+.PHONY : src_bonus/input_mode.c.s
+
+src_bonus/main.o: src_bonus/main.c.o
+.PHONY : src_bonus/main.o
+
+# target to build an object file
+src_bonus/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/main.c.o
+.PHONY : src_bonus/main.c.o
+
+src_bonus/main.i: src_bonus/main.c.i
+.PHONY : src_bonus/main.i
+
+# target to preprocess a source file
+src_bonus/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/main.c.i
+.PHONY : src_bonus/main.c.i
+
+src_bonus/main.s: src_bonus/main.c.s
+.PHONY : src_bonus/main.s
+
+# target to generate assembly for a file
+src_bonus/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/main.c.s
+.PHONY : src_bonus/main.c.s
+
+src_bonus/mlx_adapter.o: src_bonus/mlx_adapter.c.o
+.PHONY : src_bonus/mlx_adapter.o
+
+# target to build an object file
+src_bonus/mlx_adapter.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o
+.PHONY : src_bonus/mlx_adapter.c.o
+
+src_bonus/mlx_adapter.i: src_bonus/mlx_adapter.c.i
+.PHONY : src_bonus/mlx_adapter.i
+
+# target to preprocess a source file
+src_bonus/mlx_adapter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.i
+.PHONY : src_bonus/mlx_adapter.c.i
+
+src_bonus/mlx_adapter.s: src_bonus/mlx_adapter.c.s
+.PHONY : src_bonus/mlx_adapter.s
+
+# target to generate assembly for a file
+src_bonus/mlx_adapter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.s
+.PHONY : src_bonus/mlx_adapter.c.s
+
+src_bonus/parsing.o: src_bonus/parsing.c.o
+.PHONY : src_bonus/parsing.o
+
+# target to build an object file
+src_bonus/parsing.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing.c.o
+.PHONY : src_bonus/parsing.c.o
+
+src_bonus/parsing.i: src_bonus/parsing.c.i
+.PHONY : src_bonus/parsing.i
+
+# target to preprocess a source file
+src_bonus/parsing.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing.c.i
+.PHONY : src_bonus/parsing.c.i
+
+src_bonus/parsing.s: src_bonus/parsing.c.s
+.PHONY : src_bonus/parsing.s
+
+# target to generate assembly for a file
+src_bonus/parsing.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing.c.s
+.PHONY : src_bonus/parsing.c.s
+
+src_bonus/parsing_font.o: src_bonus/parsing_font.c.o
+.PHONY : src_bonus/parsing_font.o
+
+# target to build an object file
+src_bonus/parsing_font.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o
+.PHONY : src_bonus/parsing_font.c.o
+
+src_bonus/parsing_font.i: src_bonus/parsing_font.c.i
+.PHONY : src_bonus/parsing_font.i
+
+# target to preprocess a source file
+src_bonus/parsing_font.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.i
+.PHONY : src_bonus/parsing_font.c.i
+
+src_bonus/parsing_font.s: src_bonus/parsing_font.c.s
+.PHONY : src_bonus/parsing_font.s
+
+# target to generate assembly for a file
+src_bonus/parsing_font.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.s
+.PHONY : src_bonus/parsing_font.c.s
+
+src_bonus/parsing_textures.o: src_bonus/parsing_textures.c.o
+.PHONY : src_bonus/parsing_textures.o
+
+# target to build an object file
+src_bonus/parsing_textures.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o
+.PHONY : src_bonus/parsing_textures.c.o
+
+src_bonus/parsing_textures.i: src_bonus/parsing_textures.c.i
+.PHONY : src_bonus/parsing_textures.i
+
+# target to preprocess a source file
+src_bonus/parsing_textures.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.i
+.PHONY : src_bonus/parsing_textures.c.i
+
+src_bonus/parsing_textures.s: src_bonus/parsing_textures.c.s
+.PHONY : src_bonus/parsing_textures.s
+
+# target to generate assembly for a file
+src_bonus/parsing_textures.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.s
+.PHONY : src_bonus/parsing_textures.c.s
+
+src_bonus/parsing_utils.o: src_bonus/parsing_utils.c.o
+.PHONY : src_bonus/parsing_utils.o
+
+# target to build an object file
+src_bonus/parsing_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o
+.PHONY : src_bonus/parsing_utils.c.o
+
+src_bonus/parsing_utils.i: src_bonus/parsing_utils.c.i
+.PHONY : src_bonus/parsing_utils.i
+
+# target to preprocess a source file
+src_bonus/parsing_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.i
+.PHONY : src_bonus/parsing_utils.c.i
+
+src_bonus/parsing_utils.s: src_bonus/parsing_utils.c.s
+.PHONY : src_bonus/parsing_utils.s
+
+# target to generate assembly for a file
+src_bonus/parsing_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.s
+.PHONY : src_bonus/parsing_utils.c.s
+
+src_bonus/player_controller.o: src_bonus/player_controller.c.o
+.PHONY : src_bonus/player_controller.o
+
+# target to build an object file
+src_bonus/player_controller.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o
+.PHONY : src_bonus/player_controller.c.o
+
+src_bonus/player_controller.i: src_bonus/player_controller.c.i
+.PHONY : src_bonus/player_controller.i
+
+# target to preprocess a source file
+src_bonus/player_controller.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/player_controller.c.i
+.PHONY : src_bonus/player_controller.c.i
+
+src_bonus/player_controller.s: src_bonus/player_controller.c.s
+.PHONY : src_bonus/player_controller.s
+
+# target to generate assembly for a file
+src_bonus/player_controller.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/player_controller.c.s
+.PHONY : src_bonus/player_controller.c.s
+
+src_bonus/player_movement.o: src_bonus/player_movement.c.o
+.PHONY : src_bonus/player_movement.o
+
+# target to build an object file
+src_bonus/player_movement.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o
+.PHONY : src_bonus/player_movement.c.o
+
+src_bonus/player_movement.i: src_bonus/player_movement.c.i
+.PHONY : src_bonus/player_movement.i
+
+# target to preprocess a source file
+src_bonus/player_movement.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/player_movement.c.i
+.PHONY : src_bonus/player_movement.c.i
+
+src_bonus/player_movement.s: src_bonus/player_movement.c.s
+.PHONY : src_bonus/player_movement.s
+
+# target to generate assembly for a file
+src_bonus/player_movement.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/player_movement.c.s
+.PHONY : src_bonus/player_movement.c.s
+
+src_bonus/put_text.o: src_bonus/put_text.c.o
+.PHONY : src_bonus/put_text.o
+
+# target to build an object file
+src_bonus/put_text.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/put_text.c.o
+.PHONY : src_bonus/put_text.c.o
+
+src_bonus/put_text.i: src_bonus/put_text.c.i
+.PHONY : src_bonus/put_text.i
+
+# target to preprocess a source file
+src_bonus/put_text.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/put_text.c.i
+.PHONY : src_bonus/put_text.c.i
+
+src_bonus/put_text.s: src_bonus/put_text.c.s
+.PHONY : src_bonus/put_text.s
+
+# target to generate assembly for a file
+src_bonus/put_text.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/put_text.c.s
+.PHONY : src_bonus/put_text.c.s
+
+src_bonus/ray_casting.o: src_bonus/ray_casting.c.o
+.PHONY : src_bonus/ray_casting.o
+
+# target to build an object file
+src_bonus/ray_casting.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o
+.PHONY : src_bonus/ray_casting.c.o
+
+src_bonus/ray_casting.i: src_bonus/ray_casting.c.i
+.PHONY : src_bonus/ray_casting.i
+
+# target to preprocess a source file
+src_bonus/ray_casting.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.i
+.PHONY : src_bonus/ray_casting.c.i
+
+src_bonus/ray_casting.s: src_bonus/ray_casting.c.s
+.PHONY : src_bonus/ray_casting.s
+
+# target to generate assembly for a file
+src_bonus/ray_casting.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.s
+.PHONY : src_bonus/ray_casting.c.s
+
+src_bonus/start_game.o: src_bonus/start_game.c.o
+.PHONY : src_bonus/start_game.o
+
+# target to build an object file
+src_bonus/start_game.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/start_game.c.o
+.PHONY : src_bonus/start_game.c.o
+
+src_bonus/start_game.i: src_bonus/start_game.c.i
+.PHONY : src_bonus/start_game.i
+
+# target to preprocess a source file
+src_bonus/start_game.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/start_game.c.i
+.PHONY : src_bonus/start_game.c.i
+
+src_bonus/start_game.s: src_bonus/start_game.c.s
+.PHONY : src_bonus/start_game.s
+
+# target to generate assembly for a file
+src_bonus/start_game.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/start_game.c.s
+.PHONY : src_bonus/start_game.c.s
+
+src_bonus/time_funcs.o: src_bonus/time_funcs.c.o
+.PHONY : src_bonus/time_funcs.o
+
+# target to build an object file
+src_bonus/time_funcs.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o
+.PHONY : src_bonus/time_funcs.c.o
+
+src_bonus/time_funcs.i: src_bonus/time_funcs.c.i
+.PHONY : src_bonus/time_funcs.i
+
+# target to preprocess a source file
+src_bonus/time_funcs.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.i
+.PHONY : src_bonus/time_funcs.c.i
+
+src_bonus/time_funcs.s: src_bonus/time_funcs.c.s
+.PHONY : src_bonus/time_funcs.s
+
+# target to generate assembly for a file
+src_bonus/time_funcs.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.s
+.PHONY : src_bonus/time_funcs.c.s
+
+src_bonus/vector_utils.o: src_bonus/vector_utils.c.o
+.PHONY : src_bonus/vector_utils.o
+
+# target to build an object file
+src_bonus/vector_utils.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o
+.PHONY : src_bonus/vector_utils.c.o
+
+src_bonus/vector_utils.i: src_bonus/vector_utils.c.i
+.PHONY : src_bonus/vector_utils.i
+
+# target to preprocess a source file
+src_bonus/vector_utils.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.i
+.PHONY : src_bonus/vector_utils.c.i
+
+src_bonus/vector_utils.s: src_bonus/vector_utils.c.s
+.PHONY : src_bonus/vector_utils.s
+
+# target to generate assembly for a file
+src_bonus/vector_utils.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.s
+.PHONY : src_bonus/vector_utils.c.s
 
 # Help Target
 help:
@@ -573,57 +1005,111 @@ help:
 	@echo "... cute_sound/cute_sound.o"
 	@echo "... cute_sound/cute_sound.i"
 	@echo "... cute_sound/cute_sound.s"
-	@echo "... src/border_checking.o"
-	@echo "... src/border_checking.i"
-	@echo "... src/border_checking.s"
-	@echo "... src/check_file.o"
-	@echo "... src/check_file.i"
-	@echo "... src/check_file.s"
-	@echo "... src/controller.o"
-	@echo "... src/controller.i"
-	@echo "... src/controller.s"
-	@echo "... src/demo_utils.o"
-	@echo "... src/demo_utils.i"
-	@echo "... src/demo_utils.s"
-	@echo "... src/draw_map.o"
-	@echo "... src/draw_map.i"
-	@echo "... src/draw_map.s"
-	@echo "... src/drawing.o"
-	@echo "... src/drawing.i"
-	@echo "... src/drawing.s"
-	@echo "... src/ft_utils.o"
-	@echo "... src/ft_utils.i"
-	@echo "... src/ft_utils.s"
-	@echo "... src/game_sound.o"
-	@echo "... src/game_sound.i"
-	@echo "... src/game_sound.s"
-	@echo "... src/game_textures.o"
-	@echo "... src/game_textures.i"
-	@echo "... src/game_textures.s"
-	@echo "... src/hooks.o"
-	@echo "... src/hooks.i"
-	@echo "... src/hooks.s"
-	@echo "... src/input_manip.o"
-	@echo "... src/input_manip.i"
-	@echo "... src/input_manip.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/mlx_adapter.o"
-	@echo "... src/mlx_adapter.i"
-	@echo "... src/mlx_adapter.s"
-	@echo "... src/parsing.o"
-	@echo "... src/parsing.i"
-	@echo "... src/parsing.s"
-	@echo "... src/ray_casting.o"
-	@echo "... src/ray_casting.i"
-	@echo "... src/ray_casting.s"
-	@echo "... src/start_game.o"
-	@echo "... src/start_game.i"
-	@echo "... src/start_game.s"
-	@echo "... src/time_funcs.o"
-	@echo "... src/time_funcs.i"
-	@echo "... src/time_funcs.s"
+	@echo "... src_bonus/border_checking.o"
+	@echo "... src_bonus/border_checking.i"
+	@echo "... src_bonus/border_checking.s"
+	@echo "... src_bonus/check_file.o"
+	@echo "... src_bonus/check_file.i"
+	@echo "... src_bonus/check_file.s"
+	@echo "... src_bonus/controller.o"
+	@echo "... src_bonus/controller.i"
+	@echo "... src_bonus/controller.s"
+	@echo "... src_bonus/death_events.o"
+	@echo "... src_bonus/death_events.i"
+	@echo "... src_bonus/death_events.s"
+	@echo "... src_bonus/demo_utils.o"
+	@echo "... src_bonus/demo_utils.i"
+	@echo "... src_bonus/demo_utils.s"
+	@echo "... src_bonus/downscale_image.o"
+	@echo "... src_bonus/downscale_image.i"
+	@echo "... src_bonus/downscale_image.s"
+	@echo "... src_bonus/draw_ceil_floor.o"
+	@echo "... src_bonus/draw_ceil_floor.i"
+	@echo "... src_bonus/draw_ceil_floor.s"
+	@echo "... src_bonus/draw_enemies.o"
+	@echo "... src_bonus/draw_enemies.i"
+	@echo "... src_bonus/draw_enemies.s"
+	@echo "... src_bonus/draw_floor.o"
+	@echo "... src_bonus/draw_floor.i"
+	@echo "... src_bonus/draw_floor.s"
+	@echo "... src_bonus/draw_map.o"
+	@echo "... src_bonus/draw_map.i"
+	@echo "... src_bonus/draw_map.s"
+	@echo "... src_bonus/draw_walls.o"
+	@echo "... src_bonus/draw_walls.i"
+	@echo "... src_bonus/draw_walls.s"
+	@echo "... src_bonus/drawing.o"
+	@echo "... src_bonus/drawing.i"
+	@echo "... src_bonus/drawing.s"
+	@echo "... src_bonus/enemy_actions.o"
+	@echo "... src_bonus/enemy_actions.i"
+	@echo "... src_bonus/enemy_actions.s"
+	@echo "... src_bonus/free_game.o"
+	@echo "... src_bonus/free_game.i"
+	@echo "... src_bonus/free_game.s"
+	@echo "... src_bonus/ft_lstsort.o"
+	@echo "... src_bonus/ft_lstsort.i"
+	@echo "... src_bonus/ft_lstsort.s"
+	@echo "... src_bonus/ft_utils.o"
+	@echo "... src_bonus/ft_utils.i"
+	@echo "... src_bonus/ft_utils.s"
+	@echo "... src_bonus/game_loop.o"
+	@echo "... src_bonus/game_loop.i"
+	@echo "... src_bonus/game_loop.s"
+	@echo "... src_bonus/game_sound.o"
+	@echo "... src_bonus/game_sound.i"
+	@echo "... src_bonus/game_sound.s"
+	@echo "... src_bonus/game_textures.o"
+	@echo "... src_bonus/game_textures.i"
+	@echo "... src_bonus/game_textures.s"
+	@echo "... src_bonus/hooks.o"
+	@echo "... src_bonus/hooks.i"
+	@echo "... src_bonus/hooks.s"
+	@echo "... src_bonus/input_manip.o"
+	@echo "... src_bonus/input_manip.i"
+	@echo "... src_bonus/input_manip.s"
+	@echo "... src_bonus/input_mode.o"
+	@echo "... src_bonus/input_mode.i"
+	@echo "... src_bonus/input_mode.s"
+	@echo "... src_bonus/main.o"
+	@echo "... src_bonus/main.i"
+	@echo "... src_bonus/main.s"
+	@echo "... src_bonus/mlx_adapter.o"
+	@echo "... src_bonus/mlx_adapter.i"
+	@echo "... src_bonus/mlx_adapter.s"
+	@echo "... src_bonus/parsing.o"
+	@echo "... src_bonus/parsing.i"
+	@echo "... src_bonus/parsing.s"
+	@echo "... src_bonus/parsing_font.o"
+	@echo "... src_bonus/parsing_font.i"
+	@echo "... src_bonus/parsing_font.s"
+	@echo "... src_bonus/parsing_textures.o"
+	@echo "... src_bonus/parsing_textures.i"
+	@echo "... src_bonus/parsing_textures.s"
+	@echo "... src_bonus/parsing_utils.o"
+	@echo "... src_bonus/parsing_utils.i"
+	@echo "... src_bonus/parsing_utils.s"
+	@echo "... src_bonus/player_controller.o"
+	@echo "... src_bonus/player_controller.i"
+	@echo "... src_bonus/player_controller.s"
+	@echo "... src_bonus/player_movement.o"
+	@echo "... src_bonus/player_movement.i"
+	@echo "... src_bonus/player_movement.s"
+	@echo "... src_bonus/put_text.o"
+	@echo "... src_bonus/put_text.i"
+	@echo "... src_bonus/put_text.s"
+	@echo "... src_bonus/ray_casting.o"
+	@echo "... src_bonus/ray_casting.i"
+	@echo "... src_bonus/ray_casting.s"
+	@echo "... src_bonus/start_game.o"
+	@echo "... src_bonus/start_game.i"
+	@echo "... src_bonus/start_game.s"
+	@echo "... src_bonus/time_funcs.o"
+	@echo "... src_bonus/time_funcs.i"
+	@echo "... src_bonus/time_funcs.s"
+	@echo "... src_bonus/vector_utils.o"
+	@echo "... src_bonus/vector_utils.i"
+	@echo "... src_bonus/vector_utils.s"
 .PHONY : help
 
 

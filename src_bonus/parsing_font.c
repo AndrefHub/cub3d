@@ -18,12 +18,4 @@ void	parse_font(t_map* map, int fd, char **line)
 		free(*line);
 		*line = skip_empty_lines(fd);
 	}	
-// while (line && *line && !ft_strncmp(*line, FONT_PREFIX, ft_strlen(
-// 		FONT_PREFIX)))
-// 	{
-// 		ft_putendl_fd(*line, 1);
-// 		ft_lstadd_back(&map->font[index].texture, ft_lstnew(
-// 			get_full_texture_path(*line, map->path_prefix)));
-// 		*line = skip_empty_lines(fd);
-// 	}
 }
