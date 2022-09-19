@@ -1,8 +1,20 @@
-<<<<<<< HEAD
-/private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/FB738935-5757-4FC3-A28F-C1CFE61E30E1/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/private/var/folders/zz/zyxvpxvq6csfxvn_n003vpzh00yxqw/T/AppTranslocation/FB738935-5757-4FC3-A28F-C1CFE61E30E1/d/CLion.app/Contents/bin/ninja/mac/ninja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=gcc -G Ninja -S /Users/lsherry/42Course/cub3d -B /Users/lsherry/42Course/cub3d/cmake-build-debug
-=======
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=gcc -G Ninja /Users/lsherry/42Course/cub3d
->>>>>>> main
+-- The C compiler identification is GNU 10.3.0
+-- Checking whether C compiler has -isysroot
+-- Checking whether C compiler has -isysroot - yes
+-- Checking whether C compiler supports OSX deployment target flag
+-- Checking whether C compiler supports OSX deployment target flag - yes
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/local/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
 -- Configuring done
 -- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_CXX_COMPILER
+
+
 -- Build files have been written to: /Users/lsherry/42Course/cub3d/cmake-build-debug

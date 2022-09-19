@@ -37,15 +37,15 @@ void	draw_object_scaled(t_game *game, t_object *object)
 	draw_start.y = ft_max(0, object->start.y);
 
 	cur = (t_vector) {draw_start.x,draw_start.y};
-	src_x = fmaxf(0.f, -object->start.x * object->render_step.x);
+	src_x = fmaxf(0.f, (float) -object->start.x * object->render_step.x);
 	while (cur.x < object->end.x)
 	{
 		cur.y = draw_start.y;
-		src_y = fmaxf(0.f, -object->start.y * object->render_step.y);
+		src_y = fmaxf(0.f, (float) -object->start.y * object->render_step.y);
 		while (cur.y < object->end.y)
 		{
 			texture_pix = object->sprite->addr[(unsigned ) ((int)src_y * object->sprite->size.x + src_x)];
-			if (texture_pix >> 24 == 0x00)
+			if (texture_pix >> 24 == 0x00 && cur.y > 0 && cur.y < game->img.size.y && cur.x > 0 && cur.x < game->img.size.x)
 				put_pixel(&game->img, cur, texture_pix);
 			src_y += object->render_step.y;
 			cur.y++;
@@ -55,11 +55,26 @@ void	draw_object_scaled(t_game *game, t_object *object)
 	}
 }
 
+void	update_distance(t_game *game)
+{
+	t_list		*elem;
+	t_object	*object;
+
+	elem = game->objects;
+	while (elem)
+	{
+		object = elem->content;
+		object->distance = fvector_distance(game->player.pos, object->pos);
+		elem = elem->next;
+	}
+}
+
 void	draw_game_objects(t_game *game)
 {
 	t_list		*elem;
 	t_object	*obj;
 
+	update_distance(game);
 	ft_lstsort(&game->objects, object_comparator);
 	elem = game->objects;
 	int fade = 0;

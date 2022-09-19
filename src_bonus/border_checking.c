@@ -98,7 +98,7 @@ void	find_objects(t_map *map)
 					+ powf((map->player_coords.y + 0.5f)
 					- (object->pos.y + 0.5f), 2));
 			ft_lstadd_back(&map->objects, ft_lstnew(object));
-			if (line[x_coord] == 'e')
+			if (line[x_coord - 1] == 'e')
 			{
 				enemy = malloc(sizeof(*enemy));
 				ft_bzero(enemy, sizeof(*enemy));
