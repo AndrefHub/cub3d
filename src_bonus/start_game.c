@@ -24,7 +24,6 @@ void	initialize_player(t_game *game)
 	game->player.delta.y = sinf(game->player.angle) * 5;
 
 	game->fov = 0.001f;
-
 	game->player.health = 1;
 	game->player.last_attack_time = 0;
 }
@@ -50,6 +49,19 @@ void	initialize_game_parameters(t_game *game)
 		error_exit(game, 0, NULL);
 }
 
+void	initialize_game_objects(t_game *game) {
+	game->objects = game->map->objects;
+	t_list *elem;
+	t_object *obj;
+
+	elem = game->objects;
+	while (elem) {
+		obj = elem->content;
+		obj->sprite = game->map->enemy[0].img->content;
+		elem = elem->next;
+	}
+
+}
 void	set_input_mode_chars(t_game *game)
 {
 	game->macos_chars = "ASDFHGZXCV BQWERYT123465=97-80]OU[IP LJ'K;\\,/NM.  ~ ";
@@ -83,6 +95,7 @@ int	game(t_map *map)
     initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
 	initialize_wall_textures(&game);
+	initialize_game_objects(&game);
 	initialize_mlx_parameters(&game);
 	set_input_mode_chars(&game);
 	start_game(&game);

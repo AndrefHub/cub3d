@@ -97,4 +97,13 @@ char	*get_full_texture_path(char *line, int flag)
 		free(line);
 	}
 	return (new_line);
+<<<<<<< HEAD
+=======
+}
+
+float	distancef(t_fvector *vector1, t_fvector *vector2)
+{
+	return (sqrtf(powf(vector2->x - vector1->x, 2)
+				  + powf(vector2->y - vector1->y, 2)));
+>>>>>>> main
 }

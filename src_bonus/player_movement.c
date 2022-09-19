@@ -16,40 +16,32 @@ void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collisio
 void	check_borders(t_game *game, t_enemy *player)
 {
 	char			tile;
-	const t_vector	plus = {(int)(player->pos.x + PL_RADIUS),
-		(int)(player->pos.y + PL_RADIUS)};
-	const t_vector	minus = {(int)(player->pos.x - PL_RADIUS),
-		(int)(player->pos.y - PL_RADIUS)};
+	const t_vector	plus = {(int)(player->object.pos.x + PL_RADIUS),
+		(int)(player->object.pos.y + PL_RADIUS)};
+	const t_vector	minus = {(int)(player->object.pos.x - PL_RADIUS),
+		(int)(player->object.pos.y - PL_RADIUS)};
 
-	tile = game->grid[(int)player->pos.y][minus.x];
+	tile = game->grid[(int)player->object.pos.y][minus.x];
 	if (is_wall(tile))
-		player->pos.x = (minus.x + 1) + PL_RADIUS;
-	tile = game->grid[(int)player->pos.y][plus.x];
+		player->object.pos.x = (minus.x + 1) + PL_RADIUS;
+	tile = game->grid[(int)player->object.pos.y][plus.x];
 	if (is_wall(tile))
-		player->pos.x = plus.x - PL_RADIUS;
-	tile = game->grid[minus.y][(int)player->pos.x];
+		player->object.pos.x = plus.x - PL_RADIUS;
+	tile = game->grid[minus.y][(int)player->object.pos.x];
 	if (is_wall(tile))
-		player->pos.y = (minus.y + 1) + PL_RADIUS;
-	tile = game->grid[plus.y][(int)player->pos.x];
+		player->object.pos.y = (minus.y + 1) + PL_RADIUS;
+	tile = game->grid[plus.y][(int)player->object.pos.x];
 	if (is_wall(tile))
-		player->pos.y = plus.y - PL_RADIUS;
+		player->object.pos.y = plus.y - PL_RADIUS;
 
 }
 
 void	check_restrictions(t_game *game)
 {
-	if (game->player.angle < 0)
+	if (game->player.angle <= 0)
 		game->player.angle += 2 * PI;
-	if (game->player.angle > 2 * PI)
+	if (game->player.angle >= 2 * PI)
 		game->player.angle -= 2 * PI;
-	if (game->player.pos.x > game->map->map_size.x)
-		game->player.pos.x -= 1;
-	if (game->player.pos.x < 0)
-		game->player.pos.x += 1;
-	if (game->player.pos.y > game->map->map_size.y)
-		game->player.pos.y -= 1;
-	if (game->player.pos.y < 0)
-		game->player.pos.y += 1;
 	if (game->z_offset > game->img.size.y)
 		game->z_offset = game->img.size.y;
 	if (game->z_offset < -game->img.size.y)

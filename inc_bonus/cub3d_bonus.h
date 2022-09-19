@@ -84,6 +84,7 @@ typedef struct s_map
 	int			map_tile_size;
 	t_fvector	last_collision;
 	t_list		*enemies;
+	t_list		*objects;
 } t_map;
 
 typedef struct ray
@@ -102,9 +103,21 @@ typedef struct	sound
 	cs_playing_sound_t	*play;
 }				t_sound;
 
-typedef struct	s_enemy
+typedef struct s_game_object
 {
 	t_fvector	pos;
+	int			fade;
+	t_vector	start;
+	t_vector	end;
+	t_vector	size;
+	t_fvector	render_step;
+	float		distance;
+	t_img		*sprite;
+}				t_object;
+
+typedef struct	s_enemy
+{
+	t_object	object;
 	t_fvector	delta;
 	t_ull		last_attack_time;
 	t_img		sprite;
@@ -119,7 +132,7 @@ typedef struct game
 	t_img			hud;
 	int				z_offset;
 	float			fov;
-
+	t_list			*objects;
 	struct s_mlx
 	{
 		void	*id;
@@ -221,6 +234,7 @@ void	error_exit(t_game *game, int return_value, char *message);
 t_img	initialize_img(t_img *img, void *mlx_ptr, int width, int height);
 void	print_map_debug(t_map *map);
 char	*get_full_texture_path(char *line, int flag);
+float	distancef(t_fvector *vector1, t_fvector *vector2);
 
 // Some utils for parsing and working with files: input_manip.c //
 char	*crop_prefix(char* line, char *prefix);
@@ -319,7 +333,7 @@ void	draw_map(t_game *game);
 int		put_char_to_screen(t_game *game, char c, t_vector pos, int divisor);
 void	put_text_to_screen(t_game *game, char *text, t_vector pos, int divisor);
 void	put_text_to_screen_layout(t_game *game, t_text *text, int divisor);
-
+void	put_image_to_image(t_img *dst, t_vector pos, t_img *src);
 
 void	input_mode(int key, t_game *game);
 
@@ -329,7 +343,9 @@ void	player_death(t_game *game);
 int		check_aliveness(t_game *game);
 void	dim_image(t_img *img, int img_size, t_rgb *color);
 
-
+// Drawing enemies: draw_enemies.c //
+int		object_comparator(t_object *obj1, t_object *obj2);
+void	draw_game_objects(t_game *game);
 
 
 // void	initialize_font(t_map *map);
@@ -354,9 +370,14 @@ t_ull	get_time(void);
 t_ull	get_time_hp(void);
 void	init_time(t_game *game);
 void	wait_milliseconds(int milliseconds);
+
+
+void	ft_lstsort(t_list **lst, int (*cmp)());
 void	update_time(t_game *game);
 
 // downscale_image.c //
 void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor);
+
+void	put_frame(t_game *game);
 
 #endif

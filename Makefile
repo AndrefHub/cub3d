@@ -37,6 +37,7 @@ SRC_BONUSFILE	= 	border_checking.c \
 					draw_floor.c \
 					draw_walls.c \
 					draw_map.c \
+					draw_enemies.c \
 					drawing.c \
 					enemy_actions.c \
 					free_game.c \
@@ -60,7 +61,8 @@ SRC_BONUSFILE	= 	border_checking.c \
 					ray_casting.c \
 					start_game.c \
 					time_funcs.c \
-					vector_utils.c
+					vector_utils.c \
+					ft_lstsort.c
 SRCS_BONUS	= $(addprefix $(SRC_BONUSDIR), $(SRC_BONUSFILE))
 OBJ_BONUSDIR	= obj_bonus/
 OBJ_BONUSFILE = $(SRC_BONUSFILE:.c=.o)

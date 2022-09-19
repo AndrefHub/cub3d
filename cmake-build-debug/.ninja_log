@@ -1,4 +1,5 @@
 # ninja log v5
+<<<<<<< HEAD
 154	281	1663085183000000000	CMakeFiles/cub3d.dir/src_bonus/death_events.c.o	6ba3626aba61a637
 408	530	1663085184000000000	CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o	c9f91fc2c3267733
 3	154	1663085183000000000	CMakeFiles/cub3d.dir/src_bonus/drawing.c.o	72d747d50ac9030f
@@ -33,3 +34,49 @@
 281	403	1663085183000000000	CMakeFiles/cub3d.dir/src_bonus/main.c.o	a39dae2d91a4c0cf
 644	766	1663085184000000000	CMakeFiles/cub3d.dir/src_bonus/check_file.c.o	be68655ab4f110a8
 426	550	1663085184000000000	CMakeFiles/cub3d.dir/src_bonus/controller.c.o	11cde5007d2e2cab
+=======
+966	1130	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o	f305cc60e5bb2fec
+4	294	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/controller.c.o	16153ab1998ec76b
+3	280	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/check_file.c.o	7d70d681f45fa534
+470	605	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/main.c.o	fb7bdc701a3bbf44
+905	1041	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o	167e6fa8a3f72ca7
+700	966	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o	e6aaad8fe1804a6
+676	888	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o	239351377a88f4ac
+282	436	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o	6c2224afca753e49
+280	520	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o	9493ebe460843800
+797	1093	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o	bd5fe384806f2f8b
+888	1069	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o	a13dd1b7c18af342
+4	282	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o	c6f932b8acca1f99
+848	1036	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o	7df55a6eee0e4a38
+726	886	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o	52df9b931d96a21e
+718	910	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o	aa56b15e42e024c
+605	848	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/parsing.c.o	11216e3def96efe0
+1623	1756	1663425930000000000	cub3d	69d91c6e41cefd12
+1	105	1663425930000000000	build.ninja	fb25d0a697a47815
+3	455	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o	d673a7aab47e0f61
+4	276	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o	f942fa5ad0204028
+284	559	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o	dc29074186ca461a
+276	577	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o	37f49d8d97cf53da
+455	676	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o	825200014fd08279
+4	380	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o	97019898b4f71296
+520	726	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o	2445ce6dd60be941
+577	718	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o	8f50a77af8a60efd
+886	1086	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/start_game.c.o	64630d50358744d0
+5	284	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/free_game.c.o	bbf62017046acdec
+764	1010	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/put_text.c.o	a7bdb984fd451bd3
+380	523	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o	3c231638563d6b2f
+910	1623	1663425930000000000	CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o	cc737a8b6248110a
+4	470	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/drawing.c.o	edec069dbdb06cf7
+294	905	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/death_events.c.o	96889b199e861ced
+1010	1131	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o	9163d3f77a62c0a8
+436	622	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/hooks.c.o	9d3c524d7ba8daca
+622	764	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o	d0ebdd695fc05146
+523	700	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o	9f7470008986cd99
+559	797	1663425929000000000	CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o	b35f4ccd8d26e9c2
+1	556	1663426648000000000	CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o	f305cc60e5bb2fec
+556	804	1663426648000000000	cub3d	69d91c6e41cefd12
+1	379	1663426832000000000	CMakeFiles/cub3d.dir/src_bonus/death_events.c.o	96889b199e861ced
+379	544	1663426832000000000	cub3d	69d91c6e41cefd12
+0	390	1663427060000000000	CMakeFiles/cub3d.dir/src_bonus/death_events.c.o	96889b199e861ced
+390	602	1663427060000000000	cub3d	69d91c6e41cefd12
+>>>>>>> main
