@@ -77,24 +77,18 @@ void	draw_map(t_game *game)
 
 void	draw_fps(t_game *game)
 {
-	char	*fps;
-
 	// output = malloc(8);
 	// ft_bzero(output, 8);
-	fps = ft_itoa(game->fps);
 	// put_text_to_screen_layout(game, &(t_text){
 	// 	fps, (t_vector){0, 0}, VTop | HLeft
 	// 	}, 15
 	// );
+	ft_bzero(game->time.fps_title + 4, 5);
+	ft_put_itoa(game->time.fps_title + 4, game->time.fps);
 	put_text_to_screen_layout(game, &(t_text){
-		"fps:", (t_vector){0, 0}, VTop | HLeft
-		}, 10
+		game->time.fps_title, (t_vector){0, 0}, VTop | HLeft
+		}, 20
 	);
-	put_text_to_screen_layout(game, &(t_text){
-		fps, (t_vector){ft_strlen("fps:") * 24, 0}, VTop | HLeft
-		}, 10
-	);
-	free(fps);
 	// mlx_string_put(game->mlx.id, game->mlx.window, 0, 15, 0x00FFFFFF, 
 	// 	(char []){'0' + fps / 100, '0' + fps / 10 % 10, '0' + fps % 10, '\0'});
 	// ++s;

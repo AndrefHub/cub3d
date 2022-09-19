@@ -188,13 +188,14 @@ typedef struct game
 		int		frames_to_move;
 		t_ull	last;
 		t_ull	fps_time;
+		int		fps;
+		char	*fps_title;
 	}		time;
 
 	char	*macos_chars;
 	char	*username;
 	int		input_mode;
 	int		score;
-	int		fps;
 }	t_game;
 
 // Font parsing: parsing_font.c //
