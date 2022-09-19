@@ -13,6 +13,8 @@ void	death_message(t_game *game)
 	put_text_to_screen_layout(game, &(t_text){"1234567890", (t_vector)
 		{WIN_WIDTH / 2, WIN_HEIGHT / 2 + font_size / 2}, VCenter | HCenter},
 		divisor);
+	put_text_to_screen_layout(game, &(t_text){"username:", (t_vector)
+		{0, WIN_HEIGHT / 2 + (FONT_SIZE / 6) * 2}, VBottom | HLeft}, 6);
 }
 
 void	put_username_on_screen(t_game *game)
@@ -38,6 +40,7 @@ void	player_death(t_game *game)
 	{
 		cs_pause_sound(game->audio.song.play, 1);
 		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
+		game->show_map = 0;
 	}
 	if (i < 50 && get_time() - time > 50)
 	{
@@ -57,9 +60,10 @@ void	player_death(t_game *game)
 	}
 	if (i > 50)
 	{
+		fill_img_color(&game->img, 0x0);
+		death_message(game);
 		put_username_on_screen(game);
-		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->hud.mlx_img,
-				0, 0);
+		put_frame(game);
 	}
 }
 

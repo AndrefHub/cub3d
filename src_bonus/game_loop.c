@@ -12,15 +12,23 @@ void	draw_hud(t_game *game, t_ull time1, t_ull time2)
 		(char []){'0' + time2 / 1000, '0' + time2 / 100 % 10, '0' + time2 / 10 % 10, '0' + time2 % 10, '\0'});
 }
 
+void	put_frame(t_game *game)
+{
+	put_image_to_image(&game->img, (t_vector){0, 0}, &game->hud);
+	if (game->show_map)
+		draw_map(game);
+	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
+							0, 0);
+}
+
 int	game_loop(t_game *game)
 {
 	fill_img_color(&game->hud, 0xFFFFFFFF);
+	draw_fps(game);
 	if (check_aliveness(game))
 	{
 		player_controll(game);
 		enemy_move(game);
-
-		fill_img_color(&game->img, 0x808080);
 		fill_ceiling_color(&game->img, game->map->C, game->z_offset);
 		draw_ceil_textured(game);
 		fill_floor_color(&game->img, game->map->F, game->z_offset);
@@ -32,16 +40,10 @@ int	game_loop(t_game *game)
 		draw_aim(game);
 
 		draw_fps(game);
-
-		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
-								0, 0);
-		mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->hud.mlx_img,
-		0, 0);
-		if (game->show_map)
-			draw_map(game);
+		put_frame(game);
 		change_textures(game);
 	}
-	else 
+	else
 	{
 		player_death(game);
 	}
