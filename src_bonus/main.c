@@ -7,7 +7,7 @@ int main(int ac, char **av)
 	map = parse_file(ac, av);
 	if (map)
 	{
-		print_map_debug(map);
+//		print_map_debug(map);
 		game(map);
 	}
 }

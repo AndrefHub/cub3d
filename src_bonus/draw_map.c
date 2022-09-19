@@ -1,5 +1,22 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
+void	draw_objects_on_map(t_game *game)
+{
+	t_list		*elem;
+	t_object	*object;
+	t_vector	coords;
+
+	elem = game->objects;
+	while (elem)
+	{
+		object = elem->content;
+		coords = (t_vector) {object->pos.x * game->map->map_tile_size - game->map->map_tile_size / 6,
+							 object->pos.y * game->map->map_tile_size - game->map->map_tile_size / 6};
+		draw_square_fill(&game->map->img, coords, game->map->map_tile_size / 3, OBJECTS_MAP_COLOR);
+		elem = elem->next;
+	}
+}
+
 void	draw_enemies_on_map(t_game *game)
 {
 	t_list		*enemies;
@@ -13,7 +30,7 @@ void	draw_enemies_on_map(t_game *game)
 			((t_enemy *)enemies->content)->object->pos.y * game->map->map_tile_size
 			- game->map->map_tile_size / 4};
 		draw_square_fill(&game->map->img, coords, game->map->map_tile_size / 2,
-						0x89D1FE);
+						ENEMIES_MAP_COLOR);
 		enemies = enemies->next;
 	}
 }
@@ -70,6 +87,7 @@ void	draw_map(t_game *game)
 		y++;
 	}
 	draw_player_on_map(game);
+	draw_objects_on_map(game);
 	draw_enemies_on_map(game);
 	put_image_to_image(&game->img, (t_vector){0, 0}, &game->map->img);
 	// mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->map->img.mlx_img, 0, 0);

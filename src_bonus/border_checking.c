@@ -7,7 +7,7 @@ int	get_map_width(const char **map)
 	max_width = 0;
 	while (*map)
 	{
-		ft_putendl_fd(*map, 1);
+//		ft_putendl_fd(*map, 1);
 		if (max_width < ft_strrchr_int(*map, '1'))
 			max_width = ft_strrchr_int(*map, '1'); // change wall to WALL_CHARS
 		++map;
@@ -106,7 +106,7 @@ void	find_objects(t_map *map)
 				ft_lstadd_back(&map->enemies, ft_lstnew(enemy));
 			}
 			line[x_coord - 1] = '0';
-			printf("%d, %d.", counter, x_coord);
+//			printf("%d, %d.", counter, x_coord);
 		}
 	}
 }

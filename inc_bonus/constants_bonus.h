@@ -29,6 +29,8 @@
 # define PERSPECTIVE 4.72f
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
+# define ENEMIES_MAP_COLOR 0x89D1FE
+# define OBJECTS_MAP_COLOR 0xFFEF00
 # define MAX_ENEMIES 1
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10

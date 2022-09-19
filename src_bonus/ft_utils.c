@@ -83,7 +83,7 @@ void	print_map_debug(t_map *map)
 		printf("%s\n", *ptr);
 		++ptr;
 	}
-	// printf("\nIs enclosed? %d\n", is_map_enclosed(map));
+	 printf("\nIs enclosed? %d\n", is_map_enclosed(map));
 }
 
 char	*get_full_texture_path(char *line, int flag)

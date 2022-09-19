@@ -34,8 +34,8 @@ int	key_hook_press(int key, t_game *game)
 			open_door(game);
 		game->key.k[(short)(key + CHAR_OFFSET)] = true;
 	}
-	ft_putnbr_fd(key, 1);
-	ft_putendl_fd("", 1);
+//	ft_putnbr_fd(key, 1);
+//	ft_putendl_fd("", 1);
 	return (0);
 }
 
