@@ -47,8 +47,8 @@ void	enemy_move(t_game *game)
 //		enemy->object.pos.y += enemy->delta.y;
 		enemy->object.distance = distancef(&game->player.pos, &enemy->object.pos);
 		check_borders(game, enemy);
-		if (fvector_distance(game->player.pos, enemy->object.pos) < 1)
-			enemy_attack(game, enemy);
+//		if (fvector_distance(game->player.pos, enemy->object.pos) < 1)
+//			enemy_attack(game, enemy);
 		lst = lst->next;
 	}
 }

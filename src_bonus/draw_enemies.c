@@ -29,18 +29,20 @@ void	draw_object_scaled(t_game *game, t_object *object)
 {
 	const t_vector	draw_start = (t_vector) {ft_max(0, object->start.x),
 											   ft_max(0, object->start.y)};
+	const t_vector	draw_end = (t_vector) {ft_min(game->img.size.x, object->end.x),
+											   ft_min(game->img.size.x, object->end.y)};
 	t_fvector		src;
 	int				texture_pix;
 	t_vector		cur;
 
 	cur = (t_vector) {draw_start.x,draw_start.y};
 	src.x = fmaxf(0.f, -object->start.x * object->render_step.x);
-	while (cur.x < object->end.x)
+	while (cur.x < draw_end.x)
 	{
 		cur.y = draw_start.y;
 		src.y = fmaxf(0.f, -object->start.y * object->render_step.y);
 		if (game->column[cur.x].distance >= object->distance)
-			while (cur.y < object->end.y)
+			while (cur.y < draw_end.y)
 			{
 				texture_pix = object->sprite->addr[(unsigned)
 						((int) src.y * object->sprite->size.x + src.x)];
@@ -58,6 +60,7 @@ void	draw_game_objects(t_game *game)
 {
 	t_list		*elem;
 	t_object	*obj;
+
 
 	ft_lstsort(&game->objects, object_comparator);
 	elem = game->objects;
