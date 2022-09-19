@@ -7,11 +7,11 @@ int	object_comparator(t_object *obj1, t_object *obj2)
 
 void	calculate_object_params(t_game *game, t_object *object)
 {
-	t_fvector	delta;
+	const t_fvector	delta = (t_fvector) {object->pos.x - game->player.pos.x,
+									  object->pos.y - game->player.pos.y};
+	float angle_to_player;
 
-
-	delta = (t_fvector) {object->pos.x - game->player.pos.x, object->pos.y - game->player.pos.y};
-	float angle_to_player = atan2f(delta.y, delta.x) - game->player.angle;
+	angle_to_player = atan2f(delta.y, delta.x) - game->player.angle;
 	if (angle_to_player < -PI)
 		angle_to_player += 2 * PI;
 	object->size.y = (int) (ABS_WALL_SIZE / (cos(angle_to_player) * object->distance));
@@ -27,30 +27,29 @@ void	calculate_object_params(t_game *game, t_object *object)
 
 void	draw_object_scaled(t_game *game, t_object *object)
 {
-	float		src_x;
-	float		src_y;
-	int			texture_pix;
-	t_vector	cur;
-	t_vector	draw_start;
-
-	draw_start.x = ft_max(0, object->start.x);
-	draw_start.y = ft_max(0, object->start.y);
+	const t_vector	draw_start = (t_vector) {ft_max(0, object->start.x),
+											   ft_max(0, object->start.y)};
+	t_fvector		src;
+	int				texture_pix;
+	t_vector		cur;
 
 	cur = (t_vector) {draw_start.x,draw_start.y};
-	src_x = fmaxf(0.f, -object->start.x * object->render_step.x);
+	src.x = fmaxf(0.f, -object->start.x * object->render_step.x);
 	while (cur.x < object->end.x)
 	{
 		cur.y = draw_start.y;
-		src_y = fmaxf(0.f, -object->start.y * object->render_step.y);
-		while (cur.y < object->end.y)
-		{
-			texture_pix = object->sprite->addr[(unsigned ) ((int)src_y * object->sprite->size.x + src_x)];
-			if (texture_pix >> 24 == 0x00)
-				put_pixel(&game->img, cur, texture_pix);
-			src_y += object->render_step.y;
-			cur.y++;
-		}
-		src_x += object->render_step.x;
+		src.y = fmaxf(0.f, -object->start.y * object->render_step.y);
+		if (game->column[cur.x].distance >= object->distance)
+			while (cur.y < object->end.y)
+			{
+				texture_pix = object->sprite->addr[(unsigned)
+						((int) src.y * object->sprite->size.x + src.x)];
+				if (texture_pix >> 24 == 0x00)
+					put_pixel(&game->img, cur, texture_pix);
+				src.y += object->render_step.y;
+				cur.y++;
+			}
+		src.x += object->render_step.x;
 		cur.x++;
 	}
 }

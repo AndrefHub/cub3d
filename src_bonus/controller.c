@@ -27,6 +27,21 @@ void	open_door(t_game *game)
 		*to_change = 'd';
 }
 
+void	change_objects_textures(t_game *game)
+{
+	t_list		*obj_list;
+	t_object	*object;
+
+	obj_list = game->objects;
+	while (obj_list)
+	{
+		object = obj_list->content;
+		game->map->enemy->img = game->map->enemy->img->next;
+		object->sprite = game->map->enemy->img->content;
+		obj_list = obj_list->next;
+	}
+}
+
 void	change_textures(t_game *game)
 {
 	static int clocks_per_frame = 1000 / FRAMERATE;
@@ -45,8 +60,9 @@ void	change_textures(t_game *game)
 			counter = -1;
 			while (++counter < frames_to_move)
 				game->map->walls[index].img = game->map->walls[index].img->next;
-			game->textures[index] = *(t_img *)game->map->walls[index].img->content;	
+			game->textures[index] = *(t_img *)game->map->walls[index].img->content;
 		}
+		change_objects_textures(game);
 	}
 	++s;
 }
