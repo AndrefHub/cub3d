@@ -41,33 +41,72 @@ int	set_player(t_map *map, t_list *lst, char *line, char *orient)
 	return (0);
 }
 
-void	find_enemy(t_map *map)
+// void	find_enemy(t_map *map)
+// {
+// 	int		counter;
+// 	int		x_coord;
+// 	char	*line;
+// 	t_enemy	*enemy;
+
+// 	counter = -1;
+// 	enemy = NULL;
+// 	while (map->map[++counter])
+// 	{
+// 		x_coord = -1;
+// 		line = map->map[counter];
+// 		while (ft_strchr(line, 'e'))
+// 		{
+// 			enemy = malloc(sizeof(*enemy));
+// 			x_coord = ft_strchr(line, 'e') - map->map[counter];
+// 			enemy->object.pos = (t_fvector) {(float )x_coord + 0.5f,
+// 				(float )counter + 0.5f};
+// 			// enemy->sprite = NULL;
+// 			ft_lstadd_back(&map->enemies, ft_lstnew(enemy));
+// 			enemy->object.distance = sqrtf(powf((map->player_coords.x + 0.5f)
+// 					- (enemy->object.pos.x + 0.5f), 2)
+// 					+ powf((map->player_coords.y + 0.5f)
+// 					- (enemy->object.pos.y + 0.5f), 2));
+// 			ft_lstadd_back(&map->objects, ft_lstnew(&enemy->object));
+// 			line += (ft_strchr(line, 'e') - line) + 1;
+// 		}
+// 	}
+// }
+
+void	find_objects(t_map *map)
 {
-	int		counter;
-	int		x_coord;
-	char	*line;
-	t_enemy	*enemy;
+	int			counter;
+	int			x_coord;
+	char		*line;
+	t_object	*object;
+	t_enemy		*enemy;
 
 	counter = -1;
-	enemy = NULL;
+	object = NULL; // don't think it's necessary
 	while (map->map[++counter])
 	{
 		x_coord = -1;
 		line = map->map[counter];
-		while (ft_strchr(line, 'e'))
+		while (ft_strrchr_int_arr(line, OBJECT_CHARS) != -1)
 		{
-			enemy = malloc(sizeof(*enemy));
-			x_coord = ft_strchr(line, 'e') - map->map[counter];
-			enemy->object.pos = (t_fvector) {(float )x_coord + 0.5f,
+			object = malloc(sizeof(*object));
+			ft_bzero(object, sizeof(*object));
+			x_coord = ft_strrchr_int_arr(line, OBJECT_CHARS);
+			object->pos = (t_fvector) {(float )x_coord + 0.5f,
 				(float )counter + 0.5f};
-			// enemy->sprite = NULL;
-			ft_lstadd_back(&map->enemies, ft_lstnew(enemy));
-			enemy->object.distance = sqrtf(powf((map->player_coords.x + 0.5f)
-					- (enemy->object.pos.x + 0.5f), 2)
+			object->distance = sqrtf(powf((map->player_coords.x + 0.5f)
+					- (object->pos.x + 0.5f), 2)
 					+ powf((map->player_coords.y + 0.5f)
-					- (enemy->object.pos.y + 0.5f), 2));
-			ft_lstadd_back(&map->objects, ft_lstnew(&enemy->object));
-			line += (ft_strchr(line, 'e') - line) + 1;
+					- (object->pos.y + 0.5f), 2));
+			ft_lstadd_back(&map->objects, ft_lstnew(object));
+			if (line[x_coord] == 'e')
+			{
+				enemy = malloc(sizeof(*enemy));
+				ft_bzero(enemy, sizeof(*enemy));
+				enemy->object = object;
+				ft_lstadd_back(&map->enemies, ft_lstnew(enemy));
+			}
+			line[x_coord - 1] = '0';
+			printf("%d, %d.", counter, x_coord);
 		}
 	}
 }

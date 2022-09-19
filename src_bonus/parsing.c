@@ -57,7 +57,7 @@ void	parse_map(t_map *map, int fd)
 	}
 	free(line);
 	map->map = lst_to_array(tmp);
-	find_enemy(map);
+	find_objects(map);
 	ft_lstclear(&tmp, empty_func);
 	map->map_size.x = get_map_width((const char **)map->map);
 	map->map_size.y = ft_arraylen((void **) map->map);

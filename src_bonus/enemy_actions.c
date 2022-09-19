@@ -37,17 +37,17 @@ void	enemy_move(t_game *game)
 	while (lst)
 	{
 		enemy = ((t_enemy *)lst->content);
-		p.x = game->player.pos.x - enemy->object.pos.x;
-		p.y = game->player.pos.y - enemy->object.pos.y;
+		p.x = game->player.pos.x - enemy->object->pos.x;
+		p.y = game->player.pos.y - enemy->object->pos.y;
 		angle = calculate_angle(e, p);
 		enemy->delta.x = cosf(angle) * EN_SPEED;
 		enemy->delta.y = sinf(angle) * EN_SPEED;
 		
-		enemy->object.pos.x += enemy->delta.x;
-		enemy->object.pos.y += enemy->delta.y;
-		enemy->object.distance = distancef(&game->player.pos, &enemy->object.pos);
-		check_borders(game, enemy);
-		if (fvector_distance(game->player.pos, enemy->object.pos) < 1)
+		enemy->object->pos.x += enemy->delta.x;
+		enemy->object->pos.y += enemy->delta.y;
+		enemy->object->distance = distancef(&game->player.pos, &enemy->object->pos);
+		check_borders(game, enemy->object);
+		if (fvector_distance(game->player.pos, enemy->object->pos) < 1)
 			enemy_attack(game, enemy);
 		lst = lst->next;
 	}

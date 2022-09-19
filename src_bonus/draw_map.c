@@ -8,9 +8,9 @@ void	draw_enemies_on_map(t_game *game)
 	enemies = game->map->enemies;
 	while (enemies)
 	{
-		coords = (t_vector) {((t_enemy *)enemies->content)->object.pos.x
+		coords = (t_vector) {((t_enemy *)enemies->content)->object->pos.x
 			* game->map->map_tile_size - game->map->map_tile_size / 4,
-			((t_enemy *)enemies->content)->object.pos.y * game->map->map_tile_size
+			((t_enemy *)enemies->content)->object->pos.y * game->map->map_tile_size
 			- game->map->map_tile_size / 4};
 		draw_square_fill(&game->map->img, coords, game->map->map_tile_size / 2,
 						0x89D1FE);
@@ -77,18 +77,21 @@ void	draw_map(t_game *game)
 
 void	draw_fps(t_game *game)
 {
-	char	*output;
 	char	*fps;
 
-	output = malloc(8);
-	ft_bzero(output, 8);
+	// output = malloc(8);
+	// ft_bzero(output, 8);
 	fps = ft_itoa(game->fps);
 	// put_text_to_screen_layout(game, &(t_text){
 	// 	fps, (t_vector){0, 0}, VTop | HLeft
 	// 	}, 15
 	// );
 	put_text_to_screen_layout(game, &(t_text){
-		fps, (t_vector){0, 0}, VTop | HLeft
+		"fps:", (t_vector){0, 0}, VTop | HLeft
+		}, 10
+	);
+	put_text_to_screen_layout(game, &(t_text){
+		fps, (t_vector){ft_strlen("fps:") * 24, 0}, VTop | HLeft
 		}, 10
 	);
 	free(fps);

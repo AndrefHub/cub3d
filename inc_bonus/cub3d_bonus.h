@@ -117,10 +117,9 @@ typedef struct s_game_object
 
 typedef struct	s_enemy
 {
-	t_object	object;
+	t_object	*object;
 	t_fvector	delta;
 	t_ull		last_attack_time;
-	t_img		sprite;
 }				t_enemy;
 
 typedef struct game
@@ -246,6 +245,7 @@ char	*ft_strcat_delim(char *first, char delim, char *second);
 int		get_map_width(const char **map); //TODO: Move to another file
 int		set_player(t_map *map, t_list *lst, char *line, char *orient);
 void	find_enemy(t_map *map);
+void	find_objects(t_map *map);
 int		find_player(t_map *map, char *line, t_list *lst);
 int		is_wall(char c);
 int		check_enclosure(t_map *map, t_vector vec);
@@ -306,7 +306,7 @@ void	player_controll(t_game *game);
 void	update_last_collision(t_game *game);
 void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collision);
 void	check_restrictions(t_game *game);
-void	check_borders(t_game *game, t_enemy *player);
+void	check_borders(t_game *game, t_object *player);
 
 // Drawing ceil and floor textured: draw_ceil_floor.c //
 void	draw_ceil_textured(t_game *game);
