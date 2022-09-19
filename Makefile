@@ -34,7 +34,6 @@ SRC_BONUSFILE	= 	border_checking.c \
 					death_events.c \
 					demo_utils.c \
 					downscale_image.c \
-					draw_floor.c \
 					draw_walls.c \
 					draw_map.c \
 					draw_enemies.c \

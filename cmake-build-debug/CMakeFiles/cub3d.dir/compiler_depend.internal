@@ -119,14 +119,6 @@ CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o
  /Users/lsherry/42Course/cub3d/cute_sound/cute_sound.h
  /Users/lsherry/42Course/cub3d/mlx/mlx.h
 
-CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o
- /Users/lsherry/42Course/cub3d/src_bonus/draw_floor.c
- /Users/lsherry/42Course/cub3d/inc_bonus/cub3d_bonus.h
- /Users/lsherry/42Course/cub3d/libft/libft.h
- /Users/lsherry/42Course/cub3d/inc_bonus/constants_bonus.h
- /Users/lsherry/42Course/cub3d/cute_sound/cute_sound.h
- /Users/lsherry/42Course/cub3d/mlx/mlx.h
-
 CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o
  /Users/lsherry/42Course/cub3d/src_bonus/draw_map.c
  /Users/lsherry/42Course/cub3d/inc_bonus/cub3d_bonus.h

@@ -14,7 +14,6 @@ add_executable(cub3d
         src_bonus/check_file.c
         src_bonus/controller.c
         src_bonus/demo_utils.c
-        src_bonus/draw_floor.c
         src_bonus/draw_map.c
         src_bonus/drawing.c
         src_bonus/free_game.c

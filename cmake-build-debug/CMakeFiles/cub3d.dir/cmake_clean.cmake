@@ -17,8 +17,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o.d"
   "CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o"
   "CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o.d"
-  "CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o"
-  "CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o.d"
   "CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o"
   "CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o.d"
   "CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o"

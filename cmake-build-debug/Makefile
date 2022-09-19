@@ -345,30 +345,6 @@ src_bonus/draw_enemies.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.s
 .PHONY : src_bonus/draw_enemies.c.s
 
-src_bonus/draw_floor.o: src_bonus/draw_floor.c.o
-.PHONY : src_bonus/draw_floor.o
-
-# target to build an object file
-src_bonus/draw_floor.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o
-.PHONY : src_bonus/draw_floor.c.o
-
-src_bonus/draw_floor.i: src_bonus/draw_floor.c.i
-.PHONY : src_bonus/draw_floor.i
-
-# target to preprocess a source file
-src_bonus/draw_floor.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.i
-.PHONY : src_bonus/draw_floor.c.i
-
-src_bonus/draw_floor.s: src_bonus/draw_floor.c.s
-.PHONY : src_bonus/draw_floor.s
-
-# target to generate assembly for a file
-src_bonus/draw_floor.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cub3d.dir/build.make CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.s
-.PHONY : src_bonus/draw_floor.c.s
-
 src_bonus/draw_map.o: src_bonus/draw_map.c.o
 .PHONY : src_bonus/draw_map.o
 
@@ -1029,9 +1005,6 @@ help:
 	@echo "... src_bonus/draw_enemies.o"
 	@echo "... src_bonus/draw_enemies.i"
 	@echo "... src_bonus/draw_enemies.s"
-	@echo "... src_bonus/draw_floor.o"
-	@echo "... src_bonus/draw_floor.i"
-	@echo "... src_bonus/draw_floor.s"
 	@echo "... src_bonus/draw_map.o"
 	@echo "... src_bonus/draw_map.i"
 	@echo "... src_bonus/draw_map.s"

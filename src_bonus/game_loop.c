@@ -32,6 +32,7 @@ int	game_loop(t_game *game)
 		fill_ceiling_color(&game->img, game->map->C, game->z_offset);
 		draw_ceil_textured(game);
 		fill_floor_color(&game->img, game->map->F, game->z_offset);
+		draw_floor_textured(game);
 
 		cast_rays(game);
 		draw_walls(game);

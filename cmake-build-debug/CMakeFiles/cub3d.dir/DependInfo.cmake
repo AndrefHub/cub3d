@@ -17,7 +17,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/lsherry/42Course/cub3d/src_bonus/downscale_image.c" "CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o" "gcc" "CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o.d"
   "/Users/lsherry/42Course/cub3d/src_bonus/draw_ceil_floor.c" "CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o" "gcc" "CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o.d"
   "/Users/lsherry/42Course/cub3d/src_bonus/draw_enemies.c" "CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o" "gcc" "CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o.d"
-  "/Users/lsherry/42Course/cub3d/src_bonus/draw_floor.c" "CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o" "gcc" "CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o.d"
   "/Users/lsherry/42Course/cub3d/src_bonus/draw_map.c" "CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o" "gcc" "CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o.d"
   "/Users/lsherry/42Course/cub3d/src_bonus/draw_walls.c" "CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o" "gcc" "CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o.d"
   "/Users/lsherry/42Course/cub3d/src_bonus/drawing.c" "CMakeFiles/cub3d.dir/src_bonus/drawing.c.o" "gcc" "CMakeFiles/cub3d.dir/src_bonus/drawing.c.o.d"

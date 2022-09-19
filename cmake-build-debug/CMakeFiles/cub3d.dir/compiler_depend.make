@@ -110,13 +110,6 @@ CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o: ../src_bonus/draw_enemies.c \
   ../cute_sound/cute_sound.h \
   ../mlx/mlx.h
 
-CMakeFiles/cub3d.dir/src_bonus/draw_floor.c.o: ../src_bonus/draw_floor.c \
-  ../inc_bonus/cub3d_bonus.h \
-  ../libft/libft.h \
-  ../inc_bonus/constants_bonus.h \
-  ../cute_sound/cute_sound.h \
-  ../mlx/mlx.h
-
 CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o: ../src_bonus/draw_map.c \
   ../inc_bonus/cub3d_bonus.h \
   ../libft/libft.h \
@@ -311,8 +304,6 @@ CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o: ../src_bonus/vector_utils.c \
 ../src_bonus/parsing_font.c:
 
 ../src_bonus/draw_walls.c:
-
-../src_bonus/draw_floor.c:
 
 ../src_bonus/game_textures.c:
 

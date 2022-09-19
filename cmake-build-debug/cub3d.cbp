@@ -112,9 +112,6 @@
 		<Unit filename="/Users/lsherry/42Course/cub3d/src_bonus/draw_enemies.c">
 			<Option target="cub3d"/>
 		</Unit>
-		<Unit filename="/Users/lsherry/42Course/cub3d/src_bonus/draw_floor.c">
-			<Option target="cub3d"/>
-		</Unit>
 		<Unit filename="/Users/lsherry/42Course/cub3d/src_bonus/draw_map.c">
 			<Option target="cub3d"/>
 		</Unit>
