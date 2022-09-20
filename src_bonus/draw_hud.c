@@ -21,6 +21,10 @@ void	draw_hud(t_game *game)
 	y = -1;
 	draw_hud_entry(game, &game->hud.fps, game->hud.fps.title_size, ++y);
 	draw_hud_entry(game, &game->hud.score, game->hud.score.title_size, ++y);
+	put_text_to_screen_layout(game, &(t_text){
+		game->username, (t_vector){0, 20 * y}, VTop | HLeft
+		}, 20
+	);
 	// mlx_string_put(game->mlx.id, game->mlx.window, 40, 15, 0x00FFFFFF,
 	// 			   "tr:");
 	// mlx_string_put(game->mlx.id, game->mlx.window, 60, 15, 0x00FFFFFF, 

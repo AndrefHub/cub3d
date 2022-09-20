@@ -251,13 +251,16 @@ char	*ft_strcat_delim(char *first, char delim, char *second);
 
 // Border checking and utils for it: border_checking.c //
 int		get_map_width(const char **map); //TODO: Move to another file
-int		set_player(t_map *map, t_list *lst, char *line, char *orient);
-void	find_enemy(t_map *map);
-void	find_objects(t_map *map);
-int		find_player(t_map *map, char *line, t_list *lst);
 int		is_wall(char c);
+int		is_enemy(char c);
 int		check_enclosure(t_map *map, t_vector vec);
 int		is_map_enclosed(t_map *args);
+
+// Find objects (player, enemies, coins): find_objects.c //
+int		set_player(t_map *map, t_list *lst, char *line, char *orient);
+void	find_enemy(t_list **lst, t_object *object, char *line, int x_coord);
+void	find_objects(t_map *map);
+int		find_player(t_map *map, char *line, t_list *lst);
 
 // Game initialization: start_game.c //
 void	initialize_mlx_parameters(t_game *game);

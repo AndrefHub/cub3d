@@ -42,6 +42,7 @@
 // # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
 # define OBJECT_CHARS ".oe"
+# define ENEMY_CHARS "e"
 # define CARDINAL_POINTS "NSWE"
 # define BONUS "BONUS"
 # define USE_PATH_PREFIX "USE_PATH_PREFIX"

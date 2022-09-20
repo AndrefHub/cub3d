@@ -98,8 +98,8 @@ void	parse_assets(t_map *map, int fd)
 	parse_sounds(map, fd, &line);
 	parse_sounds(map, fd, &line);
 	if (line)
-		map->F = convert_to_rgb(crop_prefix(line, "F"));
+		map->f = convert_to_rgb(crop_prefix(line, "F"));
 	else
-		map->F = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "F"));
-	map->C = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "C"));
+		map->f = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "F"));
+	map->c = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "C"));
 }
