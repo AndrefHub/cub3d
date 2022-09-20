@@ -1000,15 +1000,14 @@ W9 ./assets/textures/wah-goodman/wah109.xpm
 
 WD ./assets/textures/monke/monke001.xpm
 
-E1 ./assets/textures/wizard/wizard0.xpm
-./assets/textures/wizard/wizard1.xpm
-./assets/textures/wizard/wizard2.xpm
-./assets/textures/wizard/wizard3.xpm
-./assets/textures/wizard/wizard4.xpm
-./assets/textures/wizard/wizard5.xpm
-./assets/textures/wizard/wizard6.xpm
-./assets/textures/wizard/wizard7.xpm
-./assets/textures/wizard/wizard8.xpm
+E1 ./assets/textures/ghost/ghost1.xpm
+./assets/textures/ghost/ghost2.xpm
+./assets/textures/ghost/ghost3.xpm
+./assets/textures/ghost/ghost4.xpm
+./assets/textures/ghost/ghost5.xpm
+./assets/textures/ghost/ghost6.xpm
+./assets/textures/ghost/ghost7.xpm
+./assets/textures/ghost/ghost8.xpm
 
 
 F  ./assets/font/font240/space.xpm
