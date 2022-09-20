@@ -74,25 +74,3 @@ void	draw_map(t_game *game)
 	put_image_to_image(&game->img, (t_vector){0, 0}, &game->map->img);
 	// mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->map->img.mlx_img, 0, 0);
 }
-
-void	draw_fps(t_game *game)
-{
-	// output = malloc(8);
-	// ft_bzero(output, 8);
-	// put_text_to_screen_layout(game, &(t_text){
-	// 	fps, (t_vector){0, 0}, VTop | HLeft
-	// 	}, 15
-	// );
-	ft_bzero(game->time.fps_title + 4, 5);
-	ft_put_itoa(game->time.fps_title + 4, game->time.fps);
-	put_text_to_screen_layout(game, &(t_text){
-		game->time.fps_title, (t_vector){0, 0}, VTop | HLeft
-		}, 20
-	);
-	// mlx_string_put(game->mlx.id, game->mlx.window, 0, 15, 0x00FFFFFF, 
-	// 	(char []){'0' + fps / 100, '0' + fps / 10 % 10, '0' + fps % 10, '\0'});
-	// ++s;
-//	f += fps;
-
-//	printf("%f %d\n", ((double)f) / s, fps);
-}

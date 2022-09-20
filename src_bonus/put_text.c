@@ -38,7 +38,7 @@ int	put_char_to_screen(t_game *game, char c, t_vector pos, int font_size)
 {
 	if (game->map->font[ft_toupper(c) - FONT_OFFSET].img)
 	{
-		put_downscaled_image(&game->hud, pos, ((t_img *)game->map->font
+		put_downscaled_image(&game->hud_img, pos, ((t_img *)game->map->font
 			[ft_toupper(c) - FONT_OFFSET].img->content), FONT_SIZE / font_size);
 		return (1);
 		// put_image_to_image(&game->img, pos, ((t_img *)game->map->font

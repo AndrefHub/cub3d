@@ -17,7 +17,7 @@ int	ft_strrchr_int(const char *line, int chr)
 	return (-1);
 }
 
-int	ft_strrchr_int_arr(char *line, char* chr)
+int	ft_strrchr_int_arr(const char *line, char* chr)
 {
 	int		max;
 	int		curr;

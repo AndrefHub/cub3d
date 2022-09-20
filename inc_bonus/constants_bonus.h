@@ -1,10 +1,10 @@
-#ifndef CONSTANTS_H
-# define CONSTANTS_H
+#ifndef CONSTANTS_BONUS_H
+# define CONSTANTS_BONUS_H
 
 # define BAD_FILE -2
 # define FRAMERATE 30
-# define CLOCKS_PER_FRAME 1000 / FRAMERATE
-# define BAD_COLOUR (1 << 24)
+// # define CLOCKS_PER_FRAME (1000 / FRAMERATE)
+# define BAD_COLOUR 0x1000000
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"
 //# define WIN_WIDTH 2560
@@ -48,7 +48,7 @@
 
 # ifndef ASSETS_PATH
 //#  define ASSETS_PATH "."
-# define ASSETS_PATH "/Users/lsherry/goinfre"
+#  define ASSETS_PATH "/Users/lsherry/goinfre"
 # endif
 
 # define WALL_PREFIX "W"
@@ -57,7 +57,8 @@
 # define FONT_PREFIX "F"
 
 # ifdef __APPLE__
-# define CHAR_OFFSET 0
+#  define CHAR_OFFSET 0
+
 enum e_keys
 {
 	W_KEY = 13,
@@ -71,13 +72,14 @@ enum e_keys
 	RIGHT_KEY = 124,
 	M_KEY = 46,
 	E_KEY = 14,
-	LEFT_CTRL_KEY = 256, //59
+	LEFT_CTRL_KEY = 256,
 	BACKSPACE = 51,
 	ENTER = 36,
 };
 # else
-# define CHAR_OFFSET 256
+#  define CHAR_OFFSET 256
 #  ifdef __linux__
+
 enum e_keys
 {
 	W_KEY = 119,
@@ -95,9 +97,11 @@ enum e_keys
 	BACKSPACE = 65288,
 	ENTER = 65293,
 };
+
 #  endif
 # endif
-enum layout
+
+enum e_layout
 {
 	VTop = 001,
 	VCenter = 002,

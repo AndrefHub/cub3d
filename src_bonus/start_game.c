@@ -38,7 +38,7 @@ void	initialize_game_parameters(t_game *game)
 	game->z_offset = 0;
 	game->grid = game->map->map;
 	game->img = initialize_img(&game->img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
-	game->hud = initialize_img(&game->hud, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
+	game->hud_img = initialize_img(&game->hud_img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,
 		WIN_WIDTH / 2, WIN_HEIGHT / 2);
 	game->map->map_tile_size = ft_min(game->map->img.size.x /
@@ -47,15 +47,18 @@ void	initialize_game_parameters(t_game *game)
 	ft_memset(game->key.k, 0, 512);
 	if (game->column == NULL)
 		error_exit(game, 0, NULL);
+	init_hud(&game->hud);
 }
 
-void	initialize_game_objects(t_game *game) {
-	game->objects = game->map->objects;
-	t_list *elem;
-	t_object *obj;
+void	initialize_game_objects(t_game *game)
+{
+	t_list		*elem;
+	t_object	*obj;
 
+	game->objects = game->map->objects;
 	elem = game->objects;
-	while (elem) {
+	while (elem)
+	{
 		obj = elem->content;
 		obj->sprite = game->map->enemy[0].img->content;
 		elem = elem->next;
@@ -68,7 +71,6 @@ void	set_input_mode_chars(t_game *game)
 	game->username = malloc(sizeof(*(game->username)) * 9);
 	ft_bzero(game->username, 9);
 	game->input_mode = 0;
-	game->score = 0;
 }
 
 void	start_game(t_game *game)

@@ -8,8 +8,8 @@ int	get_map_width(const char **map)
 	while (*map)
 	{
 		ft_putendl_fd(*map, 1);
-		if (max_width < ft_strrchr_int(*map, '1'))
-			max_width = ft_strrchr_int(*map, '1'); // change wall to WALL_CHARS
+		if (max_width < ft_strrchr_int_arr(*map, WALL_CHARS))
+			max_width = ft_strrchr_int_arr(*map, WALL_CHARS);
 		++map;
 	}
 	return (max_width);
@@ -93,10 +93,12 @@ void	find_objects(t_map *map)
 			x_coord = ft_strrchr_int_arr(line, OBJECT_CHARS);
 			object->pos = (t_fvector) {(float )x_coord + 0.5f,
 				(float )counter + 0.5f};
-			object->distance = sqrtf(powf((map->player_coords.x + 0.5f)
-					- (object->pos.x + 0.5f), 2)
-					+ powf((map->player_coords.y + 0.5f)
-					- (object->pos.y + 0.5f), 2));
+			object->distance = fvector_distance((t_fvector)
+				{map->player_coords.x, map->player_coords.y}, object->pos);
+			// sqrtf(powf((map->player_coords.x + 0.5f)
+			// 		- (object->pos.x + 0.5f), 2)
+			// 		+ powf((map->player_coords.y + 0.5f)
+			// 		- (object->pos.y + 0.5f), 2));
 			ft_lstadd_back(&map->objects, ft_lstnew(object));
 			if (line[x_coord - 1] == 'e')
 			{
@@ -106,7 +108,6 @@ void	find_objects(t_map *map)
 				ft_lstadd_back(&map->enemies, ft_lstnew(enemy));
 			}
 			line[x_coord - 1] = '0';
-			printf("%d, %d.", counter, x_coord);
 		}
 	}
 }

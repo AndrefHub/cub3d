@@ -35,6 +35,7 @@ SRC_BONUSFILE	= 	border_checking.c \
 					demo_utils.c \
 					downscale_image.c \
 					draw_floor.c \
+					draw_hud.c \
 					draw_walls.c \
 					draw_map.c \
 					draw_enemies.c \
@@ -47,6 +48,7 @@ SRC_BONUSFILE	= 	border_checking.c \
 					game_textures.c \
 					hooks.c \
 					draw_ceil_floor.c \
+					init_utils.c \
 					input_manip.c \
 					input_mode.c \
 					main.c \

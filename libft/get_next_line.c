@@ -64,7 +64,6 @@ char	*get_next_line(int fd)
 		}
 		str = ft_strjoin_gnl(str, buffer);
 	}
-	// printf("%s\n", str);
 	if (rd > 0 || ft_strlen(str) != 0 || rem != NULL)
 		return (str);
 	free(str);
