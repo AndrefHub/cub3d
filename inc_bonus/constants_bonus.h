@@ -13,6 +13,7 @@
 // # define WIN_HEIGHT 720
 # define WIN_WIDTH 1920
 # define WIN_HEIGHT 1000
+# define FOV 0.66
 # define TEXTURE_SIZE 192
 # define MAX_RENDER_DISTANCE 5000
 # define PI (float) M_PI
