@@ -37,3 +37,43 @@ void	draw_walls(t_game *game)
 		x++;
 	}
 }
+
+/*
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+	vec2 realUV = (fragCoord.xy - 0.5*iResolution.xy)/iResolution.y;
+	vec2 uv = realUV;
+
+	// Ray angle
+	float angle = uv.x * FOV + iTime*0.1;
+
+	// Ceiling
+	if(uv.y > 0.0)
+	{
+		//uv.y = pow(uv.y*2.0, (sin(iTime) + 1.0) * 0.5 + 1.0);
+		uv.y *= uv.y * (sin(iTime)+1.0);
+
+		//angle += iTime * 0.3;
+	}
+
+	// Pixel distance in the map
+	float dist = 1.0 / ((abs(uv.y) + 0.001) * cos(uv.x * FOV * 1.0));
+
+	// Get floor/ceiling coordinates
+	vec2 floorUV = vec2(cos(angle), sin(angle)) * dist;
+	//vec2 id = floor(floorUV);
+	//floorUV = fract(floorUV); // This seems to cause some weird aliasing issues?
+
+	// Get texture
+	vec3 col = texture(iChannel0, floorUV).rgb;
+
+	// Fog
+	col *= pow(abs(uv.y*2.0), 0.7);
+
+	// If uv.y and realUV.y are "disagreeing",
+	// then this row of pixels is just staring into the infinite
+	col *= uv.y * realUV.y < 0.0 ? 0.0 : 1.0;
+
+	// Output to screen
+	fragColor = vec4(col, 1.0);
+}*/
