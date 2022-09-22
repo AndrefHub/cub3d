@@ -6,7 +6,7 @@ void	death_message(t_game *game)
 	const int	font_size = FONT_SIZE / divisor;
 
 	put_text_to_screen_layout(game, &(t_text){"cub3d (c) 2022 kdancy, lsherry",
-		(t_vector){0, game->img.size.y}, VBottom | HLeft}, 16);
+		(t_vector){0, game->img.size.y}, VBottom | HLeft}, 120);
 	put_text_to_screen_layout(game, &(t_text){"YOU DIED!", (t_vector)
 	{WIN_WIDTH / 2, WIN_HEIGHT / 2 - font_size / 2}, VCenter | HCenter},
 		font_size);

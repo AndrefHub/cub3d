@@ -73,7 +73,7 @@ typedef struct s_map
 	char			**map;
 	t_vector		map_size;
 	t_texture		walls[MAX_WALL_CHARS];
-	t_texture		enemy[MAX_ENEMIES];
+	t_texture		object[MAX_OBJECTS];
 	t_texture		font[MAX_FONT_CHARS];
 	char			*sounds[MAX_SOUNDS];
 	unsigned int	list_size;
@@ -132,6 +132,13 @@ typedef struct s_hud_entry
 	short	title_size;
 	short	value_size;
 }				t_hud_entry;
+
+typedef struct s_parse_info
+{
+	char		*chars;
+	char		*prefix;
+	t_texture	*arr;
+} t_parse_info;
 
 typedef struct game
 {
@@ -404,10 +411,10 @@ void	init_hud(struct s_hud *hud);
 int	player_respawn(t_game *game);
 
 // is_checks.c //
-int	is_wall(char c);
-int	is_enemy(char c);
-int	is_edible(char c);
-int	is_object(char c);
+int		is_wall(char c);
+int		is_enemy(char c);
+int		is_edible(char c);
+int		is_object(char c);
 
 // player_eating.c //
 void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *));

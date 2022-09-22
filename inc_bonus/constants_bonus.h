@@ -29,7 +29,7 @@
 # define PERSPECTIVE 4.72f
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
-# define MAX_ENEMIES 1
+# define MAX_OBJECTS 3
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
 # define MAX_SOUNDS 2
@@ -44,7 +44,7 @@
 # define WALL_CHARS "123456789D"
 # define EDIBLE_CHARS ".o"
 # define ENEMY_CHARS "e"
-# define OBJECT_CHARS EDIBLE_CHARS ENEMY_CHARS
+# define OBJECT_CHARS "e.o"
 # define CARDINAL_POINTS "NSWE"
 # define BONUS "BONUS"
 # define USE_PATH_PREFIX "USE_PATH_PREFIX"
@@ -55,7 +55,7 @@
 # endif
 
 # define WALL_PREFIX "W"
-# define ENTITY_PREFIX "E"
+# define OBJECT_PREFIX "O"
 # define SOUND_PREFIX "S"
 # define FONT_PREFIX "F"
 

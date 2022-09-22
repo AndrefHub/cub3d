@@ -56,6 +56,8 @@ void	parse_map(t_map *map, int fd)
 		line = skip_empty_lines(fd);
 	}
 	free(line);
+	if (map->player_coords.x == BAD_COORD)
+		error_exit(NULL, 1, "Reading error: Player not found");
 	map->map = lst_to_array(tmp);
 	find_objects(map);
 	ft_lstclear(&tmp, empty_func);

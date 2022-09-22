@@ -51,6 +51,29 @@ void	initialize_game_parameters(t_game *game)
 	init_hud(&game->hud);
 }
 
+void	clear_font_outline(t_game *game)
+{
+	int		counter;
+	int		imagecounter;
+	t_img	*img;
+
+	counter = -1;
+	while (++counter < MAX_FONT_CHARS)
+	{
+		if (game->map->font[counter].img)
+		{
+			img = ((t_img *)game->map->font[counter].img->content);
+			imagecounter = -1;
+			while (++imagecounter < img->size.x * img->size.y)
+			{
+				((t_rgb *)img->addr + imagecounter)->r = 0xFF;
+				((t_rgb *)img->addr + imagecounter)->g = 0xFF;
+				((t_rgb *)img->addr + imagecounter)->b = 0xFF;
+			}
+		}
+	}
+}
+
 void	initialize_game_objects(t_game *game)
 {
 	t_list		*elem;
@@ -61,7 +84,7 @@ void	initialize_game_objects(t_game *game)
 	while (elem)
 	{
 		obj = elem->content;
-		obj->sprite = game->map->enemy[0].img->content;
+		obj->sprite = game->map->object[get_string_index(OBJECT_CHARS, obj->type)].img->content;
 		elem = elem->next;
 	}
 
@@ -94,13 +117,14 @@ int	game(t_map *map)
 	init_main_game_sound_theme(&game, map->sounds[0]);
 	set_game_events_sounds(&game.audio, map->sounds[1]);
 	initialize_game_parameters(&game);
-	initialize_sprites(&game, MAX_ENEMIES, (t_texture *)game.map->enemy, TEXTURE_SIZE);
+	initialize_sprites(&game, MAX_OBJECTS, (t_texture *)game.map->object, TEXTURE_SIZE);
     initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
 	initialize_wall_textures(&game);
 	initialize_game_objects(&game);
 	initialize_mlx_parameters(&game);
 	set_input_mode_chars(&game);
+	clear_font_outline(&game);
 	start_game(&game);
 	return (1);
 }

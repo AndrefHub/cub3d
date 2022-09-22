@@ -35,8 +35,8 @@ void	change_textures(t_game *game)
 	int			counter;
 	int			frames_to_move;
 
-	frames_to_move = (float)(get_time() - game->time.startup) / clocks_per_frame
-		- (float)(game->time.last - game->time.startup) / clocks_per_frame;
+	frames_to_move = (int)((float)(get_time() - game->time.startup) / clocks_per_frame)
+		- (int)((float)(game->time.last - game->time.startup) / clocks_per_frame);
 	if (frames_to_move)
 	{
 		index = -1;

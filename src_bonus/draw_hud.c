@@ -23,7 +23,10 @@ void	draw_hud(t_game *game)
 	draw_hud_entry(game, &game->hud.score, game->hud.score.title_size, ++y);
 	draw_hud_entry(game, &game->hud.lives, game->hud.lives.title_size, ++y);
 	draw_hud_entry(game, &game->hud.health, game->hud.health.title_size, ++y);
-	
+	put_text_to_screen_layout(game, &(t_text){
+		"a", (t_vector){0, 30 * ++y}, VTop | HLeft
+		}, 120
+	);
 	// mlx_string_put(game->mlx.id, game->mlx.window, 40, 15, 0x00FFFFFF,
 	// 			   "tr:");
 	// mlx_string_put(game->mlx.id, game->mlx.window, 60, 15, 0x00FFFFFF, 
