@@ -51,6 +51,28 @@ void	initialize_game_parameters(t_game *game)
 	init_hud(&game->hud);
 }
 
+void	clear_font_outline(t_game *game)
+{
+	int		counter;
+	int		imagecounter;
+	t_img	*img;
+
+	counter = -1;
+	while (++counter < MAX_FONT_CHARS)
+	{
+		if (game->map->font[counter].img)
+		{
+			img = ((t_img *)game->map->font[counter].img->content);
+			imagecounter = -1;
+			while (++imagecounter < img->size.x * img->size.y)
+			{
+				if ((unsigned int)img->addr[imagecounter] == 0xFF000000)
+					img->addr[imagecounter] = 0xFFFFFFFF;
+			}
+		}
+	}
+}
+
 void	initialize_game_objects(t_game *game)
 {
 	t_list		*elem;
@@ -101,6 +123,7 @@ int	game(t_map *map)
 	initialize_game_objects(&game);
 	initialize_mlx_parameters(&game);
 	set_input_mode_chars(&game);
+	clear_font_outline(&game);
 	start_game(&game);
 	return (1);
 }

@@ -404,10 +404,10 @@ void	init_hud(struct s_hud *hud);
 int	player_respawn(t_game *game);
 
 // is_checks.c //
-int	is_wall(char c);
-int	is_enemy(char c);
-int	is_edible(char c);
-int	is_object(char c);
+int		is_wall(char c);
+int		is_enemy(char c);
+int		is_edible(char c);
+int		is_object(char c);
 
 // player_eating.c //
 void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *));
