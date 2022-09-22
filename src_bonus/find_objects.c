@@ -1,5 +1,32 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
+int	ft_strchr_int(char *line, int chr)
+{
+	char	*wall;
+
+	wall = ft_strchr(line, chr);
+	if (line && wall)
+		return (wall - line);
+	return (-1);
+}
+
+int	ft_strchr_int_arr(char *line, char* chr)
+{
+	int		max;
+	int		curr;
+	size_t	counter;
+
+	counter = 0;
+	max = ft_strchr_int(line, chr[counter]);
+	while (++counter < ft_strlen(chr))
+	{
+		curr = ft_strchr_int(line, chr[counter]);
+		if (max < curr)
+			max = curr;
+	}
+	return (max);
+}
+
 int	set_player(t_map *map, t_list *lst, char *line, char *orient)
 {
 	int	x;
@@ -26,15 +53,16 @@ int	set_player(t_map *map, t_list *lst, char *line, char *orient)
 	return (0);
 }
 
-void	find_enemy(t_list **lst, t_object *object, char *line, int x_coord)
+void	find_enemy(t_list **lst, t_object *object)
 {
 	t_enemy	*enemy;
 
-	if (line[x_coord - 1] == 'e')
+	if (object->type == 'e')
 	{
 		enemy = malloc(sizeof(*enemy));
 		ft_bzero(enemy, sizeof(*enemy));
 		enemy->object = object;
+		enemy->starting_pos = enemy->object->pos;
 		ft_lstadd_back(lst, ft_lstnew(enemy));
 	}
 }
@@ -47,23 +75,24 @@ void	find_objects(t_map *map)
 	t_object	*object;
 
 	counter = -1;
-	object = NULL; // don't think it's necessary
 	while (map->map[++counter])
 	{
-		x_coord = -1;
+		x_coord = -1; // not necessary ?
 		line = map->map[counter];
-		while (ft_strrchr_int_arr(line, OBJECT_CHARS) != -1)
+		while (ft_strchr_int_arr(line, OBJECT_CHARS) != -1)
 		{
 			object = malloc(sizeof(*object));
 			ft_bzero(object, sizeof(*object));
-			x_coord = ft_strrchr_int_arr(line, OBJECT_CHARS);
+			x_coord = (line - map->map[counter]) + ft_strchr_int_arr(line, OBJECT_CHARS);
 			object->pos = (t_fvector) {(float )x_coord + 0.5f,
 				(float )counter + 0.5f};
 			object->distance = fvector_distance((t_fvector)
 				{map->player_coords.x, map->player_coords.y}, object->pos);
+			object->type = map->map[counter][x_coord];
 			ft_lstadd_back(&map->objects, ft_lstnew(object));
-			find_enemy(&map->enemies, object, line, x_coord);
-			line[x_coord - 1] = '0';
+			find_enemy(&map->enemies, object);
+			line = map->map[counter] + x_coord + 1;
+			printf("%d %d\n", counter, x_coord);
 		}
 	}
 }

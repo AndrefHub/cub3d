@@ -15,16 +15,6 @@ int	get_map_width(const char **map)
 	return (max_width);
 }
 
-int	is_wall(char c)
-{
-	return (ft_strchr(WALL_CHARS, c) != NULL);
-}
-
-int	is_enemy(char c)
-{
-	return (ft_strchr(ENEMY_CHARS, c) != NULL);
-}
-
 int	check_enclosure(t_map *map, t_vector vec)
 {
 	if (map->map[vec.y][vec.x] == ' ' || is_wall(map->map[vec.y][vec.x]))

@@ -18,4 +18,7 @@ void	init_hud(struct s_hud *hud)
 	init_hud_entry(&hud->fps, "fps:", 4);
 	init_hud_entry(&hud->score, "score:", 7);
 	init_hud_entry(&hud->lives, "lives:", 1);
+	hud->lives.value = 3;
+	init_hud_entry(&hud->health, "health:", 3);
+	hud->health.value = 1;
 }

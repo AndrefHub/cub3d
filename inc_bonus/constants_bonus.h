@@ -33,6 +33,7 @@
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
 # define MAX_SOUNDS 2
+# define MAX_HEALTH 1
 # define MAX_FONT_CHARS 224
 # define ENEMY_RELOAD 1000
 # define PL_INVINCIBILITY 2000
@@ -41,8 +42,9 @@
 
 // # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
-# define OBJECT_CHARS ".oe"
+# define EDIBLE_CHARS ".o"
 # define ENEMY_CHARS "e"
+# define OBJECT_CHARS EDIBLE_CHARS ENEMY_CHARS
 # define CARDINAL_POINTS "NSWE"
 # define BONUS "BONUS"
 # define USE_PATH_PREFIX "USE_PATH_PREFIX"
@@ -111,5 +113,10 @@ enum e_layout
 	HCenter = 020,
 	HRight = 040
 };
+
+// enum e_colors
+// {
+// 	// int
+// };
 
 #endif

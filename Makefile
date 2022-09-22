@@ -28,30 +28,33 @@ OBJFILE = $(SRCFILE:.c=.o)
 OBJS	= $(addprefix $(OBJDIR), $(OBJFILE))
 ###
 SRC_BONUSDIR	= src_bonus/
-SRC_BONUSFILE	= 	border_checking.c \
+SRC_BONUSFILE	=	border_checking.c \
 					check_file.c \
 					controller.c \
 					death_events.c \
 					demo_utils.c \
 					downscale_image.c \
+					draw_ceil_floor.c \
+					draw_enemies.c \
 					draw_floor.c \
 					draw_hud.c \
-					draw_walls.c \
 					draw_map.c \
-					draw_enemies.c \
+					draw_walls.c \
 					drawing.c \
 					enemy_actions.c \
 					find_objects.c \
 					free_game.c \
+					ft_lstsort.c \
 					ft_utils.c \
 					game_loop.c \
 					game_sound.c \
 					game_textures.c \
 					hooks.c \
-					draw_ceil_floor.c \
+					image_manip.c \
 					init_utils.c \
 					input_manip.c \
 					input_mode.c \
+					is_checks.c \
 					main.c \
 					mlx_adapter.c \
 					parsing.c \
@@ -59,13 +62,14 @@ SRC_BONUSFILE	= 	border_checking.c \
 					parsing_textures.c \
 					parsing_utils.c \
 					player_controller.c \
+					player_eating.c \
 					player_movement.c \
 					put_text.c \
 					ray_casting.c \
+					respawn.c \
 					start_game.c \
 					time_funcs.c \
-					vector_utils.c \
-					ft_lstsort.c
+					vector_utils.c
 SRCS_BONUS	= $(addprefix $(SRC_BONUSDIR), $(SRC_BONUSFILE))
 OBJ_BONUSDIR	= obj_bonus/
 OBJ_BONUSFILE = $(SRC_BONUSFILE:.c=.o)

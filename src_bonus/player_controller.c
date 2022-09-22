@@ -59,4 +59,5 @@ void	player_controll(t_game *game)
 		update_last_collision(game);
 	}
 	check_restrictions(game);
+	player_eat(game);
 }

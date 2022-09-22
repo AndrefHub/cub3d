@@ -8,7 +8,7 @@ void	enemy_attack(t_game *game, t_enemy *enemy)
 	{
 		game->player.last_attack_time = get_time();
 		enemy->last_attack_time = get_time();
-		game->player.health -= 1;
+		game->hud.health.value -= 1;
 		ft_putendl_fd("Enemy attacked you", 1);
 	}
 }

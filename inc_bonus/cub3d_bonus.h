@@ -114,6 +114,7 @@ typedef struct s_game_object
 	t_fvector	render_step;
 	float		distance;
 	t_img		*sprite;
+	char		type;
 }				t_object;
 
 typedef struct s_enemy
@@ -121,6 +122,7 @@ typedef struct s_enemy
 	t_object	*object;
 	t_fvector	delta;
 	t_ull		last_attack_time;
+	t_fvector	starting_pos;
 }				t_enemy;
 
 typedef struct s_hud_entry
@@ -153,7 +155,9 @@ typedef struct game
 		t_ull		last_attack_time;
 		float		angle;
 		t_fvector	vector;
-		int			health;
+		// short		lives;
+		// short		health;
+		t_fvector	starting_pos;
 	}				player;
 	struct			s_key
 	{
@@ -199,6 +203,7 @@ typedef struct game
 		t_hud_entry		fps;
 		t_hud_entry		score;
 		t_hud_entry		lives;
+		t_hud_entry		health;
 	}			hud;
 	char			*macos_chars;
 	char			*username;
@@ -258,7 +263,7 @@ int		is_map_enclosed(t_map *args);
 
 // Find objects (player, enemies, coins): find_objects.c //
 int		set_player(t_map *map, t_list *lst, char *line, char *orient);
-void	find_enemy(t_list **lst, t_object *object, char *line, int x_coord);
+void	find_enemy(t_list **lst, t_object *object);
 void	find_objects(t_map *map);
 int		find_player(t_map *map, char *line, t_list *lst);
 
@@ -359,6 +364,7 @@ void	death_message(t_game *game);
 void	player_death(t_game *game);
 int		check_aliveness(t_game *game);
 void	dim_image(t_img *img, int img_size, t_rgb *color);
+void	dim_screen(t_game *game, int i);
 
 // Drawing enemies: draw_enemies.c //
 int		object_comparator(t_object *obj1, t_object *obj2);
@@ -393,5 +399,19 @@ void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor);
 void	put_frame(t_game *game);
 
 void	init_hud(struct s_hud *hud);
+
+// what happens to player after death: // 
+int	player_respawn(t_game *game);
+
+// is_checks.c //
+int	is_wall(char c);
+int	is_enemy(char c);
+int	is_edible(char c);
+int	is_object(char c);
+
+// player_eating.c //
+void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *));
+void	eat_by_coords(t_game *game, t_vector pos);
+void	player_eat(t_game *game);
 
 #endif

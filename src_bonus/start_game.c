@@ -19,12 +19,13 @@ void	initialize_player(t_game *game)
 		+ 0.5f,
 		(float )(game->map->player_coords.y - 1)
 		+ 0.5f};
+	game->player.starting_pos = game->player.pos;
 	game->player.angle = game->map->player_orient;
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
 
 	game->fov = 0.001f;
-	game->player.health = 1;
+	// game->player.health = 1;
 	game->player.last_attack_time = 0;
 }
 
