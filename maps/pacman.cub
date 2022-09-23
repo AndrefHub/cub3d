@@ -1,0 +1,113 @@
+BONUS
+USE_PATH_PREFIX
+
+W1 ./assets/textures/monke/monke001.xpm
+
+W2 ./assets/textures/wah-goodman/wah102.xpm
+
+W3 ./assets/textures/wah-goodman/wah103.xpm
+
+W4 ./assets/textures/wah-goodman/wah104.xpm
+
+W5 ./assets/textures/wah-goodman/wah105.xpm
+
+W6 ./assets/textures/wah-goodman/wah106.xpm
+
+W7 ./assets/textures/wah-goodman/wah107.xpm
+
+W8 ./assets/textures/wah-goodman/wah108.xpm
+
+W9 ./assets/textures/wah-goodman/wah109.xpm
+
+WD ./assets/textures/monke/monke001.xpm
+
+E1 ./assets/textures/ghost/ghost1.xpm
+./assets/textures/ghost/ghost2.xpm
+./assets/textures/ghost/ghost3.xpm
+./assets/textures/ghost/ghost4.xpm
+./assets/textures/ghost/ghost5.xpm
+./assets/textures/ghost/ghost6.xpm
+./assets/textures/ghost/ghost7.xpm
+./assets/textures/ghost/ghost8.xpm
+
+
+F  ./assets/font/font240/space.xpm
+F! ./assets/font/font240/exclam.xpm
+F" ./assets/font/font240/quotedbl.xpm
+F# ./assets/font/font240/numbersign.xpm
+F$ ./assets/font/font240/dollar.xpm
+F% ./assets/font/font240/percent.xpm
+F& ./assets/font/font240/ampersand.xpm
+F' ./assets/font/font240/quotesingle.xpm
+
+F_ ./assets/font/font240/underscore.xpm
+F: ./assets/font/font240/colon.xpm
+F, ./assets/font/font240/comma.xpm
+F0 ./assets/font/font240/zero.xpm
+F1 ./assets/font/font240/one.xpm
+F2 ./assets/font/font240/two.xpm
+F3 ./assets/font/font240/three.xpm
+F4 ./assets/font/font240/four.xpm
+F5 ./assets/font/font240/five.xpm
+F6 ./assets/font/font240/six.xpm
+F7 ./assets/font/font240/seven.xpm
+F8 ./assets/font/font240/eight.xpm
+F9 ./assets/font/font240/nine.xpm
+
+FA ./assets/font/font240/A.xpm
+FB ./assets/font/font240/B.xpm
+FC ./assets/font/font240/C.xpm
+FD ./assets/font/font240/D.xpm
+FE ./assets/font/font240/E.xpm
+FF ./assets/font/font240/F.xpm
+FG ./assets/font/font240/G.xpm
+FH ./assets/font/font240/H.xpm
+FI ./assets/font/font240/I.xpm
+FJ ./assets/font/font240/J.xpm
+FK ./assets/font/font240/K.xpm
+FL ./assets/font/font240/L.xpm
+FM ./assets/font/font240/M.xpm
+FN ./assets/font/font240/N.xpm
+FO ./assets/font/font240/O.xpm
+FP ./assets/font/font240/P.xpm
+FQ ./assets/font/font240/Q.xpm
+FR ./assets/font/font240/R.xpm
+FS ./assets/font/font240/S.xpm
+FT ./assets/font/font240/T.xpm
+FU ./assets/font/font240/U.xpm
+FV ./assets/font/font240/V.xpm
+FW ./assets/font/font240/W.xpm
+FX ./assets/font/font240/X.xpm
+FY ./assets/font/font240/Y.xpm
+FZ ./assets/font/font240/Z.xpm
+
+
+S1 ./assets/sounds/monke.wav
+S2 ./assets/sounds/death.wav
+F 0,0,0
+C 0,0,0
+
+
+11111111111111111111111111
+10000000000011000000000001
+10111101111011011110111101
+10111101111011011110111101
+10111101111011011110111101
+10000000000000000000000001
+10111101011111111010111101
+10000001000011000010000001
+11111101111011011110111111
+11111101000000000010111111
+11111101011100111010111111
+1e0000000000ee0000000000e1
+11111101011100111010111111
+11111101000000000010111111
+11111101011111111010111111
+10000000000011000000000001
+10111101111011011110111101
+1000110000000E000000110001
+11101101011111111010110111
+10000001000011000010000001
+10111111111011011111111101
+10000000000000000000000001
+11111111111111111111111111

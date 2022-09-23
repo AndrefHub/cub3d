@@ -1,5 +1,7 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
+//void	draw_floor_textured(t_game *game, t_vector cur);
+
 void	draw_wall_scaled(t_img *img, const t_img *texture,
 	const struct s_column *column, int x, t_game * game)
 {
@@ -18,6 +20,10 @@ void	draw_wall_scaled(t_img *img, const t_img *texture,
 		tex_y += step;
 		y++;
 	}
+//	if (y < img->size.y)
+//	{
+//		draw_floor_textured(game, (t_vector) {x, max_height});
+//	}
 }
 
 void	draw_walls(t_game *game)
