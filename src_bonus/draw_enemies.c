@@ -14,9 +14,9 @@ void	calculate_object_params(t_game *game, t_object *object)
 	angle_to_player = atan2f(delta.y, delta.x) - game->player.angle;
 	if (angle_to_player < -PI)
 		angle_to_player += 2 * PI;
-	object->size.y = (int) (ABS_WALL_SIZE / (cos(angle_to_player) * object->distance));
+	object->size.y = (int) (game->col_scale / (cos(angle_to_player) * object->distance));
 	object->size.x = object->size.y;
-	object->start.x = (game->img.size.x / 2) + tanf(angle_to_player) * ABS_WALL_SIZE - object->size.x / 2;
+	object->start.x = (game->img.size.x / 2) + tanf(angle_to_player) * game->col_scale - object->size.x / 2;
 	object->start.y = (game->img.size.y / 2) - object->size.y / 2 - game->z_offset;
 	object->end.x = object->start.x + object->size.x;
 	object->end.y = object->start.y + object->size.y;

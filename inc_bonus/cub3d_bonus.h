@@ -39,6 +39,7 @@ typedef struct s_img
 	int			bpp;
 	int			line_length;
 	int			endian;
+	float		aspect;
 	t_vector	size;
 }	t_img;
 
@@ -130,6 +131,8 @@ typedef struct game
 	t_img			hud;
 	int				z_offset;
 	float			fov;
+	float			col_step;
+	float			col_scale;
 	t_list			*objects;
 	struct s_mlx
 	{

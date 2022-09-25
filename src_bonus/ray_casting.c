@@ -72,7 +72,7 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 			camera += 2 * PI;
 		if (camera > 2 * PI)
 			camera -= 2 * PI;
-		game->column[i].height = ABS_WALL_SIZE * TEXTURE_SIZE / distance;
+		game->column[i].height = game->col_scale / distance;
 		game->column[i].perp_dist = distance * cosf(camera);
 		game->column[i].pos = (t_fvector) {game->player.pos.x + cosf(ray_angle)
 																* distance, game->player.pos.y + sinf(ray_angle) * distance};
@@ -80,16 +80,17 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 		{
 			game->column[i].fade = 2.f;
 			game->column[i].dir = "SN"[(int) (game->column[i].pos.x > game->player.pos.x)];
-			game->column[i].texture_pos = game->column[i].pos.y * TEXTURE_SIZE;
+			game->column[i].texture_pos = game->column[i].pos.y;
 		}
 		else
 		{
 			game->column[i].fade = 1.f;
 			game->column[i].dir = "EW"[(int) (game->column[i].pos.y > game->player.pos.y)];
-			game->column[i].texture_pos = game->column[i].pos.x * TEXTURE_SIZE;
+			game->column[i].texture_pos = game->column[i].pos.x;
 		}
 		if (game->column[i].dir == 'W' || game->column[i].dir == 'S')
-			game->column[i].texture_pos = TEXTURE_SIZE * ABS_WALL_SIZE - game->column[i].texture_pos;
+			game->column[i].texture_pos = TEXTURE_SIZE - game->column[i].texture_pos;
+		game->column[i].texture_pos = game->column[i].texture_pos * TEXTURE_SIZE;
 		if (distance > MAX_RENDER_DISTANCE)
 			game->column[i].color = 0xFFAAAA;
 		game->column[i].distance = distance;
@@ -123,7 +124,8 @@ void	cast_rays(t_game *game)
 	while (i < game->img.size.x)
 	{
 		ray_angle = game->player.angle
-					+ atanf(game->fov * ((float) i - (float) game->img.size.x / 2));
+					+ atanf(game->col_step * ((float) i - (float) game->img.size.x / 2));
+//		ray_angle = acosf(cosf(game->player.angle) + game->player.plane.x * (2.f * i / (float) game->img.size.x - 1));
 		get_interception(game, ray_angle, i);
 		i++;
 	}

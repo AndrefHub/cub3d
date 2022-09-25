@@ -63,6 +63,7 @@ t_img	initialize_img(t_img *img, void *mlx_ptr, int width, int height)
 		error_exit(NULL, 1, "Memory allocation error: t_img");
 	img->addr = (int *) mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_length, &img->endian);
 	img->size = (t_vector) {width, height};
+	img->aspect = (float) img->size.x / (float) img->size.y;
 	return (*img);
 }
 

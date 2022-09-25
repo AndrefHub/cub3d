@@ -16,6 +16,12 @@ void	mouse_controller(t_game *game)
 		mouse_move(game->mlx.id, game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
 		game->z_offset += (float) game->key.mdir.y * 2;
 		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2;
+		float old_plane;
+		old_plane = game->player.plane.x;
+		game->player.plane.x = game->player.plane.x * cosf((float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2) -
+							   game->player.plane.y * sinf((float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2);
+		game->player.plane.y = old_plane * sinf((float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2) +
+							   game->player.plane.y * cosf((float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2);
 		player_delta_calculation(&game->player);
 	}
 }

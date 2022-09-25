@@ -24,7 +24,11 @@ void	initialize_player(t_game *game)
 	game->player.delta.y = sinf(game->player.angle) * 5;
 
 	game->player.plane = (t_fvector) {0.0f, 0.66f};
-	game->fov = 0.001f;
+	game->fov = ((game->img.aspect >= 0.66f) - (game->img.aspect < 0.66f)) *
+			sqrtf(fabsf((float) M_PI_4 * (game->img.aspect - 0.66f) / 2)) + M_2_PI;
+	game->col_step = tanf(game->fov / (WIN_WIDTH - 1));
+	game->col_scale = 1.0f / game->col_step;
+	printf("%f, %f\n", game->col_step, game->fov);
 	game->player.health = 1;
 	game->player.last_attack_time = 0;
 }
@@ -33,7 +37,6 @@ void	initialize_game_parameters(t_game *game)
 {
 	game->mlx.window = mlx_new_window(game->mlx.id,
 		WIN_WIDTH, WIN_HEIGHT, PROJ_NAME);
-	initialize_player(game);
 	game->key.mouse = true;
 	game->show_map = false;
 	game->z_offset = 0;
@@ -92,6 +95,7 @@ int	game(t_map *map)
 	init_main_game_sound_theme(&game, map->sounds[0]);
 	set_game_events_sounds(&game.audio, map->sounds[1]);
 	initialize_game_parameters(&game);
+	initialize_player(&game);
 	initialize_sprites(&game, MAX_ENEMIES, (t_texture *)game.map->enemy, TEXTURE_SIZE);
     initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
