@@ -23,6 +23,7 @@ void	initialize_player(t_game *game)
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
 
+	game->player.plane = (t_fvector) {0.0f, 0.66f};
 	game->fov = 0.001f;
 	game->player.health = 1;
 	game->player.last_attack_time = 0;

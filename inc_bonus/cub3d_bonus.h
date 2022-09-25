@@ -1,15 +1,14 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
+# include "../libft/libft.h"
+# include "constants_bonus.h"
 # include <stdbool.h>
 # include <stdlib.h>
-# include "../libft/libft.h"
 # include "stdio.h"
-# include "constants_bonus.h"
 # include "math.h"
 # include "X11/X.h"
 # include "X11/keysym.h"
-//# include
 # include <time.h>
 # include <sys/time.h>
 # include "../cute_sound/cute_sound.h"
@@ -144,7 +143,7 @@ typedef struct game
 		t_fvector	delta;
 		t_ull		last_attack_time;
 		float		angle;
-		t_fvector	vector;
+		t_fvector	plane;
 		int			health;
 	}				player;
 

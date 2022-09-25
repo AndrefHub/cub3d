@@ -40,9 +40,27 @@ void	movement_controller(t_game *game, int *collision)
 void	rotation_by_key_controller(t_game *game)
 {
 	if (key_pressed(game, RIGHT_KEY))
+	{
 		game->player.angle += PL_ROT_KEY_SPEED;
+		float old_plane;
+		old_plane = game->player.plane.x;
+		game->player.plane.x =
+				game->player.plane.x * cosf(PL_ROT_KEY_SPEED) -
+				game->player.plane.y * sinf(PL_ROT_KEY_SPEED);
+		game->player.plane.y = old_plane * sinf(PL_ROT_KEY_SPEED) +
+				game->player.plane.y *
+				cosf(PL_ROT_KEY_SPEED);
+	}
 	if (key_pressed(game, LEFT_KEY))
+	{
 		game->player.angle -= PL_ROT_KEY_SPEED;
+		float old_plane;
+		old_plane = game->player.plane.x;
+		game->player.plane.x = game->player.plane.x * cosf(-PL_ROT_KEY_SPEED) -
+							   game->player.plane.y * sinf(-PL_ROT_KEY_SPEED);
+		game->player.plane.y = old_plane * sinf(-PL_ROT_KEY_SPEED) +
+							   game->player.plane.y * cosf(-PL_ROT_KEY_SPEED);
+	}
 	player_delta_calculation(&game->player);
 }
 

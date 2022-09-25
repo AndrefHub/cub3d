@@ -123,7 +123,7 @@ void	cast_rays(t_game *game)
 	while (i < game->img.size.x)
 	{
 		ray_angle = game->player.angle
-					+ atan(game->fov * (i - (float) game->img.size.x / 2));
+					+ atanf(game->fov * ((float) i - (float) game->img.size.x / 2));
 		get_interception(game, ray_angle, i);
 		i++;
 	}

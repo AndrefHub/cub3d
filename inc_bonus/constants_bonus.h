@@ -9,10 +9,10 @@
 # define PROJ_NAME "Cub3d"
 //# define WIN_WIDTH 2560
 //# define WIN_HEIGHT 1440
-// # define WIN_WIDTH 1280
-// # define WIN_HEIGHT 720
-# define WIN_WIDTH 1920
-# define WIN_HEIGHT 1000
+ # define WIN_WIDTH 1280
+ # define WIN_HEIGHT 720
+//# define WIN_WIDTH 1920
+//# define WIN_HEIGHT 1000
 # define FOV 0.66
 # define TEXTURE_SIZE 192
 # define MAX_RENDER_DISTANCE 5000
@@ -52,10 +52,10 @@
 # define BONUS "BONUS"
 # define USE_PATH_PREFIX "USE_PATH_PREFIX"
 
-# ifndef ASSETS_PATH
+//# ifndef ASSETS_PATH
 //#  define ASSETS_PATH "."
-# define ASSETS_PATH "/Users/lsherry/goinfre"
-# endif
+//# define ASSETS_PATH "/Users/lsherry/goinfre"
+//# endif
 
 # define WALL_PREFIX "W"
 # define ENTITY_PREFIX "E"
