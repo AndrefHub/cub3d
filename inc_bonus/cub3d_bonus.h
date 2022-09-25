@@ -312,7 +312,7 @@ void	check_borders(t_game *game, t_object *player);
 
 // Drawing ceil and floor textured: draw_ceil_floor.c //
 void	draw_ceil_textured(t_game *game);
-void	draw_floor_textured(t_game *game);
+void	draw_ceil_floor_textured(t_game *game);
 
 // Ray_casting algorithm: ray_casting.c //
 t_ray	ray_initialize(t_game *game, float ray_angle);
