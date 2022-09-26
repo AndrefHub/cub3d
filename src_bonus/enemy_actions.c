@@ -8,7 +8,7 @@ void	enemy_attack(t_game *game, t_enemy *enemy)
 	{
 		game->player.last_attack_time = get_time();
 		enemy->last_attack_time = get_time();
-		game->player.health -= 1;
+		game->hud.health.value -= 1;
 		ft_putendl_fd("Enemy attacked you", 1);
 	}
 }
@@ -43,8 +43,8 @@ void	enemy_move(t_game *game)
 		enemy->delta.x = cosf(angle) * EN_SPEED;
 		enemy->delta.y = sinf(angle) * EN_SPEED;
 
-//		enemy->object.pos.x += enemy->delta.x;
-//		enemy->object.pos.y += enemy->delta.y;
+		enemy->object->pos.x += enemy->delta.x;
+		enemy->object->pos.y += enemy->delta.y;
 		enemy->object->distance = distancef(&game->player.pos, &enemy->object->pos);
 		check_borders(game, enemy->object);
 		if (fvector_distance(game->player.pos, enemy->object->pos) < 1)

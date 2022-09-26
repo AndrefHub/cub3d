@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "chrono": "c",
-        "cub3d_bonus.h": "c"
+        "cub3d_bonus.h": "c",
+        "constants_bonus.h": "c"
     }
 }

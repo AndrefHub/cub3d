@@ -74,8 +74,8 @@ void	print_map_debug(t_map *map)
 	printf("NO %s\nSO %s\nWE %s\nEA %s\nF %d,%d,%d\nC %d,%d,%d\n\n",
 		(char *)map->walls[0].texture->content, (char *)map->walls[1].texture->content,
 		(char *)map->walls[2].texture->content, (char *)map->walls[3].texture->content,
-		map->F >> 16, (map->F >> 8) % (1 << 8), map->F % (1 << 8),
-		map->C >> 16, (map->C >> 8) % (1 << 8), map->C % (1 << 8));
+		map->f >> 16, (map->f >> 8) % (1 << 8), map->f % (1 << 8),
+		map->c >> 16, (map->c >> 8) % (1 << 8), map->c % (1 << 8));
 	printf("Player X: %d\nPlayer Y: %d\nPlayer orientation: %f\n",
 		map->player_coords.x, map->player_coords.y, map->player_orient);
 	ptr = map->map;

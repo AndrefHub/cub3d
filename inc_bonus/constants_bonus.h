@@ -1,10 +1,10 @@
-#ifndef CONSTANTS_H
-# define CONSTANTS_H
+#ifndef CONSTANTS_BONUS_H
+# define CONSTANTS_BONUS_H
 
 # define BAD_FILE -2
 # define FRAMERATE 30
-# define CLOCKS_PER_FRAME 1000 / FRAMERATE
-# define BAD_COLOUR (1 << 24)
+// # define CLOCKS_PER_FRAME (1000 / FRAMERATE)
+# define BAD_COLOUR 0x1000000
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"
 //# define WIN_WIDTH 2560
@@ -35,9 +35,11 @@
 # define ENEMIES_MAP_COLOR 0x89D1FE
 # define OBJECTS_MAP_COLOR 0xFFEF00
 # define MAX_ENEMIES 1
+# define MAX_OBJECTS 3
 // # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
 # define MAX_SOUNDS 2
+# define MAX_HEALTH 1
 # define MAX_FONT_CHARS 224
 # define ENEMY_RELOAD 1000
 # define PL_INVINCIBILITY 2000
@@ -46,23 +48,25 @@
 
 // # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
-# define OBJECT_CHARS ".oe"
+# define EDIBLE_CHARS ".o"
+# define ENEMY_CHARS "e"
+# define OBJECT_CHARS "e.o"
 # define CARDINAL_POINTS "NSWE"
 # define BONUS "BONUS"
 # define USE_PATH_PREFIX "USE_PATH_PREFIX"
 
-//# ifndef ASSETS_PATH
-//#  define ASSETS_PATH "."
-//# define ASSETS_PATH "/Users/lsherry/goinfre"
-//# endif
+# ifndef ASSETS_PATH
+#  define ASSETS_PATH "."
+# endif
 
 # define WALL_PREFIX "W"
-# define ENTITY_PREFIX "E"
+# define OBJECT_PREFIX "O"
 # define SOUND_PREFIX "S"
 # define FONT_PREFIX "F"
 
 # ifdef __APPLE__
-# define CHAR_OFFSET 0
+#  define CHAR_OFFSET 0
+
 enum e_keys
 {
 	W_KEY = 13,
@@ -76,13 +80,14 @@ enum e_keys
 	RIGHT_KEY = 124,
 	M_KEY = 46,
 	E_KEY = 14,
-	LEFT_CTRL_KEY = 256, //59
+	LEFT_CTRL_KEY = 256,
 	BACKSPACE = 51,
 	ENTER = 36,
 };
 # else
-# define CHAR_OFFSET 256
+#  define CHAR_OFFSET 256
 #  ifdef __linux__
+
 enum e_keys
 {
 	W_KEY = 119,
@@ -100,9 +105,11 @@ enum e_keys
 	BACKSPACE = 65288,
 	ENTER = 65293,
 };
+
 #  endif
 # endif
-enum layout
+
+enum e_layout
 {
 	VTop = 001,
 	VCenter = 002,
@@ -111,5 +118,10 @@ enum layout
 	HCenter = 020,
 	HRight = 040
 };
+
+// enum e_colors
+// {
+// 	// int
+// };
 
 #endif

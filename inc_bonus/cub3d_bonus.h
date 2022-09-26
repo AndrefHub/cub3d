@@ -1,5 +1,5 @@
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include "../libft/libft.h"
 # include "constants_bonus.h"
@@ -51,41 +51,42 @@ typedef struct s_texture
 
 typedef struct rgb
 {
-	unsigned char	b; // blue;
-	unsigned char	g; // green;
-	unsigned char	r; // red; 
-	unsigned char	a; // alpha;
+	unsigned char	b;
+	unsigned char	g;
+	unsigned char	r;
+	unsigned char	a;
 }	t_rgb;
 
-// t_text: dummy structure created with sole purpose of putting 5 variables in function
+// t_text: dummy structure created with sole purpose of
+// putting 5 variables in function
 typedef struct text
 {
 	char		*text;
 	t_vector	pos;
 	int			layout;
-}	t_text; 
+}	t_text;
 
 typedef struct s_map
 {
-	int			bonus;
-	int			path_prefix;
-	char		**map;
-	t_vector	map_size;
-	t_texture	walls[MAX_WALL_CHARS];
-	t_texture	enemy[MAX_ENEMIES];
-	t_texture	font[MAX_FONT_CHARS];
-	char		*sounds[MAX_SOUNDS];
-	unsigned	list_size;
-	int			F;
-	int			C;
-	t_img		img;
-	t_vector	player_coords;
-	float		player_orient;
-	int			map_tile_size;
-	t_fvector	last_collision;
-	t_list		*enemies;
-	t_list		*objects;
-} t_map;
+	int				bonus;
+	int				path_prefix;
+	char			**map;
+	t_vector		map_size;
+	t_texture		walls[MAX_WALL_CHARS];
+	t_texture		object[MAX_OBJECTS];
+	t_texture		font[MAX_FONT_CHARS];
+	char			*sounds[MAX_SOUNDS];
+	unsigned int	list_size;
+	int				f;
+	int				c;
+	t_img			img;
+	t_vector		player_coords;
+	float			player_orient;
+	int				map_tile_size;
+	t_fvector		last_collision;
+	t_list			*enemies;
+	t_list			*objects;
+}				t_map;
 
 typedef struct ray
 {
@@ -96,7 +97,7 @@ typedef struct ray
 	t_vector	step;
 }				t_ray;
 
-typedef struct	sound
+typedef struct sound
 {
 	cs_loaded_sound_t	file;
 	cs_play_sound_def_t	def;
@@ -113,14 +114,31 @@ typedef struct s_game_object
 	t_fvector	render_step;
 	float		distance;
 	t_img		*sprite;
+	char		type;
 }				t_object;
 
-typedef struct	s_enemy
+typedef struct s_enemy
 {
 	t_object	*object;
 	t_fvector	delta;
 	t_ull		last_attack_time;
+	t_fvector	starting_pos;
 }				t_enemy;
+
+typedef struct s_hud_entry
+{
+	int		value;
+	char	*title;
+	short	title_size;
+	short	value_size;
+}				t_hud_entry;
+
+typedef struct s_parse_info
+{
+	char		*chars;
+	char		*prefix;
+	t_texture	*arr;
+} t_parse_info;
 
 typedef struct game
 {
@@ -128,18 +146,17 @@ typedef struct game
 	char			**grid;
 	bool			show_map;
 	t_img			img;
-	t_img			hud;
+	t_img			hud_img;
 	int				z_offset;
 	float			fov;
 	float			col_step;
 	float			col_scale;
 	t_list			*objects;
-	struct s_mlx
+	struct			s_mlx
 	{
-		void	*id;
-		void	*window;
+		void		*id;
+		void		*window;
 	}	mlx;
-
 	struct			s_player
 	{
 		t_fvector	pos;
@@ -148,8 +165,11 @@ typedef struct game
 		float		angle;
 		t_fvector	plane;
 		int			health;
+		t_fvector	vector;
+		// short		lives;
+		// short		health;
+		t_fvector	starting_pos;
 	}				player;
-
 	struct			s_key
 	{
 		bool		k[512];
@@ -158,7 +178,6 @@ typedef struct game
 		t_vector	mdir;
 		bool		mouse;
 	}				key;
-
 	struct			s_column
 	{
 		float		distance;
@@ -174,33 +193,36 @@ typedef struct game
 		float		fade;
 		int			color;
 	}				*column;
-
 	t_img			textures[MAX_WALL_CHARS];
-
-	struct				s_audio
+	struct			s_audio
 	{
 		cs_context_t	*ctx;
-
 		t_sound			bonk;
 		t_sound			song;
 	}					audio;
-	struct 	s_time
+	struct	s_time
 	{
-		t_ull	startup;
-		int		frames_to_move;
-		t_ull	last;
-		t_ull	fps_time;
-	}		time;
-
-	char	*macos_chars;
-	char	*username;
-	int		input_mode;
-	int		score;
-	int		fps;
+		t_ull		startup;
+		int			frames_to_move;
+		t_ull		last;
+		t_ull		fps_time;
+		int			fps;
+		char		*fps_title;
+	}				time;
+	struct s_hud
+	{
+		t_hud_entry		fps;
+		t_hud_entry		score;
+		t_hud_entry		lives;
+		t_hud_entry		health;
+	}			hud;
+	char			*macos_chars;
+	char			*username;
+	int				input_mode;
 }	t_game;
 
 // Font parsing: parsing_font.c //
-void	parse_font(t_map* map, int fd, char **line);
+void	parse_font(t_map *map, int fd, char **line);
 
 // Map parsing: parsing.c //
 int		get_string_index(char *str, char c);
@@ -212,22 +234,22 @@ t_map	*parse_file(int ac, char **av);
 // Parsing utils: parsing_utils.c //
 t_map	*free_map(t_map *map);
 int		ft_strrchr_int(const char *line, int chr);
-int		ft_strrchr_int_arr(char *line, char* chr);
+int		ft_strrchr_int_arr(const char *line, char *chr);
 void	map_to_rectangle(t_map *map); // TODO: Rename "set_map_to_rectangle"?
 void	convert_spaces_to_zeros(t_map *map);
 
 // Parsing textures path from map: parsing_textures.c //
-void	parse_config(t_map* map, int fd, char **line);
-void	parse_walls(t_map* map, int fd, char **line);
-void	parse_enemies(t_map* map, int fd, char **line);
-void	parse_sounds(t_map* map, int fd, char **line);
+void	parse_config(t_map *map, int fd, char **line);
+void	parse_walls(t_map *map, int fd, char **line);
+void	parse_enemies(t_map *map, int fd, char **line);
+void	parse_sounds(t_map *map, int fd, char **line);
 void	parse_assets(t_map *map, int fd);
 
 // Check filename and : check_file.c //
 int		check_file(int ac, char **av);
 
 // Cub3d utils : ft_utils.c //
-t_map	*create_empty_map();
+t_map	*create_empty_map(void);
 int		ft_arraylen(void **arr);
 int		is_space(char c);
 int		is_line_empty(char *line);
@@ -238,20 +260,23 @@ char	*get_full_texture_path(char *line, int flag);
 float	distancef(t_fvector *vector1, t_fvector *vector2);
 
 // Some utils for parsing and working with files: input_manip.c //
-char	*crop_prefix(char* line, char *prefix);
+char	*crop_prefix(char *line, char *prefix);
 char	*skip_empty_lines(int fd);
 int		convert_to_rgb(char *line);
 char	*ft_strcat_delim(char *first, char delim, char *second);
 
 // Border checking and utils for it: border_checking.c //
 int		get_map_width(const char **map); //TODO: Move to another file
-int		set_player(t_map *map, t_list *lst, char *line, char *orient);
-void	find_enemy(t_map *map);
-void	find_objects(t_map *map);
-int		find_player(t_map *map, char *line, t_list *lst);
 int		is_wall(char c);
+int		is_enemy(char c);
 int		check_enclosure(t_map *map, t_vector vec);
 int		is_map_enclosed(t_map *args);
+
+// Find objects (player, enemies, coins): find_objects.c //
+int		set_player(t_map *map, t_list *lst, char *line, char *orient);
+void	find_enemy(t_list **lst, t_object *object);
+void	find_objects(t_map *map);
+int		find_player(t_map *map, char *line, t_list *lst);
 
 // Game initialization: start_game.c //
 void	initialize_mlx_parameters(t_game *game);
@@ -261,15 +286,18 @@ void	start_game(t_game *game);
 int		game(t_map *map);
 
 // Work with sound: game_sound.c //
-void	init_main_game_sound_theme(t_game *game, char *main_music_theme_filename);
+void	init_main_game_sound_theme(t_game *game,
+			char *main_music_theme_filename);
 void	set_game_events_sounds(struct s_audio *audio, char *filename);
 void	set_sound(t_sound *sound, char *filename);
 
 // Work with sprites: game_textures.c //
 void	draw_texture_set(t_game *game, struct s_column *column);
-void	import_texture_to_img(t_game *game, t_img *img, char *filename, int img_size);
-void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_size);
-void    initialize_wall_textures(t_game *game);
+void	import_texture_to_img(t_game *game, t_img *img, char *filename,
+			int img_size);
+void	initialize_sprites(t_game *game, int size, t_texture *sprites_list,
+			int t_size);
+void	initialize_wall_textures(t_game *game);
 
 // Adapters for MLX for macOS and Linux: mlx_adapter.c //
 void	mouse_get_pos(void *mlx_ptr, void *win_ptr, int *x, int *y);
@@ -306,7 +334,8 @@ void	player_controll(t_game *game);
 
 // Player moving control: player_movement.c //
 void	update_last_collision(t_game *game);
-void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collision);
+void	move_radius_check(t_game *game, float x_delta, float y_delta,
+			int *collision);
 void	check_restrictions(t_game *game);
 void	check_borders(t_game *game, t_object *player);
 
@@ -317,19 +346,21 @@ void	draw_ceil_floor_textured(t_game *game);
 // Ray_casting algorithm: ray_casting.c //
 t_ray	ray_initialize(t_game *game, float ray_angle);
 float	interception_distance(t_game *game, t_ray *ray);
-void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float ray_angle);
+void	initialize_columns(t_game *game, t_ray *ray, float distance, int i,
+			float ray_angle);
 void	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
 void	cast_rays(t_game *game);
 
 // Wall drawing: draw_walls.c //
-void	draw_wall_scaled(t_img *img, const t_img *texture, 
-	const struct s_column *column, int x, t_game * game);
+void	draw_wall_scaled(t_img *img, const t_img *texture,
+			const struct s_column *column, int x, t_game *game);
 void	draw_walls(t_game *game);
 
 // Map drawing: draw_map.c //
 void	draw_fps(t_game *game);
 void	draw_enemies_on_map(t_game *game);
 void	draw_player_on_map(t_game *game);
+void	draw_hud(t_game *game);
 void	draw_map(t_game *game);
 
 // Text writing: put_text.c //
@@ -345,16 +376,13 @@ void	death_message(t_game *game);
 void	player_death(t_game *game);
 int		check_aliveness(t_game *game);
 void	dim_image(t_img *img, int img_size, t_rgb *color);
+void	dim_screen(t_game *game, int i);
 
 // Drawing enemies: draw_enemies.c //
 int		object_comparator(t_object *obj1, t_object *obj2);
 void	draw_game_objects(t_game *game);
 
-
 // void	initialize_font(t_map *map);
-
-
-
 
 //controller.c
 int		close_hook(t_game *game);
@@ -374,7 +402,6 @@ t_ull	get_time_hp(void);
 void	init_time(t_game *game);
 void	wait_milliseconds(int milliseconds);
 
-
 void	ft_lstsort(t_list **lst, int (*cmp)());
 void	update_time(t_game *game);
 
@@ -382,4 +409,21 @@ void	update_time(t_game *game);
 void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor);
 
 void	put_frame(t_game *game);
+
+void	init_hud(struct s_hud *hud);
+
+// what happens to player after death: // 
+int	player_respawn(t_game *game);
+
+// is_checks.c //
+int		is_wall(char c);
+int		is_enemy(char c);
+int		is_edible(char c);
+int		is_object(char c);
+
+// player_eating.c //
+void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *));
+void	eat_by_coords(t_game *game, t_vector pos);
+void	player_eat(t_game *game);
+
 #endif

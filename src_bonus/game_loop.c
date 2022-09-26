@@ -1,20 +1,8 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-void	draw_hud(t_game *game, t_ull time1, t_ull time2)
-{
-	mlx_string_put(game->mlx.id, game->mlx.window, 40, 15, 0x00FFFFFF,
-				   "tr:");
-	mlx_string_put(game->mlx.id, game->mlx.window, 60, 15, 0x00FFFFFF, \
-		(char []){'0' + time1 / 1000, '0' + time1 / 100 % 10, '0' + time1 / 10 % 10, '0' + time1 % 10, '\0'});
-	mlx_string_put(game->mlx.id, game->mlx.window, 100, 15, 0x00FFFFFF,
-				   "td:");
-	mlx_string_put(game->mlx.id, game->mlx.window, 120, 15, 0x00FFFFFF, \
-		(char []){'0' + time2 / 1000, '0' + time2 / 100 % 10, '0' + time2 / 10 % 10, '0' + time2 % 10, '\0'});
-}
-
 void	put_frame(t_game *game)
 {
-	put_image_to_image(&game->img, (t_vector){0, 0}, &game->hud);
+	put_image_to_image(&game->img, (t_vector){0, 0}, &game->hud_img);
 	if (game->show_map)
 		draw_map(game);
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->img.mlx_img,
@@ -23,14 +11,14 @@ void	put_frame(t_game *game)
 
 int	game_loop(t_game *game)
 {
-	fill_img_color(&game->hud, 0xFFFFFFFF);
-	draw_fps(game);
+	fill_img_color(&game->hud_img, 0xFF000000);
 	if (check_aliveness(game))
 	{
 		player_controll(game);
 		enemy_move(game);
-		fill_ceiling_color(&game->img, game->map->C, game->z_offset);
-		fill_floor_color(&game->img, game->map->F, game->z_offset);
+
+		fill_ceiling_color(&game->img, game->map->c, game->z_offset);
+		fill_floor_color(&game->img, game->map->f, game->z_offset);
 		draw_ceil_floor_textured(game);
 
 		cast_rays(game);
@@ -39,7 +27,8 @@ int	game_loop(t_game *game)
 
 		draw_aim(game);
 
-		draw_fps(game);
+//		draw_fps(game);
+		draw_hud(game);
 		put_frame(game);
 		change_textures(game);
 	}

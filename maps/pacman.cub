@@ -1,22 +1,80 @@
 BONUS
 USE_PATH_PREFIX
 
-W1 ./assets/textures/monke/monke001.xpm
+W1 ./assets/textures/pacwall/wall01.xpm
+./assets/textures/pacwall/wall02.xpm
+./assets/textures/pacwall/wall03.xpm
+./assets/textures/pacwall/wall04.xpm
+./assets/textures/pacwall/wall05.xpm
+./assets/textures/pacwall/wall06.xpm
+./assets/textures/pacwall/wall07.xpm
+./assets/textures/pacwall/wall08.xpm
+./assets/textures/pacwall/wall09.xpm
+./assets/textures/pacwall/wall10.xpm
+./assets/textures/pacwall/wall11.xpm
+./assets/textures/pacwall/wall12.xpm
+./assets/textures/pacwall/wall13.xpm
+./assets/textures/pacwall/wall14.xpm
+./assets/textures/pacwall/wall15.xpm
+./assets/textures/pacwall/wall16.xpm
+./assets/textures/pacwall/wall17.xpm
+./assets/textures/pacwall/wall18.xpm
+./assets/textures/pacwall/wall19.xpm
+./assets/textures/pacwall/wall20.xpm
+./assets/textures/pacwall/wall21.xpm
+./assets/textures/pacwall/wall22.xpm
+./assets/textures/pacwall/wall23.xpm
+./assets/textures/pacwall/wall24.xpm
+./assets/textures/pacwall/wall25.xpm
+./assets/textures/pacwall/wall26.xpm
+./assets/textures/pacwall/wall27.xpm
+./assets/textures/pacwall/wall28.xpm
+./assets/textures/pacwall/wall29.xpm
+./assets/textures/pacwall/wall30.xpm
+./assets/textures/pacwall/wall31.xpm
+./assets/textures/pacwall/wall32.xpm
+./assets/textures/pacwall/wall33.xpm
+./assets/textures/pacwall/wall34.xpm
+./assets/textures/pacwall/wall35.xpm
+./assets/textures/pacwall/wall36.xpm
+./assets/textures/pacwall/wall37.xpm
+./assets/textures/pacwall/wall38.xpm
+./assets/textures/pacwall/wall39.xpm
+./assets/textures/pacwall/wall40.xpm
+./assets/textures/pacwall/wall41.xpm
+./assets/textures/pacwall/wall42.xpm
+./assets/textures/pacwall/wall43.xpm
+./assets/textures/pacwall/wall44.xpm
+./assets/textures/pacwall/wall45.xpm
+./assets/textures/pacwall/wall46.xpm
+./assets/textures/pacwall/wall47.xpm
+./assets/textures/pacwall/wall48.xpm
+./assets/textures/pacwall/wall49.xpm
+./assets/textures/pacwall/wall50.xpm
+./assets/textures/pacwall/wall51.xpm
+./assets/textures/pacwall/wall52.xpm
+./assets/textures/pacwall/wall53.xpm
+./assets/textures/pacwall/wall54.xpm
+./assets/textures/pacwall/wall55.xpm
+./assets/textures/pacwall/wall56.xpm
+./assets/textures/pacwall/wall57.xpm
+./assets/textures/pacwall/wall58.xpm
+./assets/textures/pacwall/wall59.xpm
+./assets/textures/pacwall/wall60.xpm
+./assets/textures/pacwall/wall61.xpm
+./assets/textures/pacwall/wall62.xpm
+./assets/textures/pacwall/wall63.xpm
+./assets/textures/pacwall/wall64.xpm
+./assets/textures/pacwall/wall65.xpm
+./assets/textures/pacwall/wall66.xpm
 
-W2 ./assets/textures/wah-goodman/wah102.xpm
-
+W2 ./assets/textures/monke/monke666.xpm
 W3 ./assets/textures/wah-goodman/wah103.xpm
-
 W4 ./assets/textures/wah-goodman/wah104.xpm
-
 W5 ./assets/textures/wah-goodman/wah105.xpm
-
 W6 ./assets/textures/wah-goodman/wah106.xpm
-
 W7 ./assets/textures/wah-goodman/wah107.xpm
-
 W8 ./assets/textures/wah-goodman/wah108.xpm
-
 W9 ./assets/textures/wah-goodman/wah109.xpm
 
 WD ./assets/textures/monke/monke001.xpm
@@ -30,6 +88,9 @@ E1 ./assets/textures/ghost/ghost1.xpm
 ./assets/textures/ghost/ghost7.xpm
 ./assets/textures/ghost/ghost8.xpm
 
+O1 ./assets/textures/wah-goodman/wah842.xpm
+O2 ./assets/textures/paccoin/coin1.xpm
+O3 ./assets/textures/pacpill/pill1.xpm
 
 F  ./assets/font/font240/space.xpm
 F! ./assets/font/font240/exclam.xpm
@@ -81,33 +142,33 @@ FX ./assets/font/font240/X.xpm
 FY ./assets/font/font240/Y.xpm
 FZ ./assets/font/font240/Z.xpm
 
-
 S1 ./assets/sounds/monke.wav
-S2 ./assets/sounds/death.wav
-F 0,0,0
-C 0,0,0
+S2 ./assets/sounds/pacman_death.wav
+F 217,242,253
+C 178,229,251
 
-
-11111111111111111111111111
-10000000000011000000000001
-10111101111011011110111101
-10111101111011011110111101
-10111101111011011110111101
-10000000000000000000000001
-10111101011111111010111101
-10000001000011000010000001
-11111101111011011110111111
-11111101000000000010111111
-11111101011100111010111111
-1e0000000000ee0000000000e1
-11111101011100111010111111
-11111101000000000010111111
-11111101011111111010111111
-10000000000011000000000001
-10111101111011011110111101
-1000110000000E000000110001
-11101101011111111010110111
-10000001000011000010000001
-10111111111011011111111101
-10000000000000000000000001
-11111111111111111111111111
+111111111111111111111
+1.........1.........1
+1.111.111.1.111.111.1
+1o111.111.1.111.111o1
+1.111.111.1.111.111.1
+1...................1
+1.111.1.11111.1.111.1
+1.111.1.11111.1.111.1
+1.....1...1...1.....1
+11111.111.1.111.11111
+    1.1.......1.1
+11111.1.11e11.1.11111
+1.......1eee1.......1
+11111.1.11111.1.11111
+    1.1.......1.1
+11111.1.11111.1.11111
+1.........1.........1
+1.111.111.1.111.111.1
+1...1.....E.....1...1
+111.1.1.11111.1.1.111
+111.1.1.11111.1.1.111
+1.....1...1...1.....1
+1.1111111.1.1111111.1
+1...................1
+111111111111111111111

@@ -19,6 +19,7 @@ void	initialize_player(t_game *game)
 		+ 0.5f,
 		(float )(game->map->player_coords.y - 1)
 		+ 0.5f};
+	game->player.starting_pos = game->player.pos;
 	game->player.angle = game->map->player_orient;
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
@@ -29,7 +30,8 @@ void	initialize_player(t_game *game)
 	game->col_step = tanf(game->fov / (WIN_WIDTH - 1));
 	game->col_scale = 1.0f / game->col_step;
 	printf("%f, %f\n", game->col_step, game->fov);
-	game->player.health = 1;
+	game->fov = 0.001f;
+	// game->player.health = 1;
 	game->player.last_attack_time = 0;
 }
 
@@ -42,7 +44,7 @@ void	initialize_game_parameters(t_game *game)
 	game->z_offset = 0;
 	game->grid = game->map->map;
 	game->img = initialize_img(&game->img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
-	game->hud = initialize_img(&game->hud, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
+	game->hud_img = initialize_img(&game->hud_img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,
 		WIN_WIDTH / 2, WIN_HEIGHT / 2);
 	game->map->map_tile_size = ft_min(game->map->img.size.x /
@@ -51,17 +53,43 @@ void	initialize_game_parameters(t_game *game)
 	ft_memset(game->key.k, 0, 512);
 	if (game->column == NULL)
 		error_exit(game, 0, NULL);
+	init_hud(&game->hud);
 }
 
-void	initialize_game_objects(t_game *game) {
-	game->objects = game->map->objects;
-	t_list *elem;
-	t_object *obj;
+void	clear_font_outline(t_game *game)
+{
+	int		counter;
+	int		imagecounter;
+	t_img	*img;
 
+	counter = -1;
+	while (++counter < MAX_FONT_CHARS)
+	{
+		if (game->map->font[counter].img)
+		{
+			img = ((t_img *)game->map->font[counter].img->content);
+			imagecounter = -1;
+			while (++imagecounter < img->size.x * img->size.y)
+			{
+				((t_rgb *)img->addr + imagecounter)->r = 0xFF;
+				((t_rgb *)img->addr + imagecounter)->g = 0xFF;
+				((t_rgb *)img->addr + imagecounter)->b = 0xFF;
+			}
+		}
+	}
+}
+
+void	initialize_game_objects(t_game *game)
+{
+	t_list		*elem;
+	t_object	*obj;
+
+	game->objects = game->map->objects;
 	elem = game->objects;
-	while (elem) {
+	while (elem)
+	{
 		obj = elem->content;
-		obj->sprite = game->map->enemy[0].img->content;
+		obj->sprite = game->map->object[get_string_index(OBJECT_CHARS, obj->type)].img->content;
 		elem = elem->next;
 	}
 
@@ -72,7 +100,6 @@ void	set_input_mode_chars(t_game *game)
 	game->username = malloc(sizeof(*(game->username)) * 9);
 	ft_bzero(game->username, 9);
 	game->input_mode = 0;
-	game->score = 0;
 }
 
 void	start_game(t_game *game)
@@ -96,13 +123,15 @@ int	game(t_map *map)
 	set_game_events_sounds(&game.audio, map->sounds[1]);
 	initialize_game_parameters(&game);
 	initialize_player(&game);
-	initialize_sprites(&game, MAX_ENEMIES, (t_texture *)game.map->enemy, TEXTURE_SIZE);
+//	initialize_sprites(&game, MAX_ENEMIES, (t_texture *)game.map->enemy, TEXTURE_SIZE);
+	initialize_sprites(&game, MAX_OBJECTS, (t_texture *)game.map->object, TEXTURE_SIZE);
     initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
 	initialize_wall_textures(&game);
 	initialize_game_objects(&game);
 	initialize_mlx_parameters(&game);
 	set_input_mode_chars(&game);
+	clear_font_outline(&game);
 	start_game(&game);
 	return (1);
 }

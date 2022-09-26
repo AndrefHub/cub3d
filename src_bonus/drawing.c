@@ -2,7 +2,8 @@
 
 void	put_pixel(t_img *img, t_vector point, int color)
 {
-	if (point.x >= img->size.x || point.y >= img->size.y || point.x < 0 || point.y < 0)
+	if (point.x >= img->size.x || point.y >= img->size.y
+		|| point.x < 0 || point.y < 0)
 		return ;
 	img->addr[point.y * img->size.x + point.x] = color;
 }
@@ -96,5 +97,6 @@ void	draw_player(t_game *game)
 
 void	draw_aim(t_game *game)
 {
-	draw_square_fill(&game->img, (t_vector ) {game->img.size.x / 2 - AIM_SIZE / 2, game->img.size.y / 2 - AIM_SIZE / 2}, AIM_SIZE, AIM_COLOR);
+	draw_square_fill(&game->img, (t_vector){game->img.size.x / 2 - AIM_SIZE / 2,
+	game->img.size.y / 2 - AIM_SIZE / 2}, AIM_SIZE, AIM_COLOR);
 }

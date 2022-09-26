@@ -34,12 +34,12 @@ void	put_image_to_image(t_img *dst, t_vector pos, t_img *src)
 	}
 }
 
-int	put_char_to_screen(t_game *game, char c, t_vector pos, int divisor)
+int	put_char_to_screen(t_game *game, char c, t_vector pos, int font_size)
 {
 	if (game->map->font[ft_toupper(c) - FONT_OFFSET].img)
 	{
-		put_downscaled_image(&game->hud, pos, ((t_img *)game->map->font
-			[ft_toupper(c) - FONT_OFFSET].img->content), divisor);
+		put_downscaled_image(&game->hud_img, pos, ((t_img *)game->map->font
+			[ft_toupper(c) - FONT_OFFSET].img->content), FONT_SIZE / font_size);
 		return (1);
 		// put_image_to_image(&game->img, pos, ((t_img *)game->map->font
 		// 	[ft_toupper(c) - FONT_OFFSET].img->content));
@@ -50,24 +50,24 @@ int	put_char_to_screen(t_game *game, char c, t_vector pos, int divisor)
 	return (0);
 }
 
-void	put_text_to_screen(t_game *game, char *text, t_vector pos, int divisor)
+void	put_text_to_screen(t_game *game, char *text, t_vector pos, int font_size)
 {
 	while (*text)
 	{
-		pos.x += put_char_to_screen(game, *text, pos, divisor) * FONT_SIZE / divisor;
+		pos.x += put_char_to_screen(game, *text, pos, font_size) * font_size;
 		++text;
 	}
 }
 
-void	put_text_to_screen_layout(t_game *game, t_text *text, int divisor)
+void	put_text_to_screen_layout(t_game *game, t_text *text, int font_size)
 {
 	if (text->layout & VCenter)
-		text->pos.y -= FONT_SIZE / (divisor * 2);
+		text->pos.y -= font_size / 2;
 	else if (text->layout & VBottom)
-		text->pos.y -= FONT_SIZE / divisor;
+		text->pos.y -= font_size;
 	if (text->layout & HCenter)
-		text->pos.x -= (ft_strlen(text->text) * (FONT_SIZE / divisor)) / 2;
+		text->pos.x -= (ft_strlen(text->text) * font_size) / 2;
 	else if (text->layout & HRight)
-		text->pos.x -= (ft_strlen(text->text) * (FONT_SIZE / divisor));
-	put_text_to_screen(game, text->text, text->pos, divisor);
+		text->pos.x -= (ft_strlen(text->text) * font_size);
+	put_text_to_screen(game, text->text, text->pos, font_size);
 }

@@ -1,15 +1,16 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-static int filename_check(char *filename)
+static int	filename_check(char *filename)
 {
-	if (ft_strlen(filename) < 5 || ft_strncmp(&filename[ft_strlen(filename) - 4], ".cub", 4) != 0)
+	if (ft_strlen(filename) < 5 || ft_strncmp(&filename
+			[ft_strlen(filename) - 4], ".cub", 4) != 0)
 		return (0);
 	return (1);
 }
 
-static int file_exists(char *filename)
+static int	file_exists(char *filename)
 {
-	int fd;
+	int	fd;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
@@ -19,7 +20,7 @@ static int file_exists(char *filename)
 
 int	check_file(int ac, char **av)
 {
-	int fd;
+	int	fd;
 
 	fd = -1;
 	if (ac != 2)

@@ -83,3 +83,29 @@ char	*ft_itoa(int n)
 	ft_reverse(arr);
 	return (arr);
 }
+
+char	*ft_put_itoa(char *arr, int n)
+{
+	int			z;
+	int			i;
+	long int	nbr;
+
+	if (n == 0)
+	{
+		arr[0] = '0';
+		return (arr);
+	}
+	nbr = n;
+	i = 0;
+	z = -2 * (nbr < 0) + 1;
+	while (nbr != 0)
+	{
+		arr[i++] = z * (nbr % 10) + '0';
+		nbr /= 10;
+	}
+	if (z < 0)
+		arr[i++] = '-';
+	arr[i] = '\0';
+	ft_reverse(arr);
+	return (arr);
+}
