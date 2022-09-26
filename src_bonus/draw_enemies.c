@@ -37,23 +37,24 @@ void	draw_object_scaled(t_game *game, t_object *object)
 
 	cur = (t_vector) {draw_start.x,draw_start.y};
 	src.x = fmaxf(0.f, -object->start.x * object->render_step.x);
-	while (cur.x < draw_end.x)
-	{
-		cur.y = draw_start.y;
-		src.y = fmaxf(0.f, -object->start.y * object->render_step.y);
-		if (game->column[cur.x].distance >= object->distance)
-			while (cur.y < draw_end.y)
-			{
-				texture_pix = object->sprite->addr[(unsigned)
-						((int) src.y * object->sprite->size.x + src.x)];
-				if (texture_pix >> 24 == 0x00)
-					put_pixel(&game->img, cur, texture_pix);
-				src.y += object->render_step.y;
-				cur.y++;
-			}
-		src.x += object->render_step.x;
-		cur.x++;
-	}
+	if (object->distance < MAX_RENDER_DISTANCE)
+		while (cur.x < draw_end.x)
+		{
+			cur.y = draw_start.y;
+			src.y = fmaxf(0.f, -object->start.y * object->render_step.y);
+			if (game->column[cur.x].distance >= object->distance)
+				while (cur.y < draw_end.y)
+				{
+					texture_pix = object->sprite->addr[(unsigned)
+							((int) src.y * object->sprite->size.x + src.x)];
+					if (texture_pix >> 24 == 0x00)
+						put_pixel(&game->img, cur, texture_pix);
+					src.y += object->render_step.y;
+					cur.y++;
+				}
+			src.x += object->render_step.x;
+			cur.x++;
+		}
 }
 
 void	update_distance(t_game *game)

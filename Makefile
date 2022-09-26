@@ -89,10 +89,10 @@ ifeq ($(UNAME), Darwin)
 	MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 	MLX		= mlx
 	SNDLIB	+= cute_sound/SDL2
-	GOINFRE	= $(HOME)/goinfre
-	ifeq ($(shell [ -d $(GOINFRE) ]; echo $?), 1) #TODO: it is doesn't work at school computer
+#	GOINFRE	= $(HOME)/goinfre
+#	ifeq ($(shell [ -d $(GOINFRE) ]; echo $?), 1) #TODO: it is doesn't work at school computer
 		GOINFRE = .
-	endif
+#	endif
 endif
 
 ifeq ($(UNAME), Linux)
