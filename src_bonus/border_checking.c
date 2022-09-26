@@ -30,17 +30,19 @@ int	check_enclosure(t_map *map, t_vector vec)
 	return (0);
 }
 
-int	is_map_enclosed(t_map *args)
+int	is_map_enclosed(t_map *map)
 {
 	t_vector	check;
 
+	if (!ft_strchr(WALL_CHARS, **map->map))
+		error_exit(NULL, 1, "unexpected map entry recieved");
 	check.y = 0;
-	while (check.y < args->map_size.y)
+	while (check.y < map->map_size.y)
 	{
 		check.x = 0;
-		while (check.x < args->map_size.x)
+		while (check.x < map->map_size.x)
 		{
-			if (check_enclosure(args, check))
+			if (check_enclosure(map, check))
 			{
 				return (0);
 			}

@@ -10,6 +10,7 @@
 # include "X11/X.h"
 # include "X11/keysym.h"
 # include <time.h>
+# include <signal.h>
 # include <sys/time.h>
 # include "../cute_sound/cute_sound.h"
 # ifdef __APPLE__
