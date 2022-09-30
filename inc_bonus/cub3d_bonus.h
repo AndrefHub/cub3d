@@ -58,6 +58,16 @@ typedef struct rgb
 	unsigned char	a;
 }	t_rgb;
 
+typedef struct node
+{
+	t_vector	pos;	
+	short		g;
+	short		h;
+	struct node	*parent;
+} t_astar_node;
+
+typedef t_astar_node t_node;
+
 // t_text: dummy structure created with sole purpose of
 // putting 5 variables in function
 typedef struct text
@@ -124,6 +134,7 @@ typedef struct s_enemy
 	t_fvector	delta;
 	t_ull		last_attack_time;
 	t_fvector	starting_pos;
+	t_list		*path;
 }				t_enemy;
 
 typedef struct s_hud_entry
@@ -414,7 +425,7 @@ void	put_frame(t_game *game);
 void	init_hud(struct s_hud *hud);
 
 // what happens to player after death: // 
-int	player_respawn(t_game *game);
+int		player_respawn(t_game *game);
 
 // is_checks.c //
 int		is_wall(char c);
@@ -426,5 +437,7 @@ int		is_object(char c);
 void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *));
 void	eat_by_coords(t_game *game, t_vector pos);
 void	player_eat(t_game *game);
+
+t_list	*astar(t_game *game, t_vector enemy, t_vector player);
 
 #endif

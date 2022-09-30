@@ -22,7 +22,7 @@ static void	draw_row_textured(t_game *game, t_img src, t_vector cur, float row_d
 						  (int) (TEXTURE_SIZE * fabsf((floor.y - (int) floor.y)))};
 		floor.x += floor_step.x;
 		floor.y += floor_step.y;
-		if (row_distance > 0)
+		if (row_distance > 0 && row_distance < 99999999)
 			put_pixel(&game->img, cur,
 				src.addr[(tex.y * TEXTURE_SIZE + tex.x) % (TEXTURE_SIZE * TEXTURE_SIZE)]);
 		cur.x++;
