@@ -26,48 +26,14 @@ void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *))
 			prev = curr;
 			curr = curr->next;
 		}
-//		printf("%p %p\n", prev, curr);
 	}
 }
-
-/*
-{
-    List* p,*q;
-    p=q=*head;
-
-    if((*head)->data == value)
-    {
-        *head = (*head)->next;
-        free(p);
-        return;
-    }
-    else
-    {
-        while(p->next != NULL)
-        {
-            if(p->data == value)
-            {
-                q->next = p->next;
-                free(p);
-            }
-            else
-            {
-                q = p;
-                p = p->next;
-             }
-        } // while loop ends
-
-    } // outer else ends
-
-} // del function ends
-*/
 
 void	eat_by_coords(t_game *game, t_vector pos)
 {
 	t_list      *objects;
 	t_object    *object;
 
-//		printf("i\'m in\n");
 	objects = game->objects;
 	while (objects)
 	{
@@ -89,7 +55,6 @@ void	player_eat(t_game *game)
 
 	if (is_edible(game->map->map[pos.y][pos.x]))
 	{
-//		printf("found edible\n");
 		eat_by_coords(game, pos);
 	}
 }

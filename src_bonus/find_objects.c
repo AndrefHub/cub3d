@@ -63,6 +63,7 @@ void	find_enemy(t_list **lst, t_object *object)
 		ft_bzero(enemy, sizeof(*enemy));
 		enemy->object = object;
 		enemy->starting_pos = enemy->object->pos;
+		enemy->path = NULL;
 		ft_lstadd_back(lst, ft_lstnew(enemy));
 	}
 }

@@ -25,27 +25,76 @@ float	calculate_angle(t_fvector p, t_fvector e)
 	return (atan);
 }
 
+void	update_path(t_game *game, t_enemy *enemy, t_list **path)
+{
+	if (!ft_lstsize(*path))
+	{
+		*path = astar(game, (t_vector){enemy->object->pos.x, enemy->object->pos.y},
+			(t_vector){game->player.pos.x, game->player.pos.y});
+	}
+}
+
+void	enemy_check_collision(t_game *game, t_enemy *enemy)
+{
+	t_list	*enemies;
+	
+	enemies = game->map->enemies;
+	while (enemies)
+	{
+		if ((t_enemy *)enemies->content != enemy && fvector_distance(enemy->object->pos, ((t_enemy *)enemies->content)->
+			object->pos) < PL_RADIUS * 2)
+		{
+			enemy->object->pos.x -= enemy->delta.x;
+			enemy->object->pos.y -= enemy->delta.y;
+		}
+		enemies = enemies->next;
+	}
+}
+
+void	enemy_move_along_path(t_game *game, t_enemy *enemy)
+{
+	const t_fvector	e = {1, 0};
+	t_fvector		p;
+	t_node			*node;
+	float 			angle;
+
+	update_path(game, enemy, &enemy->path);
+	if (ft_lstsize(enemy->path))
+	{
+		node = ((t_node *)enemy->path->content);
+		if (fvector_distance((t_fvector){.5 + node->pos.x, .5 + node->pos.y},
+			enemy->object->pos) < .1)
+		{
+			ft_lstdelone(ft_lstpop_front(&enemy->path), free);
+			update_path(game, enemy, &enemy->path);
+			// if (!ft_lstsize(enemy->path))
+			// 	enemy->path = astar(game, (t_vector){enemy->object->pos.x, enemy->object->pos.y},
+			// 		(t_vector){game->player.pos.x, game->player.pos.y});
+			node = ((t_node *)enemy->path->content);
+		}
+			
+		p.x = .5 + node->pos.x - enemy->object->pos.x;
+		p.y = .5 + node->pos.y - enemy->object->pos.y;
+		angle = calculate_angle(e, p);
+		enemy->delta.x = cosf(angle) * EN_SPEED;
+		enemy->delta.y = sinf(angle) * EN_SPEED;
+		enemy->object->pos.x += enemy->delta.x;
+		enemy->object->pos.y += enemy->delta.y;
+	}
+	// enemy_check_collision(game, enemy);
+}
+
 void	enemy_move(t_game *game)
 {
 	t_list			*lst;
-	const t_fvector	e = {1, 0};
 	t_enemy			*enemy;
-	t_fvector		p;
-	float 			angle;
 
 	lst = game->map->enemies;
 	while (lst)
 	{
 		enemy = ((t_enemy *)lst->content);
-		p.x = game->player.pos.x - enemy->object->pos.x;
-		p.y = game->player.pos.y - enemy->object->pos.y;
-		angle = calculate_angle(e, p);
-		(void ) angle;
-//		enemy->delta.x = cosf(angle) * EN_SPEED;
-//		enemy->delta.y = sinf(angle) * EN_SPEED;
 
-		enemy->object->pos.x += enemy->delta.x;
-		enemy->object->pos.y += enemy->delta.y;
+		enemy_move_along_path(game, enemy);
 		enemy->object->distance = distancef(&game->player.pos, &enemy->object->pos);
 		check_borders(game, enemy->object);
 		if (fvector_distance(game->player.pos, enemy->object->pos) < 1)

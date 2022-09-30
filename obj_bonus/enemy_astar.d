@@ -1,4 +1,4 @@
-obj_bonus/draw_enemies.o: src_bonus/draw_enemies.c libft/libft.h \
+obj_bonus/enemy_astar.o: src_bonus/enemy_astar.c libft/libft.h \
   inc_bonus/cub3d_bonus.h inc_bonus/../libft/libft.h \
   inc_bonus/constants_bonus.h /usr/local/include/X11/X.h \
   /usr/local/include/X11/keysym.h /usr/local/include/X11/keysymdef.h \

@@ -35,6 +35,7 @@ add_executable(cub3d
         src_bonus/find_objects.c
         src_bonus/init_utils.c
         src_bonus/input_mode.c
+        src_bonus/enemy_astar.c
         src_bonus/downscale_image.c
         src_bonus/mlx_adapter.c
         src_bonus/parsing.c
