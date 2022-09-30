@@ -16,8 +16,6 @@ int	game_loop(t_game *game)
 	{
 		player_controll(game);
 		enemy_move(game);
-//		fill_ceiling_color(&game->img, game->map->c, game->z_offset);
-//		fill_floor_color(&game->img, game->map->f, game->z_offset);
 		draw_ceil_floor_textured(game);
 
 		cast_rays(game);
@@ -26,7 +24,6 @@ int	game_loop(t_game *game)
 
 		draw_aim(game);
 
-//		draw_fps(game);
 		draw_hud(game);
 		put_frame(game);
 		change_textures(game);
@@ -36,7 +33,5 @@ int	game_loop(t_game *game)
 		player_death(game);
 	}
 	update_time(game);
-	// draw_hud(game, time_rays, time_drawing);
-	// game->time.last = get_time();
 	return (0);
 }

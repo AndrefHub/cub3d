@@ -92,8 +92,8 @@ void	find_objects(t_map *map)
 			ft_lstadd_back(&map->objects, ft_lstnew(object));
 			find_enemy(&map->enemies, object);
 			line = map->map[counter] + x_coord + 1;
-			printf("%s\n", line);
-			printf("%d %d\n", counter, x_coord);
+//			printf("%s\n", line);
+//			printf("%d %d\n", counter, x_coord);
 		}
 	}
 }

@@ -40,6 +40,7 @@ void	enemy_move(t_game *game)
 		p.x = game->player.pos.x - enemy->object->pos.x;
 		p.y = game->player.pos.y - enemy->object->pos.y;
 		angle = calculate_angle(e, p);
+		(void ) angle;
 //		enemy->delta.x = cosf(angle) * EN_SPEED;
 //		enemy->delta.y = sinf(angle) * EN_SPEED;
 

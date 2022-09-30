@@ -16,7 +16,7 @@ void	draw_wall_scaled(t_img *img, const t_img *texture,
 	max_height = ft_min(img->size.y, img->size.y / 2 + column->height / 2 - game->z_offset);
 	while (y < max_height)
 	{
-		put_pixel(img, (t_vector) {x, y}, texture->addr[(unsigned )tex_y * texture->size.x + tex_x]);
+		img->addr[y * img->size.x + x] = texture->addr[(unsigned )tex_y * texture->size.x + tex_x];
 		tex_y += step;
 		y++;
 	}

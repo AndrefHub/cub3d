@@ -26,7 +26,7 @@ void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *))
 			prev = curr;
 			curr = curr->next;
 		}
-		printf("%p %p\n", prev, curr);
+//		printf("%p %p\n", prev, curr);
 	}
 }
 
@@ -67,7 +67,7 @@ void	eat_by_coords(t_game *game, t_vector pos)
 	t_list      *objects;
 	t_object    *object;
 
-		printf("i\'m in\n");
+//		printf("i\'m in\n");
 	objects = game->objects;
 	while (objects)
 	{
@@ -89,7 +89,7 @@ void	player_eat(t_game *game)
 
 	if (is_edible(game->map->map[pos.y][pos.x]))
 	{
-		printf("found edible\n");
+//		printf("found edible\n");
 		eat_by_coords(game, pos);
 	}
 }

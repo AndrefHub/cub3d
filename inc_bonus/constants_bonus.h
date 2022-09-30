@@ -9,17 +9,17 @@
 # define PROJ_NAME "Cub3d"
 //# define WIN_WIDTH 2560
 //# define WIN_HEIGHT 1440
- # define WIN_WIDTH 1280
- # define WIN_HEIGHT 720
-//# define WIN_WIDTH 1920
-//# define WIN_HEIGHT 1000
+// # define WIN_WIDTH 1280
+// # define WIN_HEIGHT 720
+# define WIN_WIDTH 1920
+# define WIN_HEIGHT 1000
 # define FOV 0.66f
 # define TEXTURE_SIZE 192
 # define MAX_RENDER_DISTANCE 120
 # define PI (float) M_PI
 # define PL_ROT_KEY_SPEED 0.05f
 # define PL_ROT_MOUSE_SPEED 0.002f
-# define PL_SPEED 2.0f
+# define PL_SPEED 0.1f
 # define PL_ACCELERATION 2.5f
 # define PL_RADIUS 0.2f
 # define PL_MAP_COLOR 0xFF0000

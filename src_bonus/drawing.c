@@ -19,7 +19,7 @@ void	draw_line(t_img *img, t_vector p1, t_vector p2, int color)
 	error = diff.x + diff.y;
 	while (1)
 	{
-		put_pixel(img, p1, color);
+		img->addr[p1.y * img->size.y + p1.y] = color;
 		if (p1.x == p2.x && p1.y == p2.y)
 			break ;
 		error_2 = 2 * error;
@@ -46,7 +46,7 @@ void	draw_square_fill(t_img *img, t_vector top_left, int size, int color)
 		px.x = top_left.x;
 		while (px.x < top_left.x + size)
 		{
-			put_pixel(img, px, color);
+			img->addr[px.y + img->size.x + px.x] = color;
 			px.x++;
 		}
 		px.y++;
