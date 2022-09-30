@@ -25,8 +25,8 @@ void	initialize_player(t_game *game)
 	game->player.delta.y = sinf(game->player.angle) * 5;
 
 	game->player.plane = (t_fvector) {0.0f, 0.66f};
-	game->fov = ((game->img.aspect >= 0.66f) - (game->img.aspect < 0.66f)) *
-			sqrtf(fabsf((float) M_PI_4 * (game->img.aspect - 0.66f) / 2)) + M_2_PI;
+	game->fov = ((game->img.aspect >= FOV) - (game->img.aspect < FOV)) *
+			sqrtf(fabsf((float) M_PI_4 * (game->img.aspect - FOV) / 2)) + M_2_PI;
 	game->col_step = tanf(game->fov / (WIN_WIDTH - 1));
 	game->col_scale = 1.0f / game->col_step;
 	printf("%f, %f\n", game->col_step, game->fov);

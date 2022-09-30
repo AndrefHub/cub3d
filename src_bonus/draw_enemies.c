@@ -48,7 +48,7 @@ void	draw_object_scaled(t_game *game, t_object *object)
 					texture_pix = object->sprite->addr[(unsigned)
 							((int) src.y * object->sprite->size.x + src.x)];
 					if (texture_pix >> 24 == 0x00)
-						put_pixel(&game->img, cur, texture_pix);
+						game->img.addr[cur.y * game->img.size.x + cur.x] = texture_pix;
 					src.y += object->render_step.y;
 					cur.y++;
 				}

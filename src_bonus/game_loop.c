@@ -16,9 +16,8 @@ int	game_loop(t_game *game)
 	{
 		player_controll(game);
 		enemy_move(game);
-
-		fill_ceiling_color(&game->img, game->map->c, game->z_offset);
-		fill_floor_color(&game->img, game->map->f, game->z_offset);
+//		fill_ceiling_color(&game->img, game->map->c, game->z_offset);
+//		fill_floor_color(&game->img, game->map->f, game->z_offset);
 		draw_ceil_floor_textured(game);
 
 		cast_rays(game);
