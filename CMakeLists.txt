@@ -27,7 +27,13 @@ add_executable(cub3d
         src_bonus/hooks.c
         src_bonus/input_manip.c
         src_bonus/main.c
+        src_bonus/image_manip.c
+        src_bonus/draw_hud.c
+        src_bonus/player_eating.c
         src_bonus/enemy_actions.c
+        src_bonus/is_checks.c
+        src_bonus/find_objects.c
+        src_bonus/init_utils.c
         src_bonus/input_mode.c
         src_bonus/downscale_image.c
         src_bonus/mlx_adapter.c
@@ -40,6 +46,8 @@ add_executable(cub3d
         src_bonus/put_text.c
         src_bonus/ray_casting.c
         src_bonus/draw_walls.c
+        src_bonus/respawn.c
+        src_bonus/vector_utils.c
         src_bonus/start_game.c
         src_bonus/time_funcs.c
         src_bonus/game_sound.c

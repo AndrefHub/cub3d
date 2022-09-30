@@ -15,7 +15,7 @@
 //# define WIN_HEIGHT 1000
 # define FOV 0.66f
 # define TEXTURE_SIZE 192
-# define MAX_RENDER_DISTANCE 30
+# define MAX_RENDER_DISTANCE 120
 # define PI (float) M_PI
 # define PL_ROT_KEY_SPEED 0.05f
 # define PL_ROT_MOUSE_SPEED 0.002f

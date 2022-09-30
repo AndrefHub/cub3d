@@ -79,8 +79,6 @@ build CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o: C_COMPILER__cub3d_Rele
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/check_file.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/check_file.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -89,8 +87,6 @@ build CMakeFiles/cub3d.dir/src_bonus/check_file.c.o: C_COMPILER__cub3d_Release /
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/controller.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/controller.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -99,8 +95,6 @@ build CMakeFiles/cub3d.dir/src_bonus/controller.c.o: C_COMPILER__cub3d_Release /
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/demo_utils.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -109,8 +103,6 @@ build CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o: C_COMPILER__cub3d_Release /
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/draw_map.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -119,8 +111,6 @@ build CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o: C_COMPILER__cub3d_Release /Us
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/drawing.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/drawing.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -129,8 +119,6 @@ build CMakeFiles/cub3d.dir/src_bonus/drawing.c.o: C_COMPILER__cub3d_Release /Use
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/free_game.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/free_game.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -139,8 +127,6 @@ build CMakeFiles/cub3d.dir/src_bonus/free_game.c.o: C_COMPILER__cub3d_Release /U
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/ft_utils.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -149,8 +135,6 @@ build CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o: C_COMPILER__cub3d_Release /Us
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/game_loop.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -159,8 +143,6 @@ build CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o: C_COMPILER__cub3d_Release /U
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/game_sound.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -169,8 +151,6 @@ build CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o: C_COMPILER__cub3d_Release /
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/game_textures.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -179,8 +159,6 @@ build CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o: C_COMPILER__cub3d_Releas
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/death_events.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/death_events.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -189,8 +167,6 @@ build CMakeFiles/cub3d.dir/src_bonus/death_events.c.o: C_COMPILER__cub3d_Release
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/vector_utils.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -199,8 +175,6 @@ build CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o: C_COMPILER__cub3d_Release
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/hooks.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/hooks.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -209,8 +183,6 @@ build CMakeFiles/cub3d.dir/src_bonus/hooks.c.o: C_COMPILER__cub3d_Release /Users
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/input_manip.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -219,8 +191,6 @@ build CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o: C_COMPILER__cub3d_Release 
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/main.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/main.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -229,8 +199,30 @@ build CMakeFiles/cub3d.dir/src_bonus/main.c.o: C_COMPILER__cub3d_Release /Users/
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
+
+build CMakeFiles/cub3d.dir/src_bonus/image_manip.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/image_manip.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\".\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/image_manip.c.o.d
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -MMD -g -Ofast -march=native -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/draw_hud.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/draw_hud.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\".\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/draw_hud.c.o.d
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -MMD -g -Ofast -march=native -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/player_eating.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/player_eating.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\".\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/player_eating.c.o.d
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -MMD -g -Ofast -march=native -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
 build CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/enemy_actions.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -239,8 +231,30 @@ build CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o: C_COMPILER__cub3d_Releas
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
+
+build CMakeFiles/cub3d.dir/src_bonus/is_checks.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/is_checks.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\".\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/is_checks.c.o.d
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -MMD -g -Ofast -march=native -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/find_objects.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/find_objects.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\".\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/find_objects.c.o.d
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -MMD -g -Ofast -march=native -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
+
+build CMakeFiles/cub3d.dir/src_bonus/init_utils.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/init_utils.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\".\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/init_utils.c.o.d
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -MMD -g -Ofast -march=native -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
 build CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/input_mode.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -249,8 +263,6 @@ build CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o: C_COMPILER__cub3d_Release /
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/downscale_image.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -259,8 +271,6 @@ build CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o: C_COMPILER__cub3d_Rele
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/mlx_adapter.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -269,8 +279,6 @@ build CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o: C_COMPILER__cub3d_Release 
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/parsing.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/parsing.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -279,8 +287,6 @@ build CMakeFiles/cub3d.dir/src_bonus/parsing.c.o: C_COMPILER__cub3d_Release /Use
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/parsing_font.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -289,8 +295,6 @@ build CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o: C_COMPILER__cub3d_Release
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/parsing_textures.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -299,8 +303,6 @@ build CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o: C_COMPILER__cub3d_Rel
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/parsing_utils.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -309,8 +311,6 @@ build CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o: C_COMPILER__cub3d_Releas
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/player_controller.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -319,8 +319,6 @@ build CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o: C_COMPILER__cub3d_Re
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/player_movement.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -329,8 +327,6 @@ build CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o: C_COMPILER__cub3d_Rele
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/put_text.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/put_text.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -339,8 +335,6 @@ build CMakeFiles/cub3d.dir/src_bonus/put_text.c.o: C_COMPILER__cub3d_Release /Us
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/ray_casting.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -349,8 +343,6 @@ build CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o: C_COMPILER__cub3d_Release 
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/draw_walls.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -359,8 +351,14 @@ build CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o: C_COMPILER__cub3d_Release /
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
+
+build CMakeFiles/cub3d.dir/src_bonus/respawn.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/respawn.c || cmake_object_order_depends_target_cub3d
+  DEFINES = -DASSETS_PATH=\".\"
+  DEP_FILE = CMakeFiles/cub3d.dir/src_bonus/respawn.c.o.d
+  FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -MMD -g -Ofast -march=native -std=gnu99
+  INCLUDES = -I/opt/X11/include
+  OBJECT_DIR = CMakeFiles/cub3d.dir
+  OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
 
 build CMakeFiles/cub3d.dir/src_bonus/start_game.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/start_game.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -369,8 +367,6 @@ build CMakeFiles/cub3d.dir/src_bonus/start_game.c.o: C_COMPILER__cub3d_Release /
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/time_funcs.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -379,8 +375,6 @@ build CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o: C_COMPILER__cub3d_Release /
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/draw_ceil_floor.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -389,8 +383,6 @@ build CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o: C_COMPILER__cub3d_Rele
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/cute_sound/cute_sound.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -399,8 +391,6 @@ build CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o: C_COMPILER__cub3d_Release 
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/cute_sound
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/draw_enemies.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -409,8 +399,6 @@ build CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o: C_COMPILER__cub3d_Release
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 build CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o: C_COMPILER__cub3d_Release /Users/landreas/42Course/cub3d/src_bonus/ft_lstsort.c || cmake_object_order_depends_target_cub3d
   DEFINES = -DASSETS_PATH=\".\"
@@ -419,8 +407,6 @@ build CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o: C_COMPILER__cub3d_Release /
   INCLUDES = -I/opt/X11/include
   OBJECT_DIR = CMakeFiles/cub3d.dir
   OBJECT_FILE_DIR = CMakeFiles/cub3d.dir/src_bonus
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
-  TARGET_PDB = cub3d.pdb
 
 
 # =============================================================================
@@ -430,15 +416,14 @@ build CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o: C_COMPILER__cub3d_Release /
 #############################################
 # Link the executable cub3d
 
-build cub3d: C_EXECUTABLE_LINKER__cub3d_Release CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o CMakeFiles/cub3d.dir/src_bonus/check_file.c.o CMakeFiles/cub3d.dir/src_bonus/controller.c.o CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o CMakeFiles/cub3d.dir/src_bonus/drawing.c.o CMakeFiles/cub3d.dir/src_bonus/free_game.c.o CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o CMakeFiles/cub3d.dir/src_bonus/death_events.c.o CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o CMakeFiles/cub3d.dir/src_bonus/hooks.c.o CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o CMakeFiles/cub3d.dir/src_bonus/main.c.o CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o CMakeFiles/cub3d.dir/src_bonus/parsing.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o CMakeFiles/cub3d.dir/src_bonus/put_text.c.o CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o CMakeFiles/cub3d.dir/src_bonus/start_game.c.o CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o | ../mlx/libmlx.a ../libft/libft.a ../cute_sound/SDL2
+build cub3d: C_EXECUTABLE_LINKER__cub3d_Release CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o CMakeFiles/cub3d.dir/src_bonus/check_file.c.o CMakeFiles/cub3d.dir/src_bonus/controller.c.o CMakeFiles/cub3d.dir/src_bonus/demo_utils.c.o CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o CMakeFiles/cub3d.dir/src_bonus/drawing.c.o CMakeFiles/cub3d.dir/src_bonus/free_game.c.o CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o CMakeFiles/cub3d.dir/src_bonus/death_events.c.o CMakeFiles/cub3d.dir/src_bonus/vector_utils.c.o CMakeFiles/cub3d.dir/src_bonus/hooks.c.o CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o CMakeFiles/cub3d.dir/src_bonus/main.c.o CMakeFiles/cub3d.dir/src_bonus/image_manip.c.o CMakeFiles/cub3d.dir/src_bonus/draw_hud.c.o CMakeFiles/cub3d.dir/src_bonus/player_eating.c.o CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o CMakeFiles/cub3d.dir/src_bonus/is_checks.c.o CMakeFiles/cub3d.dir/src_bonus/find_objects.c.o CMakeFiles/cub3d.dir/src_bonus/init_utils.c.o CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o CMakeFiles/cub3d.dir/src_bonus/mlx_adapter.c.o CMakeFiles/cub3d.dir/src_bonus/parsing.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o CMakeFiles/cub3d.dir/src_bonus/put_text.c.o CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o CMakeFiles/cub3d.dir/src_bonus/respawn.c.o CMakeFiles/cub3d.dir/src_bonus/start_game.c.o CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o CMakeFiles/cub3d.dir/cute_sound/cute_sound.c.o CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o CMakeFiles/cub3d.dir/src_bonus/ft_lstsort.c.o | ../mlx/libmlx.a ../libft/libft.a ../cute_sound/SDL2
   FLAGS = -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   LINK_LIBRARIES = ../mlx/libmlx.a  -framework OpenGL  -framework AppKit  ../libft/libft.a  ../cute_sound/SDL2
   OBJECT_DIR = CMakeFiles/cub3d.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/cub3d.dir/
   TARGET_FILE = cub3d
-  TARGET_PDB = cub3d.pdb
+  TARGET_PDB = cub3d.dbg
 
 # =============================================================================
 # Target aliases.
@@ -460,14 +445,14 @@ build all: phony cub3d
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/ROCMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.21/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################

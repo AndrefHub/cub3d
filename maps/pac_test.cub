@@ -1,92 +1,92 @@
 BONUS
 USE_PATH_PREFIX
 
-W1 ./assets/textures/pacwall/pac_wall01.xpm
-./assets/textures/pacwall/pac_wall02.xpm
-./assets/textures/pacwall/pac_wall03.xpm
-./assets/textures/pacwall/pac_wall04.xpm
-./assets/textures/pacwall/pac_wall05.xpm
-./assets/textures/pacwall/pac_wall06.xpm
-./assets/textures/pacwall/pac_wall07.xpm
-./assets/textures/pacwall/pac_wall08.xpm
-./assets/textures/pacwall/pac_wall09.xpm
-./assets/textures/pacwall/pac_wall10.xpm
-./assets/textures/pacwall/pac_wall11.xpm
-./assets/textures/pacwall/pac_wall12.xpm
-./assets/textures/pacwall/pac_wall13.xpm
-./assets/textures/pacwall/pac_wall14.xpm
-./assets/textures/pacwall/pac_wall15.xpm
-./assets/textures/pacwall/pac_wall16.xpm
-./assets/textures/pacwall/pac_wall17.xpm
-./assets/textures/pacwall/pac_wall18.xpm
-./assets/textures/pacwall/pac_wall19.xpm
-./assets/textures/pacwall/pac_wall20.xpm
-./assets/textures/pacwall/pac_wall21.xpm
-./assets/textures/pacwall/pac_wall22.xpm
-./assets/textures/pacwall/pac_wall23.xpm
-./assets/textures/pacwall/pac_wall24.xpm
-./assets/textures/pacwall/pac_wall25.xpm
-./assets/textures/pacwall/pac_wall26.xpm
-./assets/textures/pacwall/pac_wall27.xpm
-./assets/textures/pacwall/pac_wall28.xpm
-./assets/textures/pacwall/pac_wall29.xpm
-./assets/textures/pacwall/pac_wall30.xpm
-./assets/textures/pacwall/pac_wall31.xpm
-./assets/textures/pacwall/pac_wall32.xpm
-./assets/textures/pacwall/pac_wall33.xpm
-./assets/textures/pacwall/pac_wall34.xpm
-./assets/textures/pacwall/pac_wall35.xpm
-./assets/textures/pacwall/pac_wall36.xpm
-./assets/textures/pacwall/pac_wall37.xpm
-./assets/textures/pacwall/pac_wall38.xpm
-./assets/textures/pacwall/pac_wall39.xpm
-./assets/textures/pacwall/pac_wall40.xpm
-./assets/textures/pacwall/pac_wall41.xpm
-./assets/textures/pacwall/pac_wall42.xpm
-./assets/textures/pacwall/pac_wall43.xpm
-./assets/textures/pacwall/pac_wall44.xpm
-./assets/textures/pacwall/pac_wall45.xpm
-./assets/textures/pacwall/pac_wall46.xpm
-./assets/textures/pacwall/pac_wall47.xpm
-./assets/textures/pacwall/pac_wall48.xpm
-./assets/textures/pacwall/pac_wall49.xpm
-./assets/textures/pacwall/pac_wall50.xpm
-./assets/textures/pacwall/pac_wall51.xpm
-./assets/textures/pacwall/pac_wall52.xpm
-./assets/textures/pacwall/pac_wall53.xpm
-./assets/textures/pacwall/pac_wall54.xpm
-./assets/textures/pacwall/pac_wall55.xpm
-./assets/textures/pacwall/pac_wall56.xpm
-./assets/textures/pacwall/pac_wall57.xpm
-./assets/textures/pacwall/pac_wall58.xpm
-./assets/textures/pacwall/pac_wall59.xpm
-./assets/textures/pacwall/pac_wall60.xpm
-./assets/textures/pacwall/pac_wall61.xpm
-./assets/textures/pacwall/pac_wall62.xpm
-./assets/textures/pacwall/pac_wall63.xpm
-./assets/textures/pacwall/pac_wall64.xpm
-./assets/textures/pacwall/pac_wall65.xpm
-./assets/textures/pacwall/pac_wall66.xpm
+W1 ./assets/textures/pacwall/wall01.xpm
+./assets/textures/pacwall/wall02.xpm
+./assets/textures/pacwall/wall03.xpm
+./assets/textures/pacwall/wall04.xpm
+./assets/textures/pacwall/wall05.xpm
+./assets/textures/pacwall/wall06.xpm
+./assets/textures/pacwall/wall07.xpm
+./assets/textures/pacwall/wall08.xpm
+./assets/textures/pacwall/wall09.xpm
+./assets/textures/pacwall/wall10.xpm
+./assets/textures/pacwall/wall11.xpm
+./assets/textures/pacwall/wall12.xpm
+./assets/textures/pacwall/wall13.xpm
+./assets/textures/pacwall/wall14.xpm
+./assets/textures/pacwall/wall15.xpm
+./assets/textures/pacwall/wall16.xpm
+./assets/textures/pacwall/wall17.xpm
+./assets/textures/pacwall/wall18.xpm
+./assets/textures/pacwall/wall19.xpm
+./assets/textures/pacwall/wall20.xpm
+./assets/textures/pacwall/wall21.xpm
+./assets/textures/pacwall/wall22.xpm
+./assets/textures/pacwall/wall23.xpm
+./assets/textures/pacwall/wall24.xpm
+./assets/textures/pacwall/wall25.xpm
+./assets/textures/pacwall/wall26.xpm
+./assets/textures/pacwall/wall27.xpm
+./assets/textures/pacwall/wall28.xpm
+./assets/textures/pacwall/wall29.xpm
+./assets/textures/pacwall/wall30.xpm
+./assets/textures/pacwall/wall31.xpm
+./assets/textures/pacwall/wall32.xpm
+./assets/textures/pacwall/wall33.xpm
+./assets/textures/pacwall/wall34.xpm
+./assets/textures/pacwall/wall35.xpm
+./assets/textures/pacwall/wall36.xpm
+./assets/textures/pacwall/wall37.xpm
+./assets/textures/pacwall/wall38.xpm
+./assets/textures/pacwall/wall39.xpm
+./assets/textures/pacwall/wall40.xpm
+./assets/textures/pacwall/wall41.xpm
+./assets/textures/pacwall/wall42.xpm
+./assets/textures/pacwall/wall43.xpm
+./assets/textures/pacwall/wall44.xpm
+./assets/textures/pacwall/wall45.xpm
+./assets/textures/pacwall/wall46.xpm
+./assets/textures/pacwall/wall47.xpm
+./assets/textures/pacwall/wall48.xpm
+./assets/textures/pacwall/wall49.xpm
+./assets/textures/pacwall/wall50.xpm
+./assets/textures/pacwall/wall51.xpm
+./assets/textures/pacwall/wall52.xpm
+./assets/textures/pacwall/wall53.xpm
+./assets/textures/pacwall/wall54.xpm
+./assets/textures/pacwall/wall55.xpm
+./assets/textures/pacwall/wall56.xpm
+./assets/textures/pacwall/wall57.xpm
+./assets/textures/pacwall/wall58.xpm
+./assets/textures/pacwall/wall59.xpm
+./assets/textures/pacwall/wall60.xpm
+./assets/textures/pacwall/wall61.xpm
+./assets/textures/pacwall/wall62.xpm
+./assets/textures/pacwall/wall64.xpm
+./assets/textures/pacwall/wall65.xpm
+./assets/textures/pacwall/wall66.xpm
+./assets/textures/pacwall/wall63.xpm
+W2 ./assets/textures/pacwall/wall01.xpm
 
-W2 ./assets/textures/pacwall/pac_wall01.xpm
+W3 ./assets/textures/pacwall/wall01.xpm
 
-W3 ./assets/textures/pacwall/pac_wall01.xpm
+W4 ./assets/textures/pacwall/wall01.xpm
 
-W4 ./assets/textures/pacwall/pac_wall01.xpm
+W5 ./assets/textures/pacwall/wall01.xpm
 
-W5 ./assets/textures/pacwall/pac_wall01.xpm
+W6 ./assets/textures/pacwall/wall01.xpm
 
-W6 ./assets/textures/pacwall/pac_wall01.xpm
+W7 ./assets/textures/pacwall/wall01.xpm
 
-W7 ./assets/textures/pacwall/pac_wall01.xpm
+W8 ./assets/textures/pacwall/wall01.xpm
 
-W8 ./assets/textures/pacwall/pac_wall01.xpm
+W9 ./assets/textures/pacwall/wall01.xpm
 
-W9 ./assets/textures/pacwall/pac_wall01.xpm
+WD ./assets/textures/pacwall/wall01.xpm
 
-WD ./assets/textures/pacwall/pac_wall01.xpm
 
-E1 ./assets/textures/ghost/ghost1.xpm
+O1 ./assets/textures/ghost/ghost1.xpm
 ./assets/textures/ghost/ghost2.xpm
 ./assets/textures/ghost/ghost3.xpm
 ./assets/textures/ghost/ghost4.xpm
@@ -95,6 +95,9 @@ E1 ./assets/textures/ghost/ghost1.xpm
 ./assets/textures/ghost/ghost7.xpm
 ./assets/textures/ghost/ghost8.xpm
 
+
+O2 ./assets/textures/paccoin/coin1.xpm
+O3 ./assets/textures/pacpill/pill1.xpm
 
 F  ./assets/font/font240/space.xpm
 F! ./assets/font/font240/exclam.xpm
