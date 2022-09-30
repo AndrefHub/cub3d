@@ -62,7 +62,7 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 	if (ft_lstsize(enemy->path))
 	{
 		node = ((t_node *)enemy->path->content);
-		if (fvector_distance((t_fvector){.5 + node->pos.x, .5 + node->pos.y},
+		if (fvector_distance((t_fvector){.5f + node->pos.x, .5f + node->pos.y},
 			enemy->object->pos) < .1)
 		{
 			ft_lstdelone(ft_lstpop_front(&enemy->path), free);
@@ -73,8 +73,8 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 			node = ((t_node *)enemy->path->content);
 		}
 			
-		p.x = .5 + node->pos.x - enemy->object->pos.x;
-		p.y = .5 + node->pos.y - enemy->object->pos.y;
+		p.x = .5f + node->pos.x - enemy->object->pos.x;
+		p.y = .5f + node->pos.y - enemy->object->pos.y;
 		angle = calculate_angle(e, p);
 		enemy->delta.x = cosf(angle) * EN_SPEED;
 		enemy->delta.y = sinf(angle) * EN_SPEED;

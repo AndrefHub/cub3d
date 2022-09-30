@@ -78,11 +78,6 @@ W8 ./assets/textures/wah-goodman/wah108.xpm
 W9 ./assets/textures/wah-goodman/wah109.xpm
 WD ./assets/textures/wah-goodman/wah109.xpm
 
-<<<<<<< HEAD
-WD ./assets/textures/monke/monke001.xpm
-
-=======
->>>>>>> kdancy
 O1 ./assets/textures/ghost/ghost1.xpm
 ./assets/textures/ghost/ghost2.xpm
 ./assets/textures/ghost/ghost3.xpm
@@ -91,10 +86,6 @@ O1 ./assets/textures/ghost/ghost1.xpm
 ./assets/textures/ghost/ghost6.xpm
 ./assets/textures/ghost/ghost7.xpm
 ./assets/textures/ghost/ghost8.xpm
-<<<<<<< HEAD
-
-=======
->>>>>>> kdancy
 O2 ./assets/textures/paccoin/coin1.xpm
 O3 ./assets/textures/pacpill/pill1.xpm
 
