@@ -41,6 +41,8 @@ static inline void	get_screen_size(void *mlx_ptr, int *size_x, int *size_y)
 {
 	(void)mlx_ptr;
 	mlx_get_screen_size(size_x, size_y);
+	*size_x = 1280;
+	*size_y = 720;
 }
 
 #else
@@ -57,23 +59,26 @@ void	initialize_game_hud(t_game *game)
 	if (game->mlx.win_size.x >= 2560 && game->mlx.win_size.y >= 1440)
 	{
 		import_texture_to_img(game, &game->hud_texture,
-							  "assets/textures/hud/pac_hud1440p.xpm", 2560,
-							  1360);
-		game->mlx.game_size = (t_vector) {2020, 1190};
+			"assets/textures/hud/pac_hud1440p.xpm", 2560, 1360);
+		game->hud.font_size = 18; //TODO: set font_size
+		game->mlx.game_size = (t_vector) {1840, 1135};
 	}
 	else if (game->mlx.win_size.x >= 1920 && game->mlx.win_size.y >= 1080)
 	{
 		import_texture_to_img(game, &game->hud_texture,
-							  "assets/textures/hud/pac_hud1080p.xpm", 1920,
-							  1000);
+			"assets/textures/hud/pac_hud1080p.xpm", 1920, 1000);
+		game->hud.font_size = 18;
 		game->mlx.game_size = (t_vector) {1380, 830};
 	}
 	else if (game->mlx.win_size.x >= 1280 && game->mlx.win_size.y >= 720)
 	{
 		import_texture_to_img(game, &game->hud_texture,
-							  "assets/textures/hud/pac_hud720p.xpm", 1280, 720);
-		game->mlx.game_size = (t_vector) {740, 550};
+			"assets/textures/hud/pac_hud720p.xpm", 1280, 720);
+		game->mlx.game_size = (t_vector) {920, 607};
+		game->hud.font_size = 14;
 	}
+	game->hud_img = initialize_img(&game->hud_img, game->mlx.id,
+		game->mlx.win_size.x, game->mlx.win_size.y);
 }
 
 void	initialize_game_parameters(t_game *game)
@@ -87,10 +92,10 @@ void	initialize_game_parameters(t_game *game)
 	game->z_offset = 0;
 	game->grid = game->map->map;
 	game->img = initialize_img(&game->img, game->mlx.id, game->mlx.game_size.x, game->mlx.game_size.y);
-	printf("%d, %d\n", game->img.size.x, game->img.size.y);
+	// printf("%d, %d\n", game->img.size.x, game->img.size.y);
 //	exit(0);
-	game->hud_img = initialize_img(&game->hud_img, game->mlx.id, game->mlx.win_size.x, game->mlx.win_size.y);
-	game->main_img = initialize_img(&game->hud_img, game->mlx.id, game->mlx.win_size.x, game->mlx.win_size.y);
+	// game->hud_img = initialize_img(&game->hud_img, game->mlx.id, game->mlx.win_size.x, game->mlx.win_size.y);
+	// game->main_img = initialize_img(&game->hud_img, game->mlx.id, game->mlx.win_size.x, game->mlx.win_size.y);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,
 		game->mlx.game_size.x / 2, game->mlx.game_size.y / 2);
 	game->map->map_tile_size = ft_min(game->map->img.size.x /

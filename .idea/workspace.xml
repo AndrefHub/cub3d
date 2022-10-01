@@ -49,15 +49,10 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc_bonus/constants_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/constants_bonus.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mlx/mlx_new_image.m" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_new_image.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/death_events.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/death_events.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/downscale_image.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/downscale_image.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/draw_hud.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_hud.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/draw_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_map.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/game_loop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/game_loop.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/game_textures.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/game_textures.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/image_manip.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/image_manip.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/player_controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/player_controller.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/put_text.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/put_text.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/start_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/start_game.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -195,17 +190,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src_bonus/enemy_actions.c</url>
-          <line>72</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

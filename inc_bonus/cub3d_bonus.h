@@ -218,6 +218,7 @@ typedef struct game
 	}				time;
 	struct s_hud
 	{
+		int				font_size;
 		t_hud_entry		fps;
 		t_hud_entry		score;
 		t_hud_entry		lives;
