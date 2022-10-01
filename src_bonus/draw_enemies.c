@@ -30,7 +30,7 @@ void	draw_object_scaled(t_game *game, t_object *object)
 	const t_vector	draw_start = (t_vector) {ft_max(0, object->start.x),
 											   ft_max(0, object->start.y)};
 	const t_vector	draw_end = (t_vector) {ft_min(game->img.size.x, object->end.x),
-											   ft_min(game->img.size.x, object->end.y)};
+											   ft_min(game->img.size.y, object->end.y)};
 	t_fvector		src;
 	int				texture_pix;
 	t_vector		cur;
