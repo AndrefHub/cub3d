@@ -3,16 +3,9 @@
 
 # define BAD_FILE -2
 # define FRAMERATE 30
-// # define CLOCKS_PER_FRAME (1000 / FRAMERATE)
 # define BAD_COLOUR 0x1000000
 # define BAD_COORD -1
 # define PROJ_NAME "Cub3d"
-//# define WIN_WIDTH 2560
-//# define WIN_HEIGHT 1360
-  # define WIN_WIDTH 1920
-  # define WIN_HEIGHT 1000
-//# define WIN_WIDTH 1280
-//# define WIN_HEIGHT 720
 # define FOV 0.66f
 # define TEXTURE_SIZE 192
 # define MAX_RENDER_DISTANCE 120
@@ -25,8 +18,6 @@
 # define PL_MAP_COLOR 0xFF0000
 # define EN_SPEED 0.05f
 # define RAYS_COLOR 0xFFDD2D
-# define ABS_WALL_SIZE 1848.5f
-# define PERSPECTIVE 4.72f
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
 # define TRANSPARENT_COLOR 0xFFFFFFFF
@@ -34,9 +25,7 @@
 # define MAP_WALLS_COLOR 0xCCFFFFFF
 # define ENEMIES_MAP_COLOR 0x89D1FE
 # define OBJECTS_MAP_COLOR 0xFFEF00
-# define MAX_ENEMIES 1
 # define MAX_OBJECTS 3
-// # define MAX_WALL_CHARS 4
 # define MAX_WALL_CHARS 10
 # define MAX_SOUNDS 2
 # define MAX_HEALTH 1
@@ -45,13 +34,10 @@
 # define PL_INVINCIBILITY 2000
 # define FONT_SIZE 240
 # define FONT_OFFSET 32
-
-// # define WALL_CHARS "1D23456789"
 # define WALL_CHARS "123456789D"
 # define EDIBLE_CHARS ".o"
 # define ENEMY_CHARS "e"
 # define OBJECT_CHARS "e.o"
-# define CARDINAL_POINTS "NSWE"
 # define BONUS "BONUS"
 # define USE_PATH_PREFIX "USE_PATH_PREFIX"
 
@@ -118,10 +104,5 @@ enum e_layout
 	HCenter = 020,
 	HRight = 040
 };
-
-// enum e_colors
-// {
-// 	// int
-// };
 
 #endif

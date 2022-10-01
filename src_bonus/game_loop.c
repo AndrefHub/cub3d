@@ -2,10 +2,11 @@
 
 void	put_frame(t_game *game)
 {
-	put_image_to_image(&game->hud_img, (t_vector){(WIN_WIDTH - game->img.size.x) / 2, 0}, &game->img);
+
+	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x - game->img.size.x) / 2, 0}, &game->img);
 	if (game->show_map) {
 		draw_map(game);
-		put_image_to_image(&game->hud_img, (t_vector){(WIN_WIDTH - game->img.size.x) / 2, 0}, &game->map->img);
+		put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x - game->img.size.x) / 2, 0}, &game->map->img);
 	}
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->hud_img.mlx_img,
 							0, 0);

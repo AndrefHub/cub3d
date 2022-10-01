@@ -23,5 +23,5 @@ void	dim_screen(t_game *game, int i)
 	dim_image(&game->img, game->img.size.x * game->img.size.y,
 		&(t_rgb){0, 0, 0, 0xFF / (50 - i)});
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window,
-		game->img.mlx_img, (WIN_WIDTH - game->img.size.x) / 2, 0);
+		game->img.mlx_img, (game->mlx.win_size.x - game->img.size.x) / 2, 0);
 }

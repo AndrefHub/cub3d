@@ -2,32 +2,38 @@
 
 void	draw_hud_entry(t_game *game, t_hud_entry *entry, int offset, int y)
 {
-	const int	font_size = 18;
 	char		*output;
+	t_vector	text_pos;
 
+	text_pos = (t_vector) {game->mlx.win_size.x - (game->mlx.win_size.x - game->img.size.x) / 2 + ((game->mlx.win_size.x - game->img.size.x) / 2) / 4,
+						   game->hud.font_size * y};
 	output = entry->title + offset;
 	ft_bzero(output, entry->title_size - offset);
 	ft_put_itoa(output, entry->value);
 	put_text_to_screen_layout(game, &(t_text){
-		entry->title, (t_vector){WIN_WIDTH - (WIN_WIDTH - game->img.size.x) / 2, font_size * y}, VTop | HLeft
-		}, font_size
-	);
+		entry->title, (t_vector)
+		{text_pos.x,text_pos.y}, VTop | HLeft}, game->hud.font_size); //TODO: put title and value on different strings
+	put_text_to_screen_layout(game, &(t_text){
+			output, (t_vector)
+					{text_pos.x,
+					 text_pos.y + game->hud.font_size * 1.5f}, VTop | HLeft}, game->hud.font_size);
 }
 
 void	draw_hud(t_game *game)
 {
 	int	y;
 
-	y = -1;
+	y = 2;
+//	fill_img_color(&game->hud_img, 0x000000);
 	put_image_to_image(&game->hud_img, (t_vector) {0, 0}, &game->hud_texture);
-	draw_hud_entry(game, &game->hud.fps, game->hud.fps.title_size, ++y);
-	draw_hud_entry(game, &game->hud.score, game->hud.score.title_size, ++y);
-	draw_hud_entry(game, &game->hud.lives, game->hud.lives.title_size, ++y);
-	draw_hud_entry(game, &game->hud.health, game->hud.health.title_size, ++y);
-	put_text_to_screen_layout(game, &(t_text){
-		"a", (t_vector){WIN_WIDTH - (WIN_WIDTH - game->img.size.x) / 2, 30 * ++y}, VTop | HLeft
-		}, 120
-	);
+	draw_hud_entry(game, &game->hud.fps, game->hud.fps.title_size, ++y * 3);
+	draw_hud_entry(game, &game->hud.score, game->hud.score.title_size, ++y * 3);
+	draw_hud_entry(game, &game->hud.lives, game->hud.lives.title_size, ++y * 3);
+	draw_hud_entry(game, &game->hud.health, game->hud.health.title_size, ++y * 3);
+//	put_text_to_screen_layout(game, &(t_text){
+//		"a", (t_vector){game->mlx.win_size.x - (game->mlx.win_size.x - game->img.size.x) / 2, 30 * ++y}, VTop | HLeft
+//		}, 120
+//	);
 	// mlx_string_put(game->mlx.id, game->mlx.window, 40, 15, 0x00FFFFFF,
 	// 			   "tr:");
 	// mlx_string_put(game->mlx.id, game->mlx.window, 60, 15, 0x00FFFFFF, 
