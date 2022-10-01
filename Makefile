@@ -43,6 +43,7 @@ SRC_BONUSFILE	=	border_checking.c \
 					drawing.c \
 					enemy_actions.c \
 					enemy_astar.c \
+					enemy_move.c \
 					find_objects.c \
 					free_game.c \
 					ft_lstsort.c \

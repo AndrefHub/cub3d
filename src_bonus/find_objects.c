@@ -64,6 +64,7 @@ void	find_enemy(t_list **lst, t_object *object)
 		enemy->object = object;
 		enemy->starting_pos = enemy->object->pos;
 		enemy->path = NULL;
+		enemy->pathfinding_algorithm = pathfinding_algo_straight;
 		ft_lstadd_back(lst, ft_lstnew(enemy));
 	}
 }
@@ -93,8 +94,8 @@ void	find_objects(t_map *map)
 			ft_lstadd_back(&map->objects, ft_lstnew(object));
 			find_enemy(&map->enemies, object);
 			line = map->map[counter] + x_coord + 1;
-			printf("%s\n", line);
-			printf("%d %d\n", counter, x_coord);
+			// printf("%s\n", line);
+			// printf("%d %d\n", counter, x_coord);
 		}
 	}
 }

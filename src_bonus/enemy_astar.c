@@ -37,7 +37,8 @@ t_node	*ft_nodenew(t_node *data)
 	return (node);
 }
 
-void	add_all_neighbours(t_game *game, t_list **open, t_list *closed, t_node *node, t_vector player)
+void	add_all_neighbours(t_game *game, t_list **open, t_list *closed,
+		t_node *node, t_vector player)
 {
 	int			counter;
 	t_vector	pos;
@@ -113,14 +114,14 @@ t_list	*astar(t_game *game, t_vector enemy, t_vector player)
 				ft_lstadd_front(&path, ft_lstnew(ft_nodenew(node)));
 				node = node->parent;
 			}
-			free(open);
-			free(closed);
+			ft_lstclear(&open, free);
+			ft_lstclear(&closed, free);
 			printf("%llu\n", get_time_hp() - time);
 			return (get_first_n_nodes(path, 5));
 		}
 		add_all_neighbours(game, &open, closed, curr->content, player);
 	}
-	free(open);
-	free(closed);
+	ft_lstclear(&open, free);
+	ft_lstclear(&closed, free);
 	return (NULL);
 }

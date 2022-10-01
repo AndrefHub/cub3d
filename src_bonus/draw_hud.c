@@ -6,8 +6,12 @@ void	draw_hud_entry(t_game *game, t_hud_entry *entry, int offset, int y)
 	char		*output;
 
 	output = entry->title + offset;
-	ft_bzero(output, entry->title_size - offset);
-	ft_put_itoa(output, entry->value);
+	ft_bzero(output, entry->value_size);
+	if (entry->value >= pow(10, entry->value_size))
+		ft_strlcat(output, "NAN", 4);
+		// entry->value = pow(10, entry->value_size) - 1;
+	else
+		ft_put_itoa(output, entry->value);
 	put_text_to_screen_layout(game, &(t_text){
 		entry->title, (t_vector){0, font_size * y}, VTop | HLeft
 		}, font_size

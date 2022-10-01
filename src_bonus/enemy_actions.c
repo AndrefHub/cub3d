@@ -29,8 +29,9 @@ void	update_path(t_game *game, t_enemy *enemy, t_list **path)
 {
 	if (!ft_lstsize(*path))
 	{
-		*path = astar(game, (t_vector){enemy->object->pos.x, enemy->object->pos.y},
-			(t_vector){game->player.pos.x, game->player.pos.y});
+		*path = enemy->pathfinding_algorithm(game, enemy); 
+		//(t_vector){enemy->object->pos.x, enemy->object->pos.y},
+		//	(t_vector){game->player.pos.x, game->player.pos.y});
 	}
 }
 
