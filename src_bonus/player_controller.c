@@ -11,9 +11,9 @@ void	mouse_controller(t_game *game)
 	if (game->key.mouse == true)
 	{
 		mouse_get_pos(game->mlx.id, game->mlx.window, &game->key.mpos.x,&game->key.mpos.y);
-		game->key.mdir.x = game->key.mpos.x - game->img.size.x / 2;
-		game->key.mdir.y = game->key.mpos.y - game->img.size.y / 2;
-		mouse_move(game->mlx.id, game->mlx.window, game->img.size.x / 2, game->img.size.y / 2);
+		game->key.mdir.x = game->key.mpos.x - game->mlx.win_size.x / 2;
+		game->key.mdir.y = game->key.mpos.y - game->mlx.win_size.y / 2;
+		mouse_move(game->mlx.id, game->mlx.window, game->mlx.win_size.x / 2, game->mlx.win_size.y / 2);
 		game->z_offset += (float) game->key.mdir.y * 2;
 		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2;
 		float old_plane;
@@ -28,11 +28,6 @@ void	mouse_controller(t_game *game)
 
 void	movement_controller(t_game *game, int *collision)
 {
-	if (key_pressed(game, LEFT_CTRL_KEY))
-	{
-		game->player.delta.x *= PL_ACCELERATION;
-		game->player.delta.y *= PL_ACCELERATION;
-	}
 	if (key_pressed(game, W_KEY))
 		move_radius_check(game, game->player.delta.x, game->player.delta.y, collision);
 	if (key_pressed(game, S_KEY))

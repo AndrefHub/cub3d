@@ -89,6 +89,5 @@ void	draw_map(t_game *game)
 	draw_player_on_map(game);
 	draw_objects_on_map(game);
 	draw_enemies_on_map(game);
-	put_image_to_image(&game->img, (t_vector){0, 0}, &game->map->img);
 	// mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->map->img.mlx_img, 0, 0);
 }

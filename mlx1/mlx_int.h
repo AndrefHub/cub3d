@@ -11,10 +11,8 @@
 #define MAX_PIXEL_NB	200000
 #define UNIQ_BPP	4
 
-//#define FONT_WIDTH	10
-//#define	FONT_HEIGHT	20
-#define FONT_WIDTH	20
-#define	FONT_HEIGHT	40
+#define FONT_WIDTH	10
+#define	FONT_HEIGHT	20
 
 
 typedef int (*func_t)();

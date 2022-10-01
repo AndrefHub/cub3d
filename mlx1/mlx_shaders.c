@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <OpenGL/gl3.h>
+// #include <OpenGL/glew.h>
+#include <OpenGL/gl.h>
 #include "mlx_int.h"
 
 

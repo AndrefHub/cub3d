@@ -27,7 +27,7 @@ void	initialize_player(t_game *game)
 	game->player.plane = (t_fvector) {0.0f, 0.66f};
 	game->fov = ((game->img.aspect >= FOV) - (game->img.aspect < FOV)) *
 			sqrtf(fabsf((float) M_PI_4 * (game->img.aspect - FOV) / 2)) + M_2_PI;
-	game->col_step = tanf(game->fov / (WIN_WIDTH - 1));
+	game->col_step = tanf(game->fov / (game->img.size.x - 1));
 	game->col_scale = 1.0f / game->col_step;
 	printf("%f, %f\n", game->col_step, game->fov);
 	game->fov = 0.001f;
@@ -35,18 +35,63 @@ void	initialize_player(t_game *game)
 	game->player.last_attack_time = 0;
 }
 
+#ifdef __APPLE__
+
+static inline void	get_screen_size(void *mlx_ptr, int *size_x, int *size_y)
+{
+	(void)mlx_ptr;
+	mlx_get_screen_size(size_x, size_y);
+}
+
+#else
+
+static inline void	get_screen_size(void *mlx_ptr, int *size_x, int *size_y)
+{
+	mlx_get_screen_size(mlx_ptr, size_x, size_y);
+}
+
+#endif
+
+void	initialize_game_hud(t_game *game)
+{
+	if (game->mlx.win_size.x >= 2560 && game->mlx.win_size.y >= 1440)
+	{
+		import_texture_to_img(game, &game->hud_texture,
+							  "assets/textures/hud/pac_hud1440p.xpm", 2560,
+							  1360);
+		game->mlx.game_size = (t_vector) {2020, 1190};
+	}
+	else if (game->mlx.win_size.x >= 1920 && game->mlx.win_size.y >= 1080)
+	{
+		import_texture_to_img(game, &game->hud_texture,
+							  "assets/textures/hud/pac_hud1080p.xpm", 1920,
+							  1000);
+		game->mlx.game_size = (t_vector) {1380, 830};
+	}
+	else if (game->mlx.win_size.x >= 1280 && game->mlx.win_size.y >= 720)
+	{
+		import_texture_to_img(game, &game->hud_texture,
+							  "assets/textures/hud/pac_hud720p.xpm", 1280, 720);
+		game->mlx.game_size = (t_vector) {740, 550};
+	}
+}
+
 void	initialize_game_parameters(t_game *game)
 {
+	get_screen_size(game->mlx.id, &game->mlx.win_size.x, &game->mlx.win_size.y);
 	game->mlx.window = mlx_new_window(game->mlx.id,
-		WIN_WIDTH, WIN_HEIGHT, PROJ_NAME);
+		game->mlx.win_size.x, game->mlx.win_size.y, PROJ_NAME);
+	initialize_game_hud(game);
 	game->key.mouse = true;
 	game->show_map = false;
 	game->z_offset = 0;
 	game->grid = game->map->map;
-	game->img = initialize_img(&game->img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
-	game->hud_img = initialize_img(&game->hud_img, game->mlx.id, WIN_WIDTH, WIN_HEIGHT);
+	game->img = initialize_img(&game->img, game->mlx.id, game->mlx.game_size.x, game->mlx.game_size.y);
+	printf("%d, %d\n", game->img.size.x, game->img.size.y);
+//	exit(0);
+	game->hud_img = initialize_img(&game->hud_img, game->mlx.id, game->mlx.win_size.x, game->mlx.win_size.y);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,
-		WIN_WIDTH / 2, WIN_HEIGHT / 2);
+		game->mlx.game_size.x / 2, game->mlx.game_size.y / 2);
 	game->map->map_tile_size = ft_min(game->map->img.size.x /
 		game->map->map_size.x, game->map->img.size.y / game->map->map_size.y);
 	game->column = malloc(sizeof(*game->column) * game->img.size.x);

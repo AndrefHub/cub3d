@@ -15,7 +15,51 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c4e217c-7993-4678-a3b0-20a822acdc07" name="Changes" comment="" />
+    <list default="true" id="6c4e217c-7993-4678-a3b0-20a822acdc07" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/border_checking.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/controller.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/death_events.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/death_events.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_enemies.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/drawing.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/drawing.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/enemy_actions.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/free_game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/free_game.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ft_utils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_loop.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_sound.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/game_textures.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/hooks.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/hooks.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/input_manip.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/input_mode.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/main.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_font.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_textures.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/put_text.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/put_text.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/start_game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/start_game.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/time_funcs.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc_bonus/constants_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/constants_bonus.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mlx/mlx_new_image.m" beforeDir="false" afterPath="$PROJECT_DIR$/mlx/mlx_new_image.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/death_events.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/death_events.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/draw_hud.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_hud.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/draw_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/game_loop.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/game_loop.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/game_textures.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/game_textures.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/image_manip.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/image_manip.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/player_controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/player_controller.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/put_text.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/put_text.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/start_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/start_game.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,26 +102,28 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/textures/hud" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/textures/hud" />
       <recent name="$PROJECT_DIR$/maps" />
       <recent name="$PROJECT_DIR$/inc_bonus" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/textures/hud" />
       <recent name="$PROJECT_DIR$/assets/textures" />
       <recent name="$PROJECT_DIR$/assets/sounds" />
       <recent name="$PROJECT_DIR$/assets" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.cub3d">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="cub" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="maps/test.cub" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$ContentRoot$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cub3d" TARGET_NAME="cub3d" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cub3d" RUN_TARGET_NAME="cub3d">
@@ -119,6 +165,7 @@
       <workItem from="1664456523024" duration="422000" />
       <workItem from="1664465619763" duration="18000" />
       <workItem from="1664535133785" duration="1415000" />
+      <workItem from="1664623139958" duration="7196000" />
     </task>
     <servers />
   </component>
@@ -153,14 +200,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src_bonus/death_events.c</url>
-          <line>52</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src_bonus/death_events.c</url>
-          <line>59</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src_bonus/enemy_actions.c</url>
+          <line>72</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

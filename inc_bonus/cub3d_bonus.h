@@ -159,6 +159,7 @@ typedef struct game
 	bool			show_map;
 	t_img			img;
 	t_img			hud_img;
+	t_img			hud_texture;
 	int				z_offset;
 	float			fov;
 	float			col_step;
@@ -168,6 +169,8 @@ typedef struct game
 	{
 		void		*id;
 		void		*window;
+		t_vector	win_size;
+		t_vector	game_size;
 	}	mlx;
 	struct			s_player
 	{
@@ -306,7 +309,7 @@ void	set_sound(t_sound *sound, char *filename);
 // Work with sprites: game_textures.c //
 void	draw_texture_set(t_game *game, struct s_column *column);
 void	import_texture_to_img(t_game *game, t_img *img, char *filename,
-			int img_size);
+			int size_x, int size_y);
 void	initialize_sprites(t_game *game, int size, t_texture *sprites_list,
 			int t_size);
 void	initialize_wall_textures(t_game *game);
