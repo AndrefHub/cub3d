@@ -6,8 +6,12 @@ void	draw_hud_entry(t_game *game, t_hud_entry *entry, int offset, int y)
 	char		*output;
 
 	output = entry->title + offset;
-	ft_bzero(output, entry->title_size - offset);
-	ft_put_itoa(output, entry->value);
+	ft_bzero(output, entry->value_size);
+	if (entry->value >= pow(10, entry->value_size))
+		ft_strlcat(output, "NAN", 4);
+		// entry->value = pow(10, entry->value_size) - 1;
+	else
+		ft_put_itoa(output, entry->value);
 	put_text_to_screen_layout(game, &(t_text){
 		entry->title, (t_vector){WIN_WIDTH - (WIN_WIDTH - game->img.size.x) / 2, font_size * y}, VTop | HLeft
 		}, font_size
@@ -24,10 +28,10 @@ void	draw_hud(t_game *game)
 	draw_hud_entry(game, &game->hud.score, game->hud.score.title_size, ++y);
 	draw_hud_entry(game, &game->hud.lives, game->hud.lives.title_size, ++y);
 	draw_hud_entry(game, &game->hud.health, game->hud.health.title_size, ++y);
-	put_text_to_screen_layout(game, &(t_text){
-		"a", (t_vector){WIN_WIDTH - (WIN_WIDTH - game->img.size.x) / 2, 30 * ++y}, VTop | HLeft
-		}, 120
-	);
+	// put_text_to_screen_layout(game, &(t_text){
+	// 	"a", (t_vector){WIN_WIDTH - (WIN_WIDTH - game->img.size.x) / 2, 30 * ++y}, VTop | HLeft
+	// 	}, 120
+	// );
 	// mlx_string_put(game->mlx.id, game->mlx.window, 40, 15, 0x00FFFFFF,
 	// 			   "tr:");
 	// mlx_string_put(game->mlx.id, game->mlx.window, 60, 15, 0x00FFFFFF, 

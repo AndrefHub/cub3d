@@ -128,15 +128,6 @@ typedef struct s_game_object
 	char		type;
 }				t_object;
 
-typedef struct s_enemy
-{
-	t_object	*object;
-	t_fvector	delta;
-	t_ull		last_attack_time;
-	t_fvector	starting_pos;
-	t_list		*path;
-}				t_enemy;
-
 typedef struct s_hud_entry
 {
 	int		value;
@@ -158,6 +149,7 @@ typedef struct game
 	char			**grid;
 	bool			show_map;
 	t_img			img;
+	t_img			main_img;
 	t_img			hud_img;
 	t_img			hud_texture;
 	int				z_offset;
@@ -235,6 +227,17 @@ typedef struct game
 	char			*username;
 	int				input_mode;
 }	t_game;
+
+typedef struct s_enemy
+{
+	t_object	*object;
+	t_fvector	delta;
+	t_ull		last_attack_time;
+	t_fvector	starting_pos;
+	t_list		*path;
+	t_list		*(*pathfinding_algorithm)(t_game *, struct s_enemy *);
+}				t_enemy;
+
 
 // Font parsing: parsing_font.c //
 void	parse_font(t_map *map, int fd, char **line);
@@ -441,6 +444,16 @@ void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *));
 void	eat_by_coords(t_game *game, t_vector pos);
 void	player_eat(t_game *game);
 
+int		node_comparator(t_node *lhs, t_node *rhs);
+int		pos_equals(void *lhs, void *rhs);
+int		heuristic_cost(t_vector lhs, t_vector rhs);
+t_list	*ft_lstfind(t_list *closed, void *val, int equals(void *, void *));
+t_node	*ft_nodenew(t_node *data);
+void	add_all_neighbours(t_game *game, t_list **open, t_list *closed, t_node *node, t_vector player);
+t_list	*get_first_n_nodes(t_list *lst, int n);
 t_list	*astar(t_game *game, t_vector enemy, t_vector player);
+
+t_list	*pathfinding_algo_straight(t_game *game, t_enemy *enemy);
+t_rgb	put_pixel_on_pixel(t_rgb *dst, t_rgb *src);
 
 #endif

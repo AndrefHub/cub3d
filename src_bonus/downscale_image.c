@@ -55,7 +55,8 @@ int	get_downscaled_colored_font(t_img *img, int divisor, t_vector pos, t_rgb col
 		++vec.y;
 	}
 	pixel.a = alpha / (divisor * divisor);
-	pixel.a = 0x7F * (pixel.a > 0x3F) + 0x80 * (pixel.a > 0xBF); //
+	// pixel.a = 0xFF * (pixel.a == 0xFF);
+	pixel.a = 0x7F * (pixel.a > 0x3F) + 0x80 * (pixel.a > 0xBF);//0x00;// //
 	pixel.r = color.r;
 	pixel.g = color.g;
 	pixel.b = color.b;
@@ -67,7 +68,7 @@ void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor)
 	int	xcounter;
 	int	ycounter;
 	int	texture_pix;
-	t_rgb	color = {0xFF, 0x7F, 0x7F, 0};
+	// t_rgb	color = {0xFF, 0x7F, 0x7F, 0x00};
 
 	ycounter = -1;
 	while (++ycounter < src->size.y / divisor)
@@ -75,10 +76,12 @@ void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor)
 		xcounter = -1;
 		while (++xcounter < src->size.x / divisor)
 		{
-			texture_pix = get_downscaled_colored_font(src, divisor,
-					(t_vector){xcounter * divisor, ycounter * divisor}, color);
-			put_pixel(dst, (t_vector){pos.x + xcounter, pos.y + ycounter},
-				texture_pix);
+			texture_pix = get_downscaled_color(src, divisor,
+					(t_vector){xcounter * divisor, ycounter * divisor});
+			// texture_pix = get_downscaled_colored_font(src, divisor,
+			// 		(t_vector){xcounter * divisor, ycounter * divisor}, color);
+			if (texture_pix >> 24)
+				put_pixel(dst, (t_vector){pos.x + xcounter, pos.y + ycounter}, texture_pix);
 		}
 	}
 }

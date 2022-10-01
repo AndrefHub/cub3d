@@ -90,6 +90,7 @@ void	initialize_game_parameters(t_game *game)
 	printf("%d, %d\n", game->img.size.x, game->img.size.y);
 //	exit(0);
 	game->hud_img = initialize_img(&game->hud_img, game->mlx.id, game->mlx.win_size.x, game->mlx.win_size.y);
+	game->main_img = initialize_img(&game->hud_img, game->mlx.id, game->mlx.win_size.x, game->mlx.win_size.y);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,
 		game->mlx.game_size.x / 2, game->mlx.game_size.y / 2);
 	game->map->map_tile_size = ft_min(game->map->img.size.x /

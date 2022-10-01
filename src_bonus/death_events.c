@@ -54,6 +54,8 @@ void	player_death(t_game *game)
 		{
 			i = 0;
 			time = 0;
+			game->audio.song.play->paused = 0;
+			// cs_play_sound(game->audio.ctx, game->audio.song.def);
 			return ;
 		}
 		game->input_mode = 1;
