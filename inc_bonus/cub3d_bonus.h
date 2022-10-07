@@ -149,7 +149,6 @@ typedef struct game
 	char			**grid;
 	bool			show_map;
 	t_img			img;
-	t_img			main_img;
 	t_img			hud_img;
 	t_img			hud_texture;
 	int				z_offset;

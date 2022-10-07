@@ -9,7 +9,7 @@ void	draw_hud_entry(t_game *game, t_hud_entry *entry, int offset, int y)
 						   game->hud.font_size * y};
 	output = entry->title + offset;
 	ft_bzero(output, entry->value_size);
-	if (entry->value >= pow(10, entry->value_size))
+	if (entry->value >= 10000)
 		ft_strlcat(output, "NAN", 4);
 		// entry->value = pow(10, entry->value_size) - 1;
 	else

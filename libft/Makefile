@@ -1,6 +1,6 @@
 NAME		:= libft.a
 CC			:= gcc
-CFLAGS		:= -Wall -Wextra -Werror -c -g
+CFLAGS		:= -Wall -Wextra -Werror -Ofast -march=native -c
 SRCS		:= 	ft_isalnum.c\
 				ft_isalpha.c\
 				ft_isascii.c\

@@ -1,8 +1,8 @@
 NAME    = cub3d
 #CC      = clang
 CC      = gcc
-FLAGS	= -Wall -Wextra -Werror -g -O0
-# FLAGS	= -Wall -Wextra -Werror -MMD -g -Og -march=native
+#FLAGS	= -Wall -Wextra -Werror -g -O0
+ FLAGS	= -Wall -Wextra -Werror -MMD -g -Ofast -march=native
 LFLAGS	= -Llibft -lft
 ###
 SRCDIR	= src/
@@ -92,10 +92,6 @@ ifeq ($(UNAME), Darwin)
 	MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 	MLX		= mlx
 	SNDLIB	+= cute_sound/SDL2
-#	GOINFRE	= $(HOME)/goinfre
-#	ifeq ($(shell [ -d $(GOINFRE) ]; echo $?), 1) #TODO: it is doesn't work at school computer
-		GOINFRE = .
-#	endif
 endif
 
 ifeq ($(UNAME), Linux)

@@ -1,6 +1,3 @@
-BONUS
-USE_PATH_PREFIX
-
 W1 ./assets/textures/pacwall/wall01.xpm
 ./assets/textures/pacwall/wall02.xpm
 ./assets/textures/pacwall/wall03.xpm
