@@ -13,10 +13,24 @@ void	put_frame(t_game *game)
 							0, 0);
 }
 
+void	player_win(t_game *game)
+{
+	static int c = 0;
+
+	if (!c)
+	{
+		printf("You\'re winner!");
+		++c;
+	}
+	(void)game;
+}
+
 int	game_loop(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-	if (check_aliveness(game))
+	if (ft_lstsize(game->map->enemies) >= ft_lstsize(game->objects))
+		player_win(game);
+	else if (check_aliveness(game))
 	{
 		player_controll(game);
 		enemy_move(game);
@@ -27,6 +41,8 @@ int	game_loop(t_game *game)
 		draw_game_objects(game);
 
 		draw_aim(game);
+
+
 
 		draw_hud(game);
 		put_frame(game);
