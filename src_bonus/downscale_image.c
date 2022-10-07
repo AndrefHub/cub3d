@@ -68,7 +68,7 @@ void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor)
 	int	xcounter;
 	int	ycounter;
 	int	texture_pix;
-	t_rgb	color = {0xFF, 0x7F, 0x7F, 0x00};
+	t_rgb	color = {0xDF, 0xEF, 0xEF, 0x00};
 
 	ycounter = -1;
 	while (++ycounter < src->size.y / divisor)

@@ -41,8 +41,8 @@ static inline void	get_screen_size(void *mlx_ptr, int *size_x, int *size_y)
 {
 	(void)mlx_ptr;
 	mlx_get_screen_size(size_x, size_y);
-//	*size_x = 1280;
-//	*size_y = 720;
+	// *size_x = 1280;
+	// *size_y = 720;
 }
 
 #else
@@ -60,14 +60,14 @@ void	initialize_game_hud(t_game *game)
 	{
 		import_texture_to_img(game, &game->hud_texture,
 			"assets/textures/hud/pac_hud1440p.xpm", 2560, 1360);
-		game->hud.font_size = 18; //TODO: set font_size
+		game->hud.font_size = 30; //TODO: set font_size
 		game->mlx.game_size = (t_vector) {1840, 1135};
 	}
 	else if (game->mlx.win_size.x >= 1920 && game->mlx.win_size.y >= 1080)
 	{
 		import_texture_to_img(game, &game->hud_texture,
 			"assets/textures/hud/pac_hud1080p.xpm", 1920, 1000);
-		game->hud.font_size = 18;
+		game->hud.font_size = 20;
 		game->mlx.game_size = (t_vector) {1380, 830};
 	}
 	else if (game->mlx.win_size.x >= 1280 && game->mlx.win_size.y >= 720)
@@ -75,7 +75,7 @@ void	initialize_game_hud(t_game *game)
 		import_texture_to_img(game, &game->hud_texture,
 			"assets/textures/hud/pac_hud720p.xpm", 1280, 720);
 		game->mlx.game_size = (t_vector) {920, 607};
-		game->hud.font_size = 14;
+		game->hud.font_size = 15;
 	}
 	game->hud_img = initialize_img(&game->hud_img, game->mlx.id,
 		game->mlx.win_size.x, game->mlx.win_size.y);

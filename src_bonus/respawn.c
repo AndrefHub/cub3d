@@ -19,10 +19,10 @@ void	reset_positions(t_game *game)
 
 int	player_respawn(t_game *game)
 {
-	if (game->hud.lives.value > 0)
+	if (game->hud.lives.value_numeric > 0)
 	{
-		game->hud.health.value = MAX_HEALTH;
-		--game->hud.lives.value;
+		game->hud.health.value_numeric = MAX_HEALTH;
+		--game->hud.lives.value_numeric;
 		reset_positions(game);
 		return (1);
 	}

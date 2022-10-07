@@ -40,7 +40,7 @@ void	eat_by_coords(t_game *game, t_vector pos)
 		object = objects->content;
 		if ((int)object->pos.x == pos.x && (int)object->pos.y == pos.y)
 		{
-			game->hud.score.value += 100 + (game->map->map[pos.y][pos.x] == 'o') * 400;
+			game->hud.score.value_numeric += 100 + (game->map->map[pos.y][pos.x] == 'o') * 400;
 			ft_lstdelbyaddr(&game->objects, objects, free);
 			game->map->map[pos.y][pos.x] = '0';
 			return ;

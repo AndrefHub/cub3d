@@ -75,6 +75,7 @@ typedef struct text
 	char		*text;
 	t_vector	pos;
 	int			layout;
+	int			color;
 }	t_text;
 
 typedef struct s_map
@@ -130,8 +131,9 @@ typedef struct s_game_object
 
 typedef struct s_hud_entry
 {
-	int		value;
+	int		value_numeric;
 	char	*title;
+	char	*value;
 	short	title_size;
 	short	value_size;
 }				t_hud_entry;
@@ -382,9 +384,9 @@ void	draw_hud(t_game *game);
 void	draw_map(t_game *game);
 
 // Text writing: put_text.c //
-int		put_char_to_screen(t_game *game, char c, t_vector pos, int divisor);
-void	put_text_to_screen(t_game *game, char *text, t_vector pos, int divisor);
-void	put_text_to_screen_layout(t_game *game, t_text *text, int divisor);
+int		put_char_to_screen(t_game *game, t_img *img, t_text *text, int font_size);
+void	put_text_to_screen(t_game *game, t_img *img, t_text *text, int font_size);
+void	put_text_to_screen_layout(t_game *game, t_img *img, t_text *text, int font_size);
 void	put_image_to_image(t_img *dst, t_vector pos, t_img *src);
 
 void	input_mode(int key, t_game *game);
