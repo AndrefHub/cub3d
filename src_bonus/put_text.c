@@ -2,16 +2,16 @@
 
 t_rgb	put_pixel_on_pixel(t_rgb *dst, t_rgb *src)
 {
-	if (!src->a)
+	if (src->a == 0)
 		*dst = *src;
 	else if (src->a != 0xFF)
 	{
-		dst->r += ((src->r - dst->r) * src->a) / 0xFF;
-		dst->g += ((src->g - dst->g) * src->a) / 0xFF;
-		dst->b += ((src->b - dst->b) * src->a) / 0xFF;
-//		 dst->r = ((dst->r * (0xFF - src->a)) + (src->r * src->a)) / 0xFF;
-//		 dst->g = ((dst->g * (0xFF - src->a)) + (src->g * src->a)) / 0xFF;
-//		 dst->b = ((dst->b * (0xFF - src->a)) + (src->b * src->a)) / 0xFF;
+		// dst->r += ((src->r - dst->r) * src->a) / 0xFF;
+		// dst->g += ((src->g - dst->g) * src->a) / 0xFF;
+		// dst->b += ((src->b - dst->b) * src->a) / 0xFF;
+		 dst->r = ((dst->r * (0xFF - src->a)) + (src->r * src->a)) / 0xFF;
+		 dst->g = ((dst->g * (0xFF - src->a)) + (src->g * src->a)) / 0xFF;
+		 dst->b = ((dst->b * (0xFF - src->a)) + (src->b * src->a)) / 0xFF;
 	}
 	return (*dst);
 }

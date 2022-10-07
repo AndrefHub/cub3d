@@ -2,9 +2,11 @@
 
 void	reset_enemy_position(void *enemy)
 {
-	const t_enemy	*en = enemy;
+	t_enemy	*en;
 
+	en = enemy;
 	en->object->pos = en->starting_pos;
+	ft_lstclear(&en->path, free);
 }
 
 void	reset_positions(t_game *game)
