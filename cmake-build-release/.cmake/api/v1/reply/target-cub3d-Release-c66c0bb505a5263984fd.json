@@ -204,7 +204,7 @@
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "../cute_sound/SDL2",
+				"fragment" : "../cute_sound/SDL/SDL2",
 				"role" : "libraries"
 			}
 		],

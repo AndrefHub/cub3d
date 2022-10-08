@@ -2,10 +2,10 @@
 
 static void	draw_row_textured(t_game *game, t_img src, t_vector cur, float row_distance)
 {
-	const t_fvector	ray_dir0 = (t_fvector) {(float) (cosf(game->player.angle) - game->player.plane.x),
-											   (sinf(game->player.angle) - game->player.plane.y)};
-	const t_fvector	ray_dir1 = (t_fvector) {(float) (cosf(game->player.angle) + game->player.plane.x),
-											   (sinf(game->player.angle) + game->player.plane.y)};
+	const t_fvector	ray_dir0 = (t_fvector) {(float) (game->player.vector.x - game->player.plane.x),
+											   (game->player.vector.y - game->player.plane.y)};
+	const t_fvector	ray_dir1 = (t_fvector) {(float) (game->player.vector.x + game->player.plane.x),
+											   (game->player.vector.y + game->player.plane.y)};
 	t_fvector		floor_step;
 	t_fvector		floor;
 	t_vector		tex;
@@ -38,7 +38,7 @@ void	draw_ceil_floor_textured(t_game *game)
 	while (cur.y < game->img.size.y)
 	{
 		row_distance = (0.5f * (float) game->col_scale)
-				/ (cur.y - (game->img.size.y / 2 - game->z_offset));
+				/ ((float ) (cur.y - (game->img.size.y / 2 - game->z_offset)));
 		if (row_distance < 0)
 			draw_row_textured(game, *((t_img *)game->map->ceiling.img->content), cur, -row_distance);
 		else

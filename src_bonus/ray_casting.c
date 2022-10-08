@@ -1,13 +1,12 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-t_ray	ray_initialize(t_game *game, float ray_angle)
+t_ray	ray_initialize(t_game *game, t_fvector ray_dir)
 {
 	t_ray ray;
 
-	ray.dir.x = cosf(ray_angle);
-	ray.dir.y = sinf(ray_angle);
-	ray.unit = (t_fvector) {sqrtf(1 + tanf(ray_angle) * tanf(ray_angle)),
-							sqrtf(1 + 1 / (tanf(ray_angle) * tanf(ray_angle)))};
+	ray.dir = ray_dir;
+	ray.unit = (t_fvector) {sqrtf(1 + (ray.dir.y / ray.dir.x) * (ray.dir.y / ray.dir.x)),
+							sqrtf(1 + (ray.dir.x / ray.dir.y) * (ray.dir.x / ray.dir.y))};
 	ray.map_tile = (t_vector) {game->player.pos.x, game->player.pos.y};
 	if (ray.dir.x < 0) {
 		ray.step.x = -1;
@@ -105,28 +104,30 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 	}
 }
 
-void	get_interception(t_game *game, float ray_angle, int i) //DDA algorithm
+void	get_interception(t_game *game, t_fvector ray_dir, int i) //DDA algorithm
 {
 	t_ray	ray;
 	float	distance;
 
-	ray = ray_initialize(game, ray_angle);
+	ray = ray_initialize(game, ray_dir);
 	distance = interception_distance(game, &ray);
-	initialize_columns(game, &ray, distance, i, ray_angle);
+	initialize_columns(game, &ray, distance, i, calculate_angle((t_fvector) {1, 0}, ray_dir));
 }
 
 void	cast_rays(t_game *game)
 {
 	int		i;
 	float	ray_angle;
+	t_fvector ray;
 
 	i = 0;
+	game->player.vector = (t_fvector) {cosf(game->player.angle), sinf(game->player.angle)};
 	while (i < game->img.size.x)
 	{
-		ray_angle = game->player.angle
-					+ atanf(game->col_step * ((float) i - (float) game->img.size.x / 2));
-//		ray_angle = acosf(cosf(game->player.angle) + game->player.plane.x * (2.f * i / (float) game->img.size.x - 1));
-		get_interception(game, ray_angle, i);
+		float camera_x = (2.f * i / (float) game->img.size.x - 1);
+		ray = (t_fvector) {game->player.vector.x + game->player.plane.x * camera_x,
+						   game->player.vector.y + game->player.plane.y * camera_x};
+		get_interception(game, ray, i);
 		i++;
 	}
 }

@@ -59,7 +59,7 @@ add_executable(cub3d
 #if ($ENV{USER} EQUAL "landreas")
     target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
     target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/libft/libft.a)
-    target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/cute_sound/SDL2)
+    target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/cute_sound/SDL/SDL2)
 #else()
 #    target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
 #    target_link_librraries(cub3d /Users/lsherry/42Course/cub3d/libft/libft.a)
