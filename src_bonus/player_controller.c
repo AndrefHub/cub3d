@@ -14,7 +14,7 @@ void	mouse_controller(t_game *game)
 		game->key.mdir.x = game->key.mpos.x - game->mlx.win_size.x / 2;
 		game->key.mdir.y = game->key.mpos.y - game->mlx.win_size.y / 2;
 		mouse_move(game->mlx.id, game->mlx.window, game->mlx.win_size.x / 2, game->mlx.win_size.y / 2);
-		game->z_offset += (float) game->key.mdir.y * 2;
+		game->z_offset += game->key.mdir.y * 2;
 		game->player.angle += (float) game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2;
 		float old_plane;
 		old_plane = game->player.plane.x;

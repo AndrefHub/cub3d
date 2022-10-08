@@ -345,6 +345,7 @@ void	open_door(t_game *game);
 void	change_textures(t_game *game);
 float	fvector_distance(t_fvector lhs, t_fvector rhs);
 void	enemy_attack(t_game *game, t_enemy *enemy);
+float	calculate_angle(t_fvector p, t_fvector e);
 void	enemy_move(t_game *game);
 
 // Player input control: player_controller.c //

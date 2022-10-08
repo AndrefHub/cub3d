@@ -30,7 +30,6 @@ void	initialize_player(t_game *game)
 	game->col_step = tanf(game->fov / (game->img.size.x - 1));
 	game->col_scale = 1.0f / game->col_step;
 	printf("%f, %f\n", game->col_step, game->fov);
-	game->fov = 0.001f;
 	// game->player.health = 1;
 	game->player.last_attack_time = 0;
 }

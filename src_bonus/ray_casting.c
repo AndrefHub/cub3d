@@ -119,13 +119,16 @@ void	cast_rays(t_game *game)
 {
 	int		i;
 	float	ray_angle;
+	t_fvector ray;
 
 	i = 0;
 	while (i < game->img.size.x)
 	{
-		ray_angle = game->player.angle
-					+ atanf(game->col_step * ((float) i - (float) game->img.size.x / 2));
-//		ray_angle = acosf(cosf(game->player.angle) + game->player.plane.x * (2.f * i / (float) game->img.size.x - 1));
+		float camera_x = (2.f * i / (float) game->img.size.x - 1);
+		ray = (t_fvector) {cosf(game->player.angle) + game->player.plane.x * camera_x,
+						   sinf(game->player.angle) + game->player.plane.y * camera_x};
+
+		ray_angle = calculate_angle((t_fvector) {1, 0}, ray);
 		get_interception(game, ray_angle, i);
 		i++;
 	}
