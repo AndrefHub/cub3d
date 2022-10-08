@@ -38,7 +38,7 @@ void	draw_ceil_floor_textured(t_game *game)
 	while (cur.y < game->img.size.y)
 	{
 		row_distance = (0.5f * (float) game->col_scale)
-				/ (cur.y - (game->img.size.y / 2 - game->z_offset));
+				/ ((float ) (cur.y - (game->img.size.y / 2 - game->z_offset)));
 		if (row_distance < 0)
 			draw_row_textured(game, *((t_img *)game->map->ceiling.img->content), cur, -row_distance);
 		else
