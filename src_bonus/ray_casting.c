@@ -117,7 +117,6 @@ void	get_interception(t_game *game, t_fvector ray_dir, int i) //DDA algorithm
 void	cast_rays(t_game *game)
 {
 	int		i;
-	float	ray_angle;
 	t_fvector ray;
 
 	i = 0;

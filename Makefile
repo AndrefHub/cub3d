@@ -38,7 +38,7 @@ SRC_BONUSFILE	=	border_checking.c \
 					draw_walls.c \
 					draw_map.c \
 					draw_ceil_floor.c \
-					draw_enemies.c \
+					draw_objects.c \
 					draw_hud.c \
 					drawing.c \
 					enemy_actions.c \

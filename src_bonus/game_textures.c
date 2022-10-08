@@ -8,6 +8,33 @@ void	draw_texture_set(t_game *game, struct s_column *column)
 	//		texture_id = ft_strchr(CARDINAL_POINTS, game->column[x].dir) - CARDINAL_POINTS;
 }
 
+void	skip_transparent_background(t_img *img)
+{
+	int		x;
+	int		y;
+	short	opaque_pix_y;
+
+	x = 0;
+	while (x < img->size.x)
+	{
+		y = 0;
+		opaque_pix_y = INT16_MAX;
+		img->alpha_start_x[x] = INT16_MAX;
+		while (y < img->size.y)
+		{
+			if (img->addr[y * img->size.x + x] >> 24 == 0x00)
+			{
+				if (opaque_pix_y == INT16_MAX)
+					img->alpha_start_x[x] = y;
+				opaque_pix_y = (short) y;
+			}
+			y++;
+		}
+		img->alpha_end_x[x] = opaque_pix_y;
+		x++;
+	}
+}
+
 void	import_texture_to_img(t_game *game, t_img *img, char *filename, int size_x, int size_y)
 {
 	int	size;
@@ -29,6 +56,10 @@ void	import_texture_to_img(t_game *game, t_img *img, char *filename, int size_x,
 	img->addr = (int *) mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_length, &img->endian);
 	img->size.x = size_x;
 	img->size.y = size_y;
+	img->alpha_start_x = malloc(sizeof(short ) * img->size.x);
+	img->alpha_end_x = malloc(sizeof(short ) * img->size.x);
+	skip_transparent_background(img);
+	printf("%s --- %d : %d\n", filename, img->alpha_start_x[70], img->alpha_end_x[70]);
 }
 
 void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_size)

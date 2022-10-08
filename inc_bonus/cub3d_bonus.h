@@ -41,6 +41,8 @@ typedef struct s_img
 	int			line_length;
 	int			endian;
 	float		aspect;
+	short		*alpha_start_x;
+	short		*alpha_end_x;
 	t_vector	size;
 }	t_img;
 
