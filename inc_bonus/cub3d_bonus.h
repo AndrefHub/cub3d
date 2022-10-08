@@ -176,8 +176,6 @@ typedef struct game
 		t_fvector	plane;
 		int			health;
 		t_fvector	vector;
-		// short		lives;
-		// short		health;
 		t_fvector	starting_pos;
 	}				player;
 	struct			s_key
@@ -207,8 +205,9 @@ typedef struct game
 	struct			s_audio
 	{
 		cs_context_t	*ctx;
-		t_sound			bonk;
 		t_sound			song;
+		t_sound			bonk;
+		t_sound			enemy;
 	}					audio;
 	struct	s_time
 	{
@@ -240,6 +239,7 @@ typedef struct s_enemy
 	t_fvector	starting_pos;
 	t_list		*path;
 	t_list		*(*pathfinding_algorithm)(t_game *, struct s_enemy *);
+	t_sound		*sound;
 }				t_enemy;
 
 
@@ -308,10 +308,10 @@ void	start_game(t_game *game);
 int		game(t_map *map);
 
 // Work with sound: game_sound.c //
-void	init_main_game_sound_theme(t_game *game,
-			char *main_music_theme_filename);
-void	set_game_events_sounds(struct s_audio *audio, char *filename);
+void	init_main_game_sound(t_game *game);
+void	set_game_events_sounds(struct s_audio *audio, char **sounds);
 void	set_sound(t_sound *sound, char *filename);
+void	copy_sound(t_sound *sound, t_sound *src);
 
 // Work with sprites: game_textures.c //
 void	draw_texture_set(t_game *game, struct s_column *column);

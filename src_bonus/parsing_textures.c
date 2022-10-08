@@ -130,6 +130,7 @@ void	parse_assets(t_map *map, int fd)
 	parse_font(map, fd, &line);
 	parse_sounds(map, fd, &line);
 	parse_sounds(map, fd, &line);
+	parse_sounds(map, fd, &line);
 	// if (line)
 	// 	map->f = convert_to_rgb(crop_prefix(line, "F"));
 	// else

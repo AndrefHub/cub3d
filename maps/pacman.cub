@@ -156,6 +156,7 @@ FZ ./assets/font/font240/Z.xpm
 
 S1 ./assets/sounds/monke.wav
 S2 ./assets/sounds/pacman_death.wav
+S3 ./assets/sounds/enemy.wav
 F ./assets/textures/sussy_stickmin/sussy-00.xpm
 C ./assets/textures/pacwall/wall12.xpm
 

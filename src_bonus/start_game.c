@@ -140,8 +140,22 @@ void	initialize_game_objects(t_game *game)
 		obj->sprite = game->map->object[get_string_index(OBJECT_CHARS, obj->type)].img->content;
 		elem = elem->next;
 	}
-
 }
+
+void	set_enemy_sounds(t_game *game)
+{
+	t_list	*elem;
+	t_enemy	*enemy;
+
+	elem = game->map->enemies;
+	while (elem)
+	{
+		enemy = elem->content;
+		copy_sound(enemy->sound, &game->audio.enemy);
+		elem = elem->next;
+	}
+}
+
 void	set_input_mode_chars(t_game *game)
 {
 	game->macos_chars = "ASDFHGZXCV BQWERYT123465=97-80]OU[IP LJ'K;\\,/NM.  ~ ";
@@ -167,11 +181,10 @@ int	game(t_map *map)
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
 		error_exit(&game, 1, "Game initialization error: MLX initialization");
-	init_main_game_sound_theme(&game, map->sounds[0]);
-	set_game_events_sounds(&game.audio, map->sounds[1]);
+	init_main_game_sound(&game);
+	set_game_events_sounds(&game.audio, map->sounds);
 	initialize_game_parameters(&game);
 	initialize_player(&game);
-//	initialize_sprites(&game, MAX_ENEMIES, (t_texture *)game.map->enemy, TEXTURE_SIZE);
 	initialize_sprites(&game, MAX_OBJECTS, (t_texture *)game.map->object, TEXTURE_SIZE);
     initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
@@ -181,6 +194,7 @@ int	game(t_map *map)
 	initialize_game_objects(&game);
 	initialize_mlx_parameters(&game);
 	set_input_mode_chars(&game);
+	set_enemy_sounds(&game);
 	clear_font_outline(&game);
 	start_game(&game);
 	return (1);

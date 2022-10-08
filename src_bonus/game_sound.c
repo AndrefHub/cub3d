@@ -3,26 +3,31 @@
 void	set_sound(t_sound *sound, char *filename)
 {
 	sound->file = cs_load_wav(filename);
-	sound->def = cs_make_def(&sound->file);
-	sound->def.volume_left = 1.f;
-	sound->def.volume_right = 1.f;
+	copy_sound(sound, sound);
 }
 
-void	init_main_game_sound_theme(t_game *game, char *main_music_theme_filename)
+void	copy_sound(t_sound *sound, t_sound *src)
 {
-	game->audio.ctx = cs_make_context(0, 44100, 4096, 4, NULL);
-	cs_spawn_mix_thread(game->audio.ctx);
-	cs_thread_sleep_delay(game->audio.ctx, 5);
-
-	game->audio.song.file = cs_load_wav(main_music_theme_filename);
-	if (game->audio.song.file.channels[0])
+	if (src->file.channels[0])
 	{
-		game->audio.song.def = cs_make_def(&game->audio.song.file);
-		game->audio.song.def.looped = 1;
+		sound->def = cs_make_def(&src->file);
+		sound->def.looped = 1;
 	}
 }
 
-void	set_game_events_sounds(struct s_audio *audio, char *filename)
+void	init_main_game_sound(t_game *game)
 {
-	set_sound(&audio->bonk, filename);
+	game->audio.ctx = cs_make_context(0, 44100, 4096, 8, NULL);
+	cs_spawn_mix_thread(game->audio.ctx);
+	cs_thread_sleep_delay(game->audio.ctx, 5);
+}
+
+void	set_game_events_sounds(struct s_audio *audio, char **sounds)
+{
+	// int	counter = -1;
+
+	// while (++counter < MAX_SOUNDS)
+	set_sound(&audio->song, sounds[0]);
+	set_sound(&audio->bonk, sounds[1]);
+	set_sound(&audio->enemy, sounds[2]);
 }
