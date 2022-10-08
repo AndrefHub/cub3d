@@ -163,10 +163,27 @@ void	set_input_mode_chars(t_game *game)
 	game->input_mode = 0;
 }
 
+void	play_sounds(t_game *game)
+{
+	t_list	*list;
+	t_enemy	*enemy;
+
+	// game->audio.song.play = cs_play_sound(game->audio.ctx, game->audio.song.def);
+	list = game->map->enemies;
+	while (list)
+	{
+		enemy = list->content;
+		enemy->sound.def.volume_left = 0.01;
+		enemy->sound.def.volume_right = 0.01;
+		enemy->sound.play = cs_play_sound(game->audio.ctx, enemy->sound.def);
+		list = list->next;
+	}
+}
+
 void	start_game(t_game *game)
 {
 	init_time(game);
-	game->audio.song.play = cs_play_sound(game->audio.ctx, game->audio.song.def);
+	play_sounds(game);
 	wait_milliseconds(500);
 	mlx_loop(game->mlx.id);
 }
