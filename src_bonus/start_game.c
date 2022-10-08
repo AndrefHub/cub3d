@@ -175,6 +175,8 @@ int	game(t_map *map)
 	initialize_sprites(&game, MAX_OBJECTS, (t_texture *)game.map->object, TEXTURE_SIZE);
     initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
 	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
+	initialize_sprites(&game, 1, &game.map->floor, TEXTURE_SIZE);
+	initialize_sprites(&game, 1, &game.map->ceiling, TEXTURE_SIZE);
 	initialize_wall_textures(&game);
 	initialize_game_objects(&game);
 	initialize_mlx_parameters(&game);

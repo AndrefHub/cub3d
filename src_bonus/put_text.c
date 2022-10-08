@@ -38,7 +38,7 @@ int	put_char_to_screen(t_game *game, t_img *img, t_text *text, int font_size)
 {
 	if (game->map->font[ft_toupper(*text->text) - FONT_OFFSET].img)
 	{
-		put_downscaled_image(img, text->pos, ((t_img *)game->map->font
+		put_downscaled_image(img, text, ((t_img *)game->map->font
 			[ft_toupper(*text->text) - FONT_OFFSET].img->content), FONT_SIZE / font_size);
 		return (1);
 		// put_image_to_image(&game->img, pos, ((t_img *)game->map->font
@@ -55,6 +55,7 @@ void	put_text_to_screen(t_game *game, t_img *img, t_text *text, int font_size)
 	while (*text->text)
 	{
 		text->pos.x += put_char_to_screen(game, img, text, font_size) * font_size;
+		// text->color -= 0x181818;
 		++text->text;
 	}
 }

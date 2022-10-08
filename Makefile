@@ -91,7 +91,7 @@ UNAME	= $(shell uname -s)
 ifeq ($(UNAME), Darwin)
 	MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 	MLX		= mlx
-	SNDLIB	+= cute_sound/SDL2
+	SNDLIB	+= cute_sound/SDL/SDL2
 endif
 
 ifeq ($(UNAME), Linux)

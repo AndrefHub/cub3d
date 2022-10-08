@@ -60,7 +60,7 @@ void	parse_enemies(t_map* map, int fd, char **line)
 	}
 }
 
-void	parse_smth(int fd, char **line, t_parse_info info)
+void	parse_texture_list_array(int fd, char **line, t_parse_info info)
 {
 	int		index;
 
@@ -82,6 +82,18 @@ void	parse_smth(int fd, char **line, t_parse_info info)
 		ft_lstadd_back(&(info.arr)[index].texture, ft_lstnew(*line));
 		*line = skip_empty_lines(fd);
 	}
+}
+
+void	parse_texture(int fd, char **line, t_parse_info info)
+{
+	if (!*line)
+		*line = skip_empty_lines(fd);
+	if (!(line && *line && !ft_strncmp(*line, info.prefix, ft_strlen(
+		info.prefix))))
+		return ;
+	ft_putendl_fd(*line, 1);
+	ft_lstadd_back(&(info.arr->texture), ft_lstnew(crop_prefix(*line, info.prefix)));
+	*line = NULL;
 }
 
 void	parse_sounds(t_map* map, int fd, char **line)
@@ -109,18 +121,20 @@ void	parse_assets(t_map *map, int fd)
 	line = NULL;
 	counter = -1;
 	while (++counter < MAX_WALL_CHARS)
-		parse_smth(fd, &line, (t_parse_info){WALL_CHARS, WALL_PREFIX, (t_texture *)map->walls});
+		parse_texture_list_array(fd, &line, (t_parse_info){WALL_CHARS, WALL_PREFIX, (t_texture *)map->walls});
 		// parse_walls(map, fd, &line);
 	counter = -1;
 	while (++counter < MAX_OBJECTS)
-		parse_smth(fd, &line, (t_parse_info){NULL, OBJECT_PREFIX, (t_texture *)map->object});
+		parse_texture_list_array(fd, &line, (t_parse_info){NULL, OBJECT_PREFIX, (t_texture *)map->object});
 	// parse_enemies(map, fd, &line);
 	parse_font(map, fd, &line);
 	parse_sounds(map, fd, &line);
 	parse_sounds(map, fd, &line);
-	if (line)
-		map->f = convert_to_rgb(crop_prefix(line, "F"));
-	else
-		map->f = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "F"));
-	map->c = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "C"));
+	// if (line)
+	// 	map->f = convert_to_rgb(crop_prefix(line, "F"));
+	// else
+	// 	map->f = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "F"));
+	// map->c = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "C"));
+	parse_texture(fd, &line, (t_parse_info){NULL, "F", &map->floor});
+	parse_texture(fd, &line, (t_parse_info){NULL, "C", &map->ceiling});
 }

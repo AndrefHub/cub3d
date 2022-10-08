@@ -83,8 +83,26 @@ O1 ./assets/textures/ghost/ghost1.xpm
 ./assets/textures/ghost/ghost6.xpm
 ./assets/textures/ghost/ghost7.xpm
 ./assets/textures/ghost/ghost8.xpm
+
 O2 ./assets/textures/paccoin/coin1.xpm
+./assets/textures/paccoin/coin2.xpm
+./assets/textures/paccoin/coin3.xpm
+./assets/textures/paccoin/coin4.xpm
+./assets/textures/paccoin/coin5.xpm
+./assets/textures/paccoin/coin6.xpm
+./assets/textures/paccoin/coin7.xpm
+./assets/textures/paccoin/coin8.xpm
+./assets/textures/paccoin/coin9.xpm
+
 O3 ./assets/textures/pacpill/pill1.xpm
+./assets/textures/pacpill/pill2.xpm
+./assets/textures/pacpill/pill3.xpm
+./assets/textures/pacpill/pill4.xpm
+./assets/textures/pacpill/pill5.xpm
+./assets/textures/pacpill/pill6.xpm
+./assets/textures/pacpill/pill7.xpm
+./assets/textures/pacpill/pill8.xpm
+./assets/textures/pacpill/pill9.xpm
 
 F  ./assets/font/font240/space.xpm
 F! ./assets/font/font240/exclam.xpm
@@ -138,8 +156,8 @@ FZ ./assets/font/font240/Z.xpm
 
 S1 ./assets/sounds/monke.wav
 S2 ./assets/sounds/pacman_death.wav
-F 217,242,253
-C 178,229,251
+F ./assets/textures/sussy_stickmin/sussy-00.xpm
+C ./assets/textures/pacwall/wall12.xpm
 
 111111111111111111111
 1.........1.........1

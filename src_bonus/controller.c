@@ -45,7 +45,7 @@ void	change_objects_textures(t_game *game)
 
 void	change_textures(t_game *game)
 {
-	const float	clocks_per_frame = (float)1000 / FRAMERATE;
+	const float	clocks_per_frame = 1000. / FRAMERATE;
 	static int	s = 0;
 	int			index;
 	int			counter;

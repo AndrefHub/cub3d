@@ -87,6 +87,8 @@ typedef struct s_map
 	t_texture		walls[MAX_WALL_CHARS];
 	t_texture		object[MAX_OBJECTS];
 	t_texture		font[MAX_FONT_CHARS];
+	t_texture		floor;
+	t_texture		ceiling;
 	char			*sounds[MAX_SOUNDS];
 	unsigned int	list_size;
 	int				f;
@@ -426,7 +428,7 @@ void	ft_lstsort(t_list **lst, int (*cmp)());
 void	update_time(t_game *game);
 
 // downscale_image.c //
-void	put_downscaled_image(t_img *dst, t_vector pos, t_img *src, int divisor);
+void	put_downscaled_image(t_img *dst, t_text *text, t_img *src, int divisor);
 
 void	put_frame(t_game *game);
 
