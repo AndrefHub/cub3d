@@ -24,25 +24,37 @@ void	player_win(t_game *game)
 	(void)game;
 }
 
+float	ftorange(float val, float border)
+{
+	if (val < -border)
+		val = -border;
+	else if (val > border)
+		val = border;
+	return (val);
+}
+
 void	update_volume(t_game *game)
 {
 	t_list		*enemies;
 	t_enemy		*enemy;
 	t_fvector	pos;
+	t_fvector	volume;
 	float		angle;
 
 	enemies = game->map->enemies;
 	while (enemies)
 	{
 		enemy = enemies->content;
-		pos = (t_fvector){0, 0};
-		// pos = (t_fvector){game->player.pos.x - enemy->object->pos.x,
-		// 	game->player.pos.y - enemy->object->pos.y};
+		pos = (t_fvector){game->player.pos.x - enemy->object->pos.x,
+			game->player.pos.y - enemy->object->pos.y};
 		angle = calculate_angle((t_fvector){1, 0}, pos);
-		enemy->sound.def.volume_left = ((cosf(angle + PI / 2) + 1) / 2) /
-			fvector_distance(pos, (t_fvector){0, 0});
-		enemy->sound.def.volume_right = ((cosf(angle - PI / 2) - 1) / 2) /
-			fvector_distance(pos, (t_fvector){0, 0});
+		volume.x = ((cosf(angle - PI / 2) + 1) / 2) /
+			fvector_distance(pos, (t_fvector){0, 0}) / 2;
+		volume.y = ((cosf(angle + PI / 2) + 1) / 2) /
+			fvector_distance(pos, (t_fvector){0, 0}) / 2;
+		enemy->sound.play->volume0 += ftorange(volume.x - enemy->sound.play->volume0, 0.01);
+		enemy->sound.play->volume1 += ftorange(volume.y - enemy->sound.play->volume1, 0.01);
+		printf("l: %f, r: %f\n", enemy->sound.play->volume0, enemy->sound.play->volume1);
 		enemies = enemies->next;
 	}
 }
@@ -63,7 +75,7 @@ int	game_loop(t_game *game)
 		draw_walls(game);
 		draw_game_objects(game);
 
-		// update_volume(game);
+		update_volume(game);
 
 		draw_aim(game);
 

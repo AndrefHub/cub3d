@@ -38,7 +38,7 @@ void	player_death(t_game *game)
 
 	if (!i)
 	{
-		cs_pause_sound(game->audio.song.play, 1);
+		// cs_pause_sound(game->audio.song.play, 1);
 		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 		game->show_map = 0;
 	}

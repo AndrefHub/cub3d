@@ -8,11 +8,12 @@ void	set_sound(t_sound *sound, char *filename)
 
 void	copy_sound(t_sound *sound, t_sound *src)
 {
-	if (src->file.channels[0])
+	if (!src->file.channels[0])
 	{
-		sound->def = cs_make_def(&src->file);
-		sound->def.looped = 1;
+		error_exit(NULL, 1, "Sound file not found");
 	}
+	sound->def = cs_make_def(&src->file);
+	sound->def.looped = 1;
 }
 
 void	init_main_game_sound(t_game *game)
@@ -29,5 +30,6 @@ void	set_game_events_sounds(struct s_audio *audio, char **sounds)
 	// while (++counter < MAX_SOUNDS)
 	set_sound(&audio->song, sounds[0]);
 	set_sound(&audio->bonk, sounds[1]);
+	audio->bonk.def.looped = 0;
 	set_sound(&audio->enemy, sounds[2]);
 }
