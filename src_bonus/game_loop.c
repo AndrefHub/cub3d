@@ -24,6 +24,20 @@ void	player_win(t_game *game)
 	(void)game;
 }
 
+void	update_volume(t_game *game)
+{
+	t_list	*enemies;
+	t_enemy	*enemy;
+
+	enemies = game->map->enemies;
+	while (enemies)
+	{
+		enemy = enemies->content;
+		enemy->sound.def.volume_left;
+		enemies = enemies->next;
+	}
+}
+
 int	game_loop(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
@@ -39,7 +53,7 @@ int	game_loop(t_game *game)
 		cast_rays(game);
 		draw_walls(game);
 		draw_game_objects(game);
-
+		update_volume(game);
 		draw_aim(game);
 
 		draw_hud(game);

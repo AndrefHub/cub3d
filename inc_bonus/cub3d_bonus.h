@@ -239,7 +239,7 @@ typedef struct s_enemy
 	t_fvector	starting_pos;
 	t_list		*path;
 	t_list		*(*pathfinding_algorithm)(t_game *, struct s_enemy *);
-	t_sound		*sound;
+	t_sound		sound;
 }				t_enemy;
 
 
