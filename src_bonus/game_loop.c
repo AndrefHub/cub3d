@@ -33,10 +33,10 @@ int	game_loop(t_game *game)
 	if (check_aliveness(game))
 	{
 		player_controll(game);
-		enemy_move(game);
-		draw_ceil_floor_textured(game);
-
 		cast_rays(game);
+		enemy_move(game);
+
+		draw_ceil_floor_textured(game);
 		draw_walls(game);
 		draw_game_objects(game);
 

@@ -18,15 +18,13 @@
     <list default="true" id="6c4e217c-7993-4678-a3b0-20a822acdc07" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/ray_casting.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/start_game.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cub3d.dir/src_bonus/start_game.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-release/.cmake/api/v1/reply/index-2022-10-08T10-34-54-0916.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc_bonus/cub3d_bonus.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/player_controller.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/player_controller.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/draw_ceil_floor.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_ceil_floor.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src_bonus/draw_map.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/draw_map.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src_bonus/ray_casting.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/ray_casting.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src_bonus/start_game.c" beforeDir="false" afterPath="$PROJECT_DIR$/src_bonus/start_game.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

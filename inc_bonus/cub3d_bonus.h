@@ -367,11 +367,11 @@ void	draw_ceil_textured(t_game *game);
 void	draw_ceil_floor_textured(t_game *game);
 
 // Ray_casting algorithm: ray_casting.c //
-t_ray	ray_initialize(t_game *game, float ray_angle);
+t_ray	ray_initialize(t_game *game, t_fvector ray_dir);
 float	interception_distance(t_game *game, t_ray *ray);
 void	initialize_columns(t_game *game, t_ray *ray, float distance, int i,
 			float ray_angle);
-void	get_interception(t_game *game, float ray_angle, int i); //DDA algorithm
+void	get_interception(t_game *game, t_fvector ray_dir, int i); //DDA algorithm
 void	cast_rays(t_game *game);
 
 // Wall drawing: draw_walls.c //

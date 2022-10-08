@@ -2,10 +2,10 @@
 
 static void	draw_row_textured(t_game *game, t_img src, t_vector cur, float row_distance)
 {
-	const t_fvector	ray_dir0 = (t_fvector) {(float) (cosf(game->player.angle) - game->player.plane.x),
-											   (sinf(game->player.angle) - game->player.plane.y)};
-	const t_fvector	ray_dir1 = (t_fvector) {(float) (cosf(game->player.angle) + game->player.plane.x),
-											   (sinf(game->player.angle) + game->player.plane.y)};
+	const t_fvector	ray_dir0 = (t_fvector) {(float) (game->player.vector.x - game->player.plane.x),
+											   (game->player.vector.y - game->player.plane.y)};
+	const t_fvector	ray_dir1 = (t_fvector) {(float) (game->player.vector.x + game->player.plane.x),
+											   (game->player.vector.y + game->player.plane.y)};
 	t_fvector		floor_step;
 	t_fvector		floor;
 	t_vector		tex;

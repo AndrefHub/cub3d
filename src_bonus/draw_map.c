@@ -57,8 +57,8 @@ void	draw_player_on_map(t_game *game)
 	draw_square_fill(&game->map->img, player, game->map->map_tile_size / 2,
 					 PL_MAP_COLOR);
 	draw_line(&game->map->img, (t_vector) {player.x + game->map->map_tile_size / 4, player.y + game->map->map_tile_size / 4},(t_vector) {player.x + game->map->map_tile_size / 4
-		+ cos(game->player.angle) * game->map->map_tile_size / 2, player.y + game->map->map_tile_size / 4 +
-		sin(game->player.angle) * game->map->map_tile_size / 2}, PL_MAP_COLOR);
+		+ game->player.vector.x * game->map->map_tile_size / 2, player.y + game->map->map_tile_size / 4 +
+			game->player.vector.y * game->map->map_tile_size / 2}, PL_MAP_COLOR);
 
 }
 
