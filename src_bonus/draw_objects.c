@@ -32,7 +32,7 @@ void	draw_object_scaled(t_game *game, t_object *object)
 	const t_vector	draw_end = (t_vector) {ft_min(game->img.size.x, object->end.x),
 											   ft_min(game->img.size.y, object->end.y)};
 	t_fvector		src;
-	int				texture_pix;
+	unsigned int	texture_pix;
 	t_vector		cur;
 
 	cur = (t_vector) {draw_start.x,draw_start.y};
@@ -40,18 +40,24 @@ void	draw_object_scaled(t_game *game, t_object *object)
 	if (object->distance < MAX_RENDER_DISTANCE)
 		while (cur.x < draw_end.x)
 		{
-			cur.y = draw_start.y;
-			src.y = fmaxf(0.f, -object->start.y * object->render_step.y);
-			if (game->column[cur.x].distance >= object->distance)
+			if (object->sprite->alpha_start_x[(int) src.x] != INT16_MAX &&
+			game->column[cur.x].distance >= object->distance)
+			{
+
+				src.y = fmaxf(0.f, -object->start.y * object->render_step.y);
+				cur.y = draw_start.y;
 				while (cur.y < draw_end.y)
 				{
 					texture_pix = object->sprite->addr[(unsigned)
 							((int) src.y * object->sprite->size.x + src.x)];
-					if (texture_pix >> 24 == 0x00)
+					if (src.y > object->sprite->alpha_start_x[(int) src.x])
 						game->img.addr[cur.y * game->img.size.x + cur.x] = texture_pix;
+					if (src.y > object->sprite->alpha_end_x[(int) src.x])
+						break ;
 					src.y += object->render_step.y;
 					cur.y++;
 				}
+			}
 			src.x += object->render_step.x;
 			cur.x++;
 		}
@@ -85,8 +91,7 @@ void	draw_game_objects(t_game *game)
 		obj = (t_object *) elem->content;
 		obj->fade = fade % 2;
 		calculate_object_params(game, obj);
-		if (obj->start.x < game->img.size.x && obj->start.y < game->img.size.y
-			&& obj->end.x > 0 && obj->end.y > 0)
+		if (obj->start.x < game->img.size.x && obj->start.y < game->img.size.y)
 			draw_object_scaled(game, obj);
 		fade++;
 		elem = elem->next;

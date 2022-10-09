@@ -527,7 +527,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src_bonus/draw_enemies.c",
+			"path" : "src_bonus/draw_objects.c",
 			"sourceGroupIndex" : 0
 		},
 		{
