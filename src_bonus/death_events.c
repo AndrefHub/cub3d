@@ -91,8 +91,6 @@ void	player_death(t_game *game)
 		// cs_pause_sound(game->audio.song.play, 1);
 		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 		game->show_map = 0;
-		game->player_lb_data->score_num = game->hud.score.value_numeric;
-		ft_lst_insert(&game->leaderboard, ft_lstnew(game->player_lb_data), cmp_lb_entry);
 	}
 	if (i < 50 && get_time() - time > 35)
 	{
@@ -111,16 +109,14 @@ void	player_death(t_game *game)
 			return ;
 		}
 		game->input_mode = 1;
-		death_message(game);
-		// put_text_to_screen_layout(game, &game->img, &(t_text){"username:", (t_vector)
-		// {0, game->img.size.y / 2 + (FONT_SIZE / 6) * 2}, VBottom | HLeft, 0x727272}, 40);
+		game->player_lb_data->score_num = game->hud.score.value_numeric;
+		ft_lst_insert(&game->leaderboard, ft_lstnew(game->player_lb_data), cmp_lb_entry);
 		++i;
 	}
 	if (i > 50)
 	{
 		fill_img_color(&game->img, 0x0);
 		death_message(game);
-		// put_username_on_screen(game);
 		put_frame(game);
 	}
 }
