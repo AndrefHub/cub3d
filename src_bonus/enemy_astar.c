@@ -76,6 +76,8 @@ t_list	*get_first_n_nodes(t_list *lst, int n)
 
 	counter = 0;
 	tmp = lst;
+	if (!tmp)
+		return (tmp);
 	while (tmp->next && ++counter < n)
 	{
 		tmp = tmp->next;
@@ -117,7 +119,7 @@ t_list	*astar(t_game *game, t_vector enemy, t_vector player)
 			ft_lstclear(&open, free);
 			ft_lstclear(&closed, free);
 			printf("%llu\n", get_time_hp() - time);
-			return (get_first_n_nodes(path, 5));
+			return (path);
 		}
 		add_all_neighbours(game, &open, closed, curr->content, player);
 	}

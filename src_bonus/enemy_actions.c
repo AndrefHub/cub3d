@@ -2,8 +2,12 @@
 
 void	enemy_attack(t_game *game, t_enemy *enemy)
 {
-	(void)game;
-	if (get_time() - game->player.last_attack_time > PL_INVINCIBILITY &&
+	if (game->panic_mode)
+	{
+		reset_enemy_position(enemy);
+		game->hud.score.value_numeric += 200 * ++game->ghosts_eaten;
+	}
+	else if (get_time() - game->player.last_attack_time > PL_INVINCIBILITY &&
 		get_time() - enemy->last_attack_time > ENEMY_RELOAD)
 	{
 		game->player.last_attack_time = get_time();
@@ -29,9 +33,7 @@ void	update_path(t_game *game, t_enemy *enemy, t_list **path)
 {
 	if (!ft_lstsize(*path))
 	{
-		*path = enemy->pathfinding_algorithm(game, enemy); 
-		//(t_vector){enemy->object->pos.x, enemy->object->pos.y},
-		//	(t_vector){game->player.pos.x, game->player.pos.y});
+		*path = enemy->pathfinding_algorithm(game, enemy);
 	}
 }
 
@@ -59,6 +61,8 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 	t_node			*node;
 	float 			angle;
 
+	if (game->panic_mode && get_time() - game->time.pill_time > PANIC_TIME)
+		ft_lstclear(&enemy->path, free);
 	update_path(game, enemy, &enemy->path);
 	if (ft_lstsize(enemy->path))
 	{
@@ -68,12 +72,12 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 		{
 			ft_lstdelone(ft_lstpop_front(&enemy->path), free);
 			update_path(game, enemy, &enemy->path);
-			// if (!ft_lstsize(enemy->path))
-			// 	enemy->path = astar(game, (t_vector){enemy->object->pos.x, enemy->object->pos.y},
-			// 		(t_vector){game->player.pos.x, game->player.pos.y});
-			node = ((t_node *)enemy->path->content);
+			node = NULL;
+			if (ft_lstsize(enemy->path))
+				node = ((t_node *)enemy->path->content);;
 		}
-			
+		if (!node)
+			return ;
 		p.x = .5f + node->pos.x - enemy->object->pos.x;
 		p.y = .5f + node->pos.y - enemy->object->pos.y;
 		angle = calculate_angle(e, p);
@@ -94,12 +98,16 @@ void	enemy_move(t_game *game)
 	while (lst)
 	{
 		enemy = ((t_enemy *)lst->content);
-
 		enemy_move_along_path(game, enemy);
 		enemy->object->distance = distancef(&game->player.pos, &enemy->object->pos);
 		check_borders(game, enemy->object);
-		if (fvector_distance(game->player.pos, enemy->object->pos) < 1)
+		if (fvector_distance(game->player.pos, enemy->object->pos) < .7)
 			enemy_attack(game, enemy);
 		lst = lst->next;
+	}
+	if (game->panic_mode && get_time() - game->time.pill_time > PANIC_TIME)
+	{
+		game->panic_mode = 0;
+		game->ghosts_eaten = 0;
 	}
 }

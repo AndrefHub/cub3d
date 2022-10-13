@@ -158,8 +158,12 @@ void	set_enemy_sounds(t_game *game)
 void	set_input_mode_chars(t_game *game)
 {
 	game->macos_chars = "ASDFHGZXCV BQWERYT123465=97-80]OU[IP LJ'K;\\,/NM.  ~ ";
-	game->username = malloc(sizeof(*(game->username)) * 9);
-	ft_bzero(game->username, 9);
+	game->player_lb_data = malloc(sizeof(*game->player_lb_data));
+	game->player_lb_data->name = malloc(sizeof(*(game->player_lb_data->name)) * 9);
+	game->player_lb_data->score = game->hud.score.value;
+	ft_bzero(game->player_lb_data->name, 9);
+	game->place = malloc(8);
+	ft_bzero(game->place, 8);
 	game->input_mode = 0;
 }
 
@@ -212,6 +216,9 @@ int	game(t_map *map)
 	set_input_mode_chars(&game);
 	set_enemy_sounds(&game);
 	clear_font_outline(&game);
+	game.leaderboard = get_leaderboard();
+	
+	print_lb(game.leaderboard);
 	start_game(&game);
 	return (1);
 }

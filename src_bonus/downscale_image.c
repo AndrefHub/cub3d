@@ -55,8 +55,8 @@ int	get_downscaled_colored_font(t_img *img, int divisor, t_vector pos, t_rgb col
 		++vec.y;
 	}
 	pixel.a = alpha / (divisor * divisor);
-	// pixel.a = 0xFF * (pixel.a == 0xFF);
-	pixel.a = 0x7F * (pixel.a > 0x3F) + 0x80 * (pixel.a > 0xBF);//0x00;// //
+	// pixel.a = 0xFF * (pixel.a >= 0x7F);
+	// pixel.a = 0x7F * (pixel.a > 0x3F) + 0x80 * (pixel.a > 0xBF);
 	pixel.r = color.r;
 	pixel.g = color.g;
 	pixel.b = color.b;
@@ -80,7 +80,7 @@ void	put_downscaled_image(t_img *dst, t_text *text, t_img *src, int divisor)
 			texture_pix = get_downscaled_colored_font(src, divisor,
 					(t_vector){xcounter * divisor, ycounter * divisor}, *color);
 			if (texture_pix > 0x000000)
-				dst->addr[(text->pos.y + ycounter) * dst->size.x + (text->pos.x + xcounter)] = texture_pix;
+				put_pixel_on_pixel((t_rgb *)dst->addr + (text->pos.y + ycounter) * dst->size.x + (text->pos.x + xcounter), (t_rgb *)&texture_pix); //dst->addr[(text->pos.y + ycounter) * dst->size.x + (text->pos.x + xcounter)] = texture_pix;
 		}
 	}
 }

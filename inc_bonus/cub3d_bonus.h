@@ -149,6 +149,13 @@ typedef struct s_parse_info
 	t_texture	*arr;
 } t_parse_info;
 
+typedef struct s_lb_entry
+{
+	char	*name;
+	int		score_num;
+	char	*score;
+}	t_lb_entry;
+
 typedef struct game
 {
 	t_map			*map;
@@ -217,20 +224,24 @@ typedef struct game
 		int			frames_to_move;
 		t_ull		last;
 		t_ull		fps_time;
-		int			fps;
-		char		*fps_title;
+		t_ull		pill_time;
 	}				time;
 	struct s_hud
 	{
-		int				font_size;
-		t_hud_entry		fps;
-		t_hud_entry		score;
-		t_hud_entry		lives;
-		t_hud_entry		health;
+		int			font_size;
+		t_hud_entry	fps;
+		t_hud_entry	score;
+		t_hud_entry	lives;
+		t_hud_entry	health;
 	}			hud;
+	t_list			*leaderboard;
 	char			*macos_chars;
-	char			*username;
+	t_lb_entry		*player_lb_data;
+	int				panic_mode;
 	int				input_mode;
+	char			*death_message;
+	char			*place;
+	int				ghosts_eaten;
 }	t_game;
 
 typedef struct s_enemy
@@ -438,6 +449,8 @@ void	put_frame(t_game *game);
 void	init_hud(struct s_hud *hud);
 
 // what happens to player after death: // 
+void	reset_enemy_position(void *enemy);
+void	reset_positions(t_game *game);
 int		player_respawn(t_game *game);
 
 // is_checks.c //
@@ -462,5 +475,12 @@ t_list	*astar(t_game *game, t_vector enemy, t_vector player);
 
 t_list	*pathfinding_algo_straight(t_game *game, t_enemy *enemy);
 t_rgb	put_pixel_on_pixel(t_rgb *dst, t_rgb *src);
+
+void	print_lb(t_list *lb);
+int		cmp_string_number(void *lhs, void *rhs);
+int		cmp_lb_entry(void *lhs, void *rhs);
+t_list	*get_leaderboard();
+void	ft_lst_insert(t_list **lst, t_list *to_insert, int cmp(void *, void *));
+void	update_leaderboard_file(t_game *game);
 
 #endif

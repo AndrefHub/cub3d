@@ -28,9 +28,9 @@ void	input_char(int key, char *username, char *charset)
 inline void	input_mode(int key, t_game *game)
 {
 	if (key == BACKSPACE) // Backspace
-		game->username[ft_strlen(game->username) - 1] = '\0';
+		game->player_lb_data->name[ft_strlen(game->player_lb_data->name) - 1] = '\0';
 	else if (key == ENTER) // Enter, to add confirm action
-		;
+		update_leaderboard_file(game);
 	else
-		input_char(key, game->username, game->macos_chars);
+		input_char(key, game->player_lb_data->name, game->macos_chars);
 }	

@@ -40,6 +40,7 @@
 # define OBJECT_CHARS "e.o"
 # define BONUS "BONUS"
 # define USE_PATH_PREFIX "USE_PATH_PREFIX"
+# define PANIC_TIME 7000
 
 # ifndef ASSETS_PATH
 #  define ASSETS_PATH "."

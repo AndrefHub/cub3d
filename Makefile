@@ -1,7 +1,7 @@
 NAME    = cub3d
 #CC      = clang
 CC      = gcc
-#FLAGS	= -Wall -Wextra -Werror -g -O0
+# FLAGS	= -Wall -Wextra -Werror -g -O0
  FLAGS	= -Wall -Wextra -Werror -MMD -g -Ofast -march=native
 LFLAGS	= -Llibft -lft
 ###
@@ -44,6 +44,7 @@ SRC_BONUSFILE	=	border_checking.c \
 					enemy_actions.c \
 					enemy_astar.c \
 					enemy_move.c \
+					file_parser.c \
 					find_objects.c \
 					free_game.c \
 					ft_lstsort.c \
@@ -57,6 +58,7 @@ SRC_BONUSFILE	=	border_checking.c \
 					input_manip.c \
 					input_mode.c \
 					is_checks.c \
+					leaderboard_funcs.c \
 					main.c \
 					mlx_adapter.c \
 					parsing.c \
