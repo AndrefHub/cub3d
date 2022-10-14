@@ -1,6 +1,3 @@
-BONUS
-USE_PATH_PREFIX
-
 W1 ./assets/textures/pacwall/wall01.xpm
 ./assets/textures/pacwall/wall02.xpm
 ./assets/textures/pacwall/wall03.xpm
@@ -78,14 +75,7 @@ W8 ./assets/textures/wah-goodman/wah108.xpm
 W9 ./assets/textures/wah-goodman/wah109.xpm
 WD ./assets/textures/wah-goodman/wah109.xpm
 
-O1 ./assets/textures/ghost/ghost1.xpm
-./assets/textures/ghost/ghost2.xpm
-./assets/textures/ghost/ghost3.xpm
-./assets/textures/ghost/ghost4.xpm
-./assets/textures/ghost/ghost5.xpm
-./assets/textures/ghost/ghost6.xpm
-./assets/textures/ghost/ghost7.xpm
-./assets/textures/ghost/ghost8.xpm
+O1 ./assets/textures/imposter.xpm
 O2 ./assets/textures/paccoin/coin1.xpm
 O3 ./assets/textures/pacpill/pill1.xpm
 
@@ -141,8 +131,9 @@ FZ ./assets/font/font240/Z.xpm
 
 S1 ./assets/sounds/monke.wav
 S2 ./assets/sounds/pacman_death.wav
-F 217,242,253
-C 178,229,251
+S3 ./assets/sounds/auuuugh.wav
+F ./assets/textures/sussy_stickmin/sussy-00.xpm
+C ./assets/textures/pacwall/wall12.xpm
 
 111111111111111111111
 100000000010000000001

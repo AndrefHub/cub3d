@@ -5,7 +5,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "/Users/kdancy/projects/cub3d/cub3d",
-            "args": ["/Users/kdancy/projects/cub3d/maps/pacman.cub"],
+            "args": ["/Users/kdancy/projects/cub3d/maps/test.cub"],
             "stopAtEntry": false,
             "cwd": "/Users/kdancy/projects/cub3d",
             "environment": [],

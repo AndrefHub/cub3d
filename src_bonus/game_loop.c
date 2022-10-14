@@ -2,7 +2,7 @@
 
 void	put_frame(t_game *game)
 {
-	draw_hud(game);
+	// draw_hud(game);
 	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x - game->img.size.x) / 2, 0}, &game->img);
 	if (game->show_map)
 	{
@@ -11,18 +11,6 @@ void	put_frame(t_game *game)
 	}
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->hud_img.mlx_img,
 							0, 0);
-}
-
-void	player_win(t_game *game)
-{
-	static int c = 0;
-
-	if (!c)
-	{
-		printf("You\'re winner!");
-		++c;
-	}
-	(void)game;
 }
 
 float	ftorange(float val, float border)
@@ -46,16 +34,19 @@ void	update_volume(t_game *game)
 	while (enemies)
 	{
 		enemy = enemies->content;
-		pos = (t_fvector){game->player.pos.x - enemy->object->pos.x,
-			game->player.pos.y - enemy->object->pos.y};
-		angle = calculate_angle((t_fvector){1, 0}, pos);
-		volume.x = ((cosf(angle - PI / 2) + 1) / 2) /
-			fvector_distance(pos, (t_fvector){0, 0}) / 2;
-		volume.y = ((cosf(angle + PI / 2) + 1) / 2) /
-			fvector_distance(pos, (t_fvector){0, 0}) / 2;
-		enemy->sound.play->volume0 += ftorange(volume.x - enemy->sound.play->volume0, 0.01);
-		enemy->sound.play->volume1 += ftorange(volume.y - enemy->sound.play->volume1, 0.01);
-		printf("l: %f, r: %f\n", enemy->sound.play->volume0, enemy->sound.play->volume1);
+		if (enemy->sound.play)
+		{
+			pos = (t_fvector){game->player.pos.x - enemy->object->pos.x,
+				game->player.pos.y - enemy->object->pos.y};
+			angle = calculate_angle((t_fvector){1, 0}, pos);
+			volume.x = ((cosf(angle - PI / 2) + 1) / 2) /
+				fvector_distance(pos, (t_fvector){0, 0}) / 2;
+			volume.y = ((cosf(angle + PI / 2) + 1) / 2) /
+				fvector_distance(pos, (t_fvector){0, 0}) / 2;
+			enemy->sound.play->volume0 += ftorange(volume.x - enemy->sound.play->volume0, 0.01);
+			enemy->sound.play->volume1 += ftorange(volume.y - enemy->sound.play->volume1, 0.01);
+			printf("l: %f, r: %f\n", enemy->sound.play->volume0, enemy->sound.play->volume1);
+		}
 		enemies = enemies->next;
 	}
 }
@@ -63,10 +54,9 @@ void	update_volume(t_game *game)
 int	game_loop(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-//	if (ft_lstsize(game->map->enemies) >= ft_lstsize(game->objects))
-//		player_win(game);
-//	else
-	if (check_aliveness(game))
+	if (game->objects_count <= 0)
+		player_win(game);
+	else if (check_aliveness(game))
 	{
 		player_controll(game);
 		cast_rays(game);
@@ -79,6 +69,7 @@ int	game_loop(t_game *game)
 		update_volume(game);
 
 		draw_aim(game);
+		draw_hud(game);
 
 		put_frame(game);
 		change_textures(game);

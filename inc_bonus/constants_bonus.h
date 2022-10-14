@@ -41,6 +41,13 @@
 # define BONUS "BONUS"
 # define USE_PATH_PREFIX "USE_PATH_PREFIX"
 # define PANIC_TIME 7000
+# define COIN_REWARD 10
+# define PILL_REWARD 50
+# define ENEMY_REWARD 200
+# define GAME_MODE 0
+# define INPUT_MODE 1
+# define WIN_SCREEN_MODE 2
+# define LEADERBOARD_FOLDER ".lb/"
 
 # ifndef ASSETS_PATH
 #  define ASSETS_PATH "."

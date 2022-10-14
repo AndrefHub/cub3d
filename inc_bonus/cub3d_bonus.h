@@ -102,6 +102,7 @@ typedef struct s_map
 	t_fvector		last_collision;
 	t_list			*enemies;
 	t_list			*objects;
+	char			*map_file;
 }				t_map;
 
 typedef struct ray
@@ -241,7 +242,9 @@ typedef struct game
 	int				input_mode;
 	char			*death_message;
 	char			*place;
+	int				objects_count;
 	int				ghosts_eaten;
+	char			*lb_filename;
 }	t_game;
 
 typedef struct s_enemy
@@ -479,8 +482,9 @@ t_rgb	put_pixel_on_pixel(t_rgb *dst, t_rgb *src);
 void	print_lb(t_list *lb);
 int		cmp_string_number(void *lhs, void *rhs);
 int		cmp_lb_entry(void *lhs, void *rhs);
-t_list	*get_leaderboard();
+t_list	*get_leaderboard(char *filename);
 void	ft_lst_insert(t_list **lst, t_list *to_insert, int cmp(void *, void *));
 void	update_leaderboard_file(t_game *game);
+void	player_win(t_game *game);
 
 #endif

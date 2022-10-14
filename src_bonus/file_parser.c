@@ -50,7 +50,8 @@ t_lb_entry	*parse_lb_entry(char *line)
 	return (entry);
 }
 
-t_list	*get_leaderboard()
+// t_list	*get_leaderboard()
+t_list	*get_leaderboard(char *filename)
 {
 	t_list		*lb;
 	t_lb_entry	*entry;
@@ -58,7 +59,7 @@ t_list	*get_leaderboard()
 	int			fd;
 
 	lb = NULL;
-	fd = open(".lb", O_RDONLY);
+	fd = open(filename, O_RDONLY);
 	if (fd >= 0)
 	{
 		line = skip_empty_lines(fd);

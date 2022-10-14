@@ -75,6 +75,7 @@ t_map	*parse_file(int ac, char **av)
 	if (fd != BAD_FILE)
 	{
 		map = create_empty_map();
+		map->map_file = av[1];
 		if (map == NULL)
 			error_exit(NULL, 1, "Allocation error: Map");
 		parse_assets(map, fd);

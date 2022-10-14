@@ -72,7 +72,9 @@ void	eat_by_coords(t_game *game, t_vector pos)
 		object = objects->content;
 		if ((int)object->pos.x == pos.x && (int)object->pos.y == pos.y)
 		{
-			game->hud.score.value_numeric += 100 + (game->map->map[pos.y][pos.x] == 'o') * 400;
+			--game->objects_count;
+			game->hud.score.value_numeric += COIN_REWARD + (game->map->map
+				[pos.y][pos.x] == 'o') * (PILL_REWARD - COIN_REWARD);
 			if (game->map->map[pos.y][pos.x] == 'o')
 				pill_eaten(game);
 			ft_lstdelbyaddr(&game->objects, objects, free);

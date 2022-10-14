@@ -8,7 +8,7 @@ void	draw_hud_entry(t_game *game, t_hud_entry *entry, int y)
 		game->img.size.x) / 2 + ((game->mlx.win_size.x - game->img.size.x)
 		/ 2) / 1.9, game->hud.font_size * y};
 	ft_bzero(entry->value, entry->value_size);
-	entry->value_numeric %= 1 << 16;
+	// entry->value_numeric %= 1 << 16;
 	// if (entry->value_numeric >= (1 << 16))
 		// ft_strlcat(output, "NAN", 4);
 	// else
