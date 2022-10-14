@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "cub3d::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cub3d-Release-269ff9c7ba617acae786.json",
+					"jsonFile" : "target-cub3d-Release-9cd5a36218d9d11cfad6.json",
 					"name" : "cub3d",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/lsherry/42Course/cub3d/cmake-build-release",
-		"source" : "/Users/lsherry/42Course/cub3d"
+		"build" : "/Users/kdancy/projects/cub3d/cmake-build-release",
+		"source" : "/Users/kdancy/projects/cub3d"
 	},
 	"version" : 
 	{

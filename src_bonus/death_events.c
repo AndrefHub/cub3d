@@ -23,7 +23,7 @@ t_text	*set_rank_color(t_text *text, int rank)
 	if (rank == 1)
 		text->color = 0xFFD700;
 	else if (rank == 2)
-		text->color = 0xC0C0C0;
+		text->color = 0xA3BBE4;
 	else if (rank == 3)
 		text->color = 0xCD7F32;
 	return (text);

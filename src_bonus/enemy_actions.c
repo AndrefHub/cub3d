@@ -2,12 +2,13 @@
 
 void	enemy_attack(t_game *game, t_enemy *enemy)
 {
-	if (game->panic_mode)
-	{
-		reset_enemy_position(enemy);
-		game->hud.score.value_numeric += 200 * ++game->ghosts_eaten;
-	}
-	else if (get_time() - game->player.last_attack_time > PL_INVINCIBILITY &&
+//	if (game->panic_mode)
+//	{
+//		reset_enemy_position(enemy);
+//		game->hud.score.value_numeric += 200 * ++game->ghosts_eaten;
+//	}
+//	else
+	if (get_time() - game->player.last_attack_time > PL_INVINCIBILITY &&
 		get_time() - enemy->last_attack_time > ENEMY_RELOAD)
 	{
 		game->player.last_attack_time = get_time();
@@ -85,6 +86,7 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 		enemy->delta.y = sinf(angle) * EN_SPEED;
 		enemy->object->pos.x += enemy->delta.x;
 		enemy->object->pos.y += enemy->delta.y;
+		enemy->object->distance = distancef(&game->player.pos, &enemy->object->pos);
 	}
 	// enemy_check_collision(game, enemy);
 }
@@ -99,7 +101,6 @@ void	enemy_move(t_game *game)
 	{
 		enemy = ((t_enemy *)lst->content);
 		enemy_move_along_path(game, enemy);
-		enemy->object->distance = distancef(&game->player.pos, &enemy->object->pos);
 		check_borders(game, enemy->object);
 		if (fvector_distance(game->player.pos, enemy->object->pos) < .7)
 			enemy_attack(game, enemy);

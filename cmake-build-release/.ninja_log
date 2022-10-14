@@ -29,12 +29,12 @@
 530	954	1664539366772034743	CMakeFiles/cub3d.dir/src_bonus/draw_map.c.o	7a8f7a89ccf4e776
 634	1249	1664539367066714706	CMakeFiles/cub3d.dir/src_bonus/drawing.c.o	2e88c520b8f706c0
 745	1302	1664539367113382537	CMakeFiles/cub3d.dir/src_bonus/enemy_astar.c.o	13313447c7e5513
-812	1255	1664539367071700610	CMakeFiles/cub3d.dir/src_bonus/parsing.c.o	e58e981a82e5154b
 960	1327	1664539367147062795	CMakeFiles/cub3d.dir/src_bonus/player_controller.c.o	14c08e6bc1377148
 1064	1329	1664539367138979694	CMakeFiles/cub3d.dir/src_bonus/player_movement.c.o	41ff10c77a3ae03b
 1249	1565	1664539367370604467	CMakeFiles/cub3d.dir/src_bonus/draw_walls.c.o	55e69c54bc2c7405
 660	1224	1664539367041856632	CMakeFiles/cub3d.dir/src_bonus/find_objects.c.o	94b90f93f2aca7d
 748	1528	1664539367339150932	CMakeFiles/cub3d.dir/src_bonus/downscale_image.c.o	62b286c547f36140
+812	1255	1664539367071700610	CMakeFiles/cub3d.dir/src_bonus/parsing.c.o	e58e981a82e5154b
 1329	1622	1664539367442032140	CMakeFiles/cub3d.dir/src_bonus/draw_ceil_floor.c.o	2a12daf437aabcf7
 954	1342	1664539367161360985	CMakeFiles/cub3d.dir/src_bonus/parsing_utils.c.o	fb2638fc80b59149
 1256	1520	1664539367337224578	CMakeFiles/cub3d.dir/src_bonus/respawn.c.o	9804615d74bf56d6

@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "(lldb) Запустить",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/Users/kdancy/projects/cub3d/cub3d",
+            "args": ["/Users/kdancy/projects/cub3d/maps/pacman.cub"],
+            "stopAtEntry": false,
+            "cwd": "/Users/kdancy/projects/cub3d",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "cub3d",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/Users/kdancy/projects/cub3d/cub3d",
+            "args": ["maps/pacman.cub"],
+            "stopAtEntry": false,
+            "cwd": "/Users/kdancy/projects/cub3d",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+        }
+    ],
+    "version": "2.0.0"
+}
