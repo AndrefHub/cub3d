@@ -59,7 +59,7 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 	t_fvector		p;
 	t_node			*node;
 	float 			angle;
-	t_list			*lst;
+	t_list			*deleted_node;
 
 	if (game->panic_mode && get_time() - game->time.pill_time > PANIC_TIME)
 		ft_lstclear(&enemy->path, free);
@@ -70,8 +70,8 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 		if (fvector_distance((t_fvector){.5f + node->pos.x, .5f + node->pos.y},
 			enemy->object->pos) < .1)
 		{
-			lst = ft_lstpop_front(&enemy->path);
-			ft_lstdelone(&lst, free);
+			deleted_node = ft_lstpop_front(&enemy->path);
+			ft_lstdelone(&deleted_node, free);
 			update_path(game, enemy, &enemy->path);
 			node = NULL;
 			if (ft_lstsize(enemy->path))

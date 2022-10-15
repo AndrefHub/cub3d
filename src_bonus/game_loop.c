@@ -2,7 +2,7 @@
 
 void	put_frame(t_game *game)
 {
-	// draw_hud(game);
+	draw_hud(game);
 	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x - game->img.size.x) / 2, 0}, &game->img);
 	if (game->show_map)
 	{
@@ -69,7 +69,7 @@ int	game_loop(t_game *game)
 		update_volume(game);
 
 		draw_aim(game);
-		draw_hud(game);
+		// draw_hud(game);
 
 		put_frame(game);
 		change_textures(game);

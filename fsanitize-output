@@ -1,0 +1,65 @@
+=================================================================
+==3428==ERROR: AddressSanitizer: heap-use-after-free on address 0x606000002a20 at pc 0x55ee997f8316 bp 0x7ffc237d1320 sp 0x7ffc237d1310
+READ of size 8 at 0x606000002a20 thread T0
+    #0 0x55ee997f8315 in enemy_move_along_path src_bonus/enemy_actions.c:70
+    #1 0x55ee997f88f3 in enemy_move src_bonus/enemy_actions.c:102
+    #2 0x55ee997fcde4 in game_loop src_bonus/game_loop.c:63
+    #3 0x55ee9980f364 in mlx_loop (/home/andref/Documents/school21/cub3d/cub3d+0x2c364)
+    #4 0x55ee9980b907 in start_game src_bonus/start_game.c:193
+    #5 0x55ee9980be13 in init_game src_bonus/start_game.c:242
+    #6 0x55ee99800019 in main src_bonus/main.c:11
+    #7 0x7f1de6f2e28f  (/usr/lib/libc.so.6+0x2328f)
+    #8 0x7f1de6f2e349 in __libc_start_main (/usr/lib/libc.so.6+0x23349)
+    #9 0x55ee997ec7d4 in _start ../sysdeps/x86_64/start.S:115
+
+0x606000002a20 is located 0 bytes inside of 64-byte region [0x606000002a20,0x606000002a60)
+freed by thread T0 here:
+    #0 0x7f1de74be672 in __interceptor_free /usr/src/debug/gcc/libsanitizer/asan/asan_malloc_linux.cpp:52
+    #1 0x55ee9980eaab in ft_lstdelone (/home/andref/Documents/school21/cub3d/cub3d+0x2baab)
+    #2 0x55ee99804aed in eat_by_coords src_bonus/player_eating.c:80
+    #3 0x55ee99804eb5 in player_eat src_bonus/player_eating.c:94
+    #4 0x55ee99803d14 in player_controll src_bonus/player_controller.c:81
+    #5 0x55ee997fcdcc in game_loop src_bonus/game_loop.c:61
+    #6 0x55ee9980f364 in mlx_loop (/home/andref/Documents/school21/cub3d/cub3d+0x2c364)
+
+previously allocated by thread T0 here:
+    #0 0x7f1de74bfa89 in __interceptor_malloc /usr/src/debug/gcc/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x55ee997fae73 in find_objects src_bonus/find_objects.c:87
+    #2 0x55ee99800524 in parse_map src_bonus/parsing.c:62
+    #3 0x55ee9980077d in parse_file src_bonus/parsing.c:82
+    #4 0x55ee99800002 in main src_bonus/main.c:7
+    #5 0x7f1de6f2e28f  (/usr/lib/libc.so.6+0x2328f)
+
+SUMMARY: AddressSanitizer: heap-use-after-free src_bonus/enemy_actions.c:70 in enemy_move_along_path
+Shadow bytes around the buggy address:
+  0x0c0c7fff84f0: 00 00 00 00 00 00 00 00 fa fa fa fa 00 00 00 00
+  0x0c0c7fff8500: 00 00 00 00 fa fa fa fa 00 00 00 00 00 00 00 00
+  0x0c0c7fff8510: fa fa fa fa 00 00 00 00 00 00 00 00 fa fa fa fa
+  0x0c0c7fff8520: 00 00 00 00 00 00 00 00 fa fa fa fa 00 00 00 00
+  0x0c0c7fff8530: 00 00 00 00 fa fa fa fa 00 00 00 00 00 00 00 00
+=>0x0c0c7fff8540: fa fa fa fa[fd]fd fd fd fd fd fd fd fa fa fa fa
+  0x0c0c7fff8550: 00 00 00 00 00 00 00 00 fa fa fa fa 00 00 00 00
+  0x0c0c7fff8560: 00 00 00 00 fa fa fa fa 00 00 00 00 00 00 00 00
+  0x0c0c7fff8570: fa fa fa fa fd fd fd fd fd fd fd fd fa fa fa fa
+  0x0c0c7fff8580: 00 00 00 00 00 00 00 00 fa fa fa fa 00 00 00 00
+  0x0c0c7fff8590: 00 00 00 00 fa fa fa fa 00 00 00 00 00 00 00 00
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==3428==ABORTING
