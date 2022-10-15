@@ -101,4 +101,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lstpop_front(t_list **lst);
 
+int		ft_rand(void);
+void	ft_srand(unsigned int seed);
+
 #endif

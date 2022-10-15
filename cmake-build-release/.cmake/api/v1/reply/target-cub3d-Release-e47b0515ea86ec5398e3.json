@@ -165,7 +165,9 @@
 				40,
 				41,
 				42,
-				43
+				43,
+				44,
+				45
 			]
 		}
 	],
@@ -266,7 +268,9 @@
 				40,
 				41,
 				42,
-				43
+				43,
+				44,
+				45
 			]
 		}
 	],
@@ -534,6 +538,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src_bonus/ft_lstsort.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src_bonus/after_death_anim.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libft/ft_rand.c",
 			"sourceGroupIndex" : 0
 		}
 	],
