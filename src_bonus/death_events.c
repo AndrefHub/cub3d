@@ -29,7 +29,7 @@ t_text	*set_rank_color(t_text *text, int rank)
 	return (text);
 }
 
-void	death_message(t_game *game)
+void	leaderboard_message(t_game *game)
 {
 	const int	font_size = FONT_SIZE / 6;
 	int			counter;
@@ -67,13 +67,13 @@ void	death_message(t_game *game)
 	// {0, game->img.size.y / 2 + (FONT_SIZE / 6) * 2}, VBottom | HLeft, 0xFF7F7F}, font_size);
 }
 
-void	win_message(t_game *game)
+void	win_message(t_game *game, char *message, int color)
 {
 	const int	font_size = FONT_SIZE / 3;
 
-	put_text_to_screen_layout(game, &game->img, &(t_text){"YOU are winner!", (t_vector)
+	put_text_to_screen_layout(game, &game->img, &(t_text){message, (t_vector)
 	{game->img.size.x / 2, game->img.size.y / 2},
-		VCenter | HCenter, 0xFFD700}, font_size);
+		VCenter | HCenter, color}, font_size);
 	// put_text_to_screen_layout(game, &game->img, &(t_text){game->hud.score.value,
 	// 	(t_vector){game->img.size.x / 2, game->img.size.y / 2 + font_size / 2},
 	// 	VCenter | HCenter, 0x7FFF7F}, font_size);
@@ -95,22 +95,57 @@ void	put_username_on_screen(t_game *game)
 	draw_square_fill(&game->img, pos, font_size, 0x00000000);
 }
 
+int	edibles_eaten(t_game *game)
+{
+	return (!game->objects_count);
+}
+
+void	change_all_enemies_cry_paused(t_game *game, int paused)
+{
+	t_list	*enemies;
+	t_enemy	*enemy;
+	
+	enemies = game->map->enemies;
+	while (enemies)
+	{
+		enemy = enemies->content;
+		enemy->sound.play->paused = paused;
+		enemies = enemies->next;
+	}
+}
+
+void	pause_game_actions(t_game *game)
+{
+	// cs_pause_sound(game->audio.song.play, 1);
+	cs_play_sound(game->audio.ctx, game->audio.bonk.def);
+	game->show_map = 0;
+	change_all_enemies_cry_paused(game, 1);
+}
+
+void	put_ended_game_image(t_game *game)
+{
+	fill_img_color(&game->img, 0x0);
+	if (game->input_mode == INPUT_MODE)
+		leaderboard_message(game);
+	else if (game->input_mode == WIN_SCREEN_MODE && edibles_eaten(game))
+		win_message(game, "You\'re winner!", 0xFFD700);
+	else
+		win_message(game, "game over", 0x800000);
+	put_frame(game);
+}
+
 void	player_death(t_game *game)
 {
 	static int		i = 0;
 	static t_ull	time = 0;
 
-	if (!i)
-	{
-		// cs_pause_sound(game->audio.song.play, 1);
-		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
-		game->show_map = 0;
-	}
+	if (i == -1)
+		pause_game_actions(game);
 	if (i < 50 && get_time() - time > 35)
 	{
+		++i;
 		time = get_time();
 		dim_screen(game, i);
-		++i;
 	}
 	else if (i == 50)
 	{
@@ -118,6 +153,7 @@ void	player_death(t_game *game)
 		{
 			i = 0;
 			time = 0;
+			change_all_enemies_cry_paused(game, 0);
 			// game->audio.song.play->paused = 0;
 			// cs_play_sound(game->audio.ctx, game->audio.song.def);
 			return ;
@@ -128,11 +164,7 @@ void	player_death(t_game *game)
 		++i;
 	}
 	if (i > 50)
-	{
-		fill_img_color(&game->img, 0x0);
-		death_message(game);
-		put_frame(game);
-	}
+		put_ended_game_image(game);
 }
 
 void	player_win(t_game *game)
@@ -160,14 +192,7 @@ void	player_win(t_game *game)
 		++i;
 	}
 	if (i > 50)
-	{
-		fill_img_color(&game->img, 0x0);
-		if (game->input_mode == INPUT_MODE)
-			death_message(game);
-		else
-			win_message(game);
-		put_frame(game);
-	}
+		put_ended_game_image(game);
 }
 
 int	check_aliveness(t_game *game)

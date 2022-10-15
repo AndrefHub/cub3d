@@ -5,4 +5,4 @@ inc
 .DS_Store
 */.DS_Store
 */*/.DS_Store
-cmake-build-debug/
+cmake-build-*

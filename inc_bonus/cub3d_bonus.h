@@ -411,7 +411,7 @@ void	put_image_to_image(t_img *dst, t_vector pos, t_img *src);
 void	input_mode(int key, t_game *game);
 
 // Death events: death_events.c //
-void	death_message(t_game *game);
+void	leaderboard_message(t_game *game);
 void	player_death(t_game *game);
 int		check_aliveness(t_game *game);
 void	dim_image(t_img *img, int img_size, t_rgb *color);
