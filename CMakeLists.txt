@@ -55,7 +55,7 @@ add_executable(cub3d
         src_bonus/game_loop.c
         src_bonus/draw_ceil_floor.c
         src_bonus/enemy_move.c
-        cute_sound/cute_sound.c src_bonus/draw_objects.c src_bonus/ft_lstsort.c)
+        cute_sound/cute_sound.c src_bonus/draw_objects.c src_bonus/ft_lstsort.c src_bonus/after_death_anim.c libft/ft_rand.c)
 #if ($ENV{USER} EQUAL "landreas")
     target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/mlx/libmlx.a "-framework OpenGL" "-framework AppKit")
     target_link_libraries(cub3d /Users/lsherry/42Course/cub3d/libft/libft.a)

@@ -60,33 +60,39 @@ void	update_volume(t_game *game)
 	}
 }
 
-int	game_loop(t_game *game)
+void	death_game_scene(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-//	if (ft_lstsize(game->map->enemies) >= ft_lstsize(game->objects))
-//		player_win(game);
-//	else
-	if (check_aliveness(game))
-	{
-		player_controll(game);
-		cast_rays(game);
-		enemy_move(game);
-
-		draw_ceil_floor_textured(game);
-		draw_walls(game);
-		draw_game_objects(game);
-
-		update_volume(game);
-
-		draw_aim(game);
-
-		put_frame(game);
-		change_textures(game);
-	}
-	else
+	draw_afterdeath_animation(game);
+	if (game->afterdeath != 1)
 	{
 		player_death(game);
 	}
 	update_time(game);
+}
+
+void	pac_game_scene(t_game *game)
+{
+	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
+	check_aliveness(game);
+	player_controll(game);
+	cast_rays(game);
+	enemy_move(game);
+
+	draw_ceil_floor_textured(game);
+	draw_walls(game);
+	draw_game_objects(game);
+
+	draw_aim(game);
+
+	draw_hud(game);
+	put_frame(game);
+	change_textures(game);
+	update_time(game);
+}
+
+int	game_loop(t_scene *scene)
+{
+	scene->scene_func(scene->parameter);
 	return (0);
 }

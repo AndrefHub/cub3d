@@ -9,7 +9,7 @@ void	initialize_mlx_parameters(t_game *game)
 	mlx_hook(game->mlx.window, ButtonPress, ButtonPressMask, mouse_hook_press, game);
 	mlx_hook(game->mlx.window, ButtonRelease, ButtonReleaseMask, mouse_hook_release, game);
 	mlx_hook(game->mlx.window, DestroyNotify, StructureNotifyMask, close_hook, game);
-	mlx_loop_hook(game->mlx.id, game_loop, game);
+	mlx_loop_hook(game->mlx.id, game_loop, &game->scene);
 	mouse_move(game->mlx.id, game->mlx.window, game->mlx.win_size.x / 2, game->mlx.win_size.y / 2);
 }
 
@@ -197,6 +197,8 @@ int	game(t_map *map)
 	t_game	game;
 
 	ft_bzero(&game, sizeof(game));
+	game.scene.parameter = &game;
+	game.scene.scene_func = (void *) pac_game_scene;
 	game.map = map;
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)

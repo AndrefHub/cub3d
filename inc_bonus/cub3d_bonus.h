@@ -68,6 +68,12 @@ typedef struct node
 	struct node	*parent;
 } t_astar_node;
 
+typedef struct s_scene
+{
+	void	(*scene_func)(void*);
+	void	*parameter;
+}	t_scene;
+
 typedef t_astar_node t_node;
 
 // t_text: dummy structure created with sole purpose of
@@ -158,6 +164,7 @@ typedef struct s_lb_entry
 
 typedef struct game
 {
+	t_scene			scene;
 	t_map			*map;
 	char			**grid;
 	bool			show_map;
@@ -242,6 +249,7 @@ typedef struct game
 	char			*death_message;
 	char			*place;
 	int				ghosts_eaten;
+	int				afterdeath;
 }	t_game;
 
 typedef struct s_enemy
@@ -350,7 +358,9 @@ void	fill_ceiling_color(t_img *img, int color, int horizon);
 void	draw_aim(t_game *game); //TODO: ??
 
 // Main game loop: game_loop.c //
-int		game_loop(t_game *game);
+void	pac_game_scene(t_game *game);
+void	death_game_scene(t_game *game);
+int		game_loop(t_scene *scene);
 
 // : controller.c //
 int		float_sign(float f);
@@ -400,9 +410,9 @@ void	draw_hud(t_game *game);
 void	draw_map(t_game *game);
 
 // Text writing: put_text.c //
-int		put_char_to_screen(t_game *game, t_img *img, t_text *text, int font_size);
-void	put_text_to_screen(t_game *game, t_img *img, t_text *text, int font_size);
-void	put_text_to_screen_layout(t_game *game, t_img *img, t_text *text, int font_size);
+int		put_char_to_screen(t_texture *font, t_img *img, t_text *text, int font_size);
+void	put_text_to_screen(t_texture *font, t_img *img, t_text *text, int font_size);
+void	put_text_to_screen_layout(t_texture *font, t_img *img, t_text *text, int font_size);
 void	put_image_to_image(t_img *dst, t_vector pos, t_img *src);
 
 void	input_mode(int key, t_game *game);
@@ -410,7 +420,7 @@ void	input_mode(int key, t_game *game);
 // Death events: death_events.c //
 void	death_message(t_game *game);
 void	player_death(t_game *game);
-int		check_aliveness(t_game *game);
+void	check_aliveness(t_game *game);
 void	dim_image(t_img *img, int img_size, t_rgb *color);
 void	dim_screen(t_game *game, int i);
 
@@ -482,5 +492,8 @@ int		cmp_lb_entry(void *lhs, void *rhs);
 t_list	*get_leaderboard();
 void	ft_lst_insert(t_list **lst, t_list *to_insert, int cmp(void *, void *));
 void	update_leaderboard_file(t_game *game);
+
+// afterdeath_animation : draw_afterdeath_animation.c //
+void	draw_afterdeath_animation(t_game *game);
 
 #endif
