@@ -10,7 +10,7 @@ void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *))
 	if (curr == to_del)
 	{
 		*lst = curr->next;
-		ft_lstdelone(curr, del);
+		ft_lstdelone(&curr, del);
 		return ;
 	}
 	while (curr)
@@ -18,7 +18,7 @@ void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *))
 		if (curr == to_del)
 		{
 			prev->next = curr->next;
-			ft_lstdelone(curr, del);
+			ft_lstdelone(&curr, del);
 			return ;
 		}
 		else

@@ -51,7 +51,8 @@ void	add_all_neighbours(t_game *game, t_list **open, t_list *closed,
 		{
 			pos.y = node->pos.y + counter / 2;
 			pos.x = node->pos.x + (counter % 2);
-			if (!is_wall(game->map->map[pos.y][pos.x])
+			if (0 <= pos.x && pos.x < game->map->map_size.x && 0 <= pos.y &&
+				pos.y < game->map->map_size.y && !is_wall(game->map->map[pos.y][pos.x])
 				&& !ft_lstfind(closed, (void *)(&pos), pos_equals))
 			{
 				lst = ft_lstfind(*open, (void *)(&pos), pos_equals);

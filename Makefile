@@ -2,7 +2,7 @@ NAME    = cub3d
 #CC      = clang
 CC      = gcc
 # FLAGS	= -Wall -Wextra -Werror -g -O0
- FLAGS	= -Wall -Wextra -Werror -MMD -g -Ofast -march=native
+FLAGS	= -Wall -Wextra -Werror -MMD -g -Ofast -march=native
 LFLAGS	= -Llibft -lft
 ###
 SRCDIR	= src/
