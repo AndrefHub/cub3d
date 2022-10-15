@@ -45,7 +45,7 @@ void	update_volume(t_game *game)
 				fvector_distance(pos, (t_fvector){0, 0}) / 2;
 			enemy->sound.play->volume0 += ftorange(volume.x - enemy->sound.play->volume0, 0.01);
 			enemy->sound.play->volume1 += ftorange(volume.y - enemy->sound.play->volume1, 0.01);
-			printf("l: %f, r: %f\n", enemy->sound.play->volume0, enemy->sound.play->volume1);
+			// printf("l: %f, r: %f\n", enemy->sound.play->volume0, enemy->sound.play->volume1);
 		}
 		enemies = enemies->next;
 	}

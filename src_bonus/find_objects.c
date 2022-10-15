@@ -65,6 +65,7 @@ void	find_enemy(t_list **lst, t_object *object)
 		enemy->starting_pos = enemy->object->pos;
 		enemy->path = NULL;
 		enemy->pathfinding_algorithm = pathfinding_algo_straight;
+		enemy->message = "cocks";
 		ft_lstadd_back(lst, ft_lstnew(enemy));
 	}
 }

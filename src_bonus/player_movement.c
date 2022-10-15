@@ -13,26 +13,48 @@ void	move_radius_check(t_game *game, float x_delta, float y_delta, int *collisio
 	(void)collision;
 }
 
-void	check_borders(t_game *game, t_object *player)
+void	check_borders_enemy(t_game *game, t_object *object)
 {
 	char			tile;
-	const t_vector	plus = {(int)(player->pos.x + PL_RADIUS),
-		(int)(player->pos.y + PL_RADIUS)};
-	const t_vector	minus = {(int)(player->pos.x - PL_RADIUS),
-		(int)(player->pos.y - PL_RADIUS)};
+	const t_vector	plus = {(int)(object->pos.x + PL_RADIUS),
+		(int)(object->pos.y + PL_RADIUS)};
+	const t_vector	minus = {(int)(object->pos.x - PL_RADIUS),
+		(int)(object->pos.y - PL_RADIUS)};
 
-	tile = game->grid[(int)player->pos.y][minus.x];
+	tile = game->grid[(int)object->pos.y][minus.x];
 	if (is_wall(tile))
-		player->pos.x = (minus.x + 1) + PL_RADIUS;
-	tile = game->grid[(int)player->pos.y][plus.x];
+		object->pos.x = (minus.x + 1) + PL_RADIUS;
+	tile = game->grid[(int)object->pos.y][plus.x];
 	if (is_wall(tile))
-		player->pos.x = plus.x - PL_RADIUS;
-	tile = game->grid[minus.y][(int)player->pos.x];
+		object->pos.x = plus.x - PL_RADIUS;
+	tile = game->grid[minus.y][(int)object->pos.x];
 	if (is_wall(tile))
-		player->pos.y = (minus.y + 1) + PL_RADIUS;
-	tile = game->grid[plus.y][(int)player->pos.x];
+		object->pos.y = (minus.y + 1) + PL_RADIUS;
+	tile = game->grid[plus.y][(int)object->pos.x];
 	if (is_wall(tile))
-		player->pos.y = plus.y - PL_RADIUS;
+		object->pos.y = plus.y - PL_RADIUS;
+}
+
+void	check_borders(t_game *game, struct s_player *object)
+{
+	char			tile;
+	const t_vector	plus = {(int)(object->pos.x + PL_RADIUS),
+		(int)(object->pos.y + PL_RADIUS)};
+	const t_vector	minus = {(int)(object->pos.x - PL_RADIUS),
+		(int)(object->pos.y - PL_RADIUS)};
+
+	tile = game->grid[(int)object->pos.y][minus.x];
+	if (is_wall(tile))
+		object->pos.x = (minus.x + 1) + PL_RADIUS;
+	tile = game->grid[(int)object->pos.y][plus.x];
+	if (is_wall(tile))
+		object->pos.x = plus.x - PL_RADIUS;
+	tile = game->grid[minus.y][(int)object->pos.x];
+	if (is_wall(tile))
+		object->pos.y = (minus.y + 1) + PL_RADIUS;
+	tile = game->grid[plus.y][(int)object->pos.x];
+	if (is_wall(tile))
+		object->pos.y = plus.y - PL_RADIUS;
 }
 
 // void	check_borders_enemy(t_game *game, t_enemy *player)
@@ -67,5 +89,5 @@ void	check_restrictions(t_game *game)
 		game->z_offset = game->img.size.y;
 	if (game->z_offset < -game->img.size.y)
 		game->z_offset = -game->img.size.y;
-	check_borders(game, (t_object *)&game->player);
+	check_borders(game, &game->player);
 }

@@ -57,14 +57,6 @@ void	leaderboard_message(t_game *game)
 	}
 	put_text_to_screen_layout(game, &game->img, &(t_text){"cub3d (c) 2022 kdancy, lsherry",
 		(t_vector){0, game->img.size.y}, VBottom | HLeft, 0xBFBFBF}, font_size / 2);
-	// put_text_to_screen_layout(game, &game->img, &(t_text){"YOU DIED!", (t_vector)
-	// {game->img.size.x / 2, game->img.size.y / 2 - font_size / 2},
-	// 	VCenter | HCenter, 0x7F7FFF}, font_size);
-	// put_text_to_screen_layout(game, &game->img, &(t_text){game->hud.score.value,
-	// 	(t_vector){game->img.size.x / 2, game->img.size.y / 2 + font_size / 2},
-	// 	VCenter | HCenter, 0x7FFF7F}, font_size);
-	// put_text_to_screen_layout(game, &game->img, &(t_text){"username:", (t_vector)
-	// {0, game->img.size.y / 2 + (FONT_SIZE / 6) * 2}, VBottom | HLeft, 0xFF7F7F}, font_size);
 }
 
 void	win_message(t_game *game, char *message, int color)
@@ -74,6 +66,10 @@ void	win_message(t_game *game, char *message, int color)
 	put_text_to_screen_layout(game, &game->img, &(t_text){message, (t_vector)
 	{game->img.size.x / 2, game->img.size.y / 2},
 		VCenter | HCenter, color}, font_size);
+	put_text_to_screen_layout(game, &game->img, &(t_text){
+		"press enter to continue", (t_vector)
+	{game->img.size.x / 2, 5 * game->img.size.y / 8},
+		VCenter | HCenter, 0xB0B0B0}, 30);
 	// put_text_to_screen_layout(game, &game->img, &(t_text){game->hud.score.value,
 	// 	(t_vector){game->img.size.x / 2, game->img.size.y / 2 + font_size / 2},
 	// 	VCenter | HCenter, 0x7FFF7F}, font_size);
@@ -130,7 +126,7 @@ void	put_ended_game_image(t_game *game)
 	else if (game->input_mode == WIN_SCREEN_MODE && edibles_eaten(game))
 		win_message(game, "You\'re winner!", 0xFFD700);
 	else
-		win_message(game, "game over", 0x800000);
+		win_message(game, "game over", 0x980000);
 	put_frame(game);
 }
 
@@ -139,13 +135,13 @@ void	player_death(t_game *game)
 	static int		i = 0;
 	static t_ull	time = 0;
 
-	if (i == -1)
+	if (i == 0)
 		pause_game_actions(game);
 	if (i < 50 && get_time() - time > 35)
 	{
-		++i;
 		time = get_time();
 		dim_screen(game, i);
+		++i;
 	}
 	else if (i == 50)
 	{
@@ -158,7 +154,7 @@ void	player_death(t_game *game)
 			// cs_play_sound(game->audio.ctx, game->audio.song.def);
 			return ;
 		}
-		game->input_mode = INPUT_MODE;
+		game->input_mode = WIN_SCREEN_MODE;
 		game->player_lb_data->score_num = game->hud.score.value_numeric;
 		ft_lst_insert(&game->leaderboard, ft_lstnew(game->player_lb_data), cmp_lb_entry);
 		++i;

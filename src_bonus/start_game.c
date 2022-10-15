@@ -213,7 +213,7 @@ char	*get_lb_name(char *filename)
 	return (res);
 }
 
-int	game(t_map *map)
+int	init_game(t_map *map)
 {
 	t_game	game;
 

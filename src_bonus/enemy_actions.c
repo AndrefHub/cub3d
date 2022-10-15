@@ -4,17 +4,15 @@ void	enemy_attack(t_game *game, t_enemy *enemy)
 {
 	if (game->panic_mode)
 	{
+		printf("eating enemy [%p, %p] \n", enemy, enemy + sizeof(*enemy));
 		reset_enemy_position(enemy);
+		printf("enemy %p eaten \n", enemy);
 		game->hud.score.value_numeric += ENEMY_REWARD * ++game->ghosts_eaten;
 	}
 	else
-	if (get_time() - game->player.last_attack_time > PL_INVINCIBILITY &&
-		get_time() - enemy->last_attack_time > ENEMY_RELOAD)
 	{
-		game->player.last_attack_time = get_time();
-		enemy->last_attack_time = get_time();
+		printf("enemy %p attacking \n", enemy);
 		game->hud.health.value_numeric -= 1;
-		ft_putendl_fd("Enemy attacked you", 1);
 	}
 }
 
@@ -75,7 +73,7 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 			update_path(game, enemy, &enemy->path);
 			node = NULL;
 			if (ft_lstsize(enemy->path))
-				node = ((t_node *)enemy->path->content);;
+				node = ((t_node *)enemy->path->content);
 		}
 		if (!node)
 			return ;
@@ -101,7 +99,7 @@ void	enemy_move(t_game *game)
 		enemy = ((t_enemy *)lst->content);
 		enemy_move_along_path(game, enemy);
 		enemy->object->distance = distancef(&game->player.pos, &enemy->object->pos);
-		check_borders(game, enemy->object);
+		check_borders_enemy(game, enemy->object);
 		if (fvector_distance(game->player.pos, enemy->object->pos) < .7)
 			enemy_attack(game, enemy);
 		lst = lst->next;

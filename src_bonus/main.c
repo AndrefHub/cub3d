@@ -8,6 +8,6 @@ int main(int ac, char **av)
 	if (map)
 	{
 //		print_map_debug(map);
-		game(map);
+		init_game(map);
 	}
 }
