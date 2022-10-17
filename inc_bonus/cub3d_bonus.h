@@ -108,6 +108,7 @@ typedef struct s_map
 	t_fvector		last_collision;
 	t_list			*enemies;
 	t_list			*objects;
+	char			*map_file;
 }				t_map;
 
 typedef struct ray
@@ -248,12 +249,15 @@ typedef struct game
 	int				input_mode;
 	char			*death_message;
 	char			*place;
+	int				objects_count;
 	int				ghosts_eaten;
 	int				afterdeath;
+	char			*lb_filename;
 }	t_game;
 
 typedef struct s_enemy
 {
+	char		*message;
 	t_object	*object;
 	t_fvector	delta;
 	t_ull		last_attack_time;
@@ -261,239 +265,247 @@ typedef struct s_enemy
 	t_list		*path;
 	t_list		*(*pathfinding_algorithm)(t_game *, struct s_enemy *);
 	t_sound		sound;
+	int			panic_mode;
 }				t_enemy;
 
+# include "prototypes.h"
 
-// Font parsing: parsing_font.c //
-void	parse_font(t_map *map, int fd, char **line);
+// // Font parsing: parsing_font.c //
+// void	parse_font(t_map *map, int fd, char **line);
 
-// Map parsing: parsing.c //
-int		get_string_index(char *str, char c);
-char	**lst_to_array(t_list *tmp); // TODO: Move to another file
-void	empty_func(void *ptr);
-void	parse_map(t_map *map, int fd); //TODO: Rename
-t_map	*parse_file(int ac, char **av);
+// // Map parsing: parsing.c //
+// int		get_string_index(char *str, char c);
+// char	**lst_to_array(t_list *tmp); // TODO: Move to another file
+// void	empty_func(void *ptr);
+// void	parse_map(t_map *map, int fd); //TODO: Rename
+// t_map	*parse_file(int ac, char **av);
 
-// Parsing utils: parsing_utils.c //
-t_map	*free_map(t_map *map);
-int		ft_strrchr_int(const char *line, int chr);
-int		ft_strrchr_int_arr(const char *line, char *chr);
-void	map_to_rectangle(t_map *map); // TODO: Rename "set_map_to_rectangle"?
-void	convert_spaces_to_zeros(t_map *map);
+// // Parsing utils: parsing_utils.c //
+// t_map	*free_map(t_map *map);
+// int		ft_strrchr_int(const char *line, int chr);
+// int		ft_strrchr_int_arr(const char *line, char *chr);
+// void	map_to_rectangle(t_map *map); // TODO: Rename "set_map_to_rectangle"?
+// void	convert_spaces_to_zeros(t_map *map);
 
-// Parsing textures path from map: parsing_textures.c //
-void	parse_config(t_map *map, int fd, char **line);
-void	parse_walls(t_map *map, int fd, char **line);
-void	parse_enemies(t_map *map, int fd, char **line);
-void	parse_sounds(t_map *map, int fd, char **line);
-void	parse_assets(t_map *map, int fd);
+// // Parsing textures path from map: parsing_textures.c //
+// void	parse_config(t_map *map, int fd, char **line);
+// void	parse_walls(t_map *map, int fd, char **line);
+// void	parse_enemies(t_map *map, int fd, char **line);
+// void	parse_sounds(t_map *map, int fd, char **line);
+// void	parse_assets(t_map *map, int fd);
 
-// Check filename and : check_file.c //
-int		check_file(int ac, char **av);
+// // Check filename and : check_file.c //
+// int		check_file(int ac, char **av);
 
-// Cub3d utils : ft_utils.c //
-t_map	*create_empty_map(void);
-int		ft_arraylen(void **arr);
-int		is_space(char c);
-int		is_line_empty(char *line);
-void	error_exit(t_game *game, int return_value, char *message);
-t_img	initialize_img(t_img *img, void *mlx_ptr, int width, int height);
-void	print_map_debug(t_map *map);
-char	*get_full_texture_path(char *line, int flag);
-float	distancef(t_fvector *vector1, t_fvector *vector2);
+// // Cub3d utils : ft_utils.c //
+// t_map	*create_empty_map(void);
+// int		ft_arraylen(void **arr);
+// int		is_space(char c);
+// int		is_line_empty(char *line);
+// void	error_exit(t_game *game, int return_value, char *message);
+// t_img	initialize_img(t_img *img, void *mlx_ptr, int width, int height);
+// void	print_map_debug(t_map *map);
+// char	*get_full_texture_path(char *line, int flag);
+// float	distancef(t_fvector *vector1, t_fvector *vector2);
 
-// Some utils for parsing and working with files: input_manip.c //
-char	*crop_prefix(char *line, char *prefix);
-char	*skip_empty_lines(int fd);
-int		convert_to_rgb(char *line);
-char	*ft_strcat_delim(char *first, char delim, char *second);
+// // Some utils for parsing and working with files: input_manip.c //
+// char	*crop_prefix(char *line, char *prefix);
+// char	*skip_empty_lines(int fd);
+// int		convert_to_rgb(char *line);
+// char	*ft_strcat_delim(char *first, char delim, char *second);
 
-// Border checking and utils for it: border_checking.c //
-int		get_map_width(const char **map); //TODO: Move to another file
-int		is_wall(char c);
-int		is_enemy(char c);
-int		check_enclosure(t_map *map, t_vector vec);
-int		is_map_enclosed(t_map *args);
+// // Border checking and utils for it: border_checking.c //
+// int		get_map_width(const char **map); //TODO: Move to another file
+// int		is_wall(char c);
+// int		is_enemy(char c);
+// int		check_enclosure(t_map *map, t_vector vec);
+// int		is_map_enclosed(t_map *args);
 
-// Find objects (player, enemies, coins): find_objects.c //
-int		set_player(t_map *map, t_list *lst, char *line, char *orient);
-void	find_enemy(t_list **lst, t_object *object);
-void	find_objects(t_map *map);
-int		find_player(t_map *map, char *line, t_list *lst);
+// // Find objects (player, enemies, coins): find_objects.c //
+// int		set_player(t_map *map, t_list *lst, char *line, char *orient);
+// void	find_enemy(t_list **lst, t_object *object);
+// void	find_objects(t_map *map);
+// int		find_player(t_map *map, char *line, t_list *lst);
 
-// Game initialization: start_game.c //
-void	initialize_mlx_parameters(t_game *game);
-void	initialize_player(t_game *game);
-void	initialize_game_parameters(t_game *game);
-void	start_game(t_game *game);
-int		game(t_map *map);
+// // Game initialization: start_game.c //
+// void	initialize_mlx_parameters(t_game *game);
+// void	initialize_player(t_game *game);
+// void	initialize_game_parameters(t_game *game);
+// void	start_game(t_game *game);
+// int		game(t_map *map);
 
-// Work with sound: game_sound.c //
-void	init_main_game_sound(t_game *game);
-void	set_game_events_sounds(struct s_audio *audio, char **sounds);
-void	set_sound(t_sound *sound, char *filename);
-void	copy_sound(t_sound *sound, t_sound *src);
+// // Work with sound: game_sound.c //
+// void	init_main_game_sound(t_game *game);
+// void	set_game_events_sounds(struct s_audio *audio, char **sounds);
+// void	set_sound(t_sound *sound, char *filename);
+// void	copy_sound(t_sound *sound, t_sound *src);
 
-// Work with sprites: game_textures.c //
-void	draw_texture_set(t_game *game, struct s_column *column);
-void	import_texture_to_img(t_game *game, t_img *img, char *filename,
-			int size_x, int size_y);
-void	initialize_sprites(t_game *game, int size, t_texture *sprites_list,
-			int t_size);
-void	initialize_wall_textures(t_game *game);
+// // Work with sprites: game_textures.c //
+// void	draw_texture_set(t_game *game, struct s_column *column);
+// void	import_texture_to_img(t_game *game, t_img *img, char *filename,
+// 			int size_x, int size_y);
+// void	initialize_sprites(t_game *game, int size, t_texture *sprites_list,
+// 			int t_size);
+// void	initialize_wall_textures(t_game *game);
 
-// Adapters for MLX for macOS and Linux: mlx_adapter.c //
-void	mouse_get_pos(void *mlx_ptr, void *win_ptr, int *x, int *y);
-void	mouse_move(void *mlx_ptr, void *win_ptr, int x, int y);
-void	mouse_show(void *mlx_ptr, void *win_ptr);
-void	mouse_hide(void *mlx_ptr, void *win_ptr);
+// // Adapters for MLX for macOS and Linux: mlx_adapter.c //
+// void	mouse_get_pos(void *mlx_ptr, void *win_ptr, int *x, int *y);
+// void	mouse_move(void *mlx_ptr, void *win_ptr, int x, int y);
+// void	mouse_show(void *mlx_ptr, void *win_ptr);
+// void	mouse_hide(void *mlx_ptr, void *win_ptr);
 
-// Everything about drawing: drawing.c //
-void	put_pixel(t_img *img, t_vector point, int color);
-void	draw_line(t_img *img, t_vector p1, t_vector p2, int color);
-void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
-void	fill_img_color(t_img *img, int color);
-void	fill_floor_color(t_img *img, int color, int horizon);
-void	fill_ceiling_color(t_img *img, int color, int horizon);
-void	draw_aim(t_game *game); //TODO: ??
+// // Everything about drawing: drawing.c //
+// void	put_pixel(t_img *img, t_vector point, int color);
+// void	draw_line(t_img *img, t_vector p1, t_vector p2, int color);
+// void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
+// void	fill_img_color(t_img *img, int color);
+// void	fill_floor_color(t_img *img, int color, int horizon);
+// void	fill_ceiling_color(t_img *img, int color, int horizon);
+// void	draw_aim(t_game *game); //TODO: ??
 
-// Main game loop: game_loop.c //
-void	pac_game_scene(t_game *game);
-void	death_game_scene(t_game *game);
-int		game_loop(t_scene *scene);
+// // Main game loop: game_loop.c //
+// int		game_loop(t_game *game);
 
-// : controller.c //
-int		float_sign(float f);
-void	open_door(t_game *game);
-void	change_textures(t_game *game);
-float	fvector_distance(t_fvector lhs, t_fvector rhs);
-void	enemy_attack(t_game *game, t_enemy *enemy);
-float	calculate_angle(t_fvector p, t_fvector e);
-void	enemy_move(t_game *game);
+// // : controller.c //
+// int		float_sign(float f);
+// void	open_door(t_game *game);
+// void	change_textures(t_game *game);
+// float	fvector_distance(t_fvector lhs, t_fvector rhs);
+// void	enemy_attack(t_game *game, t_enemy *enemy);
+// float	calculate_angle(t_fvector p, t_fvector e);
+// void	enemy_move(t_game *game);
 
-// Player input control: player_controller.c //
-void	player_delta_calculation(struct s_player *player);
-void	mouse_controller(t_game *game);
-void	movement_controller(t_game *game, int *collision);
-void	rotation_by_key_controller(t_game *game);
-void	player_controll(t_game *game);
+// // Player input control: player_controller.c //
+// void	player_delta_calculation(struct s_player *player);
+// void	mouse_controller(t_game *game);
+// void	movement_controller(t_game *game, int *collision);
+// void	rotation_by_key_controller(t_game *game);
+// void	player_controll(t_game *game);
 
-// Player moving control: player_movement.c //
-void	update_last_collision(t_game *game);
-void	move_radius_check(t_game *game, float x_delta, float y_delta,
-			int *collision);
-void	check_restrictions(t_game *game);
-void	check_borders(t_game *game, t_object *player);
+// // Player moving control: player_movement.c //
+// void	update_last_collision(t_game *game);
+// void	move_radius_check(t_game *game, float x_delta, float y_delta,
+// 			int *collision);
+// void	check_restrictions(t_game *game);
+// void	check_borders(t_game *game, t_object *player);
 
-// Drawing ceil and floor textured: draw_ceil_floor.c //
-void	draw_ceil_textured(t_game *game);
-void	draw_ceil_floor_textured(t_game *game);
+// // Drawing ceil and floor textured: draw_ceil_floor.c //
+// void	draw_ceil_textured(t_game *game);
+// void	draw_ceil_floor_textured(t_game *game);
 
-// Ray_casting algorithm: ray_casting.c //
-t_ray	ray_initialize(t_game *game, t_fvector ray_dir);
-float	interception_distance(t_game *game, t_ray *ray);
-void	initialize_columns(t_game *game, t_ray *ray, float distance, int i,
-			float ray_angle);
-void	get_interception(t_game *game, t_fvector ray_dir, int i); //DDA algorithm
-void	cast_rays(t_game *game);
+// // Ray_casting algorithm: ray_casting.c //
+// t_ray	ray_initialize(t_game *game, t_fvector ray_dir);
+// float	interception_distance(t_game *game, t_ray *ray);
+// void	initialize_columns(t_game *game, t_ray *ray, float distance, int i,
+// 			float ray_angle);
+// void	get_interception(t_game *game, t_fvector ray_dir, int i); //DDA algorithm
+// void	cast_rays(t_game *game);
 
-// Wall drawing: draw_walls.c //
-void	draw_wall_scaled(t_img *img, const t_img *texture,
-			const struct s_column *column, int x, t_game *game);
-void	draw_walls(t_game *game);
+// // Wall drawing: draw_walls.c //
+// void	draw_wall_scaled(t_img *img, const t_img *texture,
+// 			const struct s_column *column, int x, t_game *game);
+// void	draw_walls(t_game *game);
 
-// Map drawing: draw_map.c //
-void	draw_fps(t_game *game);
-void	draw_enemies_on_map(t_game *game);
-void	draw_player_on_map(t_game *game);
-void	draw_hud(t_game *game);
-void	draw_map(t_game *game);
+// // Map drawing: draw_map.c //
+// void	draw_fps(t_game *game);
+// void	draw_enemies_on_map(t_game *game);
+// void	draw_player_on_map(t_game *game);
+// void	draw_hud(t_game *game);
+// void	draw_map(t_game *game);
 
-// Text writing: put_text.c //
-int		put_char_to_screen(t_texture *font, t_img *img, t_text *text, int font_size);
-void	put_text_to_screen(t_texture *font, t_img *img, t_text *text, int font_size);
-void	put_text_to_screen_layout(t_texture *font, t_img *img, t_text *text, int font_size);
-void	put_image_to_image(t_img *dst, t_vector pos, t_img *src);
+// // Text writing: put_text.c //
+// int		put_char_to_screen(t_game *game, t_img *img, t_text *text, int font_size);
+// void	put_text_to_screen(t_game *game, t_img *img, t_text *text, int font_size);
+// void	put_text_to_screen_layout(t_game *game, t_img *img, t_text *text, int font_size);
+// void	put_image_to_image(t_img *dst, t_vector pos, t_img *src);
 
-void	input_mode(int key, t_game *game);
+// void	input_mode(int key, t_game *game);
 
 // Death events: death_events.c //
-void	death_message(t_game *game);
-void	player_death(t_game *game);
-void	check_aliveness(t_game *game);
-void	dim_image(t_img *img, int img_size, t_rgb *color);
-void	dim_screen(t_game *game, int i);
 
-// Drawing enemies: draw_enemies.c //
-int		object_comparator(t_object *obj1, t_object *obj2);
-void	draw_game_objects(t_game *game);
+// // Death events: death_events.c //
+// char	*get_rank_str(char *str, int rank);
+// t_text	*set_rank_color(t_text *text, int rank);
+// void	leaderboard_message(t_game *game);
+// void	win_message(t_game *game, char *message, int color);
+// void	put_username_on_screen(t_game *game);
+// int		edibles_eaten(t_game *game);
+// void	change_all_enemies_cry_paused(t_game *game, int paused);
+// void	pause_game_actions(t_game *game);
+// void	put_ended_game_image(t_game *game);
+// void	player_death(t_game *game);
+// void	player_win(t_game *game);
+// int		check_aliveness(t_game *game);
 
-// void	initialize_font(t_map *map);
+// // Drawing enemies: draw_enemies.c //
+// int		object_comparator(t_object *obj1, t_object *obj2);
+// void	draw_game_objects(t_game *game);
 
-//controller.c
-int		close_hook(t_game *game);
-int		key_hook_press(int key, t_game *game);
-int		key_hook_release(int key, t_game *game);
-int		mouse_hook_press(int button, int x, int y, t_game *game);
-int		mouse_hook_release(int button, int x, int y, t_game *game);
+// // void	initialize_font(t_map *map);
 
-bool	key_pressed(t_game *game, int key);
+// //controller.c
+// int		close_hook(t_game *game);
+// int		key_hook_press(int key, t_game *game);
+// int		key_hook_release(int key, t_game *game);
+// int		mouse_hook_press(int button, int x, int y, t_game *game);
+// int		mouse_hook_release(int button, int x, int y, t_game *game);
 
-//demo
-void	error_exit(t_game *game, int return_value, char *message);
+// bool	key_pressed(t_game *game, int key);
 
-// time
-t_ull	get_time(void);
-t_ull	get_time_hp(void);
-void	init_time(t_game *game);
-void	wait_milliseconds(int milliseconds);
+// //demo
+// void	error_exit(t_game *game, int return_value, char *message);
 
-void	ft_lstsort(t_list **lst, int (*cmp)());
-void	update_time(t_game *game);
+// // time
+// t_ull	get_time(void);
+// t_ull	get_time_hp(void);
+// void	init_time(t_game *game);
+// void	wait_milliseconds(int milliseconds);
 
-// downscale_image.c //
-void	put_downscaled_image(t_img *dst, t_text *text, t_img *src, int divisor);
+// void	ft_lstsort(t_list **lst, int (*cmp)());
+// void	update_time(t_game *game);
 
-void	put_frame(t_game *game);
+// // downscale_image.c //
+// void	put_downscaled_image(t_img *dst, t_text *text, t_img *src, int divisor);
 
-void	init_hud(struct s_hud *hud);
+// void	put_frame(t_game *game);
 
-// what happens to player after death: // 
-void	reset_enemy_position(void *enemy);
-void	reset_positions(t_game *game);
-int		player_respawn(t_game *game);
+// void	init_hud(struct s_hud *hud);
 
-// is_checks.c //
-int		is_wall(char c);
-int		is_enemy(char c);
-int		is_edible(char c);
-int		is_object(char c);
+// // what happens to player after death: // 
+// void	reset_enemy_position(void *enemy);
+// void	reset_positions(t_game *game);
+// int		player_respawn(t_game *game);
 
-// player_eating.c //
-void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *));
-void	eat_by_coords(t_game *game, t_vector pos);
-void	player_eat(t_game *game);
+// // is_checks.c //
+// int		is_wall(char c);
+// int		is_enemy(char c);
+// int		is_edible(char c);
+// int		is_object(char c);
 
-int		node_comparator(t_node *lhs, t_node *rhs);
-int		pos_equals(void *lhs, void *rhs);
-int		heuristic_cost(t_vector lhs, t_vector rhs);
-t_list	*ft_lstfind(t_list *closed, void *val, int equals(void *, void *));
-t_node	*ft_nodenew(t_node *data);
-void	add_all_neighbours(t_game *game, t_list **open, t_list *closed, t_node *node, t_vector player);
-t_list	*get_first_n_nodes(t_list *lst, int n);
-t_list	*astar(t_game *game, t_vector enemy, t_vector player);
+// // player_eating.c //
+// void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *));
+// void	eat_by_coords(t_game *game, t_vector pos);
+// void	player_eat(t_game *game);
 
-t_list	*pathfinding_algo_straight(t_game *game, t_enemy *enemy);
-t_rgb	put_pixel_on_pixel(t_rgb *dst, t_rgb *src);
+// int		node_comparator(t_node *lhs, t_node *rhs);
+// int		pos_equals(void *lhs, void *rhs);
+// int		heuristic_cost(t_vector lhs, t_vector rhs);
+// t_list	*ft_lstfind(t_list *closed, void *val, int equals(void *, void *));
+// t_node	*ft_nodenew(t_node *data);
+// void	add_all_neighbours(t_game *game, t_list **open, t_list *closed, t_node *node, t_vector player);
+// t_list	*get_first_n_nodes(t_list *lst, int n);
+// t_list	*astar(t_game *game, t_vector enemy, t_vector player);
 
-void	print_lb(t_list *lb);
-int		cmp_string_number(void *lhs, void *rhs);
-int		cmp_lb_entry(void *lhs, void *rhs);
-t_list	*get_leaderboard();
-void	ft_lst_insert(t_list **lst, t_list *to_insert, int cmp(void *, void *));
-void	update_leaderboard_file(t_game *game);
+// t_list	*pathfinding_algo_straight(t_game *game, t_enemy *enemy);
+// t_rgb	put_pixel_on_pixel(t_rgb *dst, t_rgb *src);
 
-// afterdeath_animation : draw_afterdeath_animation.c //
-void	draw_afterdeath_animation(t_game *game);
+// void	print_lb(t_list *lb);
+// int		cmp_string_number(void *lhs, void *rhs);
+// int		cmp_lb_entry(void *lhs, void *rhs);
+// t_list	*get_leaderboard(char *filename);
+// void	ft_lst_insert(t_list **lst, t_list *to_insert, int cmp(void *, void *));
+// void	update_leaderboard_file(t_game *game);
+// void	player_win(t_game *game);
+
 
 #endif

@@ -10,7 +10,8 @@ void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *))
 	if (curr == to_del)
 	{
 		*lst = curr->next;
-		ft_lstdelone(curr, del);
+		printf("%c\n", ((t_object *)curr->content)->type);
+		ft_lstdelone(&curr, del);
 		return ;
 	}
 	while (curr)
@@ -18,14 +19,12 @@ void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *))
 		if (curr == to_del)
 		{
 			prev->next = curr->next;
-			ft_lstdelone(curr, del);
+			printf("%c\n", ((t_object *)curr->content)->type);
+			ft_lstdelone(&curr, del);
 			return ;
 		}
-		else
-		{
-			prev = curr;
-			curr = curr->next;
-		}
+		prev = curr;
+		curr = curr->next;
 	}
 }
 
@@ -70,13 +69,15 @@ void	eat_by_coords(t_game *game, t_vector pos)
 	while (objects)
 	{
 		object = objects->content;
-		if ((int)object->pos.x == pos.x && (int)object->pos.y == pos.y)
+		if (object->type != 'e' && (int)object->pos.x == pos.x && (int)object->pos.y == pos.y)
 		{
-			game->hud.score.value_numeric += 100 + (game->map->map[pos.y][pos.x] == 'o') * 400;
+			--game->objects_count;
+			game->hud.score.value_numeric += COIN_REWARD + (game->map->map
+				[pos.y][pos.x] == 'o') * (PILL_REWARD - COIN_REWARD);
 			if (game->map->map[pos.y][pos.x] == 'o')
 				pill_eaten(game);
 			ft_lstdelbyaddr(&game->objects, objects, free);
-			game->map->map[pos.y][pos.x] = '0';
+			// game->map->map[pos.y][pos.x] = '0';
 			return ;
 		}
 		objects = objects->next;

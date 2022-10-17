@@ -39,7 +39,7 @@ void	update_leaderboard_file(t_game *game)
 
 	counter = -1;
 	lb = game->leaderboard;
-	fd = open(".lb", O_RDWR | O_CREAT | O_TRUNC, 0777);
+	fd = open(game->lb_filename, O_RDWR | O_CREAT | O_TRUNC, 0777);
 	if (fd >= 0)
 	{
 		while (lb && ++counter < 10)

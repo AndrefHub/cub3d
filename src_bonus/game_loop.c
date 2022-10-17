@@ -13,18 +13,6 @@ void	put_frame(t_game *game)
 							0, 0);
 }
 
-void	player_win(t_game *game)
-{
-	static int c = 0;
-
-	if (!c)
-	{
-		printf("You\'re winner!");
-		++c;
-	}
-	(void)game;
-}
-
 float	ftorange(float val, float border)
 {
 	if (val < -border)
@@ -46,16 +34,19 @@ void	update_volume(t_game *game)
 	while (enemies)
 	{
 		enemy = enemies->content;
-		pos = (t_fvector){game->player.pos.x - enemy->object->pos.x,
-			game->player.pos.y - enemy->object->pos.y};
-		angle = calculate_angle((t_fvector){1, 0}, pos);
-		volume.x = ((cosf(angle - PI / 2) + 1) / 2) /
-			fvector_distance(pos, (t_fvector){0, 0}) / 2;
-		volume.y = ((cosf(angle + PI / 2) + 1) / 2) /
-			fvector_distance(pos, (t_fvector){0, 0}) / 2;
-		enemy->sound.play->volume0 += ftorange(volume.x - enemy->sound.play->volume0, 0.01);
-		enemy->sound.play->volume1 += ftorange(volume.y - enemy->sound.play->volume1, 0.01);
-		printf("l: %f, r: %f\n", enemy->sound.play->volume0, enemy->sound.play->volume1);
+		if (enemy->sound.play)
+		{
+			pos = (t_fvector){game->player.pos.x - enemy->object->pos.x,
+				game->player.pos.y - enemy->object->pos.y};
+			angle = calculate_angle((t_fvector){1, 0}, pos);
+			volume.x = ((cosf(angle - PI / 2) + 1) / 2) /
+				fvector_distance(pos, (t_fvector){0, 0}) / 2;
+			volume.y = ((cosf(angle + PI / 2) + 1) / 2) /
+				fvector_distance(pos, (t_fvector){0, 0}) / 2;
+			enemy->sound.play->volume0 += ftorange(volume.x - enemy->sound.play->volume0, 0.01);
+			enemy->sound.play->volume1 += ftorange(volume.y - enemy->sound.play->volume1, 0.01);
+			// printf("l: %f, r: %f\n", enemy->sound.play->volume0, enemy->sound.play->volume1);
+		}
 		enemies = enemies->next;
 	}
 }
@@ -89,6 +80,8 @@ void	pac_game_scene(t_game *game)
 	put_frame(game);
 	change_textures(game);
 	update_time(game);
+	if (edibles_eaten(game))
+		game->scene.scene_func = player_win;
 }
 
 int	game_loop(t_scene *scene)

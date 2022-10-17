@@ -1,8 +1,8 @@
 NAME    = cub3d
 #CC      = clang
 CC      = gcc
-# FLAGS	= -Wall -Wextra -Werror -g -O0
- FLAGS	= -Wall -Wextra -Werror -MMD -g -Ofast -march=native
+# FLAGS	= -Wall -Wextra -Werror -g -O0 -fsanitize=address
+FLAGS	= -Wall -Wextra -Werror -MMD -g -Ofast -march=native 
 LFLAGS	= -Llibft -lft
 ###
 SRCDIR	= src/
@@ -88,6 +88,7 @@ CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
 INC_BONUSDIR = inc_bonus/
 CUB_BONUSHDR  = $(addprefix $(INC_BONUSDIR), cub3d_bonus.h)
 SNDLIB  = cute_sound/cute_sound.o
+LBFOLDER  = .lb
 
 UNAME	= $(shell uname -s)
 
@@ -132,6 +133,7 @@ $(NAME): $(OBJS) $(MSHHDR)
 	@echo "\033[1;33m"$(NAME) "is up to date."'\033[0m'
 
 bonus: download_assets $(OBJS_BONUS)
+	@mkdir -p $(LBFOLDER)
 	@echo
 	@echo "\033[1;33m"$(NAME)"_bonus" "objs is up to date."'\033[0m'
 	@make -C libft

@@ -139,6 +139,7 @@ void	initialize_game_objects(t_game *game)
 		obj->sprite = game->map->object[get_string_index(OBJECT_CHARS, obj->type)].img->content;
 		elem = elem->next;
 	}
+	game->objects_count = ft_lstsize(game->objects) - ft_lstsize(game->map->enemies);
 }
 
 void	set_enemy_sounds(t_game *game)
@@ -164,7 +165,7 @@ void	set_input_mode_chars(t_game *game)
 	ft_bzero(game->player_lb_data->name, 9);
 	game->place = malloc(8);
 	ft_bzero(game->place, 8);
-	game->input_mode = 0;
+	game->input_mode = GAME_MODE;
 }
 
 void	play_sounds(t_game *game)
@@ -192,7 +193,27 @@ void	start_game(t_game *game)
 	mlx_loop(game->mlx.id);
 }
 
-int	game(t_map *map)
+char	*get_lb_name(char *filename)
+{
+	char	*lb;
+	char	*dot;
+	char	*res;
+
+	lb = ft_strrchr(filename, '/');
+	if (lb)
+		++lb;
+	else
+		lb = filename;
+	dot = ft_strrchr(lb, '.');
+	res = ft_strndup(lb, dot - lb);
+	lb = ft_strjoin(LEADERBOARD_FOLDER, res);
+	free(res);
+	res = ft_strjoin(lb, ".lb");
+	free(lb);
+	return (res);
+}
+
+int	init_game(t_map *map)
 {
 	t_game	game;
 
@@ -218,9 +239,8 @@ int	game(t_map *map)
 	set_input_mode_chars(&game);
 	set_enemy_sounds(&game);
 	clear_font_outline(&game);
-	game.leaderboard = get_leaderboard();
-	
-	print_lb(game.leaderboard);
+	game.lb_filename = get_lb_name(map->map_file);
+	game.leaderboard = get_leaderboard(game.lb_filename);
 	start_game(&game);
 	return (1);
 }

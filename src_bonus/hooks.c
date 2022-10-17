@@ -19,10 +19,10 @@ int	key_hook_press(int key, t_game *game)
 		return (1);
 	if (key == ESC_KEY)
 		close_hook(game);
-	if (game->input_mode)
-	{
+	if (game->input_mode == WIN_SCREEN_MODE && key == ENTER)
+		--game->input_mode;
+	else if (game->input_mode == INPUT_MODE)
 		input_mode(key, game);
-	}
 	else
 	{
 		if (key == M_KEY)
@@ -34,8 +34,6 @@ int	key_hook_press(int key, t_game *game)
 			open_door(game);
 		game->key.k[(short)(key + CHAR_OFFSET)] = true;
 	}
-//	ft_putnbr_fd(key, 1);
-//	ft_putendl_fd("", 1);
 	return (0);
 }
 

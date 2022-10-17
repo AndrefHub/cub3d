@@ -134,7 +134,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="cub3d" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="maps/test.cub" REDIRECT_INPUT="false" REDIRECT_INPUT_PATH="cub.input" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$ContentRoot$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cub3d" TARGET_NAME="cub3d" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cub3d" RUN_TARGET_NAME="cub3d">
+    <configuration name="cub3d" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="maps/pacman.cub" REDIRECT_INPUT="false" REDIRECT_INPUT_PATH="cub.input" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$ContentRoot$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cub3d" TARGET_NAME="cub3d" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cub3d" RUN_TARGET_NAME="cub3d">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -169,9 +169,14 @@
       <workItem from="1664465619763" duration="18000" />
       <workItem from="1664535133785" duration="1415000" />
       <workItem from="1664623139958" duration="7196000" />
+<<<<<<< HEAD
       <workItem from="1665742083189" duration="940000" />
       <workItem from="1665758327654" duration="658000" />
       <workItem from="1665827583246" duration="12299000" />
+=======
+      <workItem from="1665747537540" duration="4739000" />
+      <workItem from="1665821922249" duration="3039000" />
+>>>>>>> kdancy
     </task>
     <servers />
   </component>
@@ -201,6 +206,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="((t_enemy *)game-&gt;map-&gt;enemies-&gt;content)-&gt;path" />
+        <watch expression="((t_enemy *)game-&gt;map-&gt;enemies-&gt;next-&gt;content)-&gt;path" />
+        <watch expression="((t_enemy *)game-&gt;map-&gt;enemies-&gt;next-&gt;next-&gt;content)-&gt;path" />
+        <watch expression="((t_enemy *)game-&gt;map-&gt;enemies-&gt;next-&gt;next-&gt;next-&gt;content)-&gt;path" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

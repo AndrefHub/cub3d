@@ -51,7 +51,8 @@ void	add_all_neighbours(t_game *game, t_list **open, t_list *closed,
 		{
 			pos.y = node->pos.y + counter / 2;
 			pos.x = node->pos.x + (counter % 2);
-			if (!is_wall(game->map->map[pos.y][pos.x])
+			if (0 <= pos.x && pos.x < game->map->map_size.x && 0 <= pos.y &&
+				pos.y < game->map->map_size.y && !is_wall(game->map->map[pos.y][pos.x])
 				&& !ft_lstfind(closed, (void *)(&pos), pos_equals))
 			{
 				lst = ft_lstfind(*open, (void *)(&pos), pos_equals);
@@ -97,7 +98,7 @@ t_list	*astar(t_game *game, t_vector enemy, t_vector player)
 	t_list	*path;
 	t_node	*node;
 
-	t_ull time = get_time_hp();
+	// t_ull time = get_time_hp();
 	open = NULL;
 	closed = NULL;
 	path = NULL;
@@ -118,7 +119,7 @@ t_list	*astar(t_game *game, t_vector enemy, t_vector player)
 			}
 			ft_lstclear(&open, free);
 			ft_lstclear(&closed, free);
-			printf("%llu\n", get_time_hp() - time);
+			// printf("%llu\n", get_time_hp() - time);
 			return (path);
 		}
 		add_all_neighbours(game, &open, closed, curr->content, player);

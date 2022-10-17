@@ -48,5 +48,5 @@ void	draw_afterdeath_animation(t_game *game)
 	}
 	y_max += font_size;
 	put_frame(game);
-	usleep(70000);
+	// usleep(70000);
 }
