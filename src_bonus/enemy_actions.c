@@ -2,16 +2,14 @@
 
 void	enemy_attack(t_game *game, t_enemy *enemy)
 {
-	if (game->panic_mode)
+	if (enemy->panic_mode)
 	{
-		printf("eating enemy [%p, %p] \n", enemy, enemy + sizeof(*enemy));
 		reset_enemy_position(enemy);
-		printf("enemy %p eaten \n", enemy);
 		game->hud.score.value_numeric += ENEMY_REWARD * ++game->ghosts_eaten;
+		enemy->panic_mode = 0;
 	}
 	else
 	{
-		printf("enemy %p attacking \n", enemy);
 		game->hud.health.value_numeric -= 1;
 	}
 }
@@ -53,12 +51,26 @@ void	enemy_check_collision(t_game *game, t_enemy *enemy)
 	}
 }
 
-void	enemy_move_along_path(t_game *game, t_enemy *enemy)
+void	enemy_calculate_frame_movement(t_node *node, t_enemy *enemy)
 {
 	const t_fvector	e = {1, 0};
 	t_fvector		p;
-	t_node			*node;
 	float 			angle;
+	
+	if (!node)
+		return ;
+	p.x = .5f + node->pos.x - enemy->object->pos.x;
+	p.y = .5f + node->pos.y - enemy->object->pos.y;
+	angle = calculate_angle(e, p);
+	enemy->delta.x = cosf(angle) * EN_SPEED;
+	enemy->delta.y = sinf(angle) * EN_SPEED;
+	enemy->object->pos.x += enemy->delta.x;
+	enemy->object->pos.y += enemy->delta.y;
+}
+
+void	enemy_move_along_path(t_game *game, t_enemy *enemy)
+{
+	t_node			*node;
 	t_list			*deleted_node;
 
 	if (game->panic_mode && get_time() - game->time.pill_time > PANIC_TIME)
@@ -77,17 +89,13 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 			if (ft_lstsize(enemy->path))
 				node = ((t_node *)enemy->path->content);
 		}
-		if (!node)
-			return ;
-		p.x = .5f + node->pos.x - enemy->object->pos.x;
-		p.y = .5f + node->pos.y - enemy->object->pos.y;
-		angle = calculate_angle(e, p);
-		enemy->delta.x = cosf(angle) * EN_SPEED;
-		enemy->delta.y = sinf(angle) * EN_SPEED;
-		enemy->object->pos.x += enemy->delta.x;
-		enemy->object->pos.y += enemy->delta.y;
+		enemy_calculate_frame_movement(node, enemy);
 	}
-	// enemy_check_collision(game, enemy);
+}
+
+void	reset_panic_mode(void *en)
+{
+	((t_enemy *)en)->panic_mode = 0;	
 }
 
 void	enemy_move(t_game *game)
@@ -109,6 +117,7 @@ void	enemy_move(t_game *game)
 	if (game->panic_mode && get_time() - game->time.pill_time > PANIC_TIME)
 	{
 		game->panic_mode = 0;
+		ft_lstiter(game->map->enemies, reset_panic_mode);
 		game->ghosts_eaten = 0;
 	}
 }

@@ -13,6 +13,11 @@ int	close_hook(t_game *game)
 	return (0);
 }
 
+void	pause_game(t_game *game)
+{
+	
+}
+
 int	key_hook_press(int key, t_game *game)
 {
 	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))

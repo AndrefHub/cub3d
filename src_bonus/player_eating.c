@@ -49,6 +49,7 @@ void	set_panic_mode(t_game *game)
 			enemy->path = astar(game, (t_vector){enemy->object->pos.x,
 				enemy->object->pos.y}, pos);
 		// if (!enemy)
+		enemy->panic_mode = 1;
 		enemies = enemies->next;
 		++counter;
 	}
@@ -77,7 +78,7 @@ void	eat_by_coords(t_game *game, t_vector pos)
 			if (game->map->map[pos.y][pos.x] == 'o')
 				pill_eaten(game);
 			ft_lstdelbyaddr(&game->objects, objects, free);
-			// game->map->map[pos.y][pos.x] = '0';
+			game->map->map[pos.y][pos.x] = '0';
 			return ;
 		}
 		objects = objects->next;
