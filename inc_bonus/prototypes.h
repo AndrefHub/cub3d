@@ -85,6 +85,8 @@ void	draw_aim(t_game *game);
 void	draw_line(t_img *img, t_vector p1, t_vector p2, int color);
 void	draw_player(t_game *game);
 void	draw_square_fill(t_img *img, t_vector top_left, int size, int color);
+void	draw_rectangle_fill(t_img *img, t_vector top_left, t_vector size,
+		int color);
 void	fill_ceiling_color(t_img *img, int color, int horizon);
 void	fill_floor_color(t_img *img, int color, int horizon);
 void	fill_img_color(t_img *img, int color);
@@ -156,6 +158,7 @@ void	print_map_debug(t_map *map);
 
 void	pac_game_scene(t_game *game);
 void	death_game_scene(t_game *game);
+void	pause_game_scene(t_game *game);
 float	ftorange(float val, float border);
 int		game_loop(t_scene *scene);
 void	put_frame(t_game *game);
@@ -205,7 +208,10 @@ char	*skip_empty_lines(int fd);
 // input_mode.c //
 
 void	input_char(int key, char *username, char *charset);
-void	input_mode(int key, t_game *game);
+int		game_input_mode(int key, t_game *game);
+int		username_input_mode(int key, t_game *game);
+int		win_screen_mode(int key, t_game *game);
+int		pause_mode(int key, t_game *game);
 
 // is_checks.c //
 
@@ -331,5 +337,8 @@ float	fvector_distance(t_fvector lhs, t_fvector rhs);
 
 // afterdeath_animation : draw_afterdeath_animation.c //
 void	draw_afterdeath_animation(t_game *game);
+
+void	print_pause_menu_entries(t_game *game);
+
 
 #endif

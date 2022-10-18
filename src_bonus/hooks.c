@@ -13,32 +13,11 @@ int	close_hook(t_game *game)
 	return (0);
 }
 
-void	pause_game(t_game *game)
-{
-	
-}
-
 int	key_hook_press(int key, t_game *game)
 {
 	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))
 		return (1);
-	if (key == ESC_KEY)
-		close_hook(game);
-	if (game->input_mode == WIN_SCREEN_MODE && key == ENTER)
-		--game->input_mode;
-	else if (game->input_mode == INPUT_MODE)
-		input_mode(key, game);
-	else
-	{
-		if (key == M_KEY)
-		{
-			game->show_map = !game->show_map;
-			return (0);
-		}
-		if (key == E_KEY)
-			open_door(game);
-		game->key.k[(short)(key + CHAR_OFFSET)] = true;
-	}
+	game->input_funcs[game->input_mode](key, game);
 	return (0);
 }
 

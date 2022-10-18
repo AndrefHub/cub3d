@@ -163,6 +163,19 @@ typedef struct s_lb_entry
 	char	*score;
 }	t_lb_entry;
 
+typedef struct s_button
+{
+	t_vector	pos;
+	t_vector	size;
+	t_text		text;
+	int			background_color;
+	int			selected;
+	int			pressed;
+	int			(*on_selected)(void *, struct s_button *);
+	int			(*on_pressed)(void *, struct s_button *);
+	// look up qt button class
+}	t_button;
+
 typedef struct game
 {
 	t_scene			scene;
@@ -253,6 +266,13 @@ typedef struct game
 	int				ghosts_eaten;
 	int				afterdeath;
 	char			*lb_filename;
+	int				(*input_funcs[MAX_FUNCS])(int, struct game *);
+	struct s_pause
+	{
+		t_button	buttons[PAUSE_ENTRIES];
+		int			index;
+	}	pause;
+	
 }	t_game;
 
 typedef struct s_enemy

@@ -47,7 +47,10 @@
 # define GAME_MODE 0
 # define INPUT_MODE 1
 # define WIN_SCREEN_MODE 2
+# define PAUSE_MODE 3
 # define LEADERBOARD_FOLDER ".lb/"
+# define MAX_FUNCS 4
+# define PAUSE_ENTRIES 3
 
 # ifndef ASSETS_PATH
 #  define ASSETS_PATH "."

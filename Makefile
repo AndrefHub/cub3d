@@ -34,13 +34,14 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					check_file.c \
 					controller.c \
 					death_events.c \
+					death_utils.c \
 					demo_utils.c \
 					downscale_image.c \
-					draw_walls.c \
-					draw_map.c \
 					draw_ceil_floor.c \
-					draw_objects.c \
 					draw_hud.c \
+					draw_map.c \
+					draw_objects.c \
+					draw_walls.c \
 					drawing.c \
 					enemy_actions.c \
 					enemy_astar.c \
@@ -56,8 +57,9 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					hooks.c \
 					image_manip.c \
 					init_utils.c \
+					input_char.c \
+					input_funcs.c \
 					input_manip.c \
-					input_mode.c \
 					is_checks.c \
 					leaderboard_funcs.c \
 					main.c \
@@ -66,6 +68,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					parsing_font.c \
 					parsing_textures.c \
 					parsing_utils.c \
+					pause_menu.c \
 					player_controller.c \
 					player_eating.c \
 					player_movement.c \
@@ -75,6 +78,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					start_game.c \
 					time_funcs.c \
 					vector_utils.c
+
 SRCS_BONUS	= $(addprefix $(SRC_BONUSDIR), $(SRC_BONUSFILE))
 OBJ_BONUSDIR	= obj_bonus/
 OBJ_BONUSFILE = $(SRC_BONUSFILE:.c=.o)

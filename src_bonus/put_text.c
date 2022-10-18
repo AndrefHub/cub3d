@@ -52,16 +52,23 @@ int	put_char_to_screen(t_texture *font, t_img *img, t_text *text, int font_size)
 
 void	put_text_to_screen(t_texture *font, t_img *img, t_text *text, int font_size)
 {
+	char	*tmp;
+
+	tmp = text->text;
 	while (*text->text)
 	{
 		text->pos.x += put_char_to_screen(font, img, text, font_size) * font_size;
 		// text->color -= 0x181818;
 		++text->text;
 	}
+	text->text = tmp;
 }
 
 void	put_text_to_screen_layout(t_texture *font, t_img *img, t_text *text, int font_size)
 {
+	t_vector	pos;
+
+	pos = text->pos;
 	if (text->layout & VCenter)
 		text->pos.y -= font_size / 2;
 	else if (text->layout & VBottom)
@@ -71,4 +78,5 @@ void	put_text_to_screen_layout(t_texture *font, t_img *img, t_text *text, int fo
 	else if (text->layout & HRight)
 		text->pos.x -= (ft_strlen(text->text) * font_size);
 	put_text_to_screen(font, img, text, font_size);
+	text->pos = pos;
 }

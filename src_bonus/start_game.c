@@ -80,6 +80,41 @@ void	initialize_game_hud(t_game *game)
 		game->mlx.win_size.x, game->mlx.win_size.y);
 }
 
+void	init_input_funcs(t_game *game)
+{
+	game->input_funcs[GAME_MODE] = game_input_mode;
+	game->input_funcs[INPUT_MODE] = username_input_mode;
+	game->input_funcs[WIN_SCREEN_MODE] = win_screen_mode;
+	game->input_funcs[PAUSE_MODE] = pause_mode;
+}
+
+void	init_default_button(t_button *button, int size, char *text)
+{
+	button->size.y = size * 1.8f;
+	button->size.x = size * 12;
+	button->background_color = AIM_COLOR;
+	button->text = (t_text){text, (t_vector){0, 0}, VCenter | HCenter, 0xFFFFFF};
+}
+
+void	init_buttons(t_game *game)
+{
+	const int	font_size = game->hud.font_size * 2;
+	int	counter;
+
+	init_default_button(game->pause.buttons, game->hud.font_size, "continue");
+	init_default_button(game->pause.buttons + 1, game->hud.font_size, "controls");
+	init_default_button(game->pause.buttons + 2, game->hud.font_size, "exit");
+	counter = -1;
+	while (++counter < PAUSE_ENTRIES)
+	{
+		game->pause.buttons[counter].text.pos.x = game->hud_img.size.x / 2;
+		game->pause.buttons[counter].text.pos.y = game->hud.font_size * (counter + 3) * 3;
+		game->pause.buttons[counter].pos.x = game->hud_img.size.x / 2 - game->pause.buttons[counter].size.x / 2;
+		// - (ft_strlen(game->pause.buttons[counter].text.text) * font_size) / 2;
+		game->pause.buttons[counter].pos.y = game->hud.font_size * 3 * (counter + 3) - font_size / 2;
+	}
+}
+
 void	initialize_game_parameters(t_game *game)
 {
 	get_screen_size(game->mlx.id, &game->mlx.win_size.x, &game->mlx.win_size.y);
@@ -90,8 +125,10 @@ void	initialize_game_parameters(t_game *game)
 	game->show_map = false;
 	game->z_offset = 0;
 	game->grid = game->map->map;
-	game->img = initialize_img(&game->img, game->mlx.id, game->mlx.game_size.x, game->mlx.game_size.y);
-	game->hud_img = initialize_img(&game->hud_img, game->mlx.id, game->mlx.win_size.x, game->mlx.win_size.y);
+	game->img = initialize_img(&game->img, game->mlx.id, game->mlx.game_size.x,
+		game->mlx.game_size.y);
+	game->hud_img = initialize_img(&game->hud_img, game->mlx.id,
+		game->mlx.win_size.x, game->mlx.win_size.y);
 	game->map->img = initialize_img(&game->map->img, game->mlx.id,
 		game->mlx.game_size.x / 2, game->mlx.game_size.y / 2);
 	game->map->map_tile_size = ft_min(game->map->img.size.x /
@@ -101,6 +138,8 @@ void	initialize_game_parameters(t_game *game)
 	if (game->column == NULL)
 		error_exit(game, 0, NULL);
 	init_hud(&game->hud);
+	init_input_funcs(game);
+	init_buttons(game);
 }
 
 void	clear_font_outline(t_game *game)
