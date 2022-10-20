@@ -27,6 +27,7 @@ int	resume_game(t_game *game)
 	}
 	game->input_mode = GAME_MODE;
 	game->scene.scene_func = (void *)pac_game_scene;
+	mouse_move(game->mlx.id, game->mlx.window, game->mlx.win_size.x / 2, game->mlx.win_size.y / 2);
 	return (0);
 }
 

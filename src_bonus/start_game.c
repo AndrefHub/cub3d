@@ -80,13 +80,18 @@ void	initialize_game_hud(t_game *game)
 		game->mlx.win_size.x, game->mlx.win_size.y);
 }
 
-void	init_input_funcs(t_game *game)
+void	init_input_and_scene_funcs(t_game *game)
 {
 	game->input_funcs[GAME_MODE] = game_input_mode;
 	game->input_funcs[INPUT_MODE] = username_input_mode;
 	game->input_funcs[WIN_SCREEN_MODE] = win_screen_mode;
 	game->input_funcs[PAUSE_MODE] = pause_mode;
-	game->input_funcs[CONTROLS_MENU_MODE] = controls_game_scene;
+	game->input_funcs[CONTROLS_MENU_MODE] = controls_mode;
+	game->scene_funcs[GAME_MODE] = (void *)pac_game_scene;
+	game->scene_funcs[INPUT_MODE] = (void *)death_game_scene;
+	game->scene_funcs[WIN_SCREEN_MODE] = (void *)win_game_scene;
+	game->scene_funcs[PAUSE_MODE] = (void *)pause_game_scene;
+	game->scene_funcs[CONTROLS_MENU_MODE] = (void *)controls_game_scene;
 }
 
 void	init_default_button(t_button *button, int size, char *text)
@@ -95,6 +100,7 @@ void	init_default_button(t_button *button, int size, char *text)
 	button->size.x = size * 12;
 	button->background_color = AIM_COLOR;
 	button->text = (t_text){text, (t_vector){0, 0}, VCenter | HCenter, 0xFFFFFF};
+	button->draw_button = (void *)show_button;
 	button->on_selected = selected_button_func;
 	button->on_pressed = default_button_func;
 	button->on_released = default_button_func;
@@ -117,6 +123,8 @@ void	init_buttons(t_game *game)
 		// - (ft_strlen(game->pause.buttons[counter].text.text) * font_size) / 2;
 		game->pause.buttons[counter].pos.y = game->pause.buttons[counter].text.pos.y - font_size;
 	}
+	game->pause.buttons[0].on_released = continue_button_func;
+	game->pause.buttons[1].on_released = controls_button_func;
 	game->pause.buttons[2].on_released = exit_button_func;
 	game->pause.buttons[game->pause.index].selected = 1;
 }
@@ -144,7 +152,7 @@ void	initialize_game_parameters(t_game *game)
 	if (game->column == NULL)
 		error_exit(game, 0, NULL);
 	init_hud(&game->hud);
-	init_input_funcs(game);
+	init_input_and_scene_funcs(game);
 	init_buttons(game);
 }
 

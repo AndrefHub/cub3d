@@ -53,53 +53,11 @@ void	update_volume(t_game *game)
 	}
 }
 
-void	death_game_scene(t_game *game)
-{
-	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-	draw_afterdeath_animation(game);
-	if (game->afterdeath != 1)
-	{
-		player_death(game);
-	}
-	update_time(game);
-}
-
-void	pause_game_scene(t_game *game)
-{
-	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-	draw_hud(game);
-	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x
-	- game->img.size.x) / 2, 0}, &game->img);
-	print_pause_menu_entries(game);
-	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->hud_img.mlx_img,
-							0, 0);
-	update_time(game);
-}
-
-void	pac_game_scene(t_game *game)
-{
-	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-	check_aliveness(game);
-	player_controll(game);
-	cast_rays(game);
-	enemy_move(game);
-
-	draw_ceil_floor_textured(game);
-	draw_walls(game);
-	draw_game_objects(game);
-
-	draw_aim(game);
-
-	draw_hud(game);
-	put_frame(game);
-	change_textures(game);
-	update_time(game);
-	if (edibles_eaten(game))
-		game->scene.scene_func = player_win;
-}
-
 int	game_loop(t_scene *scene)
 {
+	const t_game	*game = scene->parameter;
+
+	scene->scene_func = game->scene_funcs[game->input_mode];
 	scene->scene_func(scene->parameter);
 	return (0);
 }

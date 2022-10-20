@@ -1,9 +1,9 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-int	default_button_func(void *v, struct s_button *b)
+int	button_draw(t_game *game, t_button *button)
 {
-	(void)v;
-	(void)b;
+	if (!button->selected && !button->pressed)
+		return (button->draw_button(game, button));
 	return (0);
 }
 
@@ -33,6 +33,7 @@ int	button_released(t_game *game, t_button *button)
 
 int	button_actions(t_game *game, t_button *button)
 {
+	button_draw(game, button);
 	button_selected(game, button);
 	button_pressed(game, button);
 	button_released(game, button);

@@ -163,38 +163,11 @@ void	player_death(t_game *game)
 		put_ended_game_image(game);
 }
 
-void	player_win(void *_game)
-{
-	t_game			*game;
-	static int		i = 0;
-	static t_ull	time = 0;
-
-	game = _game;
-	if (!i)
-	{
-		// cs_pause_sound(game->audio.song.play, 1);
-		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
-		game->show_map = 0;
-	}
-	if (i < 50 && get_time() - time > 35)
-	{
-		time = get_time();
-		dim_screen(game, i);
-		++i;
-	}
-	else if (i == 50)
-	{
-		game->input_mode = WIN_SCREEN_MODE;
-		game->player_lb_data->score_num = game->hud.score.value_numeric;
-		ft_lst_insert(&game->leaderboard, ft_lstnew(game->player_lb_data), cmp_lb_entry);
-		++i;
-	}
-	if (i > 50)
-		put_ended_game_image(game);
-}
-
 void	check_aliveness(t_game *game)
 {
-	if (game->hud.health.value_numeric == 0)
+	if (game->hud.health.value_numeric <= 0)
+	{
+		game->input_mode = INPUT_MODE;
 		game->scene.scene_func = (void *) death_game_scene;
+	}
 }

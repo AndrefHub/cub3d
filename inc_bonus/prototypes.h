@@ -12,6 +12,14 @@ int		check_enclosure(t_map *map, t_vector vec);
 int		get_map_width(const char **map);
 int		is_map_enclosed(t_map *map);
 
+// button_actions.c //
+
+int		default_button_func(void *v, struct s_button *b);
+int		selected_button_func(void *__game, t_button *button);
+int		continue_button_func(void *__game, t_button *button);
+int		controls_button_func(void *__game, t_button *button);
+int		exit_button_func(void *game, t_button *button);
+
 // button_functions.c //
 
 int		default_button_func(void *v, struct s_button *b);
@@ -40,7 +48,7 @@ void	check_aliveness(t_game *game);
 void	leaderboard_message(t_game *game);
 void	pause_game_actions(t_game *game);
 void	player_death(t_game *game);
-void	player_win(void *_game);
+void	win_game_scene(void *_game);
 void	put_ended_game_image(t_game *game);
 void	put_username_on_screen(t_game *game);
 void	win_message(t_game *game, char *message, int color);
@@ -215,6 +223,9 @@ void	input_char(int key, char *username, char *charset);
 
 // input_funcs.c //
 
+int		pause_game(t_game *game);
+int		resume_game(t_game *game);
+
 int		game_input_mode(int key, t_game *game);
 int		pause_mode(int key, t_game *game);
 int		username_input_mode(int key, t_game *game);
@@ -285,15 +296,15 @@ void	map_to_rectangle(t_map *map);
 // pause_menu.c //
 
 void	print_pause_menu_entries(t_game *game);
-void	show_button(t_img *img, t_texture *font, t_button *button);
+int		show_button(t_game *game, t_button *button);
 void	show_buttons(t_img *img, t_texture *font, t_button *buttons, int size);
 int		exit_button_func(void *game, t_button *button);
-int		selected_button_func(void *__game, t_button *button);
+void	controls_game_scene(void *__game);
 
 // player_controller.c //
 
 void	mouse_controller(t_game *game);
-void	movement_controller(t_game *game, int *collision);
+void	movement_controller(t_game *game);
 void	player_controll(t_game *game);
 void	player_delta_calculation(struct s_player *player);
 void	rotation_by_key_controller(t_game *game);
@@ -311,8 +322,7 @@ void	set_panic_mode(t_game *game);
 void	check_borders(t_game *game, struct s_player *object);
 void	check_borders_enemy(t_game *game, t_object *object);
 void	check_restrictions(t_game *game);
-void	move_radius_check(t_game *game, float x_delta, float y_delta,
-			int *collision);
+void	move_radius_check(t_game *game, float x_delta, float y_delta);
 void	update_last_collision(t_game *game);
 
 // put_text.c //

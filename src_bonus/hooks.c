@@ -18,7 +18,7 @@ int	key_hook_press(int key, t_game *game)
 	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))
 		return (1);
 	game->input_funcs[game->input_mode](key, game);
-	game->key.k[(short)(key + CHAR_OFFSET)] = false;
+	game->key.k[(short)(key + CHAR_OFFSET)] = true;
 	return (0);
 }
 

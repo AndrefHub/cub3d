@@ -31,7 +31,8 @@ OBJS	= $(addprefix $(OBJDIR), $(OBJFILE))
 SRC_BONUSDIR	= src_bonus/
 SRC_BONUSFILE	=	after_death_anim.c \
 					border_checking.c \
-					button_functions.c \
+					button_actions.c \
+					button_core_funcs.c \
 					check_file.c \
 					controller.c \
 					death_events.c \
@@ -53,6 +54,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					ft_lstsort.c \
 					ft_utils.c \
 					game_loop.c \
+					game_scenes.c \
 					game_sound.c \
 					game_textures.c \
 					hooks.c \
@@ -79,7 +81,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					respawn.c \
 					start_game.c \
 					time_funcs.c \
-					vector_utils.c
+					vector_utils.c 
 
 SRCS_BONUS	= $(addprefix $(SRC_BONUSDIR), $(SRC_BONUSFILE))
 OBJ_BONUSDIR	= obj_bonus/

@@ -44,11 +44,6 @@
 # define COIN_REWARD 10
 # define PILL_REWARD 50
 # define ENEMY_REWARD 200
-# define GAME_MODE 0
-# define INPUT_MODE 1
-# define WIN_SCREEN_MODE 2
-# define PAUSE_MODE 3
-# define CONTROLS_MENU_MODE 4
 # define LEADERBOARD_FOLDER ".lb/"
 # define MAX_FUNCS 5
 # define PAUSE_ENTRIES 3
@@ -115,6 +110,22 @@ enum e_layout
 	HLeft = 010,
 	HCenter = 020,
 	HRight = 040
+};
+
+enum e_sound
+{
+	MUSIC,
+	DEATH_SOUND,
+	ENEMY_CRY,
+};
+
+enum e_mode
+{
+	GAME_MODE,
+	INPUT_MODE,
+	WIN_SCREEN_MODE,
+	PAUSE_MODE,
+	CONTROLS_MENU_MODE,
 };
 
 #endif
