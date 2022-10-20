@@ -20,19 +20,30 @@ void	pac_game_scene(t_game *game)
 	change_textures(game);
 	update_time(game);
 	if (edibles_eaten(game))
-		game->scene.scene_func = win_game_scene;
+		game->input_mode = WIN_SCREEN_MODE;
 }
 
 // 1
-void	death_game_scene(t_game *game)
+void	leaderboard_game_scene(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-	draw_afterdeath_animation(game);
-	if (game->afterdeath != 1)
-	{
-		player_death(game);
-	}
+	// draw_afterdeath_animation(game);
+	// if (game->afterdeath != 1)
+	// {
+	// 	game->input_mode = WIN_SCREEN_MODE;
+	// }
+	put_ended_game_image(game);
 	update_time(game);
+}
+
+void	dim_screen_afterdeath(t_game *game, int i, t_ull time)
+{
+	if (i < 50 && get_time() - time > 35)
+	{
+		time = get_time();
+		dim_screen(game, i);
+		++i;
+	}
 }
 
 // 2

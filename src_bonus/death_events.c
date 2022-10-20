@@ -121,7 +121,7 @@ void	pause_game_actions(t_game *game)
 void	put_ended_game_image(t_game *game)
 {
 	fill_img_color(&game->img, 0x0);
-	if (game->input_mode == INPUT_MODE)
+	if (game->input_mode == LEADERBOARD_MODE)
 		leaderboard_message(game);
 	else if (game->input_mode == WIN_SCREEN_MODE && edibles_eaten(game))
 		win_message(game, "You\'re winner!", 0xFFD700);
@@ -167,7 +167,7 @@ void	check_aliveness(t_game *game)
 {
 	if (game->hud.health.value_numeric <= 0)
 	{
-		game->input_mode = INPUT_MODE;
-		game->scene.scene_func = (void *) death_game_scene;
+		game->input_mode = LEADERBOARD_MODE;
+		game->scene.scene_func = (void *) leaderboard_game_scene;
 	}
 }

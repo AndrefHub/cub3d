@@ -83,12 +83,12 @@ void	initialize_game_hud(t_game *game)
 void	init_input_and_scene_funcs(t_game *game)
 {
 	game->input_funcs[GAME_MODE] = game_input_mode;
-	game->input_funcs[INPUT_MODE] = username_input_mode;
+	game->input_funcs[LEADERBOARD_MODE] = username_input_mode;
 	game->input_funcs[WIN_SCREEN_MODE] = win_screen_mode;
 	game->input_funcs[PAUSE_MODE] = pause_mode;
 	game->input_funcs[CONTROLS_MENU_MODE] = controls_mode;
 	game->scene_funcs[GAME_MODE] = (void *)pac_game_scene;
-	game->scene_funcs[INPUT_MODE] = (void *)death_game_scene;
+	game->scene_funcs[LEADERBOARD_MODE] = (void *)leaderboard_game_scene;
 	game->scene_funcs[WIN_SCREEN_MODE] = (void *)win_game_scene;
 	game->scene_funcs[PAUSE_MODE] = (void *)pause_game_scene;
 	game->scene_funcs[CONTROLS_MENU_MODE] = (void *)controls_game_scene;

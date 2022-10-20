@@ -175,7 +175,7 @@ void	print_map_debug(t_map *map);
 
 float	ftorange(float val, float border);
 int		game_loop(t_scene *scene);
-void	death_game_scene(t_game *game);
+void	leaderboard_game_scene(t_game *game);
 void	pac_game_scene(t_game *game);
 void	pause_game_scene(t_game *game);
 void	put_frame(t_game *game);

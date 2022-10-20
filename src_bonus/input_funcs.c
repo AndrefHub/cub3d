@@ -50,7 +50,7 @@ inline int	game_input_mode(int key, t_game *game)
 	return (0);
 }
 
-// game->input_mode = INPUT_MODE (1) //
+// game->input_mode = LEADERBOARD_MODE (1) //
 inline int	username_input_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY && ft_strlen(game->player_lb_data->name))
@@ -69,7 +69,7 @@ inline int	username_input_mode(int key, t_game *game)
 inline int	win_screen_mode(int key, t_game *game)
 {
 	if (key == ENTER)
-		game->input_mode = INPUT_MODE;
+		game->input_mode = LEADERBOARD_MODE;
 	return (0);
 }
 
