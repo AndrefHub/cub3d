@@ -18,6 +18,7 @@ int	key_hook_press(int key, t_game *game)
 	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))
 		return (1);
 	game->input_funcs[game->input_mode](key, game);
+	game->key.k[(short)(key + CHAR_OFFSET)] = false;
 	return (0);
 }
 
@@ -26,6 +27,11 @@ int	key_hook_release(int key, t_game *game)
 	if (!(0 <= (short)(key + CHAR_OFFSET) && (short)(key + CHAR_OFFSET) < 512))
 		return (1);
 	game->key.k[(short)(key + CHAR_OFFSET)] = false;
+	if (game->input_mode == PAUSE_MODE && key == ENTER)
+	{
+		game->pause.buttons[game->pause.index].released = 1;
+		game->pause.buttons[game->pause.index].pressed = 0;
+	}
 	return (0);
 }
 

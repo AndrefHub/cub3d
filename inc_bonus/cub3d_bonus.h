@@ -171,8 +171,10 @@ typedef struct s_button
 	int			background_color;
 	int			selected;
 	int			pressed;
+	int			released;
 	int			(*on_selected)(void *, struct s_button *);
 	int			(*on_pressed)(void *, struct s_button *);
+	int			(*on_released)(void *, struct s_button *);
 	// look up qt button class
 }	t_button;
 
@@ -266,6 +268,7 @@ typedef struct game
 	int				ghosts_eaten;
 	int				afterdeath;
 	char			*lb_filename;
+	void			(*scene_funcs[MAX_FUNCS])(void*);
 	int				(*input_funcs[MAX_FUNCS])(int, struct game *);
 	struct s_pause
 	{

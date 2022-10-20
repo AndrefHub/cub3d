@@ -31,6 +31,7 @@ OBJS	= $(addprefix $(OBJDIR), $(OBJFILE))
 SRC_BONUSDIR	= src_bonus/
 SRC_BONUSFILE	=	after_death_anim.c \
 					border_checking.c \
+					button_functions.c \
 					check_file.c \
 					controller.c \
 					death_events.c \
@@ -55,6 +56,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					game_sound.c \
 					game_textures.c \
 					hooks.c \
+					hooks_pause_mode.c \
 					image_manip.c \
 					init_utils.c \
 					input_char.c \

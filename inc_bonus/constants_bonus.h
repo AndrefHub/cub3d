@@ -48,8 +48,9 @@
 # define INPUT_MODE 1
 # define WIN_SCREEN_MODE 2
 # define PAUSE_MODE 3
+# define CONTROLS_MENU_MODE 4
 # define LEADERBOARD_FOLDER ".lb/"
-# define MAX_FUNCS 4
+# define MAX_FUNCS 5
 # define PAUSE_ENTRIES 3
 
 # ifndef ASSETS_PATH

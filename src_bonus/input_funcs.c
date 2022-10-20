@@ -1,13 +1,40 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
+int	pause_game(t_game *game)
+{
+	t_list	*lst;
+
+	lst = game->map->enemies;
+	while (lst)
+	{
+		((t_enemy *)lst->content)->sound.play->paused = 1;
+		lst = lst->next;
+	}
+	game->input_mode = PAUSE_MODE;
+	game->scene.scene_func = (void *)pause_game_scene;
+	return (0);
+}
+
+int	resume_game(t_game *game)
+{
+	t_list	*lst;
+
+	lst = game->map->enemies;
+	while (lst)
+	{
+		((t_enemy *)lst->content)->sound.play->paused = 0;
+		lst = lst->next;
+	}
+	game->input_mode = GAME_MODE;
+	game->scene.scene_func = (void *)pac_game_scene;
+	return (0);
+}
+
 // game->input_mode = GAME_MODE (0) //
 inline int	game_input_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
-	{
-		game->input_mode = PAUSE_MODE;
-		game->scene.scene_func = (void *)pause_game_scene;
-	}
+		pause_game(game);
 	else
 	{
 		if (key == M_KEY)
@@ -54,16 +81,38 @@ inline int	pause_mode(int key, t_game *game)
 	}
 	else if (key == DOWN_KEY)
 	{
+		game->pause.buttons[game->pause.index].selected = 0;
 		game->pause.index = (game->pause.index + 1) % PAUSE_ENTRIES;
+		game->pause.buttons[game->pause.index].selected = 1;
+		printf("%d\n", game->pause.index);
 	}
 	else if (key == UP_KEY)
 	{
-		game->pause.index = (game->pause.index - 1) % PAUSE_ENTRIES;
+		game->pause.buttons[game->pause.index].selected = 0;
+		game->pause.index = (game->pause.index + PAUSE_ENTRIES - 1) % PAUSE_ENTRIES;
+		game->pause.buttons[game->pause.index].selected = 1;
+		printf("%d\n", game->pause.index);
 	}
-	else if (key == ENTER)
+	// else if (key == ENTER)
+	// {
+	// 	game->input_mode = GAME_MODE;
+	// 	game->scene.scene_func = (void *)pac_game_scene;
+	// }
+	return (0);
+}	
+
+// game->input_mode = CONTROLS_MODE (4) //
+inline int	controls_mode(int key, t_game *game)
+{
+	if (key == ESC_KEY)
 	{
-		game->input_mode = GAME_MODE;
-		game->scene.scene_func = (void *)pac_game_scene;
+		game->input_mode = PAUSE_MODE;
+		game->scene.scene_func = (void *)pause_game_scene;
 	}
+	// else if (key == ENTER)
+	// {
+	// 	game->input_mode = GAME_MODE;
+	// 	game->scene.scene_func = (void *)pac_game_scene;
+	// }
 	return (0);
 }	
