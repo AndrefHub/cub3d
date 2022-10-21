@@ -1,5 +1,11 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
+void	set_game_input_mode(t_game *game, int mode)
+{
+	game->input_mode = mode;
+	game->scene.scene_func = game->scene_funcs[game->input_mode];
+}
+
 // 0
 void	pac_game_scene(t_game *game)
 {
@@ -20,7 +26,10 @@ void	pac_game_scene(t_game *game)
 	change_textures(game);
 	update_time(game);
 	if (edibles_eaten(game))
-		game->input_mode = WIN_SCREEN_MODE;
+	{
+		game->death_func = draw_afterdeath_animation;
+		set_game_input_mode(game, WIN_SCREEN_MODE);
+	}
 }
 
 // 1
@@ -30,35 +39,22 @@ void	leaderboard_game_scene(t_game *game)
 	// draw_afterdeath_animation(game);
 	// if (game->afterdeath != 1)
 	// {
-	// 	game->input_mode = WIN_SCREEN_MODE;
+	// 	set_game_input_mode(game, WIN_SCREEN_MODE);
 	// }
 	put_ended_game_image(game);
 	update_time(game);
 }
 
-void	dim_screen_afterdeath(t_game *game, int i, t_ull time)
-{
-	if (i < 50 && get_time() - time > 35)
-	{
-		time = get_time();
-		dim_screen(game, i);
-		++i;
-	}
-}
-
-// 2
-void	win_game_scene(void *_game)
-{
-	t_game			*game;
+void	end_game_dim(t_game *game)
+{	
 	static int		i = 0;
 	static t_ull	time = 0;
 
-	game = _game;
 	if (!i)
 	{
-		// cs_pause_sound(game->audio.song.play, 1);
 		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 		game->show_map = 0;
+		change_all_enemies_cry_paused(game, 1);
 	}
 	if (i < 50 && get_time() - time > 35)
 	{
@@ -68,13 +64,24 @@ void	win_game_scene(void *_game)
 	}
 	else if (i == 50)
 	{
-		game->input_mode = WIN_SCREEN_MODE;
+		set_game_input_mode(game, LEADERBOARD_MODE);
+		if (player_respawn(game, &i, &time))
+			return ;
 		game->player_lb_data->score_num = game->hud.score.value_numeric;
 		ft_lst_insert(&game->leaderboard, ft_lstnew(game->player_lb_data), cmp_lb_entry);
 		++i;
 	}
 	if (i > 50)
 		put_ended_game_image(game);
+}
+
+// 2
+void	win_game_scene(void *_game)
+{
+	t_game	*game;
+
+	game = _game;
+	game->death_func(game);
 }
 
 // 3

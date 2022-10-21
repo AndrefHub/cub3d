@@ -19,17 +19,18 @@ void	reset_positions(t_game *game)
 	ft_lstiter(enemies, reset_enemy_position);
 }
 
-int	player_respawn(t_game *game)
+int	player_respawn(t_game *game, int *i, t_ull *time)
 {
 	if (game->hud.lives.value_numeric > 0)
 	{
 		game->hud.health.value_numeric = MAX_HEALTH;
 		--game->hud.lives.value_numeric;
 		reset_positions(game);
+		*time = 0;
+		*i = 0;
+		change_all_enemies_cry_paused(game, 0);
+		set_game_input_mode(game, GAME_MODE);
 		return (1);
 	}
 	return (0);
 }
-
-
-

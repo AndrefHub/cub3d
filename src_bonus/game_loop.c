@@ -55,10 +55,6 @@ void	update_volume(t_game *game)
 
 int	game_loop(t_scene *scene)
 {
-	const t_game	*game = scene->parameter;
-
-	printf("%d\n", game->input_mode);
-	scene->scene_func = game->scene_funcs[game->input_mode];
 	scene->scene_func(scene->parameter);
 	return (0);
 }

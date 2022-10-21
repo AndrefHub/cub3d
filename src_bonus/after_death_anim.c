@@ -16,12 +16,13 @@ void	draw_afterdeath_animation(t_game *game)
 	t_text text;
 	int font_size;
 
-
-	game->afterdeath = 0;
+	// game->afterdeath = 0;
+	game->death_func = end_game_dim;
 	font_size = game->hud.font_size * 0.9f;
 	if (y_max > game->img.size.y + font_size)
 		return;
-	game->afterdeath = 1;
+	// game->afterdeath = 1;
+	game->death_func = draw_afterdeath_animation;
 	fill_ceiling_color(&game->img, 0x00000000, (game->img.size.y / 2) - y_max);
 	y = 0;
 	while (y < game->img.size.y - font_size)

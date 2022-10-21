@@ -105,7 +105,8 @@ void	change_all_enemies_cry_paused(t_game *game, int paused)
 	while (enemies)
 	{
 		enemy = enemies->content;
-		enemy->sound.play->paused = paused;
+		if (enemy->sound.play)
+			enemy->sound.play->paused = paused;
 		enemies = enemies->next;
 	}
 }
@@ -130,44 +131,45 @@ void	put_ended_game_image(t_game *game)
 	put_frame(game);
 }
 
-void	player_death(t_game *game)
-{
-	static int		i = 0;
-	static t_ull	time = 0;
+// void	player_death(t_game *game)
+// {
+// 	static int		i = 0;
+// 	static t_ull	time = 0;
 
-	if (i == 0)
-		pause_game_actions(game);
-	if (i < 50 && get_time() - time > 35)
-	{
-		time = get_time();
-		dim_screen(game, i);
-		++i;
-	}
-	else if (i == 50)
-	{
-		if (player_respawn(game))
-		{
-			i = 0;
-			time = 0;
-			change_all_enemies_cry_paused(game, 0);
-			// game->audio.song.play->paused = 0;
-			// cs_play_sound(game->audio.ctx, game->audio.song.def);
-			return ;
-		}
-		game->input_mode = WIN_SCREEN_MODE;
-		game->player_lb_data->score_num = game->hud.score.value_numeric;
-		ft_lst_insert(&game->leaderboard, ft_lstnew(game->player_lb_data), cmp_lb_entry);
-		++i;
-	}
-	if (i > 50)
-		put_ended_game_image(game);
-}
+// 	if (i == 0)
+// 		pause_game_actions(game);
+// 	if (i < 50 && get_time() - time > 35)
+// 	{
+// 		time = get_time();
+// 		dim_screen(game, i);
+// 		++i;
+// 	}
+// 	else if (i == 50)
+// 	{
+// 		if (player_respawn(game))
+// 		{
+// 			i = 0;
+// 			time = 0;
+// 			change_all_enemies_cry_paused(game, 0);
+// 			// game->audio.song.play->paused = 0;
+// 			// cs_play_sound(game->audio.ctx, game->audio.song.def);
+// 			return ;
+// 		}
+// 		set_game_input_mode(game, WIN_SCREEN_MODE);
+// 		game->player_lb_data->score_num = game->hud.score.value_numeric;
+// 		ft_lst_insert(&game->leaderboard, ft_lstnew(game->player_lb_data), cmp_lb_entry);
+// 		++i;
+// 	}
+// 	if (i > 50)
+// 		put_ended_game_image(game);
+// }
 
 void	check_aliveness(t_game *game)
 {
 	if (game->hud.health.value_numeric <= 0)
 	{
-		game->input_mode = LEADERBOARD_MODE;
-		game->scene.scene_func = (void *) leaderboard_game_scene;
+		if (game->hud.lives.value_numeric <= 0)
+			game->death_func = draw_afterdeath_animation;
+		set_game_input_mode(game, WIN_SCREEN_MODE);
 	}
 }

@@ -218,7 +218,7 @@ void	set_input_mode_chars(t_game *game)
 	ft_bzero(game->player_lb_data->name, 9);
 	game->place = malloc(8);
 	ft_bzero(game->place, 8);
-	game->input_mode = GAME_MODE;
+	set_game_input_mode(game, GAME_MODE);
 }
 
 void	play_sounds(t_game *game)
@@ -294,6 +294,7 @@ int	init_game(t_map *map)
 	clear_font_outline(&game);
 	game.lb_filename = get_lb_name(map->map_file);
 	game.leaderboard = get_leaderboard(game.lb_filename);
+	game.death_func = end_game_dim;
 	start_game(&game);
 	return (1);
 }

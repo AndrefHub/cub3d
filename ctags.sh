@@ -5,7 +5,7 @@ echo >> prototypes.h
 for file in *.c; do
 	echo '//' "$file" '//' >> prototypes.h
 	echo >> prototypes.h
-	ctags -o - --kinds-C=f --kinds-C++=f -x --_xformat='%{typeref}	%{name}%{signature};' "$file" | tr ':' ' ' | sed -e 's/^typename //' >> prototypes.h
+	ctags -x "$file" | awk '{printf $4 "\t"; $1=$2=$3=$4=""; $0=$0; $1=$1; print $0 ";"}' >> prototypes.h
 	echo >> prototypes.h
 done
 echo '#endif' >> prototypes.h

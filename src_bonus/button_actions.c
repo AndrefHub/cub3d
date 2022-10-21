@@ -31,8 +31,7 @@ int	controls_button_func(void *__game, t_button *button)
 	t_game	*game;
 
 	game = __game;
-	game->scene.scene_func = (void *)controls_game_scene;
-	game->input_mode = CONTROLS_MENU_MODE;
+	set_game_input_mode(game, CONTROLS_MENU_MODE);
 	(void)button;
 	return (0);
 }

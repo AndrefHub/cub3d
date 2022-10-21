@@ -271,6 +271,7 @@ typedef struct game
 	char			*lb_filename;
 	void			(*scene_funcs[MAX_FUNCS])(void*);
 	int				(*input_funcs[MAX_FUNCS])(int, struct game *);
+	void			(*death_func)(struct game *);
 	struct s_pause
 	{
 		t_button	buttons[PAUSE_ENTRIES];
@@ -291,6 +292,12 @@ typedef struct s_enemy
 	t_sound		sound;
 	int			panic_mode;
 }				t_enemy;
+
+typedef struct s_astar
+{
+	t_list	*open;
+	t_list	*closed;
+}	t_astar_utils;
 
 # include "prototypes.h"
 

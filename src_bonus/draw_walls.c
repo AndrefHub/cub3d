@@ -2,8 +2,7 @@
 
 //void	draw_floor_textured(t_game *game, t_vector cur);
 
-void	draw_wall_scaled(t_img *img, const t_img *texture,
-	const struct s_column *column, int x, t_game * game)
+void	draw_wall_scaled(t_img *img, const t_img *texture, const struct s_column *column, int x, t_game * game)
 {
 	double	step = (double ) texture->size.y / column->height;
 	unsigned	tex_x = (unsigned ) column->texture_pos % texture->size.x;

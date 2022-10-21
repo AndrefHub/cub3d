@@ -50,7 +50,6 @@ t_lb_entry	*parse_lb_entry(char *line)
 	return (entry);
 }
 
-// t_list	*get_leaderboard()
 t_list	*get_leaderboard(char *filename)
 {
 	t_list		*lb;

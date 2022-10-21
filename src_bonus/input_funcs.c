@@ -10,8 +10,7 @@ int	pause_game(t_game *game)
 		((t_enemy *)lst->content)->sound.play->paused = 1;
 		lst = lst->next;
 	}
-	game->input_mode = PAUSE_MODE;
-	game->scene.scene_func = (void *)pause_game_scene;
+	set_game_input_mode(game, PAUSE_MODE);
 	return (0);
 }
 
@@ -25,13 +24,12 @@ int	resume_game(t_game *game)
 		((t_enemy *)lst->content)->sound.play->paused = 0;
 		lst = lst->next;
 	}
-	game->input_mode = GAME_MODE;
-	game->scene.scene_func = (void *)pac_game_scene;
+	set_game_input_mode(game, GAME_MODE);
 	mouse_move(game->mlx.id, game->mlx.window, game->mlx.win_size.x / 2, game->mlx.win_size.y / 2);
 	return (0);
 }
 
-// game->input_mode = GAME_MODE (0) //
+// set_game_input_mode(game, GAME_MODE) (0) //
 inline int	game_input_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
@@ -50,7 +48,7 @@ inline int	game_input_mode(int key, t_game *game)
 	return (0);
 }
 
-// game->input_mode = LEADERBOARD_MODE (1) //
+// set_game_input_mode(game, LEADERBOARD_MODE) (1) //
 inline int	username_input_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY && ft_strlen(game->player_lb_data->name))
@@ -65,15 +63,15 @@ inline int	username_input_mode(int key, t_game *game)
 	return (0);
 }
 
-// game->input_mode = WIN_SCREEN_MODE (2) //
+// set_game_input_mode(game, WIN_SCREEN_MODE) (2) //
 inline int	win_screen_mode(int key, t_game *game)
 {
 	if (key == ENTER)
-		game->input_mode = LEADERBOARD_MODE;
+		set_game_input_mode(game, LEADERBOARD_MODE);
 	return (0);
 }
 
-// game->input_mode = PAUSE_MODE (3) //
+// set_game_input_mode(game, PAUSE_MODE) (3) //
 inline int	pause_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
@@ -96,23 +94,23 @@ inline int	pause_mode(int key, t_game *game)
 	}
 	// else if (key == ENTER)
 	// {
-	// 	game->input_mode = GAME_MODE;
+	// 	set_game_input_mode(game, GAME_MODE);
 	// 	game->scene.scene_func = (void *)pac_game_scene;
 	// }
 	return (0);
 }	
 
-// game->input_mode = CONTROLS_MODE (4) //
+// set_game_input_mode(game, CONTROLS_MODE (4) //
 inline int	controls_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
 	{
-		game->input_mode = PAUSE_MODE;
+		set_game_input_mode(game, PAUSE_MODE);
 		game->scene.scene_func = (void *)pause_game_scene;
 	}
 	// else if (key == ENTER)
 	// {
-	// 	game->input_mode = GAME_MODE;
+	// 	set_game_input_mode(game, GAME_MODE);
 	// 	game->scene.scene_func = (void *)pac_game_scene;
 	// }
 	return (0);

@@ -1,6 +1,6 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-char	*crop_prefix(char* line, char *prefix)
+char	*crop_prefix(char *line, char *prefix)
 {
 	char	*new_line;
 	char	*begin;

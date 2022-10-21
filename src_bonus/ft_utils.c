@@ -1,6 +1,6 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-t_map	*create_empty_map()
+t_map	*create_empty_map(void)
 {
 	t_map	*map;
 	// int		counter;

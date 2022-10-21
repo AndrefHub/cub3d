@@ -47,6 +47,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					drawing.c \
 					enemy_actions.c \
 					enemy_astar.c \
+					enemy_astar_utils.c \
 					enemy_move.c \
 					file_parser.c \
 					find_objects.c \
@@ -60,7 +61,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					hooks.c \
 					hooks_pause_mode.c \
 					image_manip.c \
-					init_utils.c \
+					init_hud.c \
 					input_char.c \
 					input_funcs.c \
 					input_manip.c \
@@ -81,7 +82,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					respawn.c \
 					start_game.c \
 					time_funcs.c \
-					vector_utils.c 
+					vector_utils.c
 
 SRCS_BONUS	= $(addprefix $(SRC_BONUSDIR), $(SRC_BONUSFILE))
 OBJ_BONUSDIR	= obj_bonus/
