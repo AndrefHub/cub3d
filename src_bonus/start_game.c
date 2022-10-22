@@ -102,7 +102,7 @@ void	init_default_button(t_button *button, int size, char *text)
 	button->text = (t_text){text, (t_vector){0, 0}, VCenter | HCenter, 0xFFFFFF};
 	button->draw_button = (void *)show_button;
 	button->on_selected = selected_button_func;
-	button->on_pressed = default_button_func;
+	button->on_pressed = selected_button_func;
 	button->on_released = default_button_func;
 }
 

@@ -40,6 +40,10 @@ int	mouse_hook_press(int button, int x, int y, t_game *game)
 	if ((unsigned)button >= sizeof(game->key.m))
 		return (1);
 	game->key.m[button] = true;
+	if (game->input_mode == PAUSE_MODE && button == 1)
+	{
+		game->pause.buttons[game->pause.index].pressed = 1;
+	}
 	return (0);
 	(void) x;
 	(void) y;
@@ -50,6 +54,11 @@ int	mouse_hook_release(int button, int x, int y, t_game *game)
 	if ((unsigned)button >= sizeof(game->key.m))
 		return (1);
 	game->key.m[button] = false;
+	if (game->input_mode == PAUSE_MODE && button == 1)
+	{
+		game->pause.buttons[game->pause.index].released = 1;
+		game->pause.buttons[game->pause.index].pressed = 0;
+	}
 	return (0);
 	(void) x;
 	(void) y;

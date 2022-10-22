@@ -10,6 +10,7 @@ int	pause_game(t_game *game)
 		((t_enemy *)lst->content)->sound.play->paused = 1;
 		lst = lst->next;
 	}
+	mouse_show(game->mlx.id, game->mlx.window);
 	set_game_input_mode(game, PAUSE_MODE);
 	return (0);
 }
@@ -24,6 +25,7 @@ int	resume_game(t_game *game)
 		((t_enemy *)lst->content)->sound.play->paused = 0;
 		lst = lst->next;
 	}
+	mouse_hide(game->mlx.id, game->mlx.window);
 	set_game_input_mode(game, GAME_MODE);
 	mouse_move(game->mlx.id, game->mlx.window, game->mlx.win_size.x / 2, game->mlx.win_size.y / 2);
 	return (0);
