@@ -171,6 +171,6 @@ re: clean bonus
 full_rebuild: fclean all
 
 download_assets:
-	@/bin/bash assets.sh $(GOINFRE)
+	@/bin/bash scripts/assets.sh $(GOINFRE)
 
 .PHONY: all clean fclean re bonus

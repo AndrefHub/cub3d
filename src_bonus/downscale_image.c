@@ -55,7 +55,7 @@ int	get_downscaled_colored_font(t_img *img, int divisor, t_vector pos, t_rgb col
 		++vec.y;
 	}
 	pixel.a = alpha / (divisor * divisor);
-	// pixel.a = 0xFF * (pixel.a >= 0x7F);
+	pixel.a = 0xFF * (pixel.a >= 0x7F);
 	// pixel.a = 0x7F * (pixel.a > 0x3F) + 0x80 * (pixel.a > 0xBF);
 	pixel.r = color.r;
 	pixel.g = color.g;
