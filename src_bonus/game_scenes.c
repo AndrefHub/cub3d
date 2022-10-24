@@ -7,6 +7,12 @@ void	set_game_input_mode(t_game *game, int mode)
 }
 
 // 0
+void	start_game_scene(t_game *game)
+{
+	
+}
+
+// 1
 void	pac_game_scene(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
@@ -32,7 +38,7 @@ void	pac_game_scene(t_game *game)
 	}
 }
 
-// 1
+// 2
 void	leaderboard_game_scene(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
@@ -75,7 +81,7 @@ void	end_game_dim(t_game *game)
 		put_ended_game_image(game);
 }
 
-// 2
+// 3
 void	win_game_scene(void *_game)
 {
 	t_game	*game;
@@ -84,7 +90,7 @@ void	win_game_scene(void *_game)
 	game->death_func(game);
 }
 
-// 3
+// 4
 void	pause_game_scene(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
@@ -97,7 +103,7 @@ void	pause_game_scene(t_game *game)
 	update_time(game);
 }
 
-// 4
+// 5
 void	controls_game_scene(void *__game)
 {
 	const int	font_size = 60;

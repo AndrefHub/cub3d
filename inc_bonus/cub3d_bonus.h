@@ -154,6 +154,7 @@ typedef struct s_parse_info
 	char		*chars;
 	char		*prefix;
 	t_texture	*arr;
+	int			size;
 } t_parse_info;
 
 typedef struct s_lb_entry
@@ -269,8 +270,8 @@ typedef struct game
 	int				ghosts_eaten;
 	int				afterdeath;
 	char			*lb_filename;
-	void			(*scene_funcs[MAX_FUNCS])(void*);
-	int				(*input_funcs[MAX_FUNCS])(int, struct game *);
+	void			(*scene_funcs[MAX_MODES])(void*);
+	int				(*input_funcs[MAX_MODES])(int, struct game *);
 	void			(*death_func)(struct game *);
 	struct s_pause
 	{

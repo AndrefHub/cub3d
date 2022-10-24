@@ -48,7 +48,9 @@ static inline void	get_screen_size(void *mlx_ptr, int *size_x, int *size_y)
 
 static inline void	get_screen_size(void *mlx_ptr, int *size_x, int *size_y)
 {
-	mlx_get_screen_size(mlx_ptr, size_x, size_y);
+	mlx_get_screenf_size(mlx_ptr, size_x, size_y);
+	// *size_x = 1280;
+	// *size_y = 720;
 }
 
 #endif

@@ -49,6 +49,8 @@ void	update_time(t_game *game)
 		game->hud.fps.value_numeric = 9999;
 		if (get_time() != game->time.fps_time)
 			game->hud.fps.value_numeric = (1000 * frames) / (get_time() - game->time.fps_time);
+		if (game->hud.fps.value_numeric > 9999)
+			game->hud.fps.value_numeric = 9999;
 		game->time.fps_time = get_time();
 		frames = 0;
 	}
