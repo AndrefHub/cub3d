@@ -24,12 +24,12 @@ void	initialize_player(t_game *game)
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
 
-	game->player.plane = (t_fvector) {0.0f, 0.66f};
+	game->player.plane = (t_fvector) {0.0f, FOV};
 	game->fov = ((game->img.aspect >= FOV) - (game->img.aspect < FOV)) *
 			sqrtf(fabsf((float) M_PI_4 * (game->img.aspect - FOV) / 2)) + M_2_PI;
 	game->col_step = tanf(game->fov / (game->img.size.x - 1));
 	game->col_scale = 1.0f / game->col_step;
-	printf("%f, %f\n", game->col_step, game->fov);
+	// printf("%f, %f\n", game->col_step, game->fov);
 	// game->player.health = 1;
 	game->player.last_attack_time = 0;
 }
@@ -84,11 +84,13 @@ void	initialize_game_hud(t_game *game)
 
 void	init_input_and_scene_funcs(t_game *game)
 {
+	game->input_funcs[START_MODE] = start_input_mode;
 	game->input_funcs[GAME_MODE] = game_input_mode;
 	game->input_funcs[LEADERBOARD_MODE] = username_input_mode;
 	game->input_funcs[WIN_SCREEN_MODE] = win_screen_mode;
 	game->input_funcs[PAUSE_MODE] = pause_mode;
 	game->input_funcs[CONTROLS_MENU_MODE] = controls_mode;
+	game->scene_funcs[START_MODE] = (void *)start_game_scene;
 	game->scene_funcs[GAME_MODE] = (void *)pac_game_scene;
 	game->scene_funcs[LEADERBOARD_MODE] = (void *)leaderboard_game_scene;
 	game->scene_funcs[WIN_SCREEN_MODE] = (void *)win_game_scene;
@@ -100,10 +102,10 @@ void	init_default_button(t_button *button, int size, char *text)
 {
 	button->size.y = size * 1.8f;
 	button->size.x = size * 12;
-	button->background_color = AIM_COLOR;
+	button->background_color = 0x0;
 	button->text = (t_text){text, (t_vector){0, 0}, VCenter | HCenter, 0xFFFFFF};
 	button->draw_button = (void *)show_button;
-	button->on_selected = selected_button_func;
+	button->on_selected = selected_arrow_button_func;
 	button->on_pressed = selected_button_func;
 	button->on_released = default_button_func;
 }
@@ -111,24 +113,41 @@ void	init_default_button(t_button *button, int size, char *text)
 void	init_buttons(t_game *game)
 {
 	const int	font_size = game->hud.font_size * 2;
-	int	counter;
+	int			counter;
 
-	init_default_button(game->pause.buttons, font_size, "continue");
+	init_default_button(game->pause.buttons, font_size, "start");
 	init_default_button(game->pause.buttons + 1, font_size, "controls");
 	init_default_button(game->pause.buttons + 2, font_size, "exit");
 	counter = -1;
 	while (++counter < PAUSE_ENTRIES)
 	{
-		game->pause.buttons[counter].text.pos.x = game->hud_img.size.x / 2;
-		game->pause.buttons[counter].text.pos.y = font_size * (counter + 2) * 3;
-		game->pause.buttons[counter].pos.x = game->hud_img.size.x / 2 - game->pause.buttons[counter].size.x / 2;
-		// - (ft_strlen(game->pause.buttons[counter].text.text) * font_size) / 2;
+		game->pause.buttons[counter].text.pos.x = game->hud_img.size.x / 3;
+		game->pause.buttons[counter].text.pos.y = (game->hud_img.size.y * 0.4f) + counter * game->pause.buttons[counter].size.y;
+		game->pause.buttons[counter].pos.x = game->pause.buttons[counter].text.pos.x - game->pause.buttons[counter].size.x / 2;
 		game->pause.buttons[counter].pos.y = game->pause.buttons[counter].text.pos.y - font_size;
 	}
-	game->pause.buttons[0].on_released = continue_button_func;
+	game->pause.buttons[0].on_released = start_button_func;
 	game->pause.buttons[1].on_released = controls_button_func;
 	game->pause.buttons[2].on_released = exit_button_func;
 	game->pause.buttons[game->pause.index].selected = 1;
+}
+
+void	change_button_to_pause_mode(t_game *game)
+{
+	const int	font_size = game->hud.font_size * 2;
+	int			counter;
+
+	game->pause.buttons[0].text.text = "continue";
+	counter = -1;
+	while (++counter < PAUSE_ENTRIES)
+	{
+		game->pause.buttons[counter].on_selected = selected_button_func;
+		game->pause.buttons[counter].background_color = AIM_COLOR;
+		game->pause.buttons[counter].text.pos.x = game->hud_img.size.x / 2;
+		game->pause.buttons[counter].text.pos.y = font_size * (counter + 2) * 3;
+		game->pause.buttons[counter].pos.x = game->hud_img.size.x / 2 - game->pause.buttons[counter].size.x / 2;
+		game->pause.buttons[counter].pos.y = game->pause.buttons[counter].text.pos.y - font_size;
+	}
 }
 
 void	initialize_game_parameters(t_game *game)
@@ -154,7 +173,6 @@ void	initialize_game_parameters(t_game *game)
 	if (game->column == NULL)
 		error_exit(game, 0, NULL);
 	init_hud(&game->hud);
-	init_input_and_scene_funcs(game);
 	init_buttons(game);
 }
 
@@ -219,8 +237,7 @@ void	set_input_mode_chars(t_game *game)
 	game->player_lb_data->score = game->hud.score.value;
 	ft_bzero(game->player_lb_data->name, 9);
 	game->place = malloc(8);
-	ft_bzero(game->place, 8);
-	set_game_input_mode(game, GAME_MODE);
+	ft_bzero(game->place, 8);  
 }
 
 void	play_sounds(t_game *game)
@@ -236,6 +253,8 @@ void	play_sounds(t_game *game)
 		enemy->sound.def.volume_left = 0.01;
 		enemy->sound.def.volume_right = 0.01;
 		enemy->sound.play = cs_play_sound(game->audio.ctx, enemy->sound.def);
+		if (enemy->sound.play)
+			enemy->sound.play->paused = 1;
 		list = list->next;
 	}
 }
@@ -273,13 +292,14 @@ int	init_game(t_map *map)
 	t_game	game;
 
 	ft_bzero(&game, sizeof(game));
+	init_input_and_scene_funcs(&game);
 	game.scene.parameter = &game;
-	game.scene.scene_func = (void *) pac_game_scene;
+	set_game_input_mode(&game, START_MODE);
 	game.map = map;
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
 		error_exit(&game, 1, "Game initialization error: MLX initialization");
-	// import_texture_to_img(&game, &game.pacman_logo, "assets/textures/pacman_logo.xpm", 600, 150);
+	import_texture_to_img(&game, &game.pacman_logo, "assets/textures/pacman_logo.xpm", 1280, 384);
 	init_main_game_sound(&game);
 	set_game_events_sounds(&game.audio, map->sounds);
 	initialize_game_parameters(&game);

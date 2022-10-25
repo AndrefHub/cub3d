@@ -10,8 +10,16 @@ void	set_game_input_mode(t_game *game, int mode)
 void	start_game_scene(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-	
-	put_frame(game);
+	draw_hud(game);
+	if (game->pacman_logo.addr)
+		put_image_to_image(&game->img, (t_vector){(game->img.size.x -
+			game->pacman_logo.size.x) / 2, 0}, &game->pacman_logo);
+	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x
+	- game->img.size.x) / 2, 0}, &game->img);
+	all_button_mouse_actions(game, game->pause.buttons, PAUSE_ENTRIES);
+	all_button_actions(game, game->pause.buttons, PAUSE_ENTRIES);
+	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->hud_img.mlx_img,
+							0, 0);
 	update_time(game);
 }
 
@@ -45,11 +53,6 @@ void	pac_game_scene(t_game *game)
 void	leaderboard_game_scene(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-	// draw_afterdeath_animation(game);
-	// if (game->afterdeath != 1)
-	// {
-	// 	set_game_input_mode(game, WIN_SCREEN_MODE);
-	// }
 	put_ended_game_image(game);
 	update_time(game);
 }
@@ -61,9 +64,13 @@ void	end_game_dim(t_game *game)
 
 	if (!i)
 	{
-		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 		game->show_map = 0;
 		change_all_enemies_cry_paused(game, 1);
+		if (edibles_eaten(game))
+		{
+			// stop_game();
+		}
+		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 	}
 	if (i < 50 && get_time() - time > 35)
 	{

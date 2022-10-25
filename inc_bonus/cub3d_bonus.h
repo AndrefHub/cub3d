@@ -68,13 +68,19 @@ typedef struct node
 	struct node	*parent;
 } t_astar_node;
 
+typedef t_astar_node t_node;
+
+typedef struct s_astar
+{
+	t_list	*open;
+	t_list	*closed;
+}	t_astar_utils;
+
 typedef struct s_scene
 {
 	void	(*scene_func)(void*);
 	void	*parameter;
 }	t_scene;
-
-typedef t_astar_node t_node;
 
 // t_text: dummy structure created with sole purpose of
 // putting 5 variables in function
@@ -180,6 +186,12 @@ typedef struct s_button
 	// look up qt button class
 }	t_button;
 
+typedef struct s_buttons
+{
+	t_button	buttons[PAUSE_ENTRIES];
+	int			index;
+}	t_button_list;
+
 typedef struct game
 {
 	t_scene			scene;
@@ -273,12 +285,8 @@ typedef struct game
 	void			(*scene_funcs[MAX_MODES])(void*);
 	int				(*input_funcs[MAX_MODES])(int, struct game *);
 	void			(*death_func)(struct game *);
-	struct s_pause
-	{
-		t_button	buttons[PAUSE_ENTRIES];
-		int			index;
-	}	pause;
-	t_img	pacman_logo;
+	t_button_list	pause;
+	t_img			pacman_logo;
 }	t_game;
 
 typedef struct s_enemy
@@ -293,12 +301,6 @@ typedef struct s_enemy
 	t_sound		sound;
 	int			panic_mode;
 }				t_enemy;
-
-typedef struct s_astar
-{
-	t_list	*open;
-	t_list	*closed;
-}	t_astar_utils;
 
 # include "prototypes.h"
 
