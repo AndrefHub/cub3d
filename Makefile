@@ -96,6 +96,7 @@ CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
 ###
 INC_BONUSDIR = inc_bonus/
 CUB_BONUSHDR  = $(addprefix $(INC_BONUSDIR), cub3d_bonus.h)
+CUB_BONUSINC = inc_bonus/constants_bonus.h inc_bonus/cub3d_bonus.h inc_bonus/prototypes.h
 SNDLIB  = cute_sound/cute_sound.o
 LBFOLDER  = .lb
 
@@ -123,12 +124,12 @@ DEFINES	= -DASSETS_PATH='"'$(GOINFRE)'"'
 
 all: download_assets $(NAME)
 
-$(OBJDIR)%.o: $(SRCDIR)%.c $(MSHHDR)
+$(OBJDIR)%.o: $(SRCDIR)%.c $(CUB_HDR)
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(FLAGS) -c $< -o $@ -include $(LIBHDR) -include $(CUBHDR) $(DEFINES)
 	@printf "\033[1;36m/\033[0m"
 
-$(OBJ_BONUSDIR)%.o: $(SRC_BONUSDIR)%.c $(MSHHDR)
+$(OBJ_BONUSDIR)%.o: $(SRC_BONUSDIR)%.c $(CUB_BONUSHDR) $(CUB_BONUSINC)
 	@mkdir -p $(OBJ_BONUSDIR)
 	@$(CC) $(FLAGS) -c $< -o $@ -include $(LIBHDR) -include $(CUB_BONUSHDR) $(DEFINES)
 	@printf "\033[1;36m/\033[0m"

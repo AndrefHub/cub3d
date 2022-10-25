@@ -59,7 +59,7 @@ void	import_texture_to_img(t_game *game, t_img *img, char *filename, int size_x,
 	img->alpha_start_x = malloc(sizeof(short ) * img->size.x);
 	img->alpha_end_x = malloc(sizeof(short ) * img->size.x);
 	skip_transparent_background(img);
-	printf("%s --- %d : %d\n", filename, img->alpha_start_x[70], img->alpha_end_x[70]);
+//	printf("%s --- %d : %d\n", filename, img->alpha_start_x[70], img->alpha_end_x[70]);
 }
 
 void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_size)

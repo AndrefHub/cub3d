@@ -24,13 +24,12 @@ void	initialize_player(t_game *game)
 	game->player.delta.x = cosf(game->player.angle) * 5;
 	game->player.delta.y = sinf(game->player.angle) * 5;
 
-	game->player.plane = (t_fvector) {0.0f, 0.66f};
-	game->fov = ((game->img.aspect >= FOV) - (game->img.aspect < FOV)) *
-			sqrtf(fabsf((float) M_PI_4 * (game->img.aspect - FOV) / 2)) + M_2_PI;
+	game->fov = M_PI / 1.3f;
 	game->col_step = tanf(game->fov / (game->img.size.x - 1));
 	game->col_scale = 1.0f / game->col_step;
-	printf("%f, %f\n", game->col_step, game->fov);
-	// game->player.health = 1;
+	printf("FOV = %.1f\n", 114 * atanf(game->col_step * (game->img.size.x / 2)));
+	game->player.plane = (t_fvector) {0.0f, (114 * atanf(game->col_step * (game->img.size.x / 2)) / 100)};
+//	game->player.plane = (t_fvector) {0.0f, 0.6};
 	game->player.last_attack_time = 0;
 }
 
