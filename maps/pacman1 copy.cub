@@ -1,0 +1,210 @@
+W1 ./assets/textures/pacwall/wall01.xpm
+./assets/textures/pacwall/wall02.xpm
+./assets/textures/pacwall/wall03.xpm
+./assets/textures/pacwall/wall04.xpm
+./assets/textures/pacwall/wall05.xpm
+./assets/textures/pacwall/wall06.xpm
+./assets/textures/pacwall/wall07.xpm
+./assets/textures/pacwall/wall08.xpm
+./assets/textures/pacwall/wall09.xpm
+./assets/textures/pacwall/wall10.xpm
+./assets/textures/pacwall/wall11.xpm
+./assets/textures/pacwall/wall12.xpm
+./assets/textures/pacwall/wall13.xpm
+./assets/textures/pacwall/wall14.xpm
+./assets/textures/pacwall/wall15.xpm
+./assets/textures/pacwall/wall16.xpm
+./assets/textures/pacwall/wall17.xpm
+./assets/textures/pacwall/wall18.xpm
+./assets/textures/pacwall/wall19.xpm
+./assets/textures/pacwall/wall20.xpm
+./assets/textures/pacwall/wall21.xpm
+./assets/textures/pacwall/wall22.xpm
+./assets/textures/pacwall/wall23.xpm
+./assets/textures/pacwall/wall24.xpm
+./assets/textures/pacwall/wall25.xpm
+./assets/textures/pacwall/wall26.xpm
+./assets/textures/pacwall/wall27.xpm
+./assets/textures/pacwall/wall28.xpm
+./assets/textures/pacwall/wall29.xpm
+./assets/textures/pacwall/wall30.xpm
+./assets/textures/pacwall/wall31.xpm
+./assets/textures/pacwall/wall32.xpm
+./assets/textures/pacwall/wall33.xpm
+./assets/textures/pacwall/wall34.xpm
+./assets/textures/pacwall/wall35.xpm
+./assets/textures/pacwall/wall36.xpm
+./assets/textures/pacwall/wall37.xpm
+./assets/textures/pacwall/wall38.xpm
+./assets/textures/pacwall/wall39.xpm
+./assets/textures/pacwall/wall40.xpm
+./assets/textures/pacwall/wall41.xpm
+./assets/textures/pacwall/wall42.xpm
+./assets/textures/pacwall/wall43.xpm
+./assets/textures/pacwall/wall44.xpm
+./assets/textures/pacwall/wall45.xpm
+./assets/textures/pacwall/wall46.xpm
+./assets/textures/pacwall/wall47.xpm
+./assets/textures/pacwall/wall48.xpm
+./assets/textures/pacwall/wall49.xpm
+./assets/textures/pacwall/wall50.xpm
+./assets/textures/pacwall/wall51.xpm
+./assets/textures/pacwall/wall52.xpm
+./assets/textures/pacwall/wall53.xpm
+./assets/textures/pacwall/wall54.xpm
+./assets/textures/pacwall/wall55.xpm
+./assets/textures/pacwall/wall56.xpm
+./assets/textures/pacwall/wall57.xpm
+./assets/textures/pacwall/wall58.xpm
+./assets/textures/pacwall/wall59.xpm
+./assets/textures/pacwall/wall60.xpm
+./assets/textures/pacwall/wall61.xpm
+./assets/textures/pacwall/wall62.xpm
+./assets/textures/pacwall/wall63.xpm
+./assets/textures/pacwall/wall64.xpm
+./assets/textures/pacwall/wall65.xpm
+./assets/textures/pacwall/wall66.xpm
+
+W2 ./assets/textures/monke/monke666.xpm
+W3 ./assets/textures/wah-goodman/wah103.xpm
+W4 ./assets/textures/wah-goodman/wah104.xpm
+W5 ./assets/textures/wah-goodman/wah105.xpm
+W6 ./assets/textures/wah-goodman/wah106.xpm
+W7 ./assets/textures/wah-goodman/wah107.xpm
+W8 ./assets/textures/wah-goodman/wah108.xpm
+W9 ./assets/textures/wah-goodman/wah109.xpm
+WD ./assets/textures/wah-goodman/wah109.xpm
+
+O1 ./assets/textures/ghost/ghost1.xpm
+./assets/textures/ghost/ghost2.xpm
+./assets/textures/ghost/ghost3.xpm
+./assets/textures/ghost/ghost4.xpm
+./assets/textures/ghost/ghost5.xpm
+./assets/textures/ghost/ghost6.xpm
+./assets/textures/ghost/ghost7.xpm
+./assets/textures/ghost/ghost8.xpm
+
+O2 ./assets/textures/paccoin/coin1.xpm
+./assets/textures/paccoin/coin2.xpm
+./assets/textures/paccoin/coin3.xpm
+./assets/textures/paccoin/coin4.xpm
+./assets/textures/paccoin/coin5.xpm
+./assets/textures/paccoin/coin6.xpm
+./assets/textures/paccoin/coin7.xpm
+./assets/textures/paccoin/coin8.xpm
+./assets/textures/paccoin/coin9.xpm
+
+O3 ./assets/textures/pacpill/pill1.xpm
+./assets/textures/pacpill/pill2.xpm
+./assets/textures/pacpill/pill3.xpm
+./assets/textures/pacpill/pill4.xpm
+./assets/textures/pacpill/pill5.xpm
+./assets/textures/pacpill/pill6.xpm
+./assets/textures/pacpill/pill7.xpm
+./assets/textures/pacpill/pill8.xpm
+./assets/textures/pacpill/pill9.xpm
+
+F  ./assets/font/font240/space.xpm
+F! ./assets/font/font240/exclam.xpm
+F" ./assets/font/font240/quotedbl.xpm
+F# ./assets/font/font240/numbersign.xpm
+F$ ./assets/font/font240/dollar.xpm
+F% ./assets/font/font240/percent.xpm
+F& ./assets/font/font240/ampersand.xpm
+F' ./assets/font/font240/quotesingle.xpm
+
+F_ ./assets/font/font240/underscore.xpm
+F: ./assets/font/font240/colon.xpm
+F, ./assets/font/font240/comma.xpm
+F0 ./assets/font/font240/zero.xpm
+F1 ./assets/font/font240/one.xpm
+F2 ./assets/font/font240/two.xpm
+F3 ./assets/font/font240/three.xpm
+F4 ./assets/font/font240/four.xpm
+F5 ./assets/font/font240/five.xpm
+F6 ./assets/font/font240/six.xpm
+F7 ./assets/font/font240/seven.xpm
+F8 ./assets/font/font240/eight.xpm
+F9 ./assets/font/font240/nine.xpm
+
+FA ./assets/font/font240/A.xpm
+FB ./assets/font/font240/B.xpm
+FC ./assets/font/font240/C.xpm
+FD ./assets/font/font240/D.xpm
+FE ./assets/font/font240/E.xpm
+FF ./assets/font/font240/F.xpm
+FG ./assets/font/font240/G.xpm
+FH ./assets/font/font240/H.xpm
+FI ./assets/font/font240/I.xpm
+FJ ./assets/font/font240/J.xpm
+FK ./assets/font/font240/K.xpm
+FL ./assets/font/font240/L.xpm
+FM ./assets/font/font240/M.xpm
+FN ./assets/font/font240/N.xpm
+FO ./assets/font/font240/O.xpm
+FP ./assets/font/font240/P.xpm
+FQ ./assets/font/font240/Q.xpm
+FR ./assets/font/font240/R.xpm
+FS ./assets/font/font240/S.xpm
+FT ./assets/font/font240/T.xpm
+FU ./assets/font/font240/U.xpm
+FV ./assets/font/font240/V.xpm
+FW ./assets/font/font240/W.xpm
+FX ./assets/font/font240/X.xpm
+FY ./assets/font/font240/Y.xpm
+FZ ./assets/font/font240/Z.xpm
+
+S1 ./assets/sounds/monke.wav
+S2 ./assets/sounds/pacman_death.wav
+S3 ./assets/sounds/auuuugh.wav
+F ./assets/textures/sussy_stickmin/sussy-00.xpm
+C ./assets/textures/pacwall/wall12.xpm
+
+111111111111111111111111111111111111111
+100000000000000000010000000000000000001
+10................010................01
+10.000000.0000000.010.0000000.000000.01
+10.011110.0111110.010.0111110.011110.01
+10o011110.0111110.010.0111110.011110o01
+10.011110.0111110.010.0111110.011110.01
+10.000000.0000000.000.0000000.000000.01
+10...................................01
+10.000000.0000000.000.0000000.000000.01
+10.011110.0110.011111110.0110.011110.01
+10.011110.0110.011111110.0110.011110.01
+10.000000.0110.000010000.0110.000000.01
+10........0110....010....0110........01
+100000000.0110000.010.0000110.000000001
+111111110.0111110.010.0111110.011111111
+       10.0111110.010.0111110.01
+       10.0110000000000000110.01
+       10.0110000000000000110.01
+       10.0110000000000000110.01
+       10.011000111e111000110.01
+111111110.0110001000001000110.011111111
+200000000.0000001e0e001000000.000000002
+111111110.0110001000e01000110.011111111
+       10.0110001111111000110.01
+       10.0110000000000000110.01
+       10.0110000000000000110.01
+       10.0110000000000000110.01
+       10.0110001111111000110.01
+111111110.0110001111111000110.011111111
+100000000.0000000001000000000.000000001
+10................010................01
+10.000000.0000000.010.0000000.000000.01
+10.011110.0111110.010.0111110.011110.01
+10.011110.0111110.010.0111110.011110.01
+10.000110.0000000.000.0000000.011000.01
+10o..0110..........E..........0110..o01
+1000.0110.0000.000000000.0000.0110.0001
+1110.0110.0110.011111110.0110.0110.0111
+1110.0110.0110.011111110.0110.0110.0111
+1000.0000.0110.000010000.0110.0000.0001
+10........0110....010....0110........01
+10.00000000110000.010.00001100000000.01
+10.01111111111110.010.01111111111110.01
+10.01111111111110.010.01111111111110.01
+10...................................01
+100000000000000000000000000000000000001
+111111111111111111111111111111111111111

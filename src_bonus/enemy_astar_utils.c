@@ -2,6 +2,8 @@
 
 int	node_comparator(t_node *lhs, t_node *rhs)
 {
+	if (lhs->h == rhs->h)
+		return (lhs->g > rhs->g);
 	return (lhs->h > rhs->h);
 }
 

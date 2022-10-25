@@ -9,7 +9,10 @@ void	set_game_input_mode(t_game *game, int mode)
 // 0
 void	start_game_scene(t_game *game)
 {
+	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
 	
+	put_frame(game);
+	update_time(game);
 }
 
 // 1

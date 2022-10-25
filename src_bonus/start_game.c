@@ -48,7 +48,7 @@ static inline void	get_screen_size(void *mlx_ptr, int *size_x, int *size_y)
 
 static inline void	get_screen_size(void *mlx_ptr, int *size_x, int *size_y)
 {
-	mlx_get_screenf_size(mlx_ptr, size_x, size_y);
+	mlx_get_screen_size(mlx_ptr, size_x, size_y);
 	// *size_x = 1280;
 	// *size_y = 720;
 }
@@ -279,6 +279,7 @@ int	init_game(t_map *map)
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
 		error_exit(&game, 1, "Game initialization error: MLX initialization");
+	// import_texture_to_img(&game, &game.pacman_logo, "assets/textures/pacman_logo.xpm", 600, 150);
 	init_main_game_sound(&game);
 	set_game_events_sounds(&game.audio, map->sounds);
 	initialize_game_parameters(&game);

@@ -278,7 +278,7 @@ typedef struct game
 		t_button	buttons[PAUSE_ENTRIES];
 		int			index;
 	}	pause;
-	
+	t_img	pacman_logo;
 }	t_game;
 
 typedef struct s_enemy
