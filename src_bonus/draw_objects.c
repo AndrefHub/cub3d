@@ -7,22 +7,46 @@ int	object_comparator(t_object *obj1, t_object *obj2)
 
 void	calculate_object_params(t_game *game, t_object *object)
 {
-	const t_fvector	delta = (t_fvector) {object->pos.x - game->player.pos.x,
-									  object->pos.y - game->player.pos.y};
 	float angle_to_player;
+	t_fvector sprite;
+	t_fvector transform;
+	float		inv_det;
+	int			spriteScreenX;
 
-	angle_to_player = atan2f(delta.y, delta.x) - game->player.angle;
+	angle_to_player = atan2f(object->pos.y - game->player.pos.y, object->pos.x - game->player.pos.x) - game->player.angle;
 	if (angle_to_player < -PI)
 		angle_to_player += 2 * PI;
-	object->size.y = (int) (game->col_scale / (cos(angle_to_player) * object->distance));
-	object->size.x = object->size.y;
-	object->start.x = (game->img.size.x / 2) + tanf(angle_to_player) * game->col_scale - object->size.x / 2;
-	object->start.y = (game->img.size.y / 2) - object->size.y / 2 - game->z_offset;
-	object->end.x = object->start.x + object->size.x;
-	object->end.y = object->start.y + object->size.y;
-	object->render_step = (t_fvector)
-			{(float) object->sprite->size.x / object->size.x,
-			 (float) object->sprite->size.y / object->size.y};
+	if (object->distance > 0.1f)
+	{
+		object->size.y = (int) (game->col_scale /
+								(cosf(angle_to_player) * object->distance));
+		object->size.x = object->size.y;
+//		object->start.x = (game->img.size.x / 2) + tanf(angle_to_player) / game->col_step - object->size.x / 2;
+//		object->start.y = (game->img.size.y / 2) - object->size.y / 2 - game->z_offset;
+//		object->end.x = object->start.x + object->size.x;
+//		object->end.y = object->start.y + object->size.y;
+//		object->render_step = (t_fvector)
+//				{(float) object->sprite->size.x / object->size.x,
+//				 (float) object->sprite->size.y / object->size.y};
+		sprite = (t_fvector) {object->pos.x - game->player.pos.x, object->pos.y - game->player.pos.y};
+		inv_det = 1.0f / (game->player.plane.x * game->player.vector.y - game->player.vector.x * game->player.plane.y);
+		transform.x = inv_det * (game->player.vector.y * sprite.x - game->player.vector.x * sprite.y);
+		transform.y = inv_det * (-game->player.plane.y * sprite.x + game->player.plane.x * sprite.y);
+		spriteScreenX = (game->img.size.x / 2) * (1 + transform.x / transform.y);
+//		object->size.y = fabs(game->img.size.y / (transform.y));
+		object->start.y = -object->size.y / 2 + game->img.size.y / 2 - game->z_offset;
+		object->end.y = object->size.y / 2 + game->img.size.y / 2 - game->z_offset;
+//		object->size.x = fabs(game->img.size.y / transform.y);
+		object->start.x = -object->size.x / 2 + spriteScreenX;
+		object->end.x = object->size.x / 2 + spriteScreenX;
+		object->render_step = (t_fvector)
+		{(float) object->sprite->size.x / object->size.x,
+		 (float) object->sprite->size.y / object->size.y};
+		if (transform.y <= 0)
+			object->start.x = 2000;
+//		if(transform.y > 0 && stripe > 0 && stripe < w && transform.y < ZBuffer[stripe])
+
+	}
 }
 
 void	draw_object_scaled(t_game *game, t_object *object)
