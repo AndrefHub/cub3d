@@ -21,9 +21,9 @@ void	reset_positions(t_game *game)
 
 int	player_respawn(t_game *game, int *i, t_ull *time)
 {
-	if (game->hud.lives.value_numeric > 0)
+	if (game->hud.lives.value_numeric > 0 && !edibles_eaten(game))
 	{
-		game->hud.health.value_numeric = MAX_HEALTH;
+		game->player.health = MAX_HEALTH;
 		--game->hud.lives.value_numeric;
 		reset_positions(game);
 		*time = 0;

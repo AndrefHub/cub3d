@@ -115,6 +115,7 @@ F' ./assets/font/font240/quotesingle.xpm
 
 F_ ./assets/font/font240/underscore.xpm
 F: ./assets/font/font240/colon.xpm
+F; ./assets/font/font240/semicolon.xpm
 F, ./assets/font/font240/comma.xpm
 F0 ./assets/font/font240/zero.xpm
 F1 ./assets/font/font240/one.xpm

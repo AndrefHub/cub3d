@@ -269,7 +269,6 @@ typedef struct game
 		t_hud_entry	fps;
 		t_hud_entry	score;
 		t_hud_entry	lives;
-		t_hud_entry	health;
 	}			hud;
 	t_list			*leaderboard;
 	char			*macos_chars;

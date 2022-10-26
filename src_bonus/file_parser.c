@@ -8,15 +8,9 @@ int	cmp_string_number(void *lhs, void *rhs)
 		return (ft_strncmp(lhs, rhs, ft_strlen(lhs)));
 }
 
-int	cmp_number(int lhs, int rhs)
-{
-	return (lhs < rhs);
-}
-
 int	cmp_lb_entry(void *lhs, void *rhs)
 {
-	return (cmp_number(((t_lb_entry *)lhs)->score_num, ((t_lb_entry *)rhs)->score_num));
-	// return (cmp_string_number(((t_lb_entry *)lhs)->score, ((t_lb_entry *)rhs)->score) == -1);
+	return (((t_lb_entry *)lhs)->score_num < ((t_lb_entry *)rhs)->score_num);
 }
 
 t_lb_entry	*lb_entry_new(char *name, char *score)

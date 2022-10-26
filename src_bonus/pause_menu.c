@@ -5,7 +5,7 @@ int	show_button(t_game *game, t_button *button)
 	draw_rectangle_fill(&game->hud_img, button->pos, button->size,
 		*((int *)&button->background_color));
 	put_text_to_screen_layout(game->map->font, &game->hud_img,
-		&button->text, game->hud.font_size * 2);
+		&button->text, game->hud.font_size * 1.5);
 	return (0);
 }
 

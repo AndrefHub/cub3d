@@ -1,53 +1,54 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-int		get_rand_color()
+int	get_rand_color(void)
 {
-	const int colors[] = {0x00ff0000, 0x0000ff00, 0x00ffff00, 0x000000ff, 0x00ff00ff};
+	const int	colors[] = {0xff0000, 0x00ff00, 0xffff00, 0x0000ff, 0xff00ff};
 
 	return (colors[ft_rand() % 5]);
 }
 
+void	draw_afterdeath_inner_cycle(t_game *game, t_text *text, int font_size, int y_max)
+{
+	const int	len = (int)ft_strlen(game->macos_chars);
+	t_vector	v;
+
+	v.y = 0;
+	while (v.y < game->img.size.y - font_size)
+	{
+		v.x = 0;
+		while (v.x < game->img.size.x - font_size)
+		{
+			if (ft_rand() % 10 > 2 && ((v.y < (y_max + ((float)(ft_rand() % 5)
+							/ 10.f) * game->img.size.y)) && v.y > y_max
+				- ((float)(ft_rand() % 10) / 10.f) * game->img.size.y))
+			{
+				text->text = (char *)(game->macos_chars + (ft_rand() % len));
+				text->pos = v;
+				text->layout = 0;
+				text->color = get_rand_color();
+				draw_square_fill(&game->img, text->pos, font_size, 0x00000000);
+				put_char_to_screen(game->map->font, &game->img,
+					text, font_size);
+			}
+			v.x += font_size;
+		}
+		v.y += font_size;
+	}
+}
+
 void	draw_afterdeath_animation(t_game *game)
 {
-	const int len = (int) ft_strlen(game->macos_chars);
 	static int	y_max = 0;
-	int	y;
-	int	x;
-	t_text text;
-	int font_size;
+	t_text		text;
+	int			font_size;
 
-	// game->afterdeath = 0;
 	game->death_func = end_game_dim;
-	font_size = game->hud.font_size * 0.9f;
+	font_size = game->hud.font_size * 0.6f - 1;
 	if (y_max > game->img.size.y + font_size)
-		return;
-	// game->afterdeath = 1;
+		return ;
 	game->death_func = draw_afterdeath_animation;
 	fill_ceiling_color(&game->img, 0x00000000, (game->img.size.y / 2) - y_max);
-	y = 0;
-	while (y < game->img.size.y - font_size)
-	{
-		x = 0;
-		while (x < game->img.size.x - font_size)
-		{
-			if (ft_rand() % 10 > 2
-			&& ((y < (y_max + ((float) (ft_rand() % 5) / 10.f) * game->img.size.y))
-			&& y > y_max - ((float) (ft_rand() % 10) / 10.f) * game->img.size.y))
-			{
-				text.text = (char *) (game->macos_chars + (ft_rand() % len));
-				text.pos = (t_vector) {x, y};
-				text.layout = 0;
-				text.color = get_rand_color();
-				draw_square_fill(&game->img, text.pos, font_size,
-								 0x00000000);
-				put_char_to_screen(game->map->font, &game->img, &text,
-								   font_size);
-			}
-			x += font_size;
-		}
-		y += font_size;
-	}
+	draw_afterdeath_inner_cycle(game, &text, font_size, y_max);
 	y_max += font_size;
 	put_frame(game);
-	// usleep(70000);
 }

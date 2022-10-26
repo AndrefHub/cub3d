@@ -38,8 +38,9 @@ int	put_char_to_screen(t_texture *font, t_img *img, t_text *text, int font_size)
 {
 	if (font[ft_toupper(*text->text) - FONT_OFFSET].img)
 	{
-		put_downscaled_image(img, text, ((t_img *)font
-			[ft_toupper(*text->text) - FONT_OFFSET].img->content), FONT_SIZE / font_size);
+		put_downscaled_image(img, text,
+			((t_img *)font[ft_toupper(*text->text) - FONT_OFFSET].img->content),
+			FONT_SIZE / font_size);
 		return (1);
 		// put_image_to_image(&game->img, pos, ((t_img *)game->map->font
 		// 	[ft_toupper(c) - FONT_OFFSET].img->content));
@@ -47,7 +48,7 @@ int	put_char_to_screen(t_texture *font, t_img *img, t_text *text, int font_size)
 		// 	((t_img *)game->map->font[ft_toupper(c) - FONT_OFFSET].img->content)->mlx_img, 
 		// 	pos.x, pos.y);
 	}
-	return (0);
+	return (1);
 }
 
 void	put_text_to_screen(t_texture *font, t_img *img, t_text *text, int font_size)

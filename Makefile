@@ -2,7 +2,7 @@ NAME    = cub3d
 #CC      = clang
 CC      = gcc
 # FLAGS	= -Wall -Wextra -Werror -g -O0 -fsanitize=address
-FLAGS	= -Wall -Wextra -Werror -MMD -g -Ofast -march=native 
+FLAGS	= -Wall -Wextra -Werror -g -Ofast -march=native 
 LFLAGS	= -Llibft -lft
 ###
 SRCDIR	= src/
@@ -33,19 +33,23 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					border_checking.c \
 					button_actions.c \
 					button_core_funcs.c \
+					button_selected.c \
 					check_file.c \
 					controller.c \
-					death_events.c \
-					death_utils.c \
 					demo_utils.c \
 					downscale_image.c \
 					draw_ceil_floor.c \
 					draw_hud.c \
 					draw_map.c \
 					draw_objects.c \
+					draw_objects_utils.c \
 					draw_walls.c \
 					drawing.c \
+					drawing_utils.c \
+					end_game_funcs.c \
+					end_game_utils.c \
 					enemy_actions.c \
+					enemy_actions_utils.c \
 					enemy_astar.c \
 					enemy_astar_utils.c \
 					enemy_move.c \
@@ -54,12 +58,12 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					free_game.c \
 					ft_lstsort.c \
 					ft_utils.c \
+					ft_utils_game.c \
 					game_loop.c \
 					game_scenes.c \
 					game_sound.c \
 					game_textures.c \
 					hooks.c \
-					hooks_pause_mode.c \
 					image_manip.c \
 					init_hud.c \
 					input_char.c \

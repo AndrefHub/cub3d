@@ -112,9 +112,12 @@ F$ ./assets/font/font240/dollar.xpm
 F% ./assets/font/font240/percent.xpm
 F& ./assets/font/font240/ampersand.xpm
 F' ./assets/font/font240/quotesingle.xpm
+F© ./assets/font/font240/copyright.xpm
 
 F_ ./assets/font/font240/underscore.xpm
 F: ./assets/font/font240/colon.xpm
+F; ./assets/font/font240/semicolon.xpm
+F. ./assets/font/font240/period.xpm
 F, ./assets/font/font240/comma.xpm
 F0 ./assets/font/font240/zero.xpm
 F1 ./assets/font/font240/one.xpm
@@ -153,6 +156,11 @@ FW ./assets/font/font240/W.xpm
 FX ./assets/font/font240/X.xpm
 FY ./assets/font/font240/Y.xpm
 FZ ./assets/font/font240/Z.xpm
+
+F[ ./assets/font/font240/pacleft.xpm
+F] ./assets/font/font240/pacright.xpm
+F( ./assets/font/font240/parenleft.xpm
+F) ./assets/font/font240/parenright.xpm
 
 S1 ./assets/sounds/monke.wav
 S2 ./assets/sounds/pacman_death.wav

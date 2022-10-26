@@ -1,16 +1,6 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-int	ft_strchr_int(char *line, int chr)
-{
-	char	*wall;
-
-	wall = ft_strchr(line, chr);
-	if (line && wall)
-		return (wall - line);
-	return (INT32_MAX);
-}
-
-int	ft_strchr_int_arr(char *line, char* chr)
+int	ft_strchr_int_arr(char *line, char *chr)
 {
 	int		min;
 	int		curr;
@@ -80,15 +70,15 @@ void	find_objects(t_map *map)
 	counter = -1;
 	while (map->map[++counter])
 	{
-		x_coord = -1; // not necessary ?
+		x_coord = -1;
 		line = map->map[counter];
 		while (ft_strchr_int_arr(line, OBJECT_CHARS) != INT32_MAX)
 		{
 			object = malloc(sizeof(*object));
 			ft_bzero(object, sizeof(*object));
-			x_coord = (line - map->map[counter]) + ft_strchr_int_arr(line, OBJECT_CHARS);
-			object->pos = (t_fvector) {(float )x_coord + 0.5f,
-				(float )counter + 0.5f};
+			x_coord = (line - map->map[counter])
+				+ ft_strchr_int_arr(line, OBJECT_CHARS);
+			object->pos = (t_fvector){0.5f + x_coord, 0.5f + counter};
 			object->distance = fvector_distance((t_fvector)
 				{map->player_coords.x, map->player_coords.y}, object->pos);
 			object->type = map->map[counter][x_coord];

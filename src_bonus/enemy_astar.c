@@ -22,27 +22,28 @@ t_node	*ft_nodenew(t_node *data)
 
 void	add_all_neighbours(t_game *game, t_astar_utils *lists, t_node *node, t_vector player)
 {
-	int			counter;
+	int			i;
 	t_vector	pos;
 	t_list		*lst;
 
-	counter = -3;
-	while (++counter < 3)
+	i = -3;
+	while (++i < 3)
 	{
-		if (counter)
+		if (i)
 		{
-			pos.y = node->pos.y + counter / 2;
-			pos.x = node->pos.x + (counter % 2);
-			if (0 <= pos.x && pos.x < game->map->map_size.x && 0 <= pos.y &&
-				pos.y < game->map->map_size.y && !is_wall(game->map->map[pos.y]
-				[pos.x]) && !ft_lstfind(lists->closed, (void *)(&pos), pos_equals))
+			pos = (t_vector){node->pos.x + (i % 2), node->pos.y + i / 2};
+			if (0 <= pos.x && pos.x < game->map->map_size.x && 0 <= pos.y
+				&& pos.y < game->map->map_size.y
+				&& !is_wall(game->map->map[pos.y][pos.x])
+				&& !ft_lstfind(lists->closed, (void *)(&pos), pos_equals))
 			{
 				lst = ft_lstfind(lists->open, (void *)(&pos), pos_equals);
 				if (lst && ((t_node *)lst->content)->g > node->g + 1)
 						((t_node *)lst->content)->g = node->g + 1;
 				if (!lst)
-					ft_lstadd_front(&lists->open, ft_lstnew(ft_nodenew(&(t_node){pos,
-						node->g + 1, heuristic_cost(pos, player), node})));
+					ft_lstadd_front(&lists->open,
+						ft_lstnew(ft_nodenew(&(t_node){pos, node->g + 1,
+								heuristic_cost(pos, player), node})));
 			}
 		}
 	}
@@ -72,8 +73,8 @@ t_list	*astar(t_game *game, t_vector enemy, t_vector player)
 
 	lists.open = NULL;
 	lists.closed = NULL;
-	ft_lstadd_back(&lists.open, ft_lstnew(ft_nodenew(&(t_node){enemy, 0,
-									heuristic_cost(enemy, player), NULL})));
+	ft_lstadd_back(&lists.open, ft_lstnew(ft_nodenew(&(t_node)
+			{enemy, 0, heuristic_cost(enemy, player), NULL})));
 	while (ft_lstsize(lists.open))
 	{
 		ft_lstsort(&lists.open, node_comparator);

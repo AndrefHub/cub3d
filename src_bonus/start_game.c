@@ -2,7 +2,6 @@
 
 void	initialize_mlx_parameters(t_game *game)
 {
-	mouse_hide(game->mlx.id, game->mlx.window);
 	mlx_do_key_autorepeatoff(game->mlx.id);
 	mlx_hook(game->mlx.window, KeyPress, KeyPressMask, key_hook_press, game);
 	mlx_hook(game->mlx.window, KeyRelease, KeyReleaseMask, key_hook_release, game);
@@ -29,8 +28,7 @@ void	initialize_player(t_game *game)
 	game->col_scale = 1.0f / game->col_step;
 	printf("FOV = %.1f\n", 114 * atanf(game->col_step * (game->img.size.x / 2)));
 	game->player.plane = (t_fvector) {0.0f, (114 * atanf(game->col_step * (game->img.size.x / 2)) / 100)};
-//	game->player.plane = (t_fvector) {0.0f, 0.6};
-	// game->player.health = 1;
+	game->player.health = 1;
 	game->player.last_attack_time = 0;
 }
 
@@ -61,14 +59,14 @@ void	initialize_game_hud(t_game *game)
 	{
 		import_texture_to_img(game, &game->hud_texture,
 			"assets/textures/hud/pac_hud1440p.xpm", 2560, 1360);
-		game->hud.font_size = 30; //TODO: set font_size
+		game->hud.font_size = 40; //TODO: set font_size
 		game->mlx.game_size = (t_vector) {1840, 1135};
 	}
 	else if (game->mlx.win_size.x >= 1920 && game->mlx.win_size.y >= 1080)
 	{
 		import_texture_to_img(game, &game->hud_texture,
 			"assets/textures/hud/pac_hud1080p.xpm", 1920, 1000);
-		game->hud.font_size = 20;
+		game->hud.font_size = 30;
 		game->mlx.game_size = (t_vector) {1380, 830};
 	}
 	else if (game->mlx.win_size.x >= 1280 && game->mlx.win_size.y >= 720)
@@ -76,7 +74,7 @@ void	initialize_game_hud(t_game *game)
 		import_texture_to_img(game, &game->hud_texture,
 			"assets/textures/hud/pac_hud720p.xpm", 1280, 720);
 		game->mlx.game_size = (t_vector) {920, 607};
-		game->hud.font_size = 15;
+		game->hud.font_size = 20;
 	}
 	game->hud_img = initialize_img(&game->hud_img, game->mlx.id,
 		game->mlx.win_size.x, game->mlx.win_size.y);
@@ -112,7 +110,7 @@ void	init_default_button(t_button *button, int size, char *text)
 
 void	init_buttons(t_game *game)
 {
-	const int	font_size = game->hud.font_size * 2;
+	const int	font_size = game->hud.font_size * 1.5;
 	int			counter;
 
 	init_default_button(game->pause.buttons, font_size, "start");
@@ -121,10 +119,13 @@ void	init_buttons(t_game *game)
 	counter = -1;
 	while (++counter < PAUSE_ENTRIES)
 	{
-		game->pause.buttons[counter].text.pos.x = game->hud_img.size.x / 3;
-		game->pause.buttons[counter].text.pos.y = (game->hud_img.size.y * 0.4f) + counter * game->pause.buttons[counter].size.y;
-		game->pause.buttons[counter].pos.x = game->pause.buttons[counter].text.pos.x - game->pause.buttons[counter].size.x / 2;
-		game->pause.buttons[counter].pos.y = game->pause.buttons[counter].text.pos.y - font_size;
+		game->pause.buttons[counter].text.pos.x = game->hud_img.size.x * 0.3f;
+		game->pause.buttons[counter].text.pos.y = (game->hud_img.size.y * 0.4f)
+			+ counter * game->pause.buttons[counter].size.y;
+		game->pause.buttons[counter].pos.x = game->pause.buttons[counter]
+			.text.pos.x - game->pause.buttons[counter].size.x / 2;
+		game->pause.buttons[counter].pos.y = game->pause.buttons[counter]
+			.text.pos.y - font_size;
 	}
 	game->pause.buttons[0].on_released = start_button_func;
 	game->pause.buttons[1].on_released = controls_button_func;
@@ -134,7 +135,7 @@ void	init_buttons(t_game *game)
 
 void	change_button_to_pause_mode(t_game *game)
 {
-	const int	font_size = game->hud.font_size * 2;
+	const int	font_size = game->hud.font_size * 1.5;
 	int			counter;
 
 	game->pause.buttons[0].text.text = "continue";
@@ -241,11 +242,11 @@ void	set_input_mode_chars(t_game *game)
 }
 
 void	play_sounds(t_game *game)
+// void	play_game_mode_sounds(t_game *game)
 {
 	t_list	*list;
 	t_enemy	*enemy;
 
-	// game->audio.song.play = cs_play_sound(game->audio.ctx, game->audio.song.def);
 	list = game->map->enemies;
 	while (list)
 	{

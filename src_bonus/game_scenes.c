@@ -11,9 +11,13 @@ void	start_game_scene(t_game *game)
 {
 	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
 	draw_hud(game);
+	put_text_to_screen_layout(game->map->font, &game->img, &(t_text)
+		{"kdancy and lsherry present", (t_vector){game->img.size.x / 2, game->hud.font_size / 2},
+		VTop | HCenter, 0xF0F0F0}, game->hud.font_size);
 	if (game->pacman_logo.addr)
-		put_image_to_image(&game->img, (t_vector){(game->img.size.x -
-			game->pacman_logo.size.x) / 2, 0}, &game->pacman_logo);
+		put_image_to_image(&game->img, 
+		(t_vector){(game->img.size.x - game->pacman_logo.size.x) / 2,
+		game->hud.font_size * 2}, &game->pacman_logo);
 	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x
 	- game->img.size.x) / 2, 0}, &game->img);
 	all_button_mouse_actions(game, game->pause.buttons, PAUSE_ENTRIES);
@@ -57,6 +61,11 @@ void	leaderboard_game_scene(t_game *game)
 	update_time(game);
 }
 
+void	stop_respawn(t_game *game)
+{
+	set_game_input_mode(game, LEADERBOARD_MODE);
+}
+
 void	end_game_dim(t_game *game)
 {	
 	static int		i = 0;
@@ -66,10 +75,6 @@ void	end_game_dim(t_game *game)
 	{
 		game->show_map = 0;
 		change_all_enemies_cry_paused(game, 1);
-		if (edibles_eaten(game))
-		{
-			// stop_game();
-		}
 		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 	}
 	if (i < 50 && get_time() - time > 35)
@@ -80,7 +85,6 @@ void	end_game_dim(t_game *game)
 	}
 	else if (i == 50)
 	{
-		set_game_input_mode(game, LEADERBOARD_MODE);
 		if (player_respawn(game, &i, &time))
 			return ;
 		game->player_lb_data->score_num = game->hud.score.value_numeric;

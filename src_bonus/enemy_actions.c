@@ -10,39 +10,20 @@ void	enemy_attack(t_game *game, t_enemy *enemy)
 	}
 	else
 	{
-		game->hud.health.value_numeric -= 1;
-	}
-}
-
-float	calculate_angle(t_fvector p, t_fvector e)
-{
-	const float	multiplication = p.x * e.x + p.y * e.y;
-	const float	determinant = p.x * e.y - p.y * e.x;
-	float atan;
-
-	atan = (atan2(determinant, multiplication));
-	if (atan < 0)
-		atan += 2 * PI;
-	return (atan);
-}
-
-void	update_path(t_game *game, t_enemy *enemy, t_list **path)
-{
-	if (!ft_lstsize(*path))
-	{
-		*path = enemy->pathfinding_algorithm(game, enemy);
+		game->player.health -= 1;
 	}
 }
 
 void	enemy_check_collision(t_game *game, t_enemy *enemy)
 {
 	t_list	*enemies;
-	
+
 	enemies = game->map->enemies;
 	while (enemies)
 	{
-		if ((t_enemy *)enemies->content != enemy && fvector_distance(enemy->object->pos, ((t_enemy *)enemies->content)->
-			object->pos) < PL_RADIUS * 2)
+		if ((t_enemy *)enemies->content != enemy
+			&& fvector_distance(enemy->object->pos,
+				((t_enemy *)enemies->content)->object->pos) < PL_RADIUS * 2)
 		{
 			enemy->object->pos.x -= enemy->delta.x;
 			enemy->object->pos.y -= enemy->delta.y;
@@ -55,8 +36,8 @@ void	enemy_calculate_frame_movement(t_node *node, t_enemy *enemy)
 {
 	const t_fvector	e = {1, 0};
 	t_fvector		p;
-	float 			angle;
-	
+	float			angle;
+
 	if (!node)
 		return ;
 	p.x = .5f + node->pos.x - enemy->object->pos.x;
@@ -93,11 +74,6 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 	}
 }
 
-void	reset_panic_mode(void *en)
-{
-	((t_enemy *)en)->panic_mode = 0;	
-}
-
 void	enemy_move(t_game *game)
 {
 	t_list			*lst;
@@ -108,7 +84,8 @@ void	enemy_move(t_game *game)
 	{
 		enemy = ((t_enemy *)lst->content);
 		enemy_move_along_path(game, enemy);
-		enemy->object->distance = distancef(&game->player.pos, &enemy->object->pos);
+		enemy->object->distance = distancef(&game->player.pos,
+				&enemy->object->pos);
 		check_borders_enemy(game, enemy->object);
 		if (fvector_distance(game->player.pos, enemy->object->pos) < .7)
 			enemy_attack(game, enemy);
