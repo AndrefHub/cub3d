@@ -100,26 +100,17 @@ inline int	pause_mode(int key, t_game *game)
 		game->pause.index = (game->pause.index + PAUSE_ENTRIES - 1) % PAUSE_ENTRIES;
 		game->pause.buttons[game->pause.index].selected = 1;
 	}
-	// else if (key == ENTER)
-	// {
-	// 	set_game_input_mode(game, GAME_MODE);
-	// 	game->scene.scene_func = (void *)pac_game_scene;
-	// }
 	return (0);
-}	
+}
 
-// set_game_input_mode(game, CONTROLS_MODE (4) //
-inline int	controls_mode(int key, t_game *game)
+// set_game_input_mode(game, CONTROLS_MODE) (4) //
+int	controls_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
 	{
 		set_game_input_mode(game, PAUSE_MODE);
 		game->scene.scene_func = (void *)pause_game_scene;
 	}
-	// else if (key == ENTER)
-	// {
-	// 	set_game_input_mode(game, GAME_MODE);
-	// 	game->scene.scene_func = (void *)pac_game_scene;
-	// }
 	return (0);
 }	
+  
