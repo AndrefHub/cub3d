@@ -3,16 +3,16 @@
 void	put_frame(t_game *game)
 {
 	draw_hud(game);
-	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x -
-		game->img.size.x) / 2, 0}, &game->img);
+	put_image_to_image(&game->hud_img, (t_vector)
+	{(game->mlx.win_size.x - game->img.size.x) / 2, 0}, &game->img);
 	if (game->show_map)
 	{
 		draw_map(game);
-		put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x -
-			game->img.size.x) / 2, 0}, &game->map->img);
+		put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x
+				- game->img.size.x) / 2, 0}, &game->map->img);
 	}
-	mlx_put_image_to_window(game->mlx.id, game->mlx.window, game->hud_img.mlx_img,
-							0, 0);
+	mlx_put_image_to_window(game->mlx.id, game->mlx.window,
+		game->hud_img.mlx_img, 0, 0);
 }
 
 float	ftorange(float val, float border)
@@ -41,13 +41,13 @@ void	update_volume(t_game *game)
 			pos = (t_fvector){game->player.pos.x - enemy->object->pos.x,
 				game->player.pos.y - enemy->object->pos.y};
 			angle = calculate_angle((t_fvector){1, 0}, pos);
-			volume.x = ((cosf(angle - PI / 2) + 1) / 2) /
-				fvector_distance(pos, (t_fvector){0, 0}) / 2;
-			volume.y = ((cosf(angle + PI / 2) + 1) / 2) /
-				fvector_distance(pos, (t_fvector){0, 0}) / 2;
-			enemy->sound.play->volume0 += ftorange(volume.x - enemy->sound.play->volume0, 0.01);
-			enemy->sound.play->volume1 += ftorange(volume.y - enemy->sound.play->volume1, 0.01);
-			// printf("l: %f, r: %f\n", enemy->sound.play->volume0, enemy->sound.play->volume1);
+			volume = (t_fvector){((cosf(angle - PI / 2) + 1) / 2) / distancef
+				(&pos, &(t_fvector){0, 0}) / 2, ((cosf(angle + PI / 2) + 1) / 2)
+				/ distancef(&pos, &(t_fvector){0, 0}) / 2};
+			enemy->sound.play->volume0 += ftorange
+				(volume.x - enemy->sound.play->volume0, 0.01);
+			enemy->sound.play->volume1 += ftorange
+				(volume.y - enemy->sound.play->volume1, 0.01);
 		}
 		enemies = enemies->next;
 	}

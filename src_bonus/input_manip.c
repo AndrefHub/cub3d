@@ -15,7 +15,6 @@ char	*crop_prefix(char *line, char *prefix)
 		++begin;
 	while (*begin == ' ' || *begin == '\t')
 		++begin;
-	// if (*begin == '.' && *(begin + 1) == '/')
 	new_line = ft_strdup(begin);
 	free(line);
 	return (new_line);
@@ -36,7 +35,7 @@ char	*skip_empty_lines(int fd)
 	return (line);
 }
 
-int convert_to_rgb(char *line)
+int	convert_to_rgb(char *line)
 {
 	char	**rgb_values;
 	int		rgb;

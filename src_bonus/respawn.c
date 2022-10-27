@@ -6,7 +6,7 @@ void	reset_enemy_position(void *enemy)
 
 	en = enemy;
 	en->object->pos = en->starting_pos;
-	// ft_lstclear(&en->path, free);
+	ft_lstclear(&en->path, free);
 	en->path = NULL;
 }
 

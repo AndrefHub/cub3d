@@ -61,6 +61,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					ft_utils_game.c \
 					game_loop.c \
 					game_scenes.c \
+					game_scenes_utils.c \
 					game_sound.c \
 					game_textures.c \
 					hooks.c \
@@ -72,11 +73,13 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					is_checks.c \
 					leaderboard_funcs.c \
 					main.c \
-					mlx_adapter.c \
+					mlx_adapter_mouse_position.c \
+					mlx_adapter_mouse_visibility.c \
 					parsing.c \
 					parsing_font.c \
 					parsing_textures.c \
 					parsing_utils.c \
+					pause_game.c \
 					pause_menu.c \
 					player_controller.c \
 					player_eating.c \

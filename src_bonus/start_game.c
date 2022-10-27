@@ -58,21 +58,21 @@ void	initialize_game_hud(t_game *game)
 	if (game->mlx.win_size.x >= 2560 && game->mlx.win_size.y >= 1440)
 	{
 		import_texture_to_img(game, &game->hud_texture,
-			"assets/textures/hud/pac_hud1440p.xpm", 2560, 1360);
+			"assets/textures/hud/pac_hud1440p.xpm", (t_vector){2560, 1360});
 		game->hud.font_size = 40; //TODO: set font_size
 		game->mlx.game_size = (t_vector) {1840, 1135};
 	}
 	else if (game->mlx.win_size.x >= 1920 && game->mlx.win_size.y >= 1080)
 	{
 		import_texture_to_img(game, &game->hud_texture,
-			"assets/textures/hud/pac_hud1080p.xpm", 1920, 1000);
+			"assets/textures/hud/pac_hud1080p.xpm", (t_vector){1920, 1000});
 		game->hud.font_size = 30;
 		game->mlx.game_size = (t_vector) {1380, 830};
 	}
 	else if (game->mlx.win_size.x >= 1280 && game->mlx.win_size.y >= 720)
 	{
 		import_texture_to_img(game, &game->hud_texture,
-			"assets/textures/hud/pac_hud720p.xpm", 1280, 720);
+			"assets/textures/hud/pac_hud720p.xpm", (t_vector){1280, 720});
 		game->mlx.game_size = (t_vector) {920, 607};
 		game->hud.font_size = 20;
 	}
@@ -268,26 +268,6 @@ void	start_game(t_game *game)
 	mlx_loop(game->mlx.id);
 }
 
-char	*get_lb_name(char *filename)
-{
-	char	*lb;
-	char	*dot;
-	char	*res;
-
-	lb = ft_strrchr(filename, '/');
-	if (lb)
-		++lb;
-	else
-		lb = filename;
-	dot = ft_strrchr(lb, '.');
-	res = ft_strndup(lb, dot - lb);
-	lb = ft_strjoin(LEADERBOARD_FOLDER, res);
-	free(res);
-	res = ft_strjoin(lb, ".lb");
-	free(lb);
-	return (res);
-}
-
 int	init_game(t_map *map)
 {
 	t_game	game;
@@ -300,7 +280,7 @@ int	init_game(t_map *map)
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
 		error_exit(&game, 1, "Game initialization error: MLX initialization");
-	import_texture_to_img(&game, &game.pacman_logo, "assets/textures/pacman_logo.xpm", 1280, 384);
+	import_texture_to_img(&game, &game.pacman_logo, "assets/textures/pacman_logo.xpm", (t_vector){1280, 384});
 	init_main_game_sound(&game);
 	set_game_events_sounds(&game.audio, map->sounds);
 	initialize_game_parameters(&game);

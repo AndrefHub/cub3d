@@ -10,7 +10,7 @@
 int	get_string_index(char *str, char c)
 {
 	int	index;
-	
+
 	index = -1;
 	while (str[++index])
 		if (str[index] == c)
@@ -26,18 +26,20 @@ char	**lst_to_array(t_list *tmp)
 
 	size = ft_lstsize(tmp);
 	map = malloc(sizeof(*map) * (size + 1));
-	//TODO: add malloc checking
-	counter = -1;
-	while (++counter < size)
+	if (map)
 	{
-		map[counter] = tmp->content;
-		tmp = tmp->next;
+		counter = -1;
+		while (++counter < size)
+		{
+			map[counter] = tmp->content;
+			tmp = tmp->next;
+		}
+		map[size] = NULL;
 	}
-	map[size] = NULL;
 	return (map);
 }
 
-void	empty_func(void *ptr) //TODO: ??
+void	empty_func(void *ptr)
 {
 	(void) ptr;
 }
@@ -92,6 +94,5 @@ t_map	*parse_file(int ac, char **av)
 	}
 	else
 		error_exit(NULL, 1, "Invalid input file: Map");
-	ft_putendl_fd("Reading error: I don't know where, but it is", 2);
 	return (NULL);
 }

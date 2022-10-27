@@ -52,3 +52,23 @@ void	update_leaderboard_file(t_game *game)
 	}
 	error_exit(game, 0, NULL);
 }
+
+char	*get_lb_name(char *filename)
+{
+	char	*lb;
+	char	*dot;
+	char	*res;
+
+	lb = ft_strrchr(filename, '/');
+	if (lb)
+		++lb;
+	else
+		lb = filename;
+	dot = ft_strrchr(lb, '.');
+	res = ft_strndup(lb, dot - lb);
+	lb = ft_strjoin(LEADERBOARD_FOLDER, res);
+	free(res);
+	res = ft_strjoin(lb, ".lb");
+	free(lb);
+	return (res);
+}

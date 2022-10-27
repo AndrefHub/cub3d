@@ -25,9 +25,6 @@ void	init_main_game_sound(t_game *game)
 
 void	set_game_events_sounds(struct s_audio *audio, char **sounds)
 {
-	// int	counter = -1;
-
-	// while (++counter < MAX_SOUNDS)
 	set_sound(&audio->song, sounds[0]);
 	set_sound(&audio->bonk, sounds[1]);
 	audio->bonk.def.looped = 0;

@@ -10,7 +10,6 @@ void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *))
 	if (curr == to_del)
 	{
 		*lst = curr->next;
-		printf("%c\n", ((t_object *)curr->content)->type);
 		ft_lstdelone(&curr, del);
 		return ;
 	}
@@ -19,7 +18,6 @@ void	ft_lstdelbyaddr(t_list **lst, t_list *to_del, void (*del)(void *))
 		if (curr == to_del)
 		{
 			prev->next = curr->next;
-			printf("%c\n", ((t_object *)curr->content)->type);
 			ft_lstdelone(&curr, del);
 			return ;
 		}
@@ -44,12 +42,14 @@ void	set_panic_mode(t_game *game)
 		pos.x = (counter % 2) * (game->map->map_size.x - 3) + 1;
 		pos.y = ((counter / 2) % 2) * (game->map->map_size.y - 3) + 1;
 		enemy = enemies->content;
-		ft_lstclear(&enemy->path, free);
-		if (!is_wall(game->map->map[pos.y][pos.x]))
-			enemy->path = astar(game, (t_vector){enemy->object->pos.x,
-				enemy->object->pos.y}, pos);
-		// if (!enemy)
-		enemy->panic_mode = 1;
+		if (enemy)
+		{
+			ft_lstclear(&enemy->path, free);
+			if (!is_wall(game->map->map[pos.y][pos.x]))
+				enemy->path = astar(game, (t_vector)
+					{enemy->object->pos.x, enemy->object->pos.y}, pos);
+			enemy->panic_mode = 1;
+		}
 		enemies = enemies->next;
 		++counter;
 	}
@@ -58,19 +58,19 @@ void	set_panic_mode(t_game *game)
 void	pill_eaten(t_game *game)
 {
 	set_panic_mode(game);
-	
 }
 
 void	eat_by_coords(t_game *game, t_vector pos)
 {
-	t_list      *objects;
-	t_object    *object;
+	t_list		*objects;
+	t_object	*object;
 
 	objects = game->objects;
 	while (objects)
 	{
 		object = objects->content;
-		if (object->type != 'e' && (int)object->pos.x == pos.x && (int)object->pos.y == pos.y)
+		if (object->type != 'e' && (int)object->pos.x == pos.x
+			&& (int)object->pos.y == pos.y)
 		{
 			--game->objects_count;
 			game->hud.score.value_numeric += COIN_REWARD + (game->map->map

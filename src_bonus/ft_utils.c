@@ -25,7 +25,7 @@ int	is_space(char c)
 	return (c != ' ' && c != '\t' && c != '\n');
 }
 
-int		is_line_empty(char *line)
+int	is_line_empty(char *line)
 {
 	while (line && *line)
 	{
@@ -39,5 +39,5 @@ int		is_line_empty(char *line)
 float	distancef(t_fvector *vector1, t_fvector *vector2)
 {
 	return (sqrtf(powf(vector2->x - vector1->x, 2)
-				  + powf(vector2->y - vector1->y, 2)));
+			+ powf(vector2->y - vector1->y, 2)));
 }

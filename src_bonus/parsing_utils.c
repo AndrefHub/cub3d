@@ -17,7 +17,7 @@ int	ft_strrchr_int(const char *line, int chr)
 	return (-1);
 }
 
-int	ft_strrchr_int_arr(const char *line, char* chr)
+int	ft_strrchr_int_arr(const char *line, char *chr)
 {
 	int		max;
 	int		curr;
@@ -37,27 +37,28 @@ int	ft_strrchr_int_arr(const char *line, char* chr)
 void	map_to_rectangle(t_map *map)
 {
 	char	**arr;
-	char	*resized_line;
+	char	*resized;
 	int		i;
 
 	i = -1;
-	resized_line = NULL;
+	resized = NULL;
 	arr = map->map;
 	while (arr[++i])
 	{
 		if (ft_strrchr_int_arr(arr[i], WALL_CHARS) < 0)
-			error_exit(NULL, 1, "Parsing error: assets incorrect order or line without walls");
+			error_exit(NULL, 1, "Parsing error: assets incorrect order \
+			or line without walls");
 		if (ft_strrchr_int_arr(arr[i], WALL_CHARS) < map->map_size.x
 			|| !is_wall(arr[i][ft_strlen(arr[i]) - 1]))
 		{
-			resized_line = malloc(sizeof(char) * (map->map_size.x + 1));
-			if (resized_line == NULL)
+			resized = malloc(sizeof(char) * (map->map_size.x + 1));
+			if (resized == NULL)
 				error_exit(NULL, 1, "Memory allocation error: Map processing");
-			ft_memset(resized_line, ' ', sizeof(char) * map->map_size.x);
-			resized_line[map->map_size.x] = 0;
-			ft_memcpy(resized_line, arr[i], ft_strrchr_int_arr(arr[i], WALL_CHARS));
+			ft_memset(resized, ' ', sizeof(char) * map->map_size.x);
+			resized[map->map_size.x] = 0;
+			ft_memcpy(resized, arr[i], ft_strrchr_int_arr(arr[i], WALL_CHARS));
 			free(arr[i]);
-			arr[i] = resized_line;
+			arr[i] = resized;
 		}
 	}
 }

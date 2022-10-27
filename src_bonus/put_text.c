@@ -6,30 +6,28 @@ t_rgb	put_pixel_on_pixel(t_rgb *dst, t_rgb *src)
 		*dst = *src;
 	else if (src->a != 0xFF)
 	{
-		 dst->r += ((src->r - dst->r) * src->a) / 0xFF;
-		 dst->g += ((src->g - dst->g) * src->a) / 0xFF;
-		 dst->b += ((src->b - dst->b) * src->a) / 0xFF;
-//		 dst->r = ((dst->r * (0xFF - src->a)) + (src->r * src->a)) / 0xFF;
-//		 dst->g = ((dst->g * (0xFF - src->a)) + (src->g * src->a)) / 0xFF;
-//		 dst->b = ((dst->b * (0xFF - src->a)) + (src->b * src->a)) / 0xFF;
+		dst->r += ((src->r - dst->r) * src->a) / 0xFF;
+		dst->g += ((src->g - dst->g) * src->a) / 0xFF;
+		dst->b += ((src->b - dst->b) * src->a) / 0xFF;
 	}
 	return (*dst);
 }
 
 void	put_image_to_image(t_img *dst, t_vector pos, t_img *src)
 {
-	const int x = ft_max(-pos.x, 0) - 1;
-	int	xcounter;
-	int	ycounter;
-	
+	const int	x = ft_max(-pos.x, 0) - 1;
+	int			xcounter;
+	int			ycounter;
+
 	ycounter = ft_max(-pos.y, 0) - 1;
 	while (++ycounter < src->size.y && ycounter < dst->size.y - pos.y)
 	{
 		xcounter = x;
 		while (++xcounter < src->size.x && xcounter < dst->size.x - pos.x)
 		{
-			put_pixel_on_pixel((t_rgb *)dst->addr + (pos.y + ycounter) * dst->size.x + pos.x
-				+ xcounter, (t_rgb *)src->addr + ycounter * src->size.x + xcounter);
+			put_pixel_on_pixel((t_rgb *)dst->addr + (pos.y + ycounter)
+				* dst->size.x + pos.x + xcounter,
+				(t_rgb *)src->addr + ycounter * src->size.x + xcounter);
 		}
 	}
 }
@@ -42,11 +40,6 @@ int	put_char_to_screen(t_texture *font, t_img *img, t_text *text, int font_size)
 			((t_img *)font[ft_toupper(*text->text) - FONT_OFFSET].img->content),
 			FONT_SIZE / font_size);
 		return (1);
-		// put_image_to_image(&game->img, pos, ((t_img *)game->map->font
-		// 	[ft_toupper(c) - FONT_OFFSET].img->content));
-		// mlx_put_image_to_window(game->mlx.id, game->mlx.window, 
-		// 	((t_img *)game->map->font[ft_toupper(c) - FONT_OFFSET].img->content)->mlx_img, 
-		// 	pos.x, pos.y);
 	}
 	return (1);
 }
@@ -58,8 +51,8 @@ void	put_text_to_screen(t_texture *font, t_img *img, t_text *text, int font_size
 	tmp = text->text;
 	while (*text->text)
 	{
-		text->pos.x += put_char_to_screen(font, img, text, font_size) * font_size;
-		// text->color -= 0x181818;
+		text->pos.x += put_char_to_screen(font, img, text, font_size)
+			* font_size;
 		++text->text;
 	}
 	text->text = tmp;

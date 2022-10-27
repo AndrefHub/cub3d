@@ -8,30 +8,36 @@ t_ray	ray_initialize(t_game *game, t_fvector ray_dir)
 	ray.unit = (t_fvector) {sqrtf(1 + (ray.dir.y / ray.dir.x) * (ray.dir.y / ray.dir.x)),
 							sqrtf(1 + (ray.dir.x / ray.dir.y) * (ray.dir.x / ray.dir.y))};
 	ray.map_tile = (t_vector) {game->player.pos.x, game->player.pos.y};
-	if (ray.dir.x < 0) {
+	if (ray.dir.x < 0)
+	{
 		ray.step.x = -1;
 		ray.length.x =
 				(game->player.pos.x - (float) ray.map_tile.x) * ray.unit.x;
-	} else {
+	}
+	else
+	{
 		ray.step.x = 1;
 		ray.length.x = (((float) ray.map_tile.x + 1) - game->player.pos.x) *
 					   ray.unit.x;
 	}
-	if (ray.dir.y < 0) {
+	if (ray.dir.y < 0)
+	{
 		ray.step.y = -1;
 		ray.length.y =
 				(game->player.pos.y - (float) ray.map_tile.y) * ray.unit.y;
-	} else {
+	}
+	else
+	{
 		ray.step.y = 1;
-		ray.length.y = (((float) ray.map_tile.y + 1) - game->player.pos.y) *
-					   ray.unit.y;
+		ray.length.y = (((float) ray.map_tile.y + 1) - game->player.pos.y)
+			* ray.unit.y;
 	}
 	return (ray);
 }
 
 float	interception_distance(t_game *game, t_ray *ray)
 {
-	float distance;
+	float	distance;
 
 	distance = 0.0f;
 	while (distance < MAX_RENDER_DISTANCE)
@@ -104,28 +110,32 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 	}
 }
 
-void	get_interception(t_game *game, t_fvector ray_dir, int i) //DDA algorithm
+void	get_interception(t_game *game, t_fvector ray_dir, int i)
 {
 	t_ray	ray;
 	float	distance;
 
 	ray = ray_initialize(game, ray_dir);
 	distance = interception_distance(game, &ray);
-	initialize_columns(game, &ray, distance, i, calculate_angle((t_fvector) {1, 0}, ray_dir));
+	initialize_columns(game, &ray, distance, i,
+		calculate_angle((t_fvector){1, 0}, ray_dir));
 }
 
 void	cast_rays(t_game *game)
 {
-	int		i;
-	t_fvector ray;
+	int			i;
+	t_fvector	ray;
+	float		camera_x;
 
 	i = 0;
-	game->player.vector = (t_fvector) {cosf(game->player.angle), sinf(game->player.angle)};
+	game->player.vector = (t_fvector) {cosf(game->player.angle),
+		sinf(game->player.angle)};
 	while (i < game->img.size.x)
 	{
-		float camera_x = (2.f * i / (float) game->img.size.x - 1);
-		ray = (t_fvector) {game->player.vector.x + game->player.plane.x * camera_x,
-						   game->player.vector.y + game->player.plane.y * camera_x};
+		camera_x = (2.f * i / (float) game->img.size.x - 1);
+		ray = (t_fvector){game->player.vector.x + game->player.plane.x
+			* camera_x, game->player.vector.y
+			+ game->player.plane.y * camera_x};
 		get_interception(game, ray, i);
 		i++;
 	}

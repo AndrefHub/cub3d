@@ -219,7 +219,7 @@ void	set_sound(t_sound *sound, char *filename);
 // src_bonus/game_textures.c //
 
 void	draw_texture_set(t_game *game, struct s_column *column);
-void	import_texture_to_img(t_game *game, t_img *img, char *filename, int size_x, int size_y);
+void	import_texture_to_img(t_game *game, t_img *img, char *filename, t_vector size);
 void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_size);
 void	initialize_wall_textures(t_game *game);
 void	skip_transparent_background(t_img *img);

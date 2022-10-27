@@ -1,45 +1,7 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-int	pause_game(t_game *game)
-{
-	change_all_enemies_cry_paused(game, 1);
-	mouse_show(game->mlx.id, game->mlx.window);
-	set_game_input_mode(game, PAUSE_MODE);
-	return (0);
-}
+// start_input_mode function is in pause_mode.c (thanks norminette)
 
-int	resume_game(t_game *game)
-{
-	change_all_enemies_cry_paused(game, 0);
-	mouse_hide(game->mlx.id, game->mlx.window);
-	set_game_input_mode(game, GAME_MODE);
-	mouse_move(game->mlx.id, game->mlx.window, game->mlx.win_size.x / 2, game->mlx.win_size.y / 2);
-	return (0);
-}
-
-// set_game_input_mode(game, START_MODE) (0) //
-inline int	start_input_mode(int key, t_game *game)
-{
-	if (key == ESC_KEY)
-	{
-		close_hook(game);
-	}
-	else if (key == DOWN_KEY)
-	{
-		game->pause.buttons[game->pause.index].selected = 0;
-		game->pause.index = (game->pause.index + 1) % PAUSE_ENTRIES;
-		game->pause.buttons[game->pause.index].selected = 1;
-	}
-	else if (key == UP_KEY)
-	{
-		game->pause.buttons[game->pause.index].selected = 0;
-		game->pause.index = (game->pause.index + PAUSE_ENTRIES - 1) % PAUSE_ENTRIES;
-		game->pause.buttons[game->pause.index].selected = 1;
-	}
-	return (0);
-}
-
-// set_game_input_mode(game, GAME_MODE) (0) //
 inline int	game_input_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
@@ -58,22 +20,20 @@ inline int	game_input_mode(int key, t_game *game)
 	return (0);
 }
 
-// set_game_input_mode(game, LEADERBOARD_MODE) (1) //
 inline int	username_input_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
 		close_hook(game);
-	if (key == BACKSPACE) // Backspace
+	if (key == BACKSPACE)
 		game->player_lb_data->name[ft_strlen(game->player_lb_data->name) - 1]
 			= '\0';
-	else if (key == ENTER && ft_strlen(game->player_lb_data->name)) // Enter, to add confirm action
+	else if (key == ENTER && ft_strlen(game->player_lb_data->name))
 		update_leaderboard_file(game);
 	else
 		input_char(key, game->player_lb_data->name, game->macos_chars);
 	return (0);
 }
 
-// set_game_input_mode(game, WIN_SCREEN_MODE) (2) //
 inline int	win_screen_mode(int key, t_game *game)
 {
 	if (key == ENTER)
@@ -81,7 +41,6 @@ inline int	win_screen_mode(int key, t_game *game)
 	return (0);
 }
 
-// set_game_input_mode(game, PAUSE_MODE) (3) //
 inline int	pause_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
@@ -97,13 +56,13 @@ inline int	pause_mode(int key, t_game *game)
 	else if (key == UP_KEY)
 	{
 		game->pause.buttons[game->pause.index].selected = 0;
-		game->pause.index = (game->pause.index + PAUSE_ENTRIES - 1) % PAUSE_ENTRIES;
+		game->pause.index = (game->pause.index + PAUSE_ENTRIES - 1)
+			% PAUSE_ENTRIES;
 		game->pause.buttons[game->pause.index].selected = 1;
 	}
 	return (0);
 }
 
-// set_game_input_mode(game, CONTROLS_MODE) (4) //
 int	controls_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
@@ -113,4 +72,3 @@ int	controls_mode(int key, t_game *game)
 	}
 	return (0);
 }	
-  
