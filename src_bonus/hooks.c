@@ -1,10 +1,5 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-bool	key_pressed(t_game *game, int key)
-{
-	return (game->key.k[(short)(key + CHAR_OFFSET)]);
-}
-
 int	close_hook(t_game *game)
 {
 	mlx_clear_window(game->mlx.id, game->mlx.window);
@@ -41,7 +36,6 @@ int	mouse_hook_press(int button, int x, int y, t_game *game)
 	if ((unsigned)button >= sizeof(game->key.m))
 		return (1);
 	game->key.m[button] = true;
-	printf("%d\n", button);
 	if (game->input_mode == PAUSE_MODE || game->input_mode == START_MODE)
 	{
 		game->pause.buttons[game->pause.index].pressed = 1;
@@ -56,7 +50,6 @@ int	mouse_hook_release(int button, int x, int y, t_game *game)
 	if ((unsigned)button >= sizeof(game->key.m))
 		return (1);
 	game->key.m[button] = false;
-	printf("released %d\n", button);
 	if (game->input_mode == PAUSE_MODE || game->input_mode == START_MODE)
 	{
 		game->pause.buttons[game->pause.index].released = 1;

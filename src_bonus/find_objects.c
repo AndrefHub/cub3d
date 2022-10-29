@@ -43,9 +43,10 @@ int	set_player(t_map *map, t_list *lst, char *line, char *orient)
 	return (0);
 }
 
-void	find_enemy(t_list **lst, t_object *object)
+void	find_enemy(t_list **lst, t_object *object, t_list *(*enemy_algorithms[4])(void *, void *))
 {
-	t_enemy	*enemy;
+	static int	type = BLINKY;
+	t_enemy		*enemy;
 
 	if (object->type == 'e')
 	{
@@ -54,9 +55,10 @@ void	find_enemy(t_list **lst, t_object *object)
 		enemy->object = object;
 		enemy->starting_pos = enemy->object->pos;
 		enemy->path = NULL;
-		enemy->pathfinding_algorithm = pathfinding_algo_straight;
+		enemy->pathfinding_algorithm = (void *)enemy_algorithms[type % 4];
 		enemy->message = "cocks";
 		ft_lstadd_back(lst, ft_lstnew(enemy));
+		++type;
 	}
 }
 
@@ -83,7 +85,7 @@ void	find_objects(t_map *map)
 				{map->player_coords.x, map->player_coords.y}, object->pos);
 			object->type = map->map[counter][x_coord];
 			ft_lstadd_back(&map->objects, ft_lstnew(object));
-			find_enemy(&map->enemies, object);
+			find_enemy(&map->enemies, object, map->enemy_algorithms);
 			line = map->map[counter] + x_coord + 1;
 		}
 	}

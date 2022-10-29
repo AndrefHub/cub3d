@@ -12,6 +12,10 @@ t_map	*create_empty_map(void)
 	map->player_coords.y = BAD_COORD;
 	map->last_collision.x = BAD_COORD;
 	map->last_collision.y = BAD_COORD;
+	map->enemy_algorithms[BLINKY] = (void *)pathfinding_algo_straight;
+	map->enemy_algorithms[PINKY] = (void *)pathfinding_algo_predict;
+	map->enemy_algorithms[INKY] = (void *)pathfinding_algo_giga_predict;
+	map->enemy_algorithms[CLYDE] = (void *)pathfinding_algo_straight;
 	return (map);
 }
 

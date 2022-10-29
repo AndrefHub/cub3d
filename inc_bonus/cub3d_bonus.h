@@ -3,6 +3,7 @@
 
 # include "../libft/libft.h"
 # include "constants_bonus.h"
+
 # include <stdbool.h>
 # include <stdlib.h>
 # include "stdio.h"
@@ -82,8 +83,6 @@ typedef struct s_scene
 	void	*parameter;
 }	t_scene;
 
-// t_text: dummy structure created with sole purpose of
-// putting 5 variables in function
 typedef struct text
 {
 	char		*text;
@@ -115,6 +114,7 @@ typedef struct s_map
 	t_list			*enemies;
 	t_list			*objects;
 	char			*map_file;
+	t_list			*(*enemy_algorithms[MAX_ENEMIES])(void *, void *);
 }				t_map;
 
 typedef struct ray

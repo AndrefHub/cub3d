@@ -5,9 +5,9 @@ t_ray	ray_initialize(t_game *game, t_fvector ray_dir)
 	t_ray ray;
 
 	ray.dir = ray_dir;
-	ray.unit = (t_fvector) {sqrtf(1 + (ray.dir.y / ray.dir.x) * (ray.dir.y / ray.dir.x)),
+	ray.unit = (t_fvector){sqrtf(1 + (ray.dir.y / ray.dir.x) * (ray.dir.y / ray.dir.x)),
 							sqrtf(1 + (ray.dir.x / ray.dir.y) * (ray.dir.x / ray.dir.y))};
-	ray.map_tile = (t_vector) {game->player.pos.x, game->player.pos.y};
+	ray.map_tile = (t_vector){game->player.pos.x, game->player.pos.y};
 	if (ray.dir.x < 0)
 	{
 		ray.step.x = -1;
@@ -79,7 +79,7 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 			camera -= 2 * PI;
 		game->column[i].height = game->col_scale / distance;
 		game->column[i].perp_dist = distance * cosf(camera);
-		game->column[i].pos = (t_fvector) {game->player.pos.x + cosf(ray_angle)
+		game->column[i].pos = (t_fvector){game->player.pos.x + cosf(ray_angle)
 																* distance, game->player.pos.y + sinf(ray_angle) * distance};
 		if (ray->length.y - ray->unit.y < ray->length.x - ray->unit.x)
 		{
@@ -100,7 +100,7 @@ void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float r
 			game->column[i].color = 0xFFAAAA;
 		game->column[i].distance = distance;
 		game->column[i].ray_dir = ray->dir;
-		game->column[i].cell = (t_vector) {ray->map_tile.x, ray->map_tile.y};
+		game->column[i].cell = (t_vector){ray->map_tile.x, ray->map_tile.y};
 	}
 	else
 	{
@@ -128,7 +128,7 @@ void	cast_rays(t_game *game)
 	float		camera_x;
 
 	i = 0;
-	game->player.vector = (t_fvector) {cosf(game->player.angle),
+	game->player.vector = (t_fvector){cosf(game->player.angle),
 		sinf(game->player.angle)};
 	while (i < game->img.size.x)
 	{

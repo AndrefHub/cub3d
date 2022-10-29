@@ -64,6 +64,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					game_scenes_utils.c \
 					game_sound.c \
 					game_textures.c \
+					get_screen_size.c \
 					hooks.c \
 					image_manip.c \
 					init_hud.c \
@@ -71,6 +72,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					input_funcs.c \
 					input_manip.c \
 					is_checks.c \
+					key_pressed.c \
 					leaderboard_funcs.c \
 					main.c \
 					mlx_adapter_mouse_position.c \
@@ -88,6 +90,9 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					ray_casting.c \
 					respawn.c \
 					start_game.c \
+					start_game_buttons.c \
+					start_game_game_data.c \
+					start_game_title_screen.c \
 					time_funcs.c \
 					vector_utils.c
 

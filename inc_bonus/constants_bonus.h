@@ -135,6 +135,15 @@ enum e_mode
 	MAX_MODES
 };
 
+enum e_enemies
+{
+	BLINKY,
+	PINKY,
+	INKY,
+	CLYDE,
+	MAX_ENEMIES
+};
+
 enum e_reward
 {
 	COIN_REWARD = 10,

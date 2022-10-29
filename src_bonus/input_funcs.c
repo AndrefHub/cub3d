@@ -1,7 +1,5 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
-// start_input_mode function is in pause_mode.c (thanks norminette)
-
 inline int	game_input_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
