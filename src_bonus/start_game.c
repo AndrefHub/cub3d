@@ -264,8 +264,43 @@ void	start_game(t_game *game)
 {
 	init_time(game);
 	play_sounds(game);
-	wait_milliseconds(500);
 	mlx_loop(game->mlx.id);
+}
+
+void	initialize_start_game_variables(t_game *game)
+{
+	import_texture_to_img(game, &game->pacman_logo, 
+		"assets/textures/pacman_logo.xpm", (t_vector){1280, 384});
+    initialize_sprites(game, MAX_FONT_CHARS,
+		(t_texture *)game->map->font, FONT_SIZE);
+	initialize_game_parameters(game);
+	initialize_mlx_parameters(game);
+	set_input_mode_chars(game);
+}
+
+void	initialize_textures(t_game *game)
+{
+	initialize_sprites(game, MAX_OBJECTS, (t_texture *)game->map->object, TEXTURE_SIZE);
+	initialize_sprites(game, MAX_WALL_CHARS, (t_texture *)game->map->walls, TEXTURE_SIZE);
+	initialize_sprites(game, 1, &game->map->floor, TEXTURE_SIZE);
+	initialize_sprites(game, 1, &game->map->ceiling, TEXTURE_SIZE);
+	initialize_wall_textures(game);
+}
+
+void	*initialize_extra(void *ptr)
+{
+	t_game	*game;
+
+	game = ptr;
+	initialize_player(game);
+	initialize_textures(game);
+	initialize_game_objects(game);
+	set_enemy_sounds(game);
+	clear_font_outline(game);
+	game->lb_filename = get_lb_name(game->map->map_file);
+	game->leaderboard = get_leaderboard(game->lb_filename);
+	game->death_func = end_game_dim;
+	return (NULL);
 }
 
 int	init_game(t_map *map)
@@ -273,32 +308,19 @@ int	init_game(t_map *map)
 	t_game	game;
 
 	ft_bzero(&game, sizeof(game));
+	game.map = map;
 	init_input_and_scene_funcs(&game);
 	game.scene.parameter = &game;
 	set_game_input_mode(&game, START_MODE);
-	game.map = map;
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
 		error_exit(&game, 1, "Game initialization error: MLX initialization");
-	import_texture_to_img(&game, &game.pacman_logo, "assets/textures/pacman_logo.xpm", (t_vector){1280, 384});
+	initialize_start_game_variables(&game);
 	init_main_game_sound(&game);
 	set_game_events_sounds(&game.audio, map->sounds);
-	initialize_game_parameters(&game);
-	initialize_player(&game);
-	initialize_sprites(&game, MAX_OBJECTS, (t_texture *)game.map->object, TEXTURE_SIZE);
-    initialize_sprites(&game, MAX_FONT_CHARS, (t_texture *)game.map->font, FONT_SIZE);
-	initialize_sprites(&game, MAX_WALL_CHARS, (t_texture *)game.map->walls, TEXTURE_SIZE);
-	initialize_sprites(&game, 1, &game.map->floor, TEXTURE_SIZE);
-	initialize_sprites(&game, 1, &game.map->ceiling, TEXTURE_SIZE);
-	initialize_wall_textures(&game);
-	initialize_game_objects(&game);
-	initialize_mlx_parameters(&game);
-	set_input_mode_chars(&game);
-	set_enemy_sounds(&game);
-	clear_font_outline(&game);
-	game.lb_filename = get_lb_name(map->map_file);
-	game.leaderboard = get_leaderboard(game.lb_filename);
-	game.death_func = end_game_dim;
+
+	initialize_extra(&game);
+
 	start_game(&game);
 	return (1);
 }
