@@ -57,7 +57,7 @@ void	set_enemy_sounds(t_game *game)
 	while (elem)
 	{
 		enemy = elem->content;
-		copy_sound(&enemy->sound, &game->audio.enemy);
+		copy_sound(&enemy->sound, &game->audio.sounds[ENEMY_SOUND]);
 		elem = elem->next;
 	}
 }

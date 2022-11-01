@@ -2,8 +2,8 @@
 
 void	free_sound(t_game *game)
 {
-	cs_free_sound(&game->audio.bonk.file);
-	cs_free_sound(&game->audio.song.file);
+	cs_free_sound(&game->audio.sounds[DEATH_SOUND].file);
+	// cs_free_sound(&game->audio.song.file);
 }
 
 void	free_texture_lists(t_game *game)

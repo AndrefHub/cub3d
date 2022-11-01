@@ -32,7 +32,7 @@ void	change_all_enemies_cry_paused(t_game *game, int paused)
 
 void	pause_game_actions(t_game *game)
 {
-	cs_play_sound(game->audio.ctx, game->audio.bonk.def);
+	// cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 	game->show_map = 0;
 	change_all_enemies_cry_paused(game, 1);
 }

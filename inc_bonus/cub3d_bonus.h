@@ -251,9 +251,7 @@ typedef struct game
 	struct			s_audio
 	{
 		cs_context_t	*ctx;
-		t_sound			song;
-		t_sound			bonk;
-		t_sound			enemy;
+		t_sound			sounds[MAX_SOUNDS];
 	}					audio;
 	struct	s_time
 	{

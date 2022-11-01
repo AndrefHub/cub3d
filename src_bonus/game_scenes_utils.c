@@ -41,7 +41,7 @@ void	end_game_dim(t_game *game)
 	{
 		game->show_map = 0;
 		change_all_enemies_cry_paused(game, 1);
-		cs_play_sound(game->audio.ctx, game->audio.bonk.def);
+		cs_play_sound(game->audio.ctx, game->audio.sounds[DEATH_SOUND].def);
 	}
 	if (i < 50 && get_time() - time > 35)
 	{
