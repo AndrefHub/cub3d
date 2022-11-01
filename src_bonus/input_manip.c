@@ -11,7 +11,7 @@ char	*crop_prefix(char *line, char *prefix)
 		return (NULL);
 	}
 	begin = line + ft_strlen(prefix);
-	while (get_string_index(WALL_CHARS, *begin) != -1)
+	while (get_string_index(WALL_CHARS, *begin) != -1 || *begin == '0')
 		++begin;
 	while (*begin == ' ' || *begin == '\t')
 		++begin;

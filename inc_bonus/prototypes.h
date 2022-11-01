@@ -322,6 +322,7 @@ void	parse_map(t_map *map, int fd);
 
 // parsing_font.c //
 
+char	*skip_empty_chars(char *line);
 void	parse_font(t_map *map, int fd, char **line);
 
 // parsing_textures.c //

@@ -39,6 +39,11 @@ void	clear_font_outline(t_game *game)
 	}
 }
 
+// void	play_sound(t_sound *sound)
+// {
+// 	sound->play = cs_play_sound(ctx, sound->def);
+// }
+
 void	play_sounds(t_game *game)
 // void	play_game_mode_sounds(t_game *game)
 {
@@ -62,6 +67,7 @@ void	start_game(t_game *game)
 {
 	init_time(game);
 	// play_sounds(game);
+	game->audio.sounds[INTRO_SOUND].play = cs_play_sound(game->audio.ctx, game->audio.sounds[INTRO_SOUND].def);
 	mlx_loop(game->mlx.id);
 }
 

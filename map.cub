@@ -162,9 +162,17 @@ F] ./assets/font/font240/pacright.xpm
 F( ./assets/font/font240/parenleft.xpm
 F) ./assets/font/font240/parenright.xpm
 
-S1 ./assets/sounds/monke.wav
-S2 ./assets/sounds/pacman_death.wav
-S3 ./assets/sounds/auuuugh.wav
+S1 ./assets/sounds/pacman_intermission.wav
+S2 ./assets/sounds/start_sound.wav
+S3 ./assets/sounds/death_sound.wav
+S4 ./assets/sounds/win_sound.wav
+S5 ./assets/sounds/enemy_sound.wav
+S6 ./assets/sounds/pacman_chomp.wav
+S7 ./assets/sounds/pacman_eatghost.wav
+S8 ./assets/sounds/pause_sound.wav
+S9 ./assets/sounds/button_change_sound.wav
+S10 ./assets/sounds/button_press_sound.wav
+
 F ./assets/textures/sussy_stickmin/sussy-00.xpm
 C ./assets/textures/pacwall/wall12.xpm
 

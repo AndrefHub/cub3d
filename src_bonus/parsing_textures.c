@@ -67,7 +67,10 @@ void	parse_sounds(t_map *map, int fd, char **line)
 	if (index < 0 || index >= MAX_SOUNDS)
 		error_exit(NULL, 1, "wrong index map");
 	ft_putendl_fd(*line, 1);
-	map->sounds[index] = crop_prefix(*line, SOUND_PREFIX);
+	if (map->sounds[index])
+		free(*line);
+	else
+		map->sounds[index] = crop_prefix(*line, SOUND_PREFIX);
 	*line = skip_empty_lines(fd);
 }
 

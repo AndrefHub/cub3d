@@ -1,5 +1,19 @@
 #include "../inc_bonus/cub3d_bonus.h"
 
+// char	*skip_empty_chars(char *line)
+// {
+// 	char	*skipped;
+// 	char	*copy;
+
+// 	copy = line;
+// 	while (is_space(*line))
+// 		++line;
+// 	skipped = malloc(sizeof(*skipped) * (ft_strlen(line) + 1));
+// 	ft_strlcpy(skipped, line, ft_strlen(line));
+// 	free(copy);
+// 	return (skipped);
+// }
+
 void	parse_font(t_map *map, int fd, char **line)
 {
 	int		index;

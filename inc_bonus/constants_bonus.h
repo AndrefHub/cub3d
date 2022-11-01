@@ -112,6 +112,7 @@ enum e_layout
 
 enum e_sound
 {
+	INTRO_SOUND,
 	START_SOUND,
 	DEATH_SOUND,
 	WIN_SOUND,
