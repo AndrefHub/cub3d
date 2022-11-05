@@ -51,8 +51,8 @@ void	draw_player_on_map(t_game *game)
 	{
 		draw_line(&game->map->img, (t_vector){player.x
 			+ game->map->map_tile_size / 4, player.y
-			+ game->map->map_tile_size / 4}, (t_vector){game->column[i].pos.x
-			* game->map->map_tile_size, game->column[i].pos.y
+			+ game->map->map_tile_size / 4}, (t_vector){game->col[i].pos.x
+			* game->map->map_tile_size, game->col[i].pos.y
 			* game->map->map_tile_size}, RAYS_COLOR);
 		i += 50;
 	}

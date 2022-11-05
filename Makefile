@@ -87,7 +87,8 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					player_eating.c \
 					player_movement.c \
 					put_text.c \
-					ray_casting.c \
+					cast_rays.c \
+					calculate_columns.c \
 					respawn.c \
 					start_game.c \
 					start_game_buttons.c \

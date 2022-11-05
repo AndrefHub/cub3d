@@ -50,7 +50,7 @@ add_executable(cub3d
         src_bonus/player_eating.c
         src_bonus/player_movement.c
         src_bonus/put_text.c
-        src_bonus/ray_casting.c
+        src_bonus/calculate_columns.c
         src_bonus/respawn.c
         src_bonus/start_game.c
         src_bonus/time_funcs.c
