@@ -69,7 +69,7 @@ void	eat_by_coords(t_game *game, t_vector pos)
 	while (objects)
 	{
 		object = objects->content;
-		if (object->type != 'e' && (int)object->pos.x == pos.x
+		if (object->type < MAX_PILLS && (int)object->pos.x == pos.x
 			&& (int)object->pos.y == pos.y)
 		{
 			--game->objects_count;

@@ -9,6 +9,7 @@ int	button_draw(t_game *game, t_button *button)
 
 int	button_selected(t_game *game, t_button *button)
 {
+
 	if (button->selected && !button->pressed)
 		return (button->on_selected(game, button));
 	return (0);

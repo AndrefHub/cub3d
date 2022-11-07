@@ -12,7 +12,7 @@ void	check_aliveness(t_game *game)
 
 int	edibles_eaten(t_game *game)
 {
-	return (!game->objects_count);
+	return (!(game->objects_count - game->enemies_count));
 }
 
 void	change_all_enemies_cry_paused(t_game *game, int paused)

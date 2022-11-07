@@ -143,7 +143,8 @@ typedef struct s_game_object
 	t_fvector	render_step;
 	float		distance;
 	t_img		*sprite;
-	char		type;
+	int			type;
+
 }				t_object;
 
 typedef struct s_hud_entry
@@ -276,6 +277,7 @@ typedef struct game
 	char			*death_message;
 	char			*place;
 	int				objects_count;
+	int				enemies_count;
 	int				ghosts_eaten;
 	int				afterdeath;
 	char			*lb_filename;
@@ -288,7 +290,6 @@ typedef struct game
 
 typedef struct s_enemy
 {
-	char		*message;
 	t_object	*object;
 	t_fvector	delta;
 	t_ull		last_attack_time;

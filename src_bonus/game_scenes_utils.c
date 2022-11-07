@@ -4,6 +4,7 @@ void	set_game_input_mode(t_game *game, int mode)
 {
 	game->input_mode = mode;
 	game->scene.scene_func = game->scene_funcs[game->input_mode];
+	// set_game_audio_input_mode(game, mode);
 }
 
 // 0

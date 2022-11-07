@@ -43,23 +43,32 @@ int	set_player(t_map *map, t_list *lst, char *line, char *orient)
 	return (0);
 }
 
-void	find_enemy(t_list **lst, t_object *object, t_list *(*enemy_algorithms[4])(void *, void *))
+void	find_enemy(t_list **lst, t_object *object, t_list *(*enemy_algorithms[MAX_ENEMIES])(void *, void *))
 {
 	static int	type = BLINKY;
 	t_enemy		*enemy;
 
-	if (object->type == 'e')
+	if (object->type == MAX_PILLS)
 	{
 		enemy = malloc(sizeof(*enemy));
 		ft_bzero(enemy, sizeof(*enemy));
 		enemy->object = object;
+		enemy->object->type = MAX_PILLS + type % 4;
 		enemy->starting_pos = enemy->object->pos;
 		enemy->path = NULL;
 		enemy->pathfinding_algorithm = (void *)enemy_algorithms[type % 4];
-		enemy->message = "cocks";
 		ft_lstadd_back(lst, ft_lstnew(enemy));
 		++type;
 	}
+}
+
+int	find_type(char c)
+{
+	if (c == '.')
+		return (0);
+	else if (c == 'o')
+		return (1);
+	return (MAX_PILLS);
 }
 
 void	find_objects(t_map *map)
@@ -83,7 +92,7 @@ void	find_objects(t_map *map)
 			object->pos = (t_fvector){0.5f + x_coord, 0.5f + counter};
 			object->distance = fvector_distance((t_fvector)
 				{map->player_coords.x, map->player_coords.y}, object->pos);
-			object->type = map->map[counter][x_coord];
+			object->type = find_type(map->map[counter][x_coord]);
 			ft_lstadd_back(&map->objects, ft_lstnew(object));
 			find_enemy(&map->enemies, object, map->enemy_algorithms);
 			line = map->map[counter] + x_coord + 1;

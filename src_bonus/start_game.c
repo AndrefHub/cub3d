@@ -45,7 +45,6 @@ void	clear_font_outline(t_game *game)
 // }
 
 void	play_sounds(t_game *game)
-// void	play_game_mode_sounds(t_game *game)
 {
 	t_list	*list;
 	t_enemy	*enemy;

@@ -43,17 +43,68 @@ void	open_door(t_game *game)
 // 	(void) game;
 // }
 
-void	change_objects_textures(t_game *game)
+inline void	change_enemies_textures_panic_mode(t_game *game)
 {
-	(void) game;
+	t_list	*enemies;
+	t_enemy	*enemy;
+	int		type;
+	
+	enemies = game->map->enemies;
+	while (enemies)
+	{
+		enemy = enemies->content;
+		type = enemy->object->type;
+		if (enemy->panic_mode)
+			type = MAX_PILLS - 1;
+		enemy->object->sprite = (t_img *)game->map->object[type].img->content;
+		enemies = enemies->next;
+	}
+}
+
+inline void	change_objects_textures(t_game *game, int frames_to_move)
+{
+	t_list		*objects;
+	t_object	*object;
+	int			index;
+	int			counter;
+
+	objects = game->objects;
+	index = -1;
+	while (++index < ft_min(MAX_PILLS + game->enemies_count, MAX_OBJECTS))
+	{
+		counter = -1;
+		while (++counter < frames_to_move)
+			game->map->object[index].img = game->map->object[index].img->next;		
+	}
+	while (objects)
+	{
+		object = objects->content;
+		object->sprite = (t_img *)game->map->object[object->type].img->content;
+		objects = objects->next;
+	}
+	change_enemies_textures_panic_mode(game);
+}
+
+// would be reasonable to change game->textures to be pointer array
+inline void	change_walls_textures(t_game *game, int frames_to_move)
+{
+	int		index;
+	int		counter;
+
+	index = -1;
+	while (++index < MAX_WALL_CHARS)
+	{
+		counter = -1;
+		while (++counter < frames_to_move)
+			game->map->walls[index].img = game->map->walls[index].img->next;
+		game->textures[index] = *(t_img *)game->map->walls[index].img->content;
+	}
 }
 
 void	change_textures(t_game *game)
 {
 	const float	clocks_per_frame = 1000. / FRAMERATE;
-	static int	s = 0;
-	int			index;
-	int			counter;
+	// static int	s = 0;
 	int			frames_to_move;
 
 	frames_to_move = (int)((float)(get_time() - game->time.startup)
@@ -61,16 +112,8 @@ void	change_textures(t_game *game)
 			(game->time.last - game->time.startup) / clocks_per_frame);
 	if (frames_to_move)
 	{
-		index = -1;
-		while (++index < MAX_WALL_CHARS)
-		{
-			counter = -1;
-			while (++counter < frames_to_move)
-				game->map->walls[index].img = game->map->walls[index].img->next;
-			game->textures[index] = *(t_img *)game->map->walls
-			[index].img->content;
-		}
-		change_objects_textures(game);
+		change_walls_textures(game, frames_to_move);
+		change_objects_textures(game, frames_to_move);
 	}
-	++s;
+	// ++s;
 }

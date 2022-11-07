@@ -26,7 +26,7 @@
 # define ENEMIES_MAP_COLOR 0x89D1FE
 # define OBJECTS_MAP_COLOR 0xFFEF00
 # define PACMAN_COLOR 0xFFCC00
-# define MAX_OBJECTS 3
+# define MAX_PILLS 3
 # define MAX_WALL_CHARS 10
 # define MAX_HEALTH 1
 # define MAX_FONT_CHARS 224
@@ -142,7 +142,8 @@ enum e_enemies
 	PINKY,
 	INKY,
 	CLYDE,
-	MAX_ENEMIES
+	MAX_ENEMIES, 
+	MAX_OBJECTS = MAX_ENEMIES + MAX_PILLS
 };
 
 enum e_reward

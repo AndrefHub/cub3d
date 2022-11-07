@@ -44,8 +44,8 @@ void	initialize_game_objects(t_game *game)
 			(OBJECT_CHARS, obj->type)].img->content;
 		elem = elem->next;
 	}
-	game->objects_count = ft_lstsize(game->objects)
-		- ft_lstsize(game->map->enemies);
+	game->objects_count = ft_lstsize(game->objects);
+	game->enemies_count = ft_lstsize(game->map->enemies);
 }
 
 void	set_enemy_sounds(t_game *game)

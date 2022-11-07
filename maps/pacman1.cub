@@ -75,16 +75,7 @@ W8 ./assets/textures/wah-goodman/wah108.xpm
 W9 ./assets/textures/wah-goodman/wah109.xpm
 WD ./assets/textures/wah-goodman/wah109.xpm
 
-O1 ./assets/textures/ghost/ghost1.xpm
-./assets/textures/ghost/ghost2.xpm
-./assets/textures/ghost/ghost3.xpm
-./assets/textures/ghost/ghost4.xpm
-./assets/textures/ghost/ghost5.xpm
-./assets/textures/ghost/ghost6.xpm
-./assets/textures/ghost/ghost7.xpm
-./assets/textures/ghost/ghost8.xpm
-
-O2 ./assets/textures/paccoin/coin1.xpm
+O1 ./assets/textures/paccoin/coin1.xpm
 ./assets/textures/paccoin/coin2.xpm
 ./assets/textures/paccoin/coin3.xpm
 ./assets/textures/paccoin/coin4.xpm
@@ -94,7 +85,7 @@ O2 ./assets/textures/paccoin/coin1.xpm
 ./assets/textures/paccoin/coin8.xpm
 ./assets/textures/paccoin/coin9.xpm
 
-O3 ./assets/textures/pacpill/pill1.xpm
+O2 ./assets/textures/pacpill/pill1.xpm
 ./assets/textures/pacpill/pill2.xpm
 ./assets/textures/pacpill/pill3.xpm
 ./assets/textures/pacpill/pill4.xpm
@@ -103,6 +94,64 @@ O3 ./assets/textures/pacpill/pill1.xpm
 ./assets/textures/pacpill/pill7.xpm
 ./assets/textures/pacpill/pill8.xpm
 ./assets/textures/pacpill/pill9.xpm
+
+O3 ./assets/textures/scared.xpm
+
+O4 ./assets/textures/ghost/ghost1.xpm
+./assets/textures/ghost/ghost2.xpm
+./assets/textures/ghost/ghost3.xpm
+./assets/textures/ghost/ghost4.xpm
+./assets/textures/ghost/ghost5.xpm
+./assets/textures/ghost/ghost6.xpm
+./assets/textures/ghost/ghost7.xpm
+./assets/textures/ghost/ghost8.xpm
+
+O5 ./assets/textures/ghost/ghost1.xpm
+./assets/textures/ghost/ghost2.xpm
+./assets/textures/ghost/ghost3.xpm
+./assets/textures/ghost/ghost4.xpm
+./assets/textures/ghost/ghost5.xpm
+./assets/textures/ghost/ghost6.xpm
+./assets/textures/ghost/ghost7.xpm
+./assets/textures/ghost/ghost8.xpm
+
+O6 ./assets/textures/sussy_stickmin/sussy-00.xpm
+./assets/textures/sussy_stickmin/sussy-01.xpm
+./assets/textures/sussy_stickmin/sussy-02.xpm
+./assets/textures/sussy_stickmin/sussy-03.xpm
+./assets/textures/sussy_stickmin/sussy-04.xpm
+./assets/textures/sussy_stickmin/sussy-05.xpm
+./assets/textures/sussy_stickmin/sussy-06.xpm
+./assets/textures/sussy_stickmin/sussy-07.xpm
+./assets/textures/sussy_stickmin/sussy-08.xpm
+./assets/textures/sussy_stickmin/sussy-09.xpm
+./assets/textures/sussy_stickmin/sussy-10.xpm
+./assets/textures/sussy_stickmin/sussy-11.xpm
+./assets/textures/sussy_stickmin/sussy-12.xpm
+./assets/textures/sussy_stickmin/sussy-13.xpm
+./assets/textures/sussy_stickmin/sussy-14.xpm
+./assets/textures/sussy_stickmin/sussy-15.xpm
+./assets/textures/sussy_stickmin/sussy-16.xpm
+./assets/textures/sussy_stickmin/sussy-17.xpm
+
+O7 ./assets/textures/sussy_stickmin/sussy-00.xpm
+./assets/textures/sussy_stickmin/sussy-01.xpm
+./assets/textures/sussy_stickmin/sussy-02.xpm
+./assets/textures/sussy_stickmin/sussy-03.xpm
+./assets/textures/sussy_stickmin/sussy-04.xpm
+./assets/textures/sussy_stickmin/sussy-05.xpm
+./assets/textures/sussy_stickmin/sussy-06.xpm
+./assets/textures/sussy_stickmin/sussy-07.xpm
+./assets/textures/sussy_stickmin/sussy-08.xpm
+./assets/textures/sussy_stickmin/sussy-09.xpm
+./assets/textures/sussy_stickmin/sussy-10.xpm
+./assets/textures/sussy_stickmin/sussy-11.xpm
+./assets/textures/sussy_stickmin/sussy-12.xpm
+./assets/textures/sussy_stickmin/sussy-13.xpm
+./assets/textures/sussy_stickmin/sussy-14.xpm
+./assets/textures/sussy_stickmin/sussy-15.xpm
+./assets/textures/sussy_stickmin/sussy-16.xpm
+./assets/textures/sussy_stickmin/sussy-17.xpm
 
 F  ./assets/font/font240/space.xpm
 F! ./assets/font/font240/exclam.xpm
