@@ -33,7 +33,8 @@ void	draw_walls(t_game *game)
 	{
 		game->col[v.x].height = (int)(game->col_scale
 				/ game->col[v.x].perp_dist);
-		draw_texture_set(game, &game->col[v.x]);
+		game->col[v.x].texture_id = ft_strchr(CARDINAL_POINTS,
+			game->col[v.x].dir) - CARDINAL_POINTS;
 		draw_wall_scaled(&game->img, &game->textures
 		[game->col[v.x].texture_id], v, game);
 		++v.x;

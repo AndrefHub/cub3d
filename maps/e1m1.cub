@@ -1,9 +1,9 @@
-NO ./assets/textures/sussy_stickmin/sussy-00.xpm
+NO ./assets/textures/floor4.xpm
 
-SO ./assets/textures/sussy_stickmin/sussy-00.xpm
+SO ./assets/textures/floor5.xpm
 
-WE ./assets/textures/sussy_stickmin/sussy-17.xpm
-EA ./assets/textures/sussy_stickmin/sussy-17.xpm
+EA ./assets/textures/floor2.xpm
+WE ./assets/textures/floor3.xpm
 
 F 11,57,37
 C 94,110,187

@@ -1,4 +1,4 @@
-W#include "../inc/cub3d.h"
+#include "../inc/cub3d.h"
 
 void	initialize_player(t_game *game)
 {
@@ -21,14 +21,8 @@ void	initialize_player(t_game *game)
 
 void	initialize_textures(t_game *game)
 {
-	// initialize_sprites(game, MAX_OBJECTS,
-	// 	(t_texture *)game->map->object, TEXTURE_SIZE);
-	for (int i = 0; i < MAX_WALL_CHARS; ++i)
-		printf("%s\n", game->map->walls[i].texture);
 	initialize_sprites(game, MAX_WALL_CHARS,
 		(t_texture *)game->map->walls, TEXTURE_SIZE);
-	// initialize_sprites(game, 1, &game->map->floor, TEXTURE_SIZE);
-	// initialize_sprites(game, 1, &game->map->ceiling, TEXTURE_SIZE);
 	initialize_wall_textures(game);
 }
 

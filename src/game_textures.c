@@ -38,6 +38,9 @@ void	import_texture_to_img(t_game *game, t_img *img, char *filename, t_vector si
 	int	tex_size;
 
 	tex_size = TEXTURE_SIZE;
+	if (!filename)
+		error_exit(game, 1, "Initialization fail: \
+Missing texture filename or invalid entries order.");
 	if (ft_strlen(filename) < 5)
 		error_exit(game, 1, "Initialization fail: Invalid texture filename");
 	if (ft_strncmp(".xpm", &filename[ft_strlen(filename) - 4], 4) == 0)
@@ -54,9 +57,6 @@ void	import_texture_to_img(t_game *game, t_img *img, char *filename, t_vector si
 		(img->mlx_img, &img->bpp, &img->line_length, &img->endian);
 	img->size.x = size.x;
 	img->size.y = size.y;
-	// img->alpha_start_x = malloc(sizeof(short) * img->size.x);
-	// img->alpha_end_x = malloc(sizeof(short) * img->size.x);
-	// skip_transparent_background(img);
 }
 
 void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_size)

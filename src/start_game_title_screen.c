@@ -28,7 +28,7 @@ void	initialize_game_parameters(t_game *game)
 			game->mlx.win_size.x, game->mlx.win_size.y);
 	game->map->map_tile_size = ft_min
 		(game->map->img.size.x / game->map->map_size.x,
-		game->map->img.size.y / game->map->map_size.y);
+			game->map->img.size.y / game->map->map_size.y);
 	game->col = malloc(sizeof(*game->col) * game->img.size.x);
 	ft_memset(game->key.k, 0, 512);
 	if (game->col == NULL)

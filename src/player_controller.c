@@ -48,5 +48,4 @@ void	player_controll(t_game *game)
 	movement_controller(game);
 	rotation_by_key_controller(game);
 	check_restrictions(game);
-	// player_eat(game);
 }

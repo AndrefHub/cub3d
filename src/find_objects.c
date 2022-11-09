@@ -1,6 +1,5 @@
 #include "../inc/cub3d.h"
 
-
 int	set_player(t_map *map, t_list *lst, char *line, char *orient)
 {
 	int	x;

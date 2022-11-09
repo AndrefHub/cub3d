@@ -32,6 +32,7 @@
 # define FONT_SIZE 240
 # define FONT_OFFSET 32
 # define WALL_CHARS "1"
+# define CARDINAL_POINTS "EWSN"
 
 # ifndef ASSETS_PATH
 #  define ASSETS_PATH "."
