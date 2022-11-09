@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_walls.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 18:48:29 by lsherry           #+#    #+#             */
+/*   Updated: 2022/11/09 18:48:33 by lsherry          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc_bonus/cub3d_bonus.h"
 
 void	draw_wall_scaled(t_img *img, const t_img *texture, t_vector v, t_game *game)

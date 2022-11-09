@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_ceil_floor.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 18:48:01 by lsherry           #+#    #+#             */
+/*   Updated: 2022/11/09 18:48:03 by lsherry          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc_bonus/cub3d_bonus.h"
 
 static void	draw_row_textured(t_game *game, t_img src, t_vector cur, float row_distance)
