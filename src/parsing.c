@@ -1,11 +1,16 @@
-#include "../inc/cub3d.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 18:47:20 by kdancy            #+#    #+#             */
+/*   Updated: 2022/11/09 18:47:24 by kdancy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// int	is_prefix_number(char *line, char *prefix, int counter)
-// {
-// 	return (line && !ft_strncmp(line, prefix, ft_strlen(prefix))
-// 		&& (ft_atoi(line + ft_strlen(prefix)) == counter + 1
-// 			|| (counter == 0 && line[ft_strlen(prefix) + 1] == ' ')));
-// }
+#include "../inc/cub3d.h"
 
 int	get_string_index(char *str, char c)
 {

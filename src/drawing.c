@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   drawing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 18:46:44 by kdancy            #+#    #+#             */
+/*   Updated: 2022/11/09 18:49:08 by kdancy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/cub3d.h"
 
 void	draw_line(t_img *img, t_vector p1, t_vector p2, int color)
@@ -44,24 +56,6 @@ void	draw_square_fill(t_img *img, t_vector top_left, int size, int color)
 		px.y++;
 	}
 }
-
-// void	draw_rectangle_fill(t_img *img, t_vector top_left, t_vector size, int color)
-// {
-// 	t_vector	px;
-
-// 	px.y = top_left.y;
-// 	while (px.y < top_left.y + size.y)
-// 	{
-// 		px.x = top_left.x;
-// 		while (px.x < top_left.x + size.x)
-// 		{
-// 			put_pixel_on_pixel((t_rgb *)img->addr + px.y * img->size.x + px.x,
-// 				(t_rgb *)(&color));
-// 			px.x++;
-// 		}
-// 		px.y++;
-// 	}
-// }
 
 void	draw_aim(t_game *game)
 {
