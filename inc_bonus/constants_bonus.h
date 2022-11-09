@@ -11,7 +11,7 @@
 # define MAX_RENDER_DISTANCE 120
 # define PI (float) M_PI
 # define PL_ROT_KEY_SPEED 0.05f
-# define PL_ROT_MOUSE_SPEED 0.002f
+# define PL_ROT_MOUSE_SPEED 0.0007f
 # define PL_SPEED 0.1f
 # define PL_ACCELERATION 2.5f
 # define PL_RADIUS 0.2f

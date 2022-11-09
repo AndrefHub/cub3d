@@ -66,6 +66,9 @@ void	calculate_column_dir(t_game *g, t_ray *ray, int i)
 		g->col[i].dir = "EW"[(int)(g->col[i].pos.y > g->player.pos.y)];
 		g->col[i].texture_pos = g->col[i].pos.x;
 	}
+	if (g->col[i].dir == 'S' || g->col[i].dir == 'W')
+		g->col[i].texture_pos =  TEXTURE_SIZE - g->col[i].texture_pos;
+	g->col[i].texture_pos = g->col[i].texture_pos * TEXTURE_SIZE;
 }
 
 void	initialize_columns(t_game *g, t_ray *ray, int i, float r_angle)
