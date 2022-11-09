@@ -1,4 +1,4 @@
-#include "../inc_bonus/cub3d_bonus.h"
+#include "../inc/cub3d.h"
 
 t_ray	ray_initialize(t_game *game, t_fvector ray_dir)
 {
@@ -66,7 +66,6 @@ void	calculate_column_dir(t_game *g, t_ray *ray, int i)
 		g->col[i].dir = "EW"[(int)(g->col[i].pos.y > g->player.pos.y)];
 		g->col[i].texture_pos = g->col[i].pos.x;
 	}
-	g->col[i].texture_pos = g->col[i].texture_pos * TEXTURE_SIZE;
 }
 
 void	initialize_columns(t_game *g, t_ray *ray, int i, float r_angle)
@@ -85,6 +84,7 @@ void	initialize_columns(t_game *g, t_ray *ray, int i, float r_angle)
 		g->col[i].pos = (t_fvector){g->player.pos.x + cosf(r_angle)
 			* g->col[i].dist, g->player.pos.y + sinf(r_angle) * g->col[i].dist};
 		calculate_column_dir(g, ray, i);
+		g->col[i].texture_pos = g->col[i].texture_pos * TEXTURE_SIZE;
 		g->col[i].dist = g->col[i].dist;
 		g->col[i].ray_dir = ray->dir;
 		g->col[i].cell = (t_vector){ray->map_tile.x, ray->map_tile.y};

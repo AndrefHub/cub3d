@@ -1,4 +1,4 @@
-#include "../inc/cub3d.h"
+W#include "../inc/cub3d.h"
 
 void	initialize_player(t_game *game)
 {

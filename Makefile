@@ -10,6 +10,8 @@ LFLAGS	= -Llibft -lft
 ###
 SRCDIR	= src/
 SRCFILE	=	border_checking.c \
+			calculate_columns.c \
+			cast_rays.c \
 			check_file.c \
 			demo_utils.c \
 			draw_walls.c \
@@ -34,11 +36,10 @@ SRCFILE	=	border_checking.c \
 			parsing_utils.c \
 			player_controller.c \
 			player_movement.c \
-			ray_casting.c \
 			start_game.c \
 			start_game_game_data.c \
 			start_game_title_screen.c \
-			vector_utils.c 
+			vector_utils.c
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
 OBJFILE = $(SRCFILE:.c=.o)
@@ -50,6 +51,8 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					button_actions.c \
 					button_core_funcs.c \
 					button_selected.c \
+					calculate_columns.c \
+					cast_rays.c \
 					check_file.c \
 					controller.c \
 					demo_utils.c \
@@ -103,9 +106,8 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					player_eating.c \
 					player_movement.c \
 					put_text.c \
-					cast_rays.c \
-					calculate_columns.c \
 					respawn.c \
+					set_game_audio_input_mode.c \
 					start_game.c \
 					start_game_buttons.c \
 					start_game_game_data.c \

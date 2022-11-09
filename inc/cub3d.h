@@ -116,7 +116,7 @@ typedef struct ray
 	t_fvector	unit;
 	t_fvector	dir;
 	t_vector	map_tile;
-	t_fvector	length;
+	t_fvector	len;
 	t_vector	step;
 }				t_ray;
 
@@ -170,7 +170,7 @@ typedef struct game
 	}				key;
 	struct			s_column
 	{
-		float		distance;
+		float		dist;
 		float		perp_dist;
 		t_fvector	pos;
 		int			side;
@@ -182,7 +182,7 @@ typedef struct game
 		float		texture_pos;
 		float		fade;
 		int			color;
-	}				*column;
+	}				*col;
 	t_img			textures[MAX_WALL_CHARS];
 	t_list			*leaderboard;
 	char			*macos_chars;
