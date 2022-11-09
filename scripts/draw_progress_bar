@@ -1,0 +1,6 @@
+#!/bin/bash
+
+COMPILED="$2"
+TOTAL="$1"
+echo -en '' '[' "$2/$1" ']'
+# printf $COMPILED

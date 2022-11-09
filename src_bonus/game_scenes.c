@@ -12,7 +12,7 @@ void	pac_game_scene(t_game *game)
 	draw_walls(game);
 	draw_game_objects(game);
 	draw_aim(game);
-	draw_hud(game);
+	// draw_hud(game); // not necessary
 	put_frame(game);
 	change_textures(game);
 	update_time(game);

@@ -9,11 +9,11 @@ all: $(NAME)
 
 $(NAME): $(HEADER) $(MAIN)
 	@$(CC) $(FLAGS) -c $(MAIN) -o $(NAME)
-	@echo "\033[1;33m"$(NAME) "is up to date."'\033[0m'
+	@echo -e "\033[1;33m"$(NAME) "is up to date."'\033[0m'
 
 fclean:
 	@$(RM) $(NAME)
-	@echo '\033[1;31m'$(NAME) "deleted."'\033[0m'
+	@echo -e '\033[1;31m'$(NAME) "deleted."'\033[0m'
 
 re: fclean all
 
