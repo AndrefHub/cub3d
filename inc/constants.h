@@ -27,31 +27,15 @@
 # define OBJECTS_MAP_COLOR 0xFFEF00
 # define PACMAN_COLOR 0xFFCC00
 # define MAX_PILLS 3
-# define MAX_WALL_CHARS 10
+# define MAX_WALL_CHARS 4
 # define MAX_HEALTH 1
-# define MAX_FONT_CHARS 224
-# define ENEMY_RELOAD 1000
-# define PL_INVINCIBILITY 2000
 # define FONT_SIZE 240
 # define FONT_OFFSET 32
-# define WALL_CHARS "123456789D"
-# define EDIBLE_CHARS ".o"
-# define ENEMY_CHARS "e"
-# define OBJECT_CHARS "e.o"
-# define BONUS "BONUS"
-# define USE_PATH_PREFIX "USE_PATH_PREFIX"
-# define PANIC_TIME 7000
-# define LEADERBOARD_FOLDER ".lb/"
-# define PAUSE_ENTRIES 3
+# define WALL_CHARS "1"
 
 # ifndef ASSETS_PATH
 #  define ASSETS_PATH "."
 # endif
-
-# define WALL_PREFIX "W"
-# define OBJECT_PREFIX "O"
-# define SOUND_PREFIX "S"
-# define FONT_PREFIX "F"
 
 # ifdef __APPLE__
 #  define CHAR_OFFSET 0
@@ -108,49 +92,6 @@ enum e_layout
 	HLeft = 010,
 	HCenter = 020,
 	HRight = 040
-};
-
-enum e_sound
-{
-	INTRO_SOUND,
-	START_SOUND,
-	DEATH_SOUND,
-	WIN_SOUND,
-	ENEMY_SOUND,
-	EATING_SOUND,
-	EATING_ENEMY_SOUND,
-	PAUSE_SOUND,
-	BUTTON_CHANGE_SOUND,
-	BUTTON_PRESS_SOUND,
-	MAX_SOUNDS
-};
-
-enum e_mode
-{
-	START_MODE,
-	GAME_MODE,
-	LEADERBOARD_MODE,
-	WIN_SCREEN_MODE,
-	PAUSE_MODE,
-	CONTROLS_MENU_MODE,
-	MAX_MODES
-};
-
-enum e_enemies
-{
-	BLINKY,
-	PINKY,
-	INKY,
-	CLYDE,
-	MAX_ENEMIES, 
-	MAX_OBJECTS = MAX_ENEMIES + MAX_PILLS
-};
-
-enum e_reward
-{
-	COIN_REWARD = 10,
-	PILL_REWARD = 50,
-	ENEMY_REWARD = 200
 };
 
 #endif

@@ -34,8 +34,6 @@ int	is_map_enclosed(t_map *map)
 {
 	t_vector	check;
 
-	if (!ft_strchr(WALL_CHARS, **map->map))
-		error_exit(NULL, 1, *map->map);
 	check.y = 0;
 	while (check.y < map->map_size.y)
 	{

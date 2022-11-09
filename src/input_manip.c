@@ -17,6 +17,7 @@ char	*crop_prefix(char *line, char *prefix)
 		++begin;
 	new_line = ft_strdup(begin);
 	free(line);
+	line = NULL;
 	return (new_line);
 }
 

@@ -64,14 +64,15 @@ RM			:= rm -rf
 HEADER		:= libft.h
 .PHONY: all clean fclean re bonus
 
+
 %.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) $< -o $@ -include $(HEADER)
 	@printf "\033[1;36m/\033[0m"
 
 $(NAME): $(OBJS) $(HEADER)
-	@echo -e
+	@echo
 	@ar rcs $(NAME) $(OBJS)
-	@echo -e "\033[1;33m"$(NAME) "is up to date."'\033[0m'
+	@echo "\033[1;33m"$(NAME) "is up to date."'\033[0m'
 
 all: $(NAME)
 
@@ -80,11 +81,11 @@ bonus: $(BONUS_OBJS) $(OBJS) $(HEADER)
 
 clean:
 	@$(RM) $(OBJS) $(BONUS_OBJS)
-	@echo -e '\033[1;31m'$(NAME) "deleted."'\033[0m'
+	@echo '\033[1;31m'$(NAME) "deleted."'\033[0m'
 
 fclean: clean
 	@/bin/rm -f $(NAME)
-	@echo -e '\033[1;31m'$(NAME) "objs deleted."'\033[0m'
+	@echo '\033[1;31m'$(NAME) "objs deleted."'\033[0m'
 
 re: fclean all
 

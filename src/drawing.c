@@ -45,23 +45,23 @@ void	draw_square_fill(t_img *img, t_vector top_left, int size, int color)
 	}
 }
 
-void	draw_rectangle_fill(t_img *img, t_vector top_left, t_vector size, int color)
-{
-	t_vector	px;
+// void	draw_rectangle_fill(t_img *img, t_vector top_left, t_vector size, int color)
+// {
+// 	t_vector	px;
 
-	px.y = top_left.y;
-	while (px.y < top_left.y + size.y)
-	{
-		px.x = top_left.x;
-		while (px.x < top_left.x + size.x)
-		{
-			put_pixel_on_pixel((t_rgb *)img->addr + px.y * img->size.x + px.x,
-				(t_rgb *)(&color));
-			px.x++;
-		}
-		px.y++;
-	}
-}
+// 	px.y = top_left.y;
+// 	while (px.y < top_left.y + size.y)
+// 	{
+// 		px.x = top_left.x;
+// 		while (px.x < top_left.x + size.x)
+// 		{
+// 			put_pixel_on_pixel((t_rgb *)img->addr + px.y * img->size.x + px.x,
+// 				(t_rgb *)(&color));
+// 			px.x++;
+// 		}
+// 		px.y++;
+// 	}
+// }
 
 void	draw_aim(t_game *game)
 {

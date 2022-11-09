@@ -4,6 +4,11 @@
         "cub3d_bonus.h": "c",
         "constants_bonus.h": "c",
         "queue": "c",
-        "random": "c"
+        "random": "c",
+        "stdlib.h": "c",
+        "math.h": "c",
+        "keysym.h": "c",
+        "signal.h": "c",
+        "time.h": "c"
     }
 }

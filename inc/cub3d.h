@@ -98,11 +98,6 @@ typedef struct s_map
 	char			**map;
 	t_vector		map_size;
 	t_texture		walls[MAX_WALL_CHARS];
-	t_texture		object[MAX_OBJECTS];
-	t_texture		font[MAX_FONT_CHARS];
-	t_texture		floor;
-	t_texture		ceiling;
-	char			*sounds[MAX_SOUNDS];
 	unsigned int	list_size;
 	int				f;
 	int				c;
@@ -114,7 +109,6 @@ typedef struct s_map
 	t_list			*enemies;
 	t_list			*objects;
 	char			*map_file;
-	t_list			*(*enemy_algorithms[MAX_ENEMIES])(void *, void *);
 }				t_map;
 
 typedef struct ray
@@ -126,36 +120,6 @@ typedef struct ray
 	t_vector	step;
 }				t_ray;
 
-typedef struct sound
-{
-	cs_loaded_sound_t	file;
-	cs_play_sound_def_t	def;
-	cs_playing_sound_t	*play;
-}				t_sound;
-
-typedef struct s_game_object
-{
-	t_fvector	pos;
-	int			fade;
-	t_vector	start;
-	t_vector	end;
-	t_vector	size;
-	t_fvector	render_step;
-	float		distance;
-	t_img		*sprite;
-	int			type;
-
-}				t_object;
-
-typedef struct s_hud_entry
-{
-	int		value_numeric;
-	char	*title;
-	char	*value;
-	short	title_size;
-	short	value_size;
-}				t_hud_entry;
-
 typedef struct s_parse_info
 {
 	char		*chars;
@@ -163,35 +127,6 @@ typedef struct s_parse_info
 	t_texture	*arr;
 	int			size;
 } t_parse_info;
-
-typedef struct s_lb_entry
-{
-	char	*name;
-	int		score_num;
-	char	*score;
-}	t_lb_entry;
-
-typedef struct s_button
-{
-	t_vector	pos;
-	t_vector	size;
-	t_text		text;
-	int			background_color;
-	int			selected;
-	int			pressed;
-	int			released;
-	int			(*draw_button)(void *, struct s_button *);
-	int			(*on_selected)(void *, struct s_button *);
-	int			(*on_pressed)(void *, struct s_button *);
-	int			(*on_released)(void *, struct s_button *);
-	// look up qt button class
-}	t_button;
-
-typedef struct s_buttons
-{
-	t_button	buttons[PAUSE_ENTRIES];
-	int			index;
-}	t_button_list;
 
 typedef struct game
 {
@@ -249,29 +184,8 @@ typedef struct game
 		int			color;
 	}				*column;
 	t_img			textures[MAX_WALL_CHARS];
-	struct			s_audio
-	{
-		cs_context_t	*ctx;
-		t_sound			sounds[MAX_SOUNDS];
-	}					audio;
-	struct	s_time
-	{
-		t_ull		startup;
-		int			frames_to_move;
-		t_ull		last;
-		t_ull		fps_time;
-		t_ull		pill_time;
-	}				time;
-	struct s_hud
-	{
-		int			font_size;
-		t_hud_entry	fps;
-		t_hud_entry	score;
-		t_hud_entry	lives;
-	}			hud;
 	t_list			*leaderboard;
 	char			*macos_chars;
-	t_lb_entry		*player_lb_data;
 	int				panic_mode;
 	int				input_mode;
 	char			*death_message;
@@ -280,25 +194,8 @@ typedef struct game
 	int				enemies_count;
 	int				ghosts_eaten;
 	int				afterdeath;
-	char			*lb_filename;
-	void			(*scene_funcs[MAX_MODES])(void*);
-	int				(*input_funcs[MAX_MODES])(int, struct game *);
-	void			(*death_func)(struct game *);
-	t_button_list	pause;
 	t_img			pacman_logo;
 }	t_game;
-
-typedef struct s_enemy
-{
-	t_object	*object;
-	t_fvector	delta;
-	t_ull		last_attack_time;
-	t_fvector	starting_pos;
-	t_list		*path;
-	t_list		*(*pathfinding_algorithm)(t_game *, struct s_enemy *);
-	t_sound		sound;
-	int			panic_mode;
-}				t_enemy;
 
 # include "prototypes.h"
 

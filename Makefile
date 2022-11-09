@@ -11,21 +11,34 @@ LFLAGS	= -Llibft -lft
 SRCDIR	= src/
 SRCFILE	=	border_checking.c \
 			check_file.c \
-			controller.c \
 			demo_utils.c \
-			draw_map.c \
-			game_textures.c \
+			draw_walls.c \
 			drawing.c \
-			free_game.c \
+			drawing_utils.c \
+			find_objects.c \
 			ft_utils.c \
+			ft_utils_game.c \
+			game_loop.c \
+			game_scenes.c \
+			game_textures.c \
+			get_screen_size.c \
 			hooks.c \
 			input_manip.c \
+			is_checks.c \
+			key_pressed.c \
 			main.c \
+			mlx_adapter_mouse_position.c \
+			mlx_adapter_mouse_visibility.c \
 			parsing.c \
+			parsing_textures.c \
+			parsing_utils.c \
+			player_controller.c \
+			player_movement.c \
 			ray_casting.c \
-			mlx_adapter.c \
 			start_game.c \
-			time_funcs.c
+			start_game_game_data.c \
+			start_game_title_screen.c \
+			vector_utils.c 
 SRCS	= $(addprefix $(SRCDIR), $(SRCFILE))
 OBJDIR	= obj/
 OBJFILE = $(SRCFILE:.c=.o)
@@ -121,6 +134,7 @@ ifeq ($(UNAME), Darwin)
 	MLXFLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 	MLX		= mlx
 	SNDLIB	+= cute_sound/SDL/SDL2
+	ECHO = echo
 endif
 
 ifeq ($(UNAME), Linux)
@@ -128,6 +142,7 @@ ifeq ($(UNAME), Linux)
 	MLX		= mlx_linux
 	SNDLIB	+= -lSDL2
 	GOINFRE = .
+	ECHO = echo -e
 endif
 
 # BUILT_COUNT := 0
@@ -161,10 +176,10 @@ $(OBJ_BONUSDIR)%.o: $(SRC_BONUSDIR)%.c $(CUB_BONUSHDR) $(CUB_BONUSINC)
 	printf '%0.s\033[0;46m \033[0m' {1..$(FILES_COMPILED)}
 	printf '%0.s ' {1..$(FILES_LEFT)}
 	# echo /$(FILES_COMPILED)
-	echo -en '[' "$(FILES_COMPILED)/$(FILES_COUNT)" '] '
+	echo -n '[' "$(FILES_COMPILED)/$(FILES_COUNT)" '] '
 
 $(NAME): $(OBJS)
-	@echo -e
+	@echo
 	@echo -e "\033[1;33m"$(NAME) "objs are up to date."'\033[0m'
 	@make -C libft
 	@make -C $(MLX)
@@ -175,14 +190,13 @@ bonus: bonus_in ;
 
 bonus_in: download_assets $(OBJS_BONUS)
 	@mkdir -p $(LBFOLDER)
-	@echo -e
+	@echo
 	@echo -e "\033[1;33m"$(NAME)"_bonus" "objs are up to date."'\033[0m'
 	@make -C libft
 	@make -C $(MLX)
 	@make -C cute_sound
 	@$(CC) $(FLAGS) $(OBJS_BONUS) $(SNDLIB) $(LFLAGS) $(MLXFLAGS) $(DEFINES) -o $(NAME)
 	@echo -e "\033[1;33m"$(NAME)"_bonus" "is up to date."'\033[0m'
-	@echo 0 > .tmp
 
 clean:
 	@$(RM) $(OBJDIR)

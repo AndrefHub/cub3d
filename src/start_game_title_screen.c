@@ -7,7 +7,7 @@ void	initialize_game_hud(t_game *game)
 	else if (game->mlx.win_size.x >= 1920 && game->mlx.win_size.y >= 1080)
 		game->mlx.game_size = (t_vector){1920, 1080};
 	else if (game->mlx.win_size.x >= 1280 && game->mlx.win_size.y >= 720)
-		game->hud.font_size = 20;
+		game->mlx.game_size = (t_vector){1280, 720};
 	game->hud_img = initialize_img(&game->hud_img, game->mlx.id,
 			game->mlx.win_size.x, game->mlx.win_size.y);
 }

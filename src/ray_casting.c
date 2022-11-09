@@ -1,5 +1,17 @@
 #include "../inc/cub3d.h"
 
+float	calculate_angle(t_fvector p, t_fvector e)
+{
+	const float	multiplication = p.x * e.x + p.y * e.y;
+	const float	determinant = p.x * e.y - p.y * e.x;
+	float		atan;
+
+	atan = (atan2(determinant, multiplication));
+	if (atan < 0)
+		atan += 2 * PI;
+	return (atan);
+}
+
 t_ray	ray_initialize(t_game *game, t_fvector ray_dir)
 {
 	t_ray ray;

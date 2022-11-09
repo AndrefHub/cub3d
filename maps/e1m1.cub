@@ -1,48 +1,13 @@
-NO00 ./assets/textures/sussy_stickmin/sussy-00.xpm
-NO01 ./assets/textures/sussy_stickmin/sussy-01.xpm
-NO02 ./assets/textures/sussy_stickmin/sussy-02.xpm
-NO03 ./assets/textures/sussy_stickmin/sussy-03.xpm
-NO04 ./assets/textures/sussy_stickmin/sussy-04.xpm
-NO05 ./assets/textures/sussy_stickmin/sussy-05.xpm
-NO06 ./assets/textures/sussy_stickmin/sussy-06.xpm
-NO07 ./assets/textures/sussy_stickmin/sussy-07.xpm
-NO08 ./assets/textures/sussy_stickmin/sussy-08.xpm
-NO09 ./assets/textures/sussy_stickmin/sussy-09.xpm
-NO10 ./assets/textures/sussy_stickmin/sussy-10.xpm
-NO11 ./assets/textures/sussy_stickmin/sussy-11.xpm
-NO12 ./assets/textures/sussy_stickmin/sussy-12.xpm
-NO13 ./assets/textures/sussy_stickmin/sussy-13.xpm
-NO14 ./assets/textures/sussy_stickmin/sussy-14.xpm
-NO15 ./assets/textures/sussy_stickmin/sussy-15.xpm
-NO16 ./assets/textures/sussy_stickmin/sussy-16.xpm
-NO17 ./assets/textures/sussy_stickmin/sussy-17.xpm
+NO ./assets/textures/sussy_stickmin/sussy-00.xpm
 
-SO00 ./assets/textures/sussy_stickmin/sussy-00.xpm
-SO01 ./assets/textures/sussy_stickmin/sussy-01.xpm
-SO02 ./assets/textures/sussy_stickmin/sussy-02.xpm
-SO03 ./assets/textures/sussy_stickmin/sussy-03.xpm
-SO04 ./assets/textures/sussy_stickmin/sussy-04.xpm
-SO05 ./assets/textures/sussy_stickmin/sussy-05.xpm
-SO06 ./assets/textures/sussy_stickmin/sussy-06.xpm
-SO07 ./assets/textures/sussy_stickmin/sussy-07.xpm
-SO08 ./assets/textures/sussy_stickmin/sussy-08.xpm
-SO09 ./assets/textures/sussy_stickmin/sussy-09.xpm
-SO10 ./assets/textures/sussy_stickmin/sussy-10.xpm
-SO11 ./assets/textures/sussy_stickmin/sussy-11.xpm
-SO12 ./assets/textures/sussy_stickmin/sussy-12.xpm
-SO13 ./assets/textures/sussy_stickmin/sussy-13.xpm
-SO14 ./assets/textures/sussy_stickmin/sussy-14.xpm
-SO15 ./assets/textures/sussy_stickmin/sussy-15.xpm
-SO16 ./assets/textures/sussy_stickmin/sussy-16.xpm
-SO17 ./assets/textures/sussy_stickmin/sussy-17.xpm
+SO ./assets/textures/sussy_stickmin/sussy-00.xpm
 
 WE ./assets/textures/sussy_stickmin/sussy-17.xpm
-EA0 ./assets/textures/sussy_stickmin/sussy-17.xpm
-EA1 ./assets/textures/sussy_stickmin/sussy-16.xpm
+EA ./assets/textures/sussy_stickmin/sussy-17.xpm
 
 F 11,57,37
-
 C 94,110,187
+
                             111111111111111
      111111                 110000001000011
      100001      111111111111000001000000011111
@@ -79,9 +44,9 @@ C 94,110,187
 1000111110001                    10101         1001
 1000110110001                    10001         1001 111111111
 1000001010101                    10001         100010000000001
-1000100010001                    10001         1000D0000000001
+1000100010001                    10001         100000000000001
 1010111110001                    10101         10001000E000001
-1000111110001111111111111        10001         1000D0000000011
+1000111110001111111111111        10001         100000000000011
 100000000000000001000000111      10001         111110000000101
 100000100000001001000000101      10001              111111111
 100000000000000001000000111      10101

@@ -61,28 +61,22 @@ void	import_texture_to_img(t_game *game, t_img *img, char *filename, t_vector si
 
 void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_size)
 {
-	t_list	*texture_list;
+	char	*texture;
 	t_img	*img;
 	int		c;
 
 	c = -1;
 	while (++c < size)
 	{
-		texture_list = sprites_list[c].texture;
+		texture = sprites_list[c].texture;
 		sprites_list[c].img = NULL;
-		while (texture_list)
-		{
-			img = malloc(sizeof(*img));
-			if (img == NULL)
-				error_exit(game, 1, "Memory allocation error: Sprites \
-					initializing");
-			import_texture_to_img(game, img, texture_list->content,
-				(t_vector){t_size, t_size});
-			ft_lstadd_back(&sprites_list[c].img, ft_lstnew(img));
-			texture_list = texture_list->next;
-		}
-		if (sprites_list[c].img)
-			ft_lstlast(sprites_list[c].img)->next = sprites_list[c].img;
+		img = malloc(sizeof(*img));
+		if (img == NULL)
+			error_exit(game, 1, "Memory allocation error: Sprites \
+				initializing");
+		import_texture_to_img(game, img, texture,
+			(t_vector){t_size, t_size});
+		sprites_list[c].img = img;
 	}
 }
 
@@ -92,6 +86,5 @@ void	initialize_wall_textures(t_game *game)
 
 	counter = -1;
 	while (++counter < MAX_WALL_CHARS)
-		game->textures[counter] = *(t_img *)
-			game->map->walls[counter].img->content;
+		game->textures[counter] = *game->map->walls[counter].img;
 }
