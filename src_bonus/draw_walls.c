@@ -2,7 +2,7 @@
 
 void	draw_wall_scaled(t_img *img, const t_img *texture, t_vector v, t_game *game)
 {
-	const struct s_column	*column = game->column + v.x;
+	const struct s_column	*column = game->col + v.x;
 	double					step;
 	unsigned int			tex_x;
 	double					tex_y;
@@ -31,11 +31,11 @@ void	draw_walls(t_game *game)
 	v.x = 0;
 	while (v.x < game->img.size.x)
 	{
-		game->column[v.x].height = (int)(game->col_scale
-				/ game->column[v.x].perp_dist);
-		draw_texture_set(game, &game->column[v.x]);
+		game->col[v.x].height = (int)(game->col_scale
+									  / game->col[v.x].perp_dist);
+		draw_texture_set(game, &game->col[v.x]);
 		draw_wall_scaled(&game->img, &game->textures
-		[game->column[v.x].texture_id], v, game);
+		[game->col[v.x].texture_id], v, game);
 		++v.x;
 	}
 }

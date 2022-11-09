@@ -382,11 +382,12 @@ t_rgb	put_pixel_on_pixel(t_rgb *dst, t_rgb *src);
 void	put_text_to_screen(t_texture *font, t_img *img, t_text *text, int font_size);
 void	put_text_to_screen_layout(t_texture *font, t_img *img, t_text *text, int font_size);
 
-// src_bonus/ray_casting.c //
-
+// cast_rays.c //
 void	cast_rays(t_game *game);
 void	get_interception(t_game *game, t_fvector ray_dir, int i);
-void	initialize_columns(t_game *game, t_ray *ray, float distance, int i, float ray_angle);
+
+// calculate_columns.c //
+void	initialize_columns(t_game *g, t_ray *ray, int i, float r_angle);
 float	interception_distance(t_game *game, t_ray *ray);
 t_ray	ray_initialize(t_game *game, t_fvector ray_dir);
 

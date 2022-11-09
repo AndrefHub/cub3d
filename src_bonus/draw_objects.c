@@ -78,7 +78,7 @@ void	draw_object_scaled(t_game *game, t_object *obj)
 		while (cur.x < draw_end.x)
 		{
 			if (obj->sprite->alpha_start_x[(int)src.x] != INT16_MAX
-				&& game->column[cur.x].distance >= obj->distance)
+				&& game->col[cur.x].dist >= obj->distance)
 			{
 				src.y = fmaxf(0.f, -obj->start.y * obj->render_step.y);
 				cur.y = draw_start.y;

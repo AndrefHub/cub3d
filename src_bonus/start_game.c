@@ -39,10 +39,6 @@ void	clear_font_outline(t_game *game)
 	}
 }
 
-// void	play_sound(t_sound *sound)
-// {
-// 	sound->play = cs_play_sound(ctx, sound->def);
-// }
 
 void	play_sounds(t_game *game)
 {

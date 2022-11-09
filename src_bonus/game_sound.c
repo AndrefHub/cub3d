@@ -9,10 +9,10 @@ void	set_sound(t_sound *sound, char *filename)
 
 void	copy_sound(t_sound *sound, t_sound *src)
 {
-	// if (!src->file.channels[0])
-	// {
-	// 	error_exit(NULL, 1, "Sound file not found");
-	// }
+	 if (!src->file.channels[0])
+	 {
+	 	error_exit(NULL, 1, "Sound file not found");
+	 }
 	sound->def = cs_make_def(&src->file);
 	// sound->def.looped = 1;
 }

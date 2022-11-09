@@ -119,7 +119,7 @@ typedef struct ray
 	t_fvector	unit;
 	t_fvector	dir;
 	t_vector	map_tile;
-	t_fvector	length;
+	t_fvector	len;
 	t_vector	step;
 }				t_ray;
 
@@ -215,7 +215,6 @@ typedef struct game
 	{
 		t_fvector	pos;
 		t_fvector	delta;
-		t_ull		last_attack_time;
 		float		angle;
 		t_fvector	plane;
 		int			health;
@@ -232,7 +231,7 @@ typedef struct game
 	}				key;
 	struct			s_column
 	{
-		float		distance;
+		float		dist;
 		float		perp_dist;
 		t_fvector	pos;
 		int			side;
@@ -242,9 +241,8 @@ typedef struct game
 		int			height;
 		uint32_t	texture_id;
 		float		texture_pos;
-		float		fade;
 		int			color;
-	}				*column;
+	}				*col;
 	t_img			textures[MAX_WALL_CHARS];
 	struct			s_audio
 	{
