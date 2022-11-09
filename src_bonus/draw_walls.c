@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_walls.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:48:29 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:48:33 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:09:50 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	draw_walls(t_game *game)
 	while (v.x < game->img.size.x)
 	{
 		game->col[v.x].height = (int)(game->col_scale
-									  / game->col[v.x].perp_dist);
+				/ game->col[v.x].perp_dist);
 		draw_texture_set(game, &game->col[v.x]);
 		draw_wall_scaled(&game->img, &game->textures
 		[game->col[v.x].texture_id], v, game);

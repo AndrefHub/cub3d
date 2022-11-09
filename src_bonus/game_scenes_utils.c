@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_scenes_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:32 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:49:33 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:24:05 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	end_game_dim(t_game *game)
 		change_all_enemies_cry_paused(game, 1);
 		cs_play_sound(game->audio.ctx, game->audio.sounds[WIN_SOUND].def);
 	}
-	if (i < 50 && get_time() - time > 35)
+	if (get_time() - time > 35 && i < 50)
 	{
 		time = get_time();
 		dim_screen(game, i);

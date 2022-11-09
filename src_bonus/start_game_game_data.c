@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_game_game_data.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:51 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:50:52 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:06:52 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ void	*initialize_game_data(void *ptr)
 	initialize_textures(game);
 	initialize_game_objects(game);
 	set_enemy_sounds(game);
-	// clear_font_outline(game);
 	game->lb_filename = get_lb_name(game->map->map_file);
 	game->leaderboard = get_leaderboard(game->lb_filename);
 	game->death_func = end_game_dim;

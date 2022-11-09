@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_scenes.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:28 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:49:31 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:08:23 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	pac_game_scene(t_game *game)
 	draw_walls(game);
 	draw_game_objects(game);
 	draw_aim(game);
-	// draw_hud(game); // not necessary
 	put_frame(game);
 	change_textures(game);
 	update_time(game);

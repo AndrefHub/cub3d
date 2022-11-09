@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calculate_columns.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:47:35 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:47:37 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:12:39 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	calculate_column_dir(t_game *g, t_ray *ray, int i)
 		g->col[i].texture_pos = g->col[i].pos.x;
 	}
 	if (g->col[i].dir == 'S' || g->col[i].dir == 'W')
-		g->col[i].texture_pos =  TEXTURE_SIZE - g->col[i].texture_pos;
+		g->col[i].texture_pos = TEXTURE_SIZE - g->col[i].texture_pos;
 	g->col[i].texture_pos = g->col[i].texture_pos * TEXTURE_SIZE;
 }
 

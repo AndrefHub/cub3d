@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enemy_move.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:01 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:49:03 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:18:36 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,16 @@ t_list	*pathfinding_algo_predict(t_game *game, t_enemy *enemy)
 		pl = (t_fvector){game->player.pos.x + game->player.vector.x * 5,
 			game->player.pos.y + game->player.vector.y * 5};
 		stopper = 0;
-		while (++stopper < 10 && (!in_bounds(game->map->map_size, (int)pl.x,
-			(int)pl.y) || is_wall(game->map->map[(int)pl.y][(int)pl.x])))
+		while (++stopper < 10
+			&& (!in_bounds(game->map->map_size, (int)pl.x, (int)pl.y)
+				|| is_wall(game->map->map[(int)pl.y][(int)pl.x])))
 		{
 			pl.x -= game->player.vector.x * .5f;
 			pl.y -= game->player.vector.y * .5f;
 		}
 		if (in_bounds_vec(game->map->map_size, en))
-			return (get_first_n_nodes(astar(game, en,
-				(t_vector){pl.x, pl.y}), 5));
+			return (get_first_n_nodes(astar(game,
+						en, (t_vector){pl.x, pl.y}), 5));
 	}
 	return (pathfinding_algo_straight(game, enemy));
 }
@@ -82,14 +83,15 @@ t_list	*pathfinding_algo_giga_predict(t_game *game, t_enemy *enemy)
 	pl = (t_fvector){game->player.pos.x + diff.x, game->player.pos.y + diff.y};
 	diff = fvector_normalization(diff);
 	stopper = 0;
-	while (++stopper < 50 && (!in_bounds(game->map->map_size, (int)pl.x,
-		(int)pl.y) || is_wall(game->map->map[(int)pl.y][(int)pl.x])))
+	while (++stopper < 50
+		&& (!in_bounds(game->map->map_size, (int)pl.x, (int)pl.y)
+			|| is_wall(game->map->map[(int)pl.y][(int)pl.x])))
 	{
 		pl.x -= diff.x * .5f;
 		pl.y -= diff.y * .5f;
 	}
 	if (in_bounds_vec(game->map->map_size, en))
-		return (get_first_n_nodes(astar(game, en,
-			(t_vector){pl.x, pl.y}), 5));
+		return (get_first_n_nodes(astar(game,
+					en, (t_vector){pl.x, pl.y}), 5));
 	return (NULL);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:44 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:50:46 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:13:13 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	clear_font_outline(t_game *game)
 	}
 }
 
-
 void	play_sounds(t_game *game)
 {
 	t_list	*list;
@@ -73,8 +72,8 @@ void	play_sounds(t_game *game)
 void	start_game(t_game *game)
 {
 	init_time(game);
-	// play_sounds(game);
-	game->audio.sounds[INTRO_SOUND].play = cs_play_sound(game->audio.ctx, game->audio.sounds[INTRO_SOUND].def);
+	game->audio.sounds[INTRO_SOUND].play
+		= cs_play_sound(game->audio.ctx, game->audio.sounds[INTRO_SOUND].def);
 	mlx_loop(game->mlx.id);
 }
 

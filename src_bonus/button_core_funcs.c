@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   button_core_funcs.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:47:27 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:47:29 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:12:46 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	button_draw(t_game *game, t_button *button)
 
 int	button_selected(t_game *game, t_button *button)
 {
-
 	if (button->selected && !button->pressed)
 		return (button->on_selected(game, button));
 	return (0);

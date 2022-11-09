@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   end_game_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:48:45 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:48:46 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:17:31 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	change_all_enemies_cry_paused(t_game *game, int paused)
 
 void	pause_game_actions(t_game *game)
 {
-	// cs_play_sound(game->audio.ctx, game->audio.bonk.def);
 	game->show_map = 0;
 	change_all_enemies_cry_paused(game, 1);
 }

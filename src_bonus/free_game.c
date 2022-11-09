@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   free_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:14 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:49:16 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/09 19:08:35 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc_bonus/cub3d_bonus.h"
-
-void	free_sound(t_game *game)
-{
-	cs_free_sound(&game->audio.sounds[DEATH_SOUND].file);
-	// cs_free_sound(&game->audio.song.file);
-}
 
 void	free_texture_lists(t_game *game)
 {
