@@ -134,7 +134,7 @@ void	put_ended_game_image(t_game *game);
 // src_bonus/enemy_actions.c //
 
 void	enemy_attack(t_game *game, t_enemy *enemy);
-void	enemy_calculate_frame_movement(t_node *node, t_enemy *enemy);
+// void	enemy_calculate_frame_movement(t_node *node, t_enemy *enemy);
 void	enemy_check_collision(t_game *game, t_enemy *enemy);
 void	enemy_move(t_game *game);
 void	enemy_move_along_path(t_game *game, t_enemy *enemy);
@@ -367,7 +367,7 @@ int	show_button(t_game *game, t_button *button);
 void	mouse_controller(t_game *game);
 void	movement_controller(t_game *game);
 void	player_controll(t_game *game);
-void	player_delta_calculation(struct s_player *player);
+// void	player_delta_calculation(struct s_player *player);
 void	rotation_by_key_controller(t_game *game);
 
 // src_bonus/player_eating.c //

@@ -173,6 +173,7 @@ void	initialize_game_hud(t_game *game);
 void	initialize_game_parameters(t_game *game);
 void	initialize_mlx_parameters(t_game *game);
 void	initialize_start_game_variables(t_game *game);
+int	check_assets(t_map *map);
 
 // ../src/vector_utils.c //
 

@@ -12,10 +12,10 @@
 
 #include "../inc_bonus/cub3d_bonus.h"
 
-void	player_delta_calculation(struct s_player *player)
+void	player_delta_calculation(struct s_player *player, int fps)
 {
-	player->delta.x = cosf(player->angle) * PL_SPEED;
-	player->delta.y = sinf(player->angle) * PL_SPEED;
+	player->delta.x = cosf(player->angle) * (PL_SPEED / fps);
+	player->delta.y = sinf(player->angle) * (PL_SPEED / fps);
 }
 
 void	mouse_controller(t_game *game)
@@ -39,7 +39,7 @@ void	mouse_controller(t_game *game)
 		game->player.plane.y = old_plane * sinf((float) game->key.mdir.x
 				* PL_ROT_MOUSE_SPEED * 2) + game->player.plane.y * cosf((float)
 				game->key.mdir.x * PL_ROT_MOUSE_SPEED * 2);
-		player_delta_calculation(&game->player);
+		player_delta_calculation(&game->player, game->hud.fps.value_numeric);
 	}
 }
 
@@ -77,14 +77,17 @@ void	rotation_by_key_controller(t_game *game)
 		game->player.plane.y = old_plane * sinf(-PL_ROT_KEY_SPEED)
 			+ game->player.plane.y * cosf(-PL_ROT_KEY_SPEED);
 	}
-	player_delta_calculation(&game->player);
+	player_delta_calculation(&game->player, game->hud.fps.value_numeric);
 }
 
 void	player_controll(t_game *game)
 {
-	mouse_controller(game);
-	movement_controller(game);
-	rotation_by_key_controller(game);
-	check_restrictions(game);
-	player_eat(game);
+	if (get_time() - game->start_game_time > START_GAME_DELAY)
+	{
+		mouse_controller(game);
+		movement_controller(game);
+		rotation_by_key_controller(game);
+		check_restrictions(game);
+		player_eat(game);
+	}
 }

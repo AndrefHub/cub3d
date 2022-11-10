@@ -24,11 +24,11 @@
 # define PI (float) M_PI
 # define PL_ROT_KEY_SPEED 0.05f
 # define PL_ROT_MOUSE_SPEED 0.0007f
-# define PL_SPEED 0.1f
+# define PL_SPEED 4.f
 # define PL_ACCELERATION 2.5f
 # define PL_RADIUS 0.2f
 # define PL_MAP_COLOR 0xFF0000
-# define EN_SPEED 0.05f
+# define EN_SPEED 2.f
 # define RAYS_COLOR 0xFFDD2D
 # define AIM_SIZE 4
 # define AIM_COLOR 0xFF0000
@@ -55,6 +55,7 @@
 # define PANIC_TIME 7000
 # define LEADERBOARD_FOLDER ".lb/"
 # define PAUSE_ENTRIES 3
+# define START_GAME_DELAY 4500
 
 # ifndef ASSETS_PATH
 #  define ASSETS_PATH "."

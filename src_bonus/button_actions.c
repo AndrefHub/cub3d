@@ -21,8 +21,12 @@ int	continue_button_func(void *__game, t_button *button)
 
 int	start_button_func(void *__game, t_button *button)
 {
-	resume_game(__game);
-	change_button_to_pause_mode(__game);
+	t_game	*game;
+
+	game = __game;
+	resume_game(game);
+	change_button_to_pause_mode(game);
+	game->start_game_time = get_time();
 	(void)button;
 	return (0);
 }

@@ -12,13 +12,6 @@
 
 #include "../inc/cub3d.h"
 
-// t_map	*free_map(t_map *map)
-// {
-// 	if (map)
-// 		ft_freesplit(map->map);
-// 	return (NULL);
-// }
-
 int	ft_strrchr_int(const char *line, int chr)
 {
 	char	*wall;
@@ -90,4 +83,16 @@ void	convert_spaces_to_zeros(t_map *map)
 			if (arr[y][x] == ' ')
 				arr[y][x] = '0';
 	}
+}
+
+int	check_assets(t_map *map)
+{
+	int	counter;
+
+	counter = -1;
+	while (++counter < MAX_WALL_CHARS)
+		if (!map->walls[counter].texture)
+			error_exit(NULL, 1, "Parsing fail: \
+Invalid entries order or missing texture filename");
+	return (1);
 }

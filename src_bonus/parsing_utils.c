@@ -12,11 +12,32 @@
 
 #include "../inc_bonus/cub3d_bonus.h"
 
-t_map	*free_map(t_map *map)
+int	check_assets(t_map *map)
 {
-	if (map)
-		ft_freesplit(map->map);
-	return (NULL);
+	int	counter;
+
+	counter = -1;
+	while (++counter < MAX_WALL_CHARS)
+		if (!map->walls[counter].texture)
+			error_exit(NULL, 1, "Parsing fail: \
+Invalid entries order or missing wall texture filename");
+	counter = -1;
+	while (++counter < MAX_OBJECTS)
+		if (!map->object[counter].texture)
+			error_exit(NULL, 1, "Parsing fail: \
+Invalid entries order or missing wall texture filename");
+	counter = -1;
+	while (++counter < MAX_SOUNDS)
+		if (!map->sounds[counter])
+			error_exit(NULL, 1, "Parsing fail: \
+Invalid entries order or missing sound filename");
+	if (!map->floor.texture)
+		error_exit(NULL, 1, "Parsing fail: \
+Invalid entries order or missing floor texture filename");
+	if (!map->ceiling.texture)
+		error_exit(NULL, 1, "Parsing fail: \
+Invalid entries order or missing ceiling texture filename");
+	return (1);
 }
 
 int	ft_strrchr_int(const char *line, int chr)

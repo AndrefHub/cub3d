@@ -85,7 +85,8 @@ int	init_game(t_map *map)
 	game.map = map;
 	init_input_and_scene_funcs(&game);
 	game.scene.parameter = &game;
-	set_game_input_mode(&game, START_MODE);
+	game.input_mode = START_MODE;
+	game.scene.scene_func = game.scene_funcs[game.input_mode];
 	game.mlx.id = mlx_init();
 	if (!game.mlx.id)
 		error_exit(&game, 1, "Game initialization error: MLX initialization");

@@ -16,7 +16,7 @@ void	set_game_input_mode(t_game *game, int mode)
 {
 	game->input_mode = mode;
 	game->scene.scene_func = game->scene_funcs[game->input_mode];
-	// set_game_audio_input_mode(game, mode);
+	set_game_audio_input_mode(game, mode);
 }
 
 // 0
@@ -54,7 +54,6 @@ void	end_game_dim(t_game *game)
 	{
 		game->show_map = 0;
 		change_all_enemies_cry_paused(game, 1);
-		cs_play_sound(game->audio.ctx, game->audio.sounds[WIN_SOUND].def);
 	}
 	if (get_time() - time > 35 && i < 50)
 	{

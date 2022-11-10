@@ -288,11 +288,12 @@ typedef struct game
 	int				ghosts_eaten;
 	int				afterdeath;
 	char			*lb_filename;
-	void			(*scene_funcs[MAX_MODES])(void*);
+	void			(*scene_funcs[MAX_MODES])(void *);
 	int				(*input_funcs[MAX_MODES])(int, struct game *);
 	void			(*death_func)(struct game *);
 	t_button_list	pause;
 	t_img			pacman_logo;
+	t_ull			start_game_time;
 }	t_game;
 
 typedef struct s_enemy

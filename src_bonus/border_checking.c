@@ -12,6 +12,13 @@
 
 #include "../inc_bonus/cub3d_bonus.h"
 
+char	*skip_empty_chars(char *line)
+{
+	while (is_space(*line))
+		++line;
+	return (line);
+}
+
 int	get_map_width(const char **map)
 {
 	int	max_width;
@@ -19,7 +26,6 @@ int	get_map_width(const char **map)
 	max_width = 0;
 	while (*map)
 	{
-		ft_putendl_fd(*map, 1);
 		if (max_width < ft_strrchr_int_arr(*map, WALL_CHARS))
 			max_width = ft_strrchr_int_arr(*map, WALL_CHARS);
 		++map;
@@ -46,8 +52,8 @@ int	is_map_enclosed(t_map *map)
 {
 	t_vector	check;
 
-	if (!ft_strchr(WALL_CHARS, **map->map))
-		error_exit(NULL, 1, *map->map);
+	if (is_wall(*skip_empty_chars(map->map[0])))
+		error_exit(NULL, 1, "Invalid entries order or map not enclosed");
 	check.y = 0;
 	while (check.y < map->map_size.y)
 	{

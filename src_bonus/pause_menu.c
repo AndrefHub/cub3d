@@ -46,9 +46,12 @@ void	all_button_mouse_actions(t_game *game, t_button *buttons, int size)
 			&& buttons[c].pos.y <= game->key.mpos.y
 			&& game->key.mpos.y < buttons[c].pos.y + buttons[c].size.y)
 		{
-			reset_selected_buttons(buttons, size);
-			buttons[c].selected = 1;
-			game->pause.index = c;
+			if (buttons[c].selected != 2)
+			{
+				reset_selected_buttons(buttons, size);
+				buttons[c].selected = 1;
+				game->pause.index = c;
+			}
 		}
 	}
 }

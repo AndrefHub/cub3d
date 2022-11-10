@@ -22,7 +22,15 @@ int	button_draw(t_game *game, t_button *button)
 int	button_selected(t_game *game, t_button *button)
 {
 	if (button->selected && !button->pressed)
+	{
+		if (button->selected == 1)
+		{
+			play_t_sound(game->audio.ctx,
+				&game->audio.sounds[BUTTON_CHANGE_SOUND]);
+			button->selected = 2;
+		}
 		return (button->on_selected(game, button));
+	}
 	return (0);
 }
 
@@ -38,6 +46,8 @@ int	button_released(t_game *game, t_button *button)
 	if (button->released)
 	{
 		button->released = 0;
+		play_t_sound(game->audio.ctx,
+			&game->audio.sounds[BUTTON_PRESS_SOUND]);
 		return (button->on_released(game, button));
 	}
 	return (0);

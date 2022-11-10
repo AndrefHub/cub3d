@@ -2,8 +2,8 @@ NO ./assets/textures/floor4.xpm
 
 SO ./assets/textures/floor5.xpm
 
-EA ./assets/textures/floor2.xpm
 WE ./assets/textures/floor3.xpm
+EA ./assets/textures/floor2.xpm
 
 F 11,57,37
 C 94,110,187
