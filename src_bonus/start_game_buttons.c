@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_game_buttons.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:49 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:50:50 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:59:11 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	change_button_to_pause_mode(t_game *game)
 	int			counter;
 
 	game->pause.buttons[0].text.text = "continue";
+	game->pause.buttons[0].on_released = continue_button_func;
 	counter = -1;
 	while (++counter < PAUSE_ENTRIES)
 	{
