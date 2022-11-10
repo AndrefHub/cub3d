@@ -17,7 +17,7 @@ if [ ! -d $folderPath ]
     then
         downloadLink=$(curl -s "$yaDiskLink""$assetsLink" | cut -d'"' -f4)
         curl -H "Authorization: OAuth $OAuthToken" -L "$downloadLink" -o "$savePath"
-        unzip "$savePath" -d "$goinfre"
+        unzip -qq "$savePath" -d "$goinfre"
         echo "Assets saved to $savePath!"
         if [ "$goinfre" != "." ]
           then
