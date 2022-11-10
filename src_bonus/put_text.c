@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   put_text.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:34 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:50:36 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:24:18 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int	put_char_to_screen(t_texture *font, t_img *img, t_text *text, int font_size)
 	return (1);
 }
 
-void	put_text_to_screen(t_texture *font, t_img *img, t_text *text, int font_size)
+void	put_text_to_screen(t_texture *font,
+	t_img *img, t_text *text, int font_size)
 {
 	char	*tmp;
 
@@ -70,7 +71,8 @@ void	put_text_to_screen(t_texture *font, t_img *img, t_text *text, int font_size
 	text->text = tmp;
 }
 
-void	put_text_to_screen_layout(t_texture *font, t_img *img, t_text *text, int font_size)
+void	put_text_to_screen_layout(t_texture *font,
+	t_img *img, t_text *text, int font_size)
 {
 	t_vector	pos;
 

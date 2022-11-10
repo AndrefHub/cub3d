@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_eating.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:30 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:50:31 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:11:15 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,14 @@ void	set_panic_mode(t_game *game)
 	}
 }
 
-void	pill_eaten(t_game *game)
+void	eat_pill_sound_effect(t_game *game)
 {
-	set_panic_mode(game);
+	play_t_sound(game->audio.ctx, &game->audio.sounds[EATING_SOUND]);
+	if (game->audio.sounds[EATING_SOUND].play)
+	{
+		game->audio.sounds[EATING_SOUND].play->volume0 = .5;
+		game->audio.sounds[EATING_SOUND].play->volume1 = .5;
+	}
 }
 
 void	eat_by_coords(t_game *game, t_vector pos)
@@ -84,12 +89,12 @@ void	eat_by_coords(t_game *game, t_vector pos)
 		if (object->type < MAX_PILLS && (int)object->pos.x == pos.x
 			&& (int)object->pos.y == pos.y)
 		{
-			play_t_sound(game->audio.ctx, &game->audio.sounds[EATING_SOUND]);
 			--game->objects_count;
+			eat_pill_sound_effect(game);
 			game->hud.score.value_numeric += COIN_REWARD + (game->map->map
 				[pos.y][pos.x] == 'o') * (PILL_REWARD - COIN_REWARD);
 			if (game->map->map[pos.y][pos.x] == 'o')
-				pill_eaten(game);
+				set_panic_mode(game);
 			ft_lstdelbyaddr(&game->objects, objects, free);
 			game->map->map[pos.y][pos.x] = '0';
 			return ;

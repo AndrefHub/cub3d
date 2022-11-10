@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   draw_objects.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:48:20 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:48:22 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:25:58 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc_bonus/cub3d_bonus.h"
 
-inline void	calculate_object_params_inner(t_game *game, t_object *obj, t_fvector sprite, float inv_det)
+inline void	calculate_object_params_inner(t_game *game,
+	t_object *obj, t_fvector sprite, float inv_det)
 {
 	t_fvector	transform;
 	int			spritescreenx;
@@ -55,7 +56,8 @@ void	calculate_object_params(t_game *game, t_object *obj)
 	}
 }
 
-inline void	draw_object_scaled_inner_cycle(t_game *game, t_object *obj, t_fvector *src, t_vector *cur)
+inline void	draw_object_scaled_inner_cycle(t_game *game,
+	t_object *obj, t_fvector *src, t_vector *cur)
 {
 	const t_vector	draw_end = (t_vector){ft_min(game->img.size.x, obj->end.x),
 		ft_min(game->img.size.y, obj->end.y)};

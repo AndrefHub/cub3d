@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enemy_actions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:48:47 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:48:48 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:25:24 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void	enemy_move_along_path(t_game *game, t_enemy *enemy)
 			if (ft_lstsize(enemy->path))
 				node = ((t_node *)enemy->path->content);
 		}
-		enemy_calculate_frame_movement(node, enemy, game->hud.fps.value_numeric);
+		enemy_calculate_frame_movement(node,
+			enemy, game->hud.fps.value_numeric);
 	}
 }
 

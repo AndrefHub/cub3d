@@ -1,5 +1,17 @@
-#ifndef CONSTANTS_BONUS_H
-# define CONSTANTS_BONUS_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   constants.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/10 18:30:11 by kdancy            #+#    #+#             */
+/*   Updated: 2022/11/10 18:30:12 by kdancy           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CONSTANTS_H
+# define CONSTANTS_H
 
 # define BAD_FILE -2
 # define FRAMERATE 30

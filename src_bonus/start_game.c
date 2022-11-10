@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:44 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 19:13:13 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 14:48:46 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	start_game(t_game *game)
 	init_time(game);
 	game->audio.sounds[INTRO_SOUND].play
 		= cs_play_sound(game->audio.ctx, game->audio.sounds[INTRO_SOUND].def);
+	game->audio.sounds[INTRO_SOUND].play->looped = 1;
 	mlx_loop(game->mlx.id);
 }
 

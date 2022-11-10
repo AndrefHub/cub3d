@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:47:26 by kdancy            #+#    #+#             */
-/*   Updated: 2022/11/09 18:47:27 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:02:15 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	rotation_by_key_controller(t_game *game)
 {
 	float	old_plane;
 
-	if (key_pressed(game, RIGHT_KEY) || key_pressed(game, E_KEY))
+	if (key_pressed(game, RIGHT_KEY))
 	{
 		game->player.angle += PL_ROT_KEY_SPEED;
 		old_plane = game->player.plane.x;
@@ -43,7 +43,7 @@ void	rotation_by_key_controller(t_game *game)
 		game->player.plane.y = old_plane * sinf(PL_ROT_KEY_SPEED)
 			+ game->player.plane.y * cosf(PL_ROT_KEY_SPEED);
 	}
-	if (key_pressed(game, LEFT_KEY) || key_pressed(game, Q_KEY))
+	if (key_pressed(game, LEFT_KEY))
 	{
 		game->player.angle -= PL_ROT_KEY_SPEED;
 		old_plane = game->player.plane.x;

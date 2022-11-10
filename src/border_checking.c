@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:46:29 by kdancy            #+#    #+#             */
-/*   Updated: 2022/11/09 18:46:31 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:12:59 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	get_map_width(const char **map)
 	max_width = 0;
 	while (*map)
 	{
-		ft_putendl_fd(*map, 1);
 		if (max_width < ft_strrchr_int_arr(*map, WALL_CHARS))
 			max_width = ft_strrchr_int_arr(*map, WALL_CHARS);
 		++map;

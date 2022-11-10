@@ -1,11 +1,9 @@
 SHELL	= /bin/bash
 MAKEFLAGS += --silent
 
-NAME    = cub3d
-NAMEBONUS = pac3d
-#CC      = clang
+NAME    = cub3D
+NAMEBONUS = pac3D
 CC      = gcc
-# FLAGS	= -Wall -Wextra -Werror -g -O0 -fsanitize=address
 FLAGS	= -Wall -Wextra -Werror -g -Ofast -march=native 
 LFLAGS	= -Llibft -lft
 ###
@@ -70,6 +68,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					end_game_utils.c \
 					enemy_actions.c \
 					enemy_actions_utils.c \
+					enemy_algorithms.c \
 					enemy_astar.c \
 					enemy_astar_utils.c \
 					enemy_move.c \
@@ -109,6 +108,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					put_text.c \
 					respawn.c \
 					set_game_audio_input_mode.c \
+					set_game_audio_modes.c \
 					start_game.c \
 					start_game_buttons.c \
 					start_game_game_data.c \
@@ -128,7 +128,7 @@ CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
 ###
 INC_BONUSDIR = inc_bonus/
 CUB_BONUSHDR  = $(addprefix $(INC_BONUSDIR), cub3d_bonus.h)
-CUB_BONUSINC = inc_bonus/constants_bonus.h inc_bonus/cub3d_bonus.h inc_bonus/prototypes.h
+CUB_BONUSINC = inc_bonus/constants_bonus.h inc_bonus/cub3d_bonus.h inc_bonus/prototypes.h inc_bonus/structures.h
 SNDLIB  = cute_sound/cute_sound.o
 LBFOLDER  = .lb
 
@@ -182,8 +182,7 @@ $(OBJDIR)%.o: $(SRCDIR)%.c $(CUB_HDR)
 	$(eval FILES_LEFT := $(shell expr $(FILES_COUNT) - $(FILES_COMPILED) + 1))
 	printf '%0.s\033[0;46m \033[0m' {1..$(FILES_COMPILED)}
 	printf '%0.s ' {1..$(FILES_LEFT)}
-	# echo /$(FILES_COMPILED)
-	echo -n '[' "$(FILES_COMPILED)/$(FILES_COUNT)" '] '
+	printf "[ $(FILES_COMPILED)/$(FILES_COUNT) ]"
 
 $(OBJ_BONUSDIR)%.o: $(SRC_BONUSDIR)%.c $(CUB_BONUSHDR) $(CUB_BONUSINC)
 	@mkdir -p $(OBJ_BONUSDIR)
@@ -193,8 +192,7 @@ $(OBJ_BONUSDIR)%.o: $(SRC_BONUSDIR)%.c $(CUB_BONUSHDR) $(CUB_BONUSINC)
 	$(eval FILES_LEFT := $(shell expr $(FILES_COUNT) - $(FILES_COMPILED) + 1))
 	printf '%0.s\033[0;46m \033[0m' {1..$(FILES_COMPILED)}
 	printf '%0.s ' {1..$(FILES_LEFT)}
-	# echo /$(FILES_COMPILED)
-	echo -n '[' "$(FILES_COMPILED)/$(FILES_COUNT)" '] '
+	printf "[ $(FILES_COMPILED)/$(FILES_COUNT) ] "
 
 clean:
 	@$(RM) $(OBJDIR)

@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:47:13 by kdancy            #+#    #+#             */
-/*   Updated: 2022/11/09 18:47:14 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 16:54:15 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ void	parse_assets(t_map *map, int fd)
 	map->walls[3].texture = parse_texture(fd, &line, "EA");
 	map->f = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "F"));
 	map->c = convert_to_rgb(crop_prefix(skip_empty_lines(fd), "C"));
+	check_assets(map);
 }

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   draw_ceil_floor.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:48:01 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:48:03 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:26:06 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc_bonus/cub3d_bonus.h"
 
-static void	draw_row_textured(t_game *game, t_img src, t_vector cur, float row_distance)
+static void	draw_row_textured(t_game *game,
+	t_img src, t_vector cur, float row_distance)
 {
 	const t_fvector	ray_dir0 = (t_fvector){(float)(game->player.vector.x - game
 			->player.plane.x), (game->player.vector.y - game->player.plane.y)};

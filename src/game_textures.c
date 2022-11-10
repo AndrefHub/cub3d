@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:46:56 by kdancy            #+#    #+#             */
-/*   Updated: 2022/11/09 18:46:57 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:22:29 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	skip_transparent_background(t_img *img)
 	}
 }
 
-void	import_texture_to_img(t_game *game, t_img *img, char *filename, t_vector size)
+void	import_texture_to_img(t_game *game,
+	t_img *img, char *filename, t_vector size)
 {
 	int	tex_size;
 
@@ -62,7 +63,6 @@ Missing texture filename or invalid entries order.");
 		error_exit(game, 1, "Initialization fail: Invalid texture format");
 	if (img->mlx_img == NULL)
 	{
-		ft_putendl_fd(filename, 2);
 		error_exit(game, 1, "Initialization fail: Textures loading");
 	}
 	img->addr = (int *) mlx_get_data_addr
@@ -71,7 +71,8 @@ Missing texture filename or invalid entries order.");
 	img->size.y = size.y;
 }
 
-void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_size)
+void	initialize_sprites(t_game *game,
+	int size, t_texture *sprites_list, int t_size)
 {
 	char	*texture;
 	t_img	*img;

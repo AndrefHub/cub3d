@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_objects.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:06 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:49:10 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:24:54 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int	set_player(t_map *map, t_list *lst, char *line, char *orient)
 	return (0);
 }
 
-void	find_enemy(t_list **lst, t_object *object, t_list *(*enemy_algorithms[MAX_ENEMIES])(void *, void *))
+void	find_enemy(t_list **lst, t_object *object,
+	t_list *(*enemy_algorithms[MAX_ENEMIES])(void *, void *))
 {
 	static int	type = BLINKY;
 	t_enemy		*enemy;
@@ -72,15 +73,6 @@ void	find_enemy(t_list **lst, t_object *object, t_list *(*enemy_algorithms[MAX_E
 		ft_lstadd_back(lst, ft_lstnew(enemy));
 		++type;
 	}
-}
-
-int	find_type(char c)
-{
-	if (c == '.')
-		return (0);
-	else if (c == 'o')
-		return (1);
-	return (MAX_PILLS);
 }
 
 void	find_objects(t_map *map)

@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:51 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 19:06:52 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 14:30:08 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,29 @@ void	initialize_game_objects(t_game *game)
 
 void	set_enemy_sounds(t_game *game)
 {
-	t_list	*elem;
-	t_enemy	*enemy;
+	t_list		*elem;
+	t_enemy		*enemy;
+	float		angle;
+	t_fvector	pos;
 
 	elem = game->map->enemies;
 	while (elem)
 	{
 		enemy = elem->content;
+		pos = (t_fvector){game->player.pos.x - enemy->object->pos.x,
+			game->player.pos.y - enemy->object->pos.y};
+		angle = calculate_angle((t_fvector){1, 0}, pos);
 		copy_sound(&enemy->sound, &game->audio.sounds[ENEMY_SOUND]);
 		play_t_sound(game->audio.ctx, &enemy->sound);
-		enemy->sound.play->looped = 1;
-		enemy->sound.play->paused = 1;
+		if (enemy->sound.play)
+		{
+			enemy->sound.play->looped = 1;
+			enemy->sound.play->paused = 1;
+			enemy->sound.play->volume0 = ((cosf(angle - PI / 2) + 1) / 2)
+				/ distancef(&pos, &(t_fvector){0, 0}) / 1.5;
+			enemy->sound.play->volume1 = ((cosf(angle + PI / 2) + 1) / 2)
+				/ distancef(&pos, &(t_fvector){0, 0}) / 1.5;
+		}
 		elem = elem->next;
 	}
 }

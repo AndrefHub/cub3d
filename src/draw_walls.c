@@ -6,13 +6,14 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:46:40 by kdancy            #+#    #+#             */
-/*   Updated: 2022/11/09 18:48:33 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:22:59 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-void	draw_wall_scaled(t_img *img, const t_img *texture, t_vector v, t_game *game)
+void	draw_wall_scaled(t_img *img,
+	const t_img *texture, t_vector v, t_game *game)
 {
 	const struct s_column	*col = game->col + v.x;
 	double					step;

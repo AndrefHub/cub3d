@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   constants_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:51:28 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:51:30 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:33:17 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ enum e_enemies
 	PINKY,
 	INKY,
 	CLYDE,
-	MAX_ENEMIES, 
+	MAX_ENEMIES,
 	MAX_OBJECTS = MAX_ENEMIES + MAX_PILLS
 };
 

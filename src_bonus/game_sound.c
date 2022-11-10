@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:34 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 19:14:59 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:11:39 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	copy_sound(t_sound *sound, t_sound *src)
 
 void	init_main_game_sound(t_game *game)
 {
-	game->audio.ctx = cs_make_context(0, 44100, 4096, 8, NULL);
+	game->audio.ctx = cs_make_context(0, 44100, 4096, 32, NULL);
 	cs_spawn_mix_thread(game->audio.ctx);
 	cs_thread_sleep_delay(game->audio.ctx, 5);
 }
