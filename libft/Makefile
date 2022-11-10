@@ -64,10 +64,19 @@ RM			:= rm -rf
 HEADER		:= libft.h
 .PHONY: all clean fclean re bonus
 
+N := x
+C = $(words $N)$(eval N := x $N)
+FILES_COUNT := $(words $(SRCS))
 
 %.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) $< -o $@ -include $(HEADER)
-	@printf "\033[1;36m/\033[0m"
+	@printf "\r"
+	$(eval FILES_COMPILED := $(C))
+	$(eval FILES_LEFT := $(shell expr $(FILES_COUNT) - $(FILES_COMPILED) + 1))
+	printf '%0.s\033[0;43m \033[0m' {1..$(FILES_COMPILED)}
+	printf '%0.s ' {1..$(FILES_LEFT)}
+	# echo /$(FILES_COMPILED)
+	echo -n '[' "$(FILES_COMPILED)/$(FILES_COUNT)" '] '
 
 $(NAME): $(OBJS) $(HEADER)
 	@echo
