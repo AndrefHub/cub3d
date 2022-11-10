@@ -6,11 +6,32 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:28 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/10 15:47:03 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:18:07 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc_bonus/cub3d_bonus.h"
+
+// 0
+void	start_game_scene(t_game *game)
+{
+	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
+	draw_hud(game);
+	put_text_to_screen_layout(game->map->font, &game->img, &(t_text)
+	{"kdancy and lsherry present", (t_vector){game->img.size.x / 2, game->hud
+		.font_size / 2}, VTop | HCenter, 0xF0F0F0}, game->hud.font_size);
+	if (game->pacman_logo.addr)
+		put_image_to_image(&game->img,
+			(t_vector){(game->img.size.x - game->pacman_logo.size.x) / 2,
+			game->hud.font_size * 2}, &game->pacman_logo);
+	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x
+			- game->img.size.x) / 2, 0}, &game->img);
+	all_button_mouse_actions(game, game->pause.buttons, PAUSE_ENTRIES);
+	all_button_actions(game, game->pause.buttons, PAUSE_ENTRIES);
+	mlx_put_image_to_window(game->mlx.id, game->mlx.window,
+		game->hud_img.mlx_img, 0, 0);
+	update_time(game);
+}
 
 // 1
 void	pac_game_scene(t_game *game)
@@ -63,53 +84,4 @@ void	pause_game_scene(t_game *game)
 	mlx_put_image_to_window(game->mlx.id, game->mlx.window,
 		game->hud_img.mlx_img, 0, 0);
 	update_time(game);
-}
-
-// 5
-void	controls_game_scene(void *__game)
-{
-	t_game		*game;
-
-	game = __game;
-	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
-	draw_hud(game);
-	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x
-			- game->img.size.x) / 2, 0}, &game->img);
-	draw_rectangle_fill(&game->hud_img, (t_vector)
-	{game->hud_img.size.x / 2 - game->img.size.x / 2, 0}, (t_vector)
-	{game->img.size.x, game->img.size.y}, 0xA0000000);
-	write_controls(game, game->hud.font_size,
-		game->index_before_controls == PAUSE_MODE);
-	mlx_put_image_to_window(game->mlx.id, game->mlx.window,
-		game->hud_img.mlx_img, 0, 0);
-	update_time(game);
-}
-
-void	write_controls(t_game *game, int font_size, int flag)
-{
-	const int	y = game->hud_img.size.y / (3 * (1 + flag));
-	int			c;
-
-	c = 0;
-	put_text_to_screen_layout(game->map->font, &game->hud_img, &(t_text)
-	{"controls", (t_vector){game->hud_img.size.x / 2, y - font_size},
-		VCenter | HCenter, 0xE0E0E0}, font_size * 1.5);
-	put_text_to_screen_layout(game->map->font, &game->hud_img, &(t_text)
-	{"WASD - MOVE PLAYER", (t_vector){game->hud_img.size.x / 2,
-		y + 2 * font_size * (++c)}, VCenter | HCenter, 0xE0E0E0}, font_size);
-	put_text_to_screen_layout(game->map->font, &game->hud_img, &(t_text)
-	{"LEFT/RIGHT/MOUSE - ROTATE PLAYER", (t_vector){game->hud_img.size.x / 2,
-		y + 2 * font_size * (++c)}, VCenter | HCenter, 0xE0E0E0}, font_size);
-	put_text_to_screen_layout(game->map->font, &game->hud_img, &(t_text)
-	{"E - OPEN DOORS", (t_vector){game->hud_img.size.x / 2,
-		y + 2 * font_size * (++c)}, VCenter | HCenter, 0xE0E0E0}, font_size);
-	put_text_to_screen_layout(game->map->font, &game->hud_img, &(t_text)
-	{"M - OPEN MAP", (t_vector){game->hud_img.size.x / 2,
-		y + 2 * font_size * (++c)}, VCenter | HCenter, 0xE0E0E0}, font_size);
-	put_text_to_screen_layout(game->map->font, &game->hud_img, &(t_text)
-	{"ESC - PAUSE/UNPAUSE GAME", (t_vector){game->hud_img.size.x / 2,
-		y + 2 * font_size * (++c)}, VCenter | HCenter, 0xE0E0E0}, font_size);
-	put_text_to_screen_layout(game->map->font, &game->hud_img, &(t_text)
-	{"ENTER/RIGHT CLICK - CONFIRM", (t_vector){game->hud_img.size.x / 2,
-		y + 2 * font_size * (++c)}, VCenter | HCenter, 0xE0E0E0}, font_size);
 }

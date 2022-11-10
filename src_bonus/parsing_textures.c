@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_textures.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:14 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:50:18 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:12:49 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	parse_texture(int fd, char **line, t_parse_info info)
 	if (!(line && *line && !ft_strncmp(*line, info.prefix,
 				ft_strlen(info.prefix))))
 		return ;
-	ft_putendl_fd(*line, 1);
 	ft_lstadd_back(&(info.arr->texture),
 		ft_lstnew(crop_prefix(*line, info.prefix)));
 	*line = NULL;
@@ -78,7 +77,6 @@ void	parse_sounds(t_map *map, int fd, char **line)
 	index = ft_atoi(*line + 1) - 1;
 	if (index < 0 || index >= MAX_SOUNDS)
 		error_exit(NULL, 1, "wrong index map");
-	ft_putendl_fd(*line, 1);
 	if (map->sounds[index])
 		free(*line);
 	else
@@ -106,4 +104,5 @@ void	parse_assets(t_map *map, int fd)
 		parse_sounds(map, fd, &line);
 	parse_texture(fd, &line, (t_parse_info){NULL, "F", &map->floor, 0});
 	parse_texture(fd, &line, (t_parse_info){NULL, "C", &map->ceiling, 0});
+	check_assets(map);
 }

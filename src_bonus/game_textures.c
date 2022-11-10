@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_textures.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:41 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:49:42 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:24:37 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	skip_transparent_background(t_img *img)
 	}
 }
 
-void	import_texture_to_img(t_game *game, t_img *img, char *filename, t_vector size)
+void	import_texture_to_img(t_game *game,
+	t_img *img, char *filename, t_vector size)
 {
 	int	tex_size;
 
@@ -59,7 +60,6 @@ void	import_texture_to_img(t_game *game, t_img *img, char *filename, t_vector si
 		error_exit(game, 1, "Initialization fail: Invalid texture format");
 	if (img->mlx_img == NULL)
 	{
-		ft_putendl_fd(filename, 2);
 		error_exit(game, 1, "Initialization fail: Textures loading");
 	}
 	img->addr = (int *) mlx_get_data_addr
@@ -71,7 +71,8 @@ void	import_texture_to_img(t_game *game, t_img *img, char *filename, t_vector si
 	skip_transparent_background(img);
 }
 
-void	initialize_sprites(t_game *game, int size, t_texture *sprites_list, int t_size)
+void	initialize_sprites(t_game *game,
+	int size, t_texture *sprites_list, int t_size)
 {
 	t_list	*texture_list;
 	t_img	*img;

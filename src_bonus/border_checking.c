@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   border_checking.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:46:27 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:46:28 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 17:03:10 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int	get_map_width(const char **map)
 
 int	check_enclosure(t_map *map, t_vector vec)
 {
-	if (map->map[vec.y][vec.x] == ' ' || is_wall(map->map[vec.y][vec.x]))
+	if (map->map[vec.y][vec.x] == ' '
+		|| (is_wall(map->map[vec.y][vec.x]) && map->map[vec.y][vec.x] != 'D'))
 		return (0);
 	if (vec.x == 0 || vec.x == map->map_size.x - 1 || vec.y == 0
 		|| vec.y == map->map_size.y - 1)

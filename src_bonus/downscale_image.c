@@ -6,13 +6,14 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:47:57 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 19:10:23 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:26:14 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc_bonus/cub3d_bonus.h"
 
-int	get_downscaled_colored_font(t_img *img, int divisor, t_vector pos, t_rgb color)
+int	get_downscaled_colored_font(t_img *img,
+	int divisor, t_vector pos, t_rgb color)
 {
 	t_rgb		pixel;
 	int			alpha;

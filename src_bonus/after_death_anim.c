@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   after_death_anim.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:47:10 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:47:19 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:26:19 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	get_rand_color(void)
 	return (colors[ft_rand() % 5]);
 }
 
-void	draw_afterdeath_inner_cycle(t_game *game, t_text *text, int font_size, int y_max)
+void	draw_afterdeath_inner_cycle(t_game *game,
+	t_text *text, int font_size, int y_max)
 {
 	const int	len = (int)ft_strlen(game->macos_chars);
 	t_vector	v;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enemy_astar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:48:55 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:48:57 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:25:05 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ t_node	*ft_nodenew(t_node *data)
 	return (node);
 }
 
-void	add_all_neighbours(t_game *game, t_astar_utils *lists, t_node *node, t_vector player)
+void	add_all_neighbours(t_game *game,
+	t_astar_utils *lists, t_node *node, t_vector player)
 {
 	int			i;
 	t_vector	pos;

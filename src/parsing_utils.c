@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:47:16 by kdancy            #+#    #+#             */
-/*   Updated: 2022/11/09 18:47:19 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:21:06 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,8 @@ int	check_assets(t_map *map)
 		if (!map->walls[counter].texture)
 			error_exit(NULL, 1, "Parsing fail: \
 Invalid entries order or missing texture filename");
+	if (map->f == BAD_COLOUR || map->c == BAD_COLOUR)
+		error_exit(NULL, 1, "Parsing fail: \
+Invalid entries order or invalid color");
 	return (1);
 }

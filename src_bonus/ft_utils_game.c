@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils_game.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:24 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:49:26 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:17:22 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,13 @@ char	*get_full_texture_path(char *line, int flag)
 		free(line);
 	}
 	return (new_line);
+}
+
+int	find_type(char c)
+{
+	if (c == '.')
+		return (0);
+	else if (c == 'o')
+		return (1);
+	return (MAX_PILLS);
 }

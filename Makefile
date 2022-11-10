@@ -70,6 +70,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					end_game_utils.c \
 					enemy_actions.c \
 					enemy_actions_utils.c \
+					enemy_algorithms.c \
 					enemy_astar.c \
 					enemy_astar_utils.c \
 					enemy_move.c \
@@ -109,6 +110,7 @@ SRC_BONUSFILE	=	after_death_anim.c \
 					put_text.c \
 					respawn.c \
 					set_game_audio_input_mode.c \
+					set_game_audio_modes.c \
 					start_game.c \
 					start_game_buttons.c \
 					start_game_game_data.c \
@@ -128,7 +130,7 @@ CUBHDR  = $(addprefix $(INCDIR), cub3d.h)
 ###
 INC_BONUSDIR = inc_bonus/
 CUB_BONUSHDR  = $(addprefix $(INC_BONUSDIR), cub3d_bonus.h)
-CUB_BONUSINC = inc_bonus/constants_bonus.h inc_bonus/cub3d_bonus.h inc_bonus/prototypes.h
+CUB_BONUSINC = inc_bonus/constants_bonus.h inc_bonus/cub3d_bonus.h inc_bonus/prototypes.h inc_bonus/structures.h
 SNDLIB  = cute_sound/cute_sound.o
 LBFOLDER  = .lb
 
