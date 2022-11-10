@@ -75,13 +75,12 @@ FILES_COUNT := $(words $(SRCS))
 	$(eval FILES_LEFT := $(shell expr $(FILES_COUNT) - $(FILES_COMPILED) + 1))
 	printf '%0.s\033[0;43m \033[0m' {1..$(FILES_COMPILED)}
 	printf '%0.s ' {1..$(FILES_LEFT)}
-	# echo /$(FILES_COMPILED)
-	echo -n '[' "$(FILES_COMPILED)/$(FILES_COUNT)" '] '
+	printf "[ $(FILES_COMPILED)/$(FILES_COUNT) ] "
 
 $(NAME): $(OBJS) $(HEADER)
 	@echo
 	@ar rcs $(NAME) $(OBJS)
-	@echo "\033[1;33m"$(NAME) "is up to date."'\033[0m'
+	@printf "\033[1;33m$(NAME) is up to date.\033[0m\n"
 
 all: $(NAME)
 

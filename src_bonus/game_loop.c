@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:26 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:49:28 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 13:26:52 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void	update_volume(t_game *game)
 				(&pos, &(t_fvector){0, 0}) / 2, ((cosf(angle + PI / 2) + 1) / 2)
 				/ distancef(&pos, &(t_fvector){0, 0}) / 2};
 			enemy->sound.play->volume0 += ftorange
-				(volume.x - enemy->sound.play->volume0, 0.01);
+				(volume.x - enemy->sound.play->volume0, 0.03);
 			enemy->sound.play->volume1 += ftorange
-				(volume.y - enemy->sound.play->volume1, 0.01);
+				(volume.y - enemy->sound.play->volume1, 0.03);
 		}
 		enemies = enemies->next;
 	}

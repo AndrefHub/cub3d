@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:28 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 19:08:23 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 13:21:26 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	pac_game_scene(t_game *game)
 	player_controll(game);
 	cast_rays(game);
 	enemy_move(game);
+	update_volume(game);
 	draw_ceil_floor_textured(game);
 	draw_walls(game);
 	draw_game_objects(game);

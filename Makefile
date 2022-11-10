@@ -182,8 +182,7 @@ $(OBJDIR)%.o: $(SRCDIR)%.c $(CUB_HDR)
 	$(eval FILES_LEFT := $(shell expr $(FILES_COUNT) - $(FILES_COMPILED) + 1))
 	printf '%0.s\033[0;46m \033[0m' {1..$(FILES_COMPILED)}
 	printf '%0.s ' {1..$(FILES_LEFT)}
-	# echo /$(FILES_COMPILED)
-	echo -n '[' "$(FILES_COMPILED)/$(FILES_COUNT)" '] '
+	printf "[ $(FILES_COMPILED)/$(FILES_COUNT) ]"
 
 $(OBJ_BONUSDIR)%.o: $(SRC_BONUSDIR)%.c $(CUB_BONUSHDR) $(CUB_BONUSINC)
 	@mkdir -p $(OBJ_BONUSDIR)
@@ -193,8 +192,7 @@ $(OBJ_BONUSDIR)%.o: $(SRC_BONUSDIR)%.c $(CUB_BONUSHDR) $(CUB_BONUSINC)
 	$(eval FILES_LEFT := $(shell expr $(FILES_COUNT) - $(FILES_COMPILED) + 1))
 	printf '%0.s\033[0;46m \033[0m' {1..$(FILES_COMPILED)}
 	printf '%0.s ' {1..$(FILES_LEFT)}
-	# echo /$(FILES_COMPILED)
-	echo -n '[' "$(FILES_COMPILED)/$(FILES_COUNT)" '] '
+	printf "[ $(FILES_COMPILED)/$(FILES_COUNT) ] "
 
 clean:
 	@$(RM) $(OBJDIR)

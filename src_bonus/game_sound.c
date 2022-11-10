@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:34 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 19:14:59 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 13:40:27 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	set_sound(t_sound *sound, char *filename)
 {
 	sound->file = cs_load_wav(filename);
+	printf("%s %p %p\n", filename, sound->file.channels[0], sound->file.channels[1]);
 	copy_sound(sound, sound);
 }
 

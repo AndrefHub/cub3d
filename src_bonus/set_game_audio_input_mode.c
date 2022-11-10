@@ -6,18 +6,18 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:39 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 19:29:26 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 14:29:50 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc_bonus/cub3d_bonus.h"
 
-void    play_t_sound(cs_context_t *ctx, t_sound *sound)
+void	play_t_sound(cs_context_t *ctx, t_sound *sound)
 {
 	sound->play = cs_play_sound(ctx, sound->def);
 }
 
-void    pause_all_sounds(t_game *game)
+void	pause_all_sounds(t_game *game)
 {
 	int i;
 
@@ -47,13 +47,14 @@ void	set_game_audio_input_mode(t_game *game, int mode)
 }
 
 // mode = START_GAME;
-void    set_game_audio_start(t_game *game)
+void	set_game_audio_start(t_game *game)
 {
 	play_t_sound(game->audio.ctx, &(game->audio.sounds[INTRO_SOUND]));
+	game->audio.sounds[INTRO_SOUND].play->looped = 1;
 }
 
 // mode = GAME_MODE
-void    set_game_audio_game(t_game *game)
+void	set_game_audio_game(t_game *game)
 {
 	static int	i = 0;
 
@@ -67,13 +68,13 @@ void    set_game_audio_game(t_game *game)
 }
 
 // mode = LEADERBOARD_MODE
-void    set_game_audio_leaderboard(t_game *game)
+void	set_game_audio_leaderboard(t_game *game)
 {
 	(void)game;
 }
 
 // mode = WIN_SCREEN_MODE
-void    set_game_audio_win_screen(t_game *game)
+void	set_game_audio_win_screen(t_game *game)
 {
 	pause_all_sounds(game);
 	if (edibles_eaten(game))
@@ -83,14 +84,14 @@ void    set_game_audio_win_screen(t_game *game)
 }
 
 // mode = PAUSE_MODE
-void    set_game_audio_pause(t_game *game)
+void	set_game_audio_pause(t_game *game)
 {
 	pause_all_sounds(game);
 	play_t_sound(game->audio.ctx, &(game->audio.sounds[PAUSE_SOUND]));
 }
 
 // mode = CONTROLS_MENU_MODE
-void    set_game_audio_controls(t_game *game)
+void	set_game_audio_controls(t_game *game)
 {
 	(void)game;
 }
