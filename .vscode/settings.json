@@ -9,6 +9,7 @@
         "math.h": "c",
         "keysym.h": "c",
         "signal.h": "c",
-        "time.h": "c"
+        "time.h": "c",
+        "prototypes.h": "c"
     }
 }
