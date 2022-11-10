@@ -6,7 +6,7 @@
 /*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:39 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/10 14:29:50 by kdancy           ###   ########.fr       */
+/*   Updated: 2022/11/10 15:06:18 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ void	set_game_audio_input_mode(t_game *game, int mode)
 // mode = START_GAME;
 void	set_game_audio_start(t_game *game)
 {
-	play_t_sound(game->audio.ctx, &(game->audio.sounds[INTRO_SOUND]));
-	game->audio.sounds[INTRO_SOUND].play->looped = 1;
+	(void)game;
 }
 
 // mode = GAME_MODE

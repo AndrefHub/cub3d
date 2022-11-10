@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   button_actions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:47:24 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:47:26 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 15:02:13 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	controls_button_func(void *__game, t_button *button)
 	t_game	*game;
 
 	game = __game;
+	game->index_before_controls = game->input_mode;
 	set_game_input_mode(game, CONTROLS_MENU_MODE);
 	(void)button;
 	return (0);

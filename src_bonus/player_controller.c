@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_controller.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:50:24 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:50:29 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 15:41:29 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,10 @@ void	player_controll(t_game *game)
 		rotation_by_key_controller(game);
 		check_restrictions(game);
 		player_eat(game);
+	}
+	else
+	{
+		mouse_move(game->mlx.id, game->mlx.window, game->mlx.win_size.x / 2,
+			game->mlx.win_size.y / 2);
 	}
 }

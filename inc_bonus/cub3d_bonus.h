@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:51:31 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:51:34 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 15:01:22 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,6 +294,7 @@ typedef struct game
 	t_button_list	pause;
 	t_img			pacman_logo;
 	t_ull			start_game_time;
+	int				index_before_controls;
 }	t_game;
 
 typedef struct s_enemy

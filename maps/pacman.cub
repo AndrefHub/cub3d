@@ -66,25 +66,27 @@ W1 ./assets/textures/pacwall/wall01.xpm
 ./assets/textures/pacwall/wall66.xpm
 
 W2 ./assets/textures/monke/monke666.xpm
-W3 ./assets/textures/wah-goodman/wah103.xpm
-W4 ./assets/textures/wah-goodman/wah104.xpm
+W3 ./assets/textures/kirby/kirby004.xpm
+./assets/textures/kirby/kirby005.xpm
+./assets/textures/kirby/kirby006.xpm
+./assets/textures/kirby/kirby007.xpm
+./assets/textures/kirby/kirby008.xpm
+./assets/textures/kirby/kirby009.xpm
+./assets/textures/kirby/kirby010.xpm
+./assets/textures/kirby/kirby011.xpm
+./assets/textures/kirby/kirby012.xpm
+./assets/textures/kirby/kirby013.xpm
+
+W4 ./assets/textures/bruh.xpm
+
 W5 ./assets/textures/wah-goodman/wah105.xpm
 W6 ./assets/textures/wah-goodman/wah106.xpm
 W7 ./assets/textures/wah-goodman/wah107.xpm
 W8 ./assets/textures/wah-goodman/wah108.xpm
 W9 ./assets/textures/wah-goodman/wah109.xpm
-WD ./assets/textures/wah-goodman/wah109.xpm
+WD ./assets/textures/floor2.xpm
 
-O1 ./assets/textures/ghost/ghost1.xpm
-./assets/textures/ghost/ghost2.xpm
-./assets/textures/ghost/ghost3.xpm
-./assets/textures/ghost/ghost4.xpm
-./assets/textures/ghost/ghost5.xpm
-./assets/textures/ghost/ghost6.xpm
-./assets/textures/ghost/ghost7.xpm
-./assets/textures/ghost/ghost8.xpm
-
-O2 ./assets/textures/paccoin/coin1.xpm
+O1 ./assets/textures/paccoin/coin1.xpm
 ./assets/textures/paccoin/coin2.xpm
 ./assets/textures/paccoin/coin3.xpm
 ./assets/textures/paccoin/coin4.xpm
@@ -94,7 +96,7 @@ O2 ./assets/textures/paccoin/coin1.xpm
 ./assets/textures/paccoin/coin8.xpm
 ./assets/textures/paccoin/coin9.xpm
 
-O3 ./assets/textures/pacpill/pill1.xpm
+O2 ./assets/textures/pacpill/pill1.xpm
 ./assets/textures/pacpill/pill2.xpm
 ./assets/textures/pacpill/pill3.xpm
 ./assets/textures/pacpill/pill4.xpm
@@ -104,6 +106,64 @@ O3 ./assets/textures/pacpill/pill1.xpm
 ./assets/textures/pacpill/pill8.xpm
 ./assets/textures/pacpill/pill9.xpm
 
+O3 ./assets/textures/imposter.xpm
+
+O4 ./assets/textures/ghost/ghost1.xpm
+./assets/textures/ghost/ghost2.xpm
+./assets/textures/ghost/ghost3.xpm
+./assets/textures/ghost/ghost4.xpm
+./assets/textures/ghost/ghost5.xpm
+./assets/textures/ghost/ghost6.xpm
+./assets/textures/ghost/ghost7.xpm
+./assets/textures/ghost/ghost8.xpm
+
+O5 ./assets/textures/ghost/ghost1.xpm
+./assets/textures/ghost/ghost2.xpm
+./assets/textures/ghost/ghost3.xpm
+./assets/textures/ghost/ghost4.xpm
+./assets/textures/ghost/ghost5.xpm
+./assets/textures/ghost/ghost6.xpm
+./assets/textures/ghost/ghost7.xpm
+./assets/textures/ghost/ghost8.xpm
+
+O6 ./assets/textures/sussy_stickmin/sussy-00.xpm
+./assets/textures/sussy_stickmin/sussy-01.xpm
+./assets/textures/sussy_stickmin/sussy-02.xpm
+./assets/textures/sussy_stickmin/sussy-03.xpm
+./assets/textures/sussy_stickmin/sussy-04.xpm
+./assets/textures/sussy_stickmin/sussy-05.xpm
+./assets/textures/sussy_stickmin/sussy-06.xpm
+./assets/textures/sussy_stickmin/sussy-07.xpm
+./assets/textures/sussy_stickmin/sussy-08.xpm
+./assets/textures/sussy_stickmin/sussy-09.xpm
+./assets/textures/sussy_stickmin/sussy-10.xpm
+./assets/textures/sussy_stickmin/sussy-11.xpm
+./assets/textures/sussy_stickmin/sussy-12.xpm
+./assets/textures/sussy_stickmin/sussy-13.xpm
+./assets/textures/sussy_stickmin/sussy-14.xpm
+./assets/textures/sussy_stickmin/sussy-15.xpm
+./assets/textures/sussy_stickmin/sussy-16.xpm
+./assets/textures/sussy_stickmin/sussy-17.xpm
+
+O7 ./assets/textures/sussy_stickmin/sussy-00.xpm
+./assets/textures/sussy_stickmin/sussy-01.xpm
+./assets/textures/sussy_stickmin/sussy-02.xpm
+./assets/textures/sussy_stickmin/sussy-03.xpm
+./assets/textures/sussy_stickmin/sussy-04.xpm
+./assets/textures/sussy_stickmin/sussy-05.xpm
+./assets/textures/sussy_stickmin/sussy-06.xpm
+./assets/textures/sussy_stickmin/sussy-07.xpm
+./assets/textures/sussy_stickmin/sussy-08.xpm
+./assets/textures/sussy_stickmin/sussy-09.xpm
+./assets/textures/sussy_stickmin/sussy-10.xpm
+./assets/textures/sussy_stickmin/sussy-11.xpm
+./assets/textures/sussy_stickmin/sussy-12.xpm
+./assets/textures/sussy_stickmin/sussy-13.xpm
+./assets/textures/sussy_stickmin/sussy-14.xpm
+./assets/textures/sussy_stickmin/sussy-15.xpm
+./assets/textures/sussy_stickmin/sussy-16.xpm
+./assets/textures/sussy_stickmin/sussy-17.xpm
+
 F  ./assets/font/font240/space.xpm
 F! ./assets/font/font240/exclam.xpm
 F" ./assets/font/font240/quotedbl.xpm
@@ -112,9 +172,14 @@ F$ ./assets/font/font240/dollar.xpm
 F% ./assets/font/font240/percent.xpm
 F& ./assets/font/font240/ampersand.xpm
 F' ./assets/font/font240/quotesingle.xpm
+F© ./assets/font/font240/copyright.xpm
 
 F_ ./assets/font/font240/underscore.xpm
+F/ ./assets/font/font240/slash.xpm
+F- ./assets/font/font240/hyphen.xpm
 F: ./assets/font/font240/colon.xpm
+F; ./assets/font/font240/semicolon.xpm
+F. ./assets/font/font240/period.xpm
 F, ./assets/font/font240/comma.xpm
 F0 ./assets/font/font240/zero.xpm
 F1 ./assets/font/font240/one.xpm
@@ -127,69 +192,85 @@ F7 ./assets/font/font240/seven.xpm
 F8 ./assets/font/font240/eight.xpm
 F9 ./assets/font/font240/nine.xpm
 
-FA ./assets/font/font240/A.xpm
-FB ./assets/font/font240/B.xpm
-FC ./assets/font/font240/C.xpm
-FD ./assets/font/font240/D.xpm
-FE ./assets/font/font240/E.xpm
-FF ./assets/font/font240/F.xpm
-FG ./assets/font/font240/G.xpm
-FH ./assets/font/font240/H.xpm
-FI ./assets/font/font240/I.xpm
-FJ ./assets/font/font240/J.xpm
-FK ./assets/font/font240/K.xpm
-FL ./assets/font/font240/L.xpm
-FM ./assets/font/font240/M.xpm
-FN ./assets/font/font240/N.xpm
-FO ./assets/font/font240/O.xpm
-FP ./assets/font/font240/P.xpm
-FQ ./assets/font/font240/Q.xpm
-FR ./assets/font/font240/R.xpm
-FS ./assets/font/font240/S.xpm
-FT ./assets/font/font240/T.xpm
-FU ./assets/font/font240/U.xpm
-FV ./assets/font/font240/V.xpm
-FW ./assets/font/font240/W.xpm
-FX ./assets/font/font240/X.xpm
-FY ./assets/font/font240/Y.xpm
-FZ ./assets/font/font240/Z.xpm
+FA ./assets/font/font240/a.xpm
+FB ./assets/font/font240/b.xpm
+FC ./assets/font/font240/c.xpm
+FD ./assets/font/font240/d.xpm
+FE ./assets/font/font240/e.xpm
+FF ./assets/font/font240/f.xpm
+FG ./assets/font/font240/g.xpm
+FH ./assets/font/font240/h.xpm
+FI ./assets/font/font240/i.xpm
+FJ ./assets/font/font240/j.xpm
+FK ./assets/font/font240/k.xpm
+FL ./assets/font/font240/l.xpm
+FM ./assets/font/font240/m.xpm
+FN ./assets/font/font240/n.xpm
+FO ./assets/font/font240/o.xpm
+FP ./assets/font/font240/p.xpm
+FQ ./assets/font/font240/q.xpm
+FR ./assets/font/font240/r.xpm
+FS ./assets/font/font240/s.xpm
+FT ./assets/font/font240/t.xpm
+FU ./assets/font/font240/u.xpm
+FV ./assets/font/font240/v.xpm
+FW ./assets/font/font240/w.xpm
+FX ./assets/font/font240/x.xpm
+FY ./assets/font/font240/y.xpm
+FZ ./assets/font/font240/z.xpm
 
-F[ ./assets/font/font240/pac.xpm
+F[ ./assets/font/font240/pacleft.xpm
+F] ./assets/font/font240/pacright.xpm
+F( ./assets/font/font240/parenleft.xpm
+F) ./assets/font/font240/parenright.xpm
 
-S1 ./assets/sounds/monke.wav
-S2 ./assets/sounds/pacman_death.wav
-S3 ./assets/sounds/auuuugh.wav
-F ./assets/textures/sussy_stickmin/sussy-00.xpm
-C ./assets/textures/pacwall/wall12.xpm
+S1 ./assets/sounds/pacman_intermission.wav
+S2 ./assets/sounds/start_sound.wav
+S3 ./assets/sounds/death_sound.wav
+S4 ./assets/sounds/win_sound.wav
+S5 ./assets/sounds/enemy_sound.wav
+S6 ./assets/sounds/pacman_chomp.wav
+S7 ./assets/sounds/pacman_eatghost.wav
+S8 ./assets/sounds/pause_sound.wav
+S9 ./assets/sounds/button_change_sound.wav
+S10 ./assets/sounds/button_press_sound.wav
 
-1111111111111111111111111111
-1............11............1
-1.1111.11111.11.11111.1111.1
-1o1111.11111.11.11111.1111o1
-1.1111.11111.11.11111.1111.1
-1..........................1
-1.1111.11.11111111.11.1111.1
-1.1111.11.11111111.11.1111.1
-1......11....11....11......1
-111111.11111.11.11111.111111
-     1.11111.11.11111.1
-     1.11          11.1
-     1.11 111  111 11.1
-111111.11 1      1 11.111111
-2     .   1      1   .     2
-111111.11 1      1 11.111111
-     1.11 11111111 11.1
-     1.11          11.1
-     1.11 11111111 11.1
-111111.11 11111111 11.111111
-1............11............1
-1.1111.11111.11.11111.1111.1
-1.1111.11111.11.11111.1111.1
-1o..11.......11.......11..o1
-111.11.11.11111111.11.11.111
-111.11.11.11111111.11.11.111
-1......11....11....11......1
-1.1111111111.11.1111111111.1
-1.1111111111.11.1111111111.1
-1..........................1
-1111111111111111111111111111
+F ./assets/textures/pacwall/wall12.xpm
+C ./assets/textures/floor3.xpm
+
+111111111111111111111111111
+1............1............1
+1.1111.11111.1.11111.1111.1
+1o1111.11111.1.11111.1111o1
+1.1111.11111.1.11111.1111.1
+1.........................1
+1.1111.11.1111111.11.1111.1
+1.1111.11.1111111.11.1111.1
+1......11....1....11......1
+111111.11111.1.11111.111111
+     1.11111.1.11111.1
+     1.1100000000011.1
+     1.110111e111011.1
+111111.1101000001011.111111
+200000.0001e0e001000.000002
+111111.1101000e01011.111111
+     1.1101111111011.1
+     1.1100000000011.1
+     1.1101111111011.1
+111111.1101111111011.111111
+1............1............1
+1.1111.11111.1.11111.1111.1
+1.1111.11111.1.11111.1111.1
+1o..11.......E.......11..o1
+111.11.11.1111111.11.11.111
+111.11.11.1111111.11.11.111
+1......11....1....11......1
+1.1111111111.1.1111111111.1
+1.1111111111.1.1111111111.1
+1.........................1
+1111111111111D1111111111111
+            1 1
+            1 1
+            1 111111
+            1      3
+            14444444

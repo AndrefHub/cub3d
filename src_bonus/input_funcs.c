@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_funcs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:49:51 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:49:52 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 15:07:06 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,7 @@ int	controls_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
 	{
-		set_game_input_mode(game, PAUSE_MODE);
-		game->scene.scene_func = (void *)pause_game_scene;
+		set_game_input_mode(game, game->index_before_controls);
 	}
 	return (0);
 }	

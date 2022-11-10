@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsherry <lsherry@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: kdancy <kdancy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 18:51:37 by lsherry           #+#    #+#             */
-/*   Updated: 2022/11/09 18:51:42 by lsherry          ###   ########.fr       */
+/*   Updated: 2022/11/10 15:47:20 by kdancy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,6 +152,7 @@ t_list	*astar(t_game *game, t_vector enemy, t_vector player);
 t_list	*astar_regenerate_path(t_list *curr);
 t_list	*ft_lstfind(t_list *closed, void *val, int equals(void *, void *));
 t_node	*ft_nodenew(t_node *data);
+void	write_controls(t_game *game, int font_size, int flag);
 
 // src_bonus/enemy_astar_utils.c //
 
