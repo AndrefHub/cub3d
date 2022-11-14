@@ -70,6 +70,8 @@ void	win_game_scene(void *_game)
 	t_game	*game;
 
 	game = _game;
+	game->show_map = false;
+	change_all_enemies_cry_paused(game, 1);
 	game->death_func(game);
 }
 

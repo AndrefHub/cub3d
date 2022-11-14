@@ -41,6 +41,17 @@ t_text	*set_rank_color(t_text *text, int rank)
 	return (text);
 }
 
+void	draw_cursor(t_game *game, int counter)
+{
+	const int	font_size = game->hud.font_size;
+
+	if (ft_strlen(game->player_lb_data->name) < 8 && get_time() % 1000 < 500)
+		draw_rectangle_fill(&game->img, (t_vector){game->img.size.x / 2
+			+ (ft_strlen(game->player_lb_data->name) * font_size) / 2,
+			(font_size * 0.95f) + counter * font_size * 1.5},
+			(t_vector){font_size / 10, font_size}, 0xEFEFEF);
+}
+
 void	print_leaderboard_entries(t_game *game)
 {
 	const int	font_size = game->hud.font_size;
@@ -63,6 +74,8 @@ void	print_leaderboard_entries(t_game *game)
 		put_text_to_screen_layout(game->map->font, &game->img, &(t_text)
 		{entry->score, (t_vector){7 * (game->img.size.x / 8), font_size
 			+ counter * font_size * 1.5}, VTop | HCenter, 0xEFEFEF}, font_size);
+		if (game->player_lb_data->name == ((t_lb_entry *)lb->content)->name)
+			draw_cursor(game, counter);
 		lb = lb->next;
 	}
 }

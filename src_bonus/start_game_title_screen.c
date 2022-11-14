@@ -99,7 +99,7 @@ void	set_input_mode_chars(t_game *game)
 void	initialize_start_game_variables(t_game *game)
 {
 	import_texture_to_img(game, &game->pacman_logo,
-		"assets/textures/pacman_logo.xpm", (t_vector){1280, 384});
+		"assets/textures/pac3d_logo.xpm", (t_vector){1280, 384});
 	initialize_sprites(game, MAX_FONT_CHARS,
 		(t_texture *)game->map->font, FONT_SIZE);
 	initialize_game_parameters(game);

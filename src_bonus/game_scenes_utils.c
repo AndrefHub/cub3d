@@ -29,11 +29,6 @@ void	end_game_dim(t_game *game)
 	static int		i = 0;
 	static t_ull	time = 0;
 
-	if (!i)
-	{
-		game->show_map = 0;
-		change_all_enemies_cry_paused(game, 1);
-	}
 	if (get_time() - time > 35 && i < 50)
 	{
 		time = get_time();
