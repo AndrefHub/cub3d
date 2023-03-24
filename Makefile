@@ -194,7 +194,7 @@ $(OBJ_BONUSDIR)%.o: $(SRC_BONUSDIR)%.c $(CUB_BONUSHDR) $(CUB_BONUSINC)
 	printf '%0.s ' {1..$(FILES_LEFT)}
 	printf "[ $(FILES_COMPILED)/$(FILES_COUNT) ] "
 
-clean:
+clean: 
 	@$(RM) $(OBJDIR)
 	@echo -e '\033[1;31m'$(NAME) "objs deleted."'\033[0m'
 	@$(RM) $(OBJ_BONUSDIR)
@@ -222,5 +222,7 @@ set_bonus_count:
 
 set_main_count:
 	$(eval FILES_COUNT := $(words $(SRCS)))
+
+.DEFAULT_GOAL := bonus
 
 .PHONY: all clean fclean re bonus bonus_in
