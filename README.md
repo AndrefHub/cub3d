@@ -1,8 +1,9 @@
 # pac3D
 
 <p align="center">
-<a href="https://youtu.be/mTbOpzq9PrI"><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjhiMDVmMmNhZmI1NmJjNDQ2MjRhNjQ2ZDA3NmIyMTU2MzA0ZjRjZCZjdD1n/P5D0Zq1YTsU6Qd3RBX/giphy.gif"></a>
+<a href="https://youtu.be/mTbOpzq9PrI" target="_blank"><img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjhiMDVmMmNhZmI1NmJjNDQ2MjRhNjQ2ZDA3NmIyMTU2MzA0ZjRjZCZjdD1n/P5D0Zq1YTsU6Qd3RBX/giphy.gif" width=1727></a>
 </p>
+</div>
 
 Ray-casting project inspired by two legendary games: [Wolfenstein 3D](https://en.wikipedia.org/wiki/Wolfenstein_3D) and [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man).
 
