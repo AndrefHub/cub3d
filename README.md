@@ -18,12 +18,16 @@ git clone --recurse-submodules https://github.com/AndrefHub/cub3d.git && cd cub3
 #### Build:
 ```bash
 make         # Mandatory part
+```
+```bash
 make bonus   # Bonus part
 ```
 
 #### Run:
 ```bash
 ./cub3D "valid map filename"
+```
+```bash
 ./pac3D "valid map filename"
 ```
 
