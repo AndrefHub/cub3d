@@ -257,7 +257,7 @@ void	write_controls(t_game *game, int font_size, int flag);
 // game_sound.c //
 
 void	copy_sound(t_sound *sound, t_sound *src);
-void	init_main_game_sound(t_game *game);
+void	init_main_game_sound(struct s_audio* audio);
 void	set_game_events_sounds(struct s_audio *audio, char **sounds);
 void	set_sound(t_sound *sound, char *filename);
 

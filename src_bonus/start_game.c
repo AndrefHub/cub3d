@@ -14,18 +14,18 @@
 
 void	init_input_and_scene_funcs(t_game *game)
 {
-	game->input_funcs[START_MODE] = start_input_mode;
-	game->input_funcs[GAME_MODE] = game_input_mode;
-	game->input_funcs[LEADERBOARD_MODE] = username_input_mode;
-	game->input_funcs[WIN_SCREEN_MODE] = win_screen_mode;
-	game->input_funcs[PAUSE_MODE] = pause_mode;
-	game->input_funcs[CONTROLS_MENU_MODE] = controls_mode;
-	game->scene_funcs[START_MODE] = (void *)start_game_scene;
-	game->scene_funcs[GAME_MODE] = (void *)pac_game_scene;
-	game->scene_funcs[LEADERBOARD_MODE] = (void *)leaderboard_game_scene;
-	game->scene_funcs[WIN_SCREEN_MODE] = (void *)win_game_scene;
-	game->scene_funcs[PAUSE_MODE] = (void *)pause_game_scene;
-	game->scene_funcs[CONTROLS_MENU_MODE] = (void *)controls_game_scene;
+	game->input_funcs[START_MODE]			= start_input_mode;
+	game->input_funcs[GAME_MODE] 			= game_input_mode;
+	game->input_funcs[LEADERBOARD_MODE] 	= username_input_mode;
+	game->input_funcs[WIN_SCREEN_MODE] 		= win_screen_mode;
+	game->input_funcs[PAUSE_MODE] 			= pause_mode;
+	game->input_funcs[CONTROLS_MENU_MODE] 	= controls_mode;
+	game->scene_funcs[START_MODE] 			= (void *)start_game_scene;
+	game->scene_funcs[GAME_MODE] 			= (void *)pac_game_scene;
+	game->scene_funcs[LEADERBOARD_MODE] 	= (void *)leaderboard_game_scene;
+	game->scene_funcs[WIN_SCREEN_MODE] 		= (void *)win_game_scene;
+	game->scene_funcs[PAUSE_MODE] 			= (void *)pause_game_scene;
+	game->scene_funcs[CONTROLS_MENU_MODE] 	= (void *)controls_game_scene;
 }
 
 void	clear_font_outline(t_game *game)
@@ -92,7 +92,7 @@ int	init_game(t_map *map)
 	if (!game.mlx.id)
 		error_exit(&game, 1, "Game initialization error: MLX initialization");
 	initialize_start_game_variables(&game);
-	init_main_game_sound(&game);
+	init_main_game_sound(&game.audio);
 	set_game_events_sounds(&game.audio, map->sounds);
 	initialize_game_data(&game);
 	start_game(&game);

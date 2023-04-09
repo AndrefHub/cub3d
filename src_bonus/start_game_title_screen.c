@@ -32,8 +32,8 @@ void	initialize_game_hud(t_game *game)
 	{
 		import_texture_to_img(game, &game->hud_texture,
 			"assets/textures/hud/pac_hud720p.xpm", (t_vector){1280, 720});
-		game->mlx.game_size = (t_vector){920, 607};
 		game->hud.font_size = 20;
+		game->mlx.game_size = (t_vector){920, 607};
 	}
 	game->hud_img = initialize_img(&game->hud_img, game->mlx.id,
 			game->mlx.win_size.x, game->mlx.win_size.y);

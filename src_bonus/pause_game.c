@@ -33,9 +33,7 @@ int	resume_game(t_game *game)
 inline int	start_input_mode(int key, t_game *game)
 {
 	if (key == ESC_KEY)
-	{
 		close_hook(game);
-	}
 	else if (key == DOWN_KEY)
 	{
 		game->pause.buttons[game->pause.index].selected = 0;

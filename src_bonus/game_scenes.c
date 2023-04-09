@@ -87,3 +87,23 @@ void	pause_game_scene(t_game *game)
 		game->hud_img.mlx_img, 0, 0);
 	update_time(game);
 }
+
+// 5
+void	controls_game_scene(void *__game)
+{
+	t_game		*game;
+
+	game = __game;
+	fill_img_color(&game->hud_img, TRANSPARENT_COLOR);
+	draw_hud(game);
+	put_image_to_image(&game->hud_img, (t_vector){(game->mlx.win_size.x
+			- game->img.size.x) / 2, 0}, &game->img);
+	draw_rectangle_fill(&game->hud_img, (t_vector)
+	{game->hud_img.size.x / 2 - game->img.size.x / 2, 0}, (t_vector)
+	{game->img.size.x, game->img.size.y}, 0xA0000000);
+	write_controls(game, game->hud.font_size,
+		game->index_before_controls == PAUSE_MODE);
+	mlx_put_image_to_window(game->mlx.id, game->mlx.window,
+		game->hud_img.mlx_img, 0, 0);
+	update_time(game);
+}
